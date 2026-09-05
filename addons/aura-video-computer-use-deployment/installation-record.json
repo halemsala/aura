@@ -1,0 +1,20 @@
+{
+  "installed_at": "20260829T005930Z",
+  "addon_path": "/home/workdir/artifacts/extract_main/AURA_QUANT_X_12.7.62_HERMES_FIXED/addons/aura-video-computer-use-deployment",
+  "backup_path": "/home/workdir/artifacts/extract_main/AURA_QUANT_X_12.7.62_HERMES_FIXED/addons/_backup_aura-video-computer-use-deployment_20260829T005930Z",
+  "environment": "linux_sandbox_not_windows",
+  "result": "PARTIAL",
+  "reason": "Host is Linux preparation environment; Windows install of Hermes/FFmpeg winget/cua-driver requires user Windows host + approvals",
+  "AURA_VIDEO_package_in_attachments": false,
+  "preserved_cua_guard": "/home/workdir/artifacts/extract_main/AURA_QUANT_X_12.7.62_HERMES_FIXED/addons/aura-computer-use-guarded-connector",
+  "services_started": [],
+  "downloads_performed": false,
+  "hermes_installed": false,
+  "cua_driver_installed": false,
+  "computer_use_enabled": false,
+  "execution_allowed": false,
+  "network_allowed": false,
+  "scheduler_enabled": false,
+  "publication_allowed": false,
+  "upload_allowed": false
+}

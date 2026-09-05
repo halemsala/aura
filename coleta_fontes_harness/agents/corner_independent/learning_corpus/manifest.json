@@ -1,0 +1,316 @@
+{
+  "manifest_version": "agent-corpus-manifest-v1",
+  "agent_memory_version": "corner-pattern-memory-v7-six-attachment-curated",
+  "raw_file_count": 51,
+  "policy": "raw files are retained for provenance; only audited patterns in memory are used by the standalone specialist; synthetic trainer is never executed",
+  "paper_trade": true,
+  "execution_allowed": false,
+  "files": [
+    {
+      "path": "learning_corpus/archive_32/APRENDIZADO01.txt",
+      "bytes": 13429,
+      "sha256": "7e4af6b476d9957d8c56a36e131934990f019986d1aea2b7df1d7e53c68ab411",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/CONHECIMENTO(1).txt",
+      "bytes": 17376,
+      "sha256": "c060508dfa2d494a3708a34d32d97f896349d74a579191ae30b25f838a561b7a",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/Consegueextrairtodososconnhecimentosdessesv.._.docx",
+      "bytes": 3011457,
+      "sha256": "95fc4fb9d2dba1bcaf10b165a30ef3261d99738e1ac0cb5ceca68d7637c58813",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/DocumentodoGoogleKeep(1).docx",
+      "bytes": 1112413,
+      "sha256": "8d78b92117267b5b621cc2d70166d664c95ff5f53843fe31be9f5a7ee78a8916",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/DocumentodoGoogleKeep(2).docx",
+      "bytes": 19241,
+      "sha256": "a7496069596f86033b1655d9e6ee5c948894fe39e1ab9c826c382719dad238d4",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/Precisamosdetreinamentosconhecimentoparatre.._.docx",
+      "bytes": 3012690,
+      "sha256": "f19aaaa4c4447c942afee03d0580e7bf63054a75fcaef40bbeb0b11d9188ad42",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/Registrecomogrennsairamosescanteios,registr...(1).docx",
+      "bytes": 3010785,
+      "sha256": "cc2a0022682ef38f1f9fbe2b75d1eea920eb1dd689317b1089611b2a03fbfc54",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/Registrecomogrennsairamosescanteios,registr...(2).docx",
+      "bytes": 1008339,
+      "sha256": "9bd8fdd9471b3e371a11d638146d13e5e670107552fac609540b590e7f970740",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/Registrecomogrennsairamosescanteios,registr...(3).docx",
+      "bytes": 9422,
+      "sha256": "62d50dc7b537896084eca43dc14bf24606dd7a14ed0fe1f8b3e4668dc2dd5d14",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/Registrecomogrennsairamosescanteios,registr...(4).docx",
+      "bytes": 9367,
+      "sha256": "d8b98241f428f3c1896293ca42a243e6a7abce70c6bf8360971afdfd64e9820a",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/Registrecomogrennsairamosescanteios,registr...(5).docx",
+      "bytes": 3011155,
+      "sha256": "9d060ffba4896018c25bd1229c87e02ab276bdf7c6c3f9a492b36c2baaa78464",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/Registrecomogrennsairamosescanteios,registr....docx",
+      "bytes": 10082,
+      "sha256": "a257222f0066bff016694f5bd1cea3a67d78b3cda3f1bf58a50d9dd25e31ccbf",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/Secomportecomoumextratiordeconhecimentode.._.docx",
+      "bytes": 10807,
+      "sha256": "5138ae5b3c67583280c3548a88f18e16475b97e6aaf51c6e68ad894d4685e919",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/algomais_.docx",
+      "bytes": 9453,
+      "sha256": "7fa7fc5e61067af501bfb3b8deb8cab15f5bb9249c21fd3b535ef69b2f251417",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/aprofundeaindamaisoconhecimentodefontesint.._.docx",
+      "bytes": 3011478,
+      "sha256": "2f7a9ec421243d9a77927c7aa4832229d5bf5b92639f8e96ed244a90e155d797",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/aumentarparaonivelmaisaltopossiveldalogica(1).docx",
+      "bytes": 3011611,
+      "sha256": "cee49d253bdf6797e9f37e9f33c76ddb3562d988503dcea1bb5a27d9bf0248a1",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/aumentarparaonivelmaisaltopossiveldalogica.docx",
+      "bytes": 3011611,
+      "sha256": "cee49d253bdf6797e9f37e9f33c76ddb3562d988503dcea1bb5a27d9bf0248a1",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/aumenteoniveldoconhecimentocompresquisasem.._.docx",
+      "bytes": 9437,
+      "sha256": "c56521433042226f0c261b1af42ce1411e5062778f6dd730556126466b9e7265",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/conseguedosdemaisvideosquevocelistouforam.._.docx",
+      "bytes": 3010708,
+      "sha256": "0a058d757f5091b21b9555863582a87b79d4e7f36b2f03df9802611c88aa21ee",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/conseguemaisconhecimentomomentoscertosdeent.._.docx",
+      "bytes": 10088,
+      "sha256": "ae0b6146d038b7188d7d614160eeacc15657d3cc31167cc6abd0d6f458fefc9d",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/conseguemaisconhecimentosnomercadoescanteio.._.docx",
+      "bytes": 9635,
+      "sha256": "99c41325c8326ee483ff71fdd82caf1d79f8761a9dfc41784591adb237ba4bf8",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/deepseek_json_20260818_595047(1).TXT",
+      "bytes": 30470,
+      "sha256": "5b37f8a85315950b6b56622dfa54a62296c2bce0834dfe7465b7f0adfe243d2d",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/deepseek_json_20260818_5ae7f2(1).TXT",
+      "bytes": 1455,
+      "sha256": "6f7fadc8052880be186690ef08c9ef7c63fdd9cbc4ab9e9ff0cf52088f4113eb",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/deepseek_python_20260818_a6963f(1).TXT",
+      "bytes": 6433,
+      "sha256": "b36ab5fbd51bdb76ac95f477ba129cf81a82f2ed6a42103a6b606f70b6c69d65",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/extraiaoconhecimentodetodososvideosquevoce.._.docx",
+      "bytes": 9956,
+      "sha256": "45ac01f10fbdfeba1271af6c1de544dcbaa7262bf5b2ab06913f4a0bd87abdeb",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/façaumapesquisanoyoutubeporconteudoscapaze.._(1).docx",
+      "bytes": 3012881,
+      "sha256": "fdcc15c09a2bc8131e3646b787dbb21b834b178f38680e3997db73156641a8cf",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/façaumapesquisanoyoutubeporconteudoscapaze.._.docx",
+      "bytes": 9906,
+      "sha256": "25f507c7819ce1a21bb5fa31deb5f45d5b1f1c16464cfe443557b4d0b99cd76c",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/maisconhecimento_(1).docx",
+      "bytes": 3010983,
+      "sha256": "b59ea2ab5733d89f469d793a3bdb4da4b3fb7fade20806e514ef63454361c6db",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/maisconhecimento_.docx",
+      "bytes": 3010983,
+      "sha256": "b59ea2ab5733d89f469d793a3bdb4da4b3fb7fade20806e514ef63454361c6db",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/naopodeserresumosimcontertodososdetalhes....docx",
+      "bytes": 3013700,
+      "sha256": "7772ca9976c0a11342aee9079f840efbfcb5a922a59b329df5c7ba8eb2851dab",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/precisamosdemaisconhecimentoparaaumnetarace.._.docx",
+      "bytes": 9266,
+      "sha256": "467946e978e16443ad8bb2a086902fccd95d0ea76b14d4f53daf1b375b5e873c",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/archive_32/precisamosdomaximodeconhecimentopossivelque.._.docx",
+      "bytes": 3011213,
+      "sha256": "681b38e29b483b5ca64cb674272d63754e02d7e44828ed5c7527736775d04f24",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/reference_rejected/BRASILEIRAO_2026_AGENTE_IA_TREINAMENTO.py",
+      "bytes": 23548,
+      "sha256": "9550a97a81df9115749bc82025118db6b63103ef1c02881851c51f3bee544745",
+      "status": "reference_rejected"
+    },
+    {
+      "path": "learning_corpus/session_uploads/BRASILEIRAO_2026_BASE_CONHECIMENTO_IA.md",
+      "bytes": 18575,
+      "sha256": "66f9d408bdccf60e2244c33d1287c8ff590c7af59c4b2472851abab90512df0f",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/session_uploads/BRASILEIRAO_2026_DADOS_REAIS_OFICIAIS.md",
+      "bytes": 13960,
+      "sha256": "4cfd77ec73483c5d51121266892556a5b339201d073106c0871ca9e1780fb711",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/session_uploads/BRASILEIRAO_SERIE_B_2026_DADOS_REAIS_OFICIAIS.md",
+      "bytes": 13933,
+      "sha256": "95d7869dff9ee63afc105045c8f7f9c038285e59c2d4a314a24a50c9f323d264",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/session_uploads/DocumentodoGoogleKeep(2).md",
+      "bytes": 137010,
+      "sha256": "8814db20cd2aae994880b9be80c27e88642fbd706cd45bbde39356ebd3d6cfaf",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/session_uploads/DocumentodoGoogleKeep(3).md",
+      "bytes": 17194,
+      "sha256": "22c61fd25edb7c98c91b15c7611815526b785cbcd8f58b5693ddad75fa340c99",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/session_uploads/DocumentodoGoogleKeep(4).md",
+      "bytes": 275584,
+      "sha256": "2e835859898c3180eb14994d967bbb87543513a7ad0d5a6c8d3b76105dbbf4eb",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/session_uploads/ceur-ws.org_Vol-3169_paper1.pdf_1787438023001.md",
+      "bytes": 50733,
+      "sha256": "fa5ec79328ff5d44522224f55b20c794db8deb46decf2632d13f9cd45d6a44fc",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/session_uploads/pasted_content.txt",
+      "bytes": 9513,
+      "sha256": "87434e2b522605e3315b80446eaee3d2cf19c0c7bbcb761720c62dcd0e18da38",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/session_uploads/pasted_content_10.txt",
+      "bytes": 5692,
+      "sha256": "8d57b169f6c2375e9a69e50ba6dae6646ab7e0e406635cf82a2d3f21e5135e85",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/session_uploads/pasted_content_11.txt",
+      "bytes": 7905,
+      "sha256": "863f166a8ca7db1b25a65b49644bfd85271030a844de4e43e99214287b9ff261",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/session_uploads/pasted_content_2.txt",
+      "bytes": 7783,
+      "sha256": "fa19dcc987a7159117ae5165d427780928b2f325952faabe0c1ac0c2d9aece10",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/session_uploads/pasted_content_3.txt",
+      "bytes": 6693,
+      "sha256": "d57238b71cb97ea1cb2195f35c6b84ad4da3846f0dd9f826e05796ec8c718ae6",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/session_uploads/pasted_content_4.txt",
+      "bytes": 3671,
+      "sha256": "9ca8e1edd971eec3ded379cb33682e7be454a95e3b9a99ea676514ba7057ce7f",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/session_uploads/pasted_content_5.txt",
+      "bytes": 12813,
+      "sha256": "c90215c87cb7ff0d468d369661ff76cf576f29db6e22ddc361529cd30d752ba7",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/session_uploads/pasted_content_6.txt",
+      "bytes": 9635,
+      "sha256": "500c2740b3523cb45a29e25f2c46776a58ad30a56727259716296536fb64a200",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/session_uploads/pasted_content_7.txt",
+      "bytes": 9635,
+      "sha256": "500c2740b3523cb45a29e25f2c46776a58ad30a56727259716296536fb64a200",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/session_uploads/pasted_content_8.txt",
+      "bytes": 5238,
+      "sha256": "9dcb9baed0ab24a28611f1ebcc87b00b3674b3ad4f6a044dc769a42e3448fab5",
+      "status": "raw_provenance_pending_or_reviewed"
+    },
+    {
+      "path": "learning_corpus/session_uploads/pasted_content_9.txt",
+      "bytes": 5557,
+      "sha256": "dd139a363908c344267b59531e78a586e55d455c8595a2e6e7536a493004a7f6",
+      "status": "raw_provenance_pending_or_reviewed"
+    }
+  ]
+}

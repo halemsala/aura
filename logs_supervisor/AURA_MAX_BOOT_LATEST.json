@@ -1,0 +1,28 @@
+﻿{
+    "timestamp":  "2026-09-03T01:21:24.5948810-03:00",
+    "root":  "C:\\aura",
+    "model":  "qwen3:8b",
+    "no_browser":  true,
+    "paper_trade":  true,
+    "execution_allowed":  false,
+    "ollama_warmup":  false,
+    "services":  {
+                     "bridge":  true,
+                     "engine":  true,
+                     "matriz":  true,
+                     "control":  true,
+                     "voice":  true,
+                     "hermes":  true,
+                     "ollama":  false
+                 },
+    "started":  {
+                    "bridge":  true,
+                    "engine":  true,
+                    "matriz":  true,
+                    "control":  true,
+                    "voice":  true,
+                    "hermes":  true
+                },
+    "backup_dir":  "C:\\aura\\backups\\aura_max_20260903_012103",
+    "note":  "Arranque idempotente; nao chama AURA_HERMES_V10_ULTRA.bat e nao abre HTML."
+}

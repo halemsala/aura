@@ -1,0 +1,30 @@
+C:\aura\bridge\jarvis_voice_server.py:442: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\bridge\jarvis_voice_server.py:493: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [26336]
+INFO:     Waiting for application startup.
+WARNING:aura.jarvis_voice:pyzmq unavailable — SUB disabled
+INFO:aura.jarvis_voice:CommandCenter ativo: 17 ferramentas
+INFO:aura.jarvis_voice:PcOperator ativo: 4 raízes permitidas
+INFO:aura.jarvis_voice:Jarvis Voice server startup complete; inicialização dos motores em background
+INFO:aura.jarvis_voice:ear: a ouvir o microfone Windows (wake: Alfred)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8099 (Press CTRL+C to quit)
+[device] NVIDIA CUDA detectada via nvidia-smi | usando cuda:0
+[stt] Carregando Whisper 'base' em cpu (compute=int8, workers=1)...
+INFO:aura.pilar4.audio_pipeline:Pipeline de áudio paralelizado iniciado | target_first_segment=320ms
+INFO:aura.jarvis_voice:Pilar 4 integrado ao Voice: pipeline paralelo ativo
+INFO:aura.jarvis_voice:Motores de voz carregados; STT CPU pronto=True (LLM = Hermes qwen3:8b)
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:01.148 of audio

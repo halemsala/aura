@@ -1,0 +1,12 @@
+V37.3.47 — FIX pydantic SchemaError path lookahead
+====================================================
+Erro:
+  SchemaError: look-around is not supported
+  regex: ^(?!.*\.\.)[a-zA-Z0-9_/\.\-]+$
+
+Causa: pydantic_core (Rust) nao suporta lookahead no Field(pattern=...).
+
+Correcao: Field sem pattern lookaround + field_validator que bloqueia ".."
+
+Arranque Hermes (PowerShell):
+  ver AURA_START_HERMES.ps1 ou Start-Process com WorkingDirectory hermes_v10

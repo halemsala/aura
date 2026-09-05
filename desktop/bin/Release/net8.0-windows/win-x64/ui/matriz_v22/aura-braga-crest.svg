@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 112" role="img" aria-label="Escudo local B">
+  <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#ff9e7a"/><stop offset="1" stop-color="#c94d6d"/></linearGradient></defs>
+  <path d="M48 4 88 18v34c0 25-17 44-40 56C25 96 8 77 8 52V18Z" fill="#10151a" stroke="url(#g)" stroke-width="4"/>
+  <path d="M27 25h22c13 0 21 7 21 17 0 5-2 9-6 12 5 3 8 8 8 14 0 11-9 19-23 19H27Zm14 13v11h8c5 0 8-2 8-6s-3-5-8-5Zm0 23v13h10c5 0 8-2 8-7 0-4-3-6-8-6Z" fill="url(#g)"/>
+</svg>

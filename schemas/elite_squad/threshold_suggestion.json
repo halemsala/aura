@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ThresholdSuggestion",
+  "type": "object",
+  "required": ["generated_at", "suggestions", "based_on_n", "applied"],
+  "properties": {
+    "generated_at": { "type": "string", "format": "date-time" },
+    "based_on_n": { "type": "integer" },
+    "loss_rate": { "type": "number" },
+    "suggestions": {
+      "type": "object",
+      "properties": {
+        "entra_min_score": { "type": "number" },
+        "entra_min_confidence": { "type": "number" }
+      },
+      "additionalProperties": true
+    },
+    "applied": { "type": "boolean", "const": false },
+    "requires_human_approval": { "type": "boolean", "const": true }
+  },
+  "additionalProperties": false
+}

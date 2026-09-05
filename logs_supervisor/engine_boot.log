@@ -1,0 +1,237 @@
+
+==== BOOT 2026-09-04 19:36:17 ====
+[skill_runtime] build CHATFIX4 carregado — filtro de intenção de análise ATIVO
+INFO:     Started server process [12960]
+INFO:     Waiting for application startup.
+{"timestamp": "2026-09-04 19:36:23,564", "level": "INFO", "module": "server", "msg": "Engine server startup complete on port 8765"}
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8765): normalmente só é permitido uma utilização de cada endereço de socket (protocolo/endereço de rede/porta)
+INFO:     Waiting for application shutdown.
+{"timestamp": "2026-09-04 19:36:23,571", "level": "INFO", "module": "deterministic_router", "msg": "Roteador determinístico ativo | patterns=3 | cache_ttl=350ms"}
+{"timestamp": "2026-09-04 19:36:23,574", "level": "INFO", "module": "structured_observability", "msg": "Observabilidade estruturada ativa | dir=C:\\aura\\engine\\artifacts\\logs"}
+{"timestamp": "2026-09-04 19:36:23,575", "level": "INFO", "module": "online_learning_alpha", "msg": "Alpha Learner ativo | pesos=0 | intervalo=[0.4, 2.5]"}
+{"timestamp": "2026-09-04 19:36:23,577", "level": "INFO", "module": "hybrid_data_store", "msg": "SQLite :memory: inicializado (zero I/O em disco)"}
+{"timestamp": "2026-09-04 19:36:23,583", "level": "INFO", "module": "hybrid_data_store", "msg": "Thread daemon de flush iniciada"}
+{"timestamp": "2026-09-04 19:36:23,583", "level": "INFO", "module": "pillar_runtime", "msg": "Pilares integrados: router, hybrid_store, p5_risk, observability, online_alpha"}
+{"timestamp": "2026-09-04 19:36:23,662", "level": "INFO", "module": "server", "msg": "Agent max-activation on startup: {'ok': True, 'declared': 38, 'markers': 76, 'paper_trade': True, 'execution_allowed': False}"}
+{"timestamp": "2026-09-04 19:36:23,715", "level": "INFO", "module": "hardware_governor", "msg": "[governor] psutil ativo"}
+{"timestamp": "2026-09-04 19:36:23,716", "level": "INFO", "module": "server", "msg": "SupervisorJarvis start() iniciado"}
+{"timestamp": "2026-09-04 19:36:23,740", "level": "INFO", "module": "conformal_gate", "msg": "[conformal] snapshot carregado: seq=0 pools={'global': 0}"}
+{"timestamp": "2026-09-04 19:36:23,740", "level": "INFO", "module": "server", "msg": "ConformalGate + ConformalRiskGate inicializados (paper_trade)"}
+{"timestamp": "2026-09-04 19:36:23,878", "level": "INFO", "module": "mc_grid", "msg": "[mcgrid] grade carregada: {'shape': [24, 24, 9, 5], 'cells_total': 25920, 'cells_done': 25920, 'pct': 100.0, 'signature': '0619c041b4f819a4', 'horizons': [5.0, 10.0, 15.0]}"}
+{"timestamp": "2026-09-04 19:36:23,879", "level": "INFO", "module": "hybrid_data_store", "msg": "HybridDataStore encerrado com segurança"}
+{"timestamp": "2026-09-04 19:36:23,891", "level": "INFO", "module": "mc_grid", "msg": "[mcgrid] build iniciado: 25920 celulas, n_sims=400"}
+{"timestamp": "2026-09-04 19:36:23,891", "level": "INFO", "module": "server", "msg": "MCGridService iniciado (build async em background)"}
+{"timestamp": "2026-09-04 19:36:24,257", "level": "INFO", "module": "server", "msg": "ExperienceRetriever iniciado"}
+{"timestamp": "2026-09-04 19:36:24,279", "level": "INFO", "module": "observability", "msg": "[metrics] http://127.0.0.1:9102/ (metrics|healthz|statusz|alerts)"}
+{"timestamp": "2026-09-04 19:36:24,279", "level": "INFO", "module": "server", "msg": "Observability metrics em http://127.0.0.1:9102/"}
+{"timestamp": "2026-09-04 19:36:24,280", "level": "INFO", "module": "server", "msg": "Modulos V23 (Governor + Jarvis + Conformal + MCGrid + Experience + Metrics) inicializados com sucesso."}
+C:\Users\salaa\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py:58: RuntimeWarning: coroutine 'JarvisSupervisor.start' was never awaited
+  result = self.fn(*self.args, **self.kwargs)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+{"timestamp": "2026-09-04 19:36:27,828", "level": "ERROR", "module": "mc_grid", "msg": "[mcgrid] save final falhou"}
+INFO:     Application shutdown complete.
+
+==== BOOT 2026-09-04 21:06:23 ====
+[skill_runtime] build CHATFIX4 carregado — filtro de intenção de análise ATIVO
+INFO:     Started server process [5720]
+INFO:     Waiting for application startup.
+{"timestamp": "2026-09-04 21:06:26,142", "level": "INFO", "module": "server", "msg": "Engine server startup complete on port 8765"}
+INFO:     Application startup complete.
+{"timestamp": "2026-09-04 21:06:26,148", "level": "INFO", "module": "deterministic_router", "msg": "Roteador determinístico ativo | patterns=3 | cache_ttl=350ms"}
+INFO:     Uvicorn running on http://127.0.0.1:8765 (Press CTRL+C to quit)
+{"timestamp": "2026-09-04 21:06:26,150", "level": "INFO", "module": "structured_observability", "msg": "Observabilidade estruturada ativa | dir=C:\\aura\\engine\\artifacts\\logs"}
+{"timestamp": "2026-09-04 21:06:26,150", "level": "INFO", "module": "online_learning_alpha", "msg": "Alpha Learner ativo | pesos=0 | intervalo=[0.4, 2.5]"}
+{"timestamp": "2026-09-04 21:06:26,152", "level": "INFO", "module": "hybrid_data_store", "msg": "SQLite :memory: inicializado (zero I/O em disco)"}
+{"timestamp": "2026-09-04 21:06:26,154", "level": "INFO", "module": "hybrid_data_store", "msg": "Thread daemon de flush iniciada"}
+{"timestamp": "2026-09-04 21:06:26,155", "level": "INFO", "module": "pillar_runtime", "msg": "Pilares integrados: router, hybrid_store, p5_risk, observability, online_alpha"}
+{"timestamp": "2026-09-04 21:06:26,190", "level": "INFO", "module": "server", "msg": "Incoming: /api/health", "correlation_id": "f6d12fbd"}
+INFO:     127.0.0.1:54664 - "GET /api/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:26,246", "level": "INFO", "module": "server", "msg": "Agent max-activation on startup: {'ok': True, 'declared': 38, 'markers': 76, 'paper_trade': True, 'execution_allowed': False}"}
+{"timestamp": "2026-09-04 21:06:26,465", "level": "INFO", "module": "hardware_governor", "msg": "[governor] psutil ativo"}
+{"timestamp": "2026-09-04 21:06:26,465", "level": "INFO", "module": "server", "msg": "SupervisorJarvis start() iniciado"}
+{"timestamp": "2026-09-04 21:06:26,629", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "44040522"}
+{"timestamp": "2026-09-04 21:06:26,664", "level": "INFO", "module": "conformal_gate", "msg": "[conformal] snapshot carregado: seq=0 pools={'global': 0}"}
+{"timestamp": "2026-09-04 21:06:26,664", "level": "INFO", "module": "server", "msg": "ConformalGate + ConformalRiskGate inicializados (paper_trade)"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:26,957", "level": "INFO", "module": "mc_grid", "msg": "[mcgrid] grade carregada: {'shape': [24, 24, 9, 5], 'cells_total': 25920, 'cells_done': 25920, 'pct': 100.0, 'signature': '0619c041b4f819a4', 'horizons': [5.0, 10.0, 15.0]}"}
+{"timestamp": "2026-09-04 21:06:26,965", "level": "INFO", "module": "mc_grid", "msg": "[mcgrid] build iniciado: 25920 celulas, n_sims=400"}
+{"timestamp": "2026-09-04 21:06:26,966", "level": "INFO", "module": "server", "msg": "MCGridService iniciado (build async em background)"}
+{"timestamp": "2026-09-04 21:06:27,194", "level": "INFO", "module": "server", "msg": "Incoming: /api/health", "correlation_id": "b77c5663"}
+INFO:     127.0.0.1:57660 - "GET /api/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:27,219", "level": "INFO", "module": "server", "msg": "ExperienceRetriever iniciado"}
+{"timestamp": "2026-09-04 21:06:27,234", "level": "INFO", "module": "observability", "msg": "[metrics] http://127.0.0.1:9102/ (metrics|healthz|statusz|alerts)"}
+{"timestamp": "2026-09-04 21:06:27,234", "level": "INFO", "module": "server", "msg": "Observability metrics em http://127.0.0.1:9102/"}
+{"timestamp": "2026-09-04 21:06:27,234", "level": "INFO", "module": "server", "msg": "Modulos V23 (Governor + Jarvis + Conformal + MCGrid + Experience + Metrics) inicializados com sucesso."}
+C:\Users\salaa\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py:58: RuntimeWarning: coroutine 'JarvisSupervisor.start' was never awaited
+  result = self.fn(*self.args, **self.kwargs)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+{"timestamp": "2026-09-04 21:06:29,423", "level": "INFO", "module": "server", "msg": "Incoming: /api/ui/state", "correlation_id": "72186112"}
+{"timestamp": "2026-09-04 21:06:29,836", "level": "INFO", "module": "mc_grid", "msg": "[mcgrid] build concluido e salvo: C:\\aura\\engine\\data\\mc_grid\\mcgrid.json.gz"}
+{"timestamp": "2026-09-04 21:06:30,444", "level": "INFO", "module": "_client", "msg": "HTTP Request: GET http://127.0.0.1:8080/api/cornerai/latest \"HTTP/1.0 200 OK\""}
+INFO:     127.0.0.1:61440 - "GET /api/ui/state HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:30,586", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "edabbdac"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:33,938", "level": "INFO", "module": "server", "msg": "Incoming: /api/health", "correlation_id": "043fda9c"}
+INFO:     127.0.0.1:61851 - "GET /api/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:34,588", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "b18954ae"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:35,378", "level": "INFO", "module": "server", "msg": "Incoming: /api/health", "correlation_id": "e34171f6"}
+INFO:     127.0.0.1:61854 - "GET /api/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:36,478", "level": "INFO", "module": "server", "msg": "Incoming: /api/ui/state", "correlation_id": "01d6d580"}
+{"timestamp": "2026-09-04 21:06:36,495", "level": "INFO", "module": "_client", "msg": "HTTP Request: GET http://127.0.0.1:8080/api/cornerai/latest \"HTTP/1.0 200 OK\""}
+INFO:     127.0.0.1:61858 - "GET /api/ui/state HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:38,609", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "ff3c2837"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:41,611", "level": "INFO", "module": "server", "msg": "Incoming: /api/health", "correlation_id": "725df3a5"}
+INFO:     127.0.0.1:61869 - "GET /api/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:42,584", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "388d0926"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:42,685", "level": "INFO", "module": "server", "msg": "Incoming: /api/ui/state", "correlation_id": "debb4df1"}
+{"timestamp": "2026-09-04 21:06:42,721", "level": "INFO", "module": "_client", "msg": "HTTP Request: GET http://127.0.0.1:8080/api/cornerai/latest \"HTTP/1.0 200 OK\""}
+INFO:     127.0.0.1:61873 - "GET /api/ui/state HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:46,590", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "5fe231e1"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:50,610", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "66267a95"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:50,945", "level": "INFO", "module": "server", "msg": "Incoming: /api/health", "correlation_id": "72049046"}
+INFO:     127.0.0.1:61880 - "GET /api/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:54,591", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "40995331"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:56,616", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "aab9b264"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:06:58,600", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "4470e2ef"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:01,212", "level": "INFO", "module": "server", "msg": "Incoming: /api/health", "correlation_id": "cfdf92f9"}
+INFO:     127.0.0.1:61894 - "GET /api/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:02,598", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "49fbc365"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:06,591", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "40cae5c6"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:10,582", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "0a53f421"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:11,439", "level": "INFO", "module": "server", "msg": "Incoming: /api/health", "correlation_id": "8e03394a"}
+INFO:     127.0.0.1:52975 - "GET /api/health HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:14,610", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "22448823"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:18,589", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "1eb01a0d"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:22,598", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "63f31c7b"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:26,631", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "2db9d602"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:30,588", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "2eda25a5"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:34,596", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "1bcd7c86"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:38,614", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "8f9ec36e"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:42,589", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "be8ebfae"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:46,602", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "cb39d7f6"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:50,648", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "dc516862"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:54,583", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "a1cc84b8"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:56,613", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "fb0b6140"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:07:58,591", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "8654f8cf"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:08:02,650", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "fefc694b"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:08:06,599", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "b1863469"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:08:10,592", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "601c6441"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:08:14,618", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "57c36985"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:08:18,605", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "e0d343df"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:08:22,602", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "1ebbf503"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:08:26,614", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "31a7d799"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:08:30,589", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "f82ebb9b"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:08:34,589", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "acadb655"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:08:38,606", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "9c019941"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:08:42,593", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "2718821b"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:08:46,600", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "0ddf82c1"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:08:50,656", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "ddb739d3"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:08:54,591", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "8306a92d"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:08:56,605", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "464bf692"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:08:58,596", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "3c4257f9"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:09:02,640", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "887efb80"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:09:06,598", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "b4cc6403"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:09:10,622", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "36136a5a"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:09:14,665", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "d0a20f63"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:09:18,587", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "8a1b6f05"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:09:22,613", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "eff14887"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:09:26,629", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "70707d68"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:09:30,588", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "4e28ee66"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:09:34,594", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "77e19546"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:09:38,602", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "37fc8b53"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:09:42,589", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "ed1e492a"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:09:46,598", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "75f39f21"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:09:50,592", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "352054d9"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:09:54,587", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "8c466825"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:09:56,646", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "c00db883"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:09:58,591", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "c9321ef1"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:10:02,678", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "8e8ad6e1"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:10:06,596", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "e462f701"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:10:10,590", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "c7d15d00"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:10:14,596", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "d94914fb"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:10:18,593", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "dcacf9a3"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:10:22,598", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "7b1c1830"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:10:26,836", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "5b4b8034"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:10:30,642", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "55a2bdba"}
+INFO:     127.0.0.1:57658 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:10:34,583", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "42fc4c7f"}
+{"timestamp": "2026-09-04 21:10:55,993", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "56185600"}
+{"timestamp": "2026-09-04 21:10:55,999", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "6ea6299f"}
+{"timestamp": "2026-09-04 21:10:56,024", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "72f4cba4"}
+{"timestamp": "2026-09-04 21:10:56,027", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "9e87a210"}
+{"timestamp": "2026-09-04 21:10:56,029", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "36fda670"}
+INFO:     127.0.0.1:60821 - "POST /api/telemetry HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55122 - "POST /api/telemetry HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58219 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:10:56,610", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "cdd94ba4"}
+INFO:     127.0.0.1:58219 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:10:58,595", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "1f36c193"}
+INFO:     127.0.0.1:58219 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:11:02,692", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "717d0d6a"}
+INFO:     127.0.0.1:58219 - "POST /api/telemetry HTTP/1.1" 200 OK
+{"timestamp": "2026-09-04 21:11:06,591", "level": "INFO", "module": "server", "msg": "Incoming: /api/telemetry", "correlation_id": "8f0a0b6f"}
+INFO:     127.0.0.1:58219 - "POST /api/telemetry HTTP/1.1" 200 OK

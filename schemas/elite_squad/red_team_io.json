@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RedTeamAdversary",
+  "type": "object",
+  "definitions": {
+    "features": {
+      "type": "object",
+      "properties": {
+        "attack_pressure_diff": { "type": "number" },
+        "minute": { "type": "number", "minimum": 0, "maximum": 130 },
+        "score": { "type": "string" },
+        "shots_off_target": { "type": "number" },
+        "corners": { "type": "number" },
+        "dangerous_attacks_home": { "type": "number" },
+        "corner_rate_15min": { "type": "number" }
+      },
+      "additionalProperties": true
+    },
+    "proposal": {
+      "type": "object",
+      "required": ["decision"],
+      "properties": {
+        "decision": { "type": "string", "enum": ["ENTRA", "AGUARDA", "BLOQUEADO"] },
+        "odd": { "type": "number" },
+        "score": { "type": "number" },
+        "minute": { "type": "number" },
+        "paper_trade": { "type": "boolean", "const": true },
+        "execution_allowed": { "type": "boolean", "const": false }
+      },
+      "additionalProperties": true
+    },
+    "audit_response": {
+      "type": "object",
+      "required": ["verdict", "reasons", "effective_decision", "paper_trade", "execution_allowed"],
+      "properties": {
+        "verdict": { "type": "string", "enum": ["APPROVED", "VETOED"] },
+        "reasons": { "type": "array", "items": { "type": "string" } },
+        "effective_decision": { "type": "string", "enum": ["ENTRA", "AGUARDA", "BLOQUEADO"] },
+        "paper_trade": { "type": "boolean", "const": true },
+        "execution_allowed": { "type": "boolean", "const": false }
+      },
+      "additionalProperties": false
+    }
+  }
+}

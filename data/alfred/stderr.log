@@ -1,0 +1,494 @@
+C:\aura\alfred\api.py:47: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:55: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [18368]
+INFO:     Waiting for application startup.
+2026-09-02 15:56:29,208 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8791 (Press CTRL+C to quit)
+^CC:\aura\alfred\api.py:47: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:55: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [13688]
+INFO:     Waiting for application startup.
+2026-09-02 16:08:47,173 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8791 (Press CTRL+C to quit)
+C:\aura\alfred\api.py:47: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:55: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [25392]
+INFO:     Waiting for application startup.
+2026-09-02 16:35:35,564 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8791 (Press CTRL+C to quit)
+2026-09-02 16:36:58,228 ERROR alfred.bridge: erro interno do Alfred
+Traceback (most recent call last):
+  File "C:\aura\alfred\bridge.py", line 172, in try_handle
+    return _handle(message, session_id, authorized, token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\aura\alfred\bridge.py", line 217, in _handle
+    plan = plan_from_message(body, OllamaClient())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\aura\alfred\planner.py", line 132, in plan_from_message
+    json.dumps([(t.tool, t.arguments) for t in tasks], sort_keys=True).encode()).hexdigest()[:16]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\salaa\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Users\salaa\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\salaa\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\salaa\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type WindowsPath is not JSON serializable
+C:\aura\alfred\api.py:47: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:55: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [31828]
+INFO:     Waiting for application startup.
+2026-09-02 16:38:15,342 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8791 (Press CTRL+C to quit)
+C:\aura\alfred\api.py:47: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:55: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [5648]
+INFO:     Waiting for application startup.
+2026-09-02 16:38:57,481 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8791 (Press CTRL+C to quit)
+C:\aura\alfred\api.py:47: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:55: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [15068]
+INFO:     Waiting for application startup.
+2026-09-02 16:39:39,694 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8791 (Press CTRL+C to quit)
+C:\aura\alfred\api.py:51: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:59: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [29312]
+INFO:     Waiting for application startup.
+2026-09-02 17:39:08,676 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8791 (Press CTRL+C to quit)
+C:\aura\alfred\api.py:51: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:59: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [26964]
+INFO:     Waiting for application startup.
+2026-09-02 19:30:37,449 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8791 (Press CTRL+C to quit)
+.1', 8791): normalmente só é permitido uma utilização de cada endereço de socket (protocolo/endereço de rede/porta)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+C:\aura\alfred\api.py:51: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:59: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [8072]
+INFO:     Waiting for application startup.
+2026-09-02 19:38:38,510 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8791): normalmente só é permitido uma utilização de cada endereço de socket (protocolo/endereço de rede/porta)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+C:\aura\alfred\api.py:51: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:59: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [21924]
+INFO:     Waiting for application startup.
+2026-09-02 19:52:25,762 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8791 (Press CTRL+C to quit)
+.1', 8791): normalmente só é permitido uma utilização de cada endereço de socket (protocolo/endereço de rede/porta)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+C:\aura\alfred\api.py:51: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:59: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [34668]
+INFO:     Waiting for application startup.
+2026-09-02 20:00:10,908 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8791): normalmente só é permitido uma utilização de cada endereço de socket (protocolo/endereço de rede/porta)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+C:\aura\alfred\api.py:51: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:59: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [35972]
+INFO:     Waiting for application startup.
+2026-09-02 20:15:14,572 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8791): normalmente só é permitido uma utilização de cada endereço de socket (protocolo/endereço de rede/porta)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+C:\aura\alfred\api.py:51: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:59: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [34716]
+INFO:     Waiting for application startup.
+2026-09-02 21:22:00,643 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8791): normalmente só é permitido uma utilização de cada endereço de socket (protocolo/endereço de rede/porta)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+C:\aura\alfred\api.py:51: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:59: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [24912]
+INFO:     Waiting for application startup.22026-09-02 22:47:20,996 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)IINFO:     Application startup complete.ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8791): normalmente só é permitido uma utilização de cada endereço de socket (protocolo/endereço de rede/porta)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+
+
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [25048]
+INFO:     Waiting for application startup.
+2026-09-02 22:47:20,996 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8791): normalmente só é permitido uma utilização de cada endereço de socket (protocolo/endereço de rede/porta)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+C:\aura\alfred\api.py:51: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:59: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [25580]
+INFO:     Waiting for application startup.
+2026-09-02 22:52:20,763 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8791): normalmente só é permitido uma utilização de cada endereço de socket (protocolo/endereço de rede/porta)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+C:\aura\alfred\api.py:51: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:59: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [15328]
+INFO:     Waiting for application startup.
+2026-09-02 23:08:40,635 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8791): normalmente só é permitido uma utilização de cada endereço de socket (protocolo/endereço de rede/porta)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+C:\aura\alfred\api.py:51: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:59: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [12420]
+INFO:     Waiting for application startup.
+2026-09-02 23:08:43,540 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8791): normalmente só é permitido uma utilização de cada endereço de socket (protocolo/endereço de rede/porta)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+C:\aura\alfred\api.py:51: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:59: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [7044]
+INFO:     Waiting for application startup.
+2026-09-02 23:11:02,371 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8791 (Press CTRL+C to quit)
+C:\aura\alfred\api.py:47: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:55: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [21924]
+INFO:     Waiting for application startup.
+2026-09-03 01:08:07,519 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8791 (Press CTRL+C to quit)
+C:\aura\alfred\api.py:47: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:55: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [20644]
+INFO:     Waiting for application startup.
+2026-09-03 01:20:40,112 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8791 (Press CTRL+C to quit)
+C:\aura\alfred\api.py:47: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:55: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [19280]
+INFO:     Waiting for application startup.
+2026-09-03 01:28:31,342 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8791): normalmente sÃ³ Ã© permitido uma utilizaÃ§Ã£o de cada endereÃ§o de socket (protocolo/endereÃ§o de rede/porta)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+C:\aura\alfred\api.py:47: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:55: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [16500]
+INFO:     Waiting for application startup.
+2026-09-04 19:28:29,404 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8791 (Press CTRL+C to quit)
+C:\aura\alfred\api.py:47: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\alfred\api.py:55: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [24716]
+INFO:     Waiting for application startup.
+2026-09-04 21:06:09,560 INFO alfred.api: Alfred API em http://127.0.0.1:8791 (apenas localhost, sem abertura de navegador)
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8791): normalmente sÃ³ Ã© permitido uma utilizaÃ§Ã£o de cada endereÃ§o de socket (protocolo/endereÃ§o de rede/porta)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.

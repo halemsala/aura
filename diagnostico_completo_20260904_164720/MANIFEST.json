@@ -1,0 +1,15 @@
+﻿{
+    "generated_at":  "2026-09-04T16:48:15.3402745-03:00",
+    "root":  "C:\\aura",
+    "read_only":  true,
+    "excluded":  "\\\\node_modules(\\\\|$)|\\\\.git(\\\\|$)|\\\\dist(\\\\|$)|\\\\build(\\\\|$)|\\\\.next(\\\\|$)|\\\\venv(\\\\|$)|\\\\__pycache__(\\\\|$)|\\\\diagnostico_[^\\\\]+(\\\\|$)|\\\\inventario_[^\\\\]+(\\\\|$)",
+    "files":  [
+                  "01_Raiz_e_estrutura.txt",
+                  "02_Todos_os_arquivos_Flashscore_SokkerPro_HTML.txt",
+                  "03_Processos_relevantes.txt",
+                  "04_Todas_as_portas_TCP_UDP.txt",
+                  "05_Servicos_e_automacoes.txt",
+                  "06_Agentes_skills_configuracoes_e_logs.txt",
+                  "07_Variaveis_e_resumo.txt"
+              ]
+}

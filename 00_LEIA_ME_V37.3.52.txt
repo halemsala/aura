@@ -1,0 +1,20 @@
+AURA QUANT-X V37.3.52 COMPLETO
+==============================
+paper_trade=true | execution_allowed=false
+
+CORRECOES INCLUIDAS
+-------------------
+1) hermes_v10_chat_api.py
+   - f-string Python 3.11 (bloco system com +)
+   - probe Ollama: _u.Request / _u.urlopen (bug _u.request.*)
+   - timeout probe Ollama 5.0s
+2) AURA_RUN_HERMES.py - path bootstrap
+3) START_HERMES_OK.ps1 - sobe Ollama se preciso + Hermes + abre chat
+
+COM FICHEIROS JA EM C:\aura
+---------------------------
+  powershell -ExecutionPolicy Bypass -File C:\aura\START_HERMES_OK.ps1
+
+Chat: http://127.0.0.1:8777
+Health: http://127.0.0.1:8777/health
+Python 3.11 (C:\AURA_V25\engine\venv)

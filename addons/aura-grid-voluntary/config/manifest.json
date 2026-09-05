@@ -1,0 +1,44 @@
+{
+  "name": "aura-grid-voluntary",
+  "version": "6.1.0",
+  "description": "Voluntary distributed compute (BOINC-like). Fixed functions only. Opt-in.",
+  "grid_enabled": false,
+  "autostart_enabled": false,
+  "services_started": [],
+  "legal_model": "explicit_consent_data_only_no_remote_code",
+  "features_v2": [
+    "tcp_framing",
+    "low_priority",
+    "queue.Queue",
+    "task_requeue",
+    "gpu_first_pause"
+  ],
+  "features_v3": [
+    "batching",
+    "process_pool",
+    "jsonl_disk",
+    "max_workers_cap"
+  ],
+  "features_v4": [
+    "json_zlib_codec",
+    "optional_tls",
+    "optional_pickle_unsafe",
+    "timeouts"
+  ],
+  "pickle_default": false,
+  "features_v5": [
+    "poison_pill_retries",
+    "dynamic_batch",
+    "graceful_shutdown"
+  ],
+  "features_v6": [
+    "cert_pinning",
+    "audit_jsonl",
+    "result_verification"
+  ],
+  "features_manager": [
+    "grid_status.json",
+    "telemetry_heartbeat",
+    "power_temp_monitor"
+  ]
+}

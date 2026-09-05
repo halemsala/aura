@@ -1,0 +1,24 @@
+AURA QUANT-X HERMES V37.3.43 — MAESTRO v2 (7 upgrades)
+======================================================
+paper_trade=true | execution_allowed=false
+
+UPGRADES (todos rastreados a auditoria / gap v1 / gym)
+------------------------------------------------------
+1 RCA (grafo DEPS) — causa-raiz; Ollama intocavel nao dispara restart storm
+2 Hot-reload catalogo — mtime do JSON sem restart do Hermes
+3 Preditivo slope+ETA — RAM e disco com tendencia
+4 Toast — plyer ou fallback Windows Forms
+5 Post-mortem — PM_*.md em logs_supervisor/postmortems
+6 Janitor — prune_old memoria, rotate logs >20MB, backup catalogo diario
+7 Modo manutencao + heartbeat — radar ON / fix OFF; is_alive()
+
+CHAT
+----
+  autonomia | liga autonomia | para autonomia
+  modo manutencao | sai do modo manutencao
+  postmortem
+  gym | gym 100
+
+OPCIONAL
+--------
+  pip install plyer

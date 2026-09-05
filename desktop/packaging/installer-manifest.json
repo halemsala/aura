@@ -1,0 +1,106 @@
+{
+  "schema": "aura-windows-installer-v25",
+  "product": "AURA QUANT-X Operator OS",
+  "version": "12.7.0-V25T6-SECURITY-HARDENED",
+  "installerSource": "desktop/packaging/AURA_Setup.iss",
+  "buildScript": "desktop/packaging/BUILD_WINDOWS_INSTALLER.ps1",
+  "publishScript": "desktop/packaging/PUBLISH_WINDOWS.ps1",
+  "auditReport": "docs/AUDITORIA_COMPLETA_INSTALADOR_WINDOWS_V25T6_SECURITY_HARDENED.md",
+  "executableProject": "desktop/Aura.Desktop.csproj",
+  "target": "win-x64",
+  "entryPoint": "Aura.QuantX.Desktop.exe",
+  "selfContainedShell": true,
+  "binaryBuiltInThisPackage": false,
+  "binaryBuildRequirement": "Windows x64 + .NET 8 SDK + Inno Setup 6+",
+  "paperTradeOnly": true,
+  "executionAllowed": false,
+  "installRoot": "%ProgramFiles%/AURA_QUANT_X",
+  "dataRoot": "%LOCALAPPDATA%/AURA_QUANT_X",
+  "backendAutostart": false,
+  "safeLauncher": "AURA_ABRIR_DESKTOP_SEGURO.bat",
+  "temporaryInstaller": "AURA_INSTALAR_TEMPORARIO_SEGURO.bat",
+  "temporaryInstallerMode": "portable-copy-no-services",
+  "unifiedInstallerLauncher": "AURA_INSTALAR_CHECK_INICIAR_SEGURO.bat",
+  "safeVoiceLauncher": "AURA_RUN_VOICE_SEGURO.bat",
+  "unifiedLauncherRequiresConfirmation": false,
+  "webView2": {
+    "required": true,
+    "distribution": "Evergreen prerequisite",
+    "checkedByInstaller": true,
+    "productionMustUseRuntime": true,
+    "registryClientId": "{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}",
+    "versionValue": "pv",
+    "minimumVersion": "0.0.0.0"
+  },
+  "preflight": [
+    "windows-x64",
+    "webview2-runtime",
+    "writable-localappdata",
+    "published-desktop-exe",
+    "desktop-content-assets",
+    "python-or-private-runtime",
+    "bridge-health-8080-on-explicit-start",
+    "engine-health-8765-on-explicit-start",
+    "voice-health-8099-on-explicit-start",
+    "ollama-http-11434-on-explicit-start",
+    "ollama-model-glm4-9b-chat-q4_0-on-explicit-start"
+  ],
+  "payload": {
+    "desktop": [
+      "desktop/publish",
+      "desktop/config/desktop.json",
+      "desktop/capture/aura-capture.js",
+      "desktop/ui/matriz_v22",
+      "AURA_ABRIR_DESKTOP_SEGURO.bat"
+    ],
+    "backend": [
+      "bridge",
+      "engine",
+      "agents",
+      "voice_profiles",
+      "requirements.txt",
+      "pyproject.toml"
+    ],
+    "modules": [
+      "addons",
+      "docs",
+      "scripts",
+      "config",
+      "knowledge",
+      "voice_assets"
+    ],
+    "legacy": [
+      "extensao",
+      "ARQUIVO_LEGADO"
+    ]
+  },
+  "migration": {
+    "keepChromeExtensionForTransition": true,
+    "desktopIsPrimaryAfterAcceptance": true,
+    "noRealOrders": true,
+    "rollbackKeepsUserData": true,
+    "preserveLocalAppDataOnUninstall": true
+  },
+  "installerAudit": {
+    "staticAudit": "PASS",
+    "wrapperEncoding": "ASCII CRLF",
+    "powershellEncoding": "UTF-8 BOM",
+    "excludesSyntax": "comma-separated"
+  },
+  "security": {
+    "noTokensInPayload": true,
+    "noCookiesInPayload": true,
+    "noTelegramPollingOnInstall": true,
+    "noOllamaStartOnInstall": true,
+    "noMicrophoneOrCameraOnInstall": true,
+    "noComputeWorkerOnInstall": true,
+    "noRealExecution": true,
+    "bridgeFeedTokenRequiredByDefault": true,
+    "mutationTokenRequiredByDefault": true,
+    "adminTokenRequiredForControlPlane": true,
+    "separateApproverTokenRequired": true,
+    "modeCeilingEnforcedFromConfig": true,
+    "captureUsesNativeAuthenticatedForwarder": true,
+    "runtimeStateExcludedFromPayload": ["engine/data", "data runtime", "runtime", "*.duckdb", "*.sqlite", "*.session"]
+  }
+}

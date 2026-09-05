@@ -1,0 +1,64 @@
+{
+  "job_id": "d341e20052a0",
+  "request_id": "b4fa875850d0",
+  "content_hash": "8b5b198bf2f036d4",
+  "created_at": 1788384990.4373362,
+  "status": "success",
+  "authorized": false,
+  "authorization_reason": "comando único de baixo risco pedido explicitamente",
+  "plan_intent": "single_task",
+  "source_message": "status do aura",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "aura_stack_status",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "bridge": {
+          "online": true,
+          "status": 200
+        },
+        "engine": {
+          "online": true,
+          "status": 200
+        },
+        "matriz": {
+          "online": true,
+          "status": 200
+        },
+        "voice": {
+          "online": true,
+          "status": 200
+        },
+        "hermes": {
+          "online": true,
+          "status": 200
+        },
+        "alfred": {
+          "online": true,
+          "nota": "este processo"
+        },
+        "ollama": {
+          "online": true,
+          "status": 200
+        },
+        "execution_allowed": false,
+        "idioma": "pt-BR"
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "1 de 1 tarefas concluídas com sucesso.",
+  "finished_at": 1788384990.9377606
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Decision Trace Explorer</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background:#0d1117; color:#e6edf3; margin:0; padding:16px; }
+    h1 { font-size:1.15rem; }
+    .step { border-left:3px solid #30363d; padding:8px 12px; margin:8px 0; background:#161b22; border-radius:0 6px 6px 0; }
+    .step.block { border-color:#f85149; }
+    .step.ok { border-color:#3fb950; }
+    .step.warn { border-color:#f0883e; }
+    .meta { font-size:0.75rem; color:#8b949e; }
+  </style>
+</head>
+<body>
+  <h1>Decision Trace Explorer</h1>
+  <p class="meta">Linha do tempo: dado → integridade → features → modelo → gates → risco → decisão. Paper-first.</p>
+  <div id="timeline">
+    <div class="step">1. Captura / telemetria <span class="meta">source lineage</span></div>
+    <div class="step">2. Data integrity / veracity</div>
+    <div class="step">3. Features (pressure, odds_velocity, …)</div>
+    <div class="step">4. Modelo / Hawkes / shadow</div>
+    <div class="step">5. Risk gates (fixture, edge, cooldown, exposure)</div>
+    <div class="step">6. Decisão final (HOLD / WATCH / BLOCKED / BUY paper)</div>
+  </div>
+  <p class="meta">Integração: preencher via eventos do Engine (correlation ID) em versões futuras.</p>
+</body>
+</html>

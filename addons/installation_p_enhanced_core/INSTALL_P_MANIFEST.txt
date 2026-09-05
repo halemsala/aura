@@ -1,0 +1,33 @@
+AURA QUANT-X V25 — INSTALL P MANIFEST
+=======================================
+
+Data: 2026-08-25
+Fonte: /home/ubuntu/upload/pasted_content_16.txt
+SHA-256 do anexo: 6b0c2d73d17506f883cb28afbba4e380c0478787ebf05c6136afcc1ce255b595
+
+Arquivo instalado:
+- engine/agents/enhanced_core.py
+SHA-256 do arquivo instalado: ba53efb4edeee1ce9972e2f512313c58d9e9bc203d1f3b24907ae676f1299ff5
+
+Correção aplicada:
+- import de sys corrigido para permitir o bloco __main__ e o self-test.
+- Busca DDG, RAG vetorial e APScheduler passaram a exigir flags explícitas.
+- O RAG não carrega SentenceTransformer nem baixa modelo durante import sem AURA_ENHANCED_ENABLE_RAG=1.
+
+Flags padrão:
+- AURA_ENHANCED_ENABLE_WEB=0
+- AURA_ENHANCED_ENABLE_RAG=0
+- AURA_ENHANCED_ENABLE_SCHEDULER=0
+- AURA_ENHANCED_REGISTER_TOOLS não é usado no import; build_enhanced_tools requer chamada explícita.
+
+Validação:
+- py_compile: PASS
+- self-test sem flags de upgrade: PASS
+- rede externa no import: NÃO realizada
+- pacotes pip instalados: NENHUM
+- serviços iniciados: NENHUM
+
+Reversão:
+- Remover engine/agents/enhanced_core.py.
+- Remover addons/installation_p_enhanced_core/.
+- Consultar .install-backups/installation-p-20260825_100800/.

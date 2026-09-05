@@ -1,0 +1,25 @@
+AURA QUANT-X 12.7.62 V37.3.30 — GROK OPS SEGURO
+================================================
+Data: 2026-08-30
+
+ADICIONADO
+- AURA_GROK_INSTALL.bat      → encaminha para INSTALAR_TUDO.bat
+- AURA_GROK_FIX.bat           → limpeza + XTTS + compileall + CHECK
+- AURA_GROK_ACTIVATE.bat      → AURA_START_ALL + health URLs corretas
+- AURA_GROK_GPU_LIVRE.bat     → modo manutencao / GPU livre (nao mata Ollama)
+- PROMPT_ASSISTENTE_OPERACOES_AURA_SEGURO.txt
+- LEIA-ME_GROK_OPS_SEGURO.txt
+- DOCUMENTACAO_COMPLETA (ja presente)
+- AURA_VOICE_ACCEPTANCE_CHECKLIST_OFFLINE.md (ja presente)
+
+CORRECOES DE CONSISTENCIA
+- Health URLs: Bridge :8080 | Engine :8765 | Voice :8099
+- Venv preferido: engine\venv
+- Sem Photoshop / shell livre / unlock de execution
+- Invariantes: paper_trade=true execution_allowed=false
+
+ORDEM TIPICA
+1. INSTALAR_TUDO.bat  (ou AURA_GROK_INSTALL.bat)
+2. AURA_GROK_FIX.bat
+3. AURA_GROK_ACTIVATE.bat
+4. GPU livre: AURA_GROK_GPU_LIVRE.bat → depois AURA_GROK_ACTIVATE.bat

@@ -1,0 +1,273 @@
+{
+  "ok": false,
+  "paper_trade": true,
+  "execution_allowed": false,
+  "root": "C:\\aura",
+  "failed": [
+    "file:requirements.txt",
+    "http:engine:/api/activation"
+  ],
+  "warnings": [],
+  "checks": [
+    {
+      "name": "file:engine/server.py",
+      "ok": true,
+      "detail": "presente"
+    },
+    {
+      "name": "file:engine/knowledge_review_gate.py",
+      "ok": true,
+      "detail": "presente"
+    },
+    {
+      "name": "file:engine/war_council_api.py",
+      "ok": true,
+      "detail": "presente"
+    },
+    {
+      "name": "file:engine/agents/war_council.py",
+      "ok": true,
+      "detail": "presente"
+    },
+    {
+      "name": "file:engine/agents/aura_hermes_router.py",
+      "ok": true,
+      "detail": "presente"
+    },
+    {
+      "name": "file:engine/agents/hermes_supervisor_agent.py",
+      "ok": true,
+      "detail": "presente"
+    },
+    {
+      "name": "file:engine/agents_glm/red_team_adversary.py",
+      "ok": true,
+      "detail": "presente"
+    },
+    {
+      "name": "file:engine/agents_glm/post_match_forensics.py",
+      "ok": true,
+      "detail": "presente"
+    },
+    {
+      "name": "file:engine/agents_glm/elo_rating_agent.py",
+      "ok": true,
+      "detail": "presente"
+    },
+    {
+      "name": "file:engine/agents_glm/crew_council.py",
+      "ok": true,
+      "detail": "presente"
+    },
+    {
+      "name": "file:bridge/server.py",
+      "ok": true,
+      "detail": "presente"
+    },
+    {
+      "name": "file:requirements.txt",
+      "ok": false,
+      "detail": "AUSENTE"
+    },
+    {
+      "name": "file:agents/activation_manifest.json",
+      "ok": true,
+      "detail": "presente"
+    },
+    {
+      "name": "file:desktop/ui/matriz_v22/index.html",
+      "ok": true,
+      "detail": "presente"
+    },
+    {
+      "name": "file:knowledge/inbox/knowledge_candidates.jsonl",
+      "ok": true,
+      "detail": "presente"
+    },
+    {
+      "name": "file:knowledge/approved/knowledge.jsonl",
+      "ok": true,
+      "detail": "presente"
+    },
+    {
+      "name": "file:knowledge/review_decisions.jsonl",
+      "ok": true,
+      "detail": "presente"
+    },
+    {
+      "name": "import:fastapi",
+      "ok": true,
+      "detail": "fastapi"
+    },
+    {
+      "name": "import:uvicorn",
+      "ok": true,
+      "detail": "uvicorn"
+    },
+    {
+      "name": "import:pydantic",
+      "ok": true,
+      "detail": "pydantic"
+    },
+    {
+      "name": "import:httpx",
+      "ok": true,
+      "detail": "httpx"
+    },
+    {
+      "name": "import:requests",
+      "ok": true,
+      "detail": "requests"
+    },
+    {
+      "name": "import:knowledge_review_gate",
+      "ok": true,
+      "detail": "knowledge_review_gate"
+    },
+    {
+      "name": "import:war_council",
+      "ok": true,
+      "detail": "engine.agents.war_council"
+    },
+    {
+      "name": "import:hermes_router",
+      "ok": true,
+      "detail": "engine.agents.aura_hermes_router"
+    },
+    {
+      "name": "import:red_team",
+      "ok": true,
+      "detail": "engine.agents_glm.red_team_adversary"
+    },
+    {
+      "name": "import:forensics",
+      "ok": true,
+      "detail": "engine.agents_glm.post_match_forensics"
+    },
+    {
+      "name": "import:elo",
+      "ok": true,
+      "detail": "engine.agents_glm.elo_rating_agent"
+    },
+    {
+      "name": "import:crew",
+      "ok": true,
+      "detail": "engine.agents_glm.crew_council"
+    },
+    {
+      "name": "import:hermes_supervisor",
+      "ok": true,
+      "detail": "engine.agents.hermes_supervisor_agent"
+    },
+    {
+      "name": "council:red_team_veto",
+      "ok": true,
+      "detail": "VETOED"
+    },
+    {
+      "name": "hermes:primary_pipeline",
+      "ok": true,
+      "detail": "primary"
+    },
+    {
+      "name": "port:8080:bridge",
+      "ok": true,
+      "warning": false,
+      "detail": "LISTEN"
+    },
+    {
+      "name": "port:8765:engine",
+      "ok": true,
+      "warning": false,
+      "detail": "LISTEN"
+    },
+    {
+      "name": "port:8099:voice",
+      "ok": true,
+      "warning": false,
+      "detail": "LISTEN"
+    },
+    {
+      "name": "port:11434:ollama",
+      "ok": true,
+      "warning": false,
+      "detail": "LISTEN"
+    },
+    {
+      "name": "http:bridge:/health",
+      "ok": true,
+      "warning": false,
+      "detail": "{\"ok\": true, \"service\": \"cornerai-bridge\", \"version\": \"12.7.6-RESILIENCIA\", \"feed\": \"C:\\\\aura\\\\bridge\\\\live_feed.jsonl\", \"feedLines\": 7028, \"latest\": \"C:\\\\aura\\\\bridge\\\\live_latest.json\", \"latestAgeSec\": 2.6, \"log\": \"C:\\\\aura\\\\bridge\\\\Corne"
+    },
+    {
+      "name": "http:engine:/api/health",
+      "ok": true,
+      "warning": false,
+      "detail": "{\"status\": \"alive\", \"service\": \"aura_engine\", \"port\": 8765, \"ts\": 1788382788, \"paper_trade\": true, \"execution_allowed\": false}"
+    },
+    {
+      "name": "http:engine:/api/knowledge/status",
+      "ok": true,
+      "warning": false,
+      "detail": "{\"ok\": true, \"pending_human_review\": 0, \"approved_for_agent\": 0, \"rejected\": 0, \"execution_allowed\": false, \"paper_trade\": true, \"plan_only\": true, \"auto_approve\": false, \"inbox\": \"C:\\\\aura\\\\knowledge\\\\inbox\\\\knowledge_candidates.jsonl\", \"a"
+    },
+    {
+      "name": "http:engine:/api/council/status",
+      "ok": true,
+      "warning": false,
+      "detail": "{\"ok\": true, \"enabled\": true, \"paper_trade\": true, \"execution_allowed\": false, \"modules\": [\"red_team\", \"forensics\", \"elo\", \"local_council\", \"crew_fallback\"]}"
+    },
+    {
+      "name": "http:engine:/api/ui/state",
+      "ok": true,
+      "warning": false,
+      "detail": "{\"ok\": true, \"fixtureId\": \"19793077\", \"home\": \"Newell's Old Boys Res.\", \"away\": \"Deportivo Riestra Res.\", \"minute\": 90, \"score\": {\"home\": 0, \"away\": 2}, \"snapshot\": {\"schema\": \"cornerai-analyst-1\", \"version\": \"12.8.12\", \"ts\": 1788382785802,"
+    },
+    {
+      "name": "http:engine:/api/agents",
+      "ok": true,
+      "warning": false,
+      "detail": "{\"ok\": true, \"manifestVersion\": \"12.7.0-V25O-ALL-ACTIVATED\", \"declaredCount\": 38, \"count\": 38, \"runnable\": 31, \"inspect_only\": 5, \"source_missing\": 0, \"layers\": [\"agents\", \"bridge\", \"core\", \"engine\", \"sre\", \"ui\", \"voice\"], \"paper_trade\": tr"
+    },
+    {
+      "name": "http:engine:/api/activation",
+      "ok": false,
+      "warning": false,
+      "detail": "{\"error\": \"timed out\"}"
+    },
+    {
+      "name": "http:engine:/api/agents/glm/status",
+      "ok": true,
+      "warning": false,
+      "detail": "{\"ok\": true, \"glm_enabled\": false, \"status\": \"DISABLED\", \"queue_depth\": 0, \"busy\": false}"
+    },
+    {
+      "name": "http:voice:/api/voice/health",
+      "ok": true,
+      "warning": false,
+      "detail": "{\"status\": \"ok\", \"service\": \"jarvis_voice\", \"version\": \"AURA-VOICE-MALE-V3\", \"build_id\": \"AURA-VOICE-MALE-V3\", \"process_up\": true, \"engineReady\": false, \"loading\": false, \"device\": \"unknown\", \"llmHealth\": {\"ok\": false, \"requested_model\": nu"
+    },
+    {
+      "name": "http:ollama:/api/tags",
+      "ok": true,
+      "warning": false,
+      "detail": "{\"models\": [{\"name\": \"qwen3:8b\", \"model\": \"qwen3:8b\", \"modified_at\": \"2026-09-02T10:31:00.744262-03:00\", \"size\": 5225388164, \"digest\": \"500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41\", \"details\": {\"parent_model\": \"\", \"form"
+    },
+    {
+      "name": "http:council_convene_veto",
+      "ok": true,
+      "detail": "{\"ok\": true, \"verdict\": \"VETOED\", \"paper_trade\": true, \"execution_allowed\": false, \"plan_only\": true, \"janitor\": {\"keys\": [\"attack_pressure_diff\", \"corners\", \"minute\", \"score\"]}, \"elo\": {\"ok\": true, \"value\": false, \"detail\": \"Elo sem times/"
+    },
+    {
+      "name": "http:elo",
+      "ok": true,
+      "detail": "{\"home\": \"Casa\", \"away\": \"Fora\", \"elo_home\": 1500.0, \"elo_away\": 1500.0, \"p_home\": 0.5, \"fair_odd_home\": 2.0, \"market_odd_home\": 2.4, \"value\": true, \"paper_trade\": true, \"execution_allowed\": false, \"detail\": \"VALUE DETECTADO: Odd mercado (2"
+    },
+    {
+      "name": "comms:sokkerpro_pane",
+      "ok": true,
+      "warning": false,
+      "detail": "source=bridge_latest home=Newell's Old Boys Res. away=Deportivo Riestra Res."
+    }
+  ]
+}

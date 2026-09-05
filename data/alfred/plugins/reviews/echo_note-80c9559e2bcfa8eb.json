@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "blockers": [],
+  "warnings": [],
+  "manifest": {
+    "name": "echo_note",
+    "risk": "low",
+    "mutating": false,
+    "sensitive": true,
+    "summary": "Devolve o texto recebido. Exemplo de plugin seguro.",
+    "sha256_16": "80c9559e2bcfa8eb",
+    "bytes": 540
+  }
+}

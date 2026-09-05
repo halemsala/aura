@@ -1,0 +1,122 @@
+{
+  "job_id": "45bc72b19e96",
+  "request_id": "5b56ffb647ab",
+  "content_hash": "a3fa47a367b0fd8c",
+  "created_at": 1788385069.459083,
+  "status": "cancelled",
+  "authorized": false,
+  "authorization_reason": "comando único de baixo risco pedido explicitamente",
+  "plan_intent": "single_task",
+  "source_message": "observa o pc",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "observe_pc",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "foreground_window": "AURA Hermes Â· Operator OS verde - Opera",
+        "top_processes": [
+          {
+            "name": "System Idle Process",
+            "cpu_percent": 0.0,
+            "memory_percent": 4.850114486952465e-05
+          },
+          {
+            "name": "System",
+            "cpu_percent": 0.0,
+            "memory_percent": 0.06084468623881867
+          },
+          {
+            "name": "",
+            "cpu_percent": 0.0,
+            "memory_percent": 0.0007275171730428696
+          },
+          {
+            "name": "Registry",
+            "cpu_percent": 0.0,
+            "memory_percent": 0.2408566854220594
+          },
+          {
+            "name": "smss.exe",
+            "cpu_percent": 0.0,
+            "memory_percent": 0.0014792849185205016
+          },
+          {
+            "name": "svchost.exe",
+            "cpu_percent": 0.0,
+            "memory_percent": 0.03123473729597387
+          },
+          {
+            "name": "svchost.exe",
+            "cpu_percent": 0.0,
+            "memory_percent": 0.11652400054903296
+          },
+          {
+            "name": "csrss.exe",
+            "cpu_percent": 0.0,
+            "memory_percent": 0.01961871309972272
+          },
+          {
+            "name": "msedgewebview2.exe",
+            "cpu_percent": 0.0,
+            "memory_percent": 0.007105417723385361
+          },
+          {
+            "name": "csrss.exe",
+            "cpu_percent": 0.0,
+            "memory_percent": 0.029706951232583843
+          },
+          {
+            "name": "wininit.exe",
+            "cpu_percent": 0.0,
+            "memory_percent": 0.008172442910514903
+          },
+          {
+            "name": "services.exe",
+            "cpu_percent": 0.0,
+            "memory_percent": 0.05080494925082706
+          }
+        ],
+        "gpu": {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "vram_total_mib": 6141.0,
+          "vram_used_mib": 141.0,
+          "vram_free_mib": 5780.0,
+          "util_pct": 0.0,
+          "temp_c": 53.0
+        },
+        "cpu_percent": 10.5,
+        "ram_used_pct": 81.8,
+        "ollama": {
+          "online": true,
+          "model_present": true,
+          "models": [
+            "qwen3:8b",
+            "qwen2.5-coder:7b",
+            "qwen-coder-safe:latest",
+            "qwen2.5-coder:7b-instruct",
+            "llama3.2:3b",
+            "qwen2.5:3b-instruct",
+            "llama3.2:1b"
+          ]
+        },
+        "screenshot": null,
+        "nota": "sem keylogger, sem leitura de outros ecrãs além do título da janela e captura se pedida"
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "Cancelado: 1 de 1 tarefas concluídas antes da interrupção.",
+  "finished_at": 1788385070.0810797
+}

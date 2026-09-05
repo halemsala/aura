@@ -1,0 +1,46 @@
+{
+  "exclusive_loaded": "qwen3:8b",
+  "keep_alive": "-1",
+  "num_ctx": 3072,
+  "num_predict": 1024,
+  "num_gpu": 99,
+  "think": false,
+  "note": "RTX 4050 6GB: só qwen3:8b residente. Outros modelos instalados NÃO carregam em paralelo.",
+  "roles": {
+    "qwen3:8b": {
+      "role": "cérebro Hermes+Alfred",
+      "load": "always",
+      "keep_alive": "-1"
+    },
+    "qwen2.5-coder:7b": {
+      "role": "código sob pedido (descarrega o 8b)",
+      "load": "manual_autorizo",
+      "keep_alive": "0"
+    },
+    "qwen2.5-coder:7b-instruct": {
+      "role": "alias coder",
+      "load": "never_auto",
+      "keep_alive": "0"
+    },
+    "qwen-coder-safe:latest": {
+      "role": "coder filtrado",
+      "load": "never_auto",
+      "keep_alive": "0"
+    },
+    "qwen2.5:3b-instruct": {
+      "role": "proibido como fallback silencioso",
+      "load": "never_auto",
+      "keep_alive": "0"
+    },
+    "llama3.2:3b": {
+      "role": "proibido como fallback silencioso",
+      "load": "never_auto",
+      "keep_alive": "0"
+    },
+    "llama3.2:1b": {
+      "role": "proibido como fallback silencioso",
+      "load": "never_auto",
+      "keep_alive": "0"
+    }
+  }
+}

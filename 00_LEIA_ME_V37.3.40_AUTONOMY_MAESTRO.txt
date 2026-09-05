@@ -1,0 +1,50 @@
+AURA QUANT-X HERMES V37.3.40 — AUTONOMY MAESTRO + FIX AUDITORIA P3
+==================================================================
+paper_trade=true | execution_allowed=false
+
+O QUE ESTE PACOTE ENTREGA
+-------------------------
+1) Autonomy Engine (o maestro) — JA INTEGRADO no lifespan do Hermes
+   - Radar a cada 60s via ErrorCatalog.diagnose
+   - Politica curta: so E-NET-003/004/005/006 com cooldown
+   - Circuit breaker: max 6 fixes/hora
+   - Verificacao HTTP real apos auto-fix (45s)
+   - Preditivo: RAM 80/90% + disco 85/92%
+   - Kill switch e relatorio por chat:
+       "autonomia" | "liga autonomia" | "para autonomia"
+   - Log: logs_supervisor/autonomy.jsonl
+
+2) Fixes da Auditoria Parte 3 (V37.3.39)
+   - memory: use_vec NameError, search, prune_old
+   - prompt_guard: padroes PT-BR + integrado Camadas 2/3 + WS
+   - model_router: qwen2.5:3b-instruct no registry
+   - chat_api: build_safe_prompt + memoria WS em to_thread
+
+3) NSSM helper
+   - AURA_INSTALAR_NSSM_HERMES.bat
+   - Transforma Hermes em servico Windows (boot + auto-restart)
+
+INSTALACAO
+----------
+1) Extraia para C:\aura (completo ou por cima)
+2) AURA_ONE_CLICK_AUDITORIA_INSTALACAO.bat
+3) (Opcional, Admin) AURA_INSTALAR_NSSM_HERMES.bat
+
+COMANDOS NO CHAT HERMES
+-----------------------
+  autonomia          → relatorio do maestro
+  liga autonomia     → ativa o radar
+  para autonomia     → kill switch
+
+TESTE DE ACEITE (autonomia)
+---------------------------
+1) Subir stack, depois matar o engine de proposito
+2) Em <=60s: entrada em logs_supervisor/autonomy.jsonl
+3) Em <=2min: engine de volta; mensagem "RESOLVIDO autonomamente"
+4) Chat: "autonomia" → timestamps no relatorio
+5) "para autonomia" → DESLIGADA
+
+INVARIANTES
+-----------
+LLM NUNCA decide no loop de autonomia (so narra).
+Ollama (E-NET-002) e RAM (E-SYS-001) fora da politica de auto-fix.

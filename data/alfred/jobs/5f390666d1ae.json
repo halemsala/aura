@@ -1,0 +1,52 @@
+{
+  "job_id": "5f390666d1ae",
+  "request_id": "73727d85",
+  "content_hash": "fbe9fb07",
+  "created_at": 1788380163.2324054,
+  "status": "failed",
+  "authorized": true,
+  "authorization_reason": "teste",
+  "plan_intent": "multi_task",
+  "source_message": "",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "ferramenta_inexistente",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "failed",
+      "result": {},
+      "error": "ferramenta desconhecida: ferramenta_inexistente",
+      "attempts": 0
+    },
+    {
+      "id": "task-2",
+      "tool": "list_files",
+      "arguments": {
+        "path": "Desktop"
+      },
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "skipped",
+      "result": {},
+      "error": "saltada: task-1 (ferramenta_inexistente) falhou antes",
+      "attempts": 0
+    }
+  ],
+  "summary": "0 de 2 tarefas concluídas com sucesso. FALHOU task-1 (ferramenta_inexistente): ferramenta desconhecida: ferramenta_inexistente 1 tarefa(s) seguinte(s) saltada(s) por segurança.",
+  "finished_at": 1788380163.2354064
+}

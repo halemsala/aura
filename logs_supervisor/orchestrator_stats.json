@@ -1,0 +1,14 @@
+{
+  "submitted": 4,
+  "completed": 4,
+  "failed": 0,
+  "retried": 0,
+  "queue_size": 0,
+  "running": 0,
+  "circuit_breakers": {
+    "corner_intelligence": "CLOSED",
+    "hawkes_corners": "CLOSED",
+    "market_edge": "CLOSED",
+    "system_medic": "CLOSED"
+  }
+}

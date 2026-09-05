@@ -1,0 +1,1185 @@
+INFO:     Started server process [27356]
+INFO:     Waiting for application startup.22026-09-04 19:29:14 [warning  ] config_load_warn               error='Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)'
+2026-09-04 19:29:14 [warning  ] sqlite_vec_not_available â€” fallback text_search_only22026-09-04 19:29:16 [info     ] tool_registered                name=system_status
+2026-09-04 19:29:16 [info     ] tool_registered                name=read_file
+2026-09-04 19:29:16 [info     ] tool_registered                name=list_dir
+2026-09-04 19:29:16 [info     ] tool_registered                name=search_logs
+2026-09-04 19:29:16 [info     ] tool_registered                name=check_constitution
+2026-09-04 19:29:16 [info     ] tool_registered                name=aura_status
+2026-09-04 19:29:16 [info     ] tool_registered                name=aura_diagnose
+2026-09-04 19:29:16 [info     ] tool_registered                name=aura_restart
+2026-09-04 19:29:16 [info     ] tool_registered                name=aura_fix
+2026-09-04 19:29:16 [info     ] tool_registered                name=aura_desktop
+2026-09-04 19:29:16 [info     ] tool_registered                name=aura_gpu
+2026-09-04 19:29:16 [info     ] healing_handler_registered     fix_type=domain_lock
+2026-09-04 19:29:16 [info     ] healing_handler_registered     fix_type=rotate_logs
+2026-09-04 19:29:16 [info     ] healing_handler_registered     fix_type=set_execution_false
+INFO:hermes.chat_api:hermes_v10_startup_complete root=C:\aura\hermes_v10 paper_trade=False
+INFO:hermes.chat_api:watchdog_started
+INFO:hermes.chat_api:error_catalog_loaded entries=14
+INFO:aura.autonomy:AUTONOMY ENGINE v2 ativo (radar 60s, politica 11 codigos, RCA+janitor+preditivo)
+INFO:hermes.chat_api:autonomy_engine_started
+INFO:hermes.chat_api:gym_background_thread_started
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8777): normalmente só é permitido uma utilização de cada endereço de socket (protocolo/endereço de rede/porta)
+INFO:     Waiting for application shutdown.
+WARNING:aura.autonomy:autonomy info SYSTEM Catalogo recarregado - 14 entradas ativas sem restart
+INFO:hermes.chat_api:gym_daily_refresh_training starting (200 scenarios)
+2026-09-04 19:29:16 [info     ] memory_pruned cutoff_days=30
+INFO:aura.autonomy:janitor_prune_memory_ok
+INFO:     Application shutdown complete.
+:hermes.chat_api:gym_playbooks_distilled count=38
+INFO:     127.0.0.1:63139 - "GET /health HTTP/1.1" 200 OK
+INFO:hermes.chat_api:gym_dataset_exported records=9968 alpaca=9968
+INFO:     127.0.0.1:63161 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy info E-NET-005 Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+INFO:     127.0.0.1:63179 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63188 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63197 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63207 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56353 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56363 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy info E-NET-005 OK E-NET-005 RESOLVIDO â€” cascata deve recuperar []
+INFO:     127.0.0.1:56375 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56385 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56399 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56409 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51165 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63385 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63954 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57391 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56732 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58621 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61179 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64960 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50884 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57493 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63696 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54409 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50868 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63243 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57424 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53318 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60696 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58362 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49552 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64681 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61191 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64901 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50109 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65350 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49168 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56759 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60798 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59903 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55270 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57081 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63272 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61783 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61795 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 94% critico
+INFO:     127.0.0.1:61819 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61829 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52823 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59218 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60067 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55906 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63125 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 94% critico
+INFO:     127.0.0.1:62946 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy warning E-NET-004 Deteccao autonoma: E-NET-004 Â· Engine AURA offline (porta 8765)
+INFO:     127.0.0.1:55179 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy info E-NET-004 Auto-fix EXECUTANDO: {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+INFO:     127.0.0.1:58085 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53622 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62285 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60786 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61101 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy info E-NET-004 OK E-NET-004 RESOLVIDO autonomamente. Sistema estavel.
+INFO:     127.0.0.1:58944 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59305 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60955 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57096 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60390 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60385 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60966 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 92% critico
+INFO:     127.0.0.1:50786 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57301 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56739 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56029 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54925 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52661 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52661 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51415 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63267 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59122 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60306 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 94% critico
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61699 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+WARNING:hermes.chat_api:alfred_route_skip error=cannot import name 'is_system_control' from 'alfred.router' (C:\aura\alfred\router.py)
+INFO:     127.0.0.1:52564 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52564 - "POST /api/speak HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52564 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60351 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+WARNING:hermes.chat_api:alfred_route_skip error=cannot import name 'is_system_control' from 'alfred.router' (C:\aura\alfred\router.py)
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 400 Bad Request"
+2026-09-04 19:39:27 [error    ] ollama_error                   error="Client error '400 Bad Request' for url 'http://localhost:11434/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+2026-09-04 19:39:27 [warning  ] ollama_failed                  error="Client error '400 Bad Request' for url 'http://localhost:11434/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+2026-09-04 19:39:27 [info     ] memory_stored                  id=mem_sess_2e74816de1bb48_1788561567492_2822cc3f source=chat_api tags=['chat', 'sess_2e74816de1bb48', 'llm']
+2026-09-04 19:39:27 [info     ] memory_stored                  id=mem_sess_2e74816de1bb48_r_1788561567508_81f47a69 source=chat_api tags=['chat', 'sess_2e74816de1bb48', 'aura-operator']
+INFO:     127.0.0.1:60878 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59137 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60878 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49604 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52315 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59975 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55008 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52363 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52372 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy warning PRED RAM 78% subindo 0.5%/ciclo â†’ 90% em ~22 min
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57264 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64507 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65403 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62709 - "GET /health HTTP/1.1" 200 OK
+WARNING:hermes.chat_api:alfred_route_skip error=cannot import name 'is_system_control' from 'alfred.router' (C:\aura\alfred\router.py)
+INFO:     127.0.0.1:65341 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65341 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65341 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52879 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52116 - "GET /health HTTP/1.1" 200 OK
+WARNING:hermes.chat_api:alfred_route_skip error=cannot import name 'is_system_control' from 'alfred.router' (C:\aura\alfred\router.py)
+INFO:     127.0.0.1:56620 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56620 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+WARNING:hermes.chat_api:alfred_route_skip error=cannot import name 'is_system_control' from 'alfred.router' (C:\aura\alfred\router.py)
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57074 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56620 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56620 - "POST /api/speak HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54508 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56620 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56433 - "GET /health HTTP/1.1" 200 OK
+WARNING:hermes.chat_api:alfred_route_skip error=cannot import name 'is_system_control' from 'alfred.router' (C:\aura\alfred\router.py)
+INFO:     127.0.0.1:64318 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64498 - "GET /api/system HTTP/1.1" 200 OK
+WARNING:hermes.chat_api:alfred_route_skip error=cannot import name 'is_system_control' from 'alfred.router' (C:\aura\alfred\router.py)
+INFO:     127.0.0.1:64498 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64503 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+WARNING:hermes.chat_api:alfred_route_skip error=cannot import name 'is_system_control' from 'alfred.router' (C:\aura\alfred\router.py)
+INFO:     127.0.0.1:64498 - "POST /api/chat HTTP/1.1" 200 OK
+WARNING:hermes.chat_api:alfred_route_skip error=cannot import name 'is_system_control' from 'alfred.router' (C:\aura\alfred\router.py)
+2026-09-04 19:41:21 [info     ] memory_stored                  id=mem_sess_2e74816de1bb48_r_1788561681203_83531a50 source=chat_api tags=['chat', 'sess_2e74816de1bb48', 'aura:diagnose']
+INFO:     127.0.0.1:64498 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64894 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55924 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62262 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61616 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57328 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51442 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55745 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58700 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63798 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56185 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50496 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+WARNING:hermes.chat_api:alfred_route_skip error=cannot import name 'is_system_control' from 'alfred.router' (C:\aura\alfred\router.py)
+2026-09-04 19:42:20 [info     ] memory_stored                  id=mem_sess_2e74816de1bb48_r_1788561740181_598d5734 source=chat_api tags=['chat', 'sess_2e74816de1bb48', 'aura-operator']
+INFO:     127.0.0.1:58488 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58504 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59981 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54555 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+WARNING:hermes.chat_api:alfred_route_skip error=cannot import name 'is_system_control' from 'alfred.router' (C:\aura\alfred\router.py)
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 400 Bad Request"
+2026-09-04 19:42:35 [error    ] ollama_error                   error="Client error '400 Bad Request' for url 'http://localhost:11434/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+2026-09-04 19:42:35 [warning  ] ollama_failed                  error="Client error '400 Bad Request' for url 'http://localhost:11434/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+2026-09-04 19:42:35 [info     ] memory_stored                  id=mem_sess_2e74816de1bb48_1788561755362_9a6e0576 source=chat_api tags=['chat', 'sess_2e74816de1bb48', 'llm']
+2026-09-04 19:42:35 [info     ] memory_stored                  id=mem_sess_2e74816de1bb48_r_1788561755374_e1f4c70e source=chat_api tags=['chat', 'sess_2e74816de1bb48', 'aura-operator']
+INFO:     127.0.0.1:49407 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58810 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55764 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+WARNING:hermes.chat_api:alfred_route_skip error=cannot import name 'is_system_control' from 'alfred.router' (C:\aura\alfred\router.py)
+INFO:     127.0.0.1:56787 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55764 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62247 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53812 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53200 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50796 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59174 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49211 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58593 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59181 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63168 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60921 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60858 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60082 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50804 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52917 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64146 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55808 - "GET /api/system HTTP/1.1" 200 OK
+WARNING:hermes.chat_api:alfred_route_skip error=cannot import name 'is_system_control' from 'alfred.router' (C:\aura\alfred\router.py)
+INFO:     127.0.0.1:57215 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57219 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+WARNING:hermes.chat_api:alfred_route_skip error=cannot import name 'is_system_control' from 'alfred.router' (C:\aura\alfred\router.py)
+INFO:     127.0.0.1:57215 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61317 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62710 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56532 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65015 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62696 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64190 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58633 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57145 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57999 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62929 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53797 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55021 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62134 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60033 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63882 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56738 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59709 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61204 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56692 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56034 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57420 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51342 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56065 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51622 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56814 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61047 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61684 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49168 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50771 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60212 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60217 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53899 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64272 - "GET /api/system HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 94% critico
+INFO:     127.0.0.1:64290 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58701 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59324 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57338 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50209 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62626 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63354 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50065 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64203 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52883 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55464 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65404 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50200 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65171 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60358 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60383 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60393 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60403 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54810 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62598 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51434 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51444 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57253 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57270 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57280 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57307 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61437 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62662 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59936 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56826 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56836 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56859 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56869 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56892 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56903 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56930 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62282 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57516 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52571 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52594 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52604 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 92% critico
+INFO:     127.0.0.1:52627 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57698 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57703 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63161 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51046 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58120 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56607 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58239 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60808 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56234 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57855 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 93% critico
+INFO:     127.0.0.1:53994 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51741 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58945 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61331 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50109 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50114 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51207 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64017 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60344 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59711 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55352 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 95% critico
+INFO:     127.0.0.1:64525 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49432 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62991 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51552 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51856 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56562 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54837 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61588 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64516 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64533 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64544 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 96% critico
+INFO:     127.0.0.1:64568 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64594 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64604 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51629 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53654 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51161 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50470 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50480 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50490 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 97% critico
+INFO:     127.0.0.1:53809 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53817 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58340 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51992 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64386 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59480 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63726 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55339 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55349 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55374 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55384 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55395 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55405 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55415 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53449 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65403 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61546 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61560 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61570 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61593 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61603 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61613 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61623 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51538 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59238 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60637 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60647 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62594 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62617 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62627 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62637 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62647 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63174 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52298 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63407 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63418 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63428 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63460 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63470 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63480 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63490 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60726 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49862 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52352 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52362 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52372 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52382 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52409 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52419 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52429 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52439 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50915 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63564 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57475 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57499 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57509 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57532 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57546 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57556 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57566 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56519 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58149 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54024 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54047 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54057 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54080 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54103 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54117 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64836 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55909 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56559 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59158 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61019 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57025 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57030 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53697 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61037 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56109 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62055 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62883 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56335 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61742 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58112 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58123 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58133 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58143 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58180 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64957 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62613 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60431 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55329 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63108 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56660 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56670 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65036 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65060 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65070 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65081 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54067 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50714 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64105 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49182 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49192 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49202 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49212 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57907 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57917 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57928 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52272 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63498 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55356 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55366 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55376 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55387 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55410 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60304 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60314 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59443 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60773 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56661 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55711 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55721 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55731 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55754 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55765 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55775 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60149 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59738 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50091 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59412 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56471 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56481 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56493 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57938 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57961 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57971 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53500 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62421 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50953 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50976 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51003 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51026 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 90% critico
+INFO:     127.0.0.1:51062 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51085 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51108 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51426 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65428 - "GET /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49344 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49354 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49377 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49404 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 97% critico
+INFO:     127.0.0.1:49432 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49451 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49474 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60465 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60488 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60524 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60534 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60548 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 94% critico
+INFO:     127.0.0.1:60571 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60581 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60591 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60601 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50584 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54430 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62661 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 97% critico
+INFO:     127.0.0.1:53503 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58187 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58197 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58220 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58230 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56089 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61342 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 97% critico
+INFO:     127.0.0.1:61664 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58850 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58860 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64529 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63989 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64879 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64902 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53830 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 97% critico
+INFO:     127.0.0.1:53866 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53882 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53903 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50966 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63246 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64430 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63452 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 92% critico
+INFO:     127.0.0.1:50811 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50822 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50850 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50873 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50884 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50907 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50917 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50927 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 94% critico
+INFO:     127.0.0.1:50951 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57071 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57085 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57096 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57106 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57116 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57126 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 94% critico
+INFO:     127.0.0.1:57153 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57165 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57179 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57193 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57203 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57213 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57224 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 96% critico
+INFO:     127.0.0.1:55650 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55660 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50907 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50917 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50931 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50941 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50951 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50961 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50985 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50996 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51006 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51016 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51030 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51040 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58493 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58516 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58526 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58536 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55750 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54535 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54549 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54559 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54582 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54592 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54602 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54612 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53840 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53850 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53864 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53874 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60177 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60187 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60197 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60207 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60217 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60227 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60242 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53622 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53632 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57614 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57624 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57634 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57645 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57655 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57682 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57692 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60344 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60354 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60364 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60374 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54083 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54164 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54221 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54231 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59182 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61673 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61683 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60627 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60635 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60662 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60676 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60686 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60697 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60707 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60717 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60727 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60751 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60761 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60775 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60785 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60795 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60805 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60816 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60826 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60850 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63232 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63246 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63256 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63266 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63276 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63286 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63311 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63321 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63331 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65523 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62102 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61780 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61790 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 3.8GB livres
+INFO:     127.0.0.1:49318 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49881 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49891 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49901 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52690 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57503 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57513 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57523 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 3.8GB livres
+INFO:     127.0.0.1:57548 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57558 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57568 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57578 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57592 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57603 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57615 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 3.8GB livres
+INFO:     127.0.0.1:57640 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57650 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57660 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57670 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57680 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57694 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57704 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57714 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 3.8GB livres
+INFO:     127.0.0.1:57738 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60846 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60856 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60866 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60876 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60891 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60901 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 3.8GB livres
+INFO:     127.0.0.1:60925 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60935 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49501 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49511 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49521 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50508 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51195 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 3.8GB livres
+INFO:     127.0.0.1:50953 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50963 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50973 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50983 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50993 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51003 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51013 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51027 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 2.8GB livres
+INFO:     127.0.0.1:51050 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51061 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50295 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50305 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50315 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59489 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59499 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 91% critico
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 2.8GB livres
+INFO:     127.0.0.1:59526 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59536 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59547 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58881 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61996 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62006 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62016 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 91% critico
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 2.8GB livres
+INFO:     127.0.0.1:62026 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64023 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64033 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64043 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64053 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64060 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64069 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49275 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 92% critico
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 2.8GB livres
+INFO:     127.0.0.1:49299 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49317 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49324 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55052 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49168 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49178 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49188 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.7GB livres
+INFO:     127.0.0.1:49211 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49221 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49235 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64970 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64980 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64990 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65000 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64951 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 94% critico
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.7GB livres
+INFO:     127.0.0.1:64984 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65001 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65421 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61658 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49561 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49571 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 98% critico
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.6GB livres
+INFO:     127.0.0.1:49503 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49515 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61126 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61140 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49896 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50362 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51206 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-001 RAM 96% critico
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.6GB livres
+INFO:     127.0.0.1:55166 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53811 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53821 - "GET /health HTTP/1.1" 200 OK
+2026-09-04 20:45:19 [warning  ] anomaly_detected score=1.0 port_down=0
+INFO:     127.0.0.1:53831 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53845 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53892 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63193 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63203 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy warning PRED RAM 87% subindo 0.3%/ciclo â†’ 90% em ~11 min
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.6GB livres
+INFO:     127.0.0.1:63227 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63237 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63247 - "GET /health HTTP/1.1" 200 OK
+2026-09-04 20:46:26 [warning  ] anomaly_detected score=1.0 port_down=0
+INFO:     127.0.0.1:63257 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63271 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59232 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59243 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy warning PRED RAM 82% subindo 0.3%/ciclo â†’ 90% em ~27 min
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.6GB livres
+INFO:     127.0.0.1:59266 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59338 - "GET /health HTTP/1.1" 200 OK
+2026-09-04 20:47:32 [warning  ] anomaly_detected score=1.0 port_down=0
+INFO:     127.0.0.1:59379 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59394 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59434 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.7GB livres
+INFO:     127.0.0.1:59470 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59514 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51237 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51247 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51257 - "GET /health HTTP/1.1" 200 OK
+2026-09-04 20:48:38 [warning  ] anomaly_detected score=1.0 port_down=0
+INFO:     127.0.0.1:51274 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51298 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy warning PRED RAM 77% subindo 0.3%/ciclo â†’ 90% em ~42 min
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.7GB livres
+INFO:     127.0.0.1:51322 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51013 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51023 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51033 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51073 - "GET /health HTTP/1.1" 200 OK
+2026-09-04 20:49:44 [warning  ] anomaly_detected score=1.0 port_down=0
+INFO:     127.0.0.1:51113 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51128 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy warning PRED RAM 74% subindo 0.3%/ciclo â†’ 90% em ~49 min
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.6GB livres
+INFO:     127.0.0.1:55173 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55191 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55200 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55210 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52131 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52141 - "GET /health HTTP/1.1" 200 OK
+2026-09-04 20:50:50 [warning  ] anomaly_detected score=1.0 port_down=0
+INFO:     127.0.0.1:52151 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.6GB livres
+INFO:     127.0.0.1:52175 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58884 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58894 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58904 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51884 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51894 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51904 - "GET /health HTTP/1.1" 200 OK
+2026-09-04 20:51:56 [warning  ] anomaly_detected score=1.0 port_down=0
+INFO:     127.0.0.1:51914 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.6GB livres
+INFO:     127.0.0.1:51951 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51971 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51981 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51991 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52001 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52011 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52021 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.6GB livres
+2026-09-04 20:53:02 [warning  ] anomaly_detected score=1.0 port_down=0
+INFO:     127.0.0.1:52044 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52054 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63314 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63324 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63334 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49863 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49873 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49883 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.7GB livres
+INFO:     127.0.0.1:49916 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49951 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49960 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49980 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49990 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52564 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.7GB livres
+INFO:     127.0.0.1:52588 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52598 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52613 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54117 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54127 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54137 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54177 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.7GB livres
+INFO:     127.0.0.1:54210 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54230 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54251 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54265 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54275 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54285 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54295 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54305 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.7GB livres
+INFO:     127.0.0.1:54338 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54358 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54368 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62779 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62789 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62799 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62810 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.7GB livres
+INFO:     127.0.0.1:52637 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52647 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52667 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52677 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52694 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52705 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52715 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.6GB livres
+INFO:     127.0.0.1:52736 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52749 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52760 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52770 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52781 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52795 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52805 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61541 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.6GB livres
+INFO:     127.0.0.1:61564 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61574 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61584 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61594 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61604 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61618 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61628 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.7GB livres
+INFO:     127.0.0.1:61651 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61661 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64690 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64700 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64710 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64720 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64755 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.6GB livres
+INFO:     127.0.0.1:64779 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64789 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64800 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64810 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64833 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64843 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64853 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64880 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.6GB livres
+INFO:     127.0.0.1:64903 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64913 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64927 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57148 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57158 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57168 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57178 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.6GB livres
+INFO:     127.0.0.1:57206 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57216 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57226 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57237 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57247 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57257 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64348 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 1.6GB livres
+INFO:     127.0.0.1:64359 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64386 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64396 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50061 - "GET /health HTTP/1.1" 200 OK
+WARNING:aura.autonomy:autonomy critical E-SYS-DISK Disco critico: 4.8GB livres
+2026-09-04 21:06:11 [warning  ] anomaly_detected score=1.0 port_down=2
+INFO:     Started server process [15768]
+INFO:     Waiting for application startup.
+2026-09-04 21:06:32 [warning  ] config_load_warn               error='Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)'
+2026-09-0INFO:     127.0.0.1:61863 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61886 - "GET /health HTTP/1.1" 200 OK
+ol_registered                name=system_status
+2026-09-04 21:06:33 [info     ] tool_registered                name=read_file
+2026-09-04 21:06:33 [info     ] tool_registered                name=list_dir
+2026-09-04 21:06:33 [info     ] tool_registered                name=search_logs
+2026-09-04 21:06:33 [info     ] tool_registered                name=check_constitution
+2026-09-04 21:06:33 [info     ] tool_registered                name=aura_status
+2026-09-04 21:06:33 [info     ] tool_registered                name=aura_diagnose
+2026-09-04 21:06:33 [info     ] tool_registered                name=aura_restart
+2026-09-04 21:06:33 [info     ] tool_registered                name=aura_fix
+2026-09-04 21:06:33 [info     ] tool_registered                name=aura_desktop
+2026-09-04 21:06:33 [info     ] tool_registered                name=aura_gpu
+2026-09-04 21:06:33 [info     ] healing_handler_registered     fix_type=domain_lock
+2026-09-04 21:06:33 [info     ] healing_handler_registered     fix_type=rotate_logs
+2026-09-04 21:06:33 [info     ] healing_handler_registered     fix_type=set_execution_false
+INFO:hermes.chat_api:hermes_v10_startup_complete root=C:\aura\hermes_v10 paper_trade=False
+INFO:hermes.chat_api:watchdog_started
+INFO:hermes.chat_api:error_catalog_loaded entries=14
+INFO:aura.autonomy:AUTONOMY ENGINE v2 ativo (radar 60s, politica 11 codigos, RCA+janitor+preditivo)
+INFO:hermes.chat_api:autonomy_engine_started
+INFO:hermes.chat_api:gym_background_thread_started
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8777): normalmente só é permitido uma utilização de cada endereço de socket (protocolo/endereço de rede/porta)
+INFO:     Waiting for application shutdown.
+WARNING:aura.autonomy:autonomy info SYSTEM Catalogo recarregado - 14 entradas ativas sem restart
+INFO:hermes.chat_api:gym_daily_refresh_training starting (200 scenarios)
+2026-09-04 21:06:33 [info     ] memory_pruned cutoff_days=30
+INFO:aura.autonomy:janitor_prune_memory_ok
+INFO:     Application shutdown complete.

@@ -1,0 +1,1129 @@
+{
+  "version": "12.7.0-RECONSOLIDADO",
+  "agentCount": 34,
+  "toolCount": 13,
+  "installer": "AURA_INSTALAR_E_INICIAR_TUDO.bat",
+  "paperTradeOnly": true,
+  "agents": [
+    {
+      "id": "engine:corner_intelligence.py",
+      "name": "Corner Intelligence",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/corner_intelligence.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "analyst_brief",
+        "analyze_corners"
+      ],
+      "allFunctions": [
+        "_f",
+        "_pair",
+        "_extract_corner_events",
+        "_gaps",
+        "analyze_corners",
+        "analyst_brief"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:hawkes_corners.py",
+      "name": "Hawkes Corners",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/hawkes_corners.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "build_hawkes_from_payload",
+        "classify_event",
+        "p_at_least_one"
+      ],
+      "allFunctions": [
+        "_f",
+        "p_at_least_one",
+        "decay_to",
+        "apply_event",
+        "effective_mu_against",
+        "intensity_against",
+        "intensity_for",
+        "classify_event",
+        "_pair_stats",
+        "build_hawkes_from_payload"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:market_edge.py",
+      "name": "Market Edge",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/market_edge.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "classify_market",
+        "compute_edge",
+        "normalize_market_name",
+        "odds_age_sec",
+        "parse_odds_ts"
+      ],
+      "allFunctions": [
+        "normalize_market_name",
+        "classify_market",
+        "parse_odds_ts",
+        "odds_age_sec",
+        "compute_edge"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:voice_planner.py",
+      "name": "Voice Planner",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/voice_planner.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "apply_pronunciation",
+        "build_ssml",
+        "narrative_from_card",
+        "plan_segments",
+        "strip_forbidden_fillers"
+      ],
+      "allFunctions": [
+        "escape_xml",
+        "apply_pronunciation",
+        "strip_forbidden_fillers",
+        "plan_segments",
+        "build_ssml",
+        "narrative_from_card",
+        "__init__",
+        "enqueue",
+        "cancel_all",
+        "barge_in",
+        "pop_next",
+        "mark_done",
+        "snapshot"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:gpu_resource_manager.py",
+      "name": "Gpu Resource Manager",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/gpu_resource_manager.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "cuda_info",
+        "recommended_voice_llm",
+        "resolve_cuda_device",
+        "status"
+      ],
+      "allFunctions": [
+        "_ps_gpu_inventory",
+        "cuda_info",
+        "resolve_cuda_device",
+        "recommended_voice_llm",
+        "status"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:data_veracity.py",
+      "name": "Data Veracity",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/data_veracity.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "verify_payload"
+      ],
+      "allFunctions": [
+        "_num",
+        "_pair",
+        "_stamp_ms",
+        "_count_events",
+        "_remember",
+        "verify_payload"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:model_shadow.py",
+      "name": "Model Shadow",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/model_shadow.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "baseline_from_payload",
+        "build_feature_vector",
+        "poisson_at_least_one",
+        "shadow_predict"
+      ],
+      "allFunctions": [
+        "_clamp",
+        "_sigmoid",
+        "_logit",
+        "poisson_at_least_one",
+        "validate",
+        "classify_events_from_payload",
+        "hawkes_intensity",
+        "baseline_prob_horizon",
+        "baseline_from_payload",
+        "build_feature_vector",
+        "transform",
+        "to_dict",
+        "from_dict",
+        "fit_calibrator",
+        "predict_residual",
+        "to_dict",
+        "fit_residual_lgbm",
+        "combine_baseline_residual",
+        "walk_forward_splits",
+        "_rows_for_fixtures",
+        "evaluate_probs",
+        "run_walk_forward",
+        "challenger_beats_champion",
+        "predict",
+        "get_shadow_bundle",
+        "set_shadow_bundle",
+        "load_or_default_shadow",
+        "shadow_predict"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:health_score.py",
+      "name": "Health Score",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/reliability/health_score.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "record",
+        "score"
+      ],
+      "allFunctions": [
+        "__init__",
+        "record",
+        "score"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:aura_director_agent.py",
+      "name": "Aura Director Agent",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/aura_director_agent.py",
+      "implementationState": "inspect_only",
+      "inspectionOnly": true,
+      "functions": [],
+      "allFunctions": [
+        "generate",
+        "__init__",
+        "_init_director_db",
+        "_get_system_telemetry",
+        "_get_system_performance_metrics",
+        "_analyze_failure_patterns",
+        "_read_tracebacks",
+        "_check_director_memory",
+        "_log_director_action",
+        "run_thinking_cycle",
+        "_process_v2_decision",
+        "execute_approved_action"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "pending",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:aura_quant_x_master.py",
+      "name": "Aura Quant X Master",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/aura_quant_x_master.py",
+      "implementationState": "inspect_only",
+      "inspectionOnly": true,
+      "functions": [],
+      "allFunctions": [
+        "__init__",
+        "forward",
+        "init_db",
+        "startup_event",
+        "health",
+        "websocket_endpoint"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:backtest_engine.py",
+      "name": "Backtest Engine",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/backtest_engine.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "run_backtest"
+      ],
+      "allFunctions": [
+        "load_from_sqlite",
+        "load_from_jsonl",
+        "fill_pnl",
+        "run_backtest",
+        "main"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:auto_calibrate_risk.py",
+      "name": "Auto Calibrate Risk",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/modules/auto_calibrate_risk.py",
+      "implementationState": "inspect_only",
+      "inspectionOnly": true,
+      "functions": [],
+      "allFunctions": [
+        "maybe_auto_calibrate"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:drift_monitor.py",
+      "name": "Drift Monitor",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/improvements/drift_monitor.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "missing_rate",
+        "recent_alerts",
+        "update"
+      ],
+      "allFunctions": [
+        "__init__",
+        "update",
+        "missing_rate",
+        "recent_alerts"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:execution_router.py",
+      "name": "Execution Router",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/execution_router.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "execute"
+      ],
+      "allFunctions": [
+        "__init__",
+        "execute"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health",
+        "paper_preview"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:digital_twin_monte_carlo.py",
+      "name": "Digital Twin Monte Carlo",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/digital_twin_monte_carlo.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "run_corner_probability"
+      ],
+      "allFunctions": [
+        "__init__",
+        "state_hash",
+        "get",
+        "put",
+        "stats",
+        "__init__",
+        "init_match",
+        "run_simulations",
+        "_step_all_trajectories",
+        "calibrate_noise",
+        "create_engine",
+        "run_corner_probability"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health",
+        "simulation_contract"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:server.py",
+      "name": "Server",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/server.py",
+      "implementationState": "inspect_only",
+      "inspectionOnly": true,
+      "functions": [],
+      "allFunctions": [
+        "compress",
+        "compress_for_llm",
+        "db_exec_sync",
+        "db_exec",
+        "ensure_server_schema",
+        "check_cooldown",
+        "approve",
+        "_first",
+        "_apply_risk_contract",
+        "_json_safe",
+        "_pair",
+        "_snapshot_for_engine",
+        "_remember_fixture",
+        "_run_snapshot_analysis",
+        "_load_bridge_latest",
+        "_fixture_context",
+        "_ui_actions",
+        "_deterministic_reply",
+        "startup",
+        "shutdown",
+        "post_telemetry",
+        "post_feed",
+        "orchestrator",
+        "health",
+        "health_root_alias",
+        "root",
+        "approve_director_action",
+        "director_pending",
+        "ops_latency",
+        "ops_signatures",
+        "ops_signatures_rebuild",
+        "api_status",
+        "api_agents",
+        "api_agent_status",
+        "api_agent_action",
+        "trader_chat",
+        "trader_action",
+        "feedback",
+        "_telegram_send",
+        "telegram_send",
+        "historical",
+        "analysis_fixture",
+        "_aura_update_live_clock"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:engine_core.py",
+      "name": "Engine Core",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/engine_core.py",
+      "implementationState": "inspect_only",
+      "inspectionOnly": true,
+      "functions": [],
+      "allFunctions": [
+        "_to_device",
+        "backend_info",
+        "_poisson_at_least",
+        "_clamp_alpha",
+        "__init__",
+        "get_alpha",
+        "train",
+        "export",
+        "load_file",
+        "save_file",
+        "__init__",
+        "calculate_odds_velocity",
+        "reset",
+        "_extract_captured_at",
+        "__init__",
+        "feed_historical",
+        "_resolve_seconds",
+        "_get_ctx",
+        "_bind",
+        "_derivatives",
+        "_parse_market_stats",
+        "_parse_odds",
+        "_attach_accuracy",
+        "_validate_integrity",
+        "_integrity_label",
+        "_decorate_analysis_contract",
+        "ingest",
+        "_persist_ledger",
+        "get_analysis",
+        "recompute",
+        "status",
+        "init_db_wal",
+        "_compat_analyze",
+        "_compat_feedback",
+        "_compat_shutdown",
+        "get_local_ai_engine",
+        "__getattr__"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:pre_treinar_gpu.py",
+      "name": "Pre Treinar Gpu",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/pre_treinar_gpu.py",
+      "implementationState": "inspect_only",
+      "inspectionOnly": true,
+      "functions": [],
+      "allFunctions": [
+        "__init__",
+        "forward",
+        "treinar"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:server_gpu_master.py",
+      "name": "Server Gpu Master",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/server_gpu_master.py",
+      "implementationState": "inspect_only",
+      "inspectionOnly": true,
+      "functions": [],
+      "allFunctions": [
+        "__init__",
+        "forward",
+        "_get_alpha",
+        "_train_historical",
+        "_poisson_at_least",
+        "__init__",
+        "connect",
+        "disconnect",
+        "broadcast",
+        "_extract_features",
+        "health",
+        "status",
+        "process_live_telemetry",
+        "feed_historical",
+        "websocket_skill_endpoint",
+        "get_skill_formatted_context",
+        "get_analysis"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "engine:server_elite_gpu.py",
+      "name": "Server Elite Gpu",
+      "layer": "engine",
+      "status": "enabled",
+      "path": "engine/server_elite_gpu.py",
+      "implementationState": "inspect_only",
+      "inspectionOnly": true,
+      "functions": [],
+      "allFunctions": [
+        "__init__",
+        "forward",
+        "__init__",
+        "connect",
+        "disconnect",
+        "broadcast_to_skill",
+        "_f",
+        "_pair",
+        "health",
+        "ingest_match_telemetry",
+        "websocket_skill_endpoint"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "bridge:server.py",
+      "name": "Server",
+      "layer": "bridge",
+      "status": "enabled",
+      "path": "bridge/server.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "extract_match_view",
+        "fingerprint",
+        "last_corner_gap",
+        "validate_skill_pack",
+        "view_to_skill_pack",
+        "window_label"
+      ],
+      "allFunctions": [
+        "_now_iso",
+        "_day_key",
+        "_next_reg_id",
+        "_safe_num",
+        "_pair",
+        "_get",
+        "extract_match_view",
+        "fingerprint",
+        "window_label",
+        "last_corner_gap",
+        "build_reg_markdown",
+        "ensure_log_header",
+        "append_index_row",
+        "_is_empty_view",
+        "persist_feed",
+        "view_to_skill_pack",
+        "validate_skill_pack",
+        "_atomic_write_text",
+        "persist_skill_pack",
+        "_origin_allowed",
+        "_cors",
+        "_auth_ok",
+        "_json",
+        "do_OPTIONS",
+        "_do_GET",
+        "_do_POST",
+        "do_GET",
+        "do_POST",
+        "log_message",
+        "main"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "bridge:jarvis_voice_server.py",
+      "name": "Jarvis Voice Server",
+      "layer": "bridge",
+      "status": "enabled",
+      "path": "bridge/jarvis_voice_server.py",
+      "implementationState": "inspect_only",
+      "inspectionOnly": true,
+      "functions": [],
+      "allFunctions": [
+        "__init__",
+        "start",
+        "_loop",
+        "_on_message",
+        "stop",
+        "resolve",
+        "apply_to_ollama_options",
+        "_read_config",
+        "_voice_profile_info",
+        "_load_engines",
+        "_start_lazy_init",
+        "_snapshot_state",
+        "_mood_instruction",
+        "_context_text",
+        "_decode_audio_to_tempfile",
+        "_require_ready",
+        "_startup",
+        "_shutdown",
+        "_build_prompt",
+        "_stream_voice_ndjson",
+        "_update_market_context",
+        "_llm_ready_response",
+        "_stt_ready_response",
+        "_transcribe_file",
+        "_synthesize_bytes",
+        "_reply_from_text",
+        "_talk_events",
+        "voice_stt",
+        "voice_chat",
+        "voice_tts",
+        "voice_talk",
+        "voice_diagnostic",
+        "voice_reload",
+        "voice_reset_session",
+        "voice_stream",
+        "voice_plan",
+        "voice_context",
+        "health",
+        "health_voice_alias",
+        "health_root_alias"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "voice_diagnostic",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "bridge:emergency_bridge.py",
+      "name": "Emergency Bridge",
+      "layer": "bridge",
+      "status": "enabled",
+      "path": "bridge/emergency_bridge.py",
+      "implementationState": "inspect_only",
+      "inspectionOnly": true,
+      "functions": [],
+      "allFunctions": [
+        "now",
+        "log_message",
+        "_cors",
+        "_json",
+        "do_OPTIONS",
+        "do_GET",
+        "do_POST",
+        "main"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "bridge:neural_tts.py",
+      "name": "Neural Tts",
+      "layer": "bridge",
+      "status": "enabled",
+      "path": "bridge/jarvis/modules/neural_tts.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "available",
+        "cache_stats",
+        "sanitize_for_speech"
+      ],
+      "allFunctions": [
+        "sanitize_for_speech",
+        "_chunks",
+        "_norm_key",
+        "_cache_path",
+        "_ram_get",
+        "_ram_put",
+        "_read_cache",
+        "_write_cache",
+        "_maybe_prune_disk",
+        "_piper_executable",
+        "_synthesize_piper",
+        "_edge_chunk",
+        "_synthesize_edge",
+        "_fetch_gtts_chunk",
+        "_concat_wav_blobs",
+        "synthesize_mp3",
+        "cache_stats",
+        "clear_cache",
+        "_piper_executable_available",
+        "available"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "bridge:tts.py",
+      "name": "Tts",
+      "layer": "bridge",
+      "status": "enabled",
+      "path": "bridge/jarvis/modules/tts.py",
+      "implementationState": "inspect_only",
+      "inspectionOnly": true,
+      "functions": [],
+      "allFunctions": [
+        "__init__",
+        "_key",
+        "_cache_path",
+        "_read_cache",
+        "_write_cache",
+        "synthesize",
+        "warmup",
+        "stats",
+        "speak"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "bridge:stt.py",
+      "name": "Stt",
+      "layer": "bridge",
+      "status": "enabled",
+      "path": "bridge/jarvis/modules/stt.py",
+      "implementationState": "inspect_only",
+      "inspectionOnly": true,
+      "functions": [],
+      "allFunctions": [
+        "__init__",
+        "transcribe",
+        "stats"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "bridge:gpu_resource_manager.py",
+      "name": "Gpu Resource Manager",
+      "layer": "bridge",
+      "status": "enabled",
+      "path": "bridge/jarvis/gpu_resource_manager.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "cleanup",
+        "device_info",
+        "profile",
+        "sample_vram",
+        "vram_snapshot"
+      ],
+      "allFunctions": [
+        "_nvidia_smi_info",
+        "device_info",
+        "sample_vram",
+        "vram_snapshot",
+        "_advice",
+        "cleanup",
+        "profile",
+        "__enter__",
+        "__exit__"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "bridge:jarvis_cognitive_server.py",
+      "name": "Jarvis Cognitive Server",
+      "layer": "bridge",
+      "status": "enabled",
+      "path": "bridge/cognitive/jarvis_cognitive_server.py",
+      "implementationState": "inspect_only",
+      "inspectionOnly": true,
+      "functions": [],
+      "allFunctions": [
+        "mock_stt",
+        "mock_tts",
+        "_startup",
+        "_shutdown",
+        "health",
+        "api_state",
+        "voice_talk",
+        "voice_tool",
+        "voice_tts"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "bridge:multi_llm_router.py",
+      "name": "Multi Llm Router",
+      "layer": "bridge",
+      "status": "enabled",
+      "path": "bridge/cognitive/multi_llm_router.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "extract_intent"
+      ],
+      "allFunctions": [
+        "extract_intent",
+        "generate",
+        "__init__",
+        "_local_resolve",
+        "_predictive_pregenerate",
+        "_build_glm_prompt",
+        "route"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "bridge:state_vector_daemon.py",
+      "name": "State Vector Daemon",
+      "layer": "bridge",
+      "status": "enabled",
+      "path": "bridge/cognitive/state_vector_daemon.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "get_semantic_graph",
+        "get_system_state"
+      ],
+      "allFunctions": [
+        "to_dict",
+        "__init__",
+        "add_event",
+        "to_prompt_block",
+        "get_system_state",
+        "get_semantic_graph",
+        "__init__",
+        "start",
+        "stop",
+        "_read_director_memory",
+        "_count_surrogate",
+        "_zmq_loop",
+        "_compile_state",
+        "_loop",
+        "run_async"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "bridge:tg_voice_pipeline.py",
+      "name": "Tg Voice Pipeline",
+      "layer": "bridge",
+      "status": "enabled",
+      "path": "bridge/telegram/tg_voice_pipeline.py",
+      "implementationState": "inspect_only",
+      "inspectionOnly": true,
+      "functions": [],
+      "allFunctions": [
+        "_ffmpeg_ogg_to_wav",
+        "process_voice_message"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "sre:omnipotent_health_profiler",
+      "name": "Omnipotent Health Profiler",
+      "layer": "sre",
+      "status": "enabled",
+      "path": "engine/sre/omnipotent_health_profiler.py",
+      "implementationState": "runnable",
+      "inspectionOnly": false,
+      "functions": [
+        "analyze_traces",
+        "check_clock_skew",
+        "check_memory_fragmentation",
+        "check_phase_space",
+        "check_schema_drift",
+        "check_vram_fragmentation",
+        "predict_time_to_failure",
+        "run_full_diagnostic"
+      ],
+      "allFunctions": [
+        "to_dict",
+        "__init__",
+        "check_memory_fragmentation",
+        "_fetch_health_ts",
+        "check_clock_skew",
+        "_probe_zmq_depth_sync",
+        "check_zmq_depth",
+        "_discover_db",
+        "check_schema_drift",
+        "check_vram_fragmentation",
+        "predict_time_to_failure",
+        "check_phase_space",
+        "new_trace_id",
+        "record_span",
+        "analyze_traces",
+        "run_full_diagnostic",
+        "get_profiler",
+        "main_async",
+        "main"
+      ],
+      "actions": [
+        "status",
+        "inspect",
+        "run_function",
+        "health"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "ui:central_nova",
+      "name": "Central Nova",
+      "layer": "ui",
+      "status": "enabled",
+      "path": "central_nova/central_nova.html",
+      "implementationState": "asset",
+      "inspectionOnly": false,
+      "functions": [],
+      "allFunctions": [],
+      "actions": [
+        "status",
+        "inspect"
+      ],
+      "paperTradeOnly": true
+    },
+    {
+      "id": "voice:masculine_profile",
+      "name": "Masculine Profile",
+      "layer": "voice",
+      "status": "enabled",
+      "path": "bridge/jarvis/config_voice_masculina.yaml",
+      "implementationState": "asset",
+      "inspectionOnly": false,
+      "functions": [],
+      "allFunctions": [],
+      "actions": [
+        "status",
+        "inspect",
+        "voice_diagnostic"
+      ],
+      "paperTradeOnly": true
+    }
+  ]
+}

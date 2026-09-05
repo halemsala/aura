@@ -1,0 +1,308 @@
+﻿===== 04_SERVICOS_WINDOWS_TODOS =====
+
+ Status StartType Name                                      DisplayName                             
+ ------ --------- ----                                      -----------                             
+Stopped    Manual AarSvc_bf09a                              AarSvc_bf09a                            
+Stopped    Manual AxInstSV                                  ActiveX Installer (AxInstSV)            
+Stopped    Manual wmiApSrv                                  Adaptador de Desempenho WMI             
+Stopped    Manual AdobeUpdateService                        AdobeUpdateService                      
+Stopped    Manual PolicyAgent                               Agente de Política de IPSec             
+Stopped    Manual pla                                       Alertas e Registos de Desempenho        
+Stopped    Manual upnphost                                  Anfitrião de dispositivo UPnP           
+Stopped    Manual fdPHost                                   Anfitrião do Fornecedor de Deteção de...
+Stopped    Manual WdiSystemHost                             Anfitrião do Sistema de Diagnóstico     
+Stopped    Manual COMSysApp                                 Aplicação de sistema COM+               
+Stopped Automatic StiSvc                                    Aquisição de Imagem do Windows (WIA)    
+Stopped    Manual NcaSvc                                    Assistente de Conectividade de Rede     
+Stopped    Manual NaturalAuthentication                     Autenticação Natural                    
+Stopped    Manual BcastDVRUserService_bf09a                 BcastDVRUserService_bf09a               
+Stopped    Manual BluetoothUserService_bf09a                BluetoothUserService_bf09a              
+Stopped    Manual PeerDistSvc                               BranchCache                             
+Stopped    Manual CaptureService_bf09a                      CaptureService_bf09a                    
+Stopped  Disabled CCleaner7                                 CCleaner 7                              
+Stopped    Manual LocalKdc                                  Centro de Distribuição de Chaves Loca...
+Stopped Automatic gpsvc                                     Cliente de Política de Grupo            
+Stopped    Manual Wecsvc                                    Colecionador de Eventos do Windows      
+Stopped    Manual dot3svc                                   Configuração Automática com Fios        
+Stopped    Manual NcdAutoSetup                              Configuração Automática de Dispositiv...
+Stopped    Manual WwanSvc                                   Configuração Automática WWAN            
+Stopped    Manual SessionEnv                                Configuração do Ambiente de Trabalho ...
+Stopped    Manual ConsentUxUserSvc_bf09a                    ConsentUxUserSvc_bf09a                  
+Stopped    Manual MSDTC                                     Coordenador de Transações Distribuídas  
+Stopped    Manual SDRSVC                                    Cópia de Segurança do Windows           
+Stopped    Manual VSS                                       Cópia sombra de volume                  
+Stopped    Manual CredentialEnrollmentManagerUserSvc_bf09a  CredentialEnrollmentManagerUserSvc_bf09a
+Stopped    Manual DeviceAssociationBrokerSvc_bf09a          DeviceAssociationBrokerSvc_bf09a        
+Stopped    Manual DevicePickerUserSvc_bf09a                 DevicePickerUserSvc_bf09a               
+Stopped    Manual diagsvc                                   Diagnostic Execution Service            
+Stopped  Disabled DialogBlockingService                     DialogBlockingService                   
+Stopped    Manual vds                                       Disco Virtual                           
+Stopped    Manual EFS                                       EFS (Sistema de Encriptação de Fichei...
+Stopped  Disabled RemoteAccess                              Encaminhamento e acesso remoto          
+Stopped    Manual WiaRpc                                    Eventos de Aquisição de Imagens Estát...
+Stopped    Manual QWAVE                                     Experiência Áudio-Vídeo de Alta Quali...
+Stopped    Manual PrintNotify                               Extensões e Notificações da Impressora  
+Stopped    Manual CscService                                Ficheiros offline                       
+Stopped  Disabled MsKeyboardFilter                          Filtro de Teclado Microsoft             
+Stopped    Manual swprv                                     Fornecedor de Cópia Sombra do Softwar...
+Stopped    Manual FrameServer                               FrameServer da Câmara do Windows        
+Stopped    Manual GameInputSvc                              GameInput Service                       
+Stopped    Manual AppMgmt                                   Gestão de Aplicações                    
+Stopped    Manual TieringEngineService                      Gestão de Camadas de Armazenamento      
+Stopped    Manual WinRM                                     Gestão Remota do Windows (WS-Management)
+Stopped    Manual XblAuthManager                            Gestor de Autenticação do Xbox Live     
+Stopped    Manual DsmSvc                                    Gestor de Configuração de Dispositivos  
+Stopped    Manual RasAuto                                   Gestor de ligação automática de acess...
+Stopped Automatic MapsBroker                                Gestor de Mapas Transferidos            
+Stopped    Manual GoogleChromeElevationService              Google Chrome Elevation Service (Goog...
+Stopped    Manual GraphicsPerfSvc                           GraphicsPerfSvc                         
+Stopped    Manual XblGameSave                               Guardar Jogos no Xbox Live              
+Stopped    Manual autotimesvc                               Hora de Rede Móvel                      
+Stopped    Manual hpatchmon                                 Hotpatch Monitoring Service             
+Stopped    Manual AppIDSvc                                  Identidade da Aplicação                 
+Stopped    Manual NlaSvc                                    Identificação da Localização na Rede    
+Stopped    Manual wuqisvc                                   Informações de Utilização e Qualidade...
+Stopped Automatic Intel(R) Platform License Manager Service Intel(R) Platform License Manager Ser...
+Stopped    Manual vmicguestinterface                        Interface de Serviço Convidado Hyper-V  
+Stopped    Manual IsolationSession                          IsolationSession                        
+Stopped    Manual KtmRm                                     KtmRm para o Coordenador de Transaçõe...
+Stopped    Manual Netman                                    Ligações de Rede                        
+Stopped    Manual lltdsvc                                   Mapeador de Deteção de Topologia de C...
+Stopped    Manual McpManagementService                      McpManagementService                    
+Stopped    Manual IsoEnvBroker                              Mediador de Ambiente de Isolamento      
+Stopped    Manual MessagingService_bf09a                    MessagingService_bf09a                  
+Stopped  Disabled AppVClient                                Microsoft App-V Client                  
+Stopped    Manual cloudidsvc                                Microsoft Cloud Identity Service        
+Stopped    Manual MicrosoftCopilotElevationService          Microsoft Copilot Elevation Service (...
+Stopped    Manual MicrosoftEdgeElevationService             Microsoft Edge Elevation Service (Mic...
+Stopped Automatic edgeupdate                                Microsoft Edge Update Service (edgeup...
+Stopped    Manual edgeupdatem                               Microsoft Edge Update Service (edgeup...
+Stopped  Disabled PCManager Service Store                   Microsoft PC Manager Service            
+Stopped    Manual embeddedmode                              Modo Incorporado                        
+Stopped    Manual IKEEXT                                    Módulos de Criação de Chaves IKE e Au...
+Stopped    Manual FrameServerMonitor                        Monitor de Servidor da Câmara do Windows
+Stopped    Manual Netlogon                                  Netlogon                                
+Stopped    Manual OneSyncSvc_bf09a                          OneSyncSvc_bf09a                        
+Stopped  Disabled ssh-agent                                 OpenSSH Authentication Agent            
+Stopped    Manual defragsvc                                 Otimizar unidades                       
+Stopped    Manual P9RdrService_bf09a                        P9RdrService_bf09a                      
+Stopped    Manual SEMgrSvc                                  Pagamentos e Gestor NFC/SE              
+Stopped    Manual workfolderssvc                            Pastas de Trabalho                      
+Stopped    Manual PenService_bf09a                          PenService_bf09a                        
+Stopped    Manual PimIndexMaintenanceSvc_bf09a              PimIndexMaintenanceSvc_bf09a            
+Stopped    Manual SCPolicySvc                               Política de Remoção de Smart Cards      
+Stopped    Manual AppReadiness                              Preparação de Aplicações                
+Stopped    Manual PrintScanBrokerService                    PrintScanBrokerService                  
+Stopped    Manual PrintWorkflowUserSvc_bf09a                PrintWorkflowUserSvc_bf09a              
+Stopped  Disabled tzautoupdate                              Programa de Atualização do Fuso Horár...
+Stopped    Manual CertPropSvc                               Propagação de Certificados              
+Stopped Automatic sppsvc                                    Proteção de Software                    
+Stopped    Manual EapHost                                   Protocolo de Autenticação Extensível    
+Stopped    Manual FDResPub                                  Publicação de Recursos de Deteção de ...
+Stopped    Manual UmRdpService                              Redirector de Portas UserMode dos Ser...
+Stopped  Disabled RemoteRegistry                            Registo remoto                          
+Stopped    Manual vmicvss                                   Requerente de Cópia Sombra de Volumes...
+Stopped    Manual WpcMonSvc                                 Restrições de Acesso                    
+Stopped    Manual WEPHOSTSVC                                Serviço Anfitrião de Fornecedor de En...
+Stopped    Manual AssignedAccessManagerSvc                  Serviço AssignedAccessManager           
+Stopped    Manual BthAvctpSvc                               Serviço AVCTP                           
+Stopped    Manual wlpasvc                                   Serviço de Assistente de Perfis Local   
+Stopped    Manual WbioSrvc                                  Serviço de Biometria do Windows         
+Stopped    Manual NetSetupSvc                               Serviço de Configuração de Rede         
+Stopped    Manual IpxlatCfgSvc                              Serviço de Configuração de Tradução d...
+Stopped    Manual dcsvc                                     Serviço de Configuração Declarada (DC)  
+Stopped    Manual PrintDeviceConfigurationService           Serviço de Configuração do Dispositiv...
+Stopped    Manual SensorDataService                         Serviço de Dados de Sensores            
+Stopped    Manual RetailDemo                                Serviço de Demonstração de Revenda      
+Stopped    Manual refsdedupsvc                              Serviço de Eliminação de Duplicados d...
+Stopped    Manual dmwappushservice                          Serviço de Encaminhamento de mensagen...
+Stopped    Manual vmicshutdown                              Serviço de Encerramento de Convidado ...
+Stopped    Manual ScDeviceEnum                              Serviço de Enumeração de Dispositivos...
+Stopped    Manual LxpSvc                                    Serviço de Experiência de Idioma        
+Stopped    Manual ALG                                       Serviço de gateway de camada de aplic...
+Stopped    Manual EntAppSvc                                 Serviço de Gestão da Aplicação Empres...
+Stopped    Manual McmSvc                                    Serviço de Gestão de Conectividade Móvel
+Stopped    Manual WManSvc                                   Serviço de Gestão do Windows            
+Stopped    Manual fhsvc                                     Serviço de Histórico de Ficheiros       
+Stopped    Manual DmEnrollmentSvc                           Serviço de Inscrição de Gestão de Dis...
+Stopped    Manual DeviceInstall                             Serviço de Instalação de Dispositivos   
+Stopped    Manual vmickvpexchange                           Serviço de Intercâmbio de Dados de Hy...
+Stopped    Manual ClipSVC                                   Serviço de Licenças de Cliente (ClipSVC)
+Stopped    Manual SensrSvc                                  Serviço de Monitorização de Sensores    
+Stopped    Manual DsSvc                                     Serviço de Partilha de Dados            
+Stopped  Disabled NetTcpPortSharing                         Serviço de Partilha de Porta Net.Tcp    
+Stopped    Manual WMPNetworkSvc                             Serviço de Partilha de Rede do Window...
+Stopped    Manual ADPSvc                                    Serviço de Plataforma de Dados Agregados
+Stopped    Manual Sense                                     Serviço de Proteção Avançada Contra A...
+Stopped    Manual XboxNetApiSvc                             Serviço de rede do Xbox Live            
+Stopped    Manual SmsRouter                                 Serviço de Router SMS do Microsoft Wi...
+Stopped    Manual perceptionsimulation                      Serviço de Simulação de Perceção do W...
+Stopped    Manual vmictimesync                              Serviço de Sincronização de Hora de H...
+Stopped    Manual TroubleshootingSvc                        Serviço de Solução de Problemas Recom...
+Stopped    Manual vmicvmsession                             Serviço Direto do PowerShell de Hyper-V 
+Stopped    Manual WFDSConMgrSvc                             Serviço do Gestor de Ligações de Serv...
+Stopped Automatic GoogleUpdaterService152.0.7933.0          Serviço do Google Updater (GoogleUpda...
+Stopped    Manual wbengine                                  Serviço do Motor de Cópia de Seguranç...
+Stopped    Manual wisvc                                     Serviço do Windows Insider              
+Stopped    Manual WPDBusEnum                                Serviço Enumerador de Dispositivos Po...
+Stopped    Manual BTAGService                               Serviço Gateway de Áudio de Bluetooth   
+Stopped    Manual vmicheartbeat                             Serviço Heartbeat de Hyper-V            
+Stopped    Manual icssvc                                    Serviço Hotspot Móvel Windows           
+Stopped    Manual MSiSCSI                                   Serviço Iniciador do Microsoft iSCSI    
+Stopped Automatic GoogleUpdaterInternalService152.0.7933.0  Serviço interno do Google Updater (Go...
+Stopped    Manual midisrv                                   Serviço MIDI do Windows                 
+Stopped    Manual ApxSvc                                    Serviço Proxy do Dispositivo de Áudio...
+Stopped    Manual PushToInstall                             Serviço PushToInstall Windows           
+Stopped    Manual WerSvc                                    Serviço Relatório de Erros do Windows   
+Stopped    Manual vmicrdv                                   Serviço Virtualização de Ambientes de...
+Stopped    Manual TermService                               Serviços de Ambiente de Trabalho Remoto 
+Stopped  Disabled shpamsvc                                  Shared PC Account Manager               
+Stopped    Manual PerfHost                                  Sistema Anfitrião de DLLs de Contador...
+Stopped    Manual SCardSvr                                  Smart Card                              
+Stopped    Manual smphost                                   SMP de Espaços de Armazenamento Micro...
+Stopped    Manual wercplsupport                             Suporte para o Painel de Controlo Rel...
+Stopped    Manual bthserv                                   Suporte Técnico de Bluetooth            
+Stopped  Disabled SysMain                                   SysMain                                 
+Stopped    Manual TapiSrv                                   Telefonia                               
+Stopped    Manual SNMPTrap                                  Trap SNMP                               
+Stopped    Manual UnistoreSvc_bf09a                         UnistoreSvc_bf09a                       
+Stopped  Disabled UevAgentService                           User Experience Virtualization Service  
+Stopped    Manual UserDataSvc_bf09a                         UserDataSvc_bf09a                       
+Stopped    Manual svsvc                                     Verificador de Pontos                   
+Stopped    Manual VSInstallerElevationService               Visual Studio Installer Elevation Ser...
+Stopped    Manual WaaSMedicSvc                              WaaSMedicSvc                            
+Stopped    Manual WalletService                             WalletService                           
+Stopped    Manual WarpJITSvc                                Warp JIT Service                        
+Stopped    Manual WebClient                                 WebClient                               
+Stopped    Manual wcncsvc                                   Windows Connect Now - Registo de Conf...
+Stopped    Manual msiserver                                 Windows Installer                       
+Stopped    Manual W32Time                                   Windows Time                            
+Stopped    Manual wuauserv                                  Windows Update                          
+Stopped    Manual XboxGipSvc                                Xbox Accessory Management Service       
+Running Automatic WSAIFabricSvc                             Anfitrião de Componentes de IA do Win...
+Running    Manual WdiServiceHost                            Anfitrião do Serviço de Diagnóstico     
+Running Automatic AnyDesk                                   AnyDesk Service                         
+Running Automatic AppXSvc                                   AppX Deployment Service (AppXSVC)       
+Running    Manual wlidsvc                                   Assistente de Início de Sessão da Con...
+Running Automatic Audiosrv                                  Áudio do Windows                        
+Running Automatic cbdhsvc_bf09a                             cbdhsvc_bf09a                           
+Running Automatic CDPUserSvc_bf09a                          CDPUserSvc_bf09a                        
+Running Automatic wscsvc                                    Centro de segurança                     
+Running Automatic RpcSs                                     Chamada de Procedimento Remoto (RPC)    
+Running Automatic CoworkVMService                           Claude                                  
+Running Automatic TrkWks                                    Cliente de Distributed Link Tracking    
+Running Automatic Dhcp                                      Cliente DHCP                            
+Running Automatic Dnscache                                  Cliente DNS                             
+Running    Manual CloudBackupRestoreSvc_bf09a               CloudBackupRestoreSvc_bf09a             
+Running Automatic WlanSvc                                   Configuração Automática de WLAN         
+Running Automatic AudioEndpointBuilder                      Construtor de Ponto Final de Áudio do...
+Running    Manual NgcCtnrSvc                                Contentor do Microsoft Passport         
+Running Automatic PSI_SVC_2_x64                             Corel License Validation Service V2 x...
+Running Automatic PSI_SVC_2                                 Corel License Validation Service V2, ...
+Running Automatic CoreMessagingRegistrar                    CoreMessaging                           
+Running Automatic LenovoVantageService                      Critical Service for Lenovo Vantage     
+Running Automatic ShellHWDetection                          Deteção de hardware da shell            
+Running    Manual SSDPSRV                                   Deteção SSDP                            
+Running    Manual DevicesFlowUserSvc_bf09a                  DevicesFlowUserSvc_bf09a                
+Running Automatic ElevocService                             Elevoc Control Service                  
+Running Automatic Power                                     Energia                                 
+Running Automatic LanmanWorkstation                         Estação de trabalho                     
+Running Automatic whesvc                                    Estado de Funcionamento e Experiência...
+Running Automatic DiagTrack                                 Experiências de Utilizador e Telemetr...
+Running Automatic mpssvc                                    Firewall do Windows Defender            
+Running    Manual TokenBroker                               Gestor de Conta Web                     
+Running Automatic SamSs                                     Gestor de contas de segurança           
+Running    Manual VaultSvc                                  Gestor de Credenciais                   
+Running    Manual RasMan                                    Gestor de ligação de acesso remoto      
+Running Automatic Wcmsvc                                    Gestor de Ligações do Windows           
+Running Automatic LSM                                       Gestor de Sessões Locais                
+Running Automatic UserManager                               Gestor de Utilizadores                  
+Running    Manual Appinfo                                   Informações sobre Aplicações            
+Running Automatic DcomLaunch                                Iniciar Processo de Servidor DCOM       
+Running    Manual seclogon                                  Início de sessão secundário             
+Running    Manual TrustedInstaller                          Instalador de Módulos do Windows        
+Running Automatic IntelAudioService                         Intel(R) Audio Service                  
+Running Automatic cplspcon                                  Intel(R) Content Protection HDCP Service
+Running Automatic jhi_service                               Intel(R) Dynamic Application Loader H...
+Running Automatic dptftcs                                   Intel(R) Dynamic Tuning Technology Te...
+Running Automatic ipfsvc                                    Intel(R) Innovation Platform Framewor...
+Running Automatic WMIRegistrationService                    Intel(R) Management Engine WMI Provid...
+Running Automatic IntelGraphicsSoftwareService              Intel® Graphics Software                
+Running    Manual KeyIso                                    Isolamento da Chave CNG                 
+Running Automatic LenovoFnAndFunctionKeys                   Lenovo Fn and function keys service     
+Running    Manual RpcLocator                                Localizador de 'Chamada de procedimen...
+Running Automatic RpcEptMapper                              Mapeador de Pontos Finais RPC           
+Running    Manual DevQueryBroker                            Mediador de Deteção em Segundo Plano ...
+Running Automatic SystemEventsBroker                        Mediador de Eventos de Sistema          
+Running    Manual NcbService                                Mediador de Ligações de Rede            
+Running    Manual TimeBrokerSvc                             Mediador de Tempo                       
+Running    Manual NgcSvc                                    Microsoft Passport                      
+Running Automatic BFE                                       Motor de Filtragem Base                 
+Running Automatic NahimicService                            Nahimic service                         
+Running    Manual NPSMSvc_bf09a                             NPSMSvc_bf09a                           
+Running Automatic NVDisplay.ContainerLocalSystem            NVIDIA Display Container LS             
+Running    Manual FvSvc                                     NVIDIA FrameView SDK service            
+Running Automatic NvContainerLocalSystem                    NVIDIA LocalSystem Container            
+Running Automatic DoSvc                                     Otimização da Entrega                   
+Running    Manual SharedAccess                              Partilha de ligação à Internet (ICS)    
+Running    Manual PlugPlay                                  Plug and Play                           
+Running Automatic iphlpsvc                                  Programa Auxiliar IP                    
+Running    Manual lmhosts                                   Programa auxiliar TCP/IP NetBIOS        
+Running Automatic Schedule                                  Programador de tarefas                  
+Running Automatic RtkAudioUniversalService                  Realtek Audio Universal Service         
+Running Automatic EventLog                                  Registo de Eventos do Windows           
+Running Automatic WinDefend                                 Serviço Antivírus do Microsoft Defender 
+Running Automatic PcaSvc                                    Serviço Auxiliar de Compatibilidade d...
+Running Automatic MDCoreSvc                                 Serviço Central do Microsoft Defender   
+Running    Manual HvHost                                    Serviço de Anfitrião HV                 
+Running Automatic StorSvc                                   Serviço de Armazenamento                
+Running Automatic DeviceAssociationService                  Serviço de Associação de Dispositivos   
+Running Automatic FontCache                                 Serviço de Cache de Tipos de Letra do...
+Running    Manual vmcompute                                 Serviço de Cálculo de Anfitrião Hyper-V 
+Running    Manual webthreatdefsvc                           Serviço de Defesa Contra Ameaças Web    
+Running    Manual BDESVC                                    Serviço de Encriptação de Unidade Bit...
+Running    Manual lfsvc                                     Serviço de Geolocalização               
+Running Automatic TextInputManagementService                Serviço de Gestão de Entrada de Texto   
+Running    Manual RmSvc                                     Serviço de Gestão de Rádio              
+Running    Manual LicenseManager                            Serviço de Gestor de Licenças do Windows
+Running    Manual WinHttpAutoProxySvc                       Serviço de identificação automática d...
+Running Automatic BrokerInfrastructure                      Serviço de Infraestrutura de Tarefas ...
+Running    Manual WdNisSvc                                  Serviço de Inspeção de Rede do Antiví...
+Running    Manual InstallService                            Serviço de Instalação da Microsoft Store
+Running Automatic nsi                                       Serviço de interface de Arquivo de Rede 
+Running Automatic InventorySvc                              Serviço de Inventário e Avaliação de ...
+Running    Manual netprofm                                  Serviço de Lista de Redes               
+Running    Manual DisplayEnhancementService                 Serviço de Melhoramento do Ecrã         
+Running Automatic SENS                                      Serviço de Notificação de Eventos do ...
+Running Automatic ProfSvc                                   Serviço de Perfis de Utilizador         
+Running Automatic CDPSvc                                    Serviço de Plataforma de Dispositivos...
+Running Automatic DispBrokerDesktopSvc                      Serviço de Política de Apresentação     
+Running Automatic DPS                                       Serviço de Políticas de Diagnóstico     
+Running    Manual hns                                       Serviço de Rede do Anfitrião            
+Running Automatic StateRepository                           Serviço de Repositório de Estado        
+Running    Manual SecurityHealthService                     Serviço de Segurança do Windows         
+Running Automatic WpnService                                Serviço de Sistema de Notificações Pu...
+Running    Manual PhoneSvc                                  Serviço de telefone                     
+Running Automatic BITS                                      Serviço de Transferência Inteligente ...
+Running    Manual nvagent                                   Serviço de Virtualização de Rede        
+Running    Manual hidserv                                   Serviço do Dispositivo de Interface H...
+Running Automatic camsvc                                    Serviço do Gestor de Acesso a Funções   
+Running    Manual SensorService                             Serviço do Sensor                       
+Running Automatic UsoSvc                                    Serviço orquestrador de atualizações    
+Running    Manual SstpSvc                                   Serviço SSTP (Secure Socket Tunneling...
+Running Automatic CryptSvc                                  Serviços de Criptografia                
+Running Automatic LanmanServer                              Servidor                                
+Running Automatic EventSystem                               Sistema de eventos do COM+              
+Running Automatic Spooler                                   Spooler de Impressão                    
+Running Automatic Themes                                    Temas                                   
+Running    Manual UdkUserSvc_bf09a                          UdkUserSvc_bf09a                        
+Running Automatic UDCService                                Universal Device Client Service         
+Running Automatic DusmSvc                                   Utilização de Dados                     
+Running Automatic webthreatdefusersvc_bf09a                 webthreatdefusersvc_bf09a               
+Running Automatic WSearch                                   Windows Search                          
+Running Automatic Winmgmt                                   WMI (Instrumento de gestão do Windows)  
+Running Automatic NativePushService                         Wondershare Native Push Service         
+Running Automatic WpnUserService_bf09a                      WpnUserService_bf09a                    
+Running Automatic WSLService                                WSL Service                             
+
+

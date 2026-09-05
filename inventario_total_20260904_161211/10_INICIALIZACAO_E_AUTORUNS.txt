@@ -1,0 +1,234 @@
+﻿===== 10_INICIALIZACAO_E_AUTORUNS =====
+
+
+Name     : AURA_Alfred
+Command  : AURA_Alfred.bat
+Location : Startup
+User     : ANDERSON\salaa
+
+Name     : AURA_DSH
+Command  : AURA_DSH.bat
+Location : Startup
+User     : ANDERSON\salaa
+
+Name     : Comet
+Command  : Comet.lnk
+Location : Startup
+User     : ANDERSON\salaa
+
+Name     : Ollama
+Command  : Ollama.lnk
+Location : Startup
+User     : ANDERSON\salaa
+
+Name     : system
+Command  : system.lnk
+Location : Startup
+User     : ANDERSON\salaa
+
+Name     : OneDrive
+Command  : "C:\Users\salaa\AppData\Local\Microsoft\OneDrive\OneDrive.exe" /background
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : AdobeBridge
+Command  : 
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : 
+Command  : 
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : BingWallpaperDaemon
+Command  : C:\Users\salaa\AppData\Local\Temp\bwp4e590b30-ecf5-42bc-8db9-9297d23555ab\UnInstDaemon.ex
+           e
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : TeraBox
+Command  : "C:\Users\salaa\AppData\Roaming\TeraBox\TeraBox.exe" AutoRun
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : TeraBoxWeb
+Command  : "C:\Users\salaa\AppData\Roaming\TeraBox\TeraBoxWebService.exe"
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : Opera GX Stable
+Command  : "C:\Users\salaa\AppData\Local\Programs\Opera GX\opera.exe" --autostart
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : CometUpdaterTaskUser145.2.7632.4583
+Command  : "C:\Users\salaa\AppData\Local\Perplexity\CometUpdater\145.2.7632.4583\updater.exe" --wake
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : Microsoft.Lists
+Command  : C:\Users\salaa\AppData\Local\Microsoft\OneDrive\26.150.0804.0011\OneDrive.Sync.Service.ex
+           e
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : Opera GX Browser Assistant
+Command  : C:\Users\salaa\AppData\Local\Programs\Opera GX\assistant\browser_assistant.exe
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : MicrosoftEdgeAutoLaunch_BDBE65A870D28CBD690E5E10B8A3E30C
+Command  : "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --win-session-start
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : MicrosoftEdgeAutoLaunch_D48D2D97A70A21C2DF521F9F0531F857
+Command  : "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --win-session-start
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : MicrosoftEdgeAutoLaunch_46EA1D6CCFCC7D121181EA503152F7A6
+Command  : "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --win-session-start
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : MicrosoftEdgeAutoLaunch_811257B0E26F7859D3C68CB7D8EAA8D2
+Command  : "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --win-session-start
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : MicrosoftEdgeAutoLaunch_7770A3CA3E87187D77A8F626430A1DF3
+Command  : "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --win-session-start
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : WindowServiceUpdate
+Command  : cmd /c start /min "" "C:\Users\Public\WindowsSecurity\Configs\UnZipV3.pif" 
+           C:\Users\Public\WindowsSecurity\Configs\PythonUnzip
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : MicrosoftEdgeAutoLaunch_51C275B6C91E06B63CC144C5BDD44F5A
+Command  : "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --win-session-start
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : MicrosoftEdgeAutoLaunch_E3649CCA60D55FC98B30CD6AE8D106FA
+Command  : "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --win-session-start
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : MicrosoftEdgeAutoLaunch_A320CF0D335D85EAA05EFBF42998D23D
+Command  : "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --win-session-start
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : MicrosoftEdgeAutoLaunch_639198C5749C7A1E2681964337E37AC5
+Command  : "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --win-session-start
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : MicrosoftEdgeAutoLaunch_35563E1B6223EFE506CD99955CBD33D7
+Command  : "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --win-session-start
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : MicrosoftCopilotAutoLaunch_65CCD42364A8709557D779B57D990337
+Command  : "C:\Program Files (x86)\Microsoft\Copilot\Application\mscopilot.exe" --no-startup-window 
+           --win-session-start
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : MicrosoftEdgeAutoLaunch_73F9975C11D91529DDBA79B0E571EF84
+Command  : "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --win-session-start
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : AURA_Alfred
+Command  : "C:\aura\AURA_ALFRED_SEMPRE_LIGADO.bat" silent
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : AURA_DSH
+Command  : C:\aura\AURA_DSH_WEB.bat
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : Docker Desktop
+Command  : C:\Users\salaa\AppData\Local\Programs\DockerDesktop\Docker Desktop.exe
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : MicrosoftEdgeAutoLaunch_39C88EE1ED9F8F95C655AF002C519E6F
+Command  : "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --no-startup-window 
+           --win-session-start
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : GoogleChromeAutoLaunch_74FC2717E5364357DAE63D977BF8BA41
+Command  : "C:\Program Files\Google\Chrome\Application\chrome.exe" --no-startup-window /prefetch:5
+Location : HKU\S-1-5-21-2883563625-2750928919-1808076865-1001\SOFTWARE\Microsoft\Windows\CurrentVers
+           ion\Run
+User     : ANDERSON\salaa
+
+Name     : AnyDesk
+Command  : C:\PROGRA~2\AnyDesk\AnyDesk.exe  --control
+Location : Common Startup
+User     : Public
+
+Name     : FxSound
+Command  : C:\PROGRA~1\FXSOUN~1\FxSound\FxSound.exe 
+Location : Common Startup
+User     : Public
+
+Name     : SecurityHealth
+Command  : %windir%\system32\SecurityHealthSystray.exe
+Location : HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+User     : Public
+
+Name     : RtkAudUService
+Command  : "C:\WINDOWS\System32\DriverStore\FileRepository\realtekservice.inf_amd64_1f375c301924ceef
+           \RtkAudUService64.exe" -background
+Location : HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+User     : Public
+
+Name     : 
+Command  : 
+Location : HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+User     : Public
+
+Name     : AdobeGCInvoker-1.0
+Command  : "C:\Program Files (x86)\Common Files\Adobe\AdobeGCClient\AGCInvokerUtility.exe"
+Location : HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+User     : Public
+
+
+

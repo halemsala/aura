@@ -1,0 +1,298 @@
+﻿
+Mode   Name                                                                                         
+----   ----                                                                                         
+d-----  ura                                                                                         
+d----- .pytest_cache                                                                                
+d----- .vscode                                                                                      
+d----- addons                                                                                       
+d----- agents                                                                                       
+d----- alfred                                                                                       
+d----- AURA_AUTONOMY_V1                                                                             
+d----- backups                                                                                      
+d----- backup_20260904_024504                                                                       
+d----- backup_autonomia_20260902_114615                                                             
+d----- bridge                                                                                       
+d----- config                                                                                       
+d----- core                                                                                         
+d----- data                                                                                         
+d----- deepseek-harness                                                                             
+d----- desktop                                                                                      
+d----- diagnostico_completo_20260904_164720                                                         
+d----- diagnostico_etapas_20260904_161805                                                           
+d----- diagnostico_rapido_20260904_164503                                                           
+d----- docs                                                                                         
+d----- docs_acceptance                                                                              
+d----- docs_fonte                                                                                   
+d----- engine                                                                                       
+d----- evals                                                                                        
+d----- extensao                                                                                     
+d----- halem_control                                                                                
+d----- hermes_v10                                                                                   
+d----- interface                                                                                    
+d----- inventario_total_20260904_155755                                                             
+d----- inventario_total_20260904_160113                                                             
+d----- inventario_total_20260904_160215                                                             
+d----- inventario_total_20260904_160305                                                             
+d----- inventario_total_20260904_161211                                                             
+d----- knowledge                                                                                    
+d----- logs_instalacao                                                                              
+d----- logs_supervisor                                                                              
+d----- ops                                                                                          
+d----- patches                                                                                      
+d----- path                                                                                         
+d----- schemas                                                                                      
+d----- scripts                                                                                      
+d----- skills                                                                                       
+d----- state                                                                                        
+d----- templates                                                                                    
+d----- tests                                                                                        
+d----- tools                                                                                        
+d----- training                                                                                     
+d----- voice_profiles                                                                               
+d----- __pycache__                                                                                  
+-a---- 00_DOCUMENTACAO_INDICE.txt                                                                   
+-a---- 00_FIX_CHAT_VOICE_V37.3.54.txt                                                               
+-a---- 00_FIX_SECURITY_V37.3.54.txt                                                                 
+-a---- 00_INSTALAR_TUDO_PAPER.txt                                                                   
+-a---- 00_LEIA_ME_ATUALIZACAO_V37.3.30.txt                                                          
+-a---- 00_LEIA_ME_AUTONOMY_V1.txt                                                                   
+-a---- 00_LEIA_ME_GOVERNANCE_V37.3.53.txt                                                           
+-a---- 00_LEIA_ME_HERMES_REBUILD_V37.3.54.txt                                                       
+-a---- 00_LEIA_ME_INSTALACAO_COMPLETA.txt                                                           
+-a---- 00_LEIA_ME_PAINEL_CONTROLO.txt                                                               
+-a---- 00_LEIA_ME_PRIMEIRO.txt                                                                      
+-a---- 00_LEIA_ME_REPARO_HERMES.txt                                                                 
+-a---- 00_LEIA_ME_SLIM.txt                                                                          
+-a---- 00_LEIA_ME_V37.3.32.txt                                                                      
+-a---- 00_LEIA_ME_V37.3.38_ONECLICK.txt                                                             
+-a---- 00_LEIA_ME_V37.3.40_AUTONOMY_MAESTRO.txt                                                     
+-a---- 00_LEIA_ME_V37.3.41_AURA_GYM.txt                                                             
+-a---- 00_LEIA_ME_V37.3.42_GYM_AUTO_BOOT.txt                                                        
+-a---- 00_LEIA_ME_V37.3.43_MAESTRO_V2.txt                                                           
+-a---- 00_LEIA_ME_V37.3.44_SILENT_INSTALL.txt                                                       
+-a---- 00_LEIA_ME_V37.3.45_HERMES_PATH_FIX.txt                                                      
+-a---- 00_LEIA_ME_V37.3.46_BAT_GOTO_FIX.txt                                                         
+-a---- 00_LEIA_ME_V37.3.47_AUTONOMO.txt                                                             
+-a---- 00_LEIA_ME_V37.3.47_BAT_NAO_FECHA.txt                                                        
+-a---- 00_LEIA_ME_V37.3.47_HERMES_CHAT_AUDIT.txt                                                    
+-a---- 00_LEIA_ME_V37.3.47_PYDANTIC_PATH_FIX.txt                                                    
+-a---- 00_LEIA_ME_V37.3.47_ZIP_RAIZ.txt                                                             
+-a---- 00_LEIA_ME_V37.3.48_HERMES_FIX_COMPLETO.txt                                                  
+-a---- 00_LEIA_ME_V37.3.49.txt                                                                      
+-a---- 00_LEIA_ME_V37.3.50.txt                                                                      
+-a---- 00_LEIA_ME_V37.3.52.txt                                                                      
+-a---- 00_LEIA_ME_V37.3.53_LIMPEZA_VERIFICA.txt                                                     
+-a---- ABRIR_MATRIZ.bat                                                                             
+-a---- AGENTS.md                                                                                    
+-a---- alfred_capabilities.py                                                                       
+-a---- alfred_config.json                                                                           
+-a---- alfred_install.py                                                                            
+-a---- allowlist.json                                                                               
+-a---- AURA_ABRIR_CHAT_ALFRED.bat                                                                   
+-a---- AURA_ABRIR_DESKTOP.bat                                                                       
+-a---- AURA_ALFRED_COMMAND.bat                                                                      
+-a---- AURA_ALFRED_INSTALL.bat                                                                      
+-a---- AURA_ALFRED_MAX.bat                                                                          
+-a---- AURA_ALFRED_ROLLBACK.bat                                                                     
+-a---- AURA_ALFRED_SEMPRE_LIGADO.bat                                                                
+-a---- AURA_ALFRED_START.bat                                                                        
+-a---- AURA_ALFRED_STATUS.bat                                                                       
+-a---- AURA_ALFRED_STOP.bat                                                                         
+-a---- AURA_ASSISTENTE_COMPLETO.bat                                                                 
+-a---- AURA_ATIVAR_ASSISTENTE_WINDOWS.bat                                                           
+-a---- AURA_ATIVAR_OPERADOR_HUMANO.bat                                                              
+-a---- AURA_AUDITORIA_COMPLETA.bat                                                                  
+-a---- AURA_COMANDO_ALFRED.bat                                                                      
+-a---- AURA_CONFIGURAR_QWEN_LLAMA.bat                                                               
+-a---- AURA_CONFIGURAR_VSCODE.ps1                                                                   
+-a---- AURA_CORRIGIR_HERMES_MAX.bat                                                                 
+-a---- AURA_CORRIGIR_HERMES_MAX.ps1                                                                 
+-a---- AURA_DIAGNOSTICO_ETAPAS_COMPLETO.ps1                                                         
+-a---- AURA_DIAGNOSTICO_ETAPAS_ENTER.ps1                                                            
+-a---- AURA_DIAGNOSTICO_ETAPAS_RAPIDO.ps1                                                           
+-a---- AURA_DIAGNOSTICO_RAPIDO.ps1                                                                  
+-a---- AURA_DSH_WEB.bat                                                                             
+-a---- AURA_FIX_HERMES_SO.bat                                                                       
+-a---- AURA_FIX_PAINEL_AGORA.bat                                                                    
+-a---- AURA_GPU_SHARE_EXPORT.bat                                                                    
+-a---- AURA_GROK_INSTALL.bat                                                                        
+-a---- AURA_GYM_TREINAR.bat                                                                         
+-a---- AURA_HARNESS_CORE.py                                                                         
+-a---- AURA_HARNESS_CORE.py.backup_20260904_030230                                                  
+-a---- AURA_HARNESS_CORE.py.backup_20260904_111333                                                  
+-a---- AURA_HARNESS_CORE.py.backup_chat_20260904_111724                                             
+-a---- AURA_HARNESS_CORE.py.backup_grounding_20260904_112012                                        
+-a---- AURA_HARNESS_HALem_PRO.py                                                                    
+-a---- AURA_HARNESS_UNICO.py                                                                        
+-a---- AURA_HERMES_V10_ULTRA.bat                                                                    
+-a---- AURA_INICIAR_OPERADOR_SEGURO.bat                                                             
+-a---- AURA_INSTALACAO_LIMPA_SILENCIOSA.bat                                                         
+-a---- AURA_INSTALAR_NSSM_HERMES.bat                                                                
+-a---- AURA_INSTALAR_TESTAR_AUTONOMO.bat                                                            
+-a---- AURA_INSTALAR_TESTAR_RELATORIO_GERAL.bat                                                     
+-a---- AURA_INSTALAR_TUDO_PAPER.bat                                                                 
+-a---- AURA_INSTALAR_VOZ.bat                                                                        
+-a---- AURA_INSTALL_TO_C_AURA.bat                                                                   
+-a---- AURA_INVENTARIO_TOTAL_SOMENTE_LEITURA.ps1                                                    
+-a---- AURA_LIMPEZA_E_INSTALACAO_COMPLETA.bat                                                       
+-a---- AURA_LIMPEZA_INSTALA_VERIFICA_TUDO.bat                                                       
+-a---- AURA_MAPA_DO_SISTEMA.md                                                                      
+-a---- AURA_MOTOR_AUTONOMO.ps1                                                                      
+-a---- AURA_ONE_CLICK_AUDITORIA_INSTALACAO.bat                                                      
+-a---- AURA_OPEN_CHAT.bat                                                                           
+-a---- AURA_OPS_STATUS_REFRESH.bat                                                                  
+-a---- AURA_REBUILD_HERMES.bat                                                                      
+-a---- AURA_REPARAR_E_SUBIR_HERMES.ps1                                                              
+-a---- AURA_REPARAR_OLLAMA.bat                                                                      
+-a---- AURA_REPARAR_OLLAMA.py                                                                       
+-a---- AURA_REPARAR_PAINEL_COMPLETO.bat                                                             
+-a---- AURA_REPARAR_SISTEMA.bat                                                                     
+-a---- AURA_REPARAR_XTTS_TORCHCODEC.bat                                                             
+-a---- AURA_ROLLBACK_LAST.bat                                                                       
+-a---- AURA_SOBE_HERMES_SO.bat                                                                      
+-a---- AURA_START_ALL.bat                                                                           
+-a---- AURA_START_HERMES.ps1                                                                        
+-a---- AURA_STATUS.bat                                                                              
+-a---- AURA_STOP_ALL.bat                                                                            
+-a---- AURA_SUBIR_HERMES.ps1                                                                        
+-a---- AURA_SUBIR_STACK_COMPLETO.bat                                                                
+-a---- AURA_SUBIR_STACK_PAPER.bat                                                                   
+-a---- AURA_SUBIR_VOZ.bat                                                                           
+-a---- AURA_TELEGRAM_GRANT_SESSION.bat                                                              
+-a---- AURA_TELEGRAM_KILL_SWITCH_ON.bat                                                             
+-a---- AURA_TESTAR_PIPER.bat                                                                        
+-a---- AURA_TESTES.ps1                                                                              
+-a---- AURA_TEST_VOICE.bat                                                                          
+-a---- AURA_TOOLS_CONTROL_API.bat                                                                   
+-a---- AURA_TUDO_EM_UM.bat                                                                          
+-a---- AURA_VRAM_REPORT.bat                                                                         
+-a---- BIE 2-2 PAU _ Bielefeld x St. Pauli 04_09_2026 _ Futebol - Flashscore _ Estatísticas de jo...
+-a---- BRIEFING_INSTALACAO_V2.md                                                                    
+-a---- CHANGELOG_AUTONOMY_V1.txt                                                                    
+-a---- CHANGELOG_GOVERNANCE_20260831.txt                                                            
+-a---- CHANGELOG_V37.3.26_FIX_COMPLETO.txt                                                          
+-a---- CHANGELOG_V37.3.27_VOZ_XTTS.txt                                                              
+-a---- CHANGELOG_V37.3.30_GROK_OPS.txt                                                              
+-a---- CHANGELOG_V37.3.31_COMPLETE.txt                                                              
+-a---- CHANGELOG_V37.3.32_ELITE_AGENTS.txt                                                          
+-a---- CHANGELOG_V37.3.33_TELEGRAM_OPTIN.txt                                                        
+-a---- CHANGELOG_V37.3.34_TELEGRAM_POLICY.txt                                                       
+-a---- CHANGELOG_V37.3.36_HUB_VRAM.txt                                                              
+-a---- CHANGELOG_V37.3.38_AUDIT_FIX.txt                                                             
+-a---- CHANGELOG_V37.3.38_CHAT_ROUTER.txt                                                           
+-a---- CHANGELOG_V37.3.38_INSTALL_V2.txt                                                            
+-a---- CHANGELOG_V37.3.38_KEDB.txt                                                                  
+-a---- CHANGELOG_V37.3.38_ONECLICK.txt                                                              
+-a---- CHANGELOG_V37.3.38_TRAINING.txt                                                              
+-a---- CHANGELOG_V37.3.47_CHAT_AUDIT.txt                                                            
+-a---- CHANGELOG_V37.3.53_LIMPEZA_VERIFICA.txt                                                      
+-a---- CHECK.bat                                                                                    
+-a---- coleta_harness.sh                                                                            
+-a---- diagnostico_finalizador.txt                                                                  
+-a---- diagnostico_rapido_20260904_164503.zip                                                       
+-a---- DOCUMENTACAO_COMPLETA_AURA_QUANT_X_HERMES.md                                                 
+-a---- FINALIZAR_AURA_ALFRED_QWEN3.bat                                                              
+-a---- FINALIZAR_AURA_ALFRED_QWEN3_LIMPO.bat                                                        
+-a---- hermes_config_ultra.json                                                                     
+-a---- hermes_config_ultra.json.bak2                                                                
+-a---- INICIAR_AUDITORIA_LOCAL.bat                                                                  
+-a---- INICIAR_AURA_HARNESS.BAT                                                                     
+-a---- Iniciar_DeepSeek_Harness.bat                                                                 
+-a---- INSTALAR_AGORA.bat                                                                           
+-a---- INSTALAR_AGORA.ps1                                                                           
+-a---- INSTALAR_ALFRED_REAL_C_AURA.bat                                                              
+-a---- INSTALAR_ALFRED_REAL_C_AURA.ps1                                                              
+-a---- INSTALAR_HERMES_EM_C_AURA.ps1                                                                
+-a---- INSTALAR_TUDO.bat                                                                            
+-a---- INSTALL_V2_FASES.ps1                                                                         
+-a---- LEIA-ME_GROK_OPS_SEGURO.txt                                                                  
+-a---- LEIA-ME_PRIMEIRO.txt                                                                         
+-a---- LEIA-ME_VOZ_ACCEPTANCE_E_INSTALACAO.txt                                                      
+-a---- MANIFEST_INSTALACAO_COMPLETA_CORRIGIDA.json                                                  
+-a---- MODO_ASSISTENTE.bat                                                                          
+-a---- MODO_TRADING.bat                                                                             
+-a---- PACKAGE_MANIFEST_AUTHORIZED.md                                                               
+-a---- PACKAGE_VERSION.txt                                                                          
+-a---- PROMPT MASTER V2 — HARNESS _ AURA.md                                                         
+-a---- Prompt mestre do agente Flashscore–SokkerPro.md                                              
+-a---- PROMPT_ASSISTENTE_OPERACOES_AURA_SEGURO.txt                                                  
+-a---- PROMPT_ASSISTENTE_PESSOAL_AURA.txt                                                           
+-a---- README_ALFRED_COMPLETO.md                                                                    
+-a---- README_ALFRED_MAX.md                                                                         
+-a---- README_AURA_CORRIGIR_HERMES_MAX.md                                                           
+-a---- relatorio_auditoria.txt                                                                      
+-a---- requirements-alfred.txt                                                                      
+-a---- rodar_harness.py                                                                             
+-a---- RUNBOOK_OPERACAO.md                                                                          
+-a---- runtime_events_auditoria.txt                                                                 
+-a---- sitecustomize.py                                                                             
+-a---- SOURCE_FILES.txt                                                                             
+-a---- START_BRIDGE.bat                                                                             
+-a---- START_ENGINE.bat                                                                             
+-a---- START_HERMES_OK.ps1                                                                          
+-a---- START_HERMES_OK.ps1.bak                                                                      
+-a---- START_UI.bat                                                                                 
+-a---- telegram_intel_dry_run.bat                                                                   
+-a---- test_aura_validation.py                                                                      
+-a---- test_halem_dialogue.py                                                                       
+-a---- test_halem_full_spec.py                                                                      
+-a---- test_halem_policies.py                                                                       
+-a---- VALIDATION.txt                                                                               
+-a---- VARREDURA_HARNESS.bat                                                                        
+
+
+--- PASTAS ---
+
+FullName                                     LastWriteTime      
+--------                                     -------------      
+C:\aura\ ura                                 04/09/2026 00:11:29
+C:\aura\.pytest_cache                        02/09/2026 16:34:25
+C:\aura\.vscode                              04/09/2026 10:47:48
+C:\aura\addons                               31/08/2026 19:01:42
+C:\aura\agents                               31/08/2026 19:01:42
+C:\aura\alfred                               02/09/2026 19:57:13
+C:\aura\AURA_AUTONOMY_V1                     31/08/2026 23:03:45
+C:\aura\backups                              03/09/2026 01:22:00
+C:\aura\backup_20260904_024504               04/09/2026 02:45:04
+C:\aura\backup_autonomia_20260902_114615     02/09/2026 11:46:15
+C:\aura\bridge                               03/09/2026 15:35:51
+C:\aura\config                               04/09/2026 03:06:32
+C:\aura\core                                 31/08/2026 23:53:23
+C:\aura\data                                 02/09/2026 14:34:38
+C:\aura\deepseek-harness                     01/09/2026 18:30:05
+C:\aura\desktop                              01/09/2026 13:40:17
+C:\aura\diagnostico_completo_20260904_164720 04/09/2026 16:47:20
+C:\aura\diagnostico_etapas_20260904_161805   04/09/2026 16:18:39
+C:\aura\diagnostico_rapido_20260904_164503   04/09/2026 16:45:16
+C:\aura\docs                                 31/08/2026 19:01:42
+C:\aura\docs_acceptance                      31/08/2026 19:01:42
+C:\aura\docs_fonte                           31/08/2026 19:01:42
+C:\aura\engine                               03/09/2026 21:48:50
+C:\aura\evals                                31/08/2026 19:01:42
+C:\aura\extensao                             31/08/2026 19:01:42
+C:\aura\halem_control                        04/09/2026 14:07:15
+C:\aura\hermes_v10                           02/09/2026 12:17:08
+C:\aura\interface                            31/08/2026 19:01:42
+C:\aura\inventario_total_20260904_155755     04/09/2026 15:59:51
+C:\aura\inventario_total_20260904_160113     04/09/2026 16:02:05
+C:\aura\inventario_total_20260904_160215     04/09/2026 16:02:21
+C:\aura\inventario_total_20260904_160305     04/09/2026 16:05:34
+C:\aura\inventario_total_20260904_161211     04/09/2026 16:14:39
+C:\aura\knowledge                            01/09/2026 00:15:53
+C:\aura\logs_instalacao                      01/09/2026 12:20:16
+C:\aura\logs_supervisor                      04/09/2026 02:02:47
+C:\aura\ops                                  31/08/2026 19:01:42
+C:\aura\patches                              31/08/2026 19:01:42
+C:\aura\path                                 03/09/2026 12:10:36
+C:\aura\schemas                              31/08/2026 19:01:42
+C:\aura\scripts                              04/09/2026 02:53:29
+C:\aura\skills                               31/08/2026 19:02:49
+C:\aura\state                                04/09/2026 10:29:18
+C:\aura\templates                            31/08/2026 19:01:42
+C:\aura\tests                                02/09/2026 18:11:15
+C:\aura\tools                                01/09/2026 04:02:48
+C:\aura\training                             31/08/2026 19:01:42
+C:\aura\voice_profiles                       31/08/2026 19:01:42
+C:\aura\__pycache__                          04/09/2026 12:46:47
+
+

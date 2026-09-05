@@ -1,0 +1,441 @@
+package requestlog
+
+import (
+	"context"
+	"fmt"
+	"sync"
+	"sync/atomic"
+	"time"
+
+	"github.com/sirupsen/logrus"
+	"gorm.io/gorm"
+
+	"gpt-load/internal/accessquota"
+	"gpt-load/internal/platform/redact"
+	"gpt-load/internal/platform/utils"
+	"gpt-load/internal/storage/models"
+	"gpt-load/internal/telemetry"
+)
+
+const (
+	queueCapacity = 4096
+	batchSize     = 500
+	flushDelay    = time.Second
+
+	warningInterval = time.Minute
+)
+
+type batchWriter interface {
+	WriteBatch(context.Context, []models.RequestLog) error
+}
+
+// passiveQuotaFlusher is the narrow, package-local view of
+// subscription.CredentialManager's passive quota pending store. RequestLog
+// depends on this shape only -- it never imports the subscription package or
+// its Provider, Observation, or window models.
+type passiveQuotaFlusher interface {
+	FlushPassiveQuotaObservations(ctx context.Context) (bool, error)
+	SetPassiveQuotaDirtyNotifier(notifier func())
+}
+
+type workerTimer interface {
+	C() <-chan time.Time
+	Stop() bool
+}
+
+type workerTimerFactory func(time.Duration) workerTimer
+
+var _ telemetry.RequestLogSink = (*Service)(nil)
+
+type Service struct {
+	db              *gorm.DB
+	queue           chan queuedEvent
+	writer          batchWriter
+	redactor        *redact.Redactor
+	retentionPolicy RetentionPolicyProvider
+	timerFactory    workerTimerFactory
+	logger          *logrus.Logger
+	now             func() time.Time
+	startErr        error
+	accessQuota     *accessquota.Runtime
+	quotaWriter     accessQuotaCheckpointWriter
+	quotaWake       chan struct{}
+	passiveQuota    passiveQuotaFlusher
+
+	stateMu       sync.Mutex
+	state         lifecycleState
+	workerCancel  context.CancelFunc
+	workerDone    chan struct{}
+	stopRequested chan struct{}
+	shutdownDone  chan struct{}
+	shutdownErr   error
+
+	enqueuedTotal                          atomic.Uint64
+	persistedTotal                         atomic.Uint64
+	droppedNotRunningTotal                 atomic.Uint64
+	droppedQueueFullTotal                  atomic.Uint64
+	droppedStoppingTotal                   atomic.Uint64
+	droppedPersistFailedTotal              atomic.Uint64
+	droppedShutdownTotal                   atomic.Uint64
+	writeFailureTotal                      atomic.Uint64
+	accessQuotaCheckpointWriteFailureTotal atomic.Uint64
+	accessQuotaCheckpointDegraded          atomic.Bool
+	retentionDeleteTotal                   atomic.Uint64
+
+	statsMu                                 sync.Mutex
+	lastWriteFailureAt                      time.Time
+	lastAccessQuotaCheckpointWriteFailureAt time.Time
+	lastRetentionFailureAt                  time.Time
+
+	warningMu     sync.Mutex
+	lastWarningAt time.Time
+
+	passiveQuotaWarningMu     sync.Mutex
+	lastPassiveQuotaWarningAt time.Time
+}
+
+func NewService(
+	db *gorm.DB,
+	redactor *redact.Redactor,
+	retentionPolicy RetentionPolicyProvider,
+	accessQuotas ...*accessquota.Runtime,
+) *Service {
+	service := newService(
+		&gormBatchWriter{db: db},
+		redactor,
+		func(delay time.Duration) workerTimer {
+			return &realWorkerTimer{timer: time.NewTimer(delay)}
+		},
+	)
+	service.db = db
+	service.retentionPolicy = retentionPolicy
+	for _, runtime := range accessQuotas {
+		if runtime != nil {
+			service.accessQuota = runtime
+			service.quotaWriter = &gormAccessQuotaCheckpointWriter{db: db}
+			service.quotaWake = make(chan struct{}, 1)
+			runtime.SetDirtyNotifier(service.wakeAccessQuotaCheckpoint)
+			break
+		}
+	}
+	if db == nil {
+		service.startErr = fmt.Errorf("request log database is nil")
+	} else if retentionPolicy == nil {
+		service.startErr = fmt.Errorf("request log retention policy provider is nil")
+	}
+	return service
+}
+
+func (service *Service) wakeAccessQuotaCheckpoint() {
+	if service == nil || service.quotaWake == nil {
+		return
+	}
+	select {
+	case service.quotaWake <- struct{}{}:
+	default:
+	}
+}
+
+// SetPassiveQuotaFlusher installs the passive credential-quota observation
+// flusher and shares this worker's existing quotaWake with it, so a dirty
+// passive observation and a dirty AccessQuota checkpoint wake the same
+// worker cycle. Call it before Start; a nil flusher is a no-op.
+func (service *Service) SetPassiveQuotaFlusher(flusher passiveQuotaFlusher) {
+	if service == nil || flusher == nil {
+		return
+	}
+	service.passiveQuota = flusher
+	if service.quotaWake == nil {
+		service.quotaWake = make(chan struct{}, 1)
+	}
+	flusher.SetPassiveQuotaDirtyNotifier(service.wakeAccessQuotaCheckpoint)
+}
+
+func (service *Service) warnPassiveQuotaFlushFailure(cause error) {
+	if service == nil || cause == nil {
+		return
+	}
+	now := service.now()
+	service.passiveQuotaWarningMu.Lock()
+	if !service.lastPassiveQuotaWarningAt.IsZero() && now.Before(service.lastPassiveQuotaWarningAt.Add(warningInterval)) {
+		service.passiveQuotaWarningMu.Unlock()
+		return
+	}
+	service.lastPassiveQuotaWarningAt = now
+	service.passiveQuotaWarningMu.Unlock()
+	utils.LogPlaneBestEffort(
+		service.logger,
+		logrus.WarnLevel,
+		utils.LogPlaneData,
+		logrus.Fields{
+			"event": "credential_observation.passive_persist_failed",
+			"error": cause.Error(),
+		},
+		"passive credential quota observation persistence failed",
+	)
+}
+
+func newService(
+	writer batchWriter,
+	redactor *redact.Redactor,
+	timerFactory workerTimerFactory,
+) *Service {
+	if redactor == nil {
+		redactor = redact.New()
+	}
+	return &Service{
+		queue:         make(chan queuedEvent, queueCapacity),
+		writer:        writer,
+		redactor:      redactor,
+		timerFactory:  timerFactory,
+		logger:        logrus.StandardLogger(),
+		now:           time.Now,
+		state:         lifecycleNew,
+		stopRequested: make(chan struct{}),
+	}
+}
+
+func (service *Service) Start() error {
+	service.stateMu.Lock()
+	defer service.stateMu.Unlock()
+
+	switch service.state {
+	case lifecycleRunning:
+		return ErrAlreadyStarted
+	case lifecycleStopping, lifecycleStopped:
+		return ErrNotRestartable
+	}
+	if service.startErr != nil {
+		service.state = lifecycleStopped
+		return fmt.Errorf("start request log service: %w", service.startErr)
+	}
+	if service.writer == nil || service.timerFactory == nil {
+		service.state = lifecycleStopped
+		return fmt.Errorf("start request log service: incomplete worker configuration")
+	}
+	workerContext, cancel := context.WithCancel(context.Background())
+	service.workerCancel = cancel
+	service.workerDone = make(chan struct{})
+	service.state = lifecycleRunning
+	go service.runWorker(workerContext, service.workerDone)
+	if service.accessQuota != nil && len(service.accessQuota.DirtySnapshots(1)) > 0 {
+		service.wakeAccessQuotaCheckpoint()
+	}
+	return nil
+}
+
+func (service *Service) Emit(event telemetry.RequestEvent) {
+	service.stateMu.Lock()
+	switch service.state {
+	case lifecycleNew:
+		service.droppedNotRunningTotal.Add(1)
+		service.stateMu.Unlock()
+		return
+	case lifecycleStopping, lifecycleStopped:
+		service.droppedStoppingTotal.Add(1)
+		service.stateMu.Unlock()
+		return
+	}
+
+	cloned := cloneEvent(event)
+	queueFull := false
+	select {
+	case service.queue <- queuedEvent{Event: cloned}:
+		service.enqueuedTotal.Add(1)
+	default:
+		service.droppedQueueFullTotal.Add(1)
+		queueFull = true
+	}
+	service.stateMu.Unlock()
+
+	if queueFull {
+		service.warn("queue_full", 0)
+	}
+	service.logCompletedRequest(cloned)
+}
+
+func (service *Service) Stop(ctx context.Context) error {
+	if ctx == nil {
+		ctx = context.Background()
+	}
+
+	service.stateMu.Lock()
+	switch service.state {
+	case lifecycleNew:
+		service.state = lifecycleStopped
+		service.shutdownDone = make(chan struct{})
+		close(service.shutdownDone)
+		service.stateMu.Unlock()
+		return nil
+	case lifecycleRunning:
+		service.state = lifecycleStopping
+		close(service.stopRequested)
+		service.shutdownDone = make(chan struct{})
+		shutdownDone := service.shutdownDone
+		workerDone := service.workerDone
+		service.stateMu.Unlock()
+
+		go service.finishShutdown(workerDone, shutdownDone)
+		return service.waitForShutdown(ctx, shutdownDone)
+	case lifecycleStopping:
+		shutdownDone := service.shutdownDone
+		service.stateMu.Unlock()
+		return service.waitForShutdown(ctx, shutdownDone)
+	case lifecycleStopped:
+		err := service.shutdownErr
+		service.stateMu.Unlock()
+		return err
+	default:
+		service.stateMu.Unlock()
+		return nil
+	}
+}
+
+func (service *Service) Stats() Stats {
+	service.statsMu.Lock()
+	lastWriteFailureAt := service.lastWriteFailureAt
+	lastAccessQuotaCheckpointWriteFailureAt := service.lastAccessQuotaCheckpointWriteFailureAt
+	lastRetentionFailureAt := service.lastRetentionFailureAt
+	service.statsMu.Unlock()
+
+	stats := Stats{
+		EnqueuedTotal:                           service.enqueuedTotal.Load(),
+		PersistedTotal:                          service.persistedTotal.Load(),
+		DroppedNotRunningTotal:                  service.droppedNotRunningTotal.Load(),
+		DroppedQueueFullTotal:                   service.droppedQueueFullTotal.Load(),
+		DroppedStoppingTotal:                    service.droppedStoppingTotal.Load(),
+		DroppedPersistFailedTotal:               service.droppedPersistFailedTotal.Load(),
+		DroppedShutdownTotal:                    service.droppedShutdownTotal.Load(),
+		WriteFailureTotal:                       service.writeFailureTotal.Load(),
+		AccessQuotaCheckpointWriteFailureTotal:  service.accessQuotaCheckpointWriteFailureTotal.Load(),
+		AccessQuotaCheckpointDegraded:           service.accessQuotaCheckpointDegraded.Load(),
+		RetentionDeleteFailureTotal:             service.retentionDeleteTotal.Load(),
+		QueueDepth:                              len(service.queue),
+		QueueCapacity:                           cap(service.queue),
+		LastWriteFailureAt:                      lastWriteFailureAt,
+		LastAccessQuotaCheckpointWriteFailureAt: lastAccessQuotaCheckpointWriteFailureAt,
+		LastRetentionFailureAt:                  lastRetentionFailureAt,
+	}
+	stats.DroppedTotal = stats.DroppedNotRunningTotal +
+		stats.DroppedQueueFullTotal +
+		stats.DroppedStoppingTotal +
+		stats.DroppedPersistFailedTotal +
+		stats.DroppedShutdownTotal
+	return stats
+}
+
+func (service *Service) waitForShutdown(ctx context.Context, shutdownDone <-chan struct{}) error {
+	select {
+	case <-shutdownDone:
+		return service.shutdownResult()
+	default:
+	}
+
+	select {
+	case <-shutdownDone:
+		return service.shutdownResult()
+	case <-ctx.Done():
+		select {
+		case <-shutdownDone:
+			return service.shutdownResult()
+		default:
+			return service.cancelShutdown(ctx.Err())
+		}
+	}
+}
+
+func (service *Service) cancelShutdown(cause error) error {
+	service.stateMu.Lock()
+	if service.state != lifecycleStopping {
+		err := service.shutdownErr
+		service.stateMu.Unlock()
+		return err
+	}
+	if service.shutdownErr == nil {
+		service.shutdownErr = fmt.Errorf("stop request log service: %w", cause)
+		cancel := service.workerCancel
+		err := service.shutdownErr
+		service.stateMu.Unlock()
+		cancel()
+		return err
+	}
+	err := service.shutdownErr
+	service.stateMu.Unlock()
+	return err
+}
+
+func (service *Service) finishShutdown(workerDone <-chan struct{}, shutdownDone chan struct{}) {
+	<-workerDone
+
+	service.stateMu.Lock()
+	service.state = lifecycleStopped
+	close(shutdownDone)
+	service.stateMu.Unlock()
+}
+
+func (service *Service) shutdownResult() error {
+	service.stateMu.Lock()
+	defer service.stateMu.Unlock()
+	return service.shutdownErr
+}
+
+func (service *Service) recordFinalQuotaCheckpointFailure(cause error) {
+	if service == nil || cause == nil {
+		return
+	}
+	service.stateMu.Lock()
+	defer service.stateMu.Unlock()
+	if service.shutdownErr == nil {
+		service.shutdownErr = fmt.Errorf(
+			"stop request log service: final access key cost limit checkpoint: %w",
+			cause,
+		)
+	}
+}
+
+func (service *Service) warn(failureType string, failedBatchSize int) {
+	now := service.now()
+	service.warningMu.Lock()
+	if !service.lastWarningAt.IsZero() && now.Before(service.lastWarningAt.Add(warningInterval)) {
+		service.warningMu.Unlock()
+		return
+	}
+	service.lastWarningAt = now
+	service.warningMu.Unlock()
+
+	stats := service.Stats()
+	message := "Request log event loss"
+	if failureType == "access_quota_checkpoint_write_failure" {
+		message = "Access key cost limit checkpoint persistence failed"
+	}
+	utils.LogPlaneBestEffort(
+		service.logger,
+		logrus.WarnLevel,
+		utils.LogPlaneData,
+		logrus.Fields{
+			"failure_type":        failureType,
+			"batch_size":          failedBatchSize,
+			"queue_depth":         stats.QueueDepth,
+			"dropped_total":       stats.DroppedTotal,
+			"write_failure_total": stats.WriteFailureTotal,
+			"access_quota_checkpoint_write_failure_total": stats.AccessQuotaCheckpointWriteFailureTotal,
+		},
+		message,
+	)
+}
+
+func cloneEvent(event telemetry.RequestEvent) telemetry.RequestEvent {
+	cloned := event
+	if event.FirstResponseMs != nil {
+		value := *event.FirstResponseMs
+		cloned.FirstResponseMs = &value
+	}
+	cloned.Reasoning = event.Reasoning.Clone()
+	if event.Attempts != nil {
+		cloned.Attempts = append([]telemetry.Attempt(nil), event.Attempts...)
+		for index := range cloned.Attempts {
+			cloned.Attempts[index].Reasoning = event.Attempts[index].Reasoning.Clone()
+		}
+	}
+	return cloned
+}

@@ -1,0 +1,23 @@
+{
+  "whatsapp": {
+    "after_focus": 1.0,
+    "after_ctrl_f": 0.8,
+    "after_type_contact": 1.5,
+    "after_enter_contact": 1.2,
+    "after_paste_text": 0.5,
+    "after_paste_file": 2.0,
+    "after_send": 0.6,
+    "type_interval": 0.06
+  },
+  "telegram": {
+    "after_focus": 1.0,
+    "after_ctrl_f": 0.8,
+    "after_type_contact": 1.5,
+    "after_enter_contact": 1.2,
+    "after_paste_text": 0.5,
+    "after_paste_file": 2.0,
+    "after_send": 0.6,
+    "type_interval": 0.06
+  },
+  "notes": "Valores padrão. Rode python -m bridge.jarvis.tools.macro_recorder para calibrar na sua máquina."
+}

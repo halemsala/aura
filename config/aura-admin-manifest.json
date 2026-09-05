@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "read_health",
+  "version": "1.0.0",
+  "description": "Read the health payload of one canonical AURA service without side effects.",
+  "risk_level": "LOW",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "service": {
+        "type": "string",
+        "enum": ["bridge", "engine", "voice", "ollama"]
+      }
+    },
+    "required": ["service"],
+    "additionalProperties": false
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string",
+        "enum": ["PASS_RUNTIME", "WARNING", "BLOCKED", "NOT_TESTED"]
+      },
+      "evidence": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "trace_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "started_at": {
+        "type": "string",
+        "minLength": 1
+      },
+      "finished_at": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required": ["status", "evidence", "trace_id", "started_at", "finished_at"],
+    "additionalProperties": false
+  },
+  "allowed_agents": ["aura-admin"],
+  "allowed_modes": ["OBSERVE", "PLAN_ONLY", "DRY_RUN", "SUPERVISED", "GUARDED_AUTONOMY"],
+  "side_effects": [],
+  "timeout_s": 10,
+  "idempotency": "idempotent",
+  "rollback": "not_applicable_read_only",
+  "rollback_tool": null,
+  "requires_approval": false,
+  "audit_events": ["tool_requested", "tool_completed", "tool_rejected"]
+}

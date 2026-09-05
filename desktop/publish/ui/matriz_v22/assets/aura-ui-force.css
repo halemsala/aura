@@ -1,0 +1,72 @@
+/* AURA QUANT-X Operator OS — UI FIX V37.3.26 */
+[data-sonner-toaster],[data-sonner-toast],[data-sonner-toast] *,
+[class*="toast"],[class*="Toast"],[role="status"],[role="alert"] {
+  animation: none !important; transition: none !important;
+}
+.pulse,.animate-ping,.animate-pulse,.luminous-dot { animation: none !important; }
+
+.icon-dock,.instrument-deck,.workbench,.feedback-dock,.aura-launcher,.executive-dock {
+  display: flex !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important;
+}
+.icon-dock { flex-direction: column !important; position: fixed !important; z-index: 80 !important; }
+.temporal-shell.executive-mode .icon-dock,
+.temporal-shell.executive-mode .instrument-deck,
+.temporal-shell.executive-mode .workbench,
+.temporal-shell.executive-mode .feedback-dock,
+.temporal-shell.executive-mode .aura-launcher,
+body.executive-mode .temporal-shell .icon-dock,
+body.executive-mode .temporal-shell .instrument-deck,
+body.executive-mode .temporal-shell .workbench,
+body.executive-mode .temporal-shell .feedback-dock,
+body.executive-mode .temporal-shell .aura-launcher { display: flex !important; }
+@media (max-width: 890px) {
+  .icon-dock { display: flex !important; }
+  .ribbon-button .button-text { display: inline !important; }
+}
+
+#aura-tools-rail {
+  position: fixed; right: 16px; top: 18px; z-index: 90;
+  display: flex; flex-direction: column; gap: 6px; padding: 10px;
+  border: 1px solid rgba(62,224,160,.35); border-radius: 14px 4px;
+  background: rgba(10,13,12,.94); backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.45);
+}
+#aura-tools-rail button {
+  border: 0; background: transparent; color: #d7e0d2;
+  font: 11px ui-monospace, Consolas, monospace;
+  text-align: left; padding: 7px 10px; cursor: pointer; border-radius: 8px;
+}
+#aura-tools-rail button:hover { background: #3ee0a0; color: #0a120c; }
+#aura-tools-rail button:focus-visible { outline: 2px solid #14c8d4; outline-offset: 1px; }
+
+body, .temporal-shell { color: #e8eee6 !important; -webkit-font-smoothing: antialiased; }
+.muted, .dim, [class*="muted"], [class*="secondary"] { color: #9aa89a !important; }
+button, .ribbon-button, .dock-item { min-height: 36px; }
+input, select, textarea {
+  background: #0f1210 !important; color: #e8eee6 !important;
+  border-color: rgba(62,224,160,.25) !important;
+}
+.panel, .card, [class*="panel"], [class*="Card"] { border-color: rgba(62,224,160,.18) !important; }
+.dot.on, [data-status="ok"] { background: #3ee0a0 !important; box-shadow: 0 0 6px rgba(62,224,160,.55); }
+.dot.off, [data-status="off"] { background: #e85d5d !important; }
+.dot.warn, [data-status="warn"] { background: #e0b03e !important; }
+html.executive-mode .icon-dock, body.executive-mode .icon-dock, [data-compact="1"] .icon-dock {
+  display: flex !important;
+}
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: rgba(62,224,160,.28); border-radius: 4px; }
+*::-webkit-scrollbar-track { background: transparent; }
+
+#aura-paper-badge, .aura-paper-badge {
+  position: fixed; left: 12px; bottom: 12px; z-index: 95;
+  font: 10px/1.2 ui-monospace, Consolas, monospace;
+  letter-spacing: .08em; text-transform: uppercase;
+  padding: 6px 10px; border-radius: 999px;
+  border: 1px solid rgba(62,224,160,.4);
+  background: rgba(8,14,10,.92); color: #3ee0a0; pointer-events: none;
+}
+#aura-assistant-status {
+  position: fixed; left: 12px; bottom: 44px; z-index: 95;
+  font: 10px ui-monospace, Consolas, monospace; padding: 5px 10px; border-radius: 8px;
+  background: rgba(10,16,20,.9); border: 1px solid rgba(20,200,212,.35); color: #8fd8e0;
+}

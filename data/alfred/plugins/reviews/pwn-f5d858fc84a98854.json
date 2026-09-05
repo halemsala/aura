@@ -1,0 +1,18 @@
+{
+  "ok": false,
+  "blockers": [
+    "import proibido: os",
+    "chamada proibida: system()",
+    "padrão proibido no texto: os.system"
+  ],
+  "warnings": [],
+  "manifest": {
+    "name": "pwn",
+    "risk": "medium",
+    "mutating": true,
+    "sensitive": true,
+    "summary": "pwn",
+    "sha256_16": "f5d858fc84a98854",
+    "bytes": 129
+  }
+}

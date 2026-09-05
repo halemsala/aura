@@ -1,0 +1,75 @@
+{
+  "version": "autonomy-layer-v1-minimal-2026-08-31",
+  "description": "Manifesto mínimo recomendado para Autonomy Layer V1. Ativar apenas o núcleo. Demais agentes em disabled ou shadow.",
+  "paper_trade": true,
+  "execution_allowed": false,
+  "services": {
+    "bridge": { "port": 8080, "enabled": true },
+    "engine": { "port": 8765, "enabled": true },
+    "voice": { "port": 8099, "enabled": true, "note": "manter se voz em uso; senão disabled" }
+  },
+  "agents_core_enabled": [
+    {
+      "id": "engine:corner_intelligence",
+      "status": "enabled",
+      "paper_trade": true,
+      "reason": "núcleo de análise de escanteios"
+    },
+    {
+      "id": "engine:hawkes_corners",
+      "status": "enabled",
+      "paper_trade": true,
+      "reason": "modelo de intensidade de eventos"
+    },
+    {
+      "id": "engine:market_edge",
+      "status": "enabled",
+      "paper_trade": true,
+      "reason": "normalização e edge de mercado"
+    },
+    {
+      "id": "engine:risk_gates",
+      "status": "enabled",
+      "paper_trade": true,
+      "reason": "gates de risco e histerese"
+    },
+    {
+      "id": "engine:data_veracity",
+      "status": "enabled",
+      "paper_trade": true,
+      "reason": "veracidade e consistência de dados"
+    },
+    {
+      "id": "engine:health_score",
+      "status": "enabled",
+      "paper_trade": true,
+      "reason": "saúde operacional"
+    },
+    {
+      "id": "engine:model_shadow",
+      "status": "shadow",
+      "paper_trade": true,
+      "reason": "comparação sem efeito em decisão"
+    },
+    {
+      "id": "engine:voice_planner",
+      "status": "enabled_if_voice",
+      "paper_trade": true,
+      "reason": "somente se Voice :8099 estiver ativo"
+    }
+  ],
+  "agents_policy": {
+    "default_for_others": "disabled",
+    "promotion_requires": [
+      "justificativa escrita",
+      "teste de regressão paper-only",
+      "revisão humana",
+      "entrada no changelog"
+    ]
+  },
+  "notes": [
+    "Este arquivo é um ESBOÇO de política. Não substitui agents/activation_manifest.json automaticamente.",
+    "Aplicar mudanças no manifesto real somente após backup e aprovação.",
+    "Nunca definir execution_allowed=true neste manifesto."
+  ]
+}

@@ -1,0 +1,30 @@
+AURA QUANT-X V37.3.53 COMPLETE
+==============================
+paper_trade=true | execution_allowed=false | GLM_ADVISORY_ONLY=true
+
+INSTALACAO / ARRANQUE (1 CLIQUE)
+--------------------------------
+Extraia este ZIP para C:\aura
+
+Depois clique em:
+  AURA_LIMPEZA_INSTALA_VERIFICA_TUDO.bat
+
+Se tiver 404, cache sujo ou venv partido:
+  AURA_LIMPEZA_INSTALA_VERIFICA_TUDO.bat /FORCE
+
+Alternativas:
+  AURA_INSTALAR_TESTAR_RELATORIO_GERAL.bat
+  AURA_TUDO_EM_UM.bat
+
+URLs:
+  Bridge  http://127.0.0.1:8080/health
+  Engine  http://127.0.0.1:8765/api/health
+  Matriz  http://127.0.0.1:8766/index.html
+  Hermes  http://127.0.0.1:8777/chat
+  Voice   http://127.0.0.1:8099/api/voice/health
+
+Se Hermes OFF:
+  type logs_supervisor\hermes_v10.log
+  AURA_HERMES_V10_ULTRA.bat
+
+NUNCA desative paper_trade / execution_allowed.

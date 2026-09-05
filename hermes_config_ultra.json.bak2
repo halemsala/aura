@@ -1,0 +1,148 @@
+﻿{
+  "version": "10.3.1-MESH-FULL",
+  "system": {
+    "paper_trade": true,
+    "execution_allowed": false,
+    "glm_advisory_only": true,
+    "api_port": 8777,
+    "dashboard_port": 8778,
+    "root_candidates": [
+      "C:\\aura",
+      "."
+    ],
+    "fail_closed": true,
+    "architecture": "mesh"
+  },
+  "security": {
+    "audit_log": "logs_supervisor/security_audit.log",
+    "allowed_hashes_file": "security/allowed_hashes.sha256",
+    "integrity_check_on_boot": true,
+    "max_failed_checks": 3,
+    "block_on_failure": true,
+    "enforce_paper_trade": true,
+    "constitution_engine": "zk_attestation",
+    "tpm_attestation": false,
+    "attestation_note": "boot_attestation.sha256 over critical files â€” not hardware TPM"
+  },
+  "orchestrator": {
+    "checkpoint_db": "orchestrator/state_checkpoints/checkpoints.db",
+    "retry_attempts": 3,
+    "retry_delay_seconds": 2,
+    "human_in_the_loop": true,
+    "event_bus_db": "orchestrator/event_bus.db"
+  },
+  "agents": {
+    "backup_before_fix": true,
+    "fix_allowlist": [
+      "domain_lock",
+      "fix_desktop_json",
+      "rotate_logs",
+      "status",
+      "latest"
+    ],
+    "fix_blocklist": [
+      "set_execution_true",
+      "enable_execution",
+      "disable_paper_trade"
+    ],
+    "memory": {
+      "engine": "lcm",
+      "db": "data/lcm_memory.db"
+    }
+  },
+  "digital_twin": {
+    "simulation_depth": 2,
+    "max_simulation_time_seconds": 15
+  },
+  "anomaly_detection": {
+    "alert_threshold": 0.75,
+    "features": [
+      "port_down_count",
+      "log_mb",
+      "live_missing",
+      "error_markers"
+    ]
+  },
+  "self_healing": {
+    "enabled": true,
+    "max_auto_fixes_per_hour": 2,
+    "confidence_threshold": 0.9,
+    "cooldown_minutes": 10,
+    "escalate_after_failures": 2,
+    "dry_run_by_default": true
+  },
+  "red_team": {
+    "safe_mode": true,
+    "scan_interval_minutes": 60
+  },
+  "constitution": {
+    "mode": "non_bypassable",
+    "case_insensitive": true,
+    "normalize_unicode": true,
+    "forbidden_patterns": [
+      "execution_allowed\\s*=\\s*['\"]?true['\"]?",
+      "allowRealOrders\\s*:\\s*['\"]?true['\"]?",
+      "aposta\\s+real",
+      "live\\s+trade",
+      "ordem\\s+real",
+      "paper_trade\\s*=\\s*['\"]?false['\"]?"
+    ],
+    "forbidden_actions": [
+      "set_execution_true",
+      "enable_execution",
+      "disable_paper_trade",
+      "activate_live_orders"
+    ]
+  },
+  "network": {
+    "api_bind": "127.0.0.1",
+    "dashboard_bind": "127.0.0.1"
+  },
+  "consensus": {
+    "quorum": 3,
+    "agreement_threshold": 0.67
+  },
+  "budget": {
+    "max_tokens_per_run": 50000,
+    "max_tool_calls_per_run": 30,
+    "max_cost_usd_per_day": 10
+  },
+  "circuit_breaker": {
+    "failure_threshold": 5,
+    "window_seconds": 60,
+    "cooldown_seconds": 30
+  },
+  "model_routing": {
+    "require_sovereign_for": [
+      "read_secrets",
+      "apply_fix",
+      "domain_lock",
+      "constitution_check"
+    ],
+    "default_model": "qwen3:8b"
+  },
+  "egress": {
+    "default_deny": true
+  },
+  "drift": {
+    "baseline_window": 100,
+    "alert_threshold": 0.3
+  },
+  "supply_chain": {
+    "slsa_level": 2,
+    "sigstore_sign": false
+  },
+  "constitutional_ai": {
+    "enabled": true,
+    "min_pairs_for_export": 10
+  },
+  "federation": {
+    "a2a_enabled": false,
+    "local_agent": "hermes-aura-01",
+    "remote_endpoints": {}
+  },
+  "lineage": {
+    "db": "data/lineage.db"
+  }
+}
+

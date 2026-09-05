@@ -1,0 +1,40 @@
+AURA QUANT-X V37.3.53 + AUTONOMY LAYER V1 (COMPLETO)
+====================================================
+
+Este ZIP é o pacote COMPLETO do sistema AURA QUANT-X V37.3.53
+com a camada de governança e autonomia (paper-only).
+
+INVARIANTES (não alterar):
+  paper_trade=true
+  execution_allowed=false
+  GLM_ADVISORY_ONLY=true
+
+CONTEÚDO ADICIONAL (pasta AURA_AUTONOMY_V1/ e raiz)
+--------------------------------------------------
+  AGENTS.md                      Contrato operacional Autonomy V1
+  AURA_AUTONOMY_V1/AGENTS.md     Mesmo contrato (cópia na pasta)
+  AURA_AUTONOMY_V1/MANIFESTO_MINIMO.json
+  AURA_AUTONOMY_V1/aura_doctor.py
+  AURA_AUTONOMY_V1/CHECKLIST_VALIDACAO.md
+  AURA_AUTONOMY_V1/PLANO_WINDOWS_CMD.md
+  AURA_AUTONOMY_V1/STRIX_ISOLADO.md
+  00_LEIA_ME_GOVERNANCE_V37.3.53.txt
+  CHANGELOG_GOVERNANCE_20260831.txt
+  00_LEIA_ME_AUTONOMY_V1.txt     (este arquivo)
+  CHANGELOG_AUTONOMY_V1.txt
+
+INSTALAÇÃO (Windows)
+--------------------
+1. Extraia este ZIP para C:\aura (sem pasta-invólucro)
+2. copy config\AURA_RUNTIME.env.example config\AURA_RUNTIME.env
+   (mantenha PAPER=1, EXECUTION=0, UNLOCK_LIVE=0)
+3. AURA_LIMPEZA_INSTALA_VERIFICA_TUDO.bat
+4. Copie scripts se necessário:
+   copy AURA_AUTONOMY_V1\aura_doctor.py scripts\aura_doctor.py
+5. engine\venv\Scripts\python.exe scripts\aura_doctor.py
+6. Siga AURA_AUTONOMY_V1\CHECKLIST_VALIDACAO.md
+
+NÃO instale Strix neste ambiente.
+NÃO desative paper_trade.
+
+ROLLBACK: pare serviços AURA → restaure backup → reextraia ZIP limpo.

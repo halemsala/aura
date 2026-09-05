@@ -1,0 +1,27 @@
+AURA QUANT-X HERMES — V37.3.30 GROK OPS SEGURO
+==============================================
+paper_trade=true | execution_allowed=false
+
+COMECE AQUI
+-----------
+1. INSTALAR_TUDO.bat          (admin, primeira vez)
+2. AURA_GROK_FIX.bat          (reparo voz/portas/sintaxe)
+3. AURA_GROK_ACTIVATE.bat     (arranque)
+4. AURA_GROK_GPU_LIVRE.bat    (quando precisar libertar GPU)
+
+DOCUMENTACAO
+------------
+- DOCUMENTACAO_COMPLETA_AURA_QUANT_X_HERMES.md
+- PROMPT_ASSISTENTE_OPERACOES_AURA_SEGURO.txt
+- AURA_VOICE_ACCEPTANCE_CHECKLIST_OFFLINE.md
+- LEIA-ME_PRIMEIRO.txt
+- LEIA-ME_GROK_OPS_SEGURO.txt
+
+PORTAS
+------
+8080 Bridge | 8765 Engine | 8099 Voice | 8766 Matriz | 8777 Hermes
+11434 Ollama (nunca morto pelos BATs de limpeza)
+
+PROIBIDO NESTE PACOTE
+---------------------
+Unlock execution | shell livre | Photoshop como ferramenta AURA | Voicebox no nucleo

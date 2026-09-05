@@ -1,0 +1,47 @@
+AURA QUANT-X V37.3.53 + GOVERNANÇA (2026-08-31)
+================================================
+
+Este ZIP é o pacote COMPLETO original V37.3.53 acrescido de:
+
+  - AGENTS.md                  → contrato de governança (paper-only, limites, critérios)
+  - 00_LEIA_ME_GOVERNANCE_...  → este arquivo
+  - CHANGELOG_GOVERNANCE_...   → registro das adições
+
+NADA do runtime original foi removido ou alterado.
+Invariantes permanecem: paper_trade=true | execution_allowed=false | GLM_ADVISORY_ONLY
+
+INSTALAÇÃO (Windows)
+--------------------
+1. Extraia este ZIP para C:\aura (ou C:\AURA_V25)
+   O ZIP NÃO tem pasta-invólucro.
+
+2. Copie o exemplo de ambiente:
+   copy config\AURA_RUNTIME.env.example config\AURA_RUNTIME.env
+   (mantenha PAPER=1, EXECUTION=0, UNLOCK_LIVE=0)
+
+3. Execute o instalador oficial:
+   AURA_LIMPEZA_INSTALA_VERIFICA_TUDO.bat
+
+   Em caso de venv/cache corrompido:
+   AURA_LIMPEZA_INSTALA_VERIFICA_TUDO.bat /FORCE
+
+4. Alternativa com relatório completo:
+   AURA_INSTALAR_TESTAR_RELATORIO_GERAL.bat
+
+5. Valide:
+   curl http://127.0.0.1:8080/health
+   curl http://127.0.0.1:8765/api/health
+   curl http://127.0.0.1:8099/api/voice/health
+   type logs_supervisor\RELATORIO_GERAL_LATEST.txt
+
+LEIA TAMBÉM
+-----------
+- AGENTS.md          (governança obrigatória)
+- 00_LEIA_ME_V37.3.53_LIMPEZA_VERIFICA.txt (instruções originais)
+- AURA_MAPA_DO_SISTEMA.md
+
+ROLLBACK
+--------
+Pare os serviços nas portas AURA → restaure a pasta de backup → reextraia o ZIP limpo.
+
+NUNCA desative paper_trade / execution_allowed para “destravar”.

@@ -1,0 +1,205 @@
+{
+  "generated_at": "2026-09-02T13:36:25",
+  "root": "C:\\aura",
+  "status": "DEGRADED",
+  "counts": {
+    "ok": 26,
+    "warn": 0,
+    "fail": 1,
+    "total": 27
+  },
+  "results": [
+    {
+      "layer": "file:engine/server.py",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "presente"
+    },
+    {
+      "layer": "file:bridge/server.py",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "presente"
+    },
+    {
+      "layer": "file:desktop/capture/aura-capture.js",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "presente"
+    },
+    {
+      "layer": "file:engine/agents/hermes_supervisor_agent.py",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "presente"
+    },
+    {
+      "layer": "file:scripts/smoke_test.py",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "presente"
+    },
+    {
+      "layer": "file:scripts/aura_hermes_e2e.py",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "presente"
+    },
+    {
+      "layer": "file:AURA_LIMPEZA_E_INSTALACAO_COMPLETA.bat",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "presente"
+    },
+    {
+      "layer": "file:AURA_TUDO_EM_UM.bat",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "presente"
+    },
+    {
+      "layer": "Porta_8080_Bridge",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "LISTEN"
+    },
+    {
+      "layer": "Porta_8765_Engine",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "LISTEN"
+    },
+    {
+      "layer": "Porta_8099_Voice",
+      "ok": true,
+      "soft": true,
+      "status": "OK",
+      "detail": "LISTEN"
+    },
+    {
+      "layer": "Porta_11434_Ollama",
+      "ok": true,
+      "soft": true,
+      "status": "OK",
+      "detail": "LISTEN"
+    },
+    {
+      "layer": "Bridge_health",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "ok ageSec=2.4 lines=6140"
+    },
+    {
+      "layer": "Engine_health",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "alive"
+    },
+    {
+      "layer": "Voice_health",
+      "ok": true,
+      "soft": true,
+      "status": "OK",
+      "detail": "ok"
+    },
+    {
+      "layer": "Ollama_tags",
+      "ok": true,
+      "soft": true,
+      "status": "OK",
+      "detail": "models=7"
+    },
+    {
+      "layer": "Bridge_latest_HTTP",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "ok"
+    },
+    {
+      "layer": "Captura_identidade",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "Udinese x Venezia min=36"
+    },
+    {
+      "layer": "Captura_rica",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "corners=1-0 atk_h=9 dang_h=5 xg_h=0.32"
+    },
+    {
+      "layer": "Feed_fresco",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "ageSec=2.4"
+    },
+    {
+      "layer": "UI_state",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "home=Udinese away=Venezia source=bridge_latest stale=False jarvis=OFFLINE"
+    },
+    {
+      "layer": "Sync_UI_Bridge",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "bridge=Udinese ui=Udinese"
+    },
+    {
+      "layer": "Paper_only",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "paper_trade=True exec=False"
+    },
+    {
+      "layer": "Smoke_test",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "[SUCCESS] All services healthy. Invariants must remain paper_trade=true, execution_allowed=false."
+    },
+    {
+      "layer": "Hermes_once",
+      "ok": true,
+      "soft": false,
+      "status": "OK",
+      "detail": "**Hermes Supervisor** - HEALTHY"
+    },
+    {
+      "layer": "Hermes_E2E",
+      "ok": false,
+      "soft": false,
+      "status": "FAIL",
+      "detail": "RESULTADO: FAIL |  | Photoshop nao encontrado: No module named 'photoshop'"
+    },
+    {
+      "layer": "Desktop_process",
+      "ok": true,
+      "soft": true,
+      "status": "OK",
+      "detail": "1"
+    }
+  ],
+  "paper_trade": true,
+  "execution_allowed": false,
+  "version": "12.7.62-V27-RELATORIO-GERAL"
+}

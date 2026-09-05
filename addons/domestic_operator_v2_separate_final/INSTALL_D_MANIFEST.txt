@@ -1,0 +1,9 @@
+INSTALLATION=domestic-operator-v2
+SOURCE=pasted_content_6.txt
+DESTINATION=/home/ubuntu/aura_inspect/AURA_V25T_FULL/AURA_QUANT_X_12.7.0_V25_INSTALLER_FIXED/addons/domestic_operator_v2_separate_final
+STATUS=installed-separated-not-activated
+SANDBOX=Documents/AURA_Domestico
+PC_OPERATOR_V1=untouched
+VOICE_SERVER=untouched
+AUTOSTART=false
+EXECUTION_STARTED=false

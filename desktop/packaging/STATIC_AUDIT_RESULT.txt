@@ -1,0 +1,35 @@
+AURA QUANT-X V25 — RESULTADO DA AUDITORIA ESTÁTICA DO INSTALADOR
+================================================================
+
+Resultado: PASS
+
+Verificações aprovadas:
+- AURA_Setup.iss presente e versionado como V25.
+- Payload aponta para desktop\\publish.
+- WebView2 é pré-requisito verificado pelo instalador.
+- Dados são criados em %LOCALAPPDATA%\\AURA_QUANT_X.
+- [Run] não chama AURA_INICIAR_SISTEMA.bat.
+- [Run] não inicia Ollama ou qualquer backend.
+- AURA_ABRIR_DESKTOP_SEGURO.bat não inicia serviços.
+- Publicação é win-x64 e autocontida por padrão.
+- Execução real permanece bloqueada.
+- BUILD_WINDOWS_INSTALLER.ps1 gera hash do Setup.exe.
+- Referências críticas do payload existem.
+
+Limitação do ambiente:
+- O sandbox atual é Linux.
+- Inno Setup (ISCC.exe) não está disponível.
+- dotnet SDK/WinForms Windows não está disponível.
+- WebView2 Runtime não está disponível.
+- Portanto, nenhum Setup.exe Windows foi declarado como compilado nesta sessão.
+
+Build em Windows:
+- Execute desktop\\packaging\\BUILD_WINDOWS_INSTALLER.ps1 em Windows x64.
+- O artefato esperado é dist_installer\\AURA_QUANT_X_Setup_V25_x64.exe.
+- O build gera installer-build.json e arquivo .sha256.
+
+Política:
+- Backend não inicia no Setup.
+- Ollama não inicia no Setup.
+- Telegram, microfone, câmera, compute e autostart ficam desligados.
+- PAPER_TRADE=true e EXECUTION_ALLOWED=false permanecem obrigatórios.

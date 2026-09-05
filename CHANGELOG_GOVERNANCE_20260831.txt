@@ -1,0 +1,29 @@
+CHANGELOG — AURA QUANT-X V37.3.53 + GOVERNANÇA
+Data: 2026-08-31
+
+ADICIONADO
+----------
+- AGENTS.md
+  Contrato operacional: missão, limites absolutos (paper-only),
+  padrões de código/testes, política de segredos, memória,
+  confirmação humana para alto impacto, incidentes/rollback,
+  critérios de “concluído”, comandos de referência e observabilidade.
+
+- 00_LEIA_ME_GOVERNANCE_V37.3.53.txt
+  Instruções de instalação alinhadas ao pacote com governança.
+
+- CHANGELOG_GOVERNANCE_20260831.txt
+  Este registro.
+
+NÃO ALTERADO
+------------
+- Nenhum arquivo de runtime (engine/, bridge/, desktop/, agents/, hermes_v10/, BATs oficiais).
+- Invariantes paper_trade / execution_allowed / GLM_ADVISORY_ONLY.
+- Allowlist, requirements, manifests e scripts de instalação originais.
+
+COMPATIBILIDADE
+---------------
+100% compatível com instalação via:
+  AURA_LIMPEZA_INSTALA_VERIFICA_TUDO.bat
+  AURA_INSTALAR_TESTAR_RELATORIO_GERAL.bat
+  AURA_TUDO_EM_UM.bat

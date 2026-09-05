@@ -1,0 +1,17 @@
+﻿--- SERVICOS ---
+
+ Status StartType Name                   DisplayName                                                
+ ------ --------- ----                   -----------                                                
+Stopped    Manual TieringEngineService   Gestão de Camadas de Armazenamento                         
+Stopped    Manual wbengine               Serviço do Motor de Cópia de Segurança de Nível de Bloqueio
+Running Automatic WMIRegistrationService Intel(R) Management Engine WMI Provider Registration       
+
+
+--- TAREFAS ---
+
+TaskPath                       TaskName                                       State Author          
+--------                       --------                                       ----- ------          
+\Lenovo\Lenovo Service Bridge\ S-1-5-21-2883563625-2750928919-1808076865-1001 Ready Lenovo          
+\Microsoft\Windows\SpacePort\  SpaceAgentTask                                 Ready Microsoft Cor...
+
+

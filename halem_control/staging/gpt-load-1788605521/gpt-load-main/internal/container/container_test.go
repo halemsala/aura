@@ -1,0 +1,1406 @@
+package container
+
+import (
+	"context"
+	"encoding/json"
+	"net/http"
+	"net/http/httptest"
+	"os"
+	"path/filepath"
+	"reflect"
+	"strings"
+	"testing"
+	"time"
+
+	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
+
+	"gpt-load/internal/accessquota"
+	"gpt-load/internal/app"
+	"gpt-load/internal/channel"
+	"gpt-load/internal/control"
+	"gpt-load/internal/dialect"
+	"gpt-load/internal/gateway"
+	"gpt-load/internal/health"
+	"gpt-load/internal/outboundproxy"
+	"gpt-load/internal/platform/authkey"
+	"gpt-load/internal/platform/config"
+	"gpt-load/internal/platform/encryption"
+	"gpt-load/internal/platform/httpclient"
+	"gpt-load/internal/platform/i18n"
+	"gpt-load/internal/platform/redact"
+	"gpt-load/internal/protocol"
+	"gpt-load/internal/ratelimit"
+	"gpt-load/internal/requestlog"
+	"gpt-load/internal/state"
+	stateloader "gpt-load/internal/state/loader"
+	"gpt-load/internal/storage"
+	"gpt-load/internal/storage/models"
+	"gpt-load/internal/telemetry"
+	"gpt-load/internal/webui"
+)
+
+func TestSystemOutboundProxyProviderUsesEnvironmentAndLatestGlobalSnapshot(t *testing.T) {
+	t.Setenv("HTTPS_PROXY", "http://environment-proxy.example.com:8080")
+	t.Setenv("https_proxy", "")
+	t.Setenv("HTTP_PROXY", "")
+	t.Setenv("http_proxy", "")
+
+	manager := state.NewManager()
+	provider := newSystemOutboundProxyProvider(manager)
+	if got := provider(); got.Config.Mode != outboundproxy.ModeEnvironment ||
+		got.Source != outboundproxy.SourceEnvironment {
+		t.Fatalf("environment proxy = %#v", got)
+	}
+
+	custom := outboundproxy.Config{
+		Mode: outboundproxy.ModeCustom,
+		URL:  "socks5://global-proxy.example.com:1080",
+	}
+	if _, err := manager.Publish(state.CompileInput{
+		ChannelRegistry: channel.NewRegistry(),
+		GlobalProxy:     &custom,
+	}); err != nil {
+		t.Fatal(err)
+	}
+	if got := provider(); got.Config != custom || got.Source != outboundproxy.SourceGlobal {
+		t.Fatalf("custom global proxy = %#v", got)
+	}
+
+	direct := outboundproxy.Config{Mode: outboundproxy.ModeDirect}
+	if _, err := manager.Publish(state.CompileInput{
+		ChannelRegistry: channel.NewRegistry(),
+		GlobalProxy:     &direct,
+	}); err != nil {
+		t.Fatal(err)
+	}
+	if got := provider(); got.Config.Mode != outboundproxy.ModeDirect ||
+		got.Source != outboundproxy.SourceGlobal {
+		t.Fatalf("direct global proxy = %#v", got)
+	}
+}
+
+func TestBuildContainerInstallsDataPlaneCORSBeforeRouteAuthentication(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+	if err := i18n.Init(); err != nil {
+		t.Fatalf("i18n.Init() error = %v", err)
+	}
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+	var engine *gin.Engine
+	var manager *state.Manager
+	if err := dependencyContainer.Invoke(func(
+		resolvedEngine *gin.Engine,
+		resolvedManager *state.Manager,
+		db *gorm.DB,
+	) {
+		engine = resolvedEngine
+		manager = resolvedManager
+		sqlDB, dbErr := db.DB()
+		if dbErr == nil {
+			t.Cleanup(func() { _ = sqlDB.Close() })
+		}
+	}); err != nil {
+		t.Fatalf("resolve container dependencies: %v", err)
+	}
+	if _, err := manager.Publish(state.CompileInput{
+		ChannelRegistry: channel.NewRegistry(),
+		SystemSettings: config.Settings{
+			state.SettingCORS: map[string]any{
+				"enabled":         true,
+				"allowed_origins": []any{"app://obsidian.md"},
+				"allowed_methods": []any{"POST"},
+				"allowed_headers": []any{"Authorization"},
+			},
+		},
+	}); err != nil {
+		t.Fatalf("publish CORS settings: %v", err)
+	}
+
+	for _, target := range []string{"/v1/responses", "/v1/chat/completions"} {
+		request := httptest.NewRequest(http.MethodOptions, target, nil)
+		request.Header.Set("Origin", "app://obsidian.md")
+		request.Header.Set("Access-Control-Request-Method", "POST")
+		request.Header.Set("Access-Control-Request-Headers", "Authorization")
+		response := httptest.NewRecorder()
+		engine.ServeHTTP(response, request)
+
+		if response.Code != http.StatusNoContent ||
+			response.Header().Get("Access-Control-Allow-Origin") != "app://obsidian.md" {
+			t.Fatalf("OPTIONS %s = %d headers=%#v, want CORS 204", target, response.Code, response.Header())
+		}
+		if response.Header().Get("X-Gptload-Attempts") != "" ||
+			response.Header().Get("X-Gptload-Group") != "" {
+			t.Fatalf("OPTIONS %s entered data-plane authentication: %#v", target, response.Header())
+		}
+	}
+
+	controlRequest := httptest.NewRequest(http.MethodOptions, "/api/settings", nil)
+	controlRequest.Header.Set("Origin", "app://obsidian.md")
+	controlRequest.Header.Set("Access-Control-Request-Method", "PUT")
+	controlResponse := httptest.NewRecorder()
+	engine.ServeHTTP(controlResponse, controlRequest)
+	if controlResponse.Code == http.StatusNoContent ||
+		controlResponse.Header().Get("Access-Control-Allow-Origin") != "" {
+		t.Fatalf("control-plane OPTIONS unexpectedly used data-plane CORS: %d %#v", controlResponse.Code, controlResponse.Header())
+	}
+}
+
+func TestBuildContainerDoesNotInitializeUnusedRuntimeStore(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+	t.Setenv("REDIS_DSN", "://invalid-redis-dsn")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() must ignore REDIS_DSN, error = %v", err)
+	}
+	err = dependencyContainer.Invoke(func(_ *app.App, db *gorm.DB) {
+		sqlDB, dbErr := db.DB()
+		if dbErr == nil {
+			t.Cleanup(func() { _ = sqlDB.Close() })
+		}
+	})
+	if err != nil {
+		t.Fatalf("resolve database: %v", err)
+	}
+}
+
+func TestBuildContainerRestoresAndReconcilesAccessKeyCostLimits(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+	err = dependencyContainer.Invoke(func(
+		runtimeState app.RuntimeStateLoader,
+		quotaRuntime *accessquota.Runtime,
+		requestLogRuntime *requestlog.Service,
+		manager *state.Manager,
+		db *gorm.DB,
+	) {
+		t.Cleanup(func() {
+			sqlDB, dbErr := db.DB()
+			if dbErr == nil {
+				_ = sqlDB.Close()
+			}
+		})
+		if migrateErr := storage.AutoMigrate(db); migrateErr != nil {
+			t.Fatalf("AutoMigrate() error = %v", migrateErr)
+		}
+		accessKey := models.AccessKey{
+			Name: "limited", KeyValue: "cipher", KeyHash: "limited-hash",
+			KeySuffix: "0abc", Status: "active", Filters: models.JSON(`{}`),
+		}
+		if createErr := db.Create(&accessKey).Error; createErr != nil {
+			t.Fatalf("create access key: %v", createErr)
+		}
+		rule := models.AccessKeyCostLimitRule{
+			AccessKeyID: accessKey.ID, Kind: models.AccessKeyCostLimitKindTotal,
+			LimitNanoUSD: 100, RuleRevision: 1,
+		}
+		if createErr := db.Create(&rule).Error; createErr != nil {
+			t.Fatalf("create cost limit rule: %v", createErr)
+		}
+		if createErr := db.Create(&models.AccessKeyCostLimitState{
+			RuleID: rule.ID, RuleRevision: 1, UsedNanoUSD: 75, SnapshotVersion: 3,
+		}).Error; createErr != nil {
+			t.Fatalf("create cost limit state: %v", createErr)
+		}
+
+		if loadErr := runtimeState.Load(t.Context()); loadErr != nil {
+			t.Fatalf("Load() error = %v", loadErr)
+		}
+		view := quotaRuntime.Snapshot(accessKey.ID, time.Now())
+		if len(view.Rules) != 1 || view.Rules[0].UsedNanoUSD != 75 || view.Rules[0].LimitNanoUSD != 100 {
+			t.Fatalf("restored view = %#v", view)
+		}
+		if startErr := requestLogRuntime.Start(); startErr != nil {
+			t.Fatalf("start request log runtime: %v", startErr)
+		}
+		t.Cleanup(func() { _ = requestLogRuntime.Stop(context.Background()) })
+		ticket, quotaDecision := quotaRuntime.Admit(accessKey.ID, time.Now())
+		if !quotaDecision.Allowed {
+			t.Fatalf("Admit() = %#v", quotaDecision)
+		}
+		quotaRuntime.Complete(ticket, 5)
+		deadline := time.Now().Add(3 * time.Second)
+		for {
+			var persisted models.AccessKeyCostLimitState
+			if queryErr := db.First(&persisted, rule.ID).Error; queryErr != nil {
+				t.Fatalf("read checkpoint: %v", queryErr)
+			}
+			if persisted.UsedNanoUSD == 80 {
+				break
+			}
+			if time.Now().After(deadline) {
+				t.Fatalf("checkpoint used = %d, want 80", persisted.UsedNanoUSD)
+			}
+			time.Sleep(10 * time.Millisecond)
+		}
+
+		input, buildErr := stateloader.BuildCompileInput(t.Context(), db)
+		if buildErr != nil {
+			t.Fatalf("BuildCompileInput() error = %v", buildErr)
+		}
+		input.AccessKeys[0].CostLimitRules[0].LimitNanoUSD = 50
+		if _, publishErr := manager.Publish(input); publishErr != nil {
+			t.Fatalf("Publish() error = %v", publishErr)
+		}
+		if decision := quotaRuntime.Check(accessKey.ID, time.Now()); decision.Allowed {
+			t.Fatalf("Check() = %#v, want lowered limit to block", decision)
+		}
+	})
+	if err == nil {
+		return
+	}
+	if strings.Contains(err.Error(), "missing type: *accessquota.Runtime") {
+		t.Fatalf("access quota runtime is not wired: %v", err)
+	}
+	t.Fatalf("resolve cost limit graph: %v", err)
+}
+
+func TestBuildContainerPublishesCodexSubscriptionGroup(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+	err = dependencyContainer.Invoke(func(
+		channels *channel.Registry,
+		manager *state.Manager,
+		db *gorm.DB,
+	) {
+		t.Cleanup(func() {
+			sqlDB, dbErr := db.DB()
+			if dbErr == nil {
+				_ = sqlDB.Close()
+			}
+		})
+		_, publishErr := manager.Publish(state.CompileInput{
+			ChannelRegistry: channels,
+			Groups: []state.GroupConfig{{
+				ID: 1, Name: "codex-subscription", ChannelID: channel.Codex,
+				ConnectionType: string(models.ConnectionTypeSubscription),
+				Params:         json.RawMessage(`{}`),
+				Models:         []state.ModelConfig{{ID: "gpt-5.2"}},
+				Enabled:        true,
+			}},
+		})
+		if publishErr != nil {
+			t.Fatalf("Publish() Codex subscription error = %v", publishErr)
+		}
+	})
+	if err != nil {
+		t.Fatalf("resolve Codex publication graph: %v", err)
+	}
+}
+
+func TestBuildContainerPublishesClaudeSubscriptionGroup(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+	err = dependencyContainer.Invoke(func(
+		channels *channel.Registry,
+		manager *state.Manager,
+		db *gorm.DB,
+	) {
+		t.Cleanup(func() {
+			sqlDB, dbErr := db.DB()
+			if dbErr == nil {
+				_ = sqlDB.Close()
+			}
+		})
+		_, publishErr := manager.Publish(state.CompileInput{
+			ChannelRegistry: channels,
+			Groups: []state.GroupConfig{{
+				ID: 1, Name: "claude-subscription", ChannelID: channel.Claude,
+				ConnectionType: string(models.ConnectionTypeSubscription),
+				Params:         json.RawMessage(`{}`),
+				Models:         []state.ModelConfig{{ID: "claude-sonnet-4-5"}},
+				Enabled:        true,
+			}},
+		})
+		if publishErr != nil {
+			t.Fatalf("Publish() Claude subscription error = %v", publishErr)
+		}
+	})
+	if err != nil {
+		t.Fatalf("resolve Claude publication graph: %v", err)
+	}
+}
+
+func TestBuildContainerWiresRequestLogRetentionSnapshotProvider(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+	err = dependencyContainer.Invoke(func(
+		_ *requestlog.Service,
+		policy requestlog.RetentionPolicyProvider,
+		manager *state.Manager,
+		db *gorm.DB,
+	) {
+		t.Cleanup(func() {
+			sqlDB, dbErr := db.DB()
+			if dbErr == nil {
+				_ = sqlDB.Close()
+			}
+		})
+		if got := policy.RequestLogRetentionDays(); got != 7 {
+			t.Fatalf("uninitialized retention days = %d, want 7", got)
+		}
+		if _, publishErr := manager.Publish(state.CompileInput{
+			SystemSettings: config.Settings{state.SettingRequestLogRetentionDays: 30},
+		}); publishErr != nil {
+			t.Fatalf("Publish() error = %v", publishErr)
+		}
+		if got := policy.RequestLogRetentionDays(); got != 30 {
+			t.Fatalf("published retention days = %d, want 30", got)
+		}
+	})
+	if err != nil {
+		t.Fatalf("resolve request-log retention graph: %v", err)
+	}
+}
+
+func TestBuildContainerWiresUsageReaderToSingletonRequestLogService(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+	err = dependencyContainer.Invoke(func(
+		service *requestlog.Service,
+		reader control.UsageStatReader,
+		db *gorm.DB,
+	) {
+		sqlDB, dbErr := db.DB()
+		if dbErr == nil {
+			t.Cleanup(func() { _ = sqlDB.Close() })
+		}
+		if reader != service {
+			t.Fatalf("UsageStatReader = %T, want singleton %p", reader, service)
+		}
+	})
+	if err != nil {
+		t.Fatalf("resolve usage reader graph: %v", err)
+	}
+}
+
+func TestBuildContainerWiresHomeStatisticsReaderToSingletonRequestLogService(
+	t *testing.T,
+) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+	err = dependencyContainer.Invoke(func(
+		service *requestlog.Service,
+		usageReader control.UsageStatReader,
+		homeReader control.HomeStatisticsReader,
+		db *gorm.DB,
+	) {
+		sqlDB, dbErr := db.DB()
+		if dbErr == nil {
+			t.Cleanup(func() { _ = sqlDB.Close() })
+		}
+		if usageReader != service || homeReader != service {
+			t.Fatalf(
+				"statistics readers = %T/%T, want singleton %p",
+				usageReader,
+				homeReader,
+				service,
+			)
+		}
+	})
+	if err != nil {
+		t.Fatalf("resolve Home statistics reader graph: %v", err)
+	}
+}
+
+func TestBuildContainerWiresSingletonPriceRuntime(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+	err = dependencyContainer.Invoke(func(
+		controlService *control.Service,
+		runtime *control.PriceRuntime,
+		provider gateway.PriceTableProvider,
+		requestLogService *requestlog.Service,
+		db *gorm.DB,
+	) {
+		sqlDB, dbErr := db.DB()
+		if dbErr == nil {
+			t.Cleanup(func() { _ = sqlDB.Close() })
+		}
+		if provider.Load() != nil || runtime.Load() != nil {
+			t.Fatal("price runtime was published before bootstrap")
+		}
+		if err := storage.AutoMigrate(db); err != nil {
+			t.Fatalf("AutoMigrate() error = %v", err)
+		}
+		if err := controlService.EnsureInitialState(context.Background()); err != nil {
+			t.Fatalf("EnsureInitialState() error = %v", err)
+		}
+		if runtime.Load() == nil || provider.Load() != runtime.Load() {
+			t.Fatalf(
+				"provider table = %p, runtime table = %p, want shared published table",
+				provider.Load(),
+				runtime.Load(),
+			)
+		}
+		if err := requestLogService.Start(); err != nil {
+			t.Fatalf("requestlog.Start() after bootstrap error = %v", err)
+		}
+		if err := requestLogService.Stop(context.Background()); err != nil {
+			t.Fatalf("requestlog.Stop() error = %v", err)
+		}
+	})
+	if err != nil {
+		t.Fatalf("resolve price runtime graph: %v", err)
+	}
+}
+
+func TestBuildContainerResolvesAllDialects(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+	err = dependencyContainer.Invoke(func(
+		openAI *dialect.OpenAI,
+		openAIResponses *dialect.OpenAIResponses,
+		openAIImages *dialect.OpenAIImages,
+		openAIEmbeddings *dialect.OpenAIEmbeddings,
+		anthropic *dialect.Anthropic,
+		gemini *dialect.Gemini,
+		values dialect.Set,
+		db *gorm.DB,
+	) {
+		t.Cleanup(func() {
+			sqlDB, dbErr := db.DB()
+			if dbErr == nil {
+				_ = sqlDB.Close()
+			}
+		})
+		if values[protocol.OpenAICompletions] != openAI ||
+			values[protocol.OpenAIResponses] != openAIResponses ||
+			values[protocol.OpenAIImages] != openAIImages ||
+			values[protocol.OpenAIEmbeddings] != openAIEmbeddings ||
+			values[protocol.Anthropic] != anthropic ||
+			values[protocol.Gemini] != gemini || len(values) != 6 {
+			t.Fatalf("dialect Set = %#v", values)
+		}
+	})
+	if err != nil {
+		t.Fatalf("resolve dialects: %v", err)
+	}
+}
+
+func TestBuildContainerResolvesRuntimeDependencies(t *testing.T) {
+	dataDir := t.TempDir()
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", dataDir)
+	t.Setenv("DATABASE_DSN", "")
+	t.Setenv("ENCRYPTION_KEY", "")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+
+	var resolved bool
+	err = dependencyContainer.Invoke(func(
+		_ *app.App,
+		cfg *config.Config,
+		keyService encryption.Service,
+		db *gorm.DB,
+		_ *gin.Engine,
+		manager *state.Manager,
+		registry *state.CredentialRegistry,
+		startupBootstrap app.StartupBootstrap,
+		runtimeState app.RuntimeStateLoader,
+		gatewayHandler *gateway.Handler,
+		attemptForwarder gateway.AttemptForwarder,
+		_ dialect.Set,
+		_ *control.Service,
+		_ *control.Server,
+		statsStore *health.StatsStore,
+		rpmLimiter *ratelimit.AccessKeyRPM,
+		gatewayLimiter gateway.AccessKeyRPMLimiter,
+		requestLogService *requestlog.Service,
+		requestLogSink telemetry.RequestLogSink,
+		runtime *control.Runtime,
+		_ app.ControlRuntime,
+		_ *httpclient.HTTPClientManager,
+		_ *redact.Redactor,
+		_ *dialect.OpenAI,
+		_ *webui.Server,
+	) {
+		t.Cleanup(func() {
+			sqlDB, dbErr := db.DB()
+			if dbErr == nil {
+				_ = sqlDB.Close()
+			}
+		})
+		if err := storage.AutoMigrate(db); err != nil {
+			t.Fatalf("AutoMigrate() error = %v", err)
+		}
+		if err := startupBootstrap.EnsureInitialState(context.Background()); err != nil {
+			t.Fatalf("EnsureInitialState() error = %v", err)
+		}
+		if err := runtimeState.Load(context.Background()); err != nil {
+			t.Fatalf("runtimeState.Load() error = %v", err)
+		}
+		var row models.AccessKey
+		if err := db.First(&row).Error; err != nil {
+			t.Fatalf("read default AccessKey: %v", err)
+		}
+		plaintext, err := keyService.Decrypt(row.KeyValue)
+		if err != nil {
+			t.Fatalf("decrypt default AccessKey: %v", err)
+		}
+		snapshot := manager.Current()
+		if snapshot == nil || len(snapshot.AccessKeysByHash) != 1 {
+			t.Fatalf("current snapshot = %#v", snapshot)
+		}
+		if _, ok := snapshot.AccessKeysByHash[keyService.Hash(plaintext)]; !ok {
+			t.Fatal("first snapshot cannot authenticate default AccessKey")
+		}
+		if got := registry.CollectCredentialCandidates(nil, nil, time.Time{}); len(got) != 0 {
+			t.Fatalf("empty registry candidates = %#v", got)
+		}
+		if attemptForwarder == nil {
+			t.Fatal("stream-capable attempt forwarder was not resolved")
+		}
+		if gatewayHandler == nil || runtime == nil || statsStore == nil ||
+			rpmLimiter == nil || gatewayLimiter != rpmLimiter {
+			t.Fatalf(
+				"runtime dependencies were not resolved: gateway=%p runtime=%p stats=%p rpm=%p adapter=%T",
+				gatewayHandler, runtime, statsStore, rpmLimiter, gatewayLimiter,
+			)
+		}
+		if requestLogSink != requestLogService {
+			t.Fatalf(
+				"RequestLogSink = %T, want singleton %p",
+				requestLogSink,
+				requestLogService,
+			)
+		}
+		if want := filepath.Join(dataDir, "gpt-load.db"); cfg.DatabaseDSN != want {
+			t.Fatalf("DatabaseDSN = %q, want %q", cfg.DatabaseDSN, want)
+		}
+		for _, name := range []string{"gpt-load.db", encryption.KeyFileName} {
+			if _, err := os.Stat(filepath.Join(dataDir, name)); err != nil {
+				t.Fatalf("%s was not created in DATA_DIR: %v", name, err)
+			}
+		}
+		if _, err := os.Stat(filepath.Join(dataDir, authkey.FileName)); !os.IsNotExist(err) {
+			t.Fatalf("explicit AUTH_KEY created %s: %v", authkey.FileName, err)
+		}
+		resolved = true
+	})
+	if err != nil {
+		t.Fatalf("resolve runtime dependency graph: %v", err)
+	}
+	if !resolved {
+		t.Fatal("runtime dependency graph was not invoked")
+	}
+}
+
+func TestBuildContainerUsesSingletonAccessKeyRPMLimiter(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+
+	var first *ratelimit.AccessKeyRPM
+	err = dependencyContainer.Invoke(func(
+		limiter *ratelimit.AccessKeyRPM,
+		adapter gateway.AccessKeyRPMLimiter,
+		db *gorm.DB,
+	) {
+		first = limiter
+		if adapter != limiter {
+			t.Fatalf("gateway limiter adapter = %T, want singleton %p", adapter, limiter)
+		}
+		t.Cleanup(func() {
+			sqlDB, dbErr := db.DB()
+			if dbErr == nil {
+				_ = sqlDB.Close()
+			}
+		})
+	})
+	if err != nil {
+		t.Fatalf("resolve first AccessKeyRPM: %v", err)
+	}
+
+	var second *ratelimit.AccessKeyRPM
+	if err := dependencyContainer.Invoke(func(limiter *ratelimit.AccessKeyRPM) {
+		second = limiter
+	}); err != nil {
+		t.Fatalf("resolve second AccessKeyRPM: %v", err)
+	}
+	if first != second {
+		t.Fatalf("AccessKeyRPM instances differ: first=%p second=%p", first, second)
+	}
+}
+
+func TestBuildContainerWiresSingletonMutationCoordinator(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+	err = dependencyContainer.Invoke(func(
+		coordinator *health.MutationCoordinator,
+		handler *gateway.Handler,
+		runtime *control.Runtime,
+		db *gorm.DB,
+	) {
+		t.Cleanup(func() {
+			sqlDB, dbErr := db.DB()
+			if dbErr == nil {
+				_ = sqlDB.Close()
+			}
+		})
+		want := reflect.ValueOf(coordinator).Pointer()
+		handlerMutation := mutationCoordinatorFieldPointer(t, reflect.ValueOf(handler), "mutations")
+		runtimeMutation := mutationCoordinatorFieldPointer(t, reflect.ValueOf(runtime), "mutations")
+
+		runtimeValue := reflect.ValueOf(runtime).Elem()
+		validator := runtimeValue.FieldByName("validator")
+		if !validator.IsValid() || validator.IsNil() {
+			t.Fatal("Runtime validator is not wired")
+		}
+		validationMutation := mutationCoordinatorFieldPointer(t, validator.Elem(), "mutations")
+		if handlerMutation != want || runtimeMutation != want || validationMutation != want {
+			t.Fatalf(
+				"mutation coordinators = handler:%#x runtime:%#x validation:%#x want:%#x",
+				handlerMutation,
+				runtimeMutation,
+				validationMutation,
+				want,
+			)
+		}
+	})
+	if err != nil {
+		t.Fatalf("resolve singleton mutation graph: %v", err)
+	}
+}
+
+func mutationCoordinatorFieldPointer(t *testing.T, value reflect.Value, fieldName string) uintptr {
+	t.Helper()
+	if value.Kind() == reflect.Pointer {
+		value = value.Elem()
+	}
+	field := value.FieldByName(fieldName)
+	if !field.IsValid() {
+		t.Fatalf("%s has no %s field", value.Type(), fieldName)
+	}
+	if field.Kind() == reflect.Interface {
+		if field.IsNil() {
+			t.Fatalf("%s.%s is nil", value.Type(), fieldName)
+		}
+		field = field.Elem()
+	}
+	if field.Kind() != reflect.Pointer || field.IsNil() {
+		t.Fatalf("%s.%s = %s, want non-nil pointer", value.Type(), fieldName, field.Kind())
+	}
+	return field.Pointer()
+}
+
+func TestBuildContainerUsesSingletonDataPlaneRuntimeServices(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+
+	var firstService *requestlog.Service
+	var firstLimiter *ratelimit.AccessKeyRPM
+	err = dependencyContainer.Invoke(func(
+		service *requestlog.Service,
+		limiter *ratelimit.AccessKeyRPM,
+		db *gorm.DB,
+	) {
+		firstService = service
+		firstLimiter = limiter
+		t.Cleanup(func() {
+			sqlDB, dbErr := db.DB()
+			if dbErr == nil {
+				_ = sqlDB.Close()
+			}
+		})
+	})
+	if err != nil {
+		t.Fatalf("resolve first data-plane runtime services: %v", err)
+	}
+
+	var secondService *requestlog.Service
+	var secondLimiter *ratelimit.AccessKeyRPM
+	err = dependencyContainer.Invoke(func(
+		service *requestlog.Service,
+		limiter *ratelimit.AccessKeyRPM,
+	) {
+		secondService = service
+		secondLimiter = limiter
+	})
+	if err != nil {
+		t.Fatalf("resolve second data-plane runtime services: %v", err)
+	}
+	if firstService != secondService {
+		t.Fatalf("RequestLog instances differ: first=%p second=%p", firstService, secondService)
+	}
+	if firstLimiter != secondLimiter {
+		t.Fatalf("AccessKeyRPM instances differ: first=%p second=%p", firstLimiter, secondLimiter)
+	}
+}
+
+func TestBuildContainerWiresRequestLogIntoEveryConsumer(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+
+	err = dependencyContainer.Invoke(func(
+		service *requestlog.Service,
+		sink telemetry.RequestLogSink,
+		reader control.RequestLogReader,
+		statsReader control.RequestLogStatsReader,
+		cleaner control.RequestLogCleaner,
+		lifecycle app.RequestLogRuntime,
+		limiter *ratelimit.AccessKeyRPM,
+		gatewayLimiter gateway.AccessKeyRPMLimiter,
+		_ *gateway.Handler,
+		_ *control.Service,
+		_ *control.Runtime,
+		_ *app.App,
+		db *gorm.DB,
+	) {
+		t.Cleanup(func() {
+			sqlDB, dbErr := db.DB()
+			if dbErr == nil {
+				_ = sqlDB.Close()
+			}
+		})
+		for name, adapter := range map[string]any{
+			"gateway sink":    sink,
+			"control reader":  reader,
+			"control stats":   statsReader,
+			"control cleaner": cleaner,
+			"app lifecycle":   lifecycle,
+		} {
+			if adapter != service {
+				t.Errorf("%s adapter = %T, want singleton %p", name, adapter, service)
+			}
+		}
+		if gatewayLimiter != limiter {
+			t.Errorf("gateway limiter = %T, want singleton %p", gatewayLimiter, limiter)
+		}
+	})
+	if err != nil {
+		t.Fatalf("resolve production data-plane consumers: %v", err)
+	}
+}
+
+func TestBuildContainerUsesSingletonRequestLogReader(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+
+	var first *requestlog.Service
+	err = dependencyContainer.Invoke(func(
+		service *requestlog.Service,
+		reader control.RequestLogReader,
+		db *gorm.DB,
+	) {
+		first = service
+		if reader != service {
+			t.Fatalf("control reader adapter = %T, want singleton %p", reader, service)
+		}
+		t.Cleanup(func() {
+			sqlDB, dbErr := db.DB()
+			if dbErr == nil {
+				_ = sqlDB.Close()
+			}
+		})
+	})
+	if err != nil {
+		t.Fatalf("resolve first RequestLog service: %v", err)
+	}
+
+	var second *requestlog.Service
+	var secondReader control.RequestLogReader
+	if err := dependencyContainer.Invoke(func(
+		service *requestlog.Service,
+		reader control.RequestLogReader,
+	) {
+		second = service
+		secondReader = reader
+	}); err != nil {
+		t.Fatalf("resolve second RequestLog service: %v", err)
+	}
+	if first != second || secondReader != second {
+		t.Fatalf(
+			"RequestLog instances differ: first=%p second=%p reader=%T",
+			first,
+			second,
+			secondReader,
+		)
+	}
+}
+
+func TestBuildContainerUsesSingletonRequestLogCleaner(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+
+	var first *requestlog.Service
+	err = dependencyContainer.Invoke(func(
+		service *requestlog.Service,
+		cleaner control.RequestLogCleaner,
+		db *gorm.DB,
+	) {
+		first = service
+		if cleaner != service {
+			t.Fatalf("control cleaner adapter = %T, want singleton %p", cleaner, service)
+		}
+		t.Cleanup(func() {
+			sqlDB, dbErr := db.DB()
+			if dbErr == nil {
+				_ = sqlDB.Close()
+			}
+		})
+	})
+	if err != nil {
+		t.Fatalf("resolve first RequestLog service: %v", err)
+	}
+
+	var second *requestlog.Service
+	var secondCleaner control.RequestLogCleaner
+	if err := dependencyContainer.Invoke(func(
+		service *requestlog.Service,
+		cleaner control.RequestLogCleaner,
+	) {
+		second = service
+		secondCleaner = cleaner
+	}); err != nil {
+		t.Fatalf("resolve second RequestLog service: %v", err)
+	}
+	if first != second || secondCleaner != second {
+		t.Fatalf(
+			"RequestLog instances differ: first=%p second=%p cleaner=%T",
+			first,
+			second,
+			secondCleaner,
+		)
+	}
+}
+
+func TestBuildContainerGeneratesAuthKeyWhenEnvironmentIsEmpty(t *testing.T) {
+	dataDir := t.TempDir()
+	t.Setenv("AUTH_KEY", "")
+	t.Setenv("DATA_DIR", dataDir)
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+	err = dependencyContainer.Invoke(func(cfg *config.Config, db *gorm.DB) {
+		t.Cleanup(func() {
+			sqlDB, dbErr := db.DB()
+			if dbErr == nil {
+				_ = sqlDB.Close()
+			}
+		})
+		stored, err := os.ReadFile(filepath.Join(dataDir, authkey.FileName))
+		if err != nil {
+			t.Fatalf("read %s: %v", authkey.FileName, err)
+		}
+		if cfg.AuthKey != strings.TrimSpace(string(stored)) {
+			t.Fatal("Config.AuthKey does not match generated auth.key")
+		}
+	})
+	if err != nil {
+		t.Fatalf("resolve generated AUTH_KEY config: %v", err)
+	}
+}
+
+func TestBuildContainerUsesSingletonStatsStore(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+
+	var first *health.StatsStore
+	err = dependencyContainer.Invoke(func(store *health.StatsStore, db *gorm.DB) {
+		first = store
+		t.Cleanup(func() {
+			sqlDB, dbErr := db.DB()
+			if dbErr == nil {
+				_ = sqlDB.Close()
+			}
+		})
+	})
+	if err != nil {
+		t.Fatalf("resolve first StatsStore: %v", err)
+	}
+
+	var second *health.StatsStore
+	if err := dependencyContainer.Invoke(func(store *health.StatsStore) { second = store }); err != nil {
+		t.Fatalf("resolve second StatsStore: %v", err)
+	}
+	if first != second {
+		t.Fatalf("StatsStore instances differ: first=%p second=%p", first, second)
+	}
+}
+
+func TestBuildContainerWiresRuntimeReadConsumersToSingletons(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+	err = dependencyContainer.Invoke(func(
+		requestLogService *requestlog.Service,
+		requestLogStats control.RequestLogStatsReader,
+		statsStore *health.StatsStore,
+		gatewayHandler *gateway.Handler,
+		controlService *control.Service,
+		db *gorm.DB,
+	) {
+		t.Cleanup(func() {
+			sqlDB, dbErr := db.DB()
+			if dbErr == nil {
+				_ = sqlDB.Close()
+			}
+		})
+		if requestLogStats != requestLogService {
+			t.Fatalf(
+				"RequestLogStatsReader = %T, want singleton %p",
+				requestLogStats,
+				requestLogService,
+			)
+		}
+		if statsStore == nil || gatewayHandler == nil || controlService == nil {
+			t.Fatalf(
+				"runtime read consumers unresolved: stats=%p gateway=%p control=%p",
+				statsStore,
+				gatewayHandler,
+				controlService,
+			)
+		}
+	})
+	if err != nil {
+		t.Fatalf("resolve runtime read consumers: %v", err)
+	}
+}
+
+func TestContainerHealthEndpointReadsSharedStatsStore(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+	if err := i18n.Init(); err != nil {
+		t.Fatalf("i18n.Init() error = %v", err)
+	}
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+	err = dependencyContainer.Invoke(func(
+		engine *gin.Engine,
+		channels *channel.Registry,
+		manager *state.Manager,
+		registry *state.CredentialRegistry,
+		stats *health.StatsStore,
+		keyService encryption.Service,
+		db *gorm.DB,
+	) {
+		t.Cleanup(func() {
+			sqlDB, dbErr := db.DB()
+			if dbErr == nil {
+				_ = sqlDB.Close()
+			}
+		})
+		if _, publishErr := manager.Publish(state.CompileInput{ChannelRegistry: channels, Groups: []state.GroupConfig{{ConnectionType: "api_key", ID: 1, Name: "shared", ChannelID: channel.OpenAI, Params: json.RawMessage(`{}`),
+			Models: []state.ModelConfig{{ID: "model"}}, Enabled: true,
+		}}}); publishErr != nil {
+			t.Fatalf("Publish() error = %v", publishErr)
+		}
+		ciphertext, encryptErr := keyService.Encrypt(
+			`{"api_key":"container-shared-secret"}`,
+		)
+		if encryptErr != nil {
+			t.Fatalf("Encrypt() error = %v", encryptErr)
+		}
+		if replaceErr := registry.ReplaceCredentials([]state.CredentialEntry{{
+			ID: 1, GroupID: 1, Status: state.CredentialStatusActive,
+			Version: 1, IdentityGeneration: 1, Fingerprint: "container-credential",
+			Blacklisted: true, EncryptedValue: ciphertext,
+		}}); replaceErr != nil {
+			t.Fatalf("Replace() error = %v", replaceErr)
+		}
+		stats.RecordFailure(1, health.FailureCategoryAmbiguous, 0, time.Now())
+
+		request := httptest.NewRequest(http.MethodGet, "/api/health", nil)
+		request.Header.Set("Authorization", "Bearer test-auth-key")
+		recorder := httptest.NewRecorder()
+		engine.ServeHTTP(recorder, request)
+		if recorder.Code != http.StatusOK {
+			t.Fatalf("response = %d %s", recorder.Code, recorder.Body.String())
+		}
+		var envelope struct {
+			Data struct {
+				BlacklistedCredentials []struct {
+					CredentialID       uint   `json:"credential_id"`
+					RecentProblemCount uint64 `json:"recent_problem_count"`
+				} `json:"blacklisted_credentials"`
+			} `json:"data"`
+		}
+		if decodeErr := json.Unmarshal(recorder.Body.Bytes(), &envelope); decodeErr != nil {
+			t.Fatalf("decode response: %v", decodeErr)
+		}
+		if len(envelope.Data.BlacklistedCredentials) != 1 ||
+			envelope.Data.BlacklistedCredentials[0].CredentialID != 1 ||
+			envelope.Data.BlacklistedCredentials[0].RecentProblemCount != 1 {
+			t.Fatalf("blacklisted stats = %#v", envelope.Data.BlacklistedCredentials)
+		}
+	})
+	if err != nil {
+		t.Fatalf("invoke container health endpoint: %v", err)
+	}
+}
+
+func TestBuildContainerRegistersWebUIControlAndGatewayRoutes(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+	if err := i18n.Init(); err != nil {
+		t.Fatalf("i18n.Init() error = %v", err)
+	}
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+	err = dependencyContainer.Invoke(func(
+		engine *gin.Engine,
+		db *gorm.DB,
+		startupBootstrap app.StartupBootstrap,
+		runtimeState app.RuntimeStateLoader,
+	) {
+		if err := storage.AutoMigrate(db); err != nil {
+			t.Fatalf("AutoMigrate() error = %v", err)
+		}
+		if err := startupBootstrap.EnsureInitialState(context.Background()); err != nil {
+			t.Fatalf("EnsureInitialState() error = %v", err)
+		}
+		if err := runtimeState.Load(context.Background()); err != nil {
+			t.Fatalf("runtimeState.Load() error = %v", err)
+		}
+
+		var indexBody string
+		for _, target := range []string{"/", "/groups/abc"} {
+			recorder := httptest.NewRecorder()
+			request := httptest.NewRequest(http.MethodGet, target, nil)
+			engine.ServeHTTP(recorder, request)
+			if recorder.Code != http.StatusOK || !strings.HasPrefix(recorder.Header().Get("Content-Type"), "text/html") {
+				t.Fatalf("GET %s response = %d %s, want embedded HTML", target, recorder.Code, recorder.Body.String())
+			}
+			if indexBody == "" {
+				indexBody = recorder.Body.String()
+			} else if recorder.Body.String() != indexBody {
+				t.Fatalf("GET %s did not return the shared index", target)
+			}
+		}
+
+		unknownPageRecorder := httptest.NewRecorder()
+		unknownPageRequest := httptest.NewRequest(http.MethodGet, "/phase-2-unknown-route", nil)
+		unknownPageRequest.Header.Set("Accept", "text/html,application/xhtml+xml")
+		engine.ServeHTTP(unknownPageRecorder, unknownPageRequest)
+		if unknownPageRecorder.Code != http.StatusNotFound ||
+			!strings.HasPrefix(unknownPageRecorder.Header().Get("Content-Type"), "text/html") ||
+			unknownPageRecorder.Body.String() != indexBody {
+			t.Fatalf(
+				"unknown browser page response = %d %s, want shared embedded HTML with 404",
+				unknownPageRecorder.Code,
+				unknownPageRecorder.Body.String(),
+			)
+		}
+
+		healthRecorder := httptest.NewRecorder()
+		engine.ServeHTTP(healthRecorder, httptest.NewRequest(http.MethodGet, "/health", nil))
+		if healthRecorder.Code != http.StatusOK || !strings.Contains(healthRecorder.Body.String(), `"status":"ok"`) {
+			t.Fatalf("health response = %d %s", healthRecorder.Code, healthRecorder.Body.String())
+		}
+
+		groupsRecorder := httptest.NewRecorder()
+		groupsRequest := httptest.NewRequest(http.MethodGet, "/api/groups", nil)
+		groupsRequest.Header.Set("Authorization", "Bearer test-auth-key")
+		engine.ServeHTTP(groupsRecorder, groupsRequest)
+		if groupsRecorder.Code != http.StatusOK {
+			t.Fatalf("groups status = %d, want 200; body=%s", groupsRecorder.Code, groupsRecorder.Body.String())
+		}
+
+		sessionRecorder := httptest.NewRecorder()
+		sessionRequest := httptest.NewRequest(http.MethodGet, "/api/auth/session", nil)
+		sessionRequest.Header.Set("Authorization", "Bearer test-auth-key")
+		engine.ServeHTTP(sessionRecorder, sessionRequest)
+		if sessionRecorder.Code != http.StatusOK {
+			t.Fatalf("session status = %d, want 200; body=%s", sessionRecorder.Code, sessionRecorder.Body.String())
+		}
+		var sessionEnvelope struct {
+			Code int `json:"code"`
+			Data struct {
+				Authenticated bool `json:"authenticated"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(sessionRecorder.Body.Bytes(), &sessionEnvelope); err != nil {
+			t.Fatalf("decode session response: %v", err)
+		}
+		if sessionEnvelope.Code != 0 || !sessionEnvelope.Data.Authenticated {
+			t.Fatalf("session envelope = %#v, want authenticated", sessionEnvelope)
+		}
+
+		const untrustedPeer = "192.0.2.200:1234"
+		for attempt := 1; attempt <= 5; attempt++ {
+			gatewayRecorder := httptest.NewRecorder()
+			gatewayRequest := httptest.NewRequest(
+				http.MethodPost,
+				"/v1/chat/completions",
+				strings.NewReader(`{"model":"gpt-4o"}`),
+			)
+			gatewayRequest.RemoteAddr = untrustedPeer
+			gatewayRequest.Header.Set("Authorization", "Bearer wrong-control-key")
+			engine.ServeHTTP(gatewayRecorder, gatewayRequest)
+			var gatewayEnvelope struct {
+				Code string `json:"code"`
+			}
+			if err := json.Unmarshal(gatewayRecorder.Body.Bytes(), &gatewayEnvelope); err != nil {
+				t.Fatalf("decode gateway attempt %d response: %v", attempt, err)
+			}
+			if gatewayRecorder.Code != http.StatusUnauthorized ||
+				gatewayEnvelope.Code != "invalid_access_key" {
+				t.Fatalf(
+					"gateway attempt %d response = %d %s, want data-plane invalid_access_key 401",
+					attempt,
+					gatewayRecorder.Code,
+					gatewayRecorder.Body.String(),
+				)
+			}
+		}
+
+		for attempt := 1; attempt <= 5; attempt++ {
+			unknownRecorder := httptest.NewRecorder()
+			unknownRequest := httptest.NewRequest(http.MethodGet, "/api/unknown", nil)
+			unknownRequest.RemoteAddr = untrustedPeer
+			unknownRequest.Header.Set("Accept", "text/html,application/xhtml+xml")
+			engine.ServeHTTP(unknownRecorder, unknownRequest)
+			if unknownRecorder.Code != http.StatusNotFound {
+				t.Fatalf(
+					"unknown /api attempt %d response = %d %s, want 404",
+					attempt,
+					unknownRecorder.Code,
+					unknownRecorder.Body.String(),
+				)
+			}
+		}
+
+		devToolsRecorder := httptest.NewRecorder()
+		engine.ServeHTTP(
+			devToolsRecorder,
+			httptest.NewRequest(
+				http.MethodGet,
+				"/.well-known/appspecific/com.chrome.devtools.json",
+				nil,
+			),
+		)
+		if devToolsRecorder.Code != http.StatusNotFound {
+			t.Fatalf(
+				"Chrome DevTools workspace probe response = %d %s, want 404",
+				devToolsRecorder.Code,
+				devToolsRecorder.Body.String(),
+			)
+		}
+	})
+	if err != nil {
+		t.Fatalf("resolve engine with control routes: %v", err)
+	}
+}
+
+func TestBuildContainerRegistersGatewayRoute(t *testing.T) {
+	dataDir := t.TempDir()
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", dataDir)
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+	err = dependencyContainer.Invoke(func(engine *gin.Engine) {
+		recorder := httptest.NewRecorder()
+		request := httptest.NewRequest(http.MethodPost, "/v1/chat/completions", strings.NewReader(`{"model":"gpt-4o"}`))
+		engine.ServeHTTP(recorder, request)
+		if recorder.Code != http.StatusUnauthorized {
+			t.Fatalf("gateway status = %d, want 401; body=%s", recorder.Code, recorder.Body.String())
+		}
+		var body struct {
+			Code string `json:"code"`
+		}
+		if err := json.Unmarshal(recorder.Body.Bytes(), &body); err != nil || body.Code != "invalid_access_key" {
+			t.Fatalf("gateway body = %s, error=%v", recorder.Body.String(), err)
+		}
+	})
+	if err != nil {
+		t.Fatalf("resolve engine: %v", err)
+	}
+}
+
+func TestBuildContainerDoesNotRedirectTrailingSlashGatewayRoute(t *testing.T) {
+	t.Setenv("AUTH_KEY", "test-auth-key")
+	t.Setenv("DATA_DIR", t.TempDir())
+	t.Setenv("DATABASE_DSN", ":memory:")
+	t.Setenv("ENCRYPTION_KEY", "test-master-key-long")
+
+	dependencyContainer, err := BuildContainer()
+	if err != nil {
+		t.Fatalf("BuildContainer() error = %v", err)
+	}
+	err = dependencyContainer.Invoke(func(
+		engine *gin.Engine,
+		manager *state.Manager,
+		keyService encryption.Service,
+	) {
+		if _, err := manager.Publish(state.CompileInput{AccessKeys: []state.AccessKeyConfig{{
+			ID: 1, Name: "client", KeyHash: keyService.Hash("gl-client"),
+			Status: state.AccessKeyStatusActive,
+		}}}); err != nil {
+			t.Fatalf("Publish() error = %v", err)
+		}
+
+		tests := []struct {
+			name   string
+			target string
+		}{
+			{
+				name:   "missing credential",
+				target: "/v1/chat/completions/",
+			},
+			{
+				name:   "valid query credential",
+				target: "/v1/chat/completions/?key=gl-client",
+			},
+		}
+		for _, tt := range tests {
+			t.Run(tt.name, func(t *testing.T) {
+				recorder := httptest.NewRecorder()
+				request := httptest.NewRequest(http.MethodPost, tt.target, nil)
+				engine.ServeHTTP(recorder, request)
+				if recorder.Code != http.StatusNotFound {
+					t.Fatalf("gateway status = %d, want 404; location=%q body=%s",
+						recorder.Code, recorder.Header().Get("Location"), recorder.Body.String())
+				}
+				if location := recorder.Header().Get("Location"); location != "" {
+					t.Fatalf("Location = %q, want empty", location)
+				}
+			})
+		}
+	})
+	if err != nil {
+		t.Fatalf("resolve engine: %v", err)
+	}
+}

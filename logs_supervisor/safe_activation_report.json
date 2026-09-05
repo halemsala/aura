@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-09-05T02:49:52.602281",
+  "safe": true,
+  "invariants": {
+    "all_safe": true,
+    "checks": {
+      "PAPER_TRADE": true,
+      "EXECUTION_ALLOWED": true,
+      "AURA_EXECUTION_ALLOWED": true,
+      "AURA_UNLOCK_LIVE": true,
+      "AURA_PAPER_ONLY": true,
+      "GLM_ADVISORY_ONLY": true
+    }
+  },
+  "activation": {
+    "activated": false,
+    "error": "HTTPConnectionPool(host='127.0.0.1', port=8765): Max retries exceeded with url: /api/health (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=8765): Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\\r\\nas recusou ativamente\"))"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "job_id": "f243afc5e0cb",
+  "request_id": "inst-echo_note",
+  "content_hash": "925bf70631e54880",
+  "created_at": 1788378914.937721,
+  "status": "success",
+  "authorized": true,
+  "authorization_reason": "AUTORIZO escrito pelo utilizador",
+  "plan_intent": "install_tool",
+  "source_message": "",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "install_tool",
+      "arguments": {
+        "source": "TOOL_NAME = \"echo_note\"\nRISK = \"low\"\nMUTATING = False\nSUMMARY = \"eco seguro\"\n\nfrom alfred.validators import ValidationError\n\ndef validate(args):\n    text = str((args or {}).get(\"text\") or \"\").strip()\n    if not text:\n        raise ValidationError(\"text vazio\")\n    return {\"text\": text[:200]}\n\ndef run(args, ctx):\n    a = validate(args)\n    return {\"echo\": a[\"text\"]}",
+        "name": "echo_note",
+        "review": {
+          "ok": true,
+          "blockers": [],
+          "warnings": [],
+          "manifest": {
+            "name": "echo_note",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": true,
+            "summary": "eco seguro",
+            "sha256_16": "682c5d048d611a9d",
+            "bytes": 367
+          }
+        }
+      },
+      "risk": "high",
+      "mutating": true,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "installed": true,
+        "name": "echo_note",
+        "path": "C:\\aura\\alfred\\tools\\plugins\\echo_note.py",
+        "backup": "",
+        "pre_review": {
+          "ok": true,
+          "blockers": [],
+          "warnings": [],
+          "manifest": {
+            "name": "echo_note",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": true,
+            "summary": "eco seguro",
+            "sha256_16": "682c5d048d611a9d",
+            "bytes": 367
+          }
+        },
+        "post_review": {
+          "phase": "post-install",
+          "compile": true,
+          "loaded": true,
+          "review": {
+            "ok": true,
+            "blockers": [],
+            "warnings": [],
+            "manifest": {
+              "name": "echo_note",
+              "risk": "low",
+              "mutating": false,
+              "sensitive": true,
+              "summary": "eco seguro",
+              "sha256_16": "682c5d048d611a9d",
+              "bytes": 367
+            }
+          },
+          "validate_smoke": "ValidationError: text vazio"
+        },
+        "status": "completed"
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "1 de 1 tarefas concluídas com sucesso.",
+  "finished_at": 1788378914.9582446
+}

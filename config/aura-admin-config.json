@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "mode": "PLAN_ONLY",
+  "paper_trade_only": true,
+  "risk_threshold": 70.0,
+  "database_path": "engine/aura_quant_x.db",
+  "embedding_model": "configured",
+  "planner": {
+    "timeout_s": 30.0,
+    "max_steps": 32,
+    "max_context_chars": 32000
+  },
+  "breaker": {
+    "failure_threshold": 3,
+    "cooldown_s": 30.0
+  }
+}

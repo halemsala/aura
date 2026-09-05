@@ -1,0 +1,9 @@
+{
+  "name": "agente-especificacao-1788586012",
+  "purpose": "Especificação de novo agente",
+  "enabled": false,
+  "approval_required": true,
+  "instructions": "Gostaria de um diagnóstico consolidado do sistema AURA. Considere que o harness acabou de subir, que o Ollama roda localmente em 127.0.0.1:11434 com o modelo qwen3:8b residente com keep_alive de 24h, que os serviços oficiais são Engine na porta 8765 com health em /api/health, Bridge na 8080 em /health e Voice na 8099 em /api/health, e que os inicializadores oficiais são arquivos .bat e .exe já existentes no projeto sob C:\\aura. A política de segurança é paper trade ativo, execução real bloqueada, reparo desativado, e toda ação com efeito exige plano e confirmação textual exata CONFIRMAR. Quero que você verifique o estado atual dos quatro serviços, aponte quais estão offline, proponha qual ação única devo aprovar para normalizar tudo, e me lembre em uma linha o que a auditoria registraria se eu aprovar. Não me faça perguntas, não liste comandos genéricos, não repita o diagnóstico completo do status: só o resumo, a ação recomendada e a nota de auditoria.",
+  "tasks": [],
+  "created_at": "2026-09-05T05:26:52.255266+00:00"
+}

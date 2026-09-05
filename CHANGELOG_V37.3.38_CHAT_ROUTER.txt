@@ -1,0 +1,11 @@
+V37.3.38 — Chat Router + Anomaly Fix
+====================================
+- /api/chat: 3-layer router (action / diagnose+explain / chat)
+- LLM use_tools=False; backend executes actions
+- No _sanitize_llm discard of LLM replies in chat path
+- Replies up to 4000 chars
+- Honest errors: ERRO REAL na rota
+- _cached_anomaly 60s (dashboard poll no longer poisons detector)
+- anomaly detector: native bool/float, no live_missing false positive
+- /health + /api/system sanitize_payload; /health/live
+- GLM disabled flags in health payload

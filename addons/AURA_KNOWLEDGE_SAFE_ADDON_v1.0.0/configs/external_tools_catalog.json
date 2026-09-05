@@ -1,0 +1,65 @@
+{
+  "catalog_version": "1.0.0",
+  "policy": "catalog_only_until_individual_approval",
+  "note": "Os itens externos abaixo foram identificados nas análises. Nenhum é baixado, instalado ou ativado pelo pack.",
+  "categories": {
+    "skills_and_agent_capabilities": [
+      {"name":"Claude Agent Skills","role":"instruções reutilizáveis carregadas sob demanda","status":"optional_blocked","source":"https://code.claude.com/docs/en/skills"},
+      {"name":"Find Skills / npx skills","role":"descoberta e preparação de Skills","status":"optional_blocked","source":"https://vercel.com/docs/agent-resources/skills"},
+      {"name":"Task Observer","role":"aprender estilo de trabalho","status":"design_only_opt_in","requires":"consentimento, redaction, retenção e revisão"},
+      {"name":"Claude Code Setup","role":"escaneamento de projeto e recomendação","status":"design_only_unverified","requires":"validar produto, versão e origem"},
+      {"name":"Verification Before Completion","role":"gate de evidências antes de concluir","status":"implemented_in_pack"},
+      {"name":"Systematic Debugging","role":"reprodução, hipótese, causa raiz e regressão","status":"implemented_as_skill"},
+      {"name":"Webapp Testing","role":"testes de aplicação em staging","status":"implemented_as_skill_sandbox_only"},
+      {"name":"Web Quality Audit","role":"qualidade, acessibilidade, SEO, performance e mobile","status":"implemented_as_skill_advisory"}
+    ],
+    "mcp_and_connectors": [
+      {"name":"Model Context Protocol","role":"padrão para dados, ferramentas e workflows externos","status":"optional_blocked","source":"https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro"},
+      {"name":"Research & Trends MCPs","role":"pesquisa e tendências","status":"catalog_only"},
+      {"name":"Writing & Docs MCPs","role":"documentos e redação","status":"catalog_only"},
+      {"name":"SEO & Web MCPs","role":"SEO e sites","status":"catalog_only"},
+      {"name":"Content Analytics MCPs","role":"analytics de conteúdo","status":"catalog_only"},
+      {"name":"Design & Visuals MCPs","role":"design e visuais","status":"catalog_only"},
+      {"name":"Video & Audio MCPs","role":"vídeo e áudio","status":"catalog_only"},
+      {"name":"Social Platforms MCPs","role":"plataformas sociais","status":"catalog_only_mutation_blocked"},
+      {"name":"Publish & Distribute MCPs","role":"publicação e distribuição","status":"catalog_only_mutation_blocked"},
+      {"name":"Websites & CMS MCPs","role":"sites e CMS","status":"catalog_only_mutation_blocked"},
+      {"name":"Automation MCPs","role":"automação","status":"catalog_only_mutation_blocked"},
+      {"name":"AI Models & Memory MCPs","role":"modelos e memória","status":"catalog_only"},
+      {"name":"Comms & Community MCPs","role":"comunicação e comunidade","status":"catalog_only_mutation_blocked"}
+    ],
+    "orchestration_and_routines": [
+      {"name":"Ralph Loop","role":"iterar implementação, teste e correção","status":"implemented_bounded_max_3"},
+      {"name":"CCMA","role":"separar planner, coder, tester, reviewer e security","status":"implemented_as_advisory_pattern"},
+      {"name":"LangGraph","role":"grafos stateful, checkpoints e human-in-the-loop","status":"optional_blocked","source":"https://docs.langchain.com/oss/python/langgraph/overview"},
+      {"name":"PydanticAI","role":"agentes com contratos tipados","status":"optional_blocked"},
+      {"name":"CrewAI","role":"times de agentes","status":"benchmark_only"},
+      {"name":"AutoGen","role":"conversações multiagente","status":"benchmark_only"},
+      {"name":"Semantic Kernel","role":"plugins e planners","status":"optional_blocked"},
+      {"name":"n8n","role":"workflows visuais","status":"optional_blocked","source":"https://docs.n8n.io/build/integrate-ai"},
+      {"name":"Apache Airflow","role":"DAGs, ETL e histórico","status":"optional_blocked","source":"https://airflow.apache.org/"},
+      {"name":"Temporal","role":"workflows duráveis e retomáveis","status":"optional_blocked","source":"https://docs.temporal.io/"},
+      {"name":"MORA","role":"rotina diária do AURA","status":"plan_only_until_approval"}
+    ],
+    "observability_and_evaluation": [
+      {"name":"OpenTelemetry","role":"traces e métricas","status":"optional_local_only","source":"https://opentelemetry.io/blog/2025/ai-agent-observability/"},
+      {"name":"Prometheus/Grafana","role":"métricas e dashboards","status":"optional_blocked"},
+      {"name":"Jaeger/Grafana Tempo","role":"tracing","status":"optional_blocked"},
+      {"name":"Loki/OpenSearch/ELK","role":"logs estruturados","status":"optional_blocked"},
+      {"name":"Langfuse","role":"observabilidade LLM","status":"optional_blocked"},
+      {"name":"LangSmith","role":"tracing e avaliação","status":"optional_blocked"},
+      {"name":"Arize Phoenix","role":"observabilidade e avaliação","status":"optional_blocked"},
+      {"name":"Helicone","role":"telemetria LLM","status":"optional_blocked"},
+      {"name":"DeepEval/Ragas/promptfoo","role":"avaliação, grounding e regressão","status":"optional_local_only"}
+    ],
+    "external_products_mentioned": [
+      {"name":"Claude","role":"modelo/ambiente de IA","status":"not_included_requires_user_credentials"},
+      {"name":"Cloudflare","role":"publicação web","status":"optional_blocked_mutation"},
+      {"name":"Higgsfield","role":"criação audiovisual","status":"optional_blocked"},
+      {"name":"TradingView","role":"dados e gráficos de mercado","status":"advisory_only_paper_trade"},
+      {"name":"Ollama","role":"modelos locais","status":"disabled_no_download"},
+      {"name":"Telegram","role":"comunicação","status":"disabled_no_login_or_send"}
+    ]
+  },
+  "universal_denies": ["send","publish","delete","deploy","execute","trade","install_dependency","modify_startup","read_secret"]
+}

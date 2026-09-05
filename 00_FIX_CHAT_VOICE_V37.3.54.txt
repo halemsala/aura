@@ -1,0 +1,13 @@
+AURA V37.3.54 — CHAT + VOZ
+==========================
+1) Logger Hermes: adapter seguro (tools deixam de falhar por kwargs)
+2) Catalogo fixo de servicos AURA no chat (anti-alucinacao de portas)
+3) Comando "voz status" → health real :8099 + tail voice.log
+4) AURA_TEST_VOICE.bat — diagnostico process_up vs engineReady
+5) AURA_SUBIR_STACK_PAPER.bat — Bridge+Engine+Hermes+Control
+
+No chat use:
+  status | diagnostico | programador | voz status
+  liste servicos / catalogar → tabela oficial (nao qwen inventar)
+
+Voz: AURA_INSTALAR_VOZ.bat && AURA_SUBIR_VOZ.bat && AURA_TEST_VOICE.bat

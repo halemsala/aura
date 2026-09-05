@@ -1,0 +1,53 @@
+AURA LAB + Visão ampliada — instalação no Harness
+=================================================
+
+1) Extraia AURA_LAB_v*.zip de forma que exista:
+     <algo>/aura_lab/catalog/failure_modes_v1.yaml
+     <algo>/aura_lab/harness/harness_lab_vision.py
+
+2) Opcional (recomendado):
+     set AURA_LAB_ROOT=C:\caminho\para\aura_lab
+
+3) No FINAL de AURA_HARNESS_UNICO_CONSOLIDADO.py,
+   IMEDIATAMENTE ANTES de:
+
+     if __name__ == "__main__":
+
+   cole:
+
+# --- AURA LAB + Visão ampliada ---
+try:
+    import sys
+    from pathlib import Path
+    _lab_candidates = [
+        Path(os.environ.get("AURA_LAB_ROOT", "")),
+        Path(__file__).resolve().parent / "aura_lab",
+        Path(__file__).resolve().parent,
+        Path(r"C:\aura\aura_lab"),
+    ]
+    for _lab in _lab_candidates:
+        _hv = _lab / "harness" / "harness_lab_vision.py"
+        if _hv.is_file():
+            import importlib.util
+            _spec = importlib.util.spec_from_file_location("harness_lab_vision", _hv)
+            _mod = importlib.util.module_from_spec(_spec)
+            assert _spec.loader is not None
+            _spec.loader.exec_module(_mod)
+            print(_mod.apply_lab_vision(globals()))
+            break
+    else:
+        print("[INFO] AURA LAB não encontrado — visão ampliada desativada.")
+except Exception as _lab_exc:
+    print(f"[WARN] LAB/Visão não aplicados: {_lab_exc}")
+# --- fim LAB ---
+
+4) Reinicie o Harness.
+
+5) Teste no chat:
+     ajuda
+     visão
+     status
+     lab diagnostico desktop abriu mas painel nao
+     lab diagnostico engine offline
+
+Policy inalterada: paper_trade, CONFIRMAR, sem stake real.

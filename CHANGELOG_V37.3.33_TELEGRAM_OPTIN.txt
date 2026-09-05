@@ -1,0 +1,7 @@
+V37.3.33 — Add-on Telegram Intel OPT-IN (desligado por defeito)
+- addons/telegram_intel_optin/ (config, publisher, allowlisted fetch, worker CLI)
+- AURA_TELEGRAM_INTEL_ENABLED=0 por defeito
+- AURA_TELEGRAM_DRY_RUN=1 por defeito
+- Scrape só com ALLOW_SCRAPE=1 + allowlist de URLs
+- Fora do hot path Engine; sem execution_allowed=true
+- telegram_intel_dry_run.bat para validar status

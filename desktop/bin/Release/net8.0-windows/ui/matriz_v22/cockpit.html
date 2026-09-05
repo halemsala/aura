@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AURA QUANT-X · Cockpit</title>
+<meta name="theme-color" content="#07080c" />
+<link rel="stylesheet" href="./assets/aura-ui-fix.css" />
+<style>
+:root{
+  --void:#07080c; --panel:#10131b; --rail:#0c0e14; --line:#1c2433;
+  --ink:#e7edf6; --mute:#8b97ab; --dim:#5d6a7e;
+  --live:#3ee0a0; --cyan:#14c8d4; --hold:#e8b86d; --abort:#ff5d6c; --info:#7aa2ff;
+  --glass:rgba(16,19,27,.72);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--void);color:var(--ink);
+  font-family:"Segoe UI Variable","Segoe UI","Bahnschrift",sans-serif;
+  overflow:hidden;-webkit-font-smoothing:antialiased}
+button,a{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+.mono{font-family:ui-monospace,"JetBrains Mono",Consolas,monospace}
+.app{display:flex;height:100%}
+.side{width:268px;flex-shrink:0;background:var(--rail);border-right:1px solid var(--line);
+  display:flex;flex-direction:column;padding:14px 10px;transition:width .2s ease}
+.side.collapsed{width:76px}
+.brand{display:flex;align-items:center;gap:10px;padding:6px 8px 12px}
+.mark{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;
+  background:linear-gradient(#07080c,#07080c) padding-box,
+             linear-gradient(135deg,#14c8d4,#3ee0a0) border-box;
+  border:1px solid transparent;color:var(--cyan);font-weight:800;font-size:12px}
+.brand h1{margin:0;font-size:15px;letter-spacing:.02em}
+.brand small{display:block;color:var(--dim);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+.side.collapsed .brand-txt,.side.collapsed .nav b,.side.collapsed .hud-lab{opacity:0;width:0;overflow:hidden}
+.nav{display:flex;flex-direction:column;gap:2px;flex:1;overflow:auto}
+.nav button{position:relative;display:flex;align-items:center;gap:10px;height:40px;
+  padding:0 10px;border-radius:10px;color:var(--mute);text-align:left}
+.nav button:hover{background:#151a24;color:var(--ink)}
+.nav button.on{background:rgba(62,224,160,.08);color:var(--live)}
+.nav button.on::before{content:"";position:absolute;left:0;top:10px;width:3px;height:20px;
+  background:var(--live);border-radius:0 3px 3px 0}
+.nav svg{width:16px;height:16px;flex-shrink:0}
+.nav .sec{margin:10px 8px 4px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.side.collapsed .sec{display:none}
+.hud{margin-top:auto;border:1px solid var(--line);border-radius:14px;padding:10px;background:#0a0c12}
+.hud-row{display:flex;justify-content:space-between;align-items:center;font-size:11px;padding:3px 0;color:var(--mute)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--dim);display:inline-block}
+.dot.on{background:var(--live)}
+.dot.off{background:var(--abort)}
+.dot.warn{background:var(--hold)}
+.main{flex:1;display:flex;flex-direction:column;min-width:0}
+.top{height:52px;display:flex;align-items:center;gap:12px;padding:0 16px;
+  border-bottom:1px solid var(--line);background:#0b0d13}
+.burger{width:34px;height:34px;border:1px solid var(--line);border-radius:8px;color:var(--mute)}
+.clock{font-size:18px;font-weight:700}
+.score{font-size:13px;color:var(--mute)}
+.pills{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{font-size:10px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);
+  border-radius:999px;padding:4px 8px;color:var(--mute)}
+.pill.ok{border-color:rgba(62,224,160,.35);color:var(--live)}
+.pill.lock{border-color:rgba(232,184,109,.4);color:var(--hold)}
+.stage{flex:1;min-height:0;position:relative}
+.view{display:none;height:100%;overflow:auto;padding:16px}
+.view.on{display:block}
+.view.bleed{padding:0;overflow:hidden}
+iframe.fill{width:100%;height:100%;border:0;background:#07080c}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+.card{grid-column:span 3;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px}
+.card.w6{grid-column:span 6}
+.card.w8{grid-column:span 8}
+.card.w12{grid-column:span 12}
+.card h3{margin:0 0 8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.k{font-size:28px;font-weight:700;letter-spacing:-.03em}
+.sub{color:var(--mute);font-size:12px;margin-top:4px}
+.bar{height:8px;background:#151a24;border-radius:99px;overflow:hidden;margin-top:8px}
+.bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--live));width:0}
+.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.tool{border:1px solid var(--line);border-radius:14px;padding:12px;background:#0d1017;text-align:left}
+.tool:hover{border-color:#2a3548}
+.tool b{display:block;font-size:13px;margin-bottom:4px}
+.tool span{display:block;color:var(--mute);font-size:11px;line-height:1.35}
+.tool em{display:inline-block;margin-top:8px;font-style:normal;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--cyan)}
+.note{font-size:12px;color:var(--mute);border-left:2px solid var(--cyan);padding-left:10px}
+pre.log{background:#07080c;border:1px solid var(--line);border-radius:12px;padding:12px;
+  font-size:12px;white-space:pre-wrap;color:#c9d4e4;max-height:420px;overflow:auto}
+@media(max-width:1100px){.card,.card.w6,.card.w8{grid-column:span 12}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="side" id="side">
+    <div class="brand">
+      <div class="mark">AX</div>
+      <div class="brand-txt">
+        <h1>Corner<span class="mono" style="color:var(--cyan);font-size:11px">AI</span></h1>
+        <small>Operator OS</small>
+      </div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="hud">
+      <div class="hud-lab" style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:6px">Live engines</div>
+      <div class="hud-row"><span>Bridge</span><span class="dot" id="d8080"></span></div>
+      <div class="hud-row"><span>Engine</span><span class="dot" id="d8765"></span></div>
+      <div class="hud-row"><span>Matriz</span><span class="dot" id="d8766"></span></div>
+      <div class="hud-row"><span>Hermes</span><span class="dot" id="d8777"></span></div>
+      <div class="hud-row"><span>Voice</span><span class="dot" id="d8099"></span></div>
+      <div class="hud-row"><span>Ollama</span><span class="dot" id="d11434"></span></div>
+    </div>
+  </aside>
+  <section class="main">
+    <header class="top">
+      <button class="burger" id="burger" title="Menu">☰</button>
+      <div>
+        <div class="clock mono" id="matchClock">--:--</div>
+        <div class="score" id="matchLine">Aguardando ui/state · paper trade</div>
+      </div>
+      <div class="pills">
+        <span class="pill lock">paper_trade</span>
+        <span class="pill lock">sem ordem real</span>
+        <span class="pill" id="feedPill">feed --</span>
+        <span class="pill" id="actionPill">HOLD</span>
+      </div>
+    </header>
+    <div class="stage">
+      <div class="view bleed on" id="v-comando"><iframe class="fill" title="Mesa" src="./operator-os.html"></iframe></div>
+      <div class="view" id="v-metricas"></div>
+      <div class="view" id="v-agentes"></div>
+      <div class="view" id="v-macd"></div>
+      <div class="view" id="v-h2h"></div>
+      <div class="view" id="v-odds"></div>
+      <div class="view" id="v-poisson"></div>
+      <div class="view" id="v-mercado"></div>
+      <div class="view" id="v-risco"></div>
+      <div class="view" id="v-captura"></div>
+      <div class="view bleed" id="v-hermes"><iframe class="fill" title="Hermes" src="http://127.0.0.1:8777/chat"></iframe></div>
+      <div class="view" id="v-voz"></div>
+      <div class="view" id="v-diag"></div>
+      <div class="view" id="v-tools"></div>
+    </div>
+  </section>
+</div>
+<script>
+const ICONS = {
+  terminal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-5-6-5"/><path d="M12 19h8"/></svg>',
+  bars:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>',
+  cpu:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>',
+  trend:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>',
+  swords:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 17.5L3 6l3-3 11.5 11.5M13 19l2 2 6-6-2-2M8 8l3 3"/></svg>',
+  layers:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l9 5-9 5-9-5 9-5zM3 12l9 5 9-5M3 17l9 5 9-5"/></svg>',
+  grid:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>',
+  eye:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
+  shield:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V7l8-4z"/></svg>',
+  cam:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>',
+  chat:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 01-8 8H7l-4 3V12a8 8 0 018-8h2a8 8 0 018 5z"/></svg>',
+  mic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg>',
+  steth:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4v7a6 6 0 0012 0V4"/><path d="M10 4v7a2 2 0 004 0V4"/><circle cx="18" cy="19" r="3"/></svg>',
+  wrench:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 005.4-5.4L16 11l-3-3 1.7-1.7z"/></svg>'
+};
+const NAV = [
+  {sec:'Mesa'},
+  {id:'comando', label:'Central de Comando', icon:'terminal'},
+  {id:'metricas', label:'Metricas ao vivo', icon:'bars'},
+  {id:'agentes', label:'Status dos agentes', icon:'cpu'},
+  {sec:'Inteligencia'},
+  {id:'macd', label:'MACD xG', icon:'trend'},
+  {id:'h2h', label:'H2H Analytics', icon:'swords'},
+  {id:'odds', label:'Odds Matrix', icon:'layers'},
+  {id:'poisson', label:'Campo & Poisson', icon:'grid'},
+  {id:'mercado', label:'Vigia do mercado', icon:'eye'},
+  {id:'risco', label:'Sentinela de risco', icon:'shield'},
+  {sec:'Sistema'},
+  {id:'captura', label:'Captura SokkerPRO', icon:'cam'},
+  {id:'hermes', label:'Hermes Chat', icon:'chat'},
+  {id:'voz', label:'Voz', icon:'mic'},
+  {id:'diag', label:'Diagnostico', icon:'steth'},
+  {id:'tools', label:'Todas as ferramentas', icon:'wrench'}
+];
+const TOOLS = [
+  ['Central de Comando','Mesa Operator OS original','comando'],
+  ['Metricas ao vivo','Times, minuto, cantos, xG do ui/state','metricas'],
+  ['Status dos agentes','Engine / GLM advisory / registry','agentes'],
+  ['MACD xG','Pressao e xG lado a lado','macd'],
+  ['H2H Analytics','Confronto atual sem inventar historico','h2h'],
+  ['Odds Matrix','Odds do payload. Cantos vazios = sem mercado','odds'],
+  ['Campo & Poisson','Motor de cantos esperados','poisson'],
+  ['Vigia do Mercado','Linhas e drift quando existirem','mercado'],
+  ['Sentinela de Risco','Kill zone / HOLD / paper lock','risco'],
+  ['Asian Stabilizer','Estabilizacao de linha asiatica','risco'],
+  ['Map Filter','Filtro territorial de pressao','metricas'],
+  ['Captura SokkerPRO','Feed Bridge + extensao','captura'],
+  ['Hermes Chat',':8777 operador do sistema','hermes'],
+  ['Voz Jarvis',':8099 lazy start','voz'],
+  ['Diagnostico deep','/api/diagnostics/deep','diag'],
+  ['CHECK servicos','Health 8080/8765/8766/8777','diag'],
+  ['Quarantine Auto Label','Agente GLM — rotulo quarentena','agentes'],
+  ['Results Agent','Pos-jogo quando houver log','agentes'],
+  ['Cross Language Scout','OFF por default (NETWORK)','agentes'],
+  ['Data Janitor','Limpeza de payload','agentes'],
+  ['Post-Match Forensics','Auditoria pos-jogo','agentes'],
+  ['Red Team Adversary','Stress do gate — paper only','agentes'],
+  ['Self Healing Scraper','Recupera captura','captura'],
+  ['AURA Director','Orquestracao advisory','agentes']
+];
+
+const navEl = document.getElementById('nav');
+NAV.forEach(item => {
+  if (item.sec) {
+    const d = document.createElement('div'); d.className='sec'; d.textContent=item.sec; navEl.appendChild(d); return;
+  }
+  const b = document.createElement('button');
+  b.dataset.id = item.id;
+  b.innerHTML = `${ICONS[item.icon]||''}<b>${item.label}</b>`;
+  if (item.id==='comando') b.classList.add('on');
+  b.onclick = () => show(item.id);
+  navEl.appendChild(b);
+});
+document.getElementById('burger').onclick = () => document.getElementById('side').classList.toggle('collapsed');
+
+function show(id){
+  document.querySelectorAll('.nav button').forEach(b => b.classList.toggle('on', b.dataset.id===id));
+  document.querySelectorAll('.view').forEach(v => v.classList.toggle('on', v.id==='v-'+id));
+  if (id!=='comando' && id!=='hermes') renderView(id);
+}
+
+let STATE = null;
+function viewOf(s){
+  if (!s || typeof s!=='object') return {};
+  return (s.snapshot && s.snapshot.view) || s.view || s.live || {};
+}
+function n(v){ return (v===0 || v) ? v : '—'; }
+
+async function getJSON(urls){
+  for (const u of urls){
+    try{
+      const r = await fetch(u, {cache:'no-store'});
+      if (r.ok) return await r.json();
+    }catch(e){}
+  }
+  return null;
+}
+async function ping(url){
+  try{ const r = await fetch(url,{cache:'no-store'}); return r.ok || (r.status>0 && r.status<500); }
+  catch(e){ return false; }
+}
+
+function card(title, value, sub, span){
+  return `<article class="card ${span||''}"><h3>${title}</h3><div class="k mono">${value}</div><div class="sub">${sub||''}</div></article>`;
+}
+
+function renderView(id){
+  const v = viewOf(STATE);
+  const home = v.home || v.home_team || 'Home';
+  const away = v.away || v.away_team || 'Away';
+  const min = n(v.minute);
+  const ch = n((v.corners&&v.corners[0]) ?? v.home_corners ?? v.corners_home);
+  const ca = n((v.corners&&v.corners[1]) ?? v.away_corners ?? v.corners_away);
+  const xh = n((v.xg&&v.xg[0]) ?? v.xg_home);
+  const xa = n((v.xg&&v.xg[1]) ?? v.xg_away);
+  const ph = Number((v.pressure&&v.pressure[0]) ?? v.ip1_home ?? 0) || 0;
+  const pa = Number((v.pressure&&v.pressure[1]) ?? v.ip1_away ?? 0) || 0;
+  const ev = Array.isArray(v.corner_events) ? v.corner_events : [];
+  const odds = (STATE && (STATE.odds || (STATE.snapshot&&STATE.snapshot.odds))) || {};
+  const el = document.getElementById('v-'+id);
+  if (!el || el.classList.contains('bleed')) return;
+
+  if (id==='metricas'){
+    el.innerHTML = `<div class="grid">
+      ${card('Partida', home+' x '+away, 'minuto '+min+' · fonte ui/state','w6')}
+      ${card('Cantos', ch+' — '+ca, ev.length? ev.length+' eventos no snapshot':'sem corner_events','w3')}
+      ${card('xG', xh+' — '+xa, 'nao inventar se vier vazio','w3')}
+      <article class="card w6"><h3>Pressao H</h3><div class="k mono">${ph}</div><div class="bar"><i style="width:${Math.min(100,ph)}%"></i></div></article>
+      <article class="card w6"><h3>Pressao A</h3><div class="k mono">${pa}</div><div class="bar"><i style="width:${Math.min(100,pa)}%"></i></div></article>
+      <article class="card w12"><h3>corner_events</h3>
+        <div class="sub">${ev.length? ev.map(e=> (e.min||e.minute||'?')+"' "+(e.team||e.side||'')).join(' · ') : 'Nenhum evento no snapshot atual.'}</div>
+      </article>
+    </div>`;
+  }
+  if (id==='agentes'){
+    el.innerHTML = `<div class="grid">
+      ${card('Politica', 'GLM advisory', 'execution_allowed=false')}
+      ${card('Modo', 'paper', 'nenhuma ordem real')}
+      ${card('Director', 'ON', 'orquestra leitura, nao executa')}
+      ${card('Scout / Crew', 'OFF', 'network e crew desligados')}
+      <article class="card w12"><h3>Agentes no catalogo</h3>
+        <div class="tools">${TOOLS.filter(t=>['agentes','risco'].includes(t[2])).map(t=>`<button class="tool" data-go="${t[2]}"><b>${t[0]}</b><span>${t[1]}</span></button>`).join('')}</div>
+      </article>
+    </div>`;
+  }
+  if (id==='macd'){
+    el.innerHTML = `<div class="grid">
+      ${card('xG '+home, xh, 'ataque mandante')}
+      ${card('xG '+away, xa, 'ataque visitante')}
+      <article class="card w12"><h3>Leitura</h3><p class="note">MACD xG so usa numeros do ui/state. Sem xG no feed, o painel fica em traco. Nao interpolo.</p></article>
+    </div>`;
+  }
+  if (id==='h2h'){
+    el.innerHTML = `<div class="grid">${card('Confronto', home+' x '+away, 'minuto '+min,'w12')}
+      <article class="card w12"><p class="note">H2H historico so aparece com base local. Este pacote nao inventa retrospecto Sporting/Braga.</p></article></div>`;
+  }
+  if (id==='odds'){
+    const c = (odds.corners && odds.corners.length) ? JSON.stringify(odds.corners) : 'odds.corners = []';
+    el.innerHTML = `<div class="grid">
+      ${card('1x2', JSON.stringify(odds['1x2']||odds.moneyline||'—'), 'nao e odd de canto','w6')}
+      ${card('Cantos', c, 'vazio = sem mercado de escanteio','w6')}
+    </div>`;
+  }
+  if (id==='poisson'){
+    el.innerHTML = `<div class="grid">
+      ${card('Cantos live', ch+' — '+ca, 'observado')}
+      ${card('Eventos', ev.length, 'clock do snapshot')}
+      <article class="card w12"><p class="note">Poisson do motor vive na Mesa (Central de Comando). Aqui so espelho o que o state ja confirmou.</p></article>
+    </div>`;
+  }
+  if (id==='mercado'){
+    el.innerHTML = `<div class="grid">${card('Vigia', 'HOLD', 'sem mercado de canto = nao ha edge listavel','w12')}
+      <article class="card w12"><p class="note">Vigia do Mercado e Sentinela nao disparam entrada. Paper only.</p></article></div>`;
+  }
+  if (id==='risco'){
+    el.innerHTML = `<div class="grid">
+      ${card('Gate', 'HOLD', 'kill zone fail-closed')}
+      ${card('Unlock live', '0', 'AURA_UNLOCK_LIVE=0')}
+      ${card('Execucao', 'false', 'execution_allowed')}
+      ${card('Paper', 'true', 'invariante')}
+    </div>`;
+  }
+  if (id==='captura'){
+    el.innerHTML = `<div class="grid">
+      ${card('Bridge', '8080', 'ingestao SokkerPRO')}
+      ${card('Extensao', 'MV3', 'pasta extensao no Chrome')}
+      ${card('Stale', (STATE && STATE.capture_age_s) || '—', '>45s = aba inativa, nao reinstalar')}
+      <article class="card w12"><p class="note">Sem feed a mesa pode mostrar demo. Com feed, times e corner_events vêm do ui/state.</p></article>
+    </div>`;
+  }
+  if (id==='voz'){
+    el.innerHTML = `<div class="grid">${card('Voice', ':8099', 'jarvis_voice_server --lazy','w6')}
+      <article class="card w6"><p class="note">Sobe no INSTALAR_TUDO passo SERVICOS. Nao bloqueia o core se a voz falhar.</p></article></div>`;
+  }
+  if (id==='diag'){
+    el.innerHTML = `<div class="grid"><article class="card w12"><h3>Diagnostico</h3><pre class="log" id="diagLog">A puxar health...</pre></article></div>`;
+    runDiag();
+  }
+  if (id==='tools'){
+    el.innerHTML = `<div class="tools">${TOOLS.map(t=>`<button class="tool" data-go="${t[2]}"><b>${t[0]}</b><span>${t[1]}</span><em>abrir</em></button>`).join('')}</div>`;
+  }
+  el.querySelectorAll('[data-go]').forEach(b => b.onclick = () => show(b.dataset.go));
+}
+
+async function runDiag(){
+  const log = document.getElementById('diagLog');
+  if (!log) return;
+  const rows = [
+    ['Bridge','http://127.0.0.1:8080/health'],
+    ['Engine','http://127.0.0.1:8765/api/health'],
+    ['Matriz','http://127.0.0.1:8766/health'],
+    ['Hermes','http://127.0.0.1:8777/chat'],
+    ['Voice','http://127.0.0.1:8099/api/voice/health'],
+    ['Ollama','http://127.0.0.1:11434/api/tags']
+  ];
+  const lines = [];
+  for (const [n,u] of rows){
+    const ok = await ping(u);
+    lines.push((ok?'OK   ':'DOWN ')+n.padEnd(8)+' '+u);
+  }
+  const deep = await getJSON(['/api/aura/diagnostic','http://127.0.0.1:8765/api/diagnostics/deep']);
+  if (deep) lines.push('\n'+JSON.stringify(deep,null,2).slice(0,4000));
+  else lines.push('\ndeep diagnostic indisponivel');
+  log.textContent = lines.join('\n');
+}
+
+function setDot(id, on){
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.className = 'dot ' + (on?'on':'off');
+}
+
+async function tick(){
+  const healths = await Promise.all([
+    ping('http://127.0.0.1:8080/health'),
+    ping('http://127.0.0.1:8765/api/health'),
+    ping('http://127.0.0.1:8766/health'),
+    ping('http://127.0.0.1:8777/chat'),
+    ping('http://127.0.0.1:8099/api/voice/health'),
+    ping('http://127.0.0.1:11434/api/tags')
+  ]);
+  setDot('d8080', healths[0]); setDot('d8765', healths[1]); setDot('d8766', healths[2]);
+  setDot('d8777', healths[3]); setDot('d8099', healths[4]); setDot('d11434', healths[5]);
+
+  STATE = await getJSON(['/api/aura/ui-state','http://127.0.0.1:8765/api/ui/state','http://127.0.0.1:8766/api/aura/ui-state']);
+  const v = viewOf(STATE);
+  const home = v.home || v.home_team;
+  const away = v.away || v.away_team;
+  const min = v.minute;
+  document.getElementById('matchClock').textContent = (min===0 || min) ? (String(min)+"'") : '--:--';
+  document.getElementById('matchLine').textContent = home && away ? (home+' x '+away+' · paper trade') : 'Sem times no ui/state · paper trade';
+  const feed = document.getElementById('feedPill');
+  if (home && away){ feed.textContent='feed live'; feed.className='pill ok'; }
+  else { feed.textContent='feed demo/off'; feed.className='pill'; }
+  const on = document.querySelector('.view.on');
+  if (on && !on.classList.contains('bleed')) renderView(on.id.replace('v-',''));
+}
+tick();
+setInterval(tick, 4000);
+</script>
+
+<link rel="stylesheet" href="./assets/aura-tools-rail.css"/>
+<script src="./assets/aura-tools-rail.js" defer></script>
+
+</body>
+</html>

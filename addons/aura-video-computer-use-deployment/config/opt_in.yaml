@@ -1,0 +1,20 @@
+# AURA Video + Computer Use — opt-in only (do not auto-merge into control plane)
+video:
+  enabled: true
+  mode: dry_run
+  overwrite_source: false
+  delete_source: false
+  publication_allowed: false
+  upload_allowed: false
+  network_allowed: false
+  require_execute_flag: true
+  require_env_approval: AURA_VIDEO_EXECUTION_APPROVED
+computer_use:
+  enabled: false
+  execution_allowed: false
+  approval_required: true
+  authenticated_profiles_allowed: false
+  max_actions_per_task: 30
+  timeout_seconds: 120
+scheduler:
+  enabled: false

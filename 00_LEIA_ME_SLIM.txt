@@ -1,0 +1,17 @@
+AURA QUANT-X HERMES — PACOTE SLIM V37.3.30
+=========================================
+paper_trade=true | execution_allowed=false
+
+Este ZIP foi auditado e limpo:
+- Removidos duplicados de imagens, BATs legados, docs historicos, clutter da raiz
+- Mantidos engine/bridge/voz/desktop/scripts e BATs oficiais + Grok Ops
+
+INSTALACAO
+1. Extrair
+2. INSTALAR_TUDO.bat (admin)
+3. AURA_GROK_FIX.bat
+4. AURA_GROK_ACTIVATE.bat
+
+GPU livre: AURA_GROK_GPU_LIVRE.bat
+Docs: DOCUMENTACAO_COMPLETA_AURA_QUANT_X_HERMES.md
+Auditoria desta limpeza: AUDITORIA_LIMPEZA_V37.3.30_SLIM.md

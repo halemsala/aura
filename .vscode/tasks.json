@@ -1,0 +1,69 @@
+﻿{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "AURA: Diagnostico somente leitura",
+      "type": "shell",
+      "command": "python",
+      "args": ["${workspaceFolder}\\engine\\diagnostico_aura_definitivo.py", "--json", "--output", "${workspaceFolder}\\state\\diagnostico_latest.json"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "AURA: Ver relatorio atual",
+      "type": "shell",
+      "command": "powershell",
+      "args": ["-NoProfile", "-Command", "Get-Content -LiteralPath '${workspaceFolder}\\state\\diagnostico_latest.json' -Raw"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "AURA: Iniciar harness",
+      "type": "shell",
+      "command": "python",
+      "args": ["${workspaceFolder}\\AURA_HARNESS_CORE.py"],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PYTHONPATH": "${workspaceFolder};${workspaceFolder}\\scripts",
+          "NO_PROXY": "127.0.0.1,localhost",
+          "no_proxy": "127.0.0.1,localhost"
+        }
+      },
+      "isBackground": false,
+      "problemMatcher": []
+    },
+    {
+      "label": "AURA: Reparar Ollama",
+      "type": "shell",
+      "command": "python",
+      "args": ["${workspaceFolder}\\AURA_HARNESS_CORE.py", "--reparar"],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PYTHONPATH": "${workspaceFolder};${workspaceFolder}\\scripts",
+          "NO_PROXY": "127.0.0.1,localhost",
+          "no_proxy": "127.0.0.1,localhost"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "AURA: Monitorar GPU",
+      "type": "shell",
+      "command": "nvidia-smi",
+      "args": ["-l", "2"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "AURA: Testar API Ollama",
+      "type": "shell",
+      "command": "curl.exe",
+      "args": ["--noproxy", "*", "--max-time", "5", "-sS", "http://127.0.0.1:11434/api/tags"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    }
+  ]
+}

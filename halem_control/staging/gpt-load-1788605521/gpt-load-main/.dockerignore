@@ -1,0 +1,38 @@
+.git
+.github
+.env*
+!.env.example
+
+# Binary, build, coverage, temporary, and profiling output
+gpt-load
+build/
+dist/
+node_modules/
+web/node_modules/
+internal/webui/dist/
+bin/
+coverage/
+tmp/
+temp/
+*.test
+*.out
+*.prof
+*.pprof
+
+# Runtime data and secrets
+data/
+data_bak/
+*.db*
+*.sqlite*
+*.key
+*.log
+
+# Editor and OS files
+.idea/
+.vscode/
+*.code-workspace
+*.swp
+*.swo
+*~
+.DS_Store
+._*

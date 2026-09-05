@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kanteiro · AURA QUANT-X</title>
+  <link rel="stylesheet" href="kanteiro-chat.css">
+</head>
+<body>
+  <div class="chat-app" id="chatApp">
+    <header class="chat-topbar"><div class="chat-brand"><span class="kanteiro-mark">K</span><div><strong>AURA QUANT-X</strong><small>Central / Conversa com Kanteiro</small></div></div><div class="match-context-top"><span class="live-dot"></span><span>AO VIVO</span><b id="topMatch">Aguardando captura</b><span id="topScore">— × —</span><span id="topMinute">—</span><span class="fresh" id="topFresh">N/D</span></div><div class="top-actions"><button id="openWindow">ABRIR EM JANELA</button><button id="backCentral">VOLTAR À CENTRAL</button></div></header>
+    <div class="chat-layout">
+      <main class="conversation">
+        <section class="assistant-head"><div class="kanteiro-orb"><span></span></div><div><h1>KANTEIRO</h1><p>Assistente contextual de escanteios</p><span class="reading"><i></i><span id="readingStatus">lendo os dados da partida</span></span></div><div class="voice-head"><span>Voz ativa</span><div class="mini-wave"></div><button id="speakHeader">OUVIR RESUMO</button></div></section>
+        <nav class="chat-modes" aria-label="Modo de conversa"><button class="active" data-mode="analysis">▣ Análise</button><button data-mode="explain">ⓘ Explicação</button><button data-mode="review">◷ Revisão</button><button data-mode="diagnostic">⌁ Diagnóstico</button></nav>
+        <section id="messages" class="messages" aria-live="polite"><div class="welcome-message"><strong>Conversa contextual pronta</strong><span>Kanteiro responderá com base apenas nos dados disponíveis da partida travada.</span></div></section>
+        <div id="typing" class="typing" hidden><span class="mini-avatar">K</span><span>Kanteiro está analisando<span class="typing-dots">...</span></span></div>
+        <section class="quick-questions"><header><span>PERGUNTAS RÁPIDAS SOBRE ESTA PARTIDA</span><small>um toque envia o contexto atual</small></header><div id="quickQuestions" class="question-grid"></div></section>
+        <form id="composer" class="composer"><textarea id="chatInput" rows="1" placeholder="Pergunte qualquer coisa sobre a partida…" aria-label="Mensagem para Kanteiro"></textarea><div class="composer-footer"><span>Enter envia · Shift+Enter quebra linha · dados ausentes não são inventados</span><div><button type="button" id="micButton">MICROFONE</button><button type="button" id="contextButton">ANEXAR CONTEXTO</button><button type="button" id="speakButton">OUVIR</button><button type="submit" id="sendButton">ENVIAR</button></div></div></form>
+      </main>
+      <aside class="context-rail"><header><div><small>CONTEXTO DA PARTIDA</small><h2>O que está acontecendo agora</h2></div><button id="hideContext">OCULTAR</button></header><section class="context-card"><header><b>ESTADO AGORA</b><span class="ok-text">AO VIVO</span></header><div class="score-block"><span id="homeTeam">Casa</span><strong id="homeScore">—</strong><em>:</em><strong id="awayScore">—</strong><span id="awayTeam">Fora</span></div><div class="context-meta"><span id="contextMinute">—</span><span>CAPTURA <b id="captureStatus">—</b></span><span>FIXTURE <b id="fixtureId">—</b></span></div></section><section class="context-card decision-card"><header><b>DECISÃO ATUAL</b><span>RISK ENGINE</span></header><div class="blocked-state"><strong id="decisionState">BLOQUEADO</strong><span>Observação de escanteio</span><b>EXPOSIÇÃO <em id="decisionExposure">0%</em></b></div><div id="reasonChips" class="reason-chips"></div></section><section class="context-card"><header><b>RESUMO DOS ESCANTEIOS</b><button class="context-action" data-question="Resuma os escanteios atuais e o ritmo dos últimos 5 minutos.">PERGUNTAR</button></header><div class="corner-summary"><div><small>ATUAIS</small><b id="cornerNow">—</b></div><div><small>ÚLTIMO</small><b id="cornerLast">—</b></div><div><small>5 MIN</small><b id="corner5">—</b></div><div><small>PRÓX. 5 MIN</small><b id="cornerP5">—</b></div></div><div class="context-spark"></div></section><section class="context-card"><header><b>GRÁFICOS DISPONÍVEIS</b><button class="context-action" data-question="Mostre todos os gráficos disponíveis e explique quais estão prontos.">VER</button></header><div id="chartLinks" class="chart-links"></div></section><section class="context-card"><header><b>ORIGEM DOS DADOS</b></header><div id="sourceGrid" class="source-grid"></div></section></aside>
+    </div>
+  </div>
+  <script src="aura-quantx-adapter.js"></script><script src="kanteiro-chat.js"></script>
+</body>
+</html>

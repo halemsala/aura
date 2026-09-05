@@ -1,0 +1,24 @@
+AURA QUANT-X — VOZES LOCAIS / REFERENCIA
+========================================
+
+INSTALACAO RAPIDA (Windows):
+  AURA_INSTALAR_VOZ_NATURAL_AGORA.bat
+
+DEFAULT ATIVO (Edge-TTS):
+  VOZ = pt-BR-HumbertoNeural
+  Rate = -12%
+  Pitch = -8Hz
+
+PIPER (offline, leve) — modelos incluidos:
+  voices\piper\pt_BR-faber-medium.onnx   (masculina)
+  voices\piper\miro_pt-BR.onnx           (masculina)
+  Teste: AURA_TESTAR_PIPER.bat
+
+XTTS (maior naturalidade local):
+  1) Coloque voz_masculina_referencia.wav nesta pasta (ver COMO_FAZER_WAV_REFERENCIA.txt)
+  2) Rode AURA_ATIVAR_XTTS_REFERENCIA.bat
+
+ESTILO DE FALA (Grok / mesa):
+  voice_profiles\PROMPT_GROK_VOZ_MASCULINA.md
+  voice_profiles\PERFIL_ASSISTENTE_ESPORTIVO_ANALITICO.md
+  (ja injetados no system_prompt do config.yaml)

@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "description": "Pre-autorizacao do operador — uma vez; o sistema so publica dentro destes limites",
+  "enabled": false,
+  "require_paper_advisory_language": true,
+  "forbid_phrases": [
+    "lucro garantido",
+    "sure bet",
+    "greencard",
+    "aposta real agora",
+    "execution_allowed",
+    "entra com dinheiro real"
+  ],
+  "require_phrases_any": [
+    "paper",
+    "advisory",
+    "analise",
+    "simulado",
+    "nao e aconselhamento"
+  ],
+  "auto_publish": {
+    "enabled": false,
+    "max_per_hour": 12,
+    "max_per_day": 80,
+    "min_seconds_between": 45,
+    "only_if_red_team": "APPROVED",
+    "min_score": 70,
+    "markets_allowlist": ["corners", "escanteios", "cantos", "AH", "1x2"],
+    "quiet_hours_local": {"start": 1, "end": 7},
+    "session_grant_hours": 12,
+    "session_grant_requires_operator_token": true
+  },
+  "manual_queue": {
+    "enabled": true,
+    "max_queue_size": 200,
+    "retain_hours": 48
+  },
+  "kill_switch_env": "AURA_TELEGRAM_KILL_SWITCH"
+}

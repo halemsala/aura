@@ -1,0 +1,15 @@
+{
+  "status": "arena_lite_success",
+  "proposal": {
+    "fix": "fix_desktop_json",
+    "score": 0.9,
+    "why": "homepage/matriz"
+  },
+  "candidates": [
+    {
+      "fix": "fix_desktop_json",
+      "score": 0.9,
+      "why": "homepage/matriz"
+    }
+  ]
+}

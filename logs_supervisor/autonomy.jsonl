@@ -1,0 +1,705 @@
+2026-09-01T02:53:23.110767Z	info	SYSTEM	Catalogo recarregado — 14 entradas ativas sem restart
+2026-09-01T02:53:26.123865Z	info	E-NET-005	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-01T02:54:11.149456Z	info	E-NET-005	OK E-NET-005 RESOLVIDO — cascata deve recuperar []
+2026-09-01T03:00:00.003798Z	info	SYSTEM	Catalogo recarregado — 14 entradas ativas sem restart
+2026-09-01T03:09:03.324322Z	warning	PRED	RAM 77% subindo 0.9%/ciclo → 90% em ~14 min
+2026-09-01T03:10:03.780963Z	warning	PRED	RAM 75% subindo 0.7%/ciclo → 90% em ~23 min
+2026-09-01T03:11:04.125988Z	warning	PRED	RAM 75% subindo 0.5%/ciclo → 90% em ~27 min
+2026-09-01T03:12:04.533740Z	warning	PRED	RAM 75% subindo 0.4%/ciclo → 90% em ~34 min
+2026-09-01T03:13:04.884823Z	warning	PRED	RAM 75% subindo 0.3%/ciclo → 90% em ~43 min
+2026-09-01T03:45:25.233045Z	info	SYSTEM	Catalogo recarregado — 14 entradas ativas sem restart
+2026-09-01T03:45:31.512616Z	info	E-NET-005	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-01T03:46:16.521439Z	info	E-NET-005	OK E-NET-005 RESOLVIDO — cascata deve recuperar []
+2026-09-01T03:55:20.219805Z	warning	PRED	RAM 81% subindo 0.5%/ciclo → 90% em ~16 min
+2026-09-01T03:56:20.598258Z	warning	PRED	RAM 80% subindo 0.5%/ciclo → 90% em ~21 min
+2026-09-01T03:57:21.015346Z	warning	PRED	RAM 78% subindo 0.3%/ciclo → 90% em ~39 min
+2026-09-01T04:04:15.271836Z	info	SYSTEM	Catalogo recarregado — 14 entradas ativas sem restart
+2026-09-01T04:04:21.259846Z	info	E-NET-005	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-01T04:05:06.290684Z	info	E-NET-005	OK E-NET-005 RESOLVIDO — cascata deve recuperar []
+2026-09-01T04:12:10.835627Z	info	SYSTEM	Catalogo recarregado — 14 entradas ativas sem restart
+2026-09-01T04:12:16.148476Z	info	E-NET-005	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-01T04:13:01.154654Z	info	E-NET-005	OK E-NET-005 RESOLVIDO — cascata deve recuperar []
+2026-09-01T04:47:17.032457Z	warning	PRED	RAM 86% subindo 0.3%/ciclo → 90% em ~13 min
+2026-09-01T04:48:17.501430Z	warning	PRED	RAM 84% subindo 0.3%/ciclo → 90% em ~20 min
+2026-09-01T06:00:52.255718Z	warning	PRED	RAM 83% subindo 0.3%/ciclo → 90% em ~22 min
+2026-09-01T06:01:52.752544Z	warning	PRED	RAM 83% subindo 0.4%/ciclo → 90% em ~18 min
+2026-09-01T06:02:53.200589Z	warning	PRED	RAM 83% subindo 0.4%/ciclo → 90% em ~17 min
+2026-09-01T06:03:53.686263Z	warning	PRED	RAM 83% subindo 0.4%/ciclo → 90% em ~16 min
+2026-09-01T06:04:54.066128Z	warning	PRED	RAM 83% subindo 0.5%/ciclo → 90% em ~15 min
+2026-09-01T06:05:54.602481Z	warning	PRED	RAM 83% subindo 0.5%/ciclo → 90% em ~15 min
+2026-09-01T06:06:55.017784Z	warning	PRED	RAM 83% subindo 0.5%/ciclo → 90% em ~15 min
+2026-09-01T06:07:55.475401Z	warning	PRED	RAM 83% subindo 0.5%/ciclo → 90% em ~15 min
+2026-09-01T06:08:55.901169Z	warning	PRED	RAM 84% subindo 0.5%/ciclo → 90% em ~13 min
+2026-09-01T06:09:56.411005Z	warning	PRED	RAM 84% subindo 0.5%/ciclo → 90% em ~12 min
+2026-09-01T06:10:56.810444Z	warning	PRED	RAM 84% subindo 0.5%/ciclo → 90% em ~13 min
+2026-09-01T06:11:57.260840Z	warning	PRED	RAM 82% subindo 0.5%/ciclo → 90% em ~17 min
+2026-09-01T06:12:57.749243Z	warning	PRED	RAM 84% subindo 0.4%/ciclo → 90% em ~14 min
+2026-09-01T06:13:58.301469Z	warning	PRED	RAM 85% subindo 0.4%/ciclo → 90% em ~12 min
+2026-09-01T06:14:58.749604Z	warning	PRED	RAM 87% subindo 0.4%/ciclo → 90% em ~7 min
+2026-09-01T06:15:59.268655Z	warning	PRED	RAM 88% subindo 0.4%/ciclo → 90% em ~6 min
+2026-09-01T06:16:59.837869Z	warning	PRED	RAM 88% subindo 0.4%/ciclo → 90% em ~5 min
+2026-09-01T06:18:00.324147Z	warning	PRED	RAM 87% subindo 0.4%/ciclo → 90% em ~7 min
+2026-09-01T06:19:00.865462Z	warning	PRED	RAM 86% subindo 0.4%/ciclo → 90% em ~10 min
+2026-09-01T06:20:01.447236Z	warning	PRED	RAM 87% subindo 0.4%/ciclo → 90% em ~7 min
+2026-09-01T06:21:01.946546Z	warning	PRED	RAM 89% subindo 0.4%/ciclo → 90% em ~3 min
+2026-09-01T06:22:02.431240Z	critical	E-SYS-001	RAM 90% critico
+2026-09-01T06:23:02.865366Z	warning	PRED	RAM 76% subindo 0.3%/ciclo → 90% em ~47 min
+2026-09-01T07:06:25.246398Z	warning	PRED	RAM 82% subindo 0.3%/ciclo → 90% em ~24 min
+2026-09-01T07:07:25.688061Z	warning	PRED	RAM 80% subindo 0.4%/ciclo → 90% em ~24 min
+2026-09-01T07:08:26.310094Z	warning	PRED	RAM 74% subindo 0.4%/ciclo → 90% em ~39 min
+2026-09-01T07:09:26.918154Z	warning	PRED	RAM 76% subindo 0.5%/ciclo → 90% em ~30 min
+2026-09-01T07:10:27.880346Z	warning	PRED	RAM 79% subindo 0.5%/ciclo → 90% em ~21 min
+2026-09-01T07:10:33.853734Z	warning	E-NET-004	Deteccao autonoma: E-NET-004 · Engine AURA offline (porta 8765)
+2026-09-01T07:10:40.390638Z	info	E-NET-004	Auto-fix EXECUTANDO: {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-01T07:11:32.133064Z	critical	E-NET-004	FALHA E-NET-004 auto-fix apos verificacao. Intervencao humana.
+2026-09-01T07:12:32.213862Z	warning	PRED	RAM 77% subindo 0.5%/ciclo → 90% em ~26 min
+2026-09-01T07:12:35.950010Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-01T07:13:36.009861Z	warning	PRED	RAM 78% subindo 0.5%/ciclo → 90% em ~25 min
+2026-09-01T07:13:39.763324Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-01T07:14:39.822106Z	warning	PRED	RAM 78% subindo 0.5%/ciclo → 90% em ~24 min
+2026-09-01T07:14:43.548163Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-01T07:15:43.606769Z	warning	PRED	RAM 78% subindo 0.5%/ciclo → 90% em ~25 min
+2026-09-01T07:15:52.162556Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-01T07:16:37.173169Z	info	E-NET-004	OK E-NET-004 RESOLVIDO — cascata deve recuperar []
+2026-09-01T07:17:37.232428Z	warning	PRED	RAM 76% subindo 0.4%/ciclo → 90% em ~33 min
+2026-09-01T07:18:37.907502Z	warning	PRED	RAM 76% subindo 0.4%/ciclo → 90% em ~39 min
+2026-09-01T07:19:38.606262Z	warning	PRED	RAM 75% subindo 0.3%/ciclo → 90% em ~46 min
+2026-09-01T07:30:51.516054Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-01T07:31:36.527665Z	info	E-NET-004	OK E-NET-004 RESOLVIDO — cascata deve recuperar []
+2026-09-01T15:08:17.338145Z	info	SYSTEM	Catalogo recarregado — 14 entradas ativas sem restart
+2026-09-01T15:08:19.076017Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-01T15:09:20.789315Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-01T15:10:22.497579Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-01T15:11:24.221654Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-01T15:12:25.993320Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-01T15:13:27.657611Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-01T15:14:29.358886Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-01T15:17:30.344974Z	warning	PRED	RAM 73% subindo 0.6%/ciclo → 90% em ~28 min
+2026-09-01T15:18:30.868008Z	warning	PRED	RAM 77% subindo 0.8%/ciclo → 90% em ~16 min
+2026-09-01T15:19:31.400202Z	warning	PRED	RAM 77% subindo 0.9%/ciclo → 90% em ~14 min
+2026-09-01T15:20:31.891925Z	warning	PRED	RAM 83% subindo 1.1%/ciclo → 90% em ~7 min
+2026-09-01T15:21:32.464987Z	warning	PRED	RAM 81% subindo 1.1%/ciclo → 90% em ~8 min
+2026-09-01T15:21:38.316850Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-01T15:22:23.321496Z	info	E-NET-004	OK E-NET-004 RESOLVIDO — cascata deve recuperar []
+2026-09-01T15:23:23.377263Z	warning	PRED	RAM 80% subindo 1.1%/ciclo → 90% em ~9 min
+2026-09-01T15:23:26.079651Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-01T15:24:26.133602Z	warning	PRED	RAM 79% subindo 1.0%/ciclo → 90% em ~11 min
+2026-09-01T15:25:26.668876Z	warning	PRED	RAM 79% subindo 1.0%/ciclo → 90% em ~11 min
+2026-09-01T15:26:27.935241Z	warning	PRED	RAM 79% subindo 0.9%/ciclo → 90% em ~12 min
+2026-09-01T15:27:28.527926Z	warning	PRED	RAM 78% subindo 0.9%/ciclo → 90% em ~13 min
+2026-09-01T15:28:28.960081Z	warning	PRED	RAM 83% subindo 0.9%/ciclo → 90% em ~8 min
+2026-09-01T15:29:29.474764Z	warning	PRED	RAM 79% subindo 0.8%/ciclo → 90% em ~14 min
+2026-09-01T15:30:29.963628Z	warning	PRED	RAM 79% subindo 0.7%/ciclo → 90% em ~15 min
+2026-09-01T15:31:30.421646Z	warning	PRED	RAM 79% subindo 0.7%/ciclo → 90% em ~15 min
+2026-09-01T15:32:31.710397Z	warning	PRED	RAM 79% subindo 0.7%/ciclo → 90% em ~16 min
+2026-09-01T15:32:38.316903Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-01T15:33:24.151931Z	info	E-NET-004	OK E-NET-004 RESOLVIDO — cascata deve recuperar []
+2026-09-01T15:34:24.204181Z	warning	PRED	RAM 79% subindo 0.6%/ciclo → 90% em ~18 min
+2026-09-01T15:35:25.166330Z	warning	PRED	RAM 78% subindo 0.6%/ciclo → 90% em ~22 min
+2026-09-01T15:36:26.402085Z	warning	PRED	RAM 80% subindo 0.5%/ciclo → 90% em ~19 min
+2026-09-01T15:37:27.891960Z	warning	PRED	RAM 79% subindo 0.5%/ciclo → 90% em ~21 min
+2026-09-01T15:38:28.861136Z	warning	PRED	RAM 78% subindo 0.5%/ciclo → 90% em ~26 min
+2026-09-01T15:39:29.660853Z	warning	PRED	RAM 81% subindo 0.5%/ciclo → 90% em ~20 min
+2026-09-01T15:40:30.235417Z	warning	PRED	RAM 78% subindo 0.4%/ciclo → 90% em ~29 min
+2026-09-01T15:41:30.690628Z	warning	PRED	RAM 78% subindo 0.4%/ciclo → 90% em ~31 min
+2026-09-01T15:42:31.099607Z	warning	PRED	RAM 78% subindo 0.3%/ciclo → 90% em ~38 min
+2026-09-01T15:43:38.039296Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-01T15:44:23.046252Z	info	E-NET-004	OK E-NET-004 RESOLVIDO — cascata deve recuperar []
+2026-09-01T16:15:57.427176Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-01T16:16:42.431614Z	info	E-NET-004	OK E-NET-004 RESOLVIDO — cascata deve recuperar []
+2026-09-01T16:38:11.555355Z	info	SYSTEM	Catalogo recarregado — 14 entradas ativas sem restart
+2026-09-01T17:17:48.180354Z	warning	PRED	RAM 78% subindo 0.3%/ciclo → 90% em ~36 min
+2026-09-01T17:18:48.670550Z	warning	PRED	RAM 78% subindo 0.4%/ciclo → 90% em ~31 min
+2026-09-01T17:19:49.171718Z	warning	PRED	RAM 82% subindo 0.4%/ciclo → 90% em ~19 min
+2026-09-01T17:20:49.636776Z	warning	PRED	RAM 81% subindo 0.5%/ciclo → 90% em ~19 min
+2026-09-01T17:21:50.608379Z	warning	PRED	RAM 80% subindo 0.5%/ciclo → 90% em ~21 min
+2026-09-01T17:21:56.663962Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-01T17:22:41.691574Z	info	E-NET-004	OK E-NET-004 RESOLVIDO — cascata deve recuperar []
+2026-09-01T17:26:45.392557Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-01T17:27:52.052738Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-01T17:28:37.074582Z	info	E-NET-004	OK E-NET-004 RESOLVIDO — cascata deve recuperar []
+2026-09-01T17:31:42.372829Z	info	E-NET-005	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-01T17:32:27.398040Z	info	E-NET-005	OK E-NET-005 RESOLVIDO — cascata deve recuperar []
+2026-09-01T17:51:50.149564Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-01T17:52:35.157163Z	info	E-NET-004	OK E-NET-004 RESOLVIDO — cascata deve recuperar []
+2026-09-01T18:18:47.568738Z	warning	PRED	RAM 88% subindo 0.3%/ciclo → 90% em ~6 min
+2026-09-01T18:19:48.019353Z	warning	PRED	RAM 87% subindo 0.4%/ciclo → 90% em ~8 min
+2026-09-01T18:20:48.503559Z	warning	PRED	RAM 88% subindo 0.4%/ciclo → 90% em ~4 min
+2026-09-01T18:21:49.004157Z	critical	E-SYS-001	RAM 96% critico
+2026-09-01T18:22:49.464659Z	warning	PRED	RAM 75% subindo 0.4%/ciclo → 90% em ~37 min
+2026-09-01T18:23:49.962950Z	warning	PRED	RAM 87% subindo 0.4%/ciclo → 90% em ~7 min
+2026-09-01T18:24:50.421694Z	warning	PRED	RAM 79% subindo 0.4%/ciclo → 90% em ~28 min
+2026-09-01T18:25:50.931085Z	warning	PRED	RAM 79% subindo 0.4%/ciclo → 90% em ~30 min
+2026-09-01T18:26:51.285895Z	warning	PRED	RAM 75% subindo 0.3%/ciclo → 90% em ~48 min
+2026-09-01T18:57:04.380294Z	warning	PRED	RAM 81% subindo 0.4%/ciclo → 90% em ~26 min
+2026-09-01T18:58:04.797367Z	warning	PRED	RAM 79% subindo 0.4%/ciclo → 90% em ~25 min
+2026-09-01T18:59:05.180798Z	warning	PRED	RAM 80% subindo 0.5%/ciclo → 90% em ~21 min
+2026-09-01T19:00:05.709527Z	warning	PRED	RAM 80% subindo 0.6%/ciclo → 90% em ~17 min
+2026-09-01T19:01:06.200089Z	warning	PRED	RAM 82% subindo 0.7%/ciclo → 90% em ~13 min
+2026-09-01T19:02:06.655907Z	warning	PRED	RAM 83% subindo 0.6%/ciclo → 90% em ~12 min
+2026-09-01T19:03:07.049498Z	warning	PRED	RAM 83% subindo 0.6%/ciclo → 90% em ~13 min
+2026-09-01T19:04:07.497845Z	warning	PRED	RAM 84% subindo 0.5%/ciclo → 90% em ~13 min
+2026-09-01T19:05:08.028108Z	warning	PRED	RAM 82% subindo 0.5%/ciclo → 90% em ~18 min
+2026-09-01T19:06:08.450857Z	warning	PRED	RAM 81% subindo 0.4%/ciclo → 90% em ~19 min
+2026-09-01T19:07:08.915608Z	warning	PRED	RAM 83% subindo 0.4%/ciclo → 90% em ~16 min
+2026-09-01T19:08:09.285551Z	warning	PRED	RAM 83% subindo 0.4%/ciclo → 90% em ~16 min
+2026-09-01T19:34:22.483573Z	critical	E-SYS-001	RAM 90% critico
+2026-09-01T19:35:22.981234Z	critical	E-SYS-001	RAM 91% critico
+2026-09-01T19:36:23.560469Z	critical	E-SYS-001	RAM 91% critico
+2026-09-01T19:37:24.113530Z	warning	PRED	RAM 82% subindo 0.5%/ciclo → 90% em ~15 min
+2026-09-01T19:38:24.603842Z	warning	PRED	RAM 85% subindo 0.6%/ciclo → 90% em ~10 min
+2026-09-01T19:39:25.213632Z	warning	PRED	RAM 85% subindo 0.5%/ciclo → 90% em ~12 min
+2026-09-01T19:40:25.877766Z	warning	PRED	RAM 88% subindo 0.4%/ciclo → 90% em ~5 min
+2026-09-01T19:41:26.404089Z	warning	PRED	RAM 87% subindo 0.4%/ciclo → 90% em ~8 min
+2026-09-01T19:42:26.913079Z	warning	PRED	RAM 82% subindo 0.4%/ciclo → 90% em ~23 min
+2026-09-02T12:22:31.981828Z	info	SYSTEM	Catalogo recarregado — 14 entradas ativas sem restart
+2026-09-02T12:31:37.232768Z	warning	PRED	RAM 85% subindo 0.6%/ciclo → 90% em ~8 min
+2026-09-02T12:32:37.735651Z	warning	PRED	RAM 85% subindo 0.7%/ciclo → 90% em ~7 min
+2026-09-02T12:33:38.258290Z	warning	PRED	RAM 87% subindo 0.8%/ciclo → 90% em ~3 min
+2026-09-02T12:34:38.756628Z	warning	PRED	RAM 89% subindo 0.8%/ciclo → 90% em ~2 min
+2026-09-02T12:35:39.209187Z	warning	PRED	RAM 87% subindo 0.8%/ciclo → 90% em ~4 min
+2026-09-02T12:36:39.577121Z	warning	PRED	RAM 87% subindo 0.8%/ciclo → 90% em ~3 min
+2026-09-02T12:37:39.953632Z	critical	E-SYS-001	RAM 91% critico
+2026-09-02T12:40:01.369677Z	info	SYSTEM	Catalogo recarregado — 14 entradas ativas sem restart
+2026-09-02T12:40:04.126920Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-02T12:41:05.818850Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-02T12:42:07.553983Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-02T12:43:09.276968Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-02T12:44:10.997471Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-02T12:45:12.761329Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-02T12:50:14.772872Z	warning	PRED	RAM 73% subindo 1.8%/ciclo → 90% em ~9 min
+2026-09-02T12:51:15.295368Z	warning	PRED	RAM 74% subindo 1.7%/ciclo → 90% em ~9 min
+2026-09-02T12:52:15.768556Z	warning	PRED	RAM 73% subindo 1.6%/ciclo → 90% em ~10 min
+2026-09-02T12:53:16.254545Z	warning	PRED	RAM 78% subindo 1.6%/ciclo → 90% em ~7 min
+2026-09-02T12:54:16.770797Z	warning	PRED	RAM 73% subindo 1.4%/ciclo → 90% em ~12 min
+2026-09-02T12:55:17.153196Z	warning	PRED	RAM 76% subindo 1.3%/ciclo → 90% em ~11 min
+2026-09-02T12:56:17.636514Z	warning	PRED	RAM 75% subindo 1.2%/ciclo → 90% em ~12 min
+2026-09-02T12:57:18.339699Z	warning	PRED	RAM 79% subindo 1.2%/ciclo → 90% em ~9 min
+2026-09-02T12:58:18.809331Z	warning	PRED	RAM 81% subindo 1.2%/ciclo → 90% em ~8 min
+2026-09-02T12:59:19.829886Z	warning	PRED	RAM 81% subindo 1.2%/ciclo → 90% em ~7 min
+2026-09-02T13:00:20.414850Z	warning	PRED	RAM 84% subindo 1.2%/ciclo → 90% em ~5 min
+2026-09-02T13:01:20.927140Z	warning	PRED	RAM 82% subindo 1.2%/ciclo → 90% em ~7 min
+2026-09-02T13:02:21.434959Z	warning	PRED	RAM 81% subindo 1.1%/ciclo → 90% em ~8 min
+2026-09-02T13:03:21.866552Z	warning	PRED	RAM 80% subindo 1.1%/ciclo → 90% em ~9 min
+2026-09-02T13:04:22.362278Z	warning	PRED	RAM 80% subindo 1.0%/ciclo → 90% em ~9 min
+2026-09-02T13:05:22.852937Z	warning	PRED	RAM 81% subindo 1.0%/ciclo → 90% em ~9 min
+2026-09-02T13:06:23.346542Z	warning	PRED	RAM 80% subindo 0.9%/ciclo → 90% em ~11 min
+2026-09-02T13:07:23.812428Z	warning	PRED	RAM 76% subindo 0.8%/ciclo → 90% em ~17 min
+2026-09-02T13:08:24.281267Z	warning	PRED	RAM 89% subindo 0.9%/ciclo → 90% em ~2 min
+2026-09-02T13:09:24.846545Z	critical	E-SYS-001	RAM 91% critico
+2026-09-02T13:10:25.633392Z	critical	E-SYS-001	RAM 90% critico
+2026-09-02T13:11:27.373703Z	warning	PRED	RAM 89% subindo 0.8%/ciclo → 90% em ~1 min
+2026-09-02T13:12:27.829629Z	warning	PRED	RAM 89% subindo 0.8%/ciclo → 90% em ~2 min
+2026-09-02T13:13:28.373990Z	warning	PRED	RAM 89% subindo 0.7%/ciclo → 90% em ~2 min
+2026-09-02T13:14:28.919476Z	warning	PRED	RAM 90% subindo 0.7%/ciclo → 90% em ~0 min
+2026-09-02T13:15:29.413910Z	critical	E-SYS-001	RAM 92% critico
+2026-09-02T13:16:29.977324Z	critical	E-SYS-001	RAM 93% critico
+2026-09-02T13:17:30.731979Z	critical	E-SYS-001	RAM 90% critico
+2026-09-02T13:18:31.534164Z	critical	E-SYS-001	RAM 92% critico
+2026-09-02T13:19:32.076650Z	critical	E-SYS-001	RAM 92% critico
+2026-09-02T13:20:32.624357Z	critical	E-SYS-001	RAM 92% critico
+2026-09-02T13:34:56.874913Z	info	SYSTEM	Catalogo recarregado — 14 entradas ativas sem restart
+2026-09-02T13:40:38.870274Z	info	SYSTEM	Catalogo recarregado — 14 entradas ativas sem restart
+2026-09-02T13:44:42.427749Z	critical	E-SYS-001	RAM 91% critico
+2026-09-02T13:45:42.969277Z	critical	E-SYS-001	RAM 92% critico
+2026-09-02T13:45:52.666574Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T13:46:38.581472Z	info	E-NET-004	OK E-NET-004 RESOLVIDO — cascata deve recuperar []
+2026-09-02T13:47:38.653297Z	critical	E-SYS-001	RAM 91% critico
+2026-09-02T13:47:42.358985Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-02T13:48:42.448676Z	critical	E-SYS-001	RAM 92% critico
+2026-09-02T13:51:03.510753Z	info	SYSTEM	Catalogo recarregado — 14 entradas ativas sem restart
+2026-09-02T13:51:03.674208Z	critical	E-SYS-001	RAM 92% critico
+2026-09-02T13:51:10.027310Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T13:51:55.036654Z	info	E-NET-004	OK E-NET-004 RESOLVIDO — cascata deve recuperar []
+2026-09-02T13:52:55.135527Z	critical	E-SYS-001	RAM 95% critico
+2026-09-02T13:53:56.708655Z	critical	E-SYS-001	RAM 95% critico
+2026-09-02T13:53:59.554317Z	warning	E-NET-004	Deteccao autonoma: E-NET-004 · Engine AURA offline (porta 8765)
+2026-09-02T13:53:59.557841Z	info	E-NET-004	Auto-fix NAO executado (cooldown ativo)
+2026-09-02T13:54:59.647815Z	critical	E-SYS-001	RAM 93% critico
+2026-09-02T13:55:03.217236Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-02T13:58:29.472069Z	info	SYSTEM	Catalogo recarregado — 14 entradas ativas sem restart
+2026-09-02T13:59:37.633617Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T14:00:22.656744Z	info	E-NET-004	OK E-NET-004 RESOLVIDO — cascata deve recuperar []
+2026-09-02T14:03:28.103979Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-02T14:04:30.677271Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-02T14:08:41.516264Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T14:09:26.545121Z	info	E-NET-004	OK E-NET-004 RESOLVIDO — cascata deve recuperar []
+2026-09-02T14:12:05.370860Z	info	SYSTEM	Catalogo recarregado — 14 entradas ativas sem restart
+2026-09-02T14:12:11.353205Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T14:12:23.977133Z	info	SYSTEM	Catalogo recarregado — 14 entradas ativas sem restart
+2026-09-02T14:12:43.014697Z	info	SYSTEM	Catalogo recarregado — 14 entradas ativas sem restart
+2026-09-02T14:12:49.563060Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T14:13:34.571009Z	info	E-NET-004	OK E-NET-004 RESOLVIDO — cascata deve recuperar []
+2026-09-02T14:15:37.276365Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-02T14:16:44.035390Z	info	SYSTEM	Catalogo recarregado â€” 14 entradas ativas sem restart
+2026-09-02T14:17:01.162624Z	info	E-NET-003	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OFF | matriz OFF | hermes OK | voice OFF | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T14:17:46.274650Z	info	E-NET-003	OK E-NET-003 RESOLVIDO â€” cascata deve recuperar ['matriz']
+2026-09-02T14:17:50.425417Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T14:18:35.431925Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar ['matriz']
+2026-09-02T14:19:37.425754Z	info	SYSTEM	Catalogo recarregado â€” 14 entradas ativas sem restart
+2026-09-02T14:24:24.285301Z	info	SYSTEM	Catalogo recarregado â€” 14 entradas ativas sem restart
+2026-09-02T14:24:31.143708Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T14:25:16.175257Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-02T14:27:18.934095Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-02T14:31:29.941290Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T14:32:14.949150Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-02T14:33:17.184676Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-02T14:35:20.595288Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-02T14:37:17.756308Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T14:39:28.528044Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T14:40:13.764356Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-02T16:01:04.983067Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T16:01:05.078748Z	critical	E-SYS-001	RAM 97% critico
+2026-09-02T16:02:05.926554Z	critical	E-SYS-001	RAM 94% critico
+2026-09-02T16:03:08.249077Z	critical	E-SYS-001	RAM 94% critico
+2026-09-02T16:04:09.548117Z	critical	E-SYS-001	RAM 96% critico
+2026-09-02T16:05:11.707998Z	critical	E-SYS-001	RAM 94% critico
+2026-09-02T16:06:12.549349Z	critical	E-SYS-001	RAM 97% critico
+2026-09-02T16:06:15.792609Z	warning	E-NET-004	Deteccao autonoma: E-NET-004 Â· Engine AURA offline (porta 8765)
+2026-09-02T16:06:20.361559Z	info	E-NET-004	Auto-fix EXECUTANDO: {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T16:07:05.616690Z	info	E-NET-004	OK E-NET-004 RESOLVIDO autonomamente. Sistema estavel.
+2026-09-02T16:08:08.973124Z	warning	E-NET-004	Deteccao autonoma: E-NET-004 Â· Engine AURA offline (porta 8765)
+2026-09-02T16:08:08.974125Z	info	E-NET-004	Auto-fix NAO executado (cooldown ativo)
+2026-09-02T16:09:45.130559Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T16:13:57.824018Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T16:14:42.832709Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-02T16:17:52.472727Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T16:18:37.483420Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-02T16:20:40.973662Z	warning	PRED	RAM 85% subindo 1.8%/ciclo â†’ 90% em ~3 min
+2026-09-02T16:20:44.402019Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-02T16:21:44.457906Z	warning	PRED	RAM 84% subindo 1.6%/ciclo â†’ 90% em ~4 min
+2026-09-02T16:21:51.569362Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T16:22:36.579393Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-02T16:23:36.634379Z	warning	PRED	RAM 87% subindo 1.5%/ciclo â†’ 90% em ~2 min
+2026-09-02T16:23:39.371377Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-02T16:24:39.424843Z	warning	PRED	RAM 86% subindo 1.3%/ciclo â†’ 90% em ~3 min
+2026-09-02T16:24:43.241073Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-02T16:25:43.298528Z	warning	PRED	RAM 84% subindo 1.1%/ciclo â†’ 90% em ~5 min
+2026-09-02T16:25:52.702177Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T16:26:37.709438Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-02T16:27:37.767950Z	warning	PRED	RAM 83% subindo 1.0%/ciclo â†’ 90% em ~7 min
+2026-09-02T16:28:40.540195Z	warning	PRED	RAM 85% subindo 0.9%/ciclo â†’ 90% em ~6 min
+2026-09-02T16:29:41.403309Z	warning	PRED	RAM 86% subindo 0.8%/ciclo â†’ 90% em ~6 min
+2026-09-02T16:30:42.276434Z	warning	PRED	RAM 86% subindo 0.7%/ciclo â†’ 90% em ~5 min
+2026-09-02T16:31:45.638215Z	warning	PRED	RAM 86% subindo 0.7%/ciclo â†’ 90% em ~6 min
+2026-09-02T16:32:46.472657Z	warning	PRED	RAM 84% subindo 0.6%/ciclo â†’ 90% em ~10 min
+2026-09-02T16:32:53.401560Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T16:33:38.409885Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-02T16:34:38.467282Z	warning	PRED	RAM 88% subindo 0.6%/ciclo â†’ 90% em ~3 min
+2026-09-02T16:35:39.344240Z	warning	PRED	RAM 87% subindo 0.6%/ciclo â†’ 90% em ~5 min
+2026-09-02T16:35:41.659858Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-02T16:36:41.716476Z	warning	PRED	RAM 86% subindo 0.5%/ciclo â†’ 90% em ~6 min
+2026-09-02T16:37:42.653622Z	warning	PRED	RAM 89% subindo 0.5%/ciclo â†’ 90% em ~3 min
+2026-09-02T16:38:44.379477Z	warning	PRED	RAM 88% subindo 0.5%/ciclo â†’ 90% em ~5 min
+2026-09-02T16:39:48.257444Z	warning	PRED	RAM 88% subindo 0.5%/ciclo â†’ 90% em ~5 min
+2026-09-02T16:40:52.845562Z	warning	PRED	RAM 88% subindo 0.5%/ciclo â†’ 90% em ~4 min
+2026-09-02T16:41:53.781589Z	warning	PRED	RAM 88% subindo 0.5%/ciclo â†’ 90% em ~5 min
+2026-09-02T16:42:54.604211Z	warning	PRED	RAM 88% subindo 0.4%/ciclo â†’ 90% em ~5 min
+2026-09-02T16:43:56.064643Z	warning	PRED	RAM 90% subindo 0.4%/ciclo â†’ 90% em ~0 min
+2026-09-02T16:44:56.903944Z	critical	E-SYS-001	RAM 90% critico
+2026-09-02T17:14:11.235711Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T17:21:53.644116Z	critical	E-SYS-001	RAM 99% critico
+2026-09-02T17:23:24.548036Z	critical	E-SYS-001	RAM 90% critico
+2026-09-02T17:55:28.151948Z	critical	E-SYS-001	RAM 94% critico
+2026-09-02T17:56:39.904100Z	critical	E-SYS-001	RAM 94% critico
+2026-09-02T17:57:42.636727Z	warning	PRED	RAM 88% subindo 1.0%/ciclo â†’ 90% em ~2 min
+2026-09-02T17:58:43.742794Z	warning	PRED	RAM 87% subindo 1.2%/ciclo â†’ 90% em ~3 min
+2026-09-02T17:59:45.417692Z	warning	PRED	RAM 76% subindo 1.2%/ciclo â†’ 90% em ~11 min
+2026-09-02T18:00:47.156547Z	warning	PRED	RAM 80% subindo 1.3%/ciclo â†’ 90% em ~8 min
+2026-09-02T18:01:48.183500Z	warning	PRED	RAM 82% subindo 1.3%/ciclo â†’ 90% em ~6 min
+2026-09-02T18:02:49.206792Z	warning	PRED	RAM 80% subindo 1.3%/ciclo â†’ 90% em ~8 min
+2026-09-02T18:03:49.992945Z	warning	PRED	RAM 80% subindo 1.3%/ciclo â†’ 90% em ~8 min
+2026-09-02T19:11:56.617991Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T19:12:15.318183Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OFF | engine OK | matriz OFF | hermes OK | voice OFF | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T19:13:00.323924Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar ['matriz']
+2026-09-02T19:13:04.577034Z	info	E-NET-003	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T19:13:49.748938Z	info	E-NET-003	OK E-NET-003 RESOLVIDO â€” cascata deve recuperar ['matriz']
+2026-09-02T19:35:45.210378Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T19:43:34.010012Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T19:47:47.487043Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T19:48:32.517365Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-02T19:55:36.815459Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T20:04:45.588973Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T20:17:49.314782Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T20:18:49.963071Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T20:19:40.848868Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T20:22:48.523247Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T20:23:33.552721Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-02T20:39:15.938231Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T20:40:11.497980Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T21:03:32.370070Z	critical	E-SYS-001	RAM 91% critico
+2026-09-02T21:08:11.001636Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T21:12:30.736806Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OFF | hermes OK | voice OFF | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T21:13:15.740787Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar ['matriz']
+2026-09-02T21:40:48.842263Z	info	E-NET-003	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OFF | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T21:41:34.014897Z	info	E-NET-003	OK E-NET-003 RESOLVIDO â€” cascata deve recuperar []
+2026-09-02T21:41:42.195784Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T21:42:27.209519Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-02T21:53:35.627749Z	critical	E-SYS-001	RAM 92% critico
+2026-09-02T21:54:36.605034Z	critical	E-SYS-001	RAM 93% critico
+2026-09-02T21:55:37.650165Z	critical	E-SYS-001	RAM 93% critico
+2026-09-02T21:56:38.716274Z	critical	E-SYS-001	RAM 97% critico
+2026-09-02T21:57:39.583209Z	critical	E-SYS-001	RAM 95% critico
+2026-09-02T21:59:22.375621Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T22:04:51.424539Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ainda OFF — ver logs_supervisor/engine_boot.log ==== BOOT 2026-09-02 19:04:27 ==== | [skill_runtime] build CHATFIX4 carregado — filtro de intenção de análise ATIVO | ltro de intenção de análise ATIVO. Estado agora: bridge OK | engine OFF | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T22:05:36.456024Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-02T22:09:40.597934Z	warning	PRED	RAM 88% subindo 1.4%/ciclo â†’ 90% em ~2 min
+2026-09-02T22:10:41.941235Z	warning	PRED	RAM 87% subindo 1.1%/ciclo â†’ 90% em ~3 min
+2026-09-02T22:11:42.871841Z	warning	PRED	RAM 87% subindo 1.0%/ciclo â†’ 90% em ~3 min
+2026-09-02T22:12:19.678971Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T22:12:19.684962Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T22:12:27.277820Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T22:12:50.632423Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T22:12:50.744890Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T22:12:55.870138Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T22:13:40.619010Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T22:13:40.742176Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T22:30:53.351143Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T22:30:53.373267Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T22:38:52.837328Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T22:38:52.841382Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T22:48:01.863698Z	warning	PRED	RAM 83% subindo 1.4%/ciclo â†’ 90% em ~5 min
+2026-09-02T22:49:02.636872Z	warning	PRED	RAM 83% subindo 1.2%/ciclo â†’ 90% em ~6 min
+2026-09-02T22:50:03.388610Z	warning	PRED	RAM 82% subindo 1.0%/ciclo â†’ 90% em ~8 min
+2026-09-02T22:51:04.192904Z	warning	PRED	RAM 82% subindo 0.8%/ciclo â†’ 90% em ~9 min
+2026-09-02T22:52:05.020079Z	warning	PRED	RAM 82% subindo 0.7%/ciclo â†’ 90% em ~11 min
+2026-09-02T22:52:41.485876Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T22:52:41.485876Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T23:00:25.088864Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T23:00:25.106568Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T23:12:51.160270Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T23:12:51.167270Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T23:14:58.069432Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OFF | engine OK | matriz OFF | hermes OK | voice OFF | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T23:15:30.486725Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T23:15:30.501258Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-02T23:15:40.248197Z	info	E-NET-005	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OFF | engine OK | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T23:16:25.263452Z	info	E-NET-005	OK E-NET-005 RESOLVIDO â€” cascata deve recuperar []
+2026-09-02T23:16:29.639127Z	info	E-NET-003	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-02T23:17:14.810369Z	info	E-NET-003	OK E-NET-003 RESOLVIDO â€” cascata deve recuperar []
+2026-09-02T23:26:21.087612Z	warning	PRED	RAM 80% subindo 0.9%/ciclo â†’ 90% em ~11 min
+2026-09-02T23:27:22.218346Z	warning	PRED	RAM 79% subindo 0.9%/ciclo â†’ 90% em ~12 min
+2026-09-02T23:28:22.918716Z	warning	PRED	RAM 79% subindo 0.9%/ciclo â†’ 90% em ~12 min
+2026-09-02T23:29:23.759965Z	warning	PRED	RAM 80% subindo 0.9%/ciclo â†’ 90% em ~10 min
+2026-09-02T23:30:24.592800Z	warning	PRED	RAM 81% subindo 0.9%/ciclo â†’ 90% em ~10 min
+2026-09-02T23:31:25.360193Z	warning	PRED	RAM 81% subindo 0.9%/ciclo â†’ 90% em ~10 min
+2026-09-02T23:32:26.140118Z	warning	PRED	RAM 81% subindo 0.9%/ciclo â†’ 90% em ~10 min
+2026-09-02T23:33:27.000359Z	warning	PRED	RAM 82% subindo 0.9%/ciclo â†’ 90% em ~10 min
+2026-09-02T23:34:27.867099Z	warning	PRED	RAM 89% subindo 1.0%/ciclo â†’ 90% em ~1 min
+2026-09-02T23:35:28.774676Z	warning	PRED	RAM 89% subindo 1.0%/ciclo â†’ 90% em ~1 min
+2026-09-02T23:36:29.593360Z	warning	PRED	RAM 88% subindo 1.0%/ciclo â†’ 90% em ~2 min
+2026-09-02T23:37:30.461133Z	critical	E-SYS-001	RAM 91% critico
+2026-09-02T23:38:31.345066Z	critical	E-SYS-001	RAM 90% critico
+2026-09-02T23:39:32.187492Z	critical	E-SYS-001	RAM 92% critico
+2026-09-02T23:40:33.122377Z	critical	E-SYS-001	RAM 92% critico
+2026-09-02T23:41:34.278542Z	critical	E-SYS-001	RAM 95% critico
+2026-09-02T23:42:35.342871Z	critical	E-SYS-001	RAM 96% critico
+2026-09-02T23:43:36.359941Z	warning	PRED	RAM 87% subindo 1.0%/ciclo â†’ 90% em ~3 min
+2026-09-02T23:44:37.497823Z	warning	PRED	RAM 88% subindo 1.0%/ciclo â†’ 90% em ~3 min
+2026-09-02T23:45:38.500113Z	warning	PRED	RAM 88% subindo 0.9%/ciclo â†’ 90% em ~2 min
+2026-09-02T23:46:39.505282Z	critical	E-SYS-001	RAM 91% critico
+2026-09-02T23:47:40.564415Z	critical	E-SYS-001	RAM 92% critico
+2026-09-02T23:48:41.574233Z	critical	E-SYS-001	RAM 92% critico
+2026-09-02T23:49:42.290308Z	critical	E-SYS-001	RAM 96% critico
+2026-09-02T23:50:43.232935Z	critical	E-SYS-001	RAM 91% critico
+2026-09-02T23:51:44.738085Z	warning	PRED	RAM 87% subindo 0.7%/ciclo â†’ 90% em ~4 min
+2026-09-02T23:52:45.719584Z	warning	PRED	RAM 88% subindo 0.6%/ciclo â†’ 90% em ~3 min
+2026-09-02T23:53:46.559143Z	warning	PRED	RAM 81% subindo 0.5%/ciclo â†’ 90% em ~18 min
+2026-09-02T23:54:47.538720Z	warning	PRED	RAM 82% subindo 0.4%/ciclo â†’ 90% em ~23 min
+2026-09-03T00:12:01.455253Z	critical	E-SYS-001	RAM 90% critico
+2026-09-03T00:13:02.090741Z	critical	E-SYS-001	RAM 96% critico
+2026-09-03T00:14:03.240371Z	critical	E-SYS-001	RAM 94% critico
+2026-09-03T00:15:04.230112Z	critical	E-SYS-001	RAM 94% critico
+2026-09-03T00:16:05.257332Z	critical	E-SYS-001	RAM 97% critico
+2026-09-03T00:17:17.711821Z	critical	E-SYS-001	RAM 96% critico
+2026-09-03T00:18:22.526536Z	critical	E-SYS-001	RAM 94% critico
+2026-09-03T00:19:34.844365Z	critical	E-SYS-001	RAM 93% critico
+2026-09-03T00:20:38.139049Z	critical	E-SYS-001	RAM 92% critico
+2026-09-03T00:20:54.592277Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T00:20:54.593276Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T00:20:54.595744Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T00:20:54.596761Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T00:20:54.599758Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T00:20:54.599758Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T00:20:54.601759Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T00:22:17.777825Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T00:22:17.863030Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T00:22:45.429726Z	info	E-NET-003	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-03T00:23:30.615332Z	info	E-NET-003	OK E-NET-003 RESOLVIDO â€” cascata deve recuperar []
+2026-09-03T00:47:57.062409Z	warning	PRED	RAM 86% subindo 0.4%/ciclo â†’ 90% em ~11 min
+2026-09-03T00:48:58.259029Z	warning	PRED	RAM 88% subindo 0.6%/ciclo â†’ 90% em ~4 min
+2026-09-03T00:49:59.405087Z	warning	PRED	RAM 87% subindo 0.7%/ciclo â†’ 90% em ~5 min
+2026-09-03T00:51:00.550004Z	warning	PRED	RAM 86% subindo 0.9%/ciclo â†’ 90% em ~4 min
+2026-09-03T00:52:01.840086Z	warning	PRED	RAM 86% subindo 1.0%/ciclo â†’ 90% em ~4 min
+2026-09-03T00:53:03.088374Z	critical	E-SYS-001	RAM 91% critico
+2026-09-03T00:54:04.248412Z	warning	PRED	RAM 90% subindo 0.8%/ciclo â†’ 90% em ~0 min
+2026-09-03T00:55:05.365514Z	warning	PRED	RAM 89% subindo 0.7%/ciclo â†’ 90% em ~1 min
+2026-09-03T00:56:06.518373Z	critical	E-SYS-001	RAM 93% critico
+2026-09-03T00:57:07.616412Z	critical	E-SYS-001	RAM 94% critico
+2026-09-03T00:58:08.719056Z	warning	PRED	RAM 81% subindo 0.5%/ciclo â†’ 90% em ~17 min
+2026-09-03T00:59:09.757226Z	warning	PRED	RAM 83% subindo 0.5%/ciclo â†’ 90% em ~15 min
+2026-09-03T01:00:10.795469Z	warning	PRED	RAM 84% subindo 0.4%/ciclo â†’ 90% em ~15 min
+2026-09-03T01:01:11.895593Z	warning	PRED	RAM 85% subindo 0.4%/ciclo â†’ 90% em ~13 min
+2026-09-03T01:45:55.456562Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ainda OFF — ver logs_supervisor/engine_boot.log ==== BOOT 2026-09-02 22:44:45 ==== |  | ==== BOOT 2026-09-02 22:45:22 ====. Estado agora: bridge OK | engine OFF | matriz OFF | hermes OK | voice OFF | ollama OFF. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-03T01:46:58.057149Z	critical	E-NET-004	FALHA E-NET-004 auto-fix apos verificacao. Intervencao humana.
+2026-09-03T01:47:57.015300Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T01:47:57.015300Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T01:48:16.970565Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OFF | hermes OK | voice OFF | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-03T01:49:01.985519Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar ['matriz']
+2026-09-03T01:52:04.675686Z	critical	E-SYS-001	RAM 94% critico
+2026-09-03T01:52:43.358657Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T01:52:43.388655Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T02:05:23.789920Z	critical	E-SYS-001	RAM 90% critico
+2026-09-03T02:06:22.152676Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T02:06:24.978514Z	warning	PRED	RAM 86% subindo 0.5%/ciclo â†’ 90% em ~9 min
+2026-09-03T02:06:27.005631Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:07:16.242222Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T02:07:18.781989Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T02:07:27.082740Z	warning	PRED	RAM 86% subindo 0.6%/ciclo â†’ 90% em ~6 min
+2026-09-03T02:07:34.553655Z	critical	E-NET-002	RCA: Ollama e a causa de ['engine', 'voice']. NAO reiniciar sintomas.
+2026-09-03T02:08:34.642340Z	critical	E-SYS-001	RAM 96% critico
+2026-09-03T02:08:36.627282Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:11:25.287710Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T02:11:34.159564Z	critical	E-NET-002	RCA: Ollama e a causa de ['engine', 'voice']. NAO reiniciar sintomas.
+2026-09-03T02:12:37.294685Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:13:39.380136Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:14:41.423778Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:15:43.359200Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:16:45.329864Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:17:47.344660Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:18:49.486909Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:19:51.548433Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:20:51.643445Z	critical	E-SYS-001	RAM 91% critico
+2026-09-03T02:20:53.522020Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:21:53.613714Z	critical	E-SYS-001	RAM 91% critico
+2026-09-03T02:21:55.594210Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:22:55.685025Z	critical	E-SYS-001	RAM 92% critico
+2026-09-03T02:22:57.657406Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:23:57.743089Z	critical	E-SYS-001	RAM 92% critico
+2026-09-03T02:23:59.677830Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:24:59.780595Z	critical	E-SYS-001	RAM 93% critico
+2026-09-03T02:25:01.799843Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:26:01.903849Z	critical	E-SYS-001	RAM 94% critico
+2026-09-03T02:26:03.891557Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:27:03.981961Z	critical	E-SYS-001	RAM 90% critico
+2026-09-03T02:27:05.879266Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:28:05.953421Z	critical	E-SYS-001	RAM 91% critico
+2026-09-03T02:28:07.853441Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:29:07.908917Z	warning	PRED	RAM 88% subindo 2.3%/ciclo â†’ 90% em ~1 min
+2026-09-03T02:29:09.733917Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:30:09.786454Z	warning	PRED	RAM 85% subindo 2.0%/ciclo â†’ 90% em ~3 min
+2026-09-03T02:30:11.726504Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:31:11.781985Z	warning	PRED	RAM 86% subindo 1.8%/ciclo â†’ 90% em ~2 min
+2026-09-03T02:31:13.806201Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:32:13.868970Z	warning	PRED	RAM 85% subindo 1.6%/ciclo â†’ 90% em ~3 min
+2026-09-03T02:32:15.819356Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:33:15.874458Z	warning	PRED	RAM 88% subindo 1.5%/ciclo â†’ 90% em ~1 min
+2026-09-03T02:33:17.776637Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:34:17.834002Z	warning	PRED	RAM 89% subindo 1.4%/ciclo â†’ 90% em ~1 min
+2026-09-03T02:34:19.798140Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:35:19.897760Z	critical	E-SYS-001	RAM 90% critico
+2026-09-03T02:35:21.784922Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:36:21.883936Z	critical	E-SYS-001	RAM 92% critico
+2026-09-03T02:36:23.780349Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:37:23.832869Z	warning	PRED	RAM 88% subindo 1.2%/ciclo â†’ 90% em ~1 min
+2026-09-03T02:37:25.775418Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:38:25.831243Z	warning	PRED	RAM 89% subindo 1.1%/ciclo â†’ 90% em ~1 min
+2026-09-03T02:38:27.720003Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:39:27.775096Z	warning	PRED	RAM 89% subindo 1.0%/ciclo â†’ 90% em ~1 min
+2026-09-03T02:39:29.727389Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:40:29.841042Z	critical	E-SYS-001	RAM 95% critico
+2026-09-03T02:40:31.783912Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:41:31.872919Z	critical	E-SYS-001	RAM 96% critico
+2026-09-03T02:41:33.744018Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:42:33.817120Z	critical	E-SYS-001	RAM 95% critico
+2026-09-03T02:42:35.783527Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:43:35.850548Z	critical	E-SYS-001	RAM 92% critico
+2026-09-03T02:43:37.824624Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:44:37.881619Z	warning	PRED	RAM 84% subindo 0.5%/ciclo â†’ 90% em ~12 min
+2026-09-03T02:44:39.787796Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:45:41.893005Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:46:44.092363Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:47:46.293546Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:48:48.361409Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:49:50.487451Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:50:52.606081Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:51:54.683727Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:52:56.663629Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:53:59.061526Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:55:01.199058Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:56:07.780392Z	critical	E-NET-002	RCA: Ollama e a causa de ['engine']. NAO reiniciar sintomas.
+2026-09-03T02:57:09.703749Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:58:11.595450Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T02:59:16.919167Z	critical	E-NET-002	RCA: Ollama e a causa de ['engine']. NAO reiniciar sintomas.
+2026-09-03T03:00:18.967323Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T04:21:20.386248Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T04:21:21.425212Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T04:21:23.946920Z	critical	E-NET-002	RCA: Ollama e a causa de ['voice']. NAO reiniciar sintomas.
+2026-09-03T04:21:38.494033Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T04:22:25.926768Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T04:23:08.474200Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T04:23:27.792445Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T04:23:54.339404Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T04:24:29.757079Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T04:25:31.667938Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T04:26:33.567834Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T04:27:35.469139Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T04:27:53.985572Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T04:31:37.961617Z	warning	PRED	RAM 73% subindo 1.3%/ciclo â†’ 90% em ~12 min
+2026-09-03T04:32:38.872630Z	warning	PRED	RAM 73% subindo 1.3%/ciclo â†’ 90% em ~13 min
+2026-09-03T04:35:41.332851Z	warning	PRED	RAM 72% subindo 0.9%/ciclo â†’ 90% em ~20 min
+2026-09-03T04:36:00.605001Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-03T04:36:45.613822Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-03T04:37:45.676274Z	warning	PRED	RAM 76% subindo 0.9%/ciclo â†’ 90% em ~15 min
+2026-09-03T04:38:46.472111Z	warning	PRED	RAM 84% subindo 1.1%/ciclo â†’ 90% em ~6 min
+2026-09-03T04:38:53.264549Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-03T04:39:38.286835Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-03T04:40:38.342900Z	warning	PRED	RAM 86% subindo 1.2%/ciclo â†’ 90% em ~3 min
+2026-09-03T04:40:40.512702Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-03T04:41:40.566750Z	warning	PRED	RAM 86% subindo 1.2%/ciclo â†’ 90% em ~3 min
+2026-09-03T04:41:43.029638Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-03T04:42:43.084523Z	warning	PRED	RAM 87% subindo 1.3%/ciclo â†’ 90% em ~2 min
+2026-09-03T04:42:50.175627Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-03T04:43:35.194443Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-03T04:44:35.289277Z	critical	E-SYS-001	RAM 92% critico
+2026-09-03T04:44:38.759979Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-03T04:45:38.859411Z	critical	E-SYS-001	RAM 91% critico
+2026-09-03T04:46:39.757969Z	warning	PRED	RAM 90% subindo 1.4%/ciclo â†’ 90% em ~0 min
+2026-09-03T04:47:40.559713Z	warning	PRED	RAM 85% subindo 1.3%/ciclo â†’ 90% em ~4 min
+2026-09-03T04:47:54.128736Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-03T04:48:39.136353Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-03T04:49:42.416744Z	critical	E-NET-002	RCA: Ollama e a causa de []. NAO reiniciar sintomas.
+2026-09-03T18:28:50.229219Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-03T18:37:00.804229Z	critical	E-SYS-001	RAM 96% critico
+2026-09-03T18:37:32.559593Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-03T18:38:17.619707Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-03T18:39:17.732297Z	critical	E-SYS-001	RAM 94% critico
+2026-09-03T18:40:18.488124Z	warning	PRED	RAM 74% subindo 1.8%/ciclo â†’ 90% em ~9 min
+2026-09-03T18:41:20.007610Z	warning	PRED	RAM 75% subindo 1.3%/ciclo â†’ 90% em ~12 min
+2026-09-03T18:42:20.513160Z	warning	PRED	RAM 79% subindo 1.0%/ciclo â†’ 90% em ~11 min
+2026-09-03T18:43:21.061915Z	warning	PRED	RAM 82% subindo 0.9%/ciclo â†’ 90% em ~9 min
+2026-09-03T18:52:33.051561Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-03T18:53:18.066057Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-03T19:01:22.048060Z	critical	E-SYS-001	RAM 94% critico
+2026-09-03T19:01:29.164879Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-03T19:02:14.171842Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-03T19:03:14.233578Z	critical	E-SYS-001	RAM 96% critico
+2026-09-03T19:04:14.856204Z	critical	E-SYS-001	RAM 97% critico
+2026-09-03T19:05:15.424562Z	critical	E-SYS-001	RAM 97% critico
+2026-09-03T19:13:28.448587Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-03T19:14:13.464752Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-03T19:16:18.441939Z	info	E-NET-004	Auto-fix suspenso (cooldown ativo)
+2026-09-03T19:17:18.497884Z	warning	PRED	RAM 74% subindo 0.5%/ciclo â†’ 90% em ~30 min
+2026-09-03T19:18:20.024517Z	warning	PRED	RAM 76% subindo 0.5%/ciclo â†’ 90% em ~27 min
+2026-09-03T19:19:20.625080Z	warning	PRED	RAM 78% subindo 0.5%/ciclo â†’ 90% em ~25 min
+2026-09-03T19:20:22.193062Z	warning	PRED	RAM 78% subindo 0.5%/ciclo â†’ 90% em ~26 min
+2026-09-03T19:21:22.723132Z	warning	PRED	RAM 74% subindo 0.4%/ciclo â†’ 90% em ~39 min
+2026-09-03T19:38:39.417122Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-03T19:39:24.421852Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-03T19:46:34.478687Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-03T19:47:19.484733Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-03T19:50:20.559985Z	warning	PRED	RAM 79% subindo 0.3%/ciclo â†’ 90% em ~33 min
+2026-09-03T19:51:21.103023Z	warning	PRED	RAM 79% subindo 0.4%/ciclo â†’ 90% em ~26 min
+2026-09-03T19:52:21.700665Z	warning	PRED	RAM 80% subindo 0.5%/ciclo â†’ 90% em ~21 min
+2026-09-03T19:53:22.303464Z	warning	PRED	RAM 80% subindo 0.6%/ciclo â†’ 90% em ~17 min
+2026-09-03T19:54:22.817826Z	warning	PRED	RAM 81% subindo 0.5%/ciclo â†’ 90% em ~17 min
+2026-09-03T19:55:23.344016Z	warning	PRED	RAM 81% subindo 0.5%/ciclo â†’ 90% em ~16 min
+2026-09-03T19:56:23.876733Z	warning	PRED	RAM 82% subindo 0.5%/ciclo â†’ 90% em ~15 min
+2026-09-03T19:57:24.439174Z	warning	PRED	RAM 84% subindo 0.5%/ciclo â†’ 90% em ~11 min
+2026-09-03T19:58:24.902859Z	warning	PRED	RAM 90% subindo 0.6%/ciclo â†’ 90% em ~0 min
+2026-09-03T19:59:25.354275Z	warning	PRED	RAM 89% subindo 0.6%/ciclo â†’ 90% em ~2 min
+2026-09-03T20:00:25.877209Z	warning	PRED	RAM 89% subindo 0.6%/ciclo â†’ 90% em ~2 min
+2026-09-03T20:01:26.332230Z	warning	PRED	RAM 81% subindo 0.6%/ciclo â†’ 90% em ~14 min
+2026-09-03T20:02:26.815184Z	warning	PRED	RAM 81% subindo 0.6%/ciclo â†’ 90% em ~16 min
+2026-09-03T20:03:27.392448Z	warning	PRED	RAM 83% subindo 0.6%/ciclo â†’ 90% em ~12 min
+2026-09-03T20:04:29.907293Z	warning	PRED	RAM 84% subindo 0.5%/ciclo â†’ 90% em ~11 min
+2026-09-03T20:05:31.021190Z	warning	PRED	RAM 85% subindo 0.5%/ciclo â†’ 90% em ~10 min
+2026-09-03T20:06:32.186557Z	warning	PRED	RAM 86% subindo 0.5%/ciclo â†’ 90% em ~8 min
+2026-09-03T20:07:32.711032Z	warning	PRED	RAM 86% subindo 0.5%/ciclo â†’ 90% em ~7 min
+2026-09-03T20:08:33.218621Z	warning	PRED	RAM 87% subindo 0.5%/ciclo â†’ 90% em ~6 min
+2026-09-03T20:09:33.762732Z	warning	PRED	RAM 88% subindo 0.5%/ciclo â†’ 90% em ~5 min
+2026-09-03T20:09:39.625561Z	info	E-NET-004	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-03T20:10:24.633107Z	info	E-NET-004	OK E-NET-004 RESOLVIDO â€” cascata deve recuperar []
+2026-09-03T20:11:24.685323Z	warning	PRED	RAM 88% subindo 0.5%/ciclo â†’ 90% em ~3 min
+2026-09-03T20:12:25.236095Z	warning	PRED	RAM 90% subindo 0.5%/ciclo â†’ 90% em ~1 min
+2026-09-03T20:13:25.769808Z	critical	E-SYS-001	RAM 90% critico
+2026-09-03T20:14:26.969805Z	warning	PRED	RAM 90% subindo 0.5%/ciclo â†’ 90% em ~1 min
+2026-09-03T20:15:27.533721Z	critical	E-SYS-001	RAM 92% critico
+2026-09-03T20:16:28.047726Z	critical	E-SYS-001	RAM 92% critico
+2026-09-03T20:17:41.566097Z	critical	E-SYS-001	RAM 100% critico
+2026-09-03T20:18:09.778481Z	critical	E-NET-002	RCA: Ollama e a causa de ['voice', 'engine']. NAO reiniciar sintomas.
+2026-09-04T22:29:15.543138Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-04T22:29:15.543138Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-04T22:29:16.287264Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart
+2026-09-04T22:29:21.164677Z	info	E-NET-005	Auto-fix (raiz): {'ok': True, 'result': 'Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-04T22:30:06.172275Z	info	E-NET-005	OK E-NET-005 RESOLVIDO â€” cascata deve recuperar []
+2026-09-04T22:35:10.029199Z	critical	E-SYS-001	RAM 94% critico
+2026-09-04T22:36:10.520959Z	critical	E-SYS-001	RAM 94% critico
+2026-09-04T22:36:14.268319Z	warning	E-NET-004	Deteccao autonoma: E-NET-004 Â· Engine AURA offline (porta 8765)
+2026-09-04T22:36:21.223354Z	info	E-NET-004	Auto-fix EXECUTANDO: {'ok': True, 'result': 'Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollama nao foi tocado.'}
+2026-09-04T22:37:06.229666Z	info	E-NET-004	OK E-NET-004 RESOLVIDO autonomamente. Sistema estavel.
+2026-09-04T22:38:06.346462Z	critical	E-SYS-001	RAM 92% critico
+2026-09-04T22:39:07.026443Z	critical	E-SYS-001	RAM 94% critico
+2026-09-04T22:40:08.510790Z	warning	PRED	RAM 78% subindo 0.5%/ciclo â†’ 90% em ~22 min
+2026-09-04T22:47:15.138734Z	critical	E-SYS-001	RAM 94% critico
+2026-09-04T22:51:17.477069Z	critical	E-SYS-001	RAM 92% critico
+2026-09-04T22:52:18.095266Z	critical	E-SYS-001	RAM 93% critico
+2026-09-04T22:53:18.704904Z	critical	E-SYS-001	RAM 95% critico
+2026-09-04T22:54:19.291371Z	critical	E-SYS-001	RAM 96% critico
+2026-09-04T22:55:20.077765Z	critical	E-SYS-001	RAM 97% critico
+2026-09-04T23:10:29.128644Z	critical	E-SYS-001	RAM 90% critico
+2026-09-04T23:11:29.668423Z	critical	E-SYS-001	RAM 97% critico
+2026-09-04T23:12:30.203328Z	critical	E-SYS-001	RAM 94% critico
+2026-09-04T23:13:30.792845Z	critical	E-SYS-001	RAM 97% critico
+2026-09-04T23:14:31.478559Z	critical	E-SYS-001	RAM 97% critico
+2026-09-04T23:15:32.200026Z	critical	E-SYS-001	RAM 97% critico
+2026-09-04T23:16:32.892315Z	critical	E-SYS-001	RAM 92% critico
+2026-09-04T23:17:33.553980Z	critical	E-SYS-001	RAM 94% critico
+2026-09-04T23:18:34.272875Z	critical	E-SYS-001	RAM 94% critico
+2026-09-04T23:19:35.082557Z	critical	E-SYS-001	RAM 96% critico
+2026-09-04T23:31:43.679507Z	critical	E-SYS-DISK	Disco critico: 3.8GB livres
+2026-09-04T23:32:44.393327Z	critical	E-SYS-DISK	Disco critico: 3.8GB livres
+2026-09-04T23:33:45.241436Z	critical	E-SYS-DISK	Disco critico: 3.8GB livres
+2026-09-04T23:34:46.007068Z	critical	E-SYS-DISK	Disco critico: 3.8GB livres
+2026-09-04T23:35:46.771807Z	critical	E-SYS-DISK	Disco critico: 3.8GB livres
+2026-09-04T23:36:47.560509Z	critical	E-SYS-DISK	Disco critico: 3.8GB livres
+2026-09-04T23:37:48.353430Z	critical	E-SYS-DISK	Disco critico: 2.8GB livres
+2026-09-04T23:38:49.113092Z	critical	E-SYS-001	RAM 91% critico
+2026-09-04T23:38:49.151240Z	critical	E-SYS-DISK	Disco critico: 2.8GB livres
+2026-09-04T23:39:49.948663Z	critical	E-SYS-001	RAM 91% critico
+2026-09-04T23:39:50.077080Z	critical	E-SYS-DISK	Disco critico: 2.8GB livres
+2026-09-04T23:40:50.886743Z	critical	E-SYS-001	RAM 92% critico
+2026-09-04T23:40:50.919174Z	critical	E-SYS-DISK	Disco critico: 2.8GB livres
+2026-09-04T23:41:51.707237Z	critical	E-SYS-DISK	Disco critico: 1.7GB livres
+2026-09-04T23:42:52.391885Z	critical	E-SYS-001	RAM 94% critico
+2026-09-04T23:42:52.419228Z	critical	E-SYS-DISK	Disco critico: 1.7GB livres
+2026-09-04T23:43:53.211095Z	critical	E-SYS-001	RAM 98% critico
+2026-09-04T23:43:53.252556Z	critical	E-SYS-DISK	Disco critico: 1.6GB livres
+2026-09-04T23:44:53.947957Z	critical	E-SYS-001	RAM 96% critico
+2026-09-04T23:44:53.987128Z	critical	E-SYS-DISK	Disco critico: 1.6GB livres
+2026-09-04T23:45:54.765343Z	warning	PRED	RAM 87% subindo 0.3%/ciclo â†’ 90% em ~11 min
+2026-09-04T23:45:54.800572Z	critical	E-SYS-DISK	Disco critico: 1.6GB livres
+2026-09-04T23:46:55.586872Z	warning	PRED	RAM 82% subindo 0.3%/ciclo â†’ 90% em ~27 min
+2026-09-04T23:46:55.623429Z	critical	E-SYS-DISK	Disco critico: 1.6GB livres
+2026-09-04T23:47:56.351101Z	critical	E-SYS-DISK	Disco critico: 1.7GB livres
+2026-09-04T23:48:57.086795Z	warning	PRED	RAM 77% subindo 0.3%/ciclo â†’ 90% em ~42 min
+2026-09-04T23:48:57.114869Z	critical	E-SYS-DISK	Disco critico: 1.7GB livres
+2026-09-04T23:49:57.894086Z	warning	PRED	RAM 74% subindo 0.3%/ciclo â†’ 90% em ~49 min
+2026-09-04T23:49:57.935697Z	critical	E-SYS-DISK	Disco critico: 1.6GB livres
+2026-09-04T23:50:58.555909Z	critical	E-SYS-DISK	Disco critico: 1.6GB livres
+2026-09-04T23:51:59.447518Z	critical	E-SYS-DISK	Disco critico: 1.6GB livres
+2026-09-04T23:53:00.105600Z	critical	E-SYS-DISK	Disco critico: 1.6GB livres
+2026-09-04T23:54:00.617368Z	critical	E-SYS-DISK	Disco critico: 1.7GB livres
+2026-09-04T23:55:01.186222Z	critical	E-SYS-DISK	Disco critico: 1.7GB livres
+2026-09-04T23:56:01.983098Z	critical	E-SYS-DISK	Disco critico: 1.7GB livres
+2026-09-04T23:57:02.666709Z	critical	E-SYS-DISK	Disco critico: 1.7GB livres
+2026-09-04T23:58:03.268794Z	critical	E-SYS-DISK	Disco critico: 1.7GB livres
+2026-09-04T23:59:04.009477Z	critical	E-SYS-DISK	Disco critico: 1.6GB livres
+2026-09-05T00:00:04.646885Z	critical	E-SYS-DISK	Disco critico: 1.6GB livres
+2026-09-05T00:01:05.133537Z	critical	E-SYS-DISK	Disco critico: 1.7GB livres
+2026-09-05T00:02:05.692536Z	critical	E-SYS-DISK	Disco critico: 1.6GB livres
+2026-09-05T00:03:06.537670Z	critical	E-SYS-DISK	Disco critico: 1.6GB livres
+2026-09-05T00:04:07.062748Z	critical	E-SYS-DISK	Disco critico: 1.6GB livres
+2026-09-05T00:05:07.880334Z	critical	E-SYS-DISK	Disco critico: 1.6GB livres
+2026-09-05T00:06:09.215926Z	critical	E-SYS-DISK	Disco critico: 4.8GB livres
+2026-09-05T00:06:17.136008Z	critical	E-NET-002	RCA: Ollama e a causa de ['engine', 'voice']. NAO reiniciar sintomas.
+2026-09-05T00:06:33.935339Z	info	SYSTEM	Catalogo recarregado - 14 entradas ativas sem restart

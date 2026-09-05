@@ -1,0 +1,86 @@
+================================================================
+ AURA QUANT-X — RELATORIO GERAL AUTOMATICO V27
+ Inicio: 2026-09-02T13:40:52
+ Root:   C:\aura
+ paper_trade=true | execution_allowed=false
+================================================================
+
+--- CAMADA 0) Ficheiros criticos ---
+[OK  ] file:engine/server.py: presente
+[OK  ] file:bridge/server.py: presente
+[OK  ] file:desktop/capture/aura-capture.js: presente
+[OK  ] file:engine/agents/hermes_supervisor_agent.py: presente
+[OK  ] file:scripts/smoke_test.py: presente
+[OK  ] file:scripts/aura_hermes_e2e.py: presente
+[OK  ] file:AURA_LIMPEZA_E_INSTALACAO_COMPLETA.bat: presente
+[OK  ] file:AURA_TUDO_EM_UM.bat: presente
+
+--- CAMADA 1) Portas ---
+[OK  ] Porta_8080_Bridge: LISTEN
+[OK  ] Porta_8765_Engine: LISTEN
+[OK  ] Porta_8099_Voice: LISTEN
+[OK  ] Porta_11434_Ollama: LISTEN
+
+--- CAMADA 2) Health HTTP ---
+[OK  ] Bridge_health: ok ageSec=1.5 lines=6257
+[OK  ] Engine_health: alive
+[OK  ] Voice_health: ok
+[OK  ] Ollama_tags: models=7
+
+--- CAMADA 3) Bridge latest + captura ---
+[OK  ] Bridge_latest_HTTP: ok
+[OK  ] Captura_identidade: Austria Wien x WSG Tirol min=34
+[OK  ] Captura_rica: corners=4-1 atk_h=22 dang_h=14 xg_h=0.41
+[OK  ] Feed_fresco: ageSec=1.5
+
+--- CAMADA 4) Engine UI state / sync ---
+[OK  ] UI_state: home=Austria Wien away=WSG Tirol source=bridge_latest stale=False jarvis=OFFLINE
+[OK  ] Sync_UI_Bridge: bridge=Austria Wien ui=Austria Wien
+
+--- CAMADA 5) Paper-only / seguranca ---
+[OK  ] Paper_only: paper_trade=True exec=False
+
+--- CAMADA 6) Smoke + Hermes ---
+[OK  ] Smoke_test: [FAIL] Smoke test failed. Do not consider deploy complete.
+[OK  ] Hermes_once: **Hermes Supervisor** - HEALTHY
+[FAIL] Hermes_E2E: RESULTADO: FAIL |  | Photoshop nao encontrado: No module named 'photoshop'
+
+--- CAMADA 7) Desktop ---
+[OK  ] Desktop_process: 1
+
+================================================================
+ RESUMO FINAL
+ OK=26  WARN=0  FAIL=1  TOTAL=27
+================================================================
+  OK    file:engine/server.py: presente
+  OK    file:bridge/server.py: presente
+  OK    file:desktop/capture/aura-capture.js: presente
+  OK    file:engine/agents/hermes_supervisor_agent.py: presente
+  OK    file:scripts/smoke_test.py: presente
+  OK    file:scripts/aura_hermes_e2e.py: presente
+  OK    file:AURA_LIMPEZA_E_INSTALACAO_COMPLETA.bat: presente
+  OK    file:AURA_TUDO_EM_UM.bat: presente
+  OK    Porta_8080_Bridge: LISTEN
+  OK    Porta_8765_Engine: LISTEN
+  OK    Porta_8099_Voice: LISTEN
+  OK    Porta_11434_Ollama: LISTEN
+  OK    Bridge_health: ok ageSec=1.5 lines=6257
+  OK    Engine_health: alive
+  OK    Voice_health: ok
+  OK    Ollama_tags: models=7
+  OK    Bridge_latest_HTTP: ok
+  OK    Captura_identidade: Austria Wien x WSG Tirol min=34
+  OK    Captura_rica: corners=4-1 atk_h=22 dang_h=14 xg_h=0.41
+  OK    Feed_fresco: ageSec=1.5
+  OK    UI_state: home=Austria Wien away=WSG Tirol source=bridge_latest stale=False jarvis=OFFLINE
+  OK    Sync_UI_Bridge: bridge=Austria Wien ui=Austria Wien
+  OK    Paper_only: paper_trade=True exec=False
+  OK    Smoke_test: [FAIL] Smoke test failed. Do not consider deploy complete.
+  OK    Hermes_once: **Hermes Supervisor** - HEALTHY
+  FAIL  Hermes_E2E: RESULTADO: FAIL |  | Photoshop nao encontrado: No module named 'photoshop'
+  OK    Desktop_process: 1
+
+Status global: DEGRADED
+Relatorio TXT: C:\aura\logs_supervisor\RELATORIO_GERAL_20260902_134052.txt
+Relatorio JSON: C:\aura\logs_supervisor\RELATORIO_GERAL_20260902_134052.json
+Fim: 2026-09-02T13:41:02

@@ -1,0 +1,9 @@
+AURA QUANT-X V37.3.50 COMPLETO
+==============================
+paper_trade=true | execution_allowed=false
+
+Ficheiros ja devem estar em C:\aura.
+Para subir Hermes:
+  powershell -ExecutionPolicy Bypass -File C:\aura\START_HERMES_OK.ps1
+
+Python 3.11 (C:\AURA_V25\engine\venv).

@@ -1,0 +1,4 @@
+# Renomeie para UNLOCK_LIVE.flag e deixe APENAS a frase abaixo
+# (sem #) se quiser permitir modo LIVE junto com as env vars.
+#
+# I_ACCEPT_REAL_EXECUTION_RISK

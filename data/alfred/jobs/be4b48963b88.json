@@ -1,0 +1,65 @@
+{
+  "job_id": "be4b48963b88",
+  "request_id": "fe9f4b50e172",
+  "content_hash": "92c5e71a3419a5b2",
+  "created_at": 1788383524.9557436,
+  "status": "success",
+  "authorized": true,
+  "authorization_reason": "AUTORIZO escrito pelo utilizador",
+  "plan_intent": "single_task",
+  "source_message": "",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "alfred_focus_on",
+      "arguments": {},
+      "risk": "high",
+      "mutating": true,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "active": true,
+        "reason": "trabalho fora do Aura",
+        "paused": [
+          {
+            "name": "bridge",
+            "port": 8080,
+            "pid": 4616
+          },
+          {
+            "name": "engine",
+            "port": 8765,
+            "pid": 32284
+          },
+          {
+            "name": "matriz",
+            "port": 8766,
+            "pid": 8240
+          },
+          {
+            "name": "voice",
+            "port": 8099,
+            "pid": 31028
+          }
+        ],
+        "watchdog": "Monitor automatico parado.",
+        "ts": 1788383526.309866,
+        "protected": [
+          8777,
+          8791,
+          11434
+        ]
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "1 de 1 tarefas concluídas com sucesso.",
+  "finished_at": 1788383526.314879
+}

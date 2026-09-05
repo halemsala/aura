@@ -1,0 +1,22 @@
+{
+  "addon": "aura-computer-use-guarded-connector",
+  "version": "1.0.0",
+  "installed_at": "20260829T005246Z",
+  "addon_path": "/home/workdir/artifacts/extract_main/AURA_QUANT_X_12.7.62_HERMES_FIXED/addons/aura-computer-use-guarded-connector",
+  "backup_path": "/home/workdir/artifacts/extract_main/AURA_QUANT_X_12.7.62_HERMES_FIXED/addons/_backup_aura-computer-use-guarded-connector_20260829T005246Z",
+  "prior_addon_backed_up": false,
+  "computer_use_enabled": false,
+  "execution_allowed": false,
+  "network_allowed": false,
+  "approval_required": true,
+  "driver_external_installed": false,
+  "services_started": [],
+  "hermes_installed": false,
+  "cua_driver_installed": false,
+  "mcp_installed": false,
+  "downloads_performed": false,
+  "network_used": false,
+  "aura_core_modified": false,
+  "mode": "stage_only_inert",
+  "source_package": "AURA_CUA_GROK_DEPLOYMENT_v1.0.0.zip (docs only; code synthesized from INSTALLAR_COM_GROK.md policies)"
+}

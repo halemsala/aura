@@ -1,0 +1,14 @@
+﻿{
+  "workspace_root": "C:\\aura",
+  "read_write_scope": "workspace_only",
+  "allow_read_files_inside_workspace": true,
+  "allow_write_files_inside_workspace": true,
+  "allow_subprocesses_inside_workspace": true,
+  "require_user_confirmation_before_execute": true,
+  "execute_commands_from_model_output": false,
+  "allow_network_targets": ["127.0.0.1:11434"],
+  "deny_paths": ["C:\\Windows", "C:\\Users", "C:\\Program Files", "C:\\ProgramData"],
+  "deny_commands": ["format", "del /s", "rmdir /s", "shutdown", "reboot", "net user", "reg delete", "Remove-Item -Recurse", "Invoke-WebRequest", "curl", "certutil", "powershell -enc"],
+  "paper_trade": true,
+  "execution_allowed": false
+}

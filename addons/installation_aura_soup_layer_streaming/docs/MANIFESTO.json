@@ -1,0 +1,23 @@
+{
+  "name": "AURA_SOUP_LAYER_STREAMING_SAFE_ADDON",
+  "version": "1.0.0",
+  "source_reel": "https://www.instagram.com/reel/DclGpkxyb1U/",
+  "official_sources": [
+    "https://github.com/MakazhanAlpamys/Soup",
+    "https://trysoup.dev/",
+    "https://gigazine.net/gsc_news/en/20260806-soup-fine-tune-llm/"
+  ],
+  "included": ["offline bridge", "AURA Skill", "tests", "manual", "evidence notes"],
+  "not_included": ["Soup repository", "PyTorch", "CUDA", "models", "drivers", "credentials", "automatic downloads", "training execution"],
+  "invariants": {
+    "paper_trade": true,
+    "execution_allowed": false,
+    "glm_advisory_only": true,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "tool_execution_enabled": false,
+    "autostart_enabled": false
+  },
+  "status": "advisory_offline_only",
+  "activation": "requires separate explicit approval and Windows staging"
+}

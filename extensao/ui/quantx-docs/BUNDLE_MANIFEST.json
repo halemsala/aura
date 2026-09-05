@@ -1,0 +1,40 @@
+{
+  "name": "AURA_QUANTX_GROK_BUNDLE",
+  "release": "central-corners-kanteiro-v1",
+  "purpose": "Overlay standalone para instalação no sistema AURA QUANT-X atual",
+  "original_zip_modified": false,
+  "dependencies": "Nenhuma dependência nova; usa APIs existentes do Engine, extensão e Voice",
+  "entrypoints": [
+    "src/aura-quantx-central.html",
+    "src/kanteiro-chat.html"
+  ],
+  "adapter": "src/aura-quantx-adapter.js",
+  "integration_hook": "src/aura-quantx-extension-hook.js",
+  "graph_families": [
+    "appm",
+    "xg",
+    "timeline",
+    "oddsOscillation",
+    "macdXg",
+    "pbar",
+    "h2h",
+    "radar"
+  ],
+  "required_existing_contracts": [
+    "GET_DIAGNOSTICS",
+    "CHARTS_UNIFIED_GET",
+    "GET /api/status",
+    "GET /api/analysis/{fixtureId}",
+    "POST /api/trader/chat",
+    "POST /api/voice/neural"
+  ],
+  "safety": {
+    "ui_decides_risk": false,
+    "ui_changes_exposure": false,
+    "ui_changes_kelly": false,
+    "demo_data_default": false,
+    "fixture_lock_required": true,
+    "fail_closed_preserved": true
+  },
+  "installation": "Leia GROK_INSTALL_PROMPT.md e INSTALL_FOR_GROK.md; não sobrescreva o ZIP original."
+}

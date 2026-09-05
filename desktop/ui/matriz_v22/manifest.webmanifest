@@ -1,0 +1,38 @@
+{
+  "id": "/index.html",
+  "name": "AURA QUANT-X — Operator OS",
+  "short_name": "AURA QUANT-X",
+  "description": "Console visual paper-first para leitura tática de escanteios.",
+  "lang": "pt-BR",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a0d0c",
+  "theme_color": "#0a0d0c",
+  "icons": [
+    {
+      "src": "/aura-quant-x-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Mesa temporal",
+      "short_name": "Mesa",
+      "url": "/index.html"
+    },
+    {
+      "name": "Atlas de parâmetros",
+      "short_name": "Atlas",
+      "url": "/index.html?atlas=1"
+    },
+    {
+      "name": "Rede de agentes",
+      "short_name": "Agentes",
+      "url": "/index.html?agents=1"
+    }
+  ]
+}

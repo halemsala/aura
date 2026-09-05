@@ -1,0 +1,118 @@
+{
+  "generated_at": "2026-09-02T12:57:35Z",
+  "root": "C:\\aura",
+  "overall": "atencao",
+  "counts": {
+    "saudavel": 16,
+    "atencao": 1,
+    "critico": 0
+  },
+  "items": [
+    {
+      "item": "python_version",
+      "status": "saudavel",
+      "detail": "3.11.9",
+      "action": null
+    },
+    {
+      "item": "file:engine/server.py",
+      "status": "saudavel",
+      "detail": "presente",
+      "action": null
+    },
+    {
+      "item": "file:bridge/server.py",
+      "status": "saudavel",
+      "detail": "presente",
+      "action": null
+    },
+    {
+      "item": "file:agents/activation_manifest.json",
+      "status": "saudavel",
+      "detail": "presente",
+      "action": null
+    },
+    {
+      "item": "file:config/AURA_RUNTIME.env.example",
+      "status": "saudavel",
+      "detail": "presente",
+      "action": null
+    },
+    {
+      "item": "file:AURA_LIMPEZA_INSTALA_VERIFICA_TUDO.bat",
+      "status": "saudavel",
+      "detail": "presente",
+      "action": null
+    },
+    {
+      "item": "port:bridge:8080",
+      "status": "saudavel",
+      "detail": "LISTEN",
+      "action": null
+    },
+    {
+      "item": "port:engine:8765",
+      "status": "saudavel",
+      "detail": "LISTEN",
+      "action": null
+    },
+    {
+      "item": "port:voice:8099",
+      "status": "saudavel",
+      "detail": "LISTEN",
+      "action": null
+    },
+    {
+      "item": "port:matriz:8766",
+      "status": "saudavel",
+      "detail": "LISTEN",
+      "action": null
+    },
+    {
+      "item": "port:hermes:8777",
+      "status": "saudavel",
+      "detail": "LISTEN",
+      "action": null
+    },
+    {
+      "item": "health:bridge",
+      "status": "saudavel",
+      "detail": "{\"ok\": true, \"service\": \"cornerai-bridge\", \"version\": \"12.7.6-RESILIENCIA\", \"feed\": \"C:\\\\aura\\\\bridge\\\\live_feed.jsonl\",",
+      "action": null
+    },
+    {
+      "item": "health:engine",
+      "status": "saudavel",
+      "detail": "{\"status\":\"alive\",\"service\":\"aura_engine\",\"port\":8765,\"ts\":1788353856,\"paper_trade\":true,\"execution_allowed\":false}",
+      "action": null
+    },
+    {
+      "item": "health:voice",
+      "status": "saudavel",
+      "detail": "{\"status\":\"ok\",\"service\":\"jarvis_voice\",\"version\":\"AURA-VOICE-MALE-V3\",\"build_id\":\"AURA-VOICE-MALE-V3\",\"process_up\":true",
+      "action": null
+    },
+    {
+      "item": "invariant:paper_signals",
+      "status": "saudavel",
+      "detail": "sinais de paper/health presentes",
+      "action": null
+    },
+    {
+      "item": "invariant:env_example",
+      "status": "saudavel",
+      "detail": "example com paper=1 e execution=0",
+      "action": null
+    },
+    {
+      "item": "report:RELATORIO_GERAL_LATEST",
+      "status": "atencao",
+      "detail": "idade_aprox_sec=77631",
+      "action": "Gerar novo relatório geral"
+    }
+  ],
+  "notes": [
+    "Doctor não altera estado nem desliga paper_trade.",
+    "Ações sugeridas são reversíveis e exigem confirmação humana se forem de alto impacto."
+  ]
+}

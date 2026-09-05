@@ -1,0 +1,36 @@
+CHANGELOG — AURA QUANT-X V37.3.53 + AUTONOMY LAYER V1
+Data: 2026-08-31
+
+ADICIONADO
+----------
+- AGENTS.md (raiz) e AURA_AUTONOMY_V1/AGENTS.md
+  Contrato: missão, limites paper-only, orquestração, agentes núcleo,
+  memória, confirmação humana, critérios de conclusão, incidentes.
+
+- AURA_AUTONOMY_V1/MANIFESTO_MINIMO.json
+  Política de agentes mínimos (não aplica automaticamente no runtime).
+
+- AURA_AUTONOMY_V1/aura_doctor.py
+  Diagnóstico somente leitura: arquivos, portas, health, invariantes,
+  relatório. Saídas em logs_supervisor/DOCTOR_LATEST.*
+
+- AURA_AUTONOMY_V1/CHECKLIST_VALIDACAO.md
+- AURA_AUTONOMY_V1/PLANO_WINDOWS_CMD.md
+- AURA_AUTONOMY_V1/STRIX_ISOLADO.md
+  (Strix apenas procedimento isolado — NÃO instalado)
+
+- 00_LEIA_ME_AUTONOMY_V1.txt
+- CHANGELOG_AUTONOMY_V1.txt
+
+NÃO ALTERADO
+------------
+- Runtime engine/, bridge/, desktop/, agents/ (código), BATs oficiais
+- Invariantes paper_trade / execution_allowed
+- Nenhum dos 5 plugins Vibecoding instalado
+
+COMPATIBILIDADE
+---------------
+100% com:
+  AURA_LIMPEZA_INSTALA_VERIFICA_TUDO.bat
+  AURA_INSTALAR_TESTAR_RELATORIO_GERAL.bat
+  AURA_TUDO_EM_UM.bat

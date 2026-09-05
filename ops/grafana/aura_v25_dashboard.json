@@ -1,0 +1,64 @@
+{
+  "title": "AURA QUANT-X V25",
+  "uid": "aura-v25",
+  "timezone": "browser",
+  "schemaVersion": 38,
+  "version": 1,
+  "refresh": "15s",
+  "tags": ["aura", "v25"],
+  "panels": [
+    {
+      "id": 1,
+      "type": "timeseries",
+      "title": "Latencia por stage (p50/p99 us)",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0},
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.50, sum(rate(aura_stage_us_bucket[5m])) by (le, stage))",
+          "legendFormat": "p50 {{stage}}"
+        },
+        {
+          "expr": "histogram_quantile(0.99, sum(rate(aura_stage_us_bucket[5m])) by (le, stage))",
+          "legendFormat": "p99 {{stage}}"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "Heartbeat feed (idade s)",
+      "gridPos": {"h": 4, "w": 6, "x": 12, "y": 0},
+      "targets": [
+        {"expr": "time() - aura_heartbeat_feed", "legendFormat": "age"}
+      ]
+    },
+    {
+      "id": 3,
+      "type": "timeseries",
+      "title": "FeedBus queue / drops",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8},
+      "targets": [
+        {"expr": "aura_component_feed_bus_queue_depth", "legendFormat": "queue"},
+        {"expr": "aura_component_feed_bus_dropped_full", "legendFormat": "drops"}
+      ]
+    },
+    {
+      "id": 4,
+      "type": "stat",
+      "title": "Cobertura conformal",
+      "gridPos": {"h": 4, "w": 6, "x": 12, "y": 4},
+      "targets": [
+        {"expr": "aura_component_conformal_coverage_recente", "legendFormat": "coverage"}
+      ]
+    },
+    {
+      "id": 5,
+      "type": "timeseries",
+      "title": "Decisoes (counter)",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8},
+      "targets": [
+        {"expr": "rate(aura_decisions_total[5m])", "legendFormat": "{{decision}}"}
+      ]
+    }
+  ]
+}

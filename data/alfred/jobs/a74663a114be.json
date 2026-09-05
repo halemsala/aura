@@ -1,0 +1,74 @@
+{
+  "job_id": "a74663a114be",
+  "request_id": "eda266b0ef6e",
+  "content_hash": "57558e0d0ca09044",
+  "created_at": 1788385242.6506622,
+  "status": "success",
+  "authorized": false,
+  "authorization_reason": "comando único de baixo risco pedido explicitamente",
+  "plan_intent": "single_task",
+  "source_message": "serviços",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "services_status",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "alfred": {
+          "service": "alfred",
+          "online": true,
+          "port": 8791
+        },
+        "bridge": {
+          "service": "bridge",
+          "online": true,
+          "status_code": 200
+        },
+        "engine": {
+          "service": "engine",
+          "online": false,
+          "error": "HTTPConnectionPool(host='127.0.0.1', port=8765): Max retries exceeded with url: /api/health (Caused by NewConnectionError(\"HTTPConnection(host='127.0."
+        },
+        "hermes": {
+          "service": "hermes",
+          "online": true,
+          "port": 8777
+        },
+        "matriz": {
+          "service": "matriz",
+          "online": true,
+          "status_code": 200
+        },
+        "ollama": {
+          "service": "ollama",
+          "online": true,
+          "status_code": 200
+        },
+        "voice": {
+          "service": "voice",
+          "online": false,
+          "error": "HTTPConnectionPool(host='127.0.0.1', port=8099): Max retries exceeded with url: /api/voice/health (Caused by NewConnectionError(\"HTTPConnection(host='"
+        },
+        "flags": {
+          "paper_trade": true,
+          "execution_allowed": false,
+          "model": "qwen3:8b"
+        }
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "1 de 1 tarefas concluídas com sucesso.",
+  "finished_at": 1788385247.4772441
+}

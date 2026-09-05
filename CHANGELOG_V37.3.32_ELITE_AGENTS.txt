@@ -1,0 +1,8 @@
+AURA QUANT-X V37.3.32 — Elite Squad stubs em engine/agents/
+==========================================================
+- engine/agents/elite_squad/__init__.py (export público)
+- engine/agents/elite_squad/elite_squad_advisory_stubs.py
+- engine/agents/elite_squad/integration_hooks.py (sanitize_feed, audit_proposal, …)
+- NÃO adicionado a agents/ENABLED (activação explícita apenas)
+- paper_trade=true execution_allowed=false nas saídas de audit
+- Sem Telegram / scrape / YAML write de produção

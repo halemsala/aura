@@ -1,0 +1,43 @@
+{
+  "job_id": "c662353b26ea",
+  "request_id": "adb229f34cec",
+  "content_hash": "6a2ab158ce68189d",
+  "created_at": 1788379505.0328336,
+  "status": "success",
+  "authorized": false,
+  "authorization_reason": "comando único de baixo risco pedido explicitamente",
+  "plan_intent": "single_task",
+  "source_message": "procura skill sobre photoshop",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "search_skill",
+      "arguments": {
+        "query": "photoshop"
+      },
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "query": "photoshop",
+        "local_skills": [],
+        "suggested_urls": [
+          "https://www.google.com/search?q=photoshop+tutorial+criativo",
+          "https://www.google.com/search?q=photoshop+photoshop+skill"
+        ],
+        "nota": "não abri páginas. Diz 'Alfred, abre <url>' ou 'abre pesquisas sobre …' se quiseres abrir."
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "1 de 1 tarefas concluídas com sucesso.",
+  "finished_at": 1788379505.0398438
+}

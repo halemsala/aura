@@ -1,0 +1,37 @@
+{
+  "pack": "AURA_FULL_HERMES_AURAIA_SAFE",
+  "version": "2.0.0",
+  "mode": "offline_advisory",
+  "runtime": {
+    "paper_trade": true,
+    "execution_allowed": false,
+    "glm_advisory_only": true,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "tool_execution_enabled": false,
+    "autostart_enabled": false,
+    "max_review_cycles": 3,
+    "timeout_seconds": 120
+  },
+  "pipeline": [
+    "context_engineering",
+    "skill_discovery_staging",
+    "aura_ia_analysis",
+    "hermes_adversarial_review",
+    "tester",
+    "security_audit",
+    "verification_before_completion",
+    "invariant_gate",
+    "audit_ledger",
+    "advisory_or_block"
+  ],
+  "roles": {
+    "aura_ia": {"purpose": "proposta, análise e decomposição", "authority": "advisory"},
+    "hermes": {"purpose": "crítica, evidência, divergência e segurança", "authority": "advisory_and_block"},
+    "controller": {"purpose": "política, permissões e invariantes", "authority": "policy_only"}
+  },
+  "disabled_integrations": [
+    "mcp", "telegram", "ollama", "docker", "n8n", "airflow", "temporal", "voice", "tts", "browser_automation", "cloudflare", "tradingview", "publication", "financial_execution"
+  ],
+  "activation_policy": "each integration requires separate explicit approval, staging, backup, tests and rollback"
+}

@@ -1,0 +1,9 @@
+Diagnóstico 2026-09-02
+
+FINALIZAR_AURA_ALFRED_QWEN3.bat estava contaminado com um patch Python: começava em `try:` e continha `from alfred.bridge...`, não tinha nenhum comando Windows válido.
+
+AURA_ALFRED_START.bat é o arranque correcto da API Alfred em 127.0.0.1:8791 e usa `python -m alfred.api`; já verifica PID e mantém pause em erro/resultado.
+
+AURA_ALFRED_INSTALL.bat instala requirements, compila os módulos e verifica `from alfred.bridge import try_handle`, mas usa `python -c` e pode depender do Python no PATH.
+
+Correcção necessária: substituir FINALIZAR por BAT puro, chamar AURA_ALFRED_INSTALL.bat e AURA_ALFRED_START.bat, verificar Ollama/qwen3, não inserir código Python directamente no BAT e usar `cmd /k` ou pause para preservar diagnóstico.

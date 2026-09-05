@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ROIAuditorPaper",
+  "definitions": {
+    "stats_request": {
+      "type": "object",
+      "properties": {
+        "days": { "type": "integer", "minimum": 1, "maximum": 90, "default": 1 }
+      },
+      "additionalProperties": false
+    },
+    "stats_response": {
+      "type": "object",
+      "properties": {
+        "total": { "type": "integer" },
+        "wins": { "type": "integer" },
+        "losses": { "type": "integer" },
+        "voids": { "type": "integer" },
+        "hit_rate": { "type": "number" },
+        "roi_paper_pct": { "type": "number" },
+        "best_market": { "type": ["string", "null"] },
+        "paper_trade": { "type": "boolean", "const": true },
+        "error": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

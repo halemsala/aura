@@ -1,0 +1,38 @@
+{
+  "job_id": "bd9193ef1442",
+  "request_id": "f206ba7e3e85",
+  "content_hash": "47a023b4a101ad22",
+  "created_at": 1788383477.2000995,
+  "status": "success",
+  "authorized": true,
+  "authorization_reason": "AUTORIZO escrito pelo utilizador",
+  "plan_intent": "single_task",
+  "source_message": "",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "open_url",
+      "arguments": {
+        "url": "https://www.google.com/search?q=photoshop"
+      },
+      "risk": "low",
+      "mutating": true,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "opened": true,
+        "url": "https://www.google.com/search?q=photoshop"
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "1 de 1 pesquisas abertas com sucesso.",
+  "finished_at": 1788383477.9686348
+}

@@ -1,0 +1,16 @@
+MANIFEST_FILES.txt
+README.md
+config/playwright-cli.md
+config/playwright-mcp.json
+docs/INSTALL.md
+docs/reel-analysis.md
+docs/reel-findings.md
+docs/tools-catalog.md
+prompts/01_planner.md
+prompts/02_implementer.md
+prompts/03_independent_verifier.md
+prompts/04_pr_gate_reviewer.md
+scripts/audit_package.sh
+skills/aura-evidence-verification/SKILL.md
+templates/test_plan.md
+templates/verification_report.md

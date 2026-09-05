@@ -1,0 +1,65 @@
+/* AURA menus ON + notificacoes sem animacao */
+[data-sonner-toaster],
+[data-sonner-toast],
+[data-sonner-toast] *,
+[class*="toast"],
+[class*="Toast"],
+[role="status"],
+[role="alert"] {
+  animation: none !important;
+  transition: none !important;
+}
+.pulse,
+.animate-ping,
+.animate-pulse,
+.luminous-dot {
+  animation: none !important;
+}
+
+/* Dock / workbench / ferramentas sempre visiveis */
+.icon-dock,
+.instrument-deck,
+.workbench,
+.feedback-dock,
+.aura-launcher,
+.executive-dock {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+.icon-dock {
+  flex-direction: column !important;
+  position: fixed !important;
+  z-index: 80 !important;
+}
+.temporal-shell.executive-mode .icon-dock,
+.temporal-shell.executive-mode .instrument-deck,
+.temporal-shell.executive-mode .workbench,
+.temporal-shell.executive-mode .feedback-dock,
+.temporal-shell.executive-mode .aura-launcher,
+body.executive-mode .temporal-shell .icon-dock,
+body.executive-mode .temporal-shell .instrument-deck,
+body.executive-mode .temporal-shell .workbench,
+body.executive-mode .temporal-shell .feedback-dock,
+body.executive-mode .temporal-shell .aura-launcher {
+  display: flex !important;
+}
+@media (max-width: 890px) {
+  .icon-dock { display: flex !important; }
+  .ribbon-button .button-text { display: inline !important; }
+}
+
+/* Launcher extra caso o dock React demore */
+#aura-tools-rail {
+  position: fixed; right: 16px; top: 18px; z-index: 90;
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 8px; border: 1px solid rgba(215,255,63,.28);
+  border-radius: 14px 4px; background: #0a0d0ce8;
+}
+#aura-tools-rail button {
+  border: 0; background: transparent; color: #d7e0d2;
+  font: 11px ui-monospace, Consolas, monospace;
+  text-align: left; padding: 6px 8px; cursor: pointer; border-radius: 6px;
+}
+#aura-tools-rail button:hover { background: #d7ff3f; color: #15200c; }

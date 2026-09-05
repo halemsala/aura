@@ -1,0 +1,15 @@
+﻿{
+    "generated_at":  "2026-09-04T16:45:16.6657507-03:00",
+    "root":  "C:\\aura",
+    "read_only":  true,
+    "limited_scope":  true,
+    "files":  [
+                  "01_Raiz_da_AURA.txt",
+                  "02_HTML_Flashscore_SokkerPro.txt",
+                  "03_Processos_relevantes.txt",
+                  "04_Portas_abertas.txt",
+                  "05_Servicos_e_automacoes.txt",
+                  "06_Agentes_skills_e_logs.txt",
+                  "07_Resumo_sem_abrir_Ollama.txt"
+              ]
+}

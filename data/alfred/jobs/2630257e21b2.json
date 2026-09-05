@@ -1,0 +1,249 @@
+{
+  "job_id": "2630257e21b2",
+  "request_id": "18533b1dcf46",
+  "content_hash": "97634c199c08276b",
+  "created_at": 1788386495.845217,
+  "status": "success",
+  "authorized": false,
+  "authorization_reason": "comando único de baixo risco pedido explicitamente",
+  "plan_intent": "single_task",
+  "source_message": "olha o desktop",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "inspect_desktop",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "path": "C:\\Users\\salaa\\Desktop",
+        "count": 49,
+        "sample": [
+          {
+            "name": "# SYSTEM PROMPT — CORNER QUANT TRADDER NOVO.txt",
+            "dir": false,
+            "size": 20005
+          },
+          {
+            "name": "0814(1).MP3",
+            "dir": false,
+            "size": 1677738
+          },
+          {
+            "name": "147092247.lnk",
+            "dir": false,
+            "size": 1977
+          },
+          {
+            "name": "```python.txt",
+            "dir": false,
+            "size": 95677
+          },
+          {
+            "name": "AAFDXCXCFSD.txt",
+            "dir": false,
+            "size": 88235
+          },
+          {
+            "name": "Adobe.After.Effects.2026",
+            "dir": true,
+            "size": 4096
+          },
+          {
+            "name": "adsdasd.jpg",
+            "dir": false,
+            "size": 321072
+          },
+          {
+            "name": "aria-system-v6-melhorado",
+            "dir": true,
+            "size": 4096
+          },
+          {
+            "name": "Arquivos",
+            "dir": true,
+            "size": 65536
+          },
+          {
+            "name": "ASD,KASDKASLKNDA.txt",
+            "dir": false,
+            "size": 88258
+          },
+          {
+            "name": "Aura codigo",
+            "dir": true,
+            "size": 8192
+          },
+          {
+            "name": "Aura Grok",
+            "dir": true,
+            "size": 28672
+          },
+          {
+            "name": "aura_diagnostico.json",
+            "dir": false,
+            "size": 4846
+          },
+          {
+            "name": "AURA_DIAGNOSTICO_WINDOWS_COMPLETO_20260818_164719.txt",
+            "dir": false,
+            "size": 22001
+          },
+          {
+            "name": "AURA_STRESS_DUAS_GPUS_20260818_151337.log",
+            "dir": false,
+            "size": 2576
+          },
+          {
+            "name": "AURA_WINDOWS_TEST_20260818_154831.txt",
+            "dir": false,
+            "size": 6277
+          },
+          {
+            "name": "backup",
+            "dir": true,
+            "size": 12288
+          },
+          {
+            "name": "banco_futebol_local.db",
+            "dir": false,
+            "size": 16384
+          },
+          {
+            "name": "banco_futebol_local.db-shm",
+            "dir": false,
+            "size": 32768
+          },
+          {
+            "name": "banco_futebol_local.db-wal",
+            "dir": false,
+            "size": 0
+          },
+          {
+            "name": "BETO.lnk",
+            "dir": false,
+            "size": 2735
+          },
+          {
+            "name": "Cajazerias 163 anos.png",
+            "dir": false,
+            "size": 2257580
+          },
+          {
+            "name": "CapCut Web.lnk",
+            "dir": false,
+            "size": 2687
+          },
+          {
+            "name": "CapCut.lnk",
+            "dir": false,
+            "size": 1415
+          },
+          {
+            "name": "CARD 06 aa.psd",
+            "dir": false,
+            "size": 67421015
+          },
+          {
+            "name": "Comet.lnk",
+            "dir": false,
+            "size": 2660
+          },
+          {
+            "name": "CornerAI_GEMINI_READY",
+            "dir": true,
+            "size": 4096
+          },
+          {
+            "name": "desktop.ini",
+            "dir": false,
+            "size": 282
+          },
+          {
+            "name": "DFSDFSDFSDFSDFSDFSDFSDFS.txt",
+            "dir": false,
+            "size": 82190
+          },
+          {
+            "name": "fatura energisa.pdf",
+            "dir": false,
+            "size": 4639677
+          },
+          {
+            "name": "GitHub Desktop.lnk",
+            "dir": false,
+            "size": 2409
+          },
+          {
+            "name": "Grok.lnk",
+            "dir": false,
+            "size": 2945
+          },
+          {
+            "name": "HERMES_CHAT_CODIGO_COMPLETO.md",
+            "dir": false,
+            "size": 119326
+          },
+          {
+            "name": "hermes_v10.log",
+            "dir": false,
+            "size": 834692
+          },
+          {
+            "name": "IMPRESSAO 70X70.png",
+            "dir": false,
+            "size": 71100150
+          },
+          {
+            "name": "MANUA.pdf",
+            "dir": false,
+            "size": 46017
+          },
+          {
+            "name": "MANUAL.txt",
+            "dir": false,
+            "size": 46003
+          },
+          {
+            "name": "MARCA COLLO DE MENINA (BRANCA).png",
+            "dir": false,
+            "size": 207764
+          },
+          {
+            "name": "Motion meninos de barão.mp4",
+            "dir": false,
+            "size": 119291823
+          },
+          {
+            "name": "Neat Office.lnk",
+            "dir": false,
+            "size": 1420
+          }
+        ],
+        "loose_files_to_organize": 27,
+        "by_category": {
+          "Documentos": 12,
+          "Audio": 1,
+          "Imagens": 4,
+          "Codigo": 2,
+          "Outros": 7,
+          "Video": 1
+        },
+        "over_limit": 0,
+        "nota": "nada foi movido. Diz 'organiza o desktop' + AUTORIZO para agrupar."
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "1 de 1 tarefas concluídas com sucesso.",
+  "finished_at": 1788386495.9391356
+}

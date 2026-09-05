@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AURA Quant-X Terminal</title>
+<link rel="stylesheet" href="sidepanel.css">
+<link rel="stylesheet" href="chat.css">
+</head>
+<body>
+<main class="terminal">
+  <header class="topbar">
+    <div class="brand">
+      <span class="live-dot"><i></i></span>
+      <div><strong>AURA QUANT-X</strong><small>CornerAI · IN-PLAY TERMINAL</small></div>
+    </div>
+    <div class="top-status"><span id="engineState" class="badge neutral">ENGINE OFF</span><span id="clock" class="clock">--:--:--</span></div>
+  </header>
+
+  <nav class="tabbar" role="tablist">
+    <button id="tabBtnPanel" class="tabbtn active" role="tab" aria-selected="true" data-view="panel">📊 PAINEL</button>
+    <button id="tabBtnChat" class="tabbtn" role="tab" aria-selected="false" data-view="chat">💬 CHAT IA<span id="chatUnread" class="unread" hidden>0</span></button>
+    <button id="tabBtnAgents" class="tabbtn" role="tab" aria-selected="false" data-view="agents">🧩 AGENTES</button>
+  </nav>
+
+  <div id="viewPanel" class="view">
+    <section class="match-head card">
+      <div class="match-line"><div><small class="label">PARTIDA ATUAL</small><div id="match" class="teams">AGUARDANDO CAPTURA</div></div><div class="score-wrap"><span id="score" class="score">— × —</span><span id="minute" class="minute">—</span></div></div>
+      <div class="subline"><span id="fixture">fixture —</span><span id="freshness" class="fresh stale">STALE</span><span id="source">Fonte —</span></div>
+    </section>
+
+    <section class="hud-grid">
+      <div class="metric card"><small>APPM H/A</small><b id="appm">— | —</b></div>
+      <div class="metric card"><small>xG H/A</small><b id="xg">— | —</b></div>
+      <div class="metric card"><small>CANTOS</small><b id="corners">— | —</b></div>
+      <div class="metric card"><small>QUALIDADE</small><b id="quality">0%</b></div>
+    </section>
+
+    <section class="pressure card">
+      <div class="section-title"><span>LIVE ENGINE</span><span id="regime" class="badge neutral">REGIME —</span></div>
+      <div class="bar-row"><span>PRESSÃO</span><div class="bar"><i id="pressureBar"></i></div><b id="pressureVal">—</b></div>
+      <div class="bar-row"><span>MOMENTUM</span><div class="bar"><i id="momentumBar"></i></div><b id="momentumVal">—</b></div>
+      <div class="bar-row"><span>DATA FRESH</span><div class="bar"><i id="freshBar"></i></div><b id="freshVal">—</b></div>
+    </section>
+
+    <section class="market card">
+      <div class="section-title"><span>MARKET ENGINE</span><span id="decision" class="decision wait">AGUARDA</span></div>
+      <div class="market-name" id="marketName">Nenhum mercado validado</div>
+      <div class="market-grid">
+        <div><small>P(MODELO)</small><b id="modelProb">—</b></div>
+        <div><small>P(MARKET)</small><b id="marketProb">—</b></div>
+        <div><small>EDGE</small><b id="edge">—</b></div>
+        <div><small>INCERTEZA</small><b id="uncertainty">—</b></div>
+      </div>
+      <div id="reason" class="reason">Sem decisão: aguardando dados suficientes.</div>
+    </section>
+
+    <section class="risk card">
+      <div class="section-title"><span>RISK ENGINE</span><span id="riskState" class="badge neutral">BLOCK</span></div>
+      <div class="risk-grid">
+        <div><small>EXPOSIÇÃO</small><b id="exposure">0.00%</b></div>
+        <div><small>KELLY BRUTO</small><b id="kelly">—</b></div>
+        <div><small>RISK CAP</small><b>2.00%</b></div>
+        <div><small>CORRELAÇÃO</small><b id="correlation">—</b></div>
+      </div>
+      <div id="riskReason" class="reason">Fail-closed ativo até validação.</div>
+    </section>
+
+    <section class="console card">
+      <div class="section-title"><span>EVENT STREAM</span><span id="eventCount">0 eventos</span></div>
+      <div id="eventLog" class="stream"></div>
+    </section>
+
+    <section class="controls">
+      <button id="btnTrader" class="primary">ANALISAR</button>
+      <button id="btnSnapshot">SNAPSHOT</button>
+      <button id="btnTG">TELEGRAM</button>
+      <button id="btnVisao">VISÃO</button>
+      <button id="btnAcertou" class="good">GREEN</button>
+      <button id="btnErrou" class="bad">RED</button>
+    </section>
+
+    <div id="quick" class="quick"></div>
+    <div class="command"><span>&gt;_</span><input id="prompt" autocomplete="off" placeholder="/analisar  /risk  /why  /state  /market"></div>
+    <footer><span id="status">Engine…</span><span id="lastUpdate">—</span></footer>
+  </div>
+
+  <div id="viewChat" class="view" hidden>
+    <section class="chat-shell card">
+      <div class="chat-context" id="chatContext">
+        <span class="ctx-dot" id="ctxDot"></span>
+        <span id="ctxMatch">Nenhuma partida capturada</span>
+        <span class="ctx-sep">·</span>
+        <span id="ctxMeta">sem dados</span>
+        <button id="btnCtxRefresh" class="ctx-refresh" title="Ressincronizar contexto">⟳</button>
+      </div>
+
+      <div id="chatScroll" class="chat-scroll">
+        <div id="chatEmpty" class="chat-empty">
+          <div class="chat-empty-badge">IA</div>
+          <h3>Assistente de análise AURA</h3>
+          <p>Pergunte sobre a partida em captura — o assistente lê stats, xG, cantos, odds, H2H e o risco em tempo real antes de responder.</p>
+          <div id="chatStarters" class="chat-starters"></div>
+        </div>
+        <div id="chatMessages" class="chat-messages"></div>
+        <div id="chatTyping" class="chat-typing" hidden><span class="chat-avatar ai">IA</span><div class="typing-dots"><i></i><i></i><i></i></div></div>
+      </div>
+
+      <div id="chatChips" class="chat-chips"></div>
+
+      <form id="chatForm" class="chat-composer" autocomplete="off">
+        <textarea id="chatInput" rows="1" placeholder="Pergunte algo sobre a partida… (Enter envia · Shift+Enter quebra linha)"></textarea>
+        <div class="chat-composer-actions">
+          <button type="button" id="btnVoiceMic" class="chat-icon-btn" title="Falar com o Jarvis (voz)">🎙</button>
+          <button type="button" id="btnChatSpeak" class="chat-icon-btn" title="Falar o estado atual da partida">🔊</button>
+          <button type="button" id="btnChatClear" class="chat-icon-btn" title="Limpar conversa">🗑</button>
+          <button type="submit" id="btnChatSend" class="chat-send" title="Enviar">➤</button>
+        </div>
+      </form>
+      <div id="voiceStatus" class="voice-status" hidden></div>
+      <div class="voice-settings">
+        <label><input type="checkbox" id="voiceWakeToggle"> exigir "<span id="voiceWakeWordLabel">jarvis</span>"</label>
+        <input type="text" id="voiceWakeWordInput" value="jarvis" maxlength="20" hidden>
+        <label class="mood-label">humor
+          <select id="voiceMoodSelect">
+            <option value="baixo">Baixo</option>
+            <option value="medio" selected>Médio</option>
+            <option value="alto">Alto</option>
+          </select>
+        </label>
+        <label class="voice-label">voz
+          <select id="voiceVoiceSelect" title="Voz local AURA :8099 (Piper/Neural)">
+            <option value="auto">AURA Natural · automática</option>
+          </select>
+        </label>
+        <button type="button" id="btnVoicePreview" class="voice-preview-btn" title="Ouvir uma prévia da voz">▶ Ouvir voz</button>
+        <button type="button" id="btnVoiceDiag" class="voice-diag-btn" title="Testar e diagnosticar o sistema de voz">🩺 Testar Voz</button>
+      </div>
+    </section>
+  </div>
+
+
+  <div id="viewAgents" class="view" hidden>
+    <section class="card agents-header">
+      <div class="section-title"><span>AGENTES OPERACIONAIS</span><span id="agentSummary" class="badge neutral">carregando...</span></div>
+      <p class="agents-intro">Cada cartão representa um agente declarado no manifesto. Status e inspeção são reais; ações com efeito externo permanecem allowlisted e em paper trade.</p>
+      <div class="agent-toolbar">
+        <input id="agentSearch" type="search" placeholder="Buscar agente, arquivo ou camada..." autocomplete="off">
+        <select id="agentLayerFilter" aria-label="Filtrar por camada">
+          <option value="all">Todas as camadas</option>
+          <option value="engine">Engine</option>
+          <option value="bridge">Bridge</option>
+          <option value="sre">SRE</option>
+          <option value="ui">UI</option>
+          <option value="voice">Voz</option>
+        </select>
+        <button type="button" id="btnAgentsRefresh" class="btn btn-primary">Atualizar agentes</button>
+      </div>
+    </section>
+    <section id="agentMenus" class="agent-menus" aria-live="polite"></section>
+  </div>
+
+    <section id="toolsPanel" class="card tools-panel">
+      <div class="section-title"><span>FERRAMENTAS DE SISTEMA</span><span class="badge neutral">OPS</span></div>
+      <div class="btn-grid">
+        <button type="button" id="btnHealth" class="btn btn-primary">Health Check</button>
+        <button type="button" id="btnLatency" class="btn">Latência Rede</button>
+        <button type="button" id="btnSignature" class="btn">Assinatura Código</button>
+        <button type="button" id="btnDirectorPending" class="btn btn-warn">Diretor Pendente</button>
+        <button type="button" id="btnDirectorApprove" class="btn btn-ok">Aprovar Diretor</button>
+        <button type="button" id="btnRefreshAll" class="btn">Refresh Total</button>
+      </div>
+      <div id="latencyBox">latência: —</div>
+      <div id="signatureBox">assinatura: —</div>
+      <div id="directorBox">diretor: —</div>
+    </section>
+
+</main>
+<script src="sidepanel-dynamic.js"></script>
+<script src="sidepanel.js"></script>
+<script src="voice-assistant.js"></script>
+<script src="../src/aura-quantx-adapter.js"></script>
+<script src="../src/aura-quantx-extension-hook.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+﻿# Arquivos muito grandes (>100MB)
+diagnostico_etapas_20260904_161805/06_Agentes_skills_configuracoes_e_logs.txt
+inventario_total_20260904_160305/14_LOGS_E_RELATORIOS_RECENTES.txt
+coleta_fontes_harness.zip
+
+# Outras extensões grandes
+*.iso
+*.dmg
+*.exe
+*.onnx
+
+# Node e Python
+node_modules/
+venv/
+.venv/
+__pycache__/
+*.pyc

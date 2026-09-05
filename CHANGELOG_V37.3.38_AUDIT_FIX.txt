@@ -1,0 +1,13 @@
+V37.3.38 AUDIT FIX — Hermes Chat API
+====================================
+P0 numpy.bool 500 on /health /api/system
+  - sanitize_payload() + bool()/float() casts
+  - /health/live minimal endpoint
+P0 anomaly permanent alarm
+  - live_missing paths fixed to AURA_ROOT
+  - live_missing removed from default features
+  - rule-gated anomalies (ports/errors)
+  - history deque maxlen=60
+P1 path ModuleNotFoundError
+  - resolve root containing core/hermes_llm_engine.py
+P1 glm_enabled=false hermes_llm=true in health payload

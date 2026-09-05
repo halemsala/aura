@@ -1,0 +1,8 @@
+AURA V37.3.32 COMPLETE — Elite Squad em engine/agents/elite_squad
+paper_trade=true | execution_allowed=false
+
+Instalação: INSTALAR_TUDO.bat → AURA_GROK_FIX.bat → AURA_GROK_ACTIVATE.bat
+GPU livre: AURA_GROK_GPU_LIVRE.bat
+
+Elite Squad (import opcional):
+  from engine.agents.elite_squad.integration_hooks import audit_proposal, sanitize_feed

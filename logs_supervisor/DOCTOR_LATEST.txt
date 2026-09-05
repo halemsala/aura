@@ -1,0 +1,25 @@
+AURA DOCTOR — 2026-09-02T12:57:35Z
+ROOT: C:\aura
+OVERALL: atencao
+CONTADORES: {'saudavel': 16, 'atencao': 1, 'critico': 0}
+
+ITENS:
+  [SAUDAVEL] python_version: 3.11.9
+  [SAUDAVEL] file:engine/server.py: presente
+  [SAUDAVEL] file:bridge/server.py: presente
+  [SAUDAVEL] file:agents/activation_manifest.json: presente
+  [SAUDAVEL] file:config/AURA_RUNTIME.env.example: presente
+  [SAUDAVEL] file:AURA_LIMPEZA_INSTALA_VERIFICA_TUDO.bat: presente
+  [SAUDAVEL] port:bridge:8080: LISTEN
+  [SAUDAVEL] port:engine:8765: LISTEN
+  [SAUDAVEL] port:voice:8099: LISTEN
+  [SAUDAVEL] port:matriz:8766: LISTEN
+  [SAUDAVEL] port:hermes:8777: LISTEN
+  [SAUDAVEL] health:bridge: {"ok": true, "service": "cornerai-bridge", "version": "12.7.6-RESILIENCIA", "feed": "C:\\aura\\bridge\\live_feed.jsonl",
+  [SAUDAVEL] health:engine: {"status":"alive","service":"aura_engine","port":8765,"ts":1788353856,"paper_trade":true,"execution_allowed":false}
+  [SAUDAVEL] health:voice: {"status":"ok","service":"jarvis_voice","version":"AURA-VOICE-MALE-V3","build_id":"AURA-VOICE-MALE-V3","process_up":true
+  [SAUDAVEL] invariant:paper_signals: sinais de paper/health presentes
+  [SAUDAVEL] invariant:env_example: example com paper=1 e execution=0
+  [ATENCAO ] report:RELATORIO_GERAL_LATEST: idade_aprox_sec=77631  → Gerar novo relatório geral
+
+Fim do doctor. Nenhuma alteração foi aplicada.

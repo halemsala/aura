@@ -1,0 +1,33 @@
+CHANGELOG V37.3.47 CHAT AUDIT
+=============================
+
+CRIT
+- CORS restringido a origens localhost (8777/8778/8766); TrustedHost sem "*"
+- Endpoints destrutivos (/api/correct, /api/simulate, /api/fs/*, /api/memory/store)
+  exigem loopback ou token HERMES
+- Camada 1 deixa de executar corrige/reinicia sem AUTORIZO; pendente + cancelar
+- Regex autoris[oa] -> autori[sz][oa] (casa AUTORIZO e autoriso)
+- fix e-xxx-nn: dry-run sem AUTORIZO; apply so com AUTORIZO
+- liga autonomia exige AUTORIZO
+- /api/correct special codes: fail-closed se simulate_first e twin ausente
+- /api/chat/stream usa build_safe_prompt + contexto vivo + runbook
+- dump de tool do LLM nao executa fix/restart/gpu sem AUTORIZO; servico allowlist
+
+ALT
+- /metrics devolve Response(bytes) com CONTENT_TYPE_LATEST
+- WebSocket: Gauge WS_ACTIVE + finally.dec(); erros no loop nao matam a sessao
+- I/O pesado em asyncio.to_thread; runbook cache 60s; alerts leem tail 64KB
+- REST /api/chat honra use_memory e injecta memory.get_context_for_prompt
+- _aura_root() unico para alerts/runbook/gym/correct
+- reinicia hermes/voz mapeados no agente (aliases ja existentes)
+- _sanitize_llm aplicado nas respostas LLM
+- programador / ativa agentes / fecha e abre / cancelar com rota
+- WS valida payload dict, timeout 90s, store memoria com try
+
+MED/BX
+- codigo morto apos return em _sanitize_reply removido
+- datetime timezone-aware (_iso_utc)
+- IDs de memoria com token aleatorio
+- PROBLEM_RE mais estreito
+- top_k / healing limit / anomaly hours com clamp
+- dashboard: origem 8778/8766/8099 -> 8777; botao Programador = "programador"

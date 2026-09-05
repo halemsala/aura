@@ -1,0 +1,32 @@
+AURA QUANT-X V25 — INSTALL R MANIFEST
+======================================
+Installation: R — Tipster Capture
+Source: /home/ubuntu/upload/pasted_content_18.txt
+Installed: 2026-08-25
+
+Canonical file
+--------------
+engine/agents/tipster_capture.py
+SHA-256: abfacffa9a30344ecbf1268ee65c7b6a9dd6af1092aa6a32a16399b418d2e482
+
+Addon copy
+----------
+addons/installation_r_tipster_capture/tipster_capture_from_pasted_content_18.py
+SHA-256: abfacffa9a30344ecbf1268ee65c7b6a9dd6af1092aa6a32a16399b418d2e482
+
+Backup
+------
+.install-backups/installations-r-s-20260825_102059/
+The canonical tipster_capture.py did not exist before installation; the backup records its absence.
+
+Safety state
+------------
+- Telethon not installed.
+- No TG_API_ID or TG_API_HASH configured.
+- No Telegram login/session, polling thread, network access or publication activated.
+- H-TC1 integration into jarvis_voice_server.py was intentionally not applied.
+- Existing paper-trade and fail-closed policies remain unchanged.
+
+Validation
+----------
+Self-test passed: parser, reactions, journal, scorecard, grammar and unavailable-without-credentials path.

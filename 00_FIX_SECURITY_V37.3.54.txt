@@ -1,0 +1,31 @@
+AURA QUANT-X V37.3.54 — FIX HERMES + SECURITY PASS
+==================================================
+Invariantes: paper_trade=true | execution_allowed=false | Python 3.10/3.11
+
+CORRECOES NESTE BUILD
+---------------------
+A) Boot / encoding (pack anterior)
+   - AURA_REBUILD_HERMES.bat → CRLF (fim erros tle/lor/et)
+   - AURA_REPARAR_E_SUBIR_HERMES.ps1 → parse PowerShell seguro
+   - hermes_v10/AURA_RUN_HERMES.py → path CAND (HERE / "core")
+
+B) Security pass (auditoria fonte verificada)
+   1) SEC-001 agents/hermes_red_team_agent_llm.py
+      - String multilinha ```system corrigida → modulo importa
+   2) SEC-WS-001 scripts/hermes_v10_chat_api.py /ws/chat
+      - Auth no handshake: loopback livre se AUTH_REQUIRED=0;
+        senao token ?token= ou Authorization Bearer
+   3) SEC-004 core/hermes_llm_engine.py tool_read_file/list_dir
+      - is_relative_to(base) + rejeicao de path absoluto
+      - Validators FSRead/FSList tambem rejeitam absolutos
+
+COMO APLICAR
+------------
+1) Extrair ESTE ZIP completo por cima de C:\aura
+2) cd /d C:\aura
+3) AURA_REBUILD_HERMES.bat
+4) curl http://127.0.0.1:8777/health
+
+Opcional multi-user:
+  set HERMES_REQUIRE_AUTH=1
+  set HERMES_JWT_SECRET=<secret-estavel-32+chars>

@@ -1,0 +1,152 @@
+﻿===== 06_PROCESSOS_AURA_RELEVANTES =====
+
+
+Id           : 2688
+ProcessName  : Code
+Path         : C:\Users\salaa\AppData\Local\Programs\Microsoft VS Code\Code.exe
+StartTime    : 04/09/2026 12:08:56
+CPU          : 714,578125
+WorkingSet64 : 233189376
+
+Id           : 5320
+ProcessName  : Code
+Path         : C:\Users\salaa\AppData\Local\Programs\Microsoft VS Code\Code.exe
+StartTime    : 04/09/2026 12:08:56
+CPU          : 3,390625
+WorkingSet64 : 15765504
+
+Id           : 7044
+ProcessName  : Code
+Path         : C:\Users\salaa\AppData\Local\Programs\Microsoft VS Code\Code.exe
+StartTime    : 04/09/2026 12:08:58
+CPU          : 10,40625
+WorkingSet64 : 29450240
+
+Id           : 9060
+ProcessName  : Code
+Path         : C:\Users\salaa\AppData\Local\Programs\Microsoft VS Code\Code.exe
+StartTime    : 04/09/2026 12:09:01
+CPU          : 2,84375
+WorkingSet64 : 4661248
+
+Id           : 9852
+ProcessName  : Code
+Path         : C:\Users\salaa\AppData\Local\Programs\Microsoft VS Code\Code.exe
+StartTime    : 04/09/2026 12:08:57
+CPU          : 7,1875
+WorkingSet64 : 20893696
+
+Id           : 12824
+ProcessName  : Code
+Path         : C:\Users\salaa\AppData\Local\Programs\Microsoft VS Code\Code.exe
+StartTime    : 04/09/2026 12:08:58
+CPU          : 115,921875
+WorkingSet64 : 233713664
+
+Id           : 19624
+ProcessName  : Code
+Path         : C:\Users\salaa\AppData\Local\Programs\Microsoft VS Code\Code.exe
+StartTime    : 04/09/2026 12:08:56
+CPU          : 0,109375
+WorkingSet64 : 2949120
+
+Id           : 19840
+ProcessName  : Code
+Path         : C:\Users\salaa\AppData\Local\Programs\Microsoft VS Code\Code.exe
+StartTime    : 04/09/2026 12:09:09
+CPU          : 1,203125
+WorkingSet64 : 7217152
+
+Id           : 19992
+ProcessName  : Code
+Path         : C:\Users\salaa\AppData\Local\Programs\Microsoft VS Code\Code.exe
+StartTime    : 04/09/2026 12:48:38
+CPU          : 146,65625
+WorkingSet64 : 193646592
+
+Id           : 21868
+ProcessName  : Code
+Path         : C:\Users\salaa\AppData\Local\Programs\Microsoft VS Code\Code.exe
+StartTime    : 04/09/2026 12:08:58
+CPU          : 23,109375
+WorkingSet64 : 25440256
+
+Id           : 22380
+ProcessName  : Code
+Path         : C:\Users\salaa\AppData\Local\Programs\Microsoft VS Code\Code.exe
+StartTime    : 04/09/2026 12:08:56
+CPU          : 193,109375
+WorkingSet64 : 147804160
+
+Id           : 22676
+ProcessName  : Code
+Path         : C:\Users\salaa\AppData\Local\Programs\Microsoft VS Code\Code.exe
+StartTime    : 04/09/2026 12:08:56
+CPU          : 147,140625
+WorkingSet64 : 79560704
+
+Id           : 23992
+ProcessName  : Code
+Path         : C:\Users\salaa\AppData\Local\Programs\Microsoft VS Code\Code.exe
+StartTime    : 04/09/2026 12:08:59
+CPU          : 84
+WorkingSet64 : 41435136
+
+Id           : 5976
+ProcessName  : LenovoVantage-(LenovoServiceBridgeAddin)
+Path         : C:\Program Files (x86)\Lenovo\VantageService\5.1.2608.14\LenovoVantage-(LenovoServiceBridgeAddin).exe
+StartTime    : 04/09/2026 10:08:44
+CPU          : 3,34375
+WorkingSet64 : 6029312
+
+Id           : 20812
+ProcessName  : node
+Path         : C:\Program Files\Adobe\Adobe Creative Cloud Experience\libs\node.exe
+StartTime    : 04/09/2026 10:12:43
+CPU          : 63,6875
+WorkingSet64 : 46796800
+
+Id           : 20492
+ProcessName  : ollama
+Path         : C:\Users\salaa\AppData\Local\Programs\Ollama\ollama.exe
+StartTime    : 04/09/2026 10:06:28
+CPU          : 172,953125
+WorkingSet64 : 19820544
+
+Id           : 5372
+ProcessName  : ollama app
+Path         : C:\Users\salaa\AppData\Local\Programs\Ollama\ollama app.exe
+StartTime    : 04/09/2026 10:06:26
+CPU          : 6,90625
+WorkingSet64 : 23736320
+
+Id           : 16716
+ProcessName  : powershell
+Path         : C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+StartTime    : 04/09/2026 13:11:23
+CPU          : 398,3125
+WorkingSet64 : 47591424
+
+Id           : 25440
+ProcessName  : powershell
+Path         : C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+StartTime    : 04/09/2026 12:48:34
+CPU          : 10,984375
+WorkingSet64 : 6422528
+
+Id           : 26088
+ProcessName  : powershell
+Path         : C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+StartTime    : 04/09/2026 15:57:52
+CPU          : 71,53125
+WorkingSet64 : 240271360
+
+Id           : 26176
+ProcessName  : powershell
+Path         : 
+StartTime    : 04/09/2026 12:47:36
+CPU          : 8,4375
+WorkingSet64 : 29634560
+
+
+

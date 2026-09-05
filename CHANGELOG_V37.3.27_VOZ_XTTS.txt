@@ -1,0 +1,42 @@
+AURA QUANT-X 12.7.62 V37.3.28 — VOZ XTTS WINDOWS
+================================================
+Data: 2026-08-30
+
+V37.3.28
+- tokenizers agora 0.22-0.23 (transformers 4.57.x nao aceita <0.22)
+- instalar_deps_voz.py em passagens: base → coqui+tf → re-pin tf
+
+
+CAUSA DOS ERROS DO LOG
+1) BAT AURA_INSTALAR_TESTAR_VOZ_COMPLETO.bat usava ^ dentro de
+   powershell -Command multi-linha. O PowerShell interpretou "^" e "try{"
+   como comandos. Portas ate subiram (8080/8765/8099/11434 LISTEN).
+2) pip do Coqui puxou transformers 5.16.x. Esse ramo removeu
+   isin_mps_friendly de transformers.pytorch_utils.
+3) Pin manual transformers==4.46.3 quebrou coqui-tts 0.27.3
+   (exige transformers>=4.57) e huggingface-hub 1.x.
+4) torchaudio.load passou a usar torchcodec. PyTorch 2.13.0+cpu nao
+   carregou libtorchcodec_coreN.dll (FFmpeg full-shared ausente).
+5) Comando colado: AURA_ABRIR_DESKTOP.batcd C:\aura
+
+CORRECOES
+- scripts/aura_xtts_compat.py: shim isin_mps_friendly + torchaudio.load/save
+  via soundfile (tambem patcha torchaudio._torchcodec)
+- scripts/instalar_deps_voz.py: coqui-tts==0.27.5 + transformers>=4.57.1,<5 + tokenizers 0.22-0.23
+  + huggingface-hub<1; desinstala torchcodec
+- scripts/teste_xtts_referencia.py aplica compat ANTES do import TTS
+- bridge/jarvis/modules/tts.py e jarvis_voice_server.py aplicam o patch
+- BAT de checks passou para scripts/AURA_CHECK_VOZ_STACK.ps1
+- Novo: AURA_REPARAR_XTTS_TORCHCODEC.bat
+
+INVARIANTES
+- paper_trade=true
+- execution_allowed=false
+- GLM_ADVISORY_ONLY
+
+COMO USAR
+1) Extrair ZIP completo para C:\aura
+2) AURA_REPARAR_XTTS_TORCHCODEC.bat
+3) python scripts\teste_xtts_referencia.py
+4) AURA_INSTALAR_TESTAR_VOZ_COMPLETO.bat   (sobe 8080/8765/8099)
+5) AURA_ABRIR_DESKTOP.bat

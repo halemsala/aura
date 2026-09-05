@@ -1,0 +1,30 @@
+services:
+  gpt-load:
+    image: ghcr.io/tbphp/gpt-load:2
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    ports:
+      - "${BIND_ADDRESS:-${HOST:-127.0.0.1}}:${PORT:-3001}:${PORT:-3001}"
+      - "${OAUTH_CALLBACK_BIND_ADDRESS:-${HOST:-127.0.0.1}}:1455:1455"
+      - "${OAUTH_CALLBACK_BIND_ADDRESS:-${HOST:-127.0.0.1}}:54545:54545"
+      - "${OAUTH_CALLBACK_BIND_ADDRESS:-${HOST:-127.0.0.1}}:51121:51121"
+    env_file:
+      - .env
+    environment:
+      HOST: 0.0.0.0
+      PORT: ${PORT:-3001}
+      DATA_DIR: /app/data
+    restart: always
+    volumes:
+      - gpt-load-data:/app/data
+    stop_grace_period: ${CONTAINER_STOP_GRACE_PERIOD:-15s}
+    healthcheck:
+      test: wget -q --spider -T 10 -O /dev/null http://localhost:${PORT:-3001}/health
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  gpt-load-data:

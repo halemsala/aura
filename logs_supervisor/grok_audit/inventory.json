@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-09-02T19:44:00Z",
+  "root": "C:\\aura",
+  "root_detected": true,
+  "python": "3.11.9",
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "vram_total_mib": 6141,
+    "note": "qwen3:8b Q4_K_M ~5.2GB. num_ctx=2048, keep_alive=20m, sem num_gpu forçado no cliente Alfred."
+  },
+  "models_installed": [
+    "qwen3:8b",
+    "qwen2.5-coder:7b",
+    "qwen-coder-safe:latest",
+    "qwen2.5-coder:7b-instruct",
+    "qwen2.5:3b-instruct",
+    "llama3.2:3b",
+    "llama3.2:1b"
+  ],
+  "exclusive_runtime_model": "qwen3:8b",
+  "entrypoints": {
+    "alfred_api": "alfred.api (python -m alfred.api) 127.0.0.1:8791",
+    "alfred_boot": "alfred.boot start|stop|status|ask|rollback",
+    "hermes_chat": "hermes_v10/scripts/hermes_v10_chat_api.py 127.0.0.1:8777",
+    "ollama": "http://127.0.0.1:11434"
+  },
+  "ports": {
+    "ollama": 11434,
+    "hermes": 8777,
+    "alfred": 8791
+  },
+  "contaminated_bats": {
+    "live_root": "none — FINALIZAR_AURA_ALFRED_QWEN3.bat is valid CMD",
+    "historical": [
+      "backups/alfred_real_20260902_154529/FINALIZAR_AURA_ALFRED_QWEN3.bat",
+      "backups/alfred_real_20260902_154437/FINALIZAR_AURA_ALFRED_QWEN3.bat",
+      "backups/alfred_real_20260902_154145/FINALIZAR_AURA_ALFRED_QWEN3.bat"
+    ]
+  },
+  "silent_fallbacks_found": [
+    "AURA_CONFIGURAR_QWEN_LLAMA.bat still sets llama3.2:3b (legacy, not called by new start)",
+    "hermes_v10/core/hermes_model_router.py previously selected llama3.2:3b for complexity>0.7 — patched to exclusive qwen3:8b",
+    "hermes chat system prompt mentioned llama3.2:3b — patched"
+  ],
+  "auto_browser": {
+    "AURA_HERMES_V10_ULTRA.bat": "opens http://127.0.0.1:8777/chat unless AURA_NO_BROWSER=1",
+    "new_start": "AURA_START_ALL.bat does not open browser",
+    "explicit_open": "AURA_OPEN_CHAT.bat"
+  },
+  "watchdog": {
+    "file": "scripts/aura_watchdog.py",
+    "interval_s": 8,
+    "repairs": ["bridge", "engine", "matriz", "voice"],
+    "never_kills": ["hermes", "ollama"],
+    "circuit_breaker": "max 3 repairs / 15 min then 5 min pause"
+  },
+  "voice_vision": {
+    "stt_tts": "optional interfaces in alfred/voice.py; textual qwen3:8b is not a vision model",
+    "vision_model": ""
+  },
+  "backup_dir": "C:\\aura\\backups\\grok_20260902_162418",
+  "checkpoint": "C:\\aura\\data\\alfred\\checkpoints\\ckpt-20260902-163658.zip"
+}

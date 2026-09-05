@@ -1,0 +1,114 @@
+package telemetry
+
+import (
+	"reflect"
+	"testing"
+	"time"
+)
+
+func TestNoopRequestLogSinkDropsSafely(t *testing.T) {
+	NoopRequestLogSink{}.Emit(RequestEvent{
+		RequestID:   "00000000-0000-4000-8000-000000000001",
+		CompletedAt: time.Unix(1, 0),
+		Attempts:    []Attempt{{Sequence: 1}},
+	})
+}
+
+func TestRequestTelemetryContractUsesExactFieldAllowlist(t *testing.T) {
+	allowlists := map[reflect.Type][]string{
+		reflect.TypeOf(RequestEvent{}): {
+			"RequestID",
+			"CompletedAt",
+			"AccessKeyID",
+			"Protocol",
+			"Operation",
+			"ClientModel",
+			"UpstreamModel",
+			"UpstreamReportedModel",
+			"ModelConsistency",
+			"Status",
+			"StatusCode",
+			"ErrorCode",
+			"ErrorSummary",
+			"Stream",
+			"FirstResponseMs",
+			"DurationMs",
+			"AffinityHit",
+			"Reasoning",
+			"Attempts",
+			"Usage",
+		},
+		reflect.TypeOf(Attempt{}): {
+			"Sequence",
+			"CompletedAt",
+			"GroupID",
+			"GroupName",
+			"ChannelID",
+			"CredentialID",
+			"Operation",
+			"RouteMode",
+			"UpstreamModel",
+			"UpstreamRequestID",
+			"DispatchState",
+			"ResponseStarted",
+			"UpstreamProtocol",
+			"Reasoning",
+			"StatusCode",
+			"DurationMs",
+			"FailureCategory",
+			"FailureOrigin",
+			"FailureScope",
+			"RetryDirective",
+			"Effect",
+			"RuleID",
+			"Action",
+			"WillRetry",
+			"ErrorCode",
+			"ErrorSummary",
+			"Committed",
+		},
+		reflect.TypeOf(PricingObservation{}): {
+			"UpstreamModel",
+			"CostState",
+			"PricingCompleteness",
+			"EstimatedCostNanoUSD",
+			"ReceiptJSON",
+		},
+		reflect.TypeOf(UsageObservation{}): {
+			"Result",
+			"GroupID",
+			"ChannelID",
+			"CredentialID",
+			"AttemptSequence",
+			"Pricing",
+		},
+	}
+
+	for typ, want := range allowlists {
+		got := make([]string, 0, typ.NumField())
+		for index := 0; index < typ.NumField(); index++ {
+			got = append(got, typ.Field(index).Name)
+		}
+		if !reflect.DeepEqual(got, want) {
+			t.Fatalf("%s fields = %v, want exact allowlist %v", typ.Name(), got, want)
+		}
+	}
+}
+
+func TestTelemetryEnumValuesAreStable(t *testing.T) {
+	if RequestStatusSuccess != "success" || RequestStatusIncomplete != "incomplete" {
+		t.Fatalf("request status values changed")
+	}
+	if FailureCategoryRateLimited != "rate_limited" ||
+		FailureCategoryAuthenticationRequired != "authentication_required" ||
+		RetryNextCandidate != "next_candidate" ||
+		EffectRecordCredentialFailure != "record_credential_failure" ||
+		ActionSkipGroup != "skip_group" {
+		t.Fatalf("attempt enum values changed")
+	}
+	if ModelConsistencyNotApplicable != "not_applicable" ||
+		ModelConsistencyMatch != "match" || ModelConsistencyUnknown != "unknown" ||
+		ModelConsistencyMismatch != "mismatch" {
+		t.Fatalf("model consistency values changed")
+	}
+}

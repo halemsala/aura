@@ -1,0 +1,40 @@
+AURA QUANT-X V25 — INSTALL O MANIFEST
+======================================
+
+Data: 2026-08-25
+Fonte: /home/ubuntu/upload/pasted_content_15.txt
+SHA-256 do anexo: f4011e16acd749c183dda5d1e18e7cb9a740ab6cbf2f313aadfbbe01e57d9611
+Componente principal: engine/agents/football_research_hub.py
+SHA-256 do módulo instalado: f536f2d862657b1a9d318f314b27fbe6a46372122783e9eed0add8cb0be5d3de
+
+Conteúdo instalado
+------------------
+- FootballResearchHub: meta-pesquisa paralela em fontes públicas e ToolKnowledge local.
+- MatchMap: mapa ASCII de intensidade estatística por zona do campo.
+- Comandos e hunks de integração foram mantidos fora do fluxo ativo.
+
+Correções e endurecimento
+-------------------------
+- Extração corrigida para preservar o módulo inteiro, inclusive strings contendo ```.
+- Import sem chamadas de rede.
+- APIs externas somente em chamadas explícitas aos métodos de pesquisa.
+- Nenhuma posição real de jogador é inferida; o mapa representa métricas agregadas.
+- Nenhuma função de aposta, stake, carteira ou execução financeira.
+
+Validação
+---------
+- Sintaxe do módulo: PASS.
+- Self-test isolado com fontes falsas e ToolKnowledge local: PASS.
+- Teste de integração CommandCenter com dados falsos: PASS.
+- Rede externa durante os testes: NÃO UTILIZADA.
+
+Ativação
+--------
+- Servidor de voz: NÃO integrado.
+- Cadeia global de parsers: NÃO integrada.
+- Boot/autostart: NÃO ativado.
+- Consultas externas automáticas: NÃO ativadas.
+
+Reversão
+--------
+Remover apenas engine/agents/football_research_hub.py e addons/installation_o_research_map/. O backup independente está em .install-backups/installation-o-20260825_090500/.

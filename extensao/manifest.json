@@ -1,0 +1,112 @@
+{
+  "manifest_version": 3,
+  "name": "CornerAI AURA Unified",
+  "version": "12.7.0",
+  "minimum_chrome_version": "114",
+  "description": "CornerAI AURA Quant-X Terminal In-Play · captura + estado + análise + risco + feedback + voz · release 12.7.0 reconsolidado",
+  "permissions": [
+    "activeTab",
+    "alarms",
+    "notifications",
+    "scripting",
+    "storage",
+    "tabs",
+    "unlimitedStorage",
+    "windows",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:11434/*",
+    "http://127.0.0.1:3000/*",
+    "http://127.0.0.1:5000/*",
+    "http://127.0.0.1:8000/*",
+    "http://127.0.0.1:8080/*",
+    "http://127.0.0.1:8090/*",
+    "http://127.0.0.1:8099/*",
+    "http://localhost:8099/*",
+    "http://127.0.0.1:8765/*",
+    "http://localhost:11434/*",
+    "http://localhost:3000/*",
+    "http://localhost:5000/*",
+    "http://localhost:8000/*",
+    "http://localhost:8080/*",
+    "http://localhost:8090/*",
+    "http://localhost:8765/*",
+    "https://*.sokkerpro.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://m2.sokkerpro.com/*",
+    "https://m4.sokkerpro.com/*",
+    "https://sokkerpro.com/*",
+    "ws://127.0.0.1:8090/*",
+    "ws://localhost:8090/*",
+    "wss://*.sokkerpro.com/*",
+    "wss://m2.sokkerpro.com/*",
+    "wss://m4.sokkerpro.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://sokkerpro.com/*",
+        "https://*.sokkerpro.com/*"
+      ],
+      "js": [
+        "lib/fixture-id.js",
+        "lib/clock-parse.js",
+        "lib/pressure-dual.js",
+        "lib/corner-align.js",
+        "lib/event-clock.js",
+        "lib/ws-decode.js",
+        "lib/chunk-buffer.js",
+        "content.js",
+        "market-capture.js",
+        "activation-diagnostic.js",
+        "charts-unified.js",
+        "menu-capture.js",
+        "h2h-capture.js",
+        "hud-overlay.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "page-hook.js",
+        "visao/sidepanel.html",
+        "visao/sidepanel.js",
+        "visao/voice-assistant.js",
+        "visao/chat.css",
+        "src/aura-quantx-central.html",
+        "src/aura-quantx-central.css",
+        "src/aura-quantx-central.js",
+        "src/aura-quantx-adapter.js",
+        "src/aura-quantx-extension-hook.js",
+        "src/kanteiro-chat.html",
+        "src/kanteiro-chat.css",
+        "src/kanteiro-chat.js",
+        "ui/dashboard.html"
+      ],
+      "matches": [
+        "https://sokkerpro.com/*",
+        "https://*.sokkerpro.com/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_title": "CornerAI AURA Unified",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icon128.png"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "side_panel": {
+    "default_path": "visao/sidepanel.html"
+  }
+}

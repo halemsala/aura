@@ -1,0 +1,62 @@
+AURA QUANT-X V25 — INSTALLATION E MANIFEST
+============================================
+
+ID: INSTALL-E-AGENT-SKILLS-EXTERNAL-SOURCES
+Versao: 1.0.0-e
+Data: 2026-08-25
+Origem: /home/ubuntu/upload/pasted_content_12.txt
+SHA256_ORIGEM: 093603fbc70bbf1feb343721fd1593aa6c61a37d58bb4dd4c88c49bdfbefa827
+
+ARQUIVOS INSTALADOS
+--------------------
+engine/agents/agent_skill_engine.py
+engine/agents/external_sources_e.py
+addons/installation_e_agent_skills/README.md
+addons/installation_e_agent_skills/.env.example
+addons/installation_e_agent_skills/INSTALL_E_MANIFEST.txt
+
+COMPONENTES
+-----------
+1. AgentSkillEngine e Qwen3Advisor, extraidos do bloco completo do anexo.
+2. Adaptadores E para Microlink, Crossref, Open Library e Frankfurter.
+3. Registro opcional no CommandCenter com nomes prefixados por e_.
+
+CORRECOES DE SEGURANCA APLICADAS
+--------------------------------
+- Corrigida a estrutura do objeto ADVISOR_TOOLS no item clipboard_paste, que tinha erro de sintaxe no anexo.
+- Adicionada importacao explicita de os.
+- Adicionado bloqueio de execucao de skills por padrao.
+- Variavel de habilitacao: AURA_E_ENABLE_SKILL_EXECUTION=0.
+- Microlink aceita somente URLs HTTP ou HTTPS publicas; caminhos locais e file:// sao rejeitados.
+- Fontes externas usam timeout, limites de resultado/conteudo e validacao de entradas.
+- Ferramentas externas recebem prefixo e_ para evitar colisao com outras instalacoes.
+
+INTEGRACAO DELIBERADAMENTE NAO APLICADA
+----------------------------------------
+- Nao alterado bridge/jarvis_voice_server.py.
+- Nao alterado engine/agents/jarvis_command_center.py.
+- Nao alterado scripts/run_selftests.py.
+- Nao executado ollama pull qwen3:4b.
+- Nao executado ollama pull nomic-embed-text.
+- Nao instalado ou iniciado n8n/Docker.
+- Nao iniciado servidor, polling, autostart, microfone, navegador ou rede externa.
+
+VALIDACAO
+---------
+- py_compile: PASS.
+- agent_skill_engine.py self-test: PASS.
+- external_sources_e.py self-test com fakes locais: PASS.
+- Teste de execucao de skill sem habilitacao: deve permanecer bloqueado.
+- Teste de registro: quatro ferramentas e_ de leitura, denylist sem rejeicoes.
+
+BACKUP
+------
+Backup independente criado em:
+.install-backups/installation-e-20260825_074029/
+
+POLITICAS PRESERVADAS
+---------------------
+PAPER_TRADE=true
+EXECUTION_ALLOWED=false
+GLM_ADVISORY_ONLY=true
+Sem aposta real ou execucao financeira.

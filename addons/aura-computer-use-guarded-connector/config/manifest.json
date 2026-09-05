@@ -1,0 +1,55 @@
+{
+  "name": "aura-computer-use-guarded-connector",
+  "version": "1.0.0",
+  "description": "Guarded connector stub for future Hermes Computer Use / cua-driver. Inert by default.",
+  "isolated": true,
+  "driver_external_installed": false,
+  "services_started": [],
+  "policies": {
+    "computer_use_enabled": false,
+    "execution_allowed": false,
+    "approval_required": true,
+    "network_allowed": false,
+    "authenticated_profiles_allowed": false,
+    "scheduler_enabled": false,
+    "autostart_enabled": false,
+    "yolo_mode_allowed": false,
+    "unrestricted_mode_allowed": false,
+    "mouse_allowed": false,
+    "keyboard_allowed": false,
+    "browser_allowed": false,
+    "microphone_allowed": false,
+    "camera_allowed": false,
+    "gateway_allowed": false
+  },
+  "blocked_domains": [
+    "email",
+    "bank",
+    "wallet",
+    "exchange",
+    "betting",
+    "payment",
+    "social",
+    "password_manager",
+    "authenticated_browser"
+  ],
+  "activation": {
+    "status": "disabled",
+    "requires_second_deployment": true,
+    "requires_capability_manifest": true,
+    "requires_allowlist": true,
+    "requires_timeout": true,
+    "requires_action_limit": true,
+    "requires_stop_button": true,
+    "first_test_window_only": [
+      "notepad",
+      "calculator",
+      "fictitious_test_app"
+    ]
+  },
+  "invariants": {
+    "paper_trade": true,
+    "execution_allowed": false,
+    "glm_advisory_only": true
+  }
+}

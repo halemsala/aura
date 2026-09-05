@@ -1,0 +1,23 @@
+
+========================================
+ CornerAI Bridge v12.7.6-RESILIENCIA
+========================================
+ Feed    : http://127.0.0.1:8080/api/cornerai/feed
+ Health  : http://127.0.0.1:8080/health
+ Skill   : http://127.0.0.1:8080/skill
+
+ JSONL   : C:\aura\bridge\live_feed.jsonl
+ Latest  : C:\aura\bridge\live_latest.json
+ Log     : C:\aura\bridge\CornerAI_Log_Analises_Entradas.md
+ REGs    : C:\aura\bridge\regs
+ SkillJSON: C:\aura\bridge\skill_feed_latest.json
+ SkillMD  : C:\aura\bridge\skill_feed_for_chat.md
+
+ Extensao deve apontar webhook para:
+   http://127.0.0.1:8080/api/cornerai/feed
+ Se o outbox mostrar BRIDGE_OFFLINE, este processo nao esta rodando.
+========================================
+
+127.0.0.1 - - [04/Sep/2026 21:06:30] "GET /api/cornerai/latest HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 21:06:36] "GET /api/cornerai/latest HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 21:06:42] "GET /api/cornerai/latest HTTP/1.1" 200 -

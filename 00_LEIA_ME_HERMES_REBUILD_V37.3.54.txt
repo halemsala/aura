@@ -1,0 +1,54 @@
+AURA QUANT-X — Hermes V10 REBUILD (estavel)
+==========================================
+paper_trade=true | execution_allowed=false
+
+O QUE FOI RECONSTRUIDO
+----------------------
+1) hermes_v10/AURA_RUN_HERMES.py
+   - Bootstrap de path robusto (C:\aura, C:\AURA_V25, AURA_ROOT)
+   - Preflight: exige core/hermes_llm_engine.py e chat API
+   - Define PAPER_TRADE / EXECUTION_ALLOWED / PYTHONPATH
+
+2) hermes_v10/scripts/hermes_v10_chat_api.py
+   - Soft-import dos modulos core (LLM, memory, anomaly, etc.)
+   - Se um modulo falhar, Hermes sobe em modo degradado
+     (health + chat operador continuam)
+   - Evita crash total por ModuleNotFoundError pontual
+
+3) hermes_v10/requirements-minimal.txt
+   - fastapi, uvicorn, pydantic, httpx, psutil (boot minimo 3.10/3.11)
+
+4) AURA_REBUILD_HERMES.bat
+   - Libera :8777
+   - Garante venv 3.10/3.11 em engine\venv
+   - pip install requirements-minimal (+ engine requirements)
+   - Sobe via AURA_RUN_HERMES.py
+   - Health-check http://127.0.0.1:8777/health
+
+ERROS COMUNS QUE ISTO ENDERECA
+------------------------------
+- ModuleNotFoundError: core.hermes_llm_engine
+- SyntaxError f-string em Python 3.11 (pack ja 3.11-safe)
+- Hermes OFF / connection refused :8777
+- venv com Python 3.12/3.14
+- pasta hermes_v10 incompleta (sem core\)
+
+COMO APLICAR NO WINDOWS
+-----------------------
+1) Extraia o ZIP COMPLETO por cima de C:\aura
+2) cd /d C:\aura
+3) AURA_REBUILD_HERMES.bat
+4) Validar:
+     curl http://127.0.0.1:8777/health
+     curl http://127.0.0.1:8777/api/system
+     start http://127.0.0.1:8777/chat
+
+Se falhar:
+  type logs_supervisor\hermes_v10.log
+  type logs_supervisor\hermes_rebuild.log
+
+Alternativa PowerShell (pack anterior):
+  powershell -ExecutionPolicy Bypass -File AURA_REPARAR_E_SUBIR_HERMES.ps1
+
+NAO use Python 3.12+.
+NAO desligue paper_trade.

@@ -1,0 +1,33 @@
+AURA QUANT-X V37.3.49 — PACK COMPLETO HERMES OK
+================================================
+paper_trade=true | execution_allowed=false
+
+COMO INSTALAR (Windows)
+-----------------------
+1) Extraia ESTE ZIP para uma pasta temporaria (ex: Desktop\AURA_TMP)
+
+2) Abra PowerShell e rode:
+
+   cd CAMINHO\DA\PASTA_EXTRAIDA
+   powershell -ExecutionPolicy Bypass -File .\INSTALAR_HERMES_EM_C_AURA.ps1
+
+   Isto copia tudo para C:\aura, aplica o fix do f-string e sobe o Hermes.
+
+ALTERNATIVA MANUAL
+------------------
+  Expand-Archive -Path .\AURA_QUANT_X_V37.3.49_COMPLETO_HERMES_OK.zip -DestinationPath C:\aura -Force
+
+  Depois:
+  powershell -ExecutionPolicy Bypass -File C:\aura\AURA_REPARAR_E_SUBIR_HERMES.ps1
+
+CORRECOES NESTA VERSAO
+----------------------
+- SyntaxError f-string Python 3.11 em hermes_v10_chat_api.py
+- Path bootstrap ModuleNotFoundError core.hermes_llm_engine
+- Script de instalacao anti-quebra (patch via Python, sem aspas PS)
+- AURA_RUN_HERMES.py + AURA_REPARAR_E_SUBIR_HERMES.ps1
+
+REQUISITO: Python 3.11 (venv em C:\AURA_V25\engine\venv ou C:\aura\engine\venv)
+NAO use Python 3.12/3.13/3.14.
+
+Validacao: http://127.0.0.1:8777/health

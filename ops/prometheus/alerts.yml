@@ -1,0 +1,34 @@
+groups:
+  - name: aura_v25
+    rules:
+      - alert: AuraFeedSilent
+        expr: (time() - aura_heartbeat_feed) > 120
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Feed AURA sem frames ha mais de 2 min"
+
+      - alert: AuraFeedBusDrops
+        expr: increase(aura_component_feed_bus_dropped_full[5m]) > 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "FeedBus descartando frames (backpressure)"
+
+      - alert: AuraConformalCoverageLow
+        expr: aura_component_conformal_coverage_recente < 0.80 and aura_component_conformal_coverage_n >= 50
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Cobertura conformal abaixo de 0.80"
+
+      - alert: AuraStageLatencyHigh
+        expr: histogram_quantile(0.99, sum(rate(aura_stage_us_bucket[5m])) by (le, stage)) > 500000
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "p99 de stage > 500ms ({{ $labels.stage }})"

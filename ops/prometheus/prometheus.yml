@@ -1,0 +1,31 @@
+# AURA QUANT-X V25 — Prometheus scrape config
+# Uso: prometheus --config.file=ops/prometheus/prometheus.yml
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - alerts.yml
+
+scrape_configs:
+  - job_name: aura-bridge
+    static_configs:
+      - targets: ["127.0.0.1:9101"]
+        labels:
+          service: bridge
+          system: aura_v25
+
+  - job_name: aura-engine-metrics
+    static_configs:
+      - targets: ["127.0.0.1:9102"]
+        labels:
+          service: engine
+          system: aura_v25
+
+  - job_name: aura-engine-fastapi
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["127.0.0.1:8765"]
+        labels:
+          service: engine_api
+          system: aura_v25

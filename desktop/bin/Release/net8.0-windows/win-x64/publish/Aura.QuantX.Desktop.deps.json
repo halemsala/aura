@@ -1,0 +1,69 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0/win-x64",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {},
+    ".NETCoreApp,Version=v8.0/win-x64": {
+      "Aura.QuantX.Desktop/12.7.62": {
+        "dependencies": {
+          "Microsoft.Web.WebView2": "1.0.3485.44",
+          "Microsoft.Web.WebView2.Core": "1.0.3485.44",
+          "Microsoft.Web.WebView2.WinForms": "1.0.3485.44"
+        },
+        "runtime": {
+          "Aura.QuantX.Desktop.dll": {}
+        }
+      },
+      "Microsoft.Web.WebView2/1.0.3485.44": {
+        "native": {
+          "runtimes/win-x64/native/WebView2Loader.dll": {
+            "fileVersion": "1.0.3485.44"
+          }
+        }
+      },
+      "Microsoft.Web.WebView2.Core/1.0.3485.44": {
+        "runtime": {
+          "Microsoft.Web.WebView2.Core.dll": {
+            "assemblyVersion": "1.0.3485.44",
+            "fileVersion": "1.0.3485.44"
+          }
+        }
+      },
+      "Microsoft.Web.WebView2.WinForms/1.0.3485.44": {
+        "runtime": {
+          "Microsoft.Web.WebView2.WinForms.dll": {
+            "assemblyVersion": "1.0.3485.44",
+            "fileVersion": "1.0.3485.44"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Aura.QuantX.Desktop/12.7.62": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Web.WebView2/1.0.3485.44": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4hk+MDJcW6Hcvtfb0qv0zba9mpBFxM2GO9gJ+8Nq/zoAdwFanmt7jzvM07NPB/UcuQ/jZpKh9IUDL/eVOEFh2A==",
+      "path": "microsoft.web.webview2/1.0.3485.44",
+      "hashPath": "microsoft.web.webview2.1.0.3485.44.nupkg.sha512"
+    },
+    "Microsoft.Web.WebView2.Core/1.0.3485.44": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Web.WebView2.WinForms/1.0.3485.44": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

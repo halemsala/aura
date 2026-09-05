@@ -1,0 +1,6 @@
+Alfred PID: 18368 | activo: True
+HTTP /health (127.0.0.1:8791): 200
+{"status":"ok","model":"qwen3:8b","ollama":{"online":true,"model_present":true},"pid":18368,"host":"127.0.0.1","port":8791,"paper_trade":true,"execution_allowed":false}
+Alfred PID: 18368 | activo: True
+HTTP /health (127.0.0.1:8791): 200
+{"status":"ok","model":"qwen3:8b","ollama":{"online":true,"model_present":true},"pid":18368,"host":"127.0.0.1","port":8791,"paper_trade":true,"execution_allowed":false}

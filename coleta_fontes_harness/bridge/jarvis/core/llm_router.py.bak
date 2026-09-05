@@ -1,0 +1,159 @@
+# bridge/jarvis/core/llm_router.py
+"""
+Roteador de modelos — arquitetura AURA (RTX 4050 6GB) com 3 LLMs:
+
+  LOCAL (notebook):
+    qwen2.5:3b-instruct          → cérebro principal (chat, tool calls, PT-BR)
+    llama3.2:3b                  → contexto longo / instruções compostas
+    qwen2.5-coder:7b-instruct    → tarefas pesadas (código, análise profunda)
+                                   Sobe só quando necessário + keep_alive=0
+
+  NUVEM (NUNCA no runtime AURA):
+    GLM                          → arquiteto externo
+
+Regras de seleção (ordem):
+  1) Contexto longo (>24k tokens)            → llama3.2:3b
+  2) Pedido pesado (código / análise forte)  → qwen2.5-coder:7b-instruct
+  3) Agente / tool call / JSON               → qwen2.5:3b-instruct
+  4) Instrução composta (2+ passos)          → llama3.2:3b
+  5) Padrão                                  → qwen2.5:3b-instruct
+
+Proteção VRAM da 7B:
+  - keep_alive=0 (descarrega logo após o uso)
+  - Só é chamada em casos específicos
+  - Pode demorar um pouco mais para carregar (aceitável)
+"""
+from __future__ import annotations
+
+import os
+import re
+from typing import Literal, Optional
+
+ModeName = Literal["trading", "creative"]
+
+# === Modelos locais (nunca GLM) ===
+PRIMARY = os.environ.get("AURA_LLM_PRIMARY", "qwen2.5:3b-instruct")
+LONGCTX = os.environ.get("AURA_LLM_LONGCTX", "llama3.2:3b")
+JSON_AGENT = os.environ.get("AURA_LLM_JSON", "qwen2.5:3b-instruct")
+HEAVY = os.environ.get("AURA_LLM_HEAVY", "qwen2.5-coder:7b-instruct")  # 7B sob demanda
+
+MODE_MODELS = {
+    "trading": os.environ.get("AURA_LLM_TRADING", PRIMARY),
+    "creative": os.environ.get("AURA_LLM_CREATIVE", PRIMARY),
+}
+
+CHARS_PER_TOKEN = 3
+LONGCTX_THRESHOLD = 24000
+
+COMPOUND_RE = re.compile(
+    r"(depois|em seguida|ent[ãa]o|se falhar|se n[ãa]o|primeiro|segundo|terceiro|"
+    r"ap[óo]s isso|caso contr[áa]rio|e depois)",
+    re.IGNORECASE,
+)
+
+# Detecta pedidos que realmente precisam da 7B (código / análise pesada)
+HEAVY_RE = re.compile(
+    r"\b(código|codigo|refator|refactor|implemente|implementar|escreva.*função|"
+    r"escreva.*classe|debug|bug|traceback|stack.?trace|analise profunda|"
+    r"análise profunda|racioc[íi]nio complexo|explique.*detalhado|"
+    r"otimize|otimizar|arquitetura|design pattern|teste unit[áa]rio|"
+    r"unit test|crie.*script|gere.*script|reescrita|rewrite)\b",
+    re.IGNORECASE,
+)
+
+# Lista negra: GLM e variantes nunca entram no runtime local via este router
+BLOCKED_LOCAL = ("glm", "glm4", "glm-4", "chatglm")
+
+
+def _is_blocked(name: str) -> bool:
+    low = (name or "").lower()
+    return any(b in low for b in BLOCKED_LOCAL)
+
+
+class LLMRouter:
+    def __init__(self) -> None:
+        self.current_mode: ModeName = "trading"
+
+    def set_mode(self, mode: ModeName) -> None:
+        if mode in MODE_MODELS:
+            self.current_mode = mode
+
+    def select(
+        self,
+        text: str = "",
+        needs_json: bool = False,
+        est_tokens: int = 0,
+        system_prompt: str = "",
+        force_model: Optional[str] = None,
+    ) -> str:
+        """Retorna o nome do modelo Ollama a usar (sempre local, nunca GLM)."""
+        if force_model:
+            if _is_blocked(force_model):
+                return PRIMARY
+            return force_model
+
+        if est_tokens <= 0:
+            total_chars = len(system_prompt or "") + len(text or "")
+            est_tokens = max(1, total_chars // CHARS_PER_TOKEN)
+
+        # 1) Contexto longo → llama (leve e especializado)
+        if est_tokens > LONGCTX_THRESHOLD:
+            return LONGCTX
+
+        # 2) Pedido pesado (código / análise forte) → 7B com proteção
+        #    Só sobe quando realmente necessário. keep_alive=0 evita ficar na VRAM.
+        if HEAVY_RE.search(text or ""):
+            return HEAVY
+
+        # 3) Agente / tool call → qwen 3B (rápido e estável)
+        if needs_json:
+            return JSON_AGENT
+
+        # 4) Instrução composta → llama
+        matches = COMPOUND_RE.findall(text or "")
+        if len(matches) >= 2:
+            return LONGCTX
+
+        # 5) Padrão → qwen 3B (cérebro principal)
+        model = MODE_MODELS.get(self.current_mode, PRIMARY)
+        if _is_blocked(model):
+            return PRIMARY
+        return model
+
+    def keep_alive_for(self, model: str) -> str:
+        """
+        Controle de VRAM:
+        - 3B principal fica quente (5m)
+        - llama e 7B descarregam imediatamente após o uso (keep_alive=0)
+        """
+        model = model or ""
+        if model == LONGCTX or "llama3.2" in model:
+            return os.environ.get("AURA_OLLAMA_KEEP_ALIVE_LONGCTX", "0")
+        if model == HEAVY or "coder:7b" in model or "7b-instruct" in model:
+            # 7B nunca fica residindo na VRAM
+            return os.environ.get("AURA_OLLAMA_KEEP_ALIVE_HEAVY", "0")
+        return os.environ.get("AURA_OLLAMA_KEEP_ALIVE", "5m")
+
+    def describe(self) -> dict:
+        return {
+            "architecture": "qwen3b_primary + llama_longctx + coder7b_heavy | GLM=cloud_only",
+            "current_mode": self.current_mode,
+            "models": {
+                "primary": PRIMARY,
+                "longctx": LONGCTX,
+                "json_agent": JSON_AGENT,
+                "heavy": HEAVY,
+                "trading": MODE_MODELS["trading"],
+                "creative": MODE_MODELS["creative"],
+            },
+            "blocked_local": list(BLOCKED_LOCAL),
+            "longctx_threshold_tokens": LONGCTX_THRESHOLD,
+            "vram_note": (
+                "3B fica quente (~2GB). "
+                "Llama e Coder-7B sobem sob demanda e descarregam (keep_alive=0). "
+                "7B pode demorar um pouco mais para carregar — é intencional para não estourar VRAM."
+            ),
+        }
+
+
+LLM_ROUTER = LLMRouter()

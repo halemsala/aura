@@ -1,0 +1,82 @@
+{
+  "job_id": "139c0137eaab",
+  "request_id": "b9dce0f77e21",
+  "content_hash": "24338df1d50037cc",
+  "created_at": 1788380162.604513,
+  "status": "success",
+  "authorized": true,
+  "authorization_reason": "teste",
+  "plan_intent": "search_multi",
+  "source_message": "abre três pesquisas sobre automação ea17dd",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "open_url",
+      "arguments": {
+        "url": "https://www.google.com/search?q=automa%C3%A7%C3%A3o+ea17dd"
+      },
+      "risk": "low",
+      "mutating": true,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "opened": true,
+        "url": "https://www.google.com/search?q=automa%C3%A7%C3%A3o+ea17dd"
+      },
+      "error": "",
+      "attempts": 1
+    },
+    {
+      "id": "task-2",
+      "tool": "open_url",
+      "arguments": {
+        "url": "https://www.google.com/search?q=automa%C3%A7%C3%A3o+ea17dd+tutorial"
+      },
+      "risk": "low",
+      "mutating": true,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "opened": true,
+        "url": "https://www.google.com/search?q=automa%C3%A7%C3%A3o+ea17dd+tutorial"
+      },
+      "error": "",
+      "attempts": 1
+    },
+    {
+      "id": "task-3",
+      "tool": "open_url",
+      "arguments": {
+        "url": "https://www.google.com/search?q=automa%C3%A7%C3%A3o+ea17dd+exemplos"
+      },
+      "risk": "low",
+      "mutating": true,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "opened": true,
+        "url": "https://www.google.com/search?q=automa%C3%A7%C3%A3o+ea17dd+exemplos"
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "3 de 3 pesquisas abertas com sucesso.",
+  "finished_at": 1788380162.6115143
+}

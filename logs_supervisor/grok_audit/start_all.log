@@ -1,0 +1,133 @@
+2026-09-02 16:35:30 a terminar PID 30248 (hermes)
+2026-09-02 16:35:31 stop concluído (Ollama não foi tocado)
+2026-09-02 16:35:31 START root=C:\aura
+2026-09-02 16:35:31 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-02 16:35:32 ollama qwen3:8b OK
+2026-09-02 16:35:34 Alfred lançado PID 25392
+2026-09-02 16:35:35 Alfred /health OK
+2026-09-02 16:35:37 Hermes lançado PID 31232
+2026-09-02 16:35:45 Hermes /health OK
+2026-09-02 16:35:45 arranque concluído — browser NÃO aberto
+2026-09-02 16:36:34 START root=C:\aura
+2026-09-02 16:36:34 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-02 16:36:35 ollama qwen3:8b OK
+2026-09-02 16:36:35 Alfred já online em http://127.0.0.1:8791/health
+2026-09-02 16:36:35 Hermes já online em :8777
+2026-09-02 16:36:35 arranque concluído — browser NÃO aberto
+2026-09-02 16:38:14 Alfred lançado PID 31828
+2026-09-02 16:38:15 Alfred /health OK
+2026-09-02 16:38:53 START root=C:\aura
+2026-09-02 16:38:53 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-02 16:38:54 ollama qwen3:8b OK
+2026-09-02 16:38:56 Alfred lançado PID 5648
+2026-09-02 16:38:57 Alfred /health OK
+2026-09-02 16:38:58 Hermes já online em :8777
+2026-09-02 16:38:58 arranque concluído — browser NÃO aberto
+2026-09-02 16:39:35 START root=C:\aura
+2026-09-02 16:39:35 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-02 16:39:36 ollama qwen3:8b OK
+2026-09-02 16:39:38 Alfred lançado PID 15068
+2026-09-02 16:39:40 Alfred /health OK
+2026-09-02 16:39:40 Hermes já online em :8777
+2026-09-02 16:39:40 arranque concluído — browser NÃO aberto
+2026-09-02 16:40:45 START root=C:\aura
+2026-09-02 16:40:45 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-02 16:40:46 ollama qwen3:8b OK
+2026-09-02 16:40:48 Alfred lançado (start /MIN)
+2026-09-02 16:43:20 START root=C:\aura
+2026-09-02 16:43:20 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-02 16:43:21 ollama qwen3:8b OK
+2026-09-02 16:43:23 Alfred lançado (start /MIN)
+2026-09-02 16:43:25 Alfred /health OK
+2026-09-02 16:43:27 Hermes lançado (start /MIN)
+2026-09-02 16:43:34 Hermes /health OK
+2026-09-02 16:43:34 arranque concluído — browser NÃO aberto
+2026-09-02 16:55:23 stop concluído (Ollama não foi tocado)
+2026-09-02 16:55:23 START root=C:\aura
+2026-09-02 16:55:23 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-02 16:55:24 ollama qwen3:8b OK
+2026-09-02 16:55:26 Alfred lançado (start /MIN)
+2026-09-02 16:55:28 Alfred /health OK
+2026-09-02 16:55:30 Hermes lançado (start /MIN)
+2026-09-02 16:55:37 Hermes /health OK
+2026-09-02 16:55:37 arranque concluído — browser NÃO aberto
+2026-09-02 17:04:33 stop concluído (Ollama não foi tocado)
+2026-09-02 17:04:33 START root=C:\aura
+2026-09-02 17:04:33 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-02 17:04:35 ollama qwen3:8b OK
+2026-09-02 17:04:37 Alfred lançado (start /MIN)
+2026-09-02 17:04:38 Alfred /health OK
+2026-09-02 17:04:40 Hermes lançado (start /MIN)
+2026-09-02 17:04:47 Hermes /health OK
+2026-09-02 17:04:47 arranque concluído — browser NÃO aberto
+2026-09-02 17:17:40 stop concluído (Ollama não foi tocado)
+2026-09-02 17:17:40 START root=C:\aura
+2026-09-02 17:17:40 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-02 17:17:40 ollama qwen3:8b OK
+2026-09-02 17:17:43 Alfred lançado (start /MIN)
+2026-09-02 17:17:44 Alfred /health OK
+2026-09-02 17:17:46 Hermes lançado (start /MIN)
+2026-09-02 17:17:49 Hermes /health OK
+2026-09-02 17:17:49 arranque concluído — browser NÃO aberto
+2026-09-02 17:18:41 START root=C:\aura
+2026-09-02 17:18:41 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-02 17:18:42 ollama qwen3:8b OK
+2026-09-02 17:18:44 Alfred lançado (start /MIN)
+2026-09-02 17:18:45 Alfred /health OK
+2026-09-02 17:18:47 Hermes lançado (start /MIN)
+2026-09-02 17:18:50 Hermes /health OK
+2026-09-02 17:18:50 arranque concluído — browser NÃO aberto
+2026-09-02 17:38:48 a terminar PID 21116 (hermes)
+2026-09-02 17:38:48 stop concluído (Ollama não foi tocado)
+2026-09-02 17:38:48 START root=C:\aura
+2026-09-02 17:38:48 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-02 17:38:49 ollama qwen3:8b OK
+2026-09-02 17:39:05 START root=C:\aura
+2026-09-02 17:39:05 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-02 17:39:06 ollama qwen3:8b OK
+2026-09-02 17:39:08 Alfred lançado (breakaway)
+2026-09-02 17:39:09 Alfred /health OK
+2026-09-02 17:39:11 Hermes lançado (breakaway)
+2026-09-02 17:39:17 Hermes /health OK
+2026-09-02 17:39:17 arranque concluído — browser NÃO aberto
+2026-09-02 19:07:25 START root=C:\aura
+2026-09-02 19:07:25 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-02 19:07:26 ollama qwen3:8b OK
+2026-09-02 19:07:27 supervisor {'supervisor': 'started', 'pid': 21292}
+2026-09-02 19:07:27 arranque concluído — supervisor a manter Alfred+Hermes; browser NÃO aberto
+2026-09-02 19:08:17 START root=C:\aura
+2026-09-02 19:08:17 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-02 19:08:18 ollama qwen3:8b OK
+2026-09-02 19:08:19 supervisor {'supervisor': 'already', 'pid': '18756'}
+2026-09-02 19:08:19 arranque concluído — supervisor a manter Alfred+Hermes; browser NÃO aberto
+2026-09-03 01:06:29 START root=C:\aura
+2026-09-03 01:06:29 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-03 01:07:12 START root=C:\aura
+2026-09-03 01:07:12 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-03 01:07:53 START root=C:\aura
+2026-09-03 01:07:53 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-03 01:20:22 START root=C:\aura
+2026-09-03 01:20:22 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-03 01:26:27 START root=C:\aura
+2026-09-03 01:26:27 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-03 01:29:23 START root=C:\aura
+2026-09-03 01:29:23 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-03 01:30:25 START root=C:\aura
+2026-09-03 01:30:25 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-03 01:35:02 START root=C:\aura
+2026-09-03 01:35:02 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-03 01:35:03 ollama qwen3:8b OK
+2026-09-03 01:35:03 supervisor {'supervisor': 'already', 'pid': '17228'}
+2026-09-03 01:35:04 arranque concluído — supervisor a manter Alfred+Hermes; browser NÃO aberto
+2026-09-03 15:27:42 START root=C:\aura
+2026-09-03 15:27:42 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-04 19:28:14 START root=C:\aura
+2026-09-04 19:28:14 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-04 19:28:16 ollama qwen3:8b OK
+2026-09-04 19:28:16 supervisor {'supervisor': 'started', 'pid': 20768}
+2026-09-04 19:29:16 arranque concluído — supervisor a manter Alfred+Hermes; browser NÃO aberto
+2026-09-04 19:29:30 START root=C:\aura
+2026-09-04 19:29:30 python 3.11.9 C:\Users\salaa\AppData\Local\Programs\Python\Python311\python.exe
+2026-09-04 19:29:31 ollama qwen3:8b OK
+2026-09-04 19:29:31 supervisor {'supervisor': 'already', 'pid': '20768'}
+2026-09-04 19:29:31 arranque concluído — supervisor a manter Alfred+Hermes; browser NÃO aberto

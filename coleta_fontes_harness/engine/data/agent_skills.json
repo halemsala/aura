@@ -1,0 +1,101 @@
+{
+  "version": "12.7.62-V25Q-HERMES-SKILLS",
+  "updated": "2026-08-29T10:25:29.052485+00:00",
+  "paper_trade": true,
+  "execution_allowed": false,
+  "glm_enabled": false,
+  "llm_backend": "hermes",
+  "ollama_model": "llama3.2:3b",
+  "AURA_E_ENABLE_SKILL_EXECUTION": "0",
+  "skills": [
+    {
+      "name": "aura-ai-coding-verifier",
+      "path": "skills/aura-ai-coding-verifier/SKILL.md",
+      "enabled": true,
+      "execution_allowed": false,
+      "paper_trade": true,
+      "source": "installed"
+    },
+    {
+      "name": "aura-ai-toolkit",
+      "path": "skills/aura-ai-toolkit/SKILL.md",
+      "enabled": true,
+      "execution_allowed": false,
+      "paper_trade": true,
+      "source": "installed"
+    },
+    {
+      "name": "aura-evidence-verification",
+      "path": "skills/aura-ai-toolkit/skills/aura-evidence-verification/SKILL.md",
+      "enabled": true,
+      "execution_allowed": false,
+      "paper_trade": true,
+      "source": "installed"
+    },
+    {
+      "name": "aura-durable-state",
+      "path": "skills/aura-durable-state/SKILL.md",
+      "enabled": true,
+      "execution_allowed": false,
+      "paper_trade": true,
+      "source": "installed"
+    },
+    {
+      "name": "aura-explanation",
+      "path": "skills/aura-explanation/SKILL.md",
+      "enabled": true,
+      "execution_allowed": false,
+      "paper_trade": true,
+      "source": "installed"
+    },
+    {
+      "name": "aura-governance",
+      "path": "skills/aura-governance/SKILL.md",
+      "enabled": true,
+      "execution_allowed": false,
+      "paper_trade": true,
+      "source": "installed"
+    },
+    {
+      "name": "aura-hermes-review",
+      "path": "skills/aura-hermes-review/SKILL.md",
+      "enabled": true,
+      "execution_allowed": false,
+      "paper_trade": true,
+      "source": "installed"
+    },
+    {
+      "name": "aura-ingestion",
+      "path": "skills/aura-ingestion/SKILL.md",
+      "enabled": true,
+      "execution_allowed": false,
+      "paper_trade": true,
+      "source": "installed"
+    },
+    {
+      "name": "aura-langchain-bridge",
+      "path": "skills/aura-langchain-bridge/SKILL.md",
+      "enabled": true,
+      "execution_allowed": false,
+      "paper_trade": true,
+      "source": "installed"
+    },
+    {
+      "name": "aura-quant-x",
+      "path": "skills/aura-quant-x/SKILL.md",
+      "enabled": true,
+      "execution_allowed": false,
+      "paper_trade": true,
+      "source": "installed"
+    },
+    {
+      "name": "CornerAI_v10.2_ELITE",
+      "path": "engine/skills/CornerAI_v10.2_ELITE.skill",
+      "enabled": true,
+      "execution_allowed": false,
+      "paper_trade": true,
+      "source": "engine_skills"
+    }
+  ],
+  "count": 11
+}

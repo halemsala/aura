@@ -1,0 +1,55 @@
+AURA QUANT-X V25 — INSTALLATION F MANIFEST
+============================================
+
+ID: INSTALL-F-FINAL-CHECK-SYSTEM-MAP
+Versao: 1.0.0-f
+Data: 2026-08-25
+Origem: /home/ubuntu/upload/pasted_content_13.txt
+SHA256_ORIGEM: b3c81ffdd1be2b2370afd7bec1851bf47410ecb1a67dca726ff8e7380de56fea
+
+ARQUIVOS INSTALADOS
+--------------------
+scripts/aura_final_check.py
+docs/AURA_ESTADO_DO_SISTEMA.md
+addons/installation_f_final_check/README.md
+addons/installation_f_final_check/INSTALL_F_MANIFEST.txt
+
+ESCOPO
+------
+1. Verificador final de sintaxe, imports, self-tests, dependencias opcionais,
+   endpoints locais, configuracoes, banco, journals e dotnet.
+2. Mapa documental do estado e arquitetura descritos no anexo.
+
+CORRECOES APLICADAS
+-------------------
+- Modo --quick retorna antes de rede, servicos, Ollama, banco, journals e dotnet.
+- Subprocessos de import e self-test recebem PYTHONPATH explicito.
+- Exclusao de engine/data/people e engine/data/.aura_trash e feita por caminho.
+- Dependencias opcionais sao informativas e nao falham o aceite por ausencia.
+- O inventario inclui engine/agents/external_sources_e.py.
+- O script nao instala pacotes, nao inicia servicos e nao habilita autostart.
+
+INTEGRACOES NAO ATIVADAS
+------------------------
+- Nenhum endpoint de rede foi consultado durante a instalacao.
+- Nenhum self-test completo, dotnet build ou chamada ao Ollama foi iniciado.
+- Nenhum servico, microfone, navegador, Telegram, polling ou Docker foi iniciado.
+- O mapa documental nao e tratado como prova de que todos os modulos existem.
+
+VALIDACAO
+---------
+- Extracao controlada do anexo: PASS.
+- Sintaxe do verificador: PASS.
+- Destinos de instalacao estavam ausentes antes da copia: PASS.
+- Teste operacional completo da F: pendente de execucao manual pelo usuario.
+
+BACKUP
+------
+.install-backups/installation-f-20260825_074709/
+
+POLITICAS PRESERVADAS
+---------------------
+PAPER_TRADE=true
+EXECUTION_ALLOWED=false
+GLM_ADVISORY_ONLY=true
+Sem aposta real ou execucao financeira.

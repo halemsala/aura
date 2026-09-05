@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "updated": "2026-08-31",
+  "entries": [
+    {
+      "code": "E-NET-004",
+      "title": "Engine AURA offline (porta 8765)",
+      "severity": "critical",
+      "symptoms": ["engine 8765", "8765 off", "engine off", "engine down", "LISTEN 8765", "OFF\\s+8765"],
+      "location": {"service": "engine", "file": "C:\\\\aura\\\\engine\\\\server.py", "port": 8765},
+      "cause": "Processo do engine caiu ou porta liberada",
+      "fix": {"type": "command", "action": "reinicia engine", "handler": "restart_engine"},
+      "prevention": "watchdog com auto_repair"
+    },
+    {
+      "code": "E-NET-002",
+      "title": "Ollama indisponivel (porta 11434)",
+      "severity": "critical",
+      "symptoms": ["ollama off", "11434 off", "connection refused.*11434", "llm indisponivel", "ollama_ok.*false"],
+      "location": {"service": "ollama", "port": 11434},
+      "cause": "Servico Ollama parado (NUNCA deve ser morto pelo Hermes)",
+      "fix": {"type": "manual", "action": "Iniciar Ollama fora do Hermes (ollama serve)", "handler": null},
+      "prevention": "health check antes de qualquer restart"
+    },
+    {
+      "code": "E-DET-001",
+      "title": "Detector de anomalias em alarme permanente (score=1.0)",
+      "severity": "high",
+      "symptoms": ["anomaly_detected", "score=1.0", "is_anomaly=np.True_", "live_missing=2"],
+      "location": {"file": "C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py", "function": "detect"},
+      "cause": "live_missing fantasma + poll 15s poluindo baseline",
+      "fix": {"type": "code", "action": "cache 60s + remover live_missing das features", "handler": "fix_detector_baseline"},
+      "prevention": "detect() so via cache",
+      "status": "patched",
+      "patched_in": "V37.3.38"
+    },
+    {
+      "code": "E-API-001",
+      "title": "numpy.bool nao serializavel → HTTP 500",
+      "severity": "critical",
+      "symptoms": ["numpy.bool", "object is not iterable", "vars\\(\\) argument must have"],
+      "location": {"file": "C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py", "function": "detect"},
+      "cause": "detect() retorna np.True_/np.float64",
+      "fix": {"type": "code", "action": "cast bool()/float() + sanitize_payload", "handler": null},
+      "status": "patched",
+      "patched_in": "V37.3.38"
+    },
+    {
+      "code": "E-API-002",
+      "title": "ModuleNotFoundError: core.hermes_llm_engine",
+      "severity": "high",
+      "symptoms": ["modulenotfounderror", "no module named 'core"],
+      "location": {"file": "C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py", "function": "import"},
+      "cause": "cwd errado (C:\\\\aura em vez de hermes_v10)",
+      "fix": {"type": "code", "action": "sys.path com deteccao de raiz + cwd hermes_v10", "handler": null},
+      "status": "patched",
+      "patched_in": "V37.3.38"
+    },
+    {
+      "code": "E-SYS-001",
+      "title": "RAM critica (>=90%) com Ollama carregado",
+      "severity": "high",
+      "symptoms": ["mem_percent\": 9", "ram 90", "mem_percent\": 8[89]"],
+      "location": {"service": "global"},
+      "cause": "Ollama 3B + stack + navegador sem headroom",
+      "fix": {"type": "command", "action": "gpu cap / fechar matriz / manter modelo 3b", "handler": "reduce_memory"},
+      "prevention": "alerta em 85%"
+    },
+    {
+      "code": "E-MEM-001",
+      "title": "sqlite_vec indisponivel — memoria sem busca vetorial",
+      "severity": "medium",
+      "symptoms": ["sqlite_vec_not_available", "fallback text_search_only"],
+      "location": {"file": "C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py"},
+      "cause": "sqlite-vec nao instalado no venv",
+      "fix": {"type": "command", "action": "pip install sqlite-vec no venv", "handler": null}
+    },
+    {
+      "code": "E-NET-006",
+      "title": "Porta AURA ocupada / domain lock",
+      "severity": "high",
+      "symptoms": ["winerror 10048", "address already in use", "domain_lock"],
+      "location": {"service": "healing"},
+      "cause": "processo zombie segurando porta",
+      "fix": {"type": "command", "action": "corrige", "handler": "fix_common"}
+    },
+    {
+      "code": "E-DATA-001",
+      "title": "Mojibake no console PowerShell",
+      "severity": "low",
+      "symptoms": ["ÔÇô", "ÔÇö", "nativecommanderror"],
+      "location": {"service": "console"},
+      "cause": "PowerShell UTF-8 como Latin-1",
+      "fix": {"type": "command", "action": "chcp 65001 + OutputEncoding UTF8", "handler": null}
+    },
+    {
+      "code": "E-NET-003",
+      "title": "Bridge offline (8080)",
+      "severity": "high",
+      "symptoms": ["8080 off", "bridge off", "OFF\\s+8080"],
+      "location": {"service": "bridge", "file": "C:\\\\aura\\\\bridge\\\\server.py", "port": 8080},
+      "fix": {"type": "command", "action": "reinicia bridge", "handler": "restart_bridge"}
+    },
+    {
+      "code": "E-NET-005",
+      "title": "Matriz offline (8766)",
+      "severity": "medium",
+      "symptoms": ["8766 off", "matriz off", "OFF\\s+8766"],
+      "location": {"service": "matriz", "port": 8766},
+      "fix": {"type": "command", "action": "reinicia matriz", "handler": "restart_matriz"}
+    },
+    {
+      "code": "E-API-003",
+      "title": "Resposta do chat substituida/esquizofrenica",
+      "severity": "high",
+      "symptoms": ["resposta sem relacao", "vomita json", "tool \\{\"name\""],
+      "location": {"file": "hermes_v10_chat_api.py", "function": "_sanitize_llm"},
+      "cause": "cascata de interceptacao + blacklist",
+      "fix": {"type": "code", "action": "router explicito 3 camadas", "handler": null},
+      "status": "resolved",
+      "patched_in": "V37.3.38 router"
+    },
+    {
+      "code": "E-VENV-001",
+      "title": "venv partido (No pyvenv.cfg / No module named pip)",
+      "severity": "critical",
+      "symptoms": ["no pyvenv.cfg", "no module named pip", "permission denied.*python.exe"],
+      "location": {"file": "C:\\\\aura\\\\engine\\\\venv"},
+      "cause": "venv incompleto ou bloqueado por processo",
+      "fix": {"type": "command", "action": "matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip", "handler": null}
+    },
+    {
+      "code": "E-NET-007",
+      "title": "Hermes Chat offline (8777)",
+      "severity": "critical",
+      "symptoms": ["8777 off", "hermes off", "OFF\\s+8777", "failed to fetch"],
+      "location": {"service": "hermes", "file": "C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py", "port": 8777},
+      "cause": "API Hermes caiu ou nao arrancou",
+      "fix": {"type": "command", "action": "reinicia hermes a partir de hermes_v10", "handler": "restart_hermes"}
+    }
+  ]
+}

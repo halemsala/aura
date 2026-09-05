@@ -1,0 +1,23 @@
+{
+  "product": "AURA QUANT-X Operator OS",
+  "version": "25.0.0",
+  "installer_project_ready": true,
+  "static_audit_passed": true,
+  "windows_exe_built_in_sandbox": false,
+  "reason": "O sandbox atual é Linux e não possui Inno Setup, SDK .NET 8 WinForms ou WebView2 Runtime.",
+  "expected_artifact": "dist_installer/AURA_QUANT_X_Setup_V25_x64.exe",
+  "build_script": "desktop/packaging/BUILD_WINDOWS_INSTALLER.ps1",
+  "publish_script": "desktop/packaging/PUBLISH_WINDOWS.ps1",
+  "required_host": "Windows x64",
+  "required_tools": [".NET 8 SDK", "Inno Setup 6+", "Microsoft Edge WebView2 Runtime Evergreen"],
+  "inno_setup_detection": ["explicit -InnoSetupPath", "INNO_SETUP_PATH", "PATH/ISCC.exe", "ProgramFiles defaults"],
+  "webview2_registry_client_id": "{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}",
+  "webview2_detection": "pv parsed with StrToVersion and ComparePackedVersion",
+  "backend_autostart": false,
+  "paper_trade_only": true,
+  "execution_allowed": false,
+  "code_signing_required_before_distribution": true,
+  "wrapper_encoding": "ASCII CRLF",
+  "powershell_encoding": "UTF-8 BOM",
+  "last_static_audit": "PASS"
+}

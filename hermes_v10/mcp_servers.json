@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "hermes-tools": {
+      "command": "python",
+      "args": ["-m", "core.hermes_mcp_server"],
+      "cwd": "${AURA_ROOT}/hermes_v10_ultra_llm",
+      "env": {
+        "AURA_ROOT": "${AURA_ROOT}",
+        "HERMES_API_TOKEN": "${HERMES_API_TOKEN}"
+      },
+      "tools_allowlist": [
+        "read_file", "list_dir", "system_status", "search_logs",
+        "search_memory", "check_constitution", "run_digital_twin"
+      ],
+      "tools_blocklist": ["apply_fix", "set_execution_*"]
+    }
+  }
+}

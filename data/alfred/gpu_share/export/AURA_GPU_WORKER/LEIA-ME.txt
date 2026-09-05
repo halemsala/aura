@@ -1,0 +1,8 @@
+AURA GPU WORKER
+===============
+Isto NAO envia a tua VRAM para o outro PC. Corre inferência AQUI e devolve o texto/resultado.
+Tecto: 60% da VRAM. Pausa se abrires um jogo ou o Windows precisar de memória.
+1. Copia esta pasta para o segundo PC.
+2. Corre AURA_GPU_WORKER.bat (localhost) ou AURA_GPU_WORKER.bat lan (rede local, só se quiseres).
+3. No Aura: Alfred, liga worker IP:8795
+O Aura central NÃO abre portas à LAN; é ele que liga ao worker.

@@ -1,0 +1,18 @@
+{
+  "ok": false,
+  "blockers": [
+    "falta TOOL_NAME = 'nome_em_snake_case'",
+    "falta def validate(args, ctx) ou def validate(args)",
+    "falta def run(args, ctx) ou def run(args)"
+  ],
+  "warnings": [],
+  "manifest": {
+    "name": "",
+    "risk": "medium",
+    "mutating": true,
+    "sensitive": true,
+    "summary": "plugin",
+    "sha256_16": "3a1660f16b298dc4",
+    "bytes": 23
+  }
+}

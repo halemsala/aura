@@ -1,0 +1,24 @@
+{
+  "profile_id": "aura-corners-pro-v1",
+  "domain": "sports_corner_analysis",
+  "automation_mode": "analytics_only",
+  "paper_trade": true,
+  "execution_allowed": false,
+  "approved": false,
+  "stake_pct": 0.0,
+  "exposure": 0.0,
+  "ai_orchestration": {
+    "order": ["AURA_AI_ONE_QUANT", "HERMES_AUDIT"],
+    "contract": "aura-hermes-advisory-v1",
+    "aura_ai_one": "engine/aura_ai_one/adapter.py::AuraAIOneAdapter",
+    "hermes": "engine/aura_ai_one/adapter.py::HermesAuditAdapter",
+    "router": "engine/agents/aura_hermes_router.py",
+    "network_default": false,
+    "tool_authority": false,
+    "divergence_behavior": "downgrade_or_block"
+  },
+  "refresh_target_seconds": 60,
+  "max_staleness_seconds": 180,
+  "horizons_minutes": [1, 3, 5, 10],
+  "financial_operations_enabled": false
+}

@@ -1,0 +1,54 @@
+{
+  "job_id": "6f25db9ca7f8",
+  "request_id": "15391870829a",
+  "content_hash": "57558e0d0ca09044",
+  "created_at": 1788382666.018194,
+  "status": "success",
+  "authorized": false,
+  "authorization_reason": "comando único de baixo risco pedido explicitamente",
+  "plan_intent": "single_task",
+  "source_message": "serviços",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "services_status",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "alfred": {
+          "service": "alfred",
+          "online": true,
+          "port": 8791
+        },
+        "hermes": {
+          "service": "hermes",
+          "online": true,
+          "port": 8777
+        },
+        "ollama": {
+          "service": "ollama",
+          "online": true,
+          "status_code": 200
+        },
+        "flags": {
+          "paper_trade": true,
+          "execution_allowed": false,
+          "model": "qwen3:8b"
+        }
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "1 de 1 tarefas concluídas com sucesso.",
+  "finished_at": 1788382666.0456855
+}

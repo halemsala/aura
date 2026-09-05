@@ -1,0 +1,30 @@
+AURA / ALFRED — GPU do segundo PC
+=================================
+
+A VRAM do outro PC NÃO entra na tua placa. O worker corre o trabalho LÁ
+e devolve o resultado. Tecto 60% VRAM, pausa se houver jogo.
+
+1) Neste PC (Aura):
+   - Comando:  Alfred, exporta worker gpu
+   - Ou BAT:   C:\aura\AURA_GPU_SHARE_EXPORT.bat
+   - Ficheiro: C:\aura\data\alfred\gpu_share\export\AURA_GPU_WORKER.zip
+
+2) Copia o ZIP para o outro PC (pen, pasta de rede, OneDrive).
+   Extrai. Corre AURA_GPU_WORKER.bat
+   Se quiseres que o Aura ligue pela LAN: AURA_GPU_WORKER.bat lan
+   (só rede privada; o Aura central NÃO abre a porta 8791 à LAN)
+
+3) Anota o IP do outro PC (ipconfig → IPv4, ex. 192.168.1.20)
+
+4) Neste PC:
+   Alfred, liga worker 192.168.1.20
+   (porta 8795 por defeito)
+   AUTORIZO se pedir.
+
+5) Ver estado:
+   Alfred, workers gpu
+   Alfred, capacidade vram
+
+Ferramenta Alfred: export_gpu_worker
+Registo:           register_gpu_worker  (liga worker IP)
+Envio de trabalho: send_gpu_job

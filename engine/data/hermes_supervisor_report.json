@@ -1,0 +1,86 @@
+{
+  "timestamp": "2026-09-02T20:59:46.775743+00:00",
+  "status": "HEALTHY",
+  "findings": [
+    {
+      "code": "GPU_INFO",
+      "severity": "INFO",
+      "message": "GPU: NVIDIA GeForce RTX 4050 Laptop GPU, 5435 MiB, 6141 MiB, 0 %",
+      "action": "Modelos Ollama usam VRAM ao fazer ollama run / chat. Hermes AURA e CPU.",
+      "auto_fixable": false,
+      "fixed": false,
+      "detail": {}
+    },
+    {
+      "code": "DASHBOARD_DOWN",
+      "severity": "LOW",
+      "message": "Dashboard (3000) offline.",
+      "action": "cd interface\\aura-quant-x-dashboard && ABRIR_INTERFACE.bat",
+      "auto_fixable": false,
+      "fixed": false,
+      "detail": {}
+    },
+    {
+      "code": "PAPER_ONLY_OK",
+      "severity": "INFO",
+      "message": "Sistema em paper-only (seguro). LIVE só com unlock triplo consciente.",
+      "action": "",
+      "auto_fixable": false,
+      "fixed": false,
+      "detail": {}
+    }
+  ],
+  "actions_taken": [],
+  "recommendations": [
+    "Dashboard opcional: interface\\aura-quant-x-dashboard\\ABRIR_INTERFACE.bat (Node 22+)",
+    "Após correções: RODAR_TESTE_AUTOMATICO.bat",
+    "Monitor contínuo: RODAR_MONITOR_CONTINUO_IA.bat"
+  ],
+  "services": {
+    "bridge": {
+      "listening": true,
+      "port": 8080
+    },
+    "engine": {
+      "listening": true,
+      "port": 8765
+    },
+    "voice": {
+      "listening": true,
+      "port": 8099
+    },
+    "ollama": {
+      "listening": true,
+      "port": 11434
+    },
+    "dashboard": {
+      "listening": false,
+      "port": 3000
+    },
+    "ui_matriz": {
+      "listening": true,
+      "port": 8766
+    }
+  },
+  "capture": {
+    "has_live_fixture": true,
+    "home": "Newell's Old Boys Res.",
+    "away": "Deportivo Riestra Res.",
+    "minute": 90,
+    "source": "bridge_latest",
+    "simulated_suspected": false,
+    "no_feed": false,
+    "token_empty": null
+  },
+  "sync": {
+    "ui_bridge_aligned": null,
+    "detail": null
+  },
+  "policy": {
+    "mode": "paper",
+    "paper_trade": true,
+    "hermes_primary": true,
+    "execution_allowed": false
+  },
+  "message_for_operator": "HERMES SUPERVISOR - HEALTHY — core e pipeline Hermes OK neste ciclo."
+}

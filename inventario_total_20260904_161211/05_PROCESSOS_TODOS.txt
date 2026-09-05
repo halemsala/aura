@@ -1,0 +1,303 @@
+﻿===== 05_PROCESSOS_TODOS =====
+
+   Id ProcessName                              Path                                                 
+   -- -----------                              ----                                                 
+ 5508 AdobeIPCBroker                           C:\Program Files (x86)\Common Files\Adobe\Adobe De...
+ 5612 AggregatorHost                                                                                
+ 4580 AnyDesk                                                                                       
+14140 ApplicationFrameHost                     C:\WINDOWS\system32\ApplicationFrameHost.exe         
+ 3728 AppProvisioningPlugin                                                                         
+ 4000 audiodg                                                                                       
+23612 backgroundTaskHost                       C:\WINDOWS\system32\backgroundTaskHost.exe           
+17460 backgroundTaskHost                       C:\WINDOWS\system32\backgroundTaskHost.exe           
+14396 BatteryWidgetHost                        C:\ProgramData\Lenovo\Vantage\Addins\BatteryWidget...
+ 1156 Camomile                                                                                      
+ 9272 CCleaner                                                                                      
+ 5568 CCXProcess                               C:\Program Files\Adobe\Adobe Creative Cloud Experi...
+19612 chrome                                   C:\Program Files\Google\Chrome\Application\chrome.exe
+18664 chrome                                   C:\Program Files\Google\Chrome\Application\chrome.exe
+18408 chrome                                   C:\Program Files\Google\Chrome\Application\chrome.exe
+24568 chrome                                   C:\Program Files\Google\Chrome\Application\chrome.exe
+24020 chrome                                   C:\Program Files\Google\Chrome\Application\chrome.exe
+20816 chrome                                   C:\Program Files\Google\Chrome\Application\chrome.exe
+11772 chrome                                   C:\Program Files\Google\Chrome\Application\chrome.exe
+10064 chrome                                   C:\Program Files\Google\Chrome\Application\chrome.exe
+ 4948 chrome                                   C:\Program Files\Google\Chrome\Application\chrome.exe
+17512 chrome                                   C:\Program Files\Google\Chrome\Application\chrome.exe
+13152 chrome                                   C:\Program Files\Google\Chrome\Application\chrome.exe
+12320 chrome                                   C:\Program Files\Google\Chrome\Application\chrome.exe
+20316 cmd                                      C:\Windows\System32\cmd.exe                          
+11756 cmd                                      C:\WINDOWS\system32\cmd.exe                          
+21868 Code                                     C:\Users\salaa\AppData\Local\Programs\Microsoft VS...
+19992 Code                                     C:\Users\salaa\AppData\Local\Programs\Microsoft VS...
+19840 Code                                     C:\Users\salaa\AppData\Local\Programs\Microsoft VS...
+23992 Code                                     C:\Users\salaa\AppData\Local\Programs\Microsoft VS...
+22676 Code                                     C:\Users\salaa\AppData\Local\Programs\Microsoft VS...
+22380 Code                                     C:\Users\salaa\AppData\Local\Programs\Microsoft VS...
+19624 Code                                     C:\Users\salaa\AppData\Local\Programs\Microsoft VS...
+ 7044 Code                                     C:\Users\salaa\AppData\Local\Programs\Microsoft VS...
+ 5320 Code                                     C:\Users\salaa\AppData\Local\Programs\Microsoft VS...
+ 2688 Code                                     C:\Users\salaa\AppData\Local\Programs\Microsoft VS...
+12824 Code                                     C:\Users\salaa\AppData\Local\Programs\Microsoft VS...
+ 9852 Code                                     C:\Users\salaa\AppData\Local\Programs\Microsoft VS...
+ 9060 Code                                     C:\Users\salaa\AppData\Local\Programs\Microsoft VS...
+22256 conhost                                  C:\WINDOWS\system32\conhost.exe                      
+20660 conhost                                                                                       
+20332 conhost                                  C:\WINDOWS\system32\conhost.exe                      
+25072 conhost                                                                                       
+23620 conhost                                  C:\WINDOWS\system32\conhost.exe                      
+22800 conhost                                  C:\WINDOWS\system32\conhost.exe                      
+ 9916 conhost                                                                                       
+ 8924 conhost                                  C:\WINDOWS\system32\conhost.exe                      
+ 1812 conhost                                  C:\WINDOWS\system32\conhost.exe                      
+19632 conhost                                                                                       
+17140 conhost                                  C:\WINDOWS\system32\conhost.exe                      
+11852 conhost                                  C:\WINDOWS\system32\conhost.exe                      
+ 7924 cowork-svc                                                                                    
+10608 CrossDeviceResume                        C:\WINDOWS\SystemApps\MicrosoftWindows.Client.CBS_...
+ 1568 csrss                                                                                         
+ 1460 csrss                                                                                         
+13824 ctfmon                                                                                        
+13288 DataExchangeHost                         C:\Windows\System32\DataExchangeHost.exe             
+22684 dllhost                                  C:\WINDOWS\system32\DllHost.exe                      
+ 2144 dwm                                                                                           
+ 4588 ElevocControlService                                                                          
+ 9976 explorer                                 C:\WINDOWS\Explorer.EXE                              
+11964 FnHotkeyCapsLKNumLK                                                                           
+12012 FnHotkeyUtility                          C:\Windows\System32\DriverStore\FileRepository\len...
+ 1940 fontdrvhost                                                                                   
+ 1936 fontdrvhost                                                                                   
+17908 FvContainer                              C:\Program Files\NVIDIA Corporation\FrameViewSDK\F...
+18784 FvContainer.System                                                                            
+19716 FxSound                                  C:\Program Files\FxSound LLC\FxSound\FxSound.exe     
+25564 HWHelper64                                                                                    
+    0 Idle                                                                                          
+19164 IGCC                                     C:\Program Files\WindowsApps\AppUp.IntelGraphicsEx...
+ 6188 IGCCTray                                 C:\Program Files\WindowsApps\AppUp.IntelGraphicsEx...
+ 4656 IntelAudioService                                                                             
+ 2472 IntelCpHDCPSvc                                                                                
+ 7900 IntelGraphicsSoftware.Service                                                                 
+ 9208 ipf_helper                               C:\WINDOWS\System32\DriverStore\FileRepository\ipf...
+ 4596 ipf_uf                                                                                        
+ 4832 ipfsvc                                                                                        
+ 4704 jhi_service                                                                                   
+ 4676 LenovoUtilityService                                                                          
+13640 LenovoVantage-(GenericMessagingAddin)    C:\Program Files (x86)\Lenovo\VantageService\5.1.2...
+ 8796 LenovoVantage-(LenovoGamingSystemAddin)                                                       
+ 5976 LenovoVantage-(LenovoServiceBridgeAddin) C:\Program Files (x86)\Lenovo\VantageService\5.1.2...
+13220 LenovoVantage-(SmartDisplayAddin)                                                             
+16048 LenovoVantage-(VantageCoreAddin)                                                              
+ 4624 LenovoVantageService                                                                          
+24336 llama-server                             C:\Users\salaa\AppData\Local\Programs\Ollama\lib\o...
+11804 Locator                                                                                       
+14320 LockApp                                  C:\WINDOWS\SystemApps\Microsoft.LockApp_cw5n1h2txy...
+ 1664 LsaIso                                                                                        
+ 1672 lsass                                                                                         
+24384 LSB                                      C:\Users\salaa\AppData\Local\Programs\Lenovo\Lenov...
+14260 MessagingPlugin                          C:\ProgramData\Lenovo\Udc\Hosts\x64\MessagingPlugi...
+ 4728 MpDefenderCoreService                                                                         
+24888 mscopilot_proxy                          C:\Program Files (x86)\Microsoft\Copilot\Applicati...
+17724 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+17812 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+17544 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+16272 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+17296 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+18212 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+20252 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+20260 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+19600 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+18288 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+18712 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+15796 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+ 6104 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+10992 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+ 5216 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+ 2256 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+ 3376 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+12676 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+13128 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+15772 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+13068 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+12844 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+13032 msedgewebview2                           C:\Program Files (x86)\Microsoft\EdgeWebView\Appli...
+ 4648 MsMpEng                                                                                       
+17312 MSPCManager                              C:\Program Files\WindowsApps\Microsoft.MicrosoftPC...
+ 5724 NahimicAPO4Volume                        C:\WINDOWS\System32\NahimicAPO4Volume.exe            
+ 4768 NahimicService                                                                                
+10644 NgcIso                                                                                        
+18692 NhNotifSys                               C:\WINDOWS\system32\NhNotifSys.exe                   
+22168 NisSrv                                                                                        
+20812 node                                     C:\Program Files\Adobe\Adobe Creative Cloud Experi...
+ 8752 nvcontainer                              C:\Program Files\NVIDIA Corporation\NvContainer\nv...
+ 8908 nvcontainer                              C:\Program Files\NVIDIA Corporation\NvContainer\nv...
+ 4712 nvcontainer                                                                                   
+ 7400 nvcontainer                                                                                   
+ 6696 NVDisplay.Container                                                                           
+ 2268 NVDisplay.Container                                                                           
+ 6816 nvfvsdksvc_x64                                                                                
+14236 NVIDIA Overlay                           C:\Program Files\NVIDIA Corporation\NVIDIA App\CEF...
+14928 NVIDIA Overlay                           C:\Program Files\NVIDIA Corporation\NVIDIA App\CEF...
+14124 NVIDIA Overlay                           C:\Program Files\NVIDIA Corporation\NVIDIA App\CEF...
+12296 NVIDIA Overlay                           C:\Program Files\NVIDIA Corporation\NVIDIA App\CEF...
+14000 NVIDIA Overlay                           C:\Program Files\NVIDIA Corporation\NVIDIA App\CEF...
+19072 nvrla                                    C:\Program Files\NVIDIA Corporation\FrameViewSDK\b...
+ 3612 nvsphelper64                                                                                  
+20492 ollama                                   C:\Users\salaa\AppData\Local\Programs\Ollama\ollam...
+ 5372 ollama app                               C:\Users\salaa\AppData\Local\Programs\Ollama\ollam...
+21664 OneDrive.Sync.Service                    C:\Users\salaa\AppData\Local\Microsoft\OneDrive\26...
+25280 OpenConsole                              c:\Users\salaa\AppData\Local\Programs\Microsoft VS...
+18944 OpenConsole                              c:\Users\salaa\AppData\Local\Programs\Microsoft VS...
+ 7032 OpenConsole                              c:\Users\salaa\AppData\Local\Programs\Microsoft VS...
+23996 pet                                      c:\Users\salaa\.vscode\extensions\ms-python.vscode...
+18716 PhoneExperienceHost                      C:\Program Files\WindowsApps\Microsoft.YourPhone_1...
+26176 powershell                                                                                    
+26472 powershell                               C:\WINDOWS\System32\WindowsPowerShell\v1.0\powersh...
+25440 powershell                               C:\WINDOWS\System32\WindowsPowerShell\v1.0\powersh...
+13448 powershell                               C:\WINDOWS\System32\WindowsPowerShell\v1.0\powersh...
+16716 powershell                               C:\WINDOWS\System32\WindowsPowerShell\v1.0\powersh...
+19052 PresentMon_x64                                                                                
+ 1852 PresentMonService                                                                             
+ 4720 PsiService_2                                                                                  
+ 4604 PsiService_2                                                                                  
+12832 RegAsm                                   C:\Users\Public\WindowsSecurity\Configs\RegAsm.exe   
+ 6884 RegAsm                                   C:\Users\Public\WindowsSecurity\Configs\RegAsm.exe   
+  328 Registry                                                                                      
+17832 RtkAudUService64                         C:\Windows\System32\DriverStore\FileRepository\rea...
+ 8816 RtkAudUService64                                                                              
+ 4796 RtkAudUService64                                                                              
+17744 RuntimeBroker                            C:\Windows\System32\RuntimeBroker.exe                
+14600 RuntimeBroker                            C:\Windows\System32\RuntimeBroker.exe                
+23576 RuntimeBroker                            C:\Windows\System32\RuntimeBroker.exe                
+20220 RuntimeBroker                            C:\Windows\System32\RuntimeBroker.exe                
+12236 RuntimeBroker                            C:\Windows\System32\RuntimeBroker.exe                
+ 4696 RuntimeBroker                            C:\Windows\System32\RuntimeBroker.exe                
+  360 RuntimeBroker                            C:\Windows\System32\RuntimeBroker.exe                
+11480 RuntimeBroker                            C:\Windows\System32\RuntimeBroker.exe                
+ 6336 RuntimeBroker                            C:\Windows\System32\RuntimeBroker.exe                
+11996 SearchHost                               C:\WINDOWS\SystemApps\MicrosoftWindows.Client.CBS_...
+ 9788 SearchIndexer                                                                                 
+25944 SearchProtocolHost                                                                            
+  284 Secure System                                                                                 
+16984 SecurityHealthService                                                                         
+17868 SecurityHealthSystray                    C:\Windows\System32\SecurityHealthSystray.exe        
+ 1644 services                                                                                      
+19692 ShellExperienceHost                      C:\WINDOWS\SystemApps\ShellExperienceHost_cw5n1h2t...
+13652 ShellHost                                C:\Windows\System32\ShellHost.exe                    
+ 8644 sihost                                   C:\WINDOWS\system32\sihost.exe                       
+ 1020 smss                                                                                          
+ 4216 spoolsv                                                                                       
+12004 StartMenuExperienceHost                  C:\WINDOWS\SystemApps\Microsoft.Windows.StartMenuE...
+ 8188 svchost                                                                                       
+ 8272 svchost                                  C:\WINDOWS\system32\svchost.exe                      
+ 7780 svchost                                                                                       
+ 6596 svchost                                                                                       
+ 7656 svchost                                                                                       
+ 9484 svchost                                                                                       
+ 9548 svchost                                                                                       
+ 9376 svchost                                                                                       
+ 8420 svchost                                                                                       
+ 8944 svchost                                  C:\WINDOWS\system32\svchost.exe                      
+ 5664 svchost                                                                                       
+ 5008 svchost                                                                                       
+ 5028 svchost                                                                                       
+ 4976 svchost                                                                                       
+ 4840 svchost                                                                                       
+ 4968 svchost                                                                                       
+ 5488 svchost                                                                                       
+ 5624 svchost                                                                                       
+ 5324 svchost                                                                                       
+ 5084 svchost                                                                                       
+ 5252 svchost                                  C:\WINDOWS\system32\svchost.exe                      
+20856 svchost                                                                                       
+22696 svchost                                                                                       
+20200 svchost                                                                                       
+19172 svchost                                                                                       
+20036 svchost                                                                                       
+24008 svchost                                  C:\WINDOWS\system32\svchost.exe                      
+24196 svchost                                                                                       
+23624 svchost                                                                                       
+23068 svchost                                                                                       
+23300 svchost                                                                                       
+16348 svchost                                                                                       
+11096 svchost                                                                                       
+11244 svchost                                                                                       
+10440 svchost                                                                                       
+ 9560 svchost                                                                                       
+10156 svchost                                                                                       
+14972 svchost                                  C:\WINDOWS\system32\svchost.exe                      
+15104 svchost                                                                                       
+14616 svchost                                                                                       
+11440 svchost                                  C:\WINDOWS\system32\svchost.exe                      
+11836 svchost                                                                                       
+ 4812 svchost                                                                                       
+ 2760 svchost                                                                                       
+ 2848 svchost                                                                                       
+ 2624 svchost                                                                                       
+ 2580 svchost                                                                                       
+ 2588 svchost                                                                                       
+ 3216 svchost                                                                                       
+ 3224 svchost                                                                                       
+ 3184 svchost                                                                                       
+ 2964 svchost                                                                                       
+ 3136 svchost                                                                                       
+ 2556 svchost                                                                                       
+ 2128 svchost                                  C:\WINDOWS\system32\svchost.exe                      
+ 2192 svchost                                                                                       
+ 1884 svchost                                                                                       
+ 1064 svchost                                                                                       
+ 1452 svchost                                                                                       
+ 2460 svchost                                                                                       
+ 2524 svchost                                                                                       
+ 2368 svchost                                                                                       
+ 2216 svchost                                                                                       
+ 2360 svchost                                                                                       
+ 4144 svchost                                                                                       
+ 4240 svchost                                                                                       
+ 4116 svchost                                                                                       
+ 4024 svchost                                                                                       
+ 4092 svchost                                                                                       
+ 4556 svchost                                                                                       
+ 4568 svchost                                                                                       
+ 4516 svchost                                  C:\WINDOWS\system32\svchost.exe                      
+ 4268 svchost                                                                                       
+ 4364 svchost                                                                                       
+ 3900 svchost                                                                                       
+ 3448 svchost                                                                                       
+ 3472 svchost                                                                                       
+ 3420 svchost                                                                                       
+ 3360 svchost                                                                                       
+ 3412 svchost                                                                                       
+ 3640 svchost                                                                                       
+ 3892 svchost                                                                                       
+ 3592 svchost                                                                                       
+ 3552 svchost                                                                                       
+ 3572 svchost                                                                                       
+    4 System                                                                                        
+ 9840 taskhostw                                C:\WINDOWS\system32\taskhostw.exe                    
+23488 Taskmgr                                                                                       
+16840 TextInputHost                            C:\WINDOWS\SystemApps\MicrosoftWindows.Client.CBS_...
+ 5584 TiWorker                                                                                      
+ 8568 TrustedInstaller                                                                              
+ 4760 UDClientService                                                                               
+11556 unsecapp                                 C:\WINDOWS\system32\wbem\unsecapp.exe                
+ 9984 unsecapp                                                                                      
+ 4536 unsecapp                                                                                      
+24600 UserOOBEBroker                           C:\Windows\System32\oobe\UserOOBEBroker.exe          
+11124 vmcompute                                                                                     
+11700 Widgets                                  C:\Program Files\WindowsApps\MicrosoftWindows.Clie...
+11540 WidgetService                            C:\Program Files\WindowsApps\Microsoft.WidgetsPlat...
+ 1580 wininit                                                                                       
+ 1736 winlogon                                                                                      
+ 8580 wlanext                                                                                       
+ 6904 WmiPrvSE                                                                                      
+ 6636 WmiPrvSE                                                                                      
+ 6628 WmiPrvSE                                                                                      
+ 4784 WMIRegistrationService                                                                        
+ 4776 wslservice                                                                                    
+ 4640 WsNativePushService                                                                           
+16816 WsToastNotification                      C:\Users\salaa\AppData\Local\Wondershare\Wondersha...
+ 2112 WUDFHost                                                                                      
+ 1916 WUDFHost                                                                                      
+ 1684 WUDFHost                                                                                      
+
+

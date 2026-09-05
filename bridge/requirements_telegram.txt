@@ -1,0 +1,4 @@
+# Extra opcional; não é instalado pelo boot padrão dos três serviços.
+aiogram>=3.4,<4
+aiohttp>=3.9,<4
+pyzmq>=27.2,<28

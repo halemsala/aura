@@ -1,0 +1,5 @@
+# OPCIONAL — não instalar automaticamente no AURA.
+# Apenas se o host quiser interoperar com LangChain.
+# O Maximizer funciona 100% sem estes pacotes.
+langchain-core>=0.2.0
+# langgraph>=0.2.0  # preferir native durable_state; vendor_reference é read-only

@@ -1,0 +1,21 @@
+POLÍTICA PERMANENTE DO MANUAL MESTRE AURA QUANT-X
+====================================================
+
+1. O arquivo MANUAL_SISTEMA_AURA.txt é o bloco de notas operacional oficial.
+2. Toda atualização do sistema deve terminar executando:
+
+   engine\venv\Scripts\python.exe desktop\update_manual.py --root .
+
+3. O BAT mestre AURA_INSTALAR_E_INICIAR_TUDO.bat já chama esse gerador automaticamente depois que a engine\venv é criada ou reparada.
+4. Uma alteração só é considerada documentada quando o TXT foi reescrito e desktop\REGISTRO_ATUALIZACOES.md recebeu a entrada da atualização.
+5. O manual deve registrar funções, agentes, menus, ferramentas, conexões, portas, dependências, política de paper trade, limitações e pendências de teste.
+6. O manual deve separar o que está presente no código, o que foi validado por teste estático e o que ainda depende de Windows, WebView2, GPU, Ollama, microfone, autenticação ou dados ao vivo.
+7. Nunca inserir tokens, cookies, senhas, chaves ou dados pessoais no TXT, nos logs ou no repositório.
+8. Se a arquitetura mudar, atualizar também desktop\ARCHITECTURE.md, desktop\packaging\EXE_PREPARATION.md e o manifesto de empacotamento.
+9. Antes de distribuir um ZIP, rodar os testes do contrato desktop, atualizar o manual e gerar novamente os hashes.
+
+
+10. Depois da primeira instalação, o caminho oficial para atualizar código é `AURA_REPARAR_SISTEMA.bat` na raiz.
+11. `/PLAN` e `/HEALTH` são diagnósticos; `/APPLY` exige manifesto `aura-inplace-patch-v1` com SHA-256, allowlist e motivo; `/ROLLBACK <id>` restaura somente ficheiros alterados.
+12. O reparador preserva engine\venv, bases, configs, .env, modelos, perfis, caches, logs, backups e dados. Não faz pull do Ollama, não reinstala dependências e não encerra processos genericamente.
+13. A homepage oficial do shell passa a ser a Matriz em `https://aura.local/matriz/aura-quantx-central.html`; o GLM é verificado no arranque antes dos serviços.

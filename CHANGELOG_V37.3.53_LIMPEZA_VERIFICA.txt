@@ -1,0 +1,7 @@
+V37.3.53 — Limpeza + Instala + Verifica
+- Novo entrypoint: AURA_LIMPEZA_INSTALA_VERIFICA_TUDO.bat [/FORCE]
+- Libera portas, sobe Bridge/Engine/Voice/Hermes/Matriz
+- Health com retries + retry automatico do Hermes
+- /FORCE limpa cache Desktop (corrige 404 SW)
+- Skill aura-hermes-stable
+- Invariantes: paper_trade=true, execution_allowed=false

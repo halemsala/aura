@@ -1,0 +1,138 @@
+{
+  "job_id": "a700fc33d455",
+  "request_id": "40cbd06169e5",
+  "content_hash": "a76354e9b96d4fab",
+  "created_at": 1788390937.0484433,
+  "status": "success",
+  "authorized": false,
+  "authorization_reason": "comando único de baixo risco pedido explicitamente",
+  "plan_intent": "multi_task",
+  "source_message": "estado",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "system_status",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "platform": "Windows-10-10.0.26200-SP0",
+        "python": "3.11.9",
+        "cpu_percent": 10.2,
+        "ram_used_pct": 67.0,
+        "ram_total_gb": 16.9,
+        "disk_free_gb": 51.5,
+        "ollama": {
+          "online": true,
+          "model_present": true,
+          "models": [
+            "qwen3:8b",
+            "qwen2.5-coder:7b",
+            "qwen-coder-safe:latest",
+            "qwen2.5-coder:7b-instruct",
+            "llama3.2:3b",
+            "qwen2.5:3b-instruct",
+            "llama3.2:1b"
+          ]
+        },
+        "service_pid": null,
+        "gpu": {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "vram_total_mib": 6141.0,
+          "vram_used_mib": 5265.0,
+          "vram_free_mib": 656.0,
+          "util_pct": 0.0,
+          "temp_c": 54.0
+        }
+      },
+      "error": "",
+      "attempts": 1
+    },
+    {
+      "id": "task-2",
+      "tool": "aura_stack_status",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "bridge": {
+          "online": false,
+          "error": "HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /health (Caused by NewConnectionError(\"H"
+        },
+        "engine": {
+          "online": true,
+          "status": 200
+        },
+        "matriz": {
+          "online": true,
+          "status": 200
+        },
+        "voice": {
+          "online": false,
+          "error": "HTTPConnectionPool(host='127.0.0.1', port=8099): Max retries exceeded with url: /api/voice/health (Caused by NewConnecti"
+        },
+        "hermes": {
+          "online": true,
+          "status": 200
+        },
+        "alfred": {
+          "online": true,
+          "nota": "este processo"
+        },
+        "ollama": {
+          "online": true,
+          "status": 200
+        },
+        "execution_allowed": false,
+        "idioma": "pt-BR"
+      },
+      "error": "",
+      "attempts": 1
+    },
+    {
+      "id": "task-3",
+      "tool": "runtime_flags",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "paper_trade": false,
+        "execution_allowed": false,
+        "model": "qwen3:8b",
+        "host": "127.0.0.1",
+        "port": 8791,
+        "num_ctx": 3072,
+        "keep_alive": "-1",
+        "no_browser_polling": true,
+        "system_repair_allowed": true,
+        "nota": "paper_trade desliga-se com AUTORIZO; execution_allowed nunca liga por aqui"
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "CPU 10.2%, RAM 67.0%. GPU NVIDIA GeForce RTX 4050 Laptop GPU 5265.0/6141.0 MiB. Ollama online, qwen3:8b presente. Stack: alfred=ON, hermes=ON, voice=OFF, engine=ON, matriz=ON, bridge=OFF, ollama=ON. paper_trade=False repair=True execution_allowed=False modelo=qwen3:8b ctx=3072.",
+  "finished_at": 1788390942.0279257
+}

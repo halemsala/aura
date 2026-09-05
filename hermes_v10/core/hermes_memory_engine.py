@@ -1,0 +1,242 @@
+﻿#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Hermes V10 Ultra â€” Memory Engine
+RAG (Retrieval-Augmented Generation) usando sqlite-vec para embeddings
+locais + ChromaDB opcional. MemÃ³ria de longo prazo entre sessÃµes.
+"""
+import os
+import sys
+import json
+import sqlite3
+import hashlib
+from pathlib import Path
+from datetime import datetime
+from typing import List, Dict, Optional, Tuple
+from dataclasses import dataclass
+try:
+    import structlog
+    logger = structlog.get_logger("hermes.memory")
+except ImportError:
+    import logging
+    logger = logging.getLogger("hermes.memory")
+
+@dataclass
+class MemoryEntry:
+    id: str
+    ts: str
+    role: str  # user, assistant, system, observation, tool_result
+    content: str
+    source: str  # chat, diagnostic, correction, anomaly, etc.
+    tags: List[str]
+    embedding: Optional[List[float]] = None
+
+
+class MemoryEngine:
+    """
+    Motor de memÃ³ria com:
+    - sqlite-vec para busca vetorial (sem serviÃ§o externo)
+    - ChromaDB como fallback opcional
+    - DeduplicaÃ§Ã£o por hash de conteÃºdo
+    - Decay temporal (memÃ³rias antigas tÃªm menor score)
+    """
+
+    def __init__(self, root: str = ".", db_name: str = "memory.sqlite"):
+        self.root = Path(root).resolve()
+        self.db_path = self.root / "data" / "memory" / db_name
+        self.db_path.parent.mkdir(parents=True, exist_ok=True)
+        self._vec_available = self._check_sqlite_vec()
+        self._st_model = None
+        try:
+            from sentence_transformers import SentenceTransformer
+            self._st_model = SentenceTransformer("all-MiniLM-L6-v2")
+        except Exception:
+            self._st_model = None
+        self._init_db()
+
+    def _check_sqlite_vec(self) -> bool:
+        try:
+            import sqlite_vec
+            return True
+        except ImportError:
+            logger.warning("sqlite_vec_not_available â€” fallback text_search_only")
+            return False
+
+    def _init_db(self):
+        with sqlite3.connect(str(self.db_path)) as conn:
+            conn.execute("""
+                CREATE TABLE IF NOT EXISTS memories (
+                    id TEXT PRIMARY KEY,
+                    ts TEXT,
+                    role TEXT,
+                    content TEXT,
+                    source TEXT,
+                    tags TEXT,
+                    content_hash TEXT UNIQUE,
+                    embedding BLOB
+                )
+            """)
+            conn.execute("CREATE INDEX IF NOT EXISTS idx_ts ON memories(ts)")
+            conn.execute("CREATE INDEX IF NOT EXISTS idx_source ON memories(source)")
+            conn.execute("CREATE INDEX IF NOT EXISTS idx_tags ON memories(tags)")
+
+            if self._vec_available:
+                try:
+                    conn.execute("CREATE VIRTUAL TABLE IF NOT EXISTS vec_memories USING vec0(embedding float[384])")
+                except Exception as e:
+                    logger.warning("vec_table_creation_failed", error=str(e))
+            conn.commit()
+
+    def _hash(self, text: str) -> str:
+        return hashlib.sha256(text.encode("utf-8")).hexdigest()[:32]
+
+    def _embed(self, text: str):
+        """Embedding real se sentence-transformers disponivel; senao None (search usa LIKE)."""
+        if not text:
+            return None
+        if getattr(self, "_st_model", None) is not None:
+            try:
+                return self._st_model.encode(text).tolist()
+            except Exception as e:
+                logger.warning("embed_encode_fail error=%s", e)
+                return None
+        return None
+
+
+    def store(self, entry: MemoryEntry) -> bool:
+        """Armazena memÃ³ria se nÃ£o for duplicata."""
+        h = self._hash(entry.content)
+        with sqlite3.connect(str(self.db_path)) as conn:
+            existing = conn.execute("SELECT 1 FROM memories WHERE content_hash = ?", (h,)).fetchone()
+            if existing:
+                return False  # deduplicado
+
+            embedding = self._embed(entry.content)
+            emb_blob = json.dumps(embedding).encode("utf-8")
+
+            conn.execute("""
+                INSERT INTO memories (id, ts, role, content, source, tags, content_hash, embedding)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                entry.id, entry.ts, entry.role, entry.content, entry.source,
+                json.dumps(entry.tags), h, emb_blob
+            ))
+
+            if self._vec_available:
+                try:
+                    conn.execute("INSERT INTO vec_memories (rowid, embedding) VALUES (last_insert_rowid(), ?)", (emb_blob,))
+                except Exception as e:
+                    logger.warning("vec_insert_failed", error=str(e))
+
+            conn.commit()
+        logger.info("memory_stored", id=entry.id, source=entry.source, tags=entry.tags)
+        return True
+
+    def search(self, query: str, top_k: int = 5, source_filter: Optional[str] = None) -> List[Dict]:
+        """Busca semÃ¢ntica + temporal decay."""
+        query_emb = self._embed(query)
+        use_vec = self._vec_available and query_emb is not None
+
+        with sqlite3.connect(str(self.db_path)) as conn:
+            conn.row_factory = sqlite3.Row
+
+            if use_vec:
+                try:
+                    emb_json = json.dumps(query_emb)
+                    rows = conn.execute("""
+                        SELECT m.*, vec_distance_L2(v.embedding, ?) as distance
+                        FROM memories m
+                        JOIN vec_memories v ON m.rowid = v.rowid
+                        ORDER BY distance
+                        LIMIT ?
+                    """, (emb_json.encode("utf-8"), top_k * 2)).fetchall()
+                except Exception:
+                    rows = []
+            else:
+                # Fallback: busca por palavras-chave (LIKE)
+                like = f"%{query}%"
+                sql = "SELECT * FROM memories WHERE content LIKE ? ORDER BY ts DESC LIMIT ?"
+                rows = conn.execute(sql, (like, top_k * 2)).fetchall()
+
+        results = []
+        for row in rows:
+            entry = dict(row)
+            # Temporal decay: memÃ³rias mais recentes ganham boost
+            try:
+                age_hours = (datetime.utcnow() - datetime.fromisoformat(entry["ts"].replace("Z", "+00:00"))).total_seconds() / 3600
+                decay = max(0.5, 1.0 - (age_hours / 168))  # 1 semana = 50% peso
+            except Exception:
+                decay = 1.0
+
+            if source_filter and entry.get("source") != source_filter:
+                continue
+
+            results.append({
+                "id": entry["id"],
+                "ts": entry["ts"],
+                "role": entry["role"],
+                "content": entry["content"],
+                "source": entry["source"],
+                "tags": json.loads(entry.get("tags", "[]")),
+                "score": round(decay, 3),
+            })
+
+        return sorted(results, key=lambda x: x["score"], reverse=True)[:top_k]
+
+    def get_context_for_prompt(self, query: str, max_tokens: int = 1500) -> str:
+        """Formata memÃ³rias relevantes para injetar no prompt do LLM."""
+        memories = self.search(query, top_k=10)
+        if not memories:
+            return ""
+
+        lines = ["=== MEMÃ“RIA DO SISTEMA ==="]
+        total_len = len(lines[0])
+        for m in memories:
+            line = f"[{m['source']}] {m['role']}: {m['content'][:200]}"
+            if total_len + len(line) > max_tokens * 4:  # rough char estimate
+                break
+            lines.append(line)
+            total_len += len(line)
+
+        return "\n".join(lines)
+
+    def prune_old(self, days: int = 30):
+        """Remove memÃ³rias mais antigas que N dias."""
+        from datetime import timedelta
+        cutoff = (datetime.utcnow() - timedelta(days=days)).isoformat()
+        with sqlite3.connect(str(self.db_path)) as conn:
+            conn.execute("DELETE FROM memories WHERE ts < ?", (cutoff,))
+            conn.commit()
+        logger.info("memory_pruned cutoff_days=%s", days)
+
+
+def main():
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--root", default=".")
+    parser.add_argument("--store", help="Texto para armazenar")
+    parser.add_argument("--search", help="Query para buscar")
+    parser.add_argument("--source", default="cli")
+    args = parser.parse_args()
+
+    engine = MemoryEngine(root=args.root)
+
+    if args.store:
+        entry = MemoryEntry(
+            id=f"mem_{datetime.utcnow().strftime('%Y%m%d%H%M%S%f')}",
+            ts=datetime.utcnow().isoformat() + "Z",
+            role="user",
+            content=args.store,
+            source=args.source,
+            tags=["manual"],
+        )
+        ok = engine.store(entry)
+        print("Armazenado:" if ok else "Duplicado (ignorado):")
+
+    if args.search:
+        results = engine.search(args.search, top_k=5)
+        print(json.dumps(results, indent=2, ensure_ascii=False))
+
+if __name__ == "__main__":
+    main()
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>AURA Calibration Lab</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background:#0d1117; color:#e6edf3; margin:0; padding:16px; }
+    h1 { font-size:1.2rem; margin:0 0 12px; }
+    .card { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:12px; margin-bottom:12px; }
+    .warn { color:#f0883e; }
+    .ok { color:#3fb950; }
+    .crit { color:#f85149; }
+    table { width:100%; border-collapse:collapse; font-size:0.85rem; }
+    th, td { border-bottom:1px solid #30363d; padding:6px 8px; text-align:left; }
+    button { background:#238636; color:#fff; border:0; padding:8px 12px; border-radius:6px; cursor:pointer; }
+    input, select { background:#0d1117; color:#e6edf3; border:1px solid #30363d; padding:6px; border-radius:4px; }
+    .disclaimer { font-size:0.8rem; color:#8b949e; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <h1>Calibration Lab — AURA QUANT-X</h1>
+  <div class="card">
+    <strong>Status do modelo</strong>
+    <div id="modelStatus" class="warn">SYNTHETIC_NOT_VALIDATED — não declarar acertividade preditiva sem dados reais + walk-forward.</div>
+    <div class="disclaimer">Brier / log-loss / ECE só são válidos com outcomes rotulados não sintéticos.</div>
+  </div>
+  <div class="card">
+    <label>Horizonte
+      <select id="horizon"><option>5m</option><option>15m</option><option>match</option></select>
+    </label>
+    <button onclick="runDemo()">Recalcular (demo local)</button>
+    <div id="metrics" style="margin-top:10px;"></div>
+  </div>
+  <div class="card">
+    <strong>Reliability (bins)</strong>
+    <table><thead><tr><th>Bin</th><th>n</th><th>mean_pred</th><th>mean_outcome</th><th>ECE contrib</th></tr></thead>
+    <tbody id="bins"></tbody></table>
+  </div>
+  <div class="card">
+    <strong>Decision Trace (última análise)</strong>
+    <pre id="trace" style="white-space:pre-wrap;font-size:0.8rem;color:#8b949e;">Aguardando telemetria…</pre>
+  </div>
+  <script>
+    function runDemo() {
+      // Demo apenas — valores ilustrativos. Nunca usar como acurácia real.
+      const metrics = document.getElementById('metrics');
+      metrics.innerHTML = `
+        <div>Brier: <span class="warn">n/a (sem labels reais)</span></div>
+        <div>log-loss: <span class="warn">n/a</span></div>
+        <div>ECE: <span class="warn">n/a</span></div>
+        <div class="disclaimer">Conecte outcomes reais via API /api/eval/accuracy ou calibration_lab.walk_forward_evaluate</div>
+      `;
+      document.getElementById('bins').innerHTML = '<tr><td colspan="5">Sem bins — dataset rotulado ausente</td></tr>';
+      document.getElementById('trace').textContent = JSON.stringify({
+        score_type: "HEURISTIC_COMPLETENESS",
+        is_predictive_accuracy: false,
+        disclaimer: "Não é acurácia histórica"
+      }, null, 2);
+    }
+    runDemo();
+  </script>
+</body>
+</html>

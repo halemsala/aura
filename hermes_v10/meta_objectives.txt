@@ -1,0 +1,7 @@
+health
+health_report_readonly
+anomaly_summary
+red_team_findings
+status
+system_status
+security_audit_readonly

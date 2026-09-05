@@ -1,0 +1,1323 @@
+﻿===== 09_TAREFAS_AUTOMACOES_AGENDADAS =====
+
+
+TaskPath    : \
+TaskName    : CCleaner 7 - Skip UAC - S-1-5-21-2883563625-2750928919-1808076865-1001
+State       : Ready
+Author      : Piriform
+Description : 
+
+TaskPath    : \
+TaskName    : CorelUpdateHelperTaskCore
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \
+TaskName    : CorelUpdateHelperTask-F4D65F5D9A7957A7F6D3BC680DCAFFD8
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \
+TaskName    : CreateExplorerShellUnelevatedTask
+State       : Ready
+Author      : ExplorerShellUnelevated
+Description : 
+
+TaskPath    : \
+TaskName    : FanControl
+State       : Ready
+Author      : 
+Description : Start FanControl at startup
+
+TaskPath    : \
+TaskName    : MSIAfterburner
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \
+TaskName    : NVIDIA App SelfUpdate_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}
+State       : Ready
+Author      : NVIDIA Corporation
+Description : 
+
+TaskPath    : \
+TaskName    : OneDrive Reporting Task-S-1-5-21-2883563625-2750928919-1808076865-1001
+State       : Ready
+Author      : Microsoft Corporation
+Description : 
+
+TaskPath    : \
+TaskName    : OneDrive Standalone Update Task-S-1-5-21-2883563625-2750928919-1808076865-1001
+State       : Ready
+Author      : Microsoft Corporation
+Description : 
+
+TaskPath    : \
+TaskName    : OneDrive Startup Task-S-1-5-21-2883563625-2750928919-1808076865-1001
+State       : Ready
+Author      : Microsoft Corporation
+Description : 
+
+TaskPath    : \
+TaskName    : Opera GX scheduled assistant Autoupdate 1774221018
+State       : Ready
+Author      : ANDERSON\salaa
+Description : Keeps Opera Browser Assistant up to date
+
+TaskPath    : \
+TaskName    : Opera GX scheduled Autoupdate 1774221011
+State       : Ready
+Author      : ANDERSON\salaa
+Description : Mantém o Opera actualizado.
+
+TaskPath    : \
+TaskName    : PlatformExperiencesHelper_Daily
+State       : Ready
+Author      : 
+Description : Platform Experiences Helper - PlatformExperiencesHelper_Daily
+
+TaskPath    : \
+TaskName    : PlatformExperiencesHelper_Metrics
+State       : Ready
+Author      : 
+Description : Platform Experiences Helper - PlatformExperiencesHelper_Metrics
+
+TaskPath    : \
+TaskName    : PlatformExperiencesHelper_OnUnlock
+State       : Ready
+Author      : 
+Description : Platform Experiences Helper - PlatformExperiencesHelper_OnUnlock
+
+TaskPath    : \
+TaskName    : RTSS
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \
+TaskName    : VSWeb Handler
+State       : Ready
+Author      : ANDERSON\salaa
+Description : 
+
+TaskPath    : \
+TaskName    : VSWebHandler
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Lenovo\
+TaskName    : LenovoNowLauncher
+State       : Ready
+Author      : Lenovo
+Description : Lenovo Now Launcher application
+
+TaskPath    : \Lenovo\
+TaskName    : LenovoNowQuarterlyLaunch
+State       : Ready
+Author      : ANDERSON\salaa
+Description : 
+
+TaskPath    : \Lenovo\
+TaskName    : LenovoNowTask
+State       : Ready
+Author      : Lenovo
+Description : Lenovo Now application
+
+TaskPath    : \Lenovo\Lenovo Service Bridge\
+TaskName    : S-1-5-21-2883563625-2750928919-1808076865-1001
+State       : Ready
+Author      : Lenovo
+Description : This program enables Lenovo's support website to automatically detect your computer's serial number 
+              and model.
+
+TaskPath    : \Lenovo\UDC\
+TaskName    : Lenovo UDC Diagnostic Scan
+State       : Disabled
+Author      : UDC
+Description : This task runs diagnostic scans.
+
+TaskPath    : \Microsoft\Windows\.NET Framework\
+TaskName    : .NET Framework NGEN v4.0.30319
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\.NET Framework\
+TaskName    : .NET Framework NGEN v4.0.30319 64
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\.NET Framework\
+TaskName    : .NET Framework NGEN v4.0.30319 64 Critical
+State       : Disabled
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\.NET Framework\
+TaskName    : .NET Framework NGEN v4.0.30319 Critical
+State       : Disabled
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\AccountHealth\
+TaskName    : RecoverabilityToastTask
+State       : Ready
+Author      : Microsoft Corporation
+Description : O Processador de Tarefas AccountHealth avalia o estado de uma Conta Microsoft e toma as ações de 
+              reparação necessárias
+
+TaskPath    : \Microsoft\Windows\Active Directory Rights Management Services Client\
+TaskName    : AD RMS Rights Policy Template Management (Automated)
+State       : Disabled
+Author      : Microsoft Corporation
+Description : Atualiza os modelos da política de direitos AD RMS para o utilizador. Esta tarefa não fornece um 
+              pedido de credenciais se a autenticação junto do serviço Web de distribuição de modelos no servidor 
+              falhar. Neste caso, a falha ocorre em modo silencioso.
+
+TaskPath    : \Microsoft\Windows\Active Directory Rights Management Services Client\
+TaskName    : AD RMS Rights Policy Template Management (Manual)
+State       : Ready
+Author      : Microsoft Corporation
+Description : Atualiza os modelos da política de direitos AD RMS para o utilizador. Esta tarefa fornece um pedido de 
+              credenciais se a autenticação junto do serviço Web de distribuição de modelos no servidor falhar.
+
+TaskPath    : \Microsoft\Windows\AppID\
+TaskName    : PolicyConverter
+State       : Ready
+Author      : Microsoft Corporation
+Description : Converte as políticas de restrição de software de XML para formato binário.
+
+TaskPath    : \Microsoft\Windows\AppID\
+TaskName    : VerifiedPublisherCertStoreCheck
+State       : Ready
+Author      : Microsoft Corporation
+Description : Inspeciona a cache de certificados AppID para detetar certificados inválidos ou revogados.
+
+TaskPath    : \Microsoft\Windows\Application Experience\
+TaskName    : MareBackup
+State       : Ready
+Author      : Microsoft Corporation
+Description : Recolhe dados da aplicação Win32 para o cenário de Cópia de Segurança de Aplicações
+
+TaskPath    : \Microsoft\Windows\Application Experience\
+TaskName    : Microsoft Compatibility Appraiser Exp
+State       : Ready
+Author      : Microsoft Corporation
+Description : Recolhe informações telemétricas dos programas se tiver optado ativamente por participar no Programa 
+              de Melhoramento da Experiência do Cliente da Microsoft.
+
+TaskPath    : \Microsoft\Windows\Application Experience\
+TaskName    : PcaPatchDbTask
+State       : Ready
+Author      : Microsoft Corporation
+Description : Updates compatibility database
+
+TaskPath    : \Microsoft\Windows\Application Experience\
+TaskName    : SdbinstMergeDbTask
+State       : Ready
+Author      : Microsoft Corporation
+Description : Merges shim databases that are pending merge.
+
+TaskPath    : \Microsoft\Windows\Application Experience\
+TaskName    : StartupAppTask
+State       : Ready
+Author      : Microsoft Corporation
+Description : Analisa entradas de arranque e gera uma notificação para o utilizador se existirem demasiadas entradas 
+              de arranque.
+
+TaskPath    : \Microsoft\Windows\ApplicationData\
+TaskName    : appuriverifierdaily
+State       : Ready
+Author      : Microsoft Corporation
+Description : Verifica os registos de anfitrião AppUriHandler.
+
+TaskPath    : \Microsoft\Windows\ApplicationData\
+TaskName    : appuriverifierinstall
+State       : Ready
+Author      : Microsoft Corporation
+Description : Verifica os registos de anfitrião AppUriHandler.
+
+TaskPath    : \Microsoft\Windows\ApplicationData\
+TaskName    : CleanupTemporaryState
+State       : Ready
+Author      : Microsoft Corporation
+Description : Cleans up each package's unused temporary files.
+
+TaskPath    : \Microsoft\Windows\ApplicationData\
+TaskName    : DsSvcCleanup
+State       : Ready
+Author      : Microsoft Corporation
+Description : Efetua manutenção para o Serviço de Partilha de Dados.
+
+TaskPath    : \Microsoft\Windows\AppListBackup\
+TaskName    : Backup
+State       : Ready
+Author      : $(@%SystemRoot%\system32\AppListBackupLauncher.dll,-600)
+Description : $(@%SystemRoot%\system32\AppListBackupLauncher.dll,-602)
+
+TaskPath    : \Microsoft\Windows\AppListBackup\
+TaskName    : BackupNonMaintenance
+State       : Ready
+Author      : $(@%SystemRoot%\system32\AppListBackupLauncher.dll,-600)
+Description : $(@%SystemRoot%\system32\AppListBackupLauncher.dll,-602)
+
+TaskPath    : \Microsoft\Windows\AppxDeploymentClient\
+TaskName    : Pre-staged app cleanup
+State       : Disabled
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\Autochk\
+TaskName    : Proxy
+State       : Ready
+Author      : Microsoft Corporation
+Description : Esta tarefa recolhe e carrega dados SQM de verificação automática se tiver optado ativamente por 
+              participar no Programa de Melhoramento da Experiência do Cliente.
+
+TaskPath    : \Microsoft\Windows\BitLocker\
+TaskName    : BitLocker Encrypt All Drives
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\BitLocker\
+TaskName    : BitLocker MDM policy Refresh
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\Bluetooth\
+TaskName    : UninstallDeviceTask
+State       : Ready
+Author      : Microsoft
+Description : Desinstala o dispositivo PnP associado ao ID de serviço Bluetooth especificado
+
+TaskPath    : \Microsoft\Windows\BrokerInfrastructure\
+TaskName    : BgTaskRegistrationMaintenanceTask
+State       : Ready
+Author      : Microsoft Corporation
+Description : Mantém os registos de tarefas em segundo plano para as aplicações da Plataforma Universal do Windows.
+
+TaskPath    : \Microsoft\Windows\capabilityaccessmanager\
+TaskName    : maintenancetasks
+State       : Ready
+Author      : Microsoft Corporation
+Description : Tarefas de Manutenção do Gestor de Acesso da Capacidade
+
+TaskPath    : \Microsoft\Windows\CertificateServicesClient\
+TaskName    : UserTask
+State       : Ready
+Author      : Microsoft Corporation
+Description : O Cliente Serviços de Certificados gere automaticamente identidades digitais, tais como Certificados, 
+              Chaves e Credenciais para os utilizadores e o computador, permitindo inscrições, acesso itinerante 
+              (roaming) e outros serviços.
+
+TaskPath    : \Microsoft\Windows\CertificateServicesClient\
+TaskName    : UserTask-Roam
+State       : Ready
+Author      : Microsoft Corporation
+Description : O Cliente Serviços de Certificados gere automaticamente identidades digitais, tais como Certificados, 
+              Chaves e Credenciais para os utilizadores e o computador, permitindo inscrições, acesso itinerante 
+              (roaming) e outros serviços.
+
+TaskPath    : \Microsoft\Windows\Chkdsk\
+TaskName    : ProactiveScan
+State       : Ready
+Author      : Microsoft Corporation
+Description : Análise de Estado de Funcionamento de Volume NTFS
+
+TaskPath    : \Microsoft\Windows\Chkdsk\
+TaskName    : SyspartRepair
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\CloudExperienceHost\
+TaskName    : CreateObjectTask
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\CloudRestore\
+TaskName    : Backup
+State       : Ready
+Author      : Microsoft Corporation
+Description : Gere o restauro das definições a partir da cloud
+
+TaskPath    : \Microsoft\Windows\CloudRestore\
+TaskName    : Restore
+State       : Ready
+Author      : Microsoft Corporation
+Description : Gere o restauro das definições a partir da cloud
+
+TaskPath    : \Microsoft\Windows\ConsentUX\UnifiedConsent\
+TaskName    : UnifiedConsentSyncTask
+State       : Ready
+Author      : $(@%systemRoot%\system32\unifiedconsent.dll,-102)
+Description : $(@%systemRoot%\system32\unifiedconsent.dll,-101)
+
+TaskPath    : \Microsoft\Windows\Containers\
+TaskName    : CmCleanup
+State       : Ready
+Author      : Microsoft Corporation
+Description : Efetua a limpeza de componentes de contentores oportuna
+
+TaskPath    : \Microsoft\Windows\Customer Experience Improvement Program\
+TaskName    : Consolidator
+State       : Ready
+Author      : Microsoft Corporation
+Description : Se o utilizador tiver autorizado a respetiva participação no Programa de Melhoramento da Experiência 
+              do Cliente do Windows, esta tarefa recolhe e envia dados de utilização para a Microsoft.
+
+TaskPath    : \Microsoft\Windows\Customer Experience Improvement Program\
+TaskName    : UsbCeip
+State       : Ready
+Author      : Microsoft Corporation
+Description : A tarefa USBCEIP (referente do Programa de Melhoramento da Experiência do Cliente) recolhe 
+              estatísticas e informações sobre o seu computador relacionadas com o Barramento Série Universal e 
+              envia-as para o departamento de engenharia Windows Device Connectivity da Microsoft. As informações 
+              recebidas são utilizadas para melhorar a fiabilidade, estabilidade e funcionalidade global do USB no 
+              Windows. Se o utilizador não acordar em participar no CEIP do Windows, a tarefa não efetuará qualquer 
+              ação.
+
+TaskPath    : \Microsoft\Windows\Data Integrity Scan\
+TaskName    : Data Integrity Check And Scan
+State       : Ready
+Author      : Microsoft Corporation
+Description : Procura danos latentes em volumes com tolerância a falhas
+
+TaskPath    : \Microsoft\Windows\Data Integrity Scan\
+TaskName    : Data Integrity Scan
+State       : Ready
+Author      : Microsoft Corporation
+Description : Procura danos latentes em volumes com tolerância a falhas
+
+TaskPath    : \Microsoft\Windows\Data Integrity Scan\
+TaskName    : Data Integrity Scan for Crash Recovery
+State       : Ready
+Author      : Microsoft Corporation
+Description : Procura recuperação de falhas de sistema rápida em volumes com tolerância a falhas
+
+TaskPath    : \Microsoft\Windows\Defrag\
+TaskName    : ScheduledDefrag
+State       : Ready
+Author      : Microsoft Corporation
+Description : Esta tarefa otimiza as unidades de armazenamento locais.
+
+TaskPath    : \Microsoft\Windows\Device Information\
+TaskName    : Device
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\Device Information\
+TaskName    : Device User
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\Device Setup\
+TaskName    : Driver Recovery on Reboot
+State       : Disabled
+Author      : $(@%SystemRoot%\system32\DeviceSetupManagerAPI.dll,-600)
+Description : $(@%SystemRoot%\system32\DeviceSetupManagerAPI.dll,-602)
+
+TaskPath    : \Microsoft\Windows\Diagnosis\
+TaskName    : RecommendedTroubleshootingScanner
+State       : Ready
+Author      : Microsoft Corporation
+Description : Procurar a resolução de problemas recomendada da Microsoft
+
+TaskPath    : \Microsoft\Windows\Diagnosis\
+TaskName    : Scheduled
+State       : Ready
+Author      : Microsoft Corporation
+Description : A Tarefa de Manutenção Agendada do Windows efetua a manutenção periódica do sistema informático 
+              corrigindo problemas automaticamente ou reportando-os através de Segurança e Manutenção.
+
+TaskPath    : \Microsoft\Windows\Diagnosis\
+TaskName    : UnexpectedCodepath
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\DirectX\
+TaskName    : DirectXDatabaseUpdater
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\DirectX\
+TaskName    : DXGIAdapterCache
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\DiskCleanup\
+TaskName    : SilentCleanup
+State       : Ready
+Author      : Microsoft Corporation
+Description : Tarefa de manutenção utilizada pelo sistema para iniciar uma limpeza do disco automática sem 
+              notificação quando não existe espaço livre suficiente no disco.
+
+TaskPath    : \Microsoft\Windows\DiskDiagnostic\
+TaskName    : Microsoft-Windows-DiskDiagnosticDataCollector
+State       : Disabled
+Author      : Microsoft Corporation
+Description : O Diagnóstico de Disco do Windows comunica informações gerais de disco e sistema à Microsoft em 
+              relação a utilizadores que participam no Programa de Experiência do Cliente.
+
+TaskPath    : \Microsoft\Windows\DiskDiagnostic\
+TaskName    : Microsoft-Windows-DiskDiagnosticResolver
+State       : Disabled
+Author      : Microsoft Corporation
+Description : O Microsoft-Windows-DiskDiagnosticResolver avisa os utilizadores acerca de falhas comunicadas por 
+              discos rígidos que suportam a norma SMART (Self Monitoring and Reporting Technology). Esta tarefa é 
+              acionada automaticamente pelo Serviço de Políticas de Diagnóstico quando é detetada uma falha SMART.
+
+TaskPath    : \Microsoft\Windows\DiskFootprint\
+TaskName    : Diagnostics
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\DiskFootprint\
+TaskName    : StorageSense
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\DUSM\
+TaskName    : dusmtask
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\EDP\
+TaskName    : EDP App Launch Task
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\EDP\
+TaskName    : EDP Auth Task
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\EDP\
+TaskName    : EDP Inaccessible Credentials Task
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\EDP\
+TaskName    : StorageCardEncryption Task
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\ExploitGuard\
+TaskName    : ExploitGuard MDM policy Refresh
+State       : Ready
+Author      : Microsoft Corporation
+Description : Tarefa para aplicar alterações às definições de Exploit Protection da máquina.
+
+TaskPath    : \Microsoft\Windows\Feedback\Siuf\
+TaskName    : DmClient
+State       : Ready
+Author      : Microsoft Windows Feedback
+Description : Update SIUF strings
+
+TaskPath    : \Microsoft\Windows\Feedback\Siuf\
+TaskName    : DmClientOnScenarioDownload
+State       : Ready
+Author      : Microsoft Windows Feedback
+Description : Update SIUF strings
+
+TaskPath    : \Microsoft\Windows\File Classification Infrastructure\
+TaskName    : Property Definition Sync
+State       : Disabled
+Author      : Microsoft Corporation
+Description : Synchronizes the File Classification Infrastructure taxonomy on the computer with the resource 
+              property definitions stored in Active Directory Domain Services.
+
+TaskPath    : \Microsoft\Windows\FileHistory\
+TaskName    : File History (maintenance mode)
+State       : Ready
+Author      : Microsoft Corporation
+Description : Protege os ficheiros de utilizador contra perda acidental, copiando-os para uma localização de cópia 
+              de segurança quando o sistema está no modo autónomo
+
+TaskPath    : \Microsoft\Windows\Flighting\FeatureConfig\
+TaskName    : BootstrapUsageDataReporting
+State       : Disabled
+Author      : Microsoft Corporation
+Description : Tarefa que efetua registos periódicos de utilização da funcionalidade
+
+TaskPath    : \Microsoft\Windows\Flighting\FeatureConfig\
+TaskName    : GovernedFeatureUsageProcessing
+State       : Ready
+Author      : Microsoft Corporation
+Description : Tarefa que reconcilia periodicamente configurações de funcionalidades
+
+TaskPath    : \Microsoft\Windows\Flighting\FeatureConfig\
+TaskName    : ReconcileConfigs
+State       : Ready
+Author      : Microsoft Corporation
+Description : Tarefa que reconcilia periodicamente configurações de funcionalidades
+
+TaskPath    : \Microsoft\Windows\Flighting\FeatureConfig\
+TaskName    : ReconcileFeatures
+State       : Ready
+Author      : Microsoft Corporation
+Description : Tarefa que reconcilia periodicamente configurações de funcionalidades
+
+TaskPath    : \Microsoft\Windows\Flighting\FeatureConfig\
+TaskName    : SafeguardsReconciliation
+State       : Ready
+Author      : Microsoft Corporation
+Description : Tarefa que reconcilia periodicamente configurações de funcionalidades
+
+TaskPath    : \Microsoft\Windows\Flighting\FeatureConfig\
+TaskName    : UsageDataFlushing
+State       : Ready
+Author      : Microsoft Corporation
+Description : Funcionalidade persistente de tarefa de utilização de dados para o disco
+
+TaskPath    : \Microsoft\Windows\Flighting\FeatureConfig\
+TaskName    : UsageDataReceiver
+State       : Ready
+Author      : Microsoft Corporation
+Description : Funcionalidade persistente de tarefa de utilização de dados para o disco
+
+TaskPath    : \Microsoft\Windows\Flighting\FeatureConfig\
+TaskName    : UsageDataReporting
+State       : Ready
+Author      : Microsoft Corporation
+Description : Tarefa que efetua registos periódicos de utilização da funcionalidade
+
+TaskPath    : \Microsoft\Windows\Flighting\OneSettings\
+TaskName    : RefreshCache
+State       : Ready
+Author      : Microsoft Corporation
+Description : Tarefa a atualizar periodicamente os dados dos clientes OneSettings.
+
+TaskPath    : \Microsoft\Windows\Hotpatch\
+TaskName    : Monitoring
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\input\
+TaskName    : InputSettingsRestoreDataAvailable
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\input\
+TaskName    : LocalUserSyncDataAvailable
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\input\
+TaskName    : MouseSyncDataAvailable
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\input\
+TaskName    : PenSyncDataAvailable
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\input\
+TaskName    : RemoteMouseSyncDataAvailable
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\input\
+TaskName    : RemotePenSyncDataAvailable
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\input\
+TaskName    : RemoteTouchpadSyncDataAvailable
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\input\
+TaskName    : syncpensettings
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\input\
+TaskName    : TouchpadSyncDataAvailable
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\InstallService\
+TaskName    : RestoreDevice
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\InstallService\
+TaskName    : ScanForUpdates
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\InstallService\
+TaskName    : ScanForUpdatesAsUser
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\InstallService\
+TaskName    : WakeUpAndContinueUpdates
+State       : Disabled
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\InstallService\
+TaskName    : WakeUpAndScanForUpdates
+State       : Disabled
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\International\
+TaskName    : Synchronize Language Settings
+State       : Ready
+Author      : Microsoft Corporation
+Description : Synchronize User Language Settings from other devices.
+
+TaskPath    : \Microsoft\Windows\Kernel\
+TaskName    : La57Cleanup
+State       : Ready
+Author      : Microsoft Corporation
+Description : Esta tarefa limpa binários de 5 níveis de paginação em sistemas que não suportam paginação de 5 níveis.
+
+TaskPath    : \Microsoft\Windows\LanguageComponentsInstaller\
+TaskName    : Installation
+State       : Ready
+Author      : Microsoft Corporation
+Description : Instale componentes de idiomas que correspondam à lista de idiomas do utilizador.
+
+TaskPath    : \Microsoft\Windows\LanguageComponentsInstaller\
+TaskName    : ReconcileLanguageResources
+State       : Ready
+Author      : Microsoft Corporation
+Description : Instale componentes de idiomas que correspondam à lista de idiomas do utilizador.
+
+TaskPath    : \Microsoft\Windows\Location\
+TaskName    : WindowsActionDialog
+State       : Ready
+Author      : 
+Description : Notificação da Localização
+
+TaskPath    : \Microsoft\Windows\Maintenance\
+TaskName    : WinSAT
+State       : Ready
+Author      : Microsoft
+Description : Mede o desempenho e as capacidades de um sistema
+
+TaskPath    : \Microsoft\Windows\Management\Autopilot\
+TaskName    : DetectHardwareChange
+State       : Disabled
+Author      : $(@%SystemRoot%\system32\Autopilot.dll,-600)
+Description : $(@%SystemRoot%\system32\Autopilot.dll,-602)
+
+TaskPath    : \Microsoft\Windows\Management\Autopilot\
+TaskName    : RemediateHardwareChange
+State       : Disabled
+Author      : $(@%SystemRoot%\system32\Autopilot.dll,-600)
+Description : $(@%SystemRoot%\system32\Autopilot.dll,-603)
+
+TaskPath    : \Microsoft\Windows\Management\Provisioning\
+TaskName    : Cellular
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\Management\Provisioning\
+TaskName    : Logon
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\Management\Provisioning\
+TaskName    : MdmDiagnosticsCleanup
+State       : Disabled
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\Management\Provisioning\
+TaskName    : Retry
+State       : Disabled
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\Management\Provisioning\
+TaskName    : RunOnReboot
+State       : Disabled
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\Maps\
+TaskName    : MapsToastTask
+State       : Ready
+Author      : Microsoft Corporation
+Description : This task shows various Map related toasts
+
+TaskPath    : \Microsoft\Windows\Maps\
+TaskName    : MapsUpdateTask
+State       : Disabled
+Author      : Microsoft Corporation
+Description : Esta tarefa verifica a existência de atualizações para os mapas que tenha transferido para utilização 
+              offline. Desativar esta tarefa irá impedir o Windows de o notificar em relação a mapas atualizados.
+
+TaskPath    : \Microsoft\Windows\MemoryDiagnostic\
+TaskName    : AutomaticOfflineMemoryDiagnostic
+State       : Ready
+Author      : Microsoft Corporation
+Description : Agenda um diagnóstico de memória offline em resposta a eventos de sistema.
+
+TaskPath    : \Microsoft\Windows\MemoryDiagnostic\
+TaskName    : ProcessMemoryDiagnosticEvents
+State       : Ready
+Author      : Microsoft Corporation
+Description : Agenda um diagnóstico de memória em resposta a eventos de sistema.
+
+TaskPath    : \Microsoft\Windows\MemoryDiagnostic\
+TaskName    : RunFullMemoryDiagnostic
+State       : Disabled
+Author      : Microsoft Corporation
+Description : Deteta e atenua os problemas na memória física (RAM).
+
+TaskPath    : \Microsoft\Windows\MUI\
+TaskName    : LPRemove
+State       : Ready
+Author      : Microsoft Corporation
+Description : Executar ferramenta de remoção de idioma
+
+TaskPath    : \Microsoft\Windows\Multimedia\
+TaskName    : SystemSoundsService
+State       : Running
+Author      : 
+Description : Agente de Modo de Utilizador de Sons do Sistema
+
+TaskPath    : \Microsoft\Windows\Network Connectivity Status Indicator\
+TaskName    : NcsiIdentifyUserProxies
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\NlaSvc\
+TaskName    : WiFiTask
+State       : Ready
+Author      : Microsoft Corporation
+Description : Tarefa em segundo plano para efetuar por utilizador e interações web
+
+TaskPath    : \Microsoft\Windows\Offline Files\
+TaskName    : Background Synchronization
+State       : Disabled
+Author      : Microsoft Corporation
+Description : Esta tarefa controla a sincronização periódica em segundo plano dos Ficheiros Offline quando um 
+              utilizador está a trabalhar num modo offline.
+
+TaskPath    : \Microsoft\Windows\Offline Files\
+TaskName    : Logon Synchronization
+State       : Disabled
+Author      : Microsoft Corporation
+Description : Esta tarefa inicia a sincronização dos Ficheiros Offline quando um utilizador inicia sessão no sistema.
+
+TaskPath    : \Microsoft\Windows\PCRPF\
+TaskName    : BitLocker Reduced PCR Profile Cleanup Task
+State       : Disabled
+Author      : Microsoft Corporation
+Description : 
+
+TaskPath    : \Microsoft\Windows\PCRPF\
+TaskName    : PCR Prediction Framework Firmware Update Task
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\PerformanceTrace\
+TaskName    : ShowFeedbackToast
+State       : Ready
+Author      : Microsoft Corporation
+Description : Feedback sobre o Desempenho (MS Interno)
+
+TaskPath    : \Microsoft\Windows\PerformanceTrace\
+TaskName    : WhesvcToast
+State       : Ready
+Author      : Microsoft Corporation
+Description : Faz a gestão da apresentação da experiência de utilizador quando é feito o rastreio da tecla de atalho
+
+TaskPath    : \Microsoft\Windows\Plug and Play\
+TaskName    : Device Install Group Policy
+State       : Ready
+Author      : Microsoft Corporation
+Description : Processador de Alterações da Política de Grupo de Instalação de Dispositivos
+
+TaskPath    : \Microsoft\Windows\Plug and Play\
+TaskName    : Device Install Reboot Required
+State       : Ready
+Author      : Microsoft Corporation
+Description : Notifica o utilizador de que o Windows tem de ser reiniciado para concluir a configuração de um 
+              dispositivo.
+
+TaskPath    : \Microsoft\Windows\Plug and Play\
+TaskName    : Sysprep Generalize Drivers
+State       : Ready
+Author      : Microsoft Corporation
+Description : Generalizar o estado do controlador para preparar o sistema para ser iniciado em qualquer configuração 
+              de hardware.
+
+TaskPath    : \Microsoft\Windows\Power Efficiency Diagnostics\
+TaskName    : AnalyzeSystem
+State       : Ready
+Author      : Microsoft Corporation
+Description : Esta tarefa analisa o sistema, procurando condições que possam causar um consumo de energia elevado.
+
+TaskPath    : \Microsoft\Windows\Printing\
+TaskName    : EduPrintProv
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\Printing\
+TaskName    : PrinterCleanupTask
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\Printing\
+TaskName    : PrintJobCleanupTask
+State       : Disabled
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\RecoveryEnvironment\
+TaskName    : VerifyWinRE
+State       : Disabled
+Author      : Microsoft Corporation
+Description : Valida o Ambiente de Recuperação do Windows.
+
+TaskPath    : \Microsoft\Windows\ReFsDedupSvc\
+TaskName    : Initialization
+State       : Ready
+Author      : Microsoft Corporation
+Description : Inicializa o Serviço de Eliminação de Duplicados de REFS quando o primeiro volume ativado para 
+              eliminação de duplicados é detetada no sistema. Não remova nem modifique esta tarefa.
+
+TaskPath    : \Microsoft\Windows\Registry\
+TaskName    : RegIdleBackup
+State       : Ready
+Author      : Microsoft Corporation
+Description : Tarefa de Cópia de Segurança do Registo Inativa
+
+TaskPath    : \Microsoft\Windows\Servicing\
+TaskName    : OOBEFodSetup
+State       : Disabled
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\Servicing\
+TaskName    : StartComponentCleanup
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\Setup\
+TaskName    : PITRTask
+State       : Ready
+Author      : 
+Description : Cria instantâneos de Restauro para um Ponto Anterior no Tempo.
+
+TaskPath    : \Microsoft\Windows\Setup\
+TaskName    : SetupRecoveryDataTask
+State       : Ready
+Author      : 
+Description : Tarefa de dados de resiliência de Recuperação e Configuração do Windows.
+
+TaskPath    : \Microsoft\Windows\SharedPC\
+TaskName    : Account Cleanup
+State       : Disabled
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\Shell\
+TaskName    : CreateObjectTask
+State       : Ready
+Author      : Microsoft Corporation
+Description : Fornece suporte para componentes de shell que acedem a dados do sistema
+
+TaskPath    : \Microsoft\Windows\Shell\
+TaskName    : FamilySafetyMonitor
+State       : Ready
+Author      : Microsoft Corporation
+Description : Inicializa a monitorização e imposição da Family Safety.
+
+TaskPath    : \Microsoft\Windows\Shell\
+TaskName    : FamilySafetyRefreshTask
+State       : Ready
+Author      : Microsoft Corporation
+Description : Sincroniza as configurações mais recentes com o serviço de funcionalidades da família Microsoft.
+
+TaskPath    : \Microsoft\Windows\Shell\
+TaskName    : IndexerAutomaticMaintenance
+State       : Ready
+Author      : Microsoft Corporation
+Description : Mantém o índice de pesquisa atualizado
+
+TaskPath    : \Microsoft\Windows\Shell\
+TaskName    : ThemesSyncedImageDownload
+State       : Ready
+Author      : Microsoft Corporation
+Description : Transfere uma cópia de segurança das suas imagens do tema sincronizado
+
+TaskPath    : \Microsoft\Windows\Shell\
+TaskName    : UpdateUserPictureTask
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\Shell\
+TaskName    : UpdateUserPictureTaskContained
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\SoftwareProtectionPlatform\
+TaskName    : SvcRestartTaskLogon
+State       : Disabled
+Author      : Microsoft Corporation
+Description : Esta tarefa reinicia o serviço Plataforma de Proteção de Software quando ocorre o início de sessão do 
+              utilizador
+
+TaskPath    : \Microsoft\Windows\SpacePort\
+TaskName    : SpaceAgentTask
+State       : Ready
+Author      : Microsoft Corporation
+Description : Definições de Espaços de Armazenamento
+
+TaskPath    : \Microsoft\Windows\SpacePort\
+TaskName    : SpaceManagerTask
+State       : Ready
+Author      : $(@%SystemRoot%\system32\spaceman.exe,-2)
+Description : $(@%SystemRoot%\system32\spaceman.exe,-3)
+
+TaskPath    : \Microsoft\Windows\StateRepository\
+TaskName    : MaintenanceTasks
+State       : Ready
+Author      : $(@%SystemRoot%\system32\Windows.StateRepositoryClient.dll,-600)
+Description : $(@%SystemRoot%\system32\Windows.StateRepositoryClient.dll,-602)
+
+TaskPath    : \Microsoft\Windows\Storage Tiers Management\
+TaskName    : Storage Tiers Management Initialization
+State       : Ready
+Author      : Microsoft Corporation
+Description : Inicializa o serviço Gestão de Camadas de Armazenamento quando o primeiro espaço de armazenamento em 
+              camadas é detetado no sistema. Não remova nem modifique esta tarefa.
+
+TaskPath    : \Microsoft\Windows\Storage Tiers Management\
+TaskName    : Storage Tiers Optimization
+State       : Disabled
+Author      : Microsoft Corporation
+Description : Otimiza a colocação de dados nas camadas de armazenamento em todos os espaços de armazenamento em 
+              camadas no sistema.
+
+TaskPath    : \Microsoft\Windows\Subscription\
+TaskName    : EnableLicenseAcquisition
+State       : Ready
+Author      : Microsoft Corporation
+Description : Enable susbscription license acquisition
+
+TaskPath    : \Microsoft\Windows\Subscription\
+TaskName    : LicenseAcquisition
+State       : Disabled
+Author      : Microsoft Corporation
+Description : Susbscription license acquisition
+
+TaskPath    : \Microsoft\Windows\Sustainability\
+TaskName    : PowerGridForecastTask
+State       : Ready
+Author      : Microsoft Corporation
+Description : O PowerGridForecastTask tem um Processador de Tarefas COM
+
+TaskPath    : \Microsoft\Windows\Sustainability\
+TaskName    : SustainabilityTelemetry
+State       : Ready
+Author      : Microsoft Corporation
+Description : Eventos de telemetria para Sustentabilidade
+
+TaskPath    : \Microsoft\Windows\Sysmain\
+TaskName    : HybridDriveCachePrepopulate
+State       : Disabled
+Author      : Microsoft Corporation
+Description : Tarefa de povoamento prévio da cache da Unidade Híbrida
+
+TaskPath    : \Microsoft\Windows\Sysmain\
+TaskName    : HybridDriveCacheRebalance
+State       : Disabled
+Author      : Microsoft Corporation
+Description : Tarefa de manutenção do reequilíbrio da cache da Unidade Híbrida
+
+TaskPath    : \Microsoft\Windows\Sysmain\
+TaskName    : ResPriStaticDbSync
+State       : Ready
+Author      : Microsoft Corporation
+Description : Tarefa de manutenção static db sync de Prioridade Reservada
+
+TaskPath    : \Microsoft\Windows\Sysmain\
+TaskName    : WsSwapAssessmentTask
+State       : Ready
+Author      : Microsoft Corporation
+Description : Tarefa de manutenção de avaliação de comutação do conjunto de trabalho
+
+TaskPath    : \Microsoft\Windows\SystemRestore\
+TaskName    : SR
+State       : Ready
+Author      : Microsoft Corporation
+Description : Esta tarefa cria pontos de proteção regulares do sistema.
+
+TaskPath    : \Microsoft\Windows\Task Manager\
+TaskName    : Interactive
+State       : Ready
+Author      : Microsoft Corporation
+Description : Executa uma tarefa como o utilizador interativo.
+
+TaskPath    : \Microsoft\Windows\TextServicesFramework\
+TaskName    : MsCtfMonitor
+State       : Ready
+Author      : 
+Description : TextServicesFramework monitor task
+
+TaskPath    : \Microsoft\Windows\Time Synchronization\
+TaskName    : ForceSynchronizeTime
+State       : Ready
+Author      : Microsoft Corporation
+Description : Esta tarefa executa a sincronização das horas.
+
+TaskPath    : \Microsoft\Windows\Time Synchronization\
+TaskName    : SynchronizeTime
+State       : Ready
+Author      : Microsoft Corporation
+Description : Maintains date and time synchronization on all clients and servers in the network. If this service is 
+              stopped, date and time synchronization will be unavailable. If this service is disabled, any services 
+              that explicitly depend on it will fail to start.
+
+TaskPath    : \Microsoft\Windows\Time Zone\
+TaskName    : SynchronizeTimeZone
+State       : Ready
+Author      : Microsoft Corporation
+Description : Atualiza as informações do fuso horário. Se esta tarefa for parada, a hora local poderá não estar 
+              correta para alguns fusos horários.
+
+TaskPath    : \Microsoft\Windows\UPnP\
+TaskName    : UPnPHostConfig
+State       : Ready
+Author      : Microsoft
+Description : Definir serviço UPnPHost como Início Automático
+
+TaskPath    : \Microsoft\Windows\USB\
+TaskName    : Usb-Notifications
+State       : Ready
+Author      : Microsoft Corporation
+Description : Tarefa de Notificação de Erros Usb
+
+TaskPath    : \Microsoft\Windows\WCM\
+TaskName    : WiFiTask
+State       : Ready
+Author      : Microsoft Corporation
+Description : Tarefa em segundo plano para efetuar por utilizador e interações web
+
+TaskPath    : \Microsoft\Windows\WDI\
+TaskName    : ResolutionHost
+State       : Ready
+Author      : Microsoft Corporation
+Description : O anfitrião da Resolução de Infraestrutura de Diagnóstico do Windows permite resoluções interativas 
+              para problemas de sistema detetados pelo Serviço de Políticas de Diagnóstico. É acionado quando 
+              necessário pelo Serviço de Políticas de Diagnóstico na sessão de utilizador apropriada. Se o Serviço 
+              de Políticas de Diagnóstico não estiver em execução, a tarefa não será executada
+
+TaskPath    : \Microsoft\Windows\Windows Defender\
+TaskName    : Windows Defender Cache Maintenance
+State       : Ready
+Author      : 
+Description : Tarefa de manutenção periódica.
+
+TaskPath    : \Microsoft\Windows\Windows Defender\
+TaskName    : Windows Defender Cleanup
+State       : Ready
+Author      : 
+Description : Tarefa de limpeza periódica.
+
+TaskPath    : \Microsoft\Windows\Windows Defender\
+TaskName    : Windows Defender Scheduled Scan
+State       : Ready
+Author      : 
+Description : Tarefa de análise periódica.
+
+TaskPath    : \Microsoft\Windows\Windows Defender\
+TaskName    : Windows Defender Verification
+State       : Ready
+Author      : 
+Description : Tarefa de verificação periódica.
+
+TaskPath    : \Microsoft\Windows\Windows Error Reporting\
+TaskName    : QueueReporting
+State       : Ready
+Author      : Microsoft Corporation
+Description : Tarefa Relatório de Erros do Windows para processar relatórios em fila.
+
+TaskPath    : \Microsoft\Windows\Windows Filtering Platform\
+TaskName    : BfeOnServiceStartTypeChange
+State       : Ready
+Author      : Microsoft Corporation
+Description : Esta tarefa ajusta o tipo de início dos serviços acionados pela firewall quando o tipo de início do 
+              BFE (Motor de Filtragem Base) é desativado.
+
+TaskPath    : \Microsoft\Windows\Windows Media Sharing\
+TaskName    : UpdateLibrary
+State       : Ready
+Author      : Microsoft Corporation
+Description : Esta tarefa atualiza a lista de pastas colocada em cache e as permissões de segurança em eventuais 
+              novos ficheiros na biblioteca de multimédia partilhada de um utilizador.
+
+TaskPath    : \Microsoft\Windows\WindowsColorSystem\
+TaskName    : Calibration Loader
+State       : Ready
+Author      : Microsoft Corporation
+Description : Esta tarefa aplica definições de calibragem de cores.
+
+TaskPath    : \Microsoft\Windows\WindowsUpdate\
+TaskName    : Scheduled Start
+State       : Ready
+Author      : Microsoft Corporation.
+Description : Esta tarefa é utilizada para iniciar o serviço Windows Update, quando necessário, para efetuar 
+              operações agendadas, como verificações.
+
+TaskPath    : \Microsoft\Windows\Wininet\
+TaskName    : CacheTask
+State       : Running
+Author      : Microsoft
+Description : Tarefa de Cache Wininet
+
+TaskPath    : \Microsoft\Windows\WlanSvc\
+TaskName    : CDSSync
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\WlanSvc\
+TaskName    : MoProfileManagement
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\Windows\Work Folders\
+TaskName    : Work Folders Logon Synchronization
+State       : Ready
+Author      : Microsoft Corporation
+Description : Esta tarefa inicia a sincronização de parcerias de Pastas de Trabalho quando um utilizador inicia 
+              sessão no sistema.
+
+TaskPath    : \Microsoft\Windows\Work Folders\
+TaskName    : Work Folders Maintenance Work
+State       : Ready
+Author      : Microsoft Corporation
+Description : Esta tarefa inicia o trabalho de manutenção necessário ao bom desempenho contínuo da sincronização de 
+              dados das parcerias de Pastas de Trabalho.
+
+TaskPath    : \Microsoft\Windows\Workplace Join\
+TaskName    : Automatic-Device-Join
+State       : Disabled
+Author      : 
+Description : Registe este computador se o computador já estiver associado a um domínio do Active Directory.
+
+TaskPath    : \Microsoft\Windows\Workplace Join\
+TaskName    : Device-Sync
+State       : Disabled
+Author      : Microsoft Corporation
+Description : Sincronizar atributos do dispositivo com o Microsoft Entra ID.
+
+TaskPath    : \Microsoft\Windows\Workplace Join\
+TaskName    : Recovery-Check
+State       : Disabled
+Author      : 
+Description : Efetua verificações de recuperação.
+
+TaskPath    : \Microsoft\Windows\WwanSvc\
+TaskName    : NotificationTask
+State       : Ready
+Author      : Microsoft Corporation
+Description : Tarefa em segundo plano para efetuar por utilizador e interações web
+
+TaskPath    : \Microsoft\Windows\WwanSvc\
+TaskName    : OobeDiscovery
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \Microsoft\XblGameSave\
+TaskName    : XblGameSaveTask
+State       : Ready
+Author      : Microsoft
+Description : XblGameSave Standby Task
+
+TaskPath    : \Outbyte\Camomile\
+TaskName    : Start Camomile оn logon
+State       : Running
+Author      : Outbyte
+Description : Iniciar o Outbyte Camomile no logon de usuário no Windows.
+
+TaskPath    : \PerplexityUser\CometUpdater\
+TaskName    : CometUpdaterTaskUser145.2.7632.4583{10A589BC-9D28-4FED-BA34-3BE357A031D2}
+State       : Ready
+Author      : ANDERSON\salaa
+Description : CometUpdater Task User 145.2.7632.4583
+
+TaskPath    : \Raycast\
+TaskName    : Raycast Open at Login
+State       : Ready
+Author      : Raycast
+Description : Starts Raycast automatically when you sign in to Windows. This task is managed automatically by 
+              Raycast based on your Raycast settings. If deleted manually, Raycast will recreate it next time it 
+              starts. To disable launch at login, open Raycast Settings.
+
+TaskPath    : \SoftLanding\S-1-5-21-2883563625-2750928919-1808076865-1001\
+TaskName    : SoftLandingCreativeManagementTask
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \SoftLanding\S-1-5-21-2883563625-2750928919-1808076865-1001\
+TaskName    : SoftLandingDeferralTask-{c979f766-33d4-49b6-a1e2-c5250c668b07}
+State       : Ready
+Author      : 
+Description : 
+
+TaskPath    : \SoftLanding\S-1-5-21-2883563625-2750928919-1808076865-1001\
+TaskName    : SoftLandingTriggerTask-128000000001615609-render-{ada8edd1-5c36-474d-8459-24bafc6838d0}
+State       : Disabled
+Author      : 
+Description : 
+
+
+

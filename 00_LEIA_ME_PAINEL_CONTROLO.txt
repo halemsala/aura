@@ -1,0 +1,8 @@
+PAINEL DE CONTROLO AURA
+=======================
+1. AURA_TOOLS_CONTROL_API.bat  → API :8790
+2. Subir Matriz (AURA_START_ALL / ACTIVATE)
+3. Abrir http://127.0.0.1:8766/tools-hub.html
+
+Abas: Visão geral | Telegram | Agentes | Sistema | VRAM
+Tudo por botões. Sem API: botões de cópia BAT ainda funcionam.

@@ -1,0 +1,8 @@
+{
+  "best_val_brier": 0.1303,
+  "baseline_brier": 0.25,
+  "beats_baseline": true,
+  "weights": "/tmp/model_weights.pt",
+  "note": "Sint\u00e9tico: substitua por dados reais rotulados assim que houver outcomes",
+  "weights_sha256": "01c9345e4de0cff5977f7e3c76c8344ffb082d5414f9a1c5bf8d32507eca38e2"
+}

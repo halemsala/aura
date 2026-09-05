@@ -1,0 +1,8 @@
+V37.3.47 AUTONOMO
+=================
+Ficheiros ja na pasta C:\AURA_V25? Duplo clique:
+
+  AURA_INSTALAR_TESTAR_AUTONOMO.bat
+
+A janela fica aberta. Relatorio: logs_supervisor\MOTOR_AUTONOMO_LATEST.txt
+Skill do pack: skills\aura-operator-autonomo\SKILL.md

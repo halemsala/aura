@@ -1,0 +1,14 @@
+{
+  "supervise:alfred": {
+    "failures": [],
+    "opened_until": 0
+  },
+  "supervise:hermes": {
+    "failures": [],
+    "opened_until": 0
+  },
+  "supervise:voice": {
+    "failures": [],
+    "opened_until": 0
+  }
+}

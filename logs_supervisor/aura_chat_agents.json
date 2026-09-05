@@ -1,0 +1,6 @@
+{
+  "paper_trade": true,
+  "execution_allowed": false,
+  "gpu_cap_pct": null,
+  "agents": "safe"
+}

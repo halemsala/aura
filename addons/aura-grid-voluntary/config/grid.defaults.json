@@ -1,0 +1,13 @@
+{
+  "grid_enabled": false,
+  "network_allowed": false,
+  "autostart_enabled": false,
+  "bind_host": "127.0.0.1",
+  "master_port": 5005,
+  "max_cpu_pct": 70.0,
+  "max_gpu_pct": 30.0,
+  "auth_token_env": "AURA_GRID_TOKEN",
+  "allow_arbitrary_code": false,
+  "payload_type": "data_only_fixed_functions",
+  "notes": "Enable only after explicit consent on BOTH terminals. No arbitrary remote code."
+}

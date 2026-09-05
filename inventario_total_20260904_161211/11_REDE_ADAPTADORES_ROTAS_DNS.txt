@@ -1,0 +1,70 @@
+﻿===== 11_REDE_ADAPTADORES_ROTAS_DNS =====
+
+Name     InterfaceDescription               Status       MacAddress        LinkSpeed 
+----     --------------------               ------       ----------        --------- 
+Ethernet Realtek PCIe GbE Family Controller Disconnected 60-C7-27-37-1B-22 0 bps     
+Wi-Fi    Intel(R) Wi-Fi 6 AX203             Up           28-0C-50-BA-85-38 433.3 Mbps
+
+
+
+
+InterfaceAlias       : Wi-Fi
+InterfaceIndex       : 7
+InterfaceDescription : Intel(R) Wi-Fi 6 AX203
+NetProfile.Name      : Iracy_5G
+IPv6Address          : 2804:bb4:210:8304:6d6f:c97c:bf22:fac1
+IPv4Address          : 192.168.0.101
+IPv6DefaultGateway   : fe80::9a25:4aff:feda:8ee2
+IPv4DefaultGateway   : 192.168.0.1
+DNSServer            : 2001:4860:4860::8888
+                       192.168.0.1
+
+InterfaceAlias       : Ethernet
+InterfaceIndex       : 13
+InterfaceDescription : Realtek PCIe GbE Family Controller
+NetAdapter.Status    : Disconnected
+
+
+
+
+DestinationPrefix                         NextHop                   InterfaceAlias              Rout
+                                                                                                eMet
+                                                                                                 ric
+-----------------                         -------                   --------------              ----
+255.255.255.255/32                        0.0.0.0                   Ligação de Área Local* 10    256
+255.255.255.255/32                        0.0.0.0                   Ligação de Área Local* 9     256
+255.255.255.255/32                        0.0.0.0                   Wi-Fi                        256
+255.255.255.255/32                        0.0.0.0                   Ethernet                     256
+255.255.255.255/32                        0.0.0.0                   Loopback Pseudo-Interface 1  256
+224.0.0.0/4                               0.0.0.0                   Ligação de Área Local* 10    256
+224.0.0.0/4                               0.0.0.0                   Ligação de Área Local* 9     256
+224.0.0.0/4                               0.0.0.0                   Wi-Fi                        256
+224.0.0.0/4                               0.0.0.0                   Ethernet                     256
+224.0.0.0/4                               0.0.0.0                   Loopback Pseudo-Interface 1  256
+192.168.0.255/32                          0.0.0.0                   Wi-Fi                        256
+192.168.0.101/32                          0.0.0.0                   Wi-Fi                        256
+192.168.0.0/24                            0.0.0.0                   Wi-Fi                        256
+127.255.255.255/32                        0.0.0.0                   Loopback Pseudo-Interface 1  256
+127.0.0.1/32                              0.0.0.0                   Loopback Pseudo-Interface 1  256
+127.0.0.0/8                               0.0.0.0                   Loopback Pseudo-Interface 1  256
+0.0.0.0/0                                 192.168.0.1               Wi-Fi                          0
+ff00::/8                                  ::                        Ligação de Área Local* 10    256
+ff00::/8                                  ::                        Ligação de Área Local* 9     256
+ff00::/8                                  ::                        Wi-Fi                        256
+ff00::/8                                  ::                        Ethernet                     256
+ff00::/8                                  ::                        Loopback Pseudo-Interface 1  256
+fe80::da02:773f:3eb2:a060/128             ::                        Ligação de Área Local* 10    256
+fe80::678f:5ba4:996e:f241/128             ::                        Ligação de Área Local* 9     256
+fe80::4ee1:8330:4890:2f8c/128             ::                        Ethernet                     256
+fe80::35d8:7b41:13a7:c166/128             ::                        Wi-Fi                        256
+fe80::/64                                 ::                        Ligação de Área Local* 10    256
+fe80::/64                                 ::                        Ligação de Área Local* 9     256
+fe80::/64                                 ::                        Wi-Fi                        256
+fe80::/64                                 ::                        Ethernet                     256
+2804:bb4:210:8304:6d6f:c97c:bf22:fac1/128 ::                        Wi-Fi                        256
+2804:bb4:210:8304:c85:b6e4:c5a6:1168/128  ::                        Wi-Fi                        256
+2804:bb4:210:8304::/64                    ::                        Wi-Fi                        256
+::1/128                                   ::                        Loopback Pseudo-Interface 1  256
+::/0                                      fe80::9a25:4aff:feda:8ee2 Wi-Fi                        256
+
+

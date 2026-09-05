@@ -1,0 +1,15 @@
+{
+  "name": "Alfred",
+  "host": "127.0.0.1",
+  "port": 8791,
+  "ollama_model": "qwen3:8b",
+  "vision_model": "",
+  "no_background_polling": true,
+  "paper_trade": true,
+  "execution_allowed": false,
+  "safe_roots": ["Desktop", "Documents", "Downloads", "data/alfred"],
+  "max_tasks_per_command": 8,
+  "max_command_chars": 2000,
+  "requires_explicit_execution_for": ["organize_desktop", "create_folder", "type_text", "remember"],
+  "notes": "vision_model vazio porque os modelos instalados indicados são de texto; preencher apenas com modelo Ollama multimodal instalado e compatível com a VRAM."
+}

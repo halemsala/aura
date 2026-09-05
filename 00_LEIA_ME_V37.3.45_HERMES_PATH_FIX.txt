@@ -1,0 +1,26 @@
+AURA QUANT-X HERMES V37.3.45 — FIX ModuleNotFoundError core.hermes_llm_engine
+=============================================================================
+paper_trade=true | execution_allowed=false
+
+ERRO
+----
+Hermes OFF:
+  ModuleNotFoundError: No module named 'core.hermes_llm_engine'
+Causa: arranque com cwd/PYTHONPATH errados (scripts\ na raiz sem hermes_v10 no path).
+
+CORRECAO NESTE PACK
+-------------------
+1) AURA_INSTALACAO_LIMPA_SILENCIOSA.bat chama AURA_HERMES_V10_ULTRA.bat bg
+2) Fallback: cd hermes_v10 + PYTHONPATH=hermes_v10;ROOT
+3) Bootstrap reforcado em scripts/hermes_v10_chat_api.py e hermes_v10/scripts/
+4) AURA_FIX_HERMES_SO.bat — so corrige Hermes sem reinstalar tudo
+
+COMANDOS
+--------
+  cd /d C:\aura
+  AURA_FIX_HERMES_SO.bat
+
+  :: ou instalacao limpa completa:
+  AURA_INSTALACAO_LIMPA_SILENCIOSA.bat
+
+Bridge e Engine ja estavam OK nos logs do utilizador.

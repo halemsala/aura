@@ -1,0 +1,25 @@
+V37.3.47 — AUDITORIA PONTA A PONTA hermes_v10_chat_api.py (Parte A)
+==================================================================
+
+Pack base: AURA_QUANT_X_HERMES_V37.3.47_SERVICOS_FIX
+Correcao: gate AUTORIZO, CORS, metrics, WS, memory REST, stream guard, roots.
+
+Ficheiros alterados
+- hermes_v10/scripts/hermes_v10_chat_api.py  (copia tambem em scripts/)
+- scripts/aura_chat_agents.py
+
+Como validar no Windows (stack local)
+1) AURA_INSTALAR_TESTAR_RELATORIO_GERAL.bat   OU   AURA_TUDO_EM_UM.bat
+2) curl http://127.0.0.1:8777/metrics
+   - corpo Prometheus texto, nao TypeError
+3) No chat Hermes:
+   - "AUTORIZO corrige" executa
+   - "corrige" pede confirmacao (nao aplica)
+   - "cancelar" limpa o pendente
+   - "liga autonomia" pede AUTORIZO
+   - "fix e-net-004" faz dry-run; "AUTORIZO fix e-net-004" aplica
+   - botao Programador envia "programador"
+4) paper_trade=true e execution_allowed=false mantidos.
+
+Invariantes
+PAPER_TRADE=true · EXECUTION_ALLOWED=false · GLM_ADVISORY_ONLY

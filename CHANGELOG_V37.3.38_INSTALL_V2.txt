@@ -1,0 +1,4 @@
+INSTALL V2 briefing
+- INSTALL_V2_FASES.ps1 — fases 0-7 no Windows
+- core/ como pacote (__init__.py) para from core.aura_error_catalog
+- qwen2.5:3b-instruct, KEDB, mapa, router, dataset, Colab recipe

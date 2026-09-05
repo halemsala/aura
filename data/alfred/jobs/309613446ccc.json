@@ -1,0 +1,53 @@
+{
+  "job_id": "309613446ccc",
+  "request_id": "99fce6ca706d",
+  "content_hash": "0b390f898b46a922",
+  "created_at": 1788377664.4896104,
+  "status": "waiting_confirmation",
+  "authorized": false,
+  "authorization_reason": "t",
+  "plan_intent": "search_multi",
+  "source_message": "abre duas pesquisas sobre robotica 913a3c",
+  "dedupe_hits": 1,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "open_url",
+      "arguments": {
+        "url": "https://www.google.com/search?q=robotica"
+      },
+      "risk": "low",
+      "mutating": true,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "planned",
+      "result": {},
+      "error": "",
+      "attempts": 0
+    },
+    {
+      "id": "task-2",
+      "tool": "open_url",
+      "arguments": {
+        "url": "https://www.google.com/search?q=913a3c"
+      },
+      "risk": "low",
+      "mutating": true,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "planned",
+      "result": {},
+      "error": "",
+      "attempts": 0
+    }
+  ],
+  "summary": ""
+}

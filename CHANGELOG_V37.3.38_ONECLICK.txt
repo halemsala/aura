@@ -1,0 +1,17 @@
+V37.3.38 — ONE-CLICK + CPU/RAM + Relatórios + Segurança painel
+==============================================================
+- AURA_ONE_CLICK_AUDITORIA_INSTALACAO.bat
+  Sequência: Auditoria → Prep → Check → Install → Check → Serviços (/MIN)
+  → Hermes Chat (/MIN) → Check → Desktop (/MIN) → Auditoria final
+- scripts/aura_system_metrics.py — CPU, RAM, GPU, portas de serviços
+- Control API :8790
+  - GET /api/system  (CPU/RAM/GPU/serviços)
+  - GET /api/reports (últimos relatórios)
+  - Token opcional AURA_CONTROL_TOKEN
+  - Audit log logs_supervisor/control_api_actions.jsonl
+- tools-hub.html
+  - Abas CPU/RAM e Relatórios
+  - Selecionar e copiar path dos últimos relatórios
+  - VRAM com temperatura e recomendações
+- APLICAR_PATCH_V37.3.38.bat — overlay em C:\aura
+- paper_trade=true | execution_allowed=false (inalterado)

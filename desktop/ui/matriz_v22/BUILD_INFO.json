@@ -1,0 +1,13 @@
+{
+  "product": "AURA QUANT-X Operator OS — Original V25Q UI",
+  "version": "12.7.0-V25Q-ORIGINAL-UI-SINGLE-SURFACE",
+  "build_id": "12.7.0-V25Q-ORIGINAL-UI-SINGLE-SURFACE",
+  "homepage": "index.html",
+  "hosted_under": "/index.html",
+  "notes": "Interface original V25Q verde/cinza escuro; Home original com navegador interno, agentes, ferramentas, Telegram, chat AURA e ativação máxima no carregamento; Desktop em superfície única.",
+  "paper_trade": true,
+  "execution_allowed": false,
+  "security_release": "V27-OPERATOR-OS-SINGLE-SURFACE",
+  "fallback": null,
+  "gpu_profile": "CUDA/NVIDIA quando disponível; Ollama num_gpu=99; fallback CPU seguro"
+}

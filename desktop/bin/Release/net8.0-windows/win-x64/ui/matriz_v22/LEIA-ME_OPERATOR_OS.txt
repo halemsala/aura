@@ -1,0 +1,17 @@
+AURA OPERATOR OS — INTERFACE CANÔNICA
+====================================
+V27-OPERATOR-OS-SINGLE-SURFACE
+
+O index.html carrega o SPA React completo do AURA Operator OS, incluindo:
+  - agentes e Agent Studio
+  - chat AURA
+  - Telegram e governança
+  - Ferramentas, Atlas e Diagnóstico
+  - telemetria, replay e captura autorizada
+
+Homepage do Desktop (desktop.json) = https://aura.local/index.html
+
+Se a UI React não montar, verifique o log do Desktop e execute:
+  AURA_INSTALAR_TESTAR_RELATORIO_GERAL.bat
+
+paper_trade=true · execution_allowed=false · GLM_ADVISORY_ONLY=true

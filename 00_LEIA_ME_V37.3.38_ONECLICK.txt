@@ -1,0 +1,57 @@
+AURA QUANT-X HERMES V37.3.38 — ONE-CLICK + MONITORAMENTO CPU/RAM + PAINEL
+========================================================================
+paper_trade=true | execution_allowed=false
+
+COMO USAR (1 clique)
+--------------------
+1) Extraia o ZIP COMPLETO original V37.3.37 para C:\aura
+   (ou para uma pasta e deixe o conteúdo de AURA_QUANT_X_HERMES_INTEGRADO em C:\aura)
+
+2) Extraia ESTE pacote V37.3.38_ONECLICK POR CIMA de C:\aura
+   (sobrescreve scripts e UI necessários)
+
+3) Clique duas vezes em:
+     AURA_ONE_CLICK_AUDITORIA_INSTALACAO.bat
+
+   Sequência automática:
+     AUDITORIA → PREPARAÇÃO → CHECK → INSTALAÇÃO → CHECK
+     → SERVIÇOS (janelas /MIN) → CHECK → HERMES CHAT (/MIN)
+     → CHECK → DESKTOP (/MIN) → AUDITORIA FINAL + relatório
+
+4) Abre automaticamente:
+     Tools Hub  http://127.0.0.1:8766/tools-hub.html
+     Hermes Chat http://127.0.0.1:8777/chat
+
+NOVIDADES V37.3.38
+------------------
+- AURA_ONE_CLICK_AUDITORIA_INSTALACAO.bat (um clique, serviços minimizados)
+- Monitoramento CPU + RAM + portas de serviços no Tools Hub (aba CPU/RAM)
+- Aba Relatórios: lista e copia path dos últimos relatórios
+- Control API :8790 com /api/system e /api/reports
+- scripts/aura_system_metrics.py
+- Segurança reforçada (token opcional AURA_CONTROL_TOKEN, audit log)
+- VRAM com temperatura e recomendações
+
+HERMES CHAT — MONITORAMENTO
+---------------------------
+O Hermes Chat (porta 8777) continua a ser o ponto de conversa.
+O estado real de todos os serviços pode ser consultado:
+  - Tools Hub → aba CPU/RAM (portas UP/DOWN)
+  - GET http://127.0.0.1:8790/api/system
+  - GET http://127.0.0.1:8790/api/status
+
+Para “voltar ao azul” do Hermes: o tema do chat é servido pelo
+hermes_v10_chat_api (FastAPI). Se a UI atual estiver diferente, use o
+dashboard em :8778 ou o Cockpit da Matriz (tema azul já presente no
+tools-hub / cockpit).
+
+TOKEN OPCIONAL (mais seguro)
+----------------------------
+set AURA_CONTROL_TOKEN=seu-segredo
+AURA_TOOLS_CONTROL_API.bat
+
+INVARIANTES
+-----------
+PAPER_TRADE=true
+EXECUTION_ALLOWED=false
+Nenhuma ordem real é enviada.

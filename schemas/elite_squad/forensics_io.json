@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PostMatchForensics",
+  "definitions": {
+    "autopsy_request": {
+      "type": "object",
+      "required": ["trade_id", "result"],
+      "properties": {
+        "trade_id": { "type": "string" },
+        "result": { "type": "string", "enum": ["WIN", "LOSS", "VOID"] },
+        "minute": { "type": "number" },
+        "score": { "type": "string" },
+        "market": { "type": "string" },
+        "odd": { "type": "number" },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "autopsy_response": {
+      "type": "object",
+      "required": ["ok", "summary", "recorded"],
+      "properties": {
+        "ok": { "type": "boolean" },
+        "summary": { "type": "string" },
+        "recorded": { "type": "boolean" },
+        "suggestion_updated": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

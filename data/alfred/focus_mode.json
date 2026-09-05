@@ -1,0 +1,33 @@
+{
+  "active": true,
+  "reason": "trabalho fora do Aura",
+  "paused": [
+    {
+      "name": "bridge",
+      "port": 8080,
+      "pid": 31260
+    },
+    {
+      "name": "engine",
+      "port": 8765,
+      "pid": 10896
+    },
+    {
+      "name": "matriz",
+      "port": 8766,
+      "pid": 17812
+    },
+    {
+      "name": "voice",
+      "port": 8099,
+      "pid": 34336
+    }
+  ],
+  "watchdog": "Monitor automatico parado.",
+  "ts": 1788390826.7272818,
+  "protected": [
+    8777,
+    8791,
+    11434
+  ]
+}

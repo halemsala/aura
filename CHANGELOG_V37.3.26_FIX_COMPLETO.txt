@@ -1,0 +1,41 @@
+AURA QUANT-X 12.7.62 V37.3.26 — FIX COMPLETO + ASSISTENTE WINDOWS + UI
+======================================================================
+Data: 2026-08-30
+
+CORRECOES
+- AURA_LIMPEZA_E_INSTALACAO_COMPLETA.bat na RAIZ (elimina FAIL do relatorio)
+- skill_manager.py: SKILLS_ENABLED via AURA_SKILLS_ENABLED=1 (env opt-in)
+- AURA_ATIVAR_ASSISTENTE_WINDOWS.bat: one-shot assistente + SafeExecutor + deps
+- UI: aura-ui-force.css V37.3.26 — contraste, docks sempre ON, badge paper-trade,
+  rail ferramentas, scrollbar, status dots legiveis, compact-ui forçado OFF
+- CSS espelhado em desktop/ui e desktop/publish/ui
+
+INVARIANTES (inalterados)
+- paper_trade=true
+- execution_allowed=false
+- GLM_ADVISORY_ONLY=true
+- Anti-Bet Shield activo no SafeExecutor
+
+COMO USAR
+1) Extrair ZIP completo para C:\aura (ou pasta dedicada)
+2) AURA_INSTALAR_TESTAR_RELATORIO_GERAL.bat
+3) AURA_ATIVAR_ASSISTENTE_WINDOWS.bat
+4) scripts\AURA_RELATORIO_GERAL_COMPLETO.py  → FAIL do BAT deve ser 0
+
+WARNs de runtime (Ollama/captura/desktop) dependem do ambiente local.
+
+---
+V37.3.26+ VOZ HUMBERTO + ESTILO GROK + XTTS ATALHO (2026-08-30)
+- AURA_INSTALAR_VOZ.bat: default pt-BR-HumbertoNeural + rate -12% + pitch -8Hz
+- neural_tts.py / human_voice.py / config.yaml: default masculino Humberto (whitelist)
+- system_prompt: bloco ESTILO VOZ alinhado a PROMPT_GROK_VOZ_MASCULINA.md + PERFIL_ASSISTENTE
+- Novo: AURA_ATIVAR_XTTS_REFERENCIA.bat (pip extra + activate_reference_voice.py --enable + restart :8099)
+- Skills do pacote ativadas no operador (aura-quant-x e satélites)
+
+---
+V37.3.26+ VOZ NATURAL AGORA (2026-08-30)
+- AURA_INSTALAR_VOZ_NATURAL_AGORA.bat — one-click: Humberto + Piper + XTTS deps
+- Modelos Piper incluidos: Faber medium + Miro pt-BR (~60 MB cada)
+- AURA_TESTAR_PIPER.bat
+- COMO_FAZER_WAV_REFERENCIA.txt (guia da WAV para XTTS)
+- AURA_ATIVAR_XTTS_REFERENCIA.bat atualizado

@@ -1,0 +1,49 @@
+{
+  "job_id": "b703c0153b61",
+  "request_id": "c5b0a003988d",
+  "content_hash": "56ba05502be4b42a",
+  "created_at": 1788383500.8366356,
+  "status": "success",
+  "authorized": true,
+  "authorization_reason": "AUTORIZO escrito pelo utilizador",
+  "plan_intent": "single_task",
+  "source_message": "",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "set_aura_flag",
+      "arguments": {
+        "flag": "paper_trade",
+        "value": false,
+        "reason": "pedido no chat"
+      },
+      "risk": "high",
+      "mutating": true,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "saved": true,
+        "flags": {
+          "paper_trade": false,
+          "execution_allowed": false,
+          "system_repair_allowed": true,
+          "voice_enabled": false,
+          "observe_pc_enabled": true,
+          "updated_at": "2026-09-02T18:11:40",
+          "reason": "pedido no chat"
+        },
+        "nota": "paper_trade=false NÃO liga apostas reais: execution_allowed continua false. Serve para o Hermes deixar de tratar correcções do Aura como 'só paper'."
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "1 de 1 tarefas concluídas com sucesso.",
+  "finished_at": 1788383500.8678572
+}

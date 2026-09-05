@@ -1,0 +1,65 @@
+AURA QUANT-X V37.3.47 — REPARO HERMES (ModuleNotFound + SyntaxError f-string)
+==============================================================================
+paper_trade=true | execution_allowed=false
+
+ERROS QUE ESTE PACK CORRIGE
+---------------------------
+1) ModuleNotFoundError: No module named 'core.hermes_llm_engine'
+   Causa: PYTHONPATH / cwd sem a pasta hermes_v10 (que contem core\).
+
+2) SyntaxError: f-string expression part cannot include a backslash
+   Linha ~1506 em hermes_v10_chat_api.py
+   Causa: Python 3.11 nao permite \n dentro da expressao de um f-string.
+   (Python 3.12+ aceita; este pack e 3.11.)
+
+FICHEIROS NESTE PACK
+--------------------
+- hermes_v10_chat_api.py          (corrigido, 3.11-safe)
+- AURA_RUN_HERMES.py              (bootstrap de path reforcado)
+- AURA_REPARAR_E_SUBIR_HERMES.ps1 (repara + sobe Hermes)
+- 00_LEIA_ME_REPARO_HERMES.txt    (este ficheiro)
+
+COMO APLICAR (Windows)
+----------------------
+1) Copie a pasta AURA_FIX_HERMES_V37.3.47 inteira para C:\aura\ (ou para onde tiver o sistema).
+
+2) PowerShell (Admin nao obrigatorio):
+
+   cd C:\aura\AURA_FIX_HERMES_V37.3.47
+   powershell -ExecutionPolicy Bypass -File .\AURA_REPARAR_E_SUBIR_HERMES.ps1
+
+   O script:
+   - deteta C:\aura ou C:\AURA_V25
+   - usa o venv 3.11 (AURA_V25\engine\venv ou aura\engine\venv)
+   - copia o chat_api corrigido para hermes_v10\scripts\ e scripts\
+   - opcionalmente faz patch in-place do f-string antigo
+   - sobe via AURA_RUN_HERMES.py (path correto)
+   - testa http://127.0.0.1:8777/health
+
+3) Se health OK, Hermes esta ON.
+
+MANUAL (se preferir)
+--------------------
+  copy /Y hermes_v10_chat_api.py C:\aura\hermes_v10\scripts\
+  copy /Y hermes_v10_chat_api.py C:\aura\scripts\
+  copy /Y AURA_RUN_HERMES.py     C:\aura\hermes_v10\
+
+  Depois use o script de reparo ou:
+
+  $env:AURA_ROOT='C:\aura'
+  $env:PYTHONPATH='C:\aura;C:\aura\hermes_v10'
+  $env:PAPER_TRADE='true'
+  $env:EXECUTION_ALLOWED='false'
+  $env:PYTHONUTF8='1'
+  cd C:\aura\hermes_v10
+  & 'C:\AURA_V25\engine\venv\Scripts\python.exe' -u AURA_RUN_HERMES.py
+
+NAO USE Python 3.12 / 3.13 / 3.14 para este Hermes neste pack.
+Use 3.11.x (o venv que ja tem em AURA_V25\engine\venv esta em 3.11.9 — ideal).
+
+VALIDACAO
+---------
+  curl http://127.0.0.1:8777/health
+  curl http://127.0.0.1:8777/metrics
+
+Invariantes mantidos: PAPER_TRADE=true, EXECUTION_ALLOWED=false.

@@ -1,0 +1,8 @@
+V37.3.38 — Skills + Training prep
+=================================
+- RUNBOOK_OPERACAO.md (skill comportamental)
+- system prompt Camadas 2/3 carrega RUNBOOK + mapa + catalogo
+- scripts/aura_build_training_dataset.py → training/hermes_dataset.json
+- training/Modelfile.hermes-aura (template Ollama pos fine-tune)
+- evals/promptfoo.yaml (bateria de regressao)
+- Fine-tune: Unsloth no Colab com hermes_dataset.json → GGUF → ollama create hermes-aura

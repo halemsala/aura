@@ -1,0 +1,10 @@
+{
+  "source_url": "https://github.com/niyathi9999-spec/AudioRAG",
+  "archive_url": "https://codeload.github.com/niyathi9999-spec/AudioRAG/tar.gz/refs/heads/main",
+  "kind": "install_skill",
+  "label": "audiorag",
+  "sha256": "a4af1bc4fc80fbe5c566f77bb53272cc29b6e21e0fd0ec0f977fd1b5e014b0f0",
+  "downloaded_at": "2026-09-05T07:51:09.816205+00:00",
+  "promoted": false,
+  "installers_executed": false
+}

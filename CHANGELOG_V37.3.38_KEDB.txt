@@ -1,0 +1,8 @@
+V37.3.38 — Known Error Database (KEDB)
+======================================
+- core/aura_error_catalog.json — 14 codigos reais dos logs AURA
+- core/aura_error_catalog.py — motor match/diagnose/apply_fix/coverage/triage
+- scripts/aura_generate_map.py — gera AURA_MAPA_DO_SISTEMA.md
+- GET /api/diagnose — diagnostico codificado
+- chat: "fix E-NET-004" executa handler do catalogo
+- Integração no lifespan do Hermes Chat API

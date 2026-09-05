@@ -1,0 +1,281 @@
+{
+  "received_at": "2026-09-03T15:35:51-03:00",
+  "view": {
+    "schema": "cornerai-analyst-2",
+    "fixture_id": "19792653",
+    "league": null,
+    "home": "Al Ahly",
+    "away": "Smouha",
+    "minute": 69,
+    "extra": 0,
+    "period": null,
+    "status": "live",
+    "score_home": 0,
+    "score_away": 0,
+    "corners_home": 60,
+    "corners_away": 0,
+    "attacks_home": 7860,
+    "attacks_away": 60,
+    "dangerous_home": 6527,
+    "dangerous_away": 27,
+    "xg_home": 0.85,
+    "xg_away": 0.28,
+    "possession_home": 6634,
+    "possession_away": 34,
+    "shots_on_home": 20,
+    "shots_on_away": 0,
+    "corner_events": [
+      {
+        "type": "corner",
+        "label": "1º Escanteio",
+        "team": null
+      },
+      {
+        "type": "corner",
+        "label": "2º Escanteio",
+        "team": null
+      },
+      {
+        "type": "corner",
+        "label": "3º Escanteio",
+        "team": null
+      },
+      {
+        "type": "corner",
+        "label": "4º Escanteio",
+        "team": null
+      },
+      {
+        "type": "corner",
+        "label": "5º Escanteio",
+        "team": null
+      },
+      {
+        "type": "corner",
+        "label": "6º Escanteio",
+        "team": null
+      }
+    ],
+    "cpi_home": null,
+    "cpi_away": null,
+    "pred": null,
+    "raw_ts": 1788460551532,
+    "quality": 0.9
+  },
+  "payload": {
+    "schema": "cornerai-analyst-2",
+    "capture_build": "V28-SOKKERPRO-DOM-HARDENED",
+    "fixture_id": "19792653",
+    "home": "Al Ahly",
+    "away": "Smouha",
+    "score_home": 0,
+    "score_away": 0,
+    "minute": 69,
+    "extra": 0,
+    "status": "live",
+    "pressure_gauge": 98,
+    "attacks_home": 7860,
+    "attacks_away": 60,
+    "dangerous_home": 6527,
+    "dangerous_away": 27,
+    "xg_home": 0.85,
+    "xg_away": 0.28,
+    "shots_on_home": 20,
+    "shots_on_away": 0,
+    "shots_off_home": 40,
+    "shots_off_away": 0,
+    "total_shots_home": 130,
+    "total_shots_away": 0,
+    "possession_home": 6634,
+    "possession_away": 34,
+    "corners_home": 60,
+    "corners_away": 0,
+    "apm_home": 0.901,
+    "apm_away": 0.1,
+    "appm_1_home": 1.001,
+    "appm_1_away": 0,
+    "appm_3_home": 0.333,
+    "appm_3_away": 0,
+    "appm_5_home": 0.805,
+    "appm_5_away": 0,
+    "appm_10_home": 0.901,
+    "appm_10_away": 0.1,
+    "fouls_home": 911,
+    "fouls_away": 11,
+    "yellow_home": 22,
+    "yellow_away": 2,
+    "red_home": null,
+    "red_away": null,
+    "saves_home": 2,
+    "saves_away": 2,
+    "offsides_home": null,
+    "offsides_away": null,
+    "param_hits": 9,
+    "quality": 0.9,
+    "corner_events": [
+      {
+        "type": "corner",
+        "label": "1º Escanteio",
+        "team": null
+      },
+      {
+        "type": "corner",
+        "label": "2º Escanteio",
+        "team": null
+      },
+      {
+        "type": "corner",
+        "label": "3º Escanteio",
+        "team": null
+      },
+      {
+        "type": "corner",
+        "label": "4º Escanteio",
+        "team": null
+      },
+      {
+        "type": "corner",
+        "label": "5º Escanteio",
+        "team": null
+      },
+      {
+        "type": "corner",
+        "label": "6º Escanteio",
+        "team": null
+      }
+    ],
+    "fixture": {
+      "id": "19792653",
+      "home": "Al Ahly",
+      "away": "Smouha",
+      "minute": 69,
+      "extra": 0,
+      "status": "live",
+      "score": {
+        "home": 0,
+        "away": 0
+      }
+    },
+    "pressure": {
+      "gauge": 98,
+      "attacks": {
+        "home": 7860,
+        "away": 60
+      },
+      "dangerous": {
+        "home": 6527,
+        "away": 27
+      },
+      "apm": {
+        "home": 0.901,
+        "away": 0.1
+      },
+      "xg": {
+        "home": 0.85,
+        "away": 0.28
+      },
+      "shotsOn": {
+        "home": 20,
+        "away": 0
+      },
+      "shotsOff": {
+        "home": 40,
+        "away": 0
+      }
+    },
+    "corners": {
+      "total": {
+        "home": 60,
+        "away": 0
+      },
+      "events": [
+        {
+          "type": "corner",
+          "label": "1º Escanteio",
+          "team": null
+        },
+        {
+          "type": "corner",
+          "label": "2º Escanteio",
+          "team": null
+        },
+        {
+          "type": "corner",
+          "label": "3º Escanteio",
+          "team": null
+        },
+        {
+          "type": "corner",
+          "label": "4º Escanteio",
+          "team": null
+        },
+        {
+          "type": "corner",
+          "label": "5º Escanteio",
+          "team": null
+        },
+        {
+          "type": "corner",
+          "label": "6º Escanteio",
+          "team": null
+        }
+      ]
+    },
+    "stats": {
+      "attacks": {
+        "home": 7860,
+        "away": 60
+      },
+      "dangerous": {
+        "home": 6527,
+        "away": 27
+      },
+      "xg": {
+        "home": 0.85,
+        "away": 0.28
+      },
+      "shotsOn": {
+        "home": 20,
+        "away": 0
+      },
+      "shotsOff": {
+        "home": 40,
+        "away": 0
+      },
+      "totalShots": {
+        "home": 130,
+        "away": 0
+      },
+      "possession": {
+        "home": 6634,
+        "away": 34
+      },
+      "fouls": {
+        "home": 911,
+        "away": 11
+      },
+      "appm": {
+        "m1": {
+          "home": 1.001,
+          "away": 0
+        },
+        "m3": {
+          "home": 0.333,
+          "away": 0
+        },
+        "m5": {
+          "home": 0.805,
+          "away": 0
+        },
+        "m10": {
+          "home": 0.901,
+          "away": 0.1
+        }
+      }
+    },
+    "source": "sokkerpro-dom",
+    "url": "https://sokkerpro.com/?fixture=19792653",
+    "ts": 1788460551532
+  },
+  "fingerprint": "19792653|69|0|0|60|0|6527|27"
+}

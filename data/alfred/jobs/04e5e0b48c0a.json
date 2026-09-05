@@ -1,0 +1,37 @@
+{
+  "job_id": "04e5e0b48c0a",
+  "request_id": "a02c9e1ba873",
+  "content_hash": "929d7e60677a20b3",
+  "created_at": 1788386972.3746674,
+  "status": "success",
+  "authorized": true,
+  "authorization_reason": "AUTORIZO escrito pelo utilizador",
+  "plan_intent": "single_task",
+  "source_message": "",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "listen_voice",
+      "arguments": {},
+      "risk": "medium",
+      "mutating": true,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "ok": true,
+        "text": "",
+        "nota": "nada reconhecido"
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "1 de 1 tarefas concluídas com sucesso.",
+  "finished_at": 1788386974.6959639
+}

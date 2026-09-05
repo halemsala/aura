@@ -1,0 +1,217 @@
+{"ts": 1788234339.3631773, "level": "error", "text": "voice OFF (2 checks). Monitor AURA."}
+{"ts": 1788234339.364184, "level": "info", "text": "Auto-reparo: a reiniciar voice..."}
+{"ts": 1788234341.2795923, "level": "info", "text": "Auto-reparo voice: Reinicio pedido: voice. Accoes: voice:8099 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Olla"}
+{"ts": 1788235469.4576483, "level": "error", "text": "voice OFF (2 checks). Monitor AURA."}
+{"ts": 1788235469.4591525, "level": "info", "text": "Auto-reparo: a reiniciar voice..."}
+{"ts": 1788235471.282926, "level": "info", "text": "Auto-reparo voice: Reinicio pedido: voice. Accoes: voice:8099 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Olla"}
+{"ts": 1788235944.8724651, "level": "error", "text": "voice OFF (2 checks). Monitor AURA."}
+{"ts": 1788235944.8731856, "level": "info", "text": "Auto-reparo: a reiniciar voice..."}
+{"ts": 1788235946.6451054, "level": "info", "text": "Auto-reparo voice: Reinicio pedido: voice. Accoes: voice:8099 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Olla"}
+{"ts": 1788246420.6232677, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788246422.986058, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788246427.7650902, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade"}
+{"ts": 1788246655.7146945, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788246655.7176907, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788246676.720063, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ainda OFF — ver logs_supervisor/engine_boot.log RuntimeWarning: Enable tracemalloc to get the object allocation tra"}
+{"ts": 1788246706.0664246, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788246706.069435, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788246728.266926, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ainda OFF — ver logs_supervisor/engine_boot.log RuntimeWarning: Enable tracemalloc to get the object allocation tra"}
+{"ts": 1788246758.9485815, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788246780.0021594, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ainda OFF — ver logs_supervisor/engine_boot.log RuntimeWarning: Enable tracemalloc to get the object allocation tra"}
+{"ts": 1788246810.748228, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788246831.754564, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ainda OFF — ver logs_supervisor/engine_boot.log RuntimeWarning: Enable tracemalloc to get the object allocation tra"}
+{"ts": 1788246862.4424994, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788246883.4536374, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ainda OFF — ver logs_supervisor/engine_boot.log RuntimeWarning: Enable tracemalloc to get the object allocation tra"}
+{"ts": 1788247838.7457025, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788247838.7497025, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788247848.4567943, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade"}
+{"ts": 1788275309.5093467, "level": "error", "text": "ollama OFF (2 checks). Monitor AURA."}
+{"ts": 1788278138.6824882, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788278138.6834893, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788278143.2479053, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade"}
+{"ts": 1788352813.58586, "level": "error", "text": "ollama OFF (2 checks). Monitor AURA."}
+{"ts": 1788358622.191904, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788358622.1939068, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788358637.4908085, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OFF | matriz OFF | hermes OK | voice OFF | ollama OK. paper_tr"}
+{"ts": 1788358639.4978144, "level": "error", "text": "matriz OFF (2 checks). Monitor AURA."}
+{"ts": 1788358639.4998329, "level": "info", "text": "Auto-reparo: a reiniciar matriz..."}
+{"ts": 1788358644.884679, "level": "info", "text": "Auto-reparo matriz: Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OFF | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, "}
+{"ts": 1788358646.9007053, "level": "error", "text": "voice OFF (2 checks). Monitor AURA."}
+{"ts": 1788358646.9037035, "level": "info", "text": "Auto-reparo: a reiniciar voice..."}
+{"ts": 1788358652.8145976, "level": "info", "text": "Auto-reparo voice: Reinicio pedido: voice. Accoes: voice:8099 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, Oll"}
+{"ts": 1788363516.1787686, "level": "error", "text": "bridge OFF (2 checks). Monitor AURA."}
+{"ts": 1788363516.3645875, "level": "info", "text": "Auto-reparo: a reiniciar bridge..."}
+{"ts": 1788363529.0850184, "level": "info", "text": "Auto-reparo bridge: Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollam"}
+{"ts": 1788369709.7602036, "level": "error", "text": "bridge OFF (2 checks). Monitor AURA."}
+{"ts": 1788369709.9811714, "level": "info", "text": "Auto-reparo: a reiniciar bridge..."}
+{"ts": 1788369745.0396998, "level": "info", "text": "Auto-reparo bridge: Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollam"}
+{"ts": 1788376334.6971657, "level": "error", "text": "bridge OFF (2 checks). Monitor AURA."}
+{"ts": 1788376334.702179, "level": "info", "text": "Auto-reparo: a reiniciar bridge..."}
+{"ts": 1788376340.912607, "level": "info", "text": "Auto-reparo bridge: Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OK | matriz OFF | hermes OK | voice OFF | ollama OK. paper_trade=true, Oll"}
+{"ts": 1788376342.9379833, "level": "error", "text": "matriz OFF (2 checks). Monitor AURA."}
+{"ts": 1788376342.9399948, "level": "info", "text": "Auto-reparo: a reiniciar matriz..."}
+{"ts": 1788376346.6457388, "level": "info", "text": "Auto-reparo matriz: Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, O"}
+{"ts": 1788376348.6527152, "level": "error", "text": "voice OFF (2 checks). Monitor AURA."}
+{"ts": 1788376348.6552393, "level": "info", "text": "Auto-reparo: a reiniciar voice..."}
+{"ts": 1788376352.0002782, "level": "info", "text": "Auto-reparo voice: Reinicio pedido: voice. Accoes: voice:8099 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Olla"}
+{"ts": 1788386651.0425665, "level": "error", "text": "bridge OFF (2 checks). Monitor AURA."}
+{"ts": 1788386651.0871475, "level": "info", "text": "Auto-reparo: a reiniciar bridge..."}
+{"ts": 1788386662.9641674, "level": "info", "text": "Auto-reparo bridge: Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OFF | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Olla"}
+{"ts": 1788386664.9862912, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788386664.9882915, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788386685.7115502, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ainda OFF — ver logs_supervisor/engine_boot.log ==== BOOT 2026-09-02 19:04:27 ==== | [skill_runtime] build CHATFIX4"}
+{"ts": 1788387441.9731758, "level": "error", "text": "bridge OFF (2 checks). Monitor AURA."}
+{"ts": 1788387441.9741771, "level": "info", "text": "Auto-reparo: a reiniciar bridge..."}
+{"ts": 1788387449.6553319, "level": "info", "text": "Auto-reparo bridge: Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OFF | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Olla"}
+{"ts": 1788387451.659655, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788387451.660654, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788387458.7366788, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade"}
+{"ts": 1788389574.1566644, "level": "error", "text": "voice OFF (2 checks). Monitor AURA."}
+{"ts": 1788389574.157961, "level": "info", "text": "Auto-reparo: a reiniciar voice..."}
+{"ts": 1788389578.2425442, "level": "info", "text": "Auto-reparo voice: Reinicio pedido: voice. Accoes: voice:8099 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, Oll"}
+{"ts": 1788390037.7648318, "level": "error", "text": "voice OFF (2 checks). Monitor AURA."}
+{"ts": 1788390037.766836, "level": "info", "text": "Auto-reparo: a reiniciar voice..."}
+{"ts": 1788390041.415139, "level": "info", "text": "Auto-reparo voice: Reinicio pedido: voice. Accoes: voice:8099 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Olla"}
+{"ts": 1788390336.765108, "level": "error", "text": "voice OFF (2 checks). Monitor AURA."}
+{"ts": 1788390336.7664566, "level": "info", "text": "Auto-reparo: a reiniciar voice..."}
+{"ts": 1788390340.3711774, "level": "info", "text": "Auto-reparo voice: Reinicio pedido: voice. Accoes: voice:8099 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Olla"}
+{"ts": 1788390946.540297, "level": "error", "text": "bridge OFF (2 checks). Monitor AURA."}
+{"ts": 1788390946.5422955, "level": "info", "text": "Auto-reparo: a reiniciar bridge..."}
+{"ts": 1788390951.7098389, "level": "info", "text": "Auto-reparo bridge: Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, Olla"}
+{"ts": 1788390953.7307098, "level": "error", "text": "voice OFF (2 checks). Monitor AURA."}
+{"ts": 1788390953.731713, "level": "info", "text": "Auto-reparo: a reiniciar voice..."}
+{"ts": 1788390957.230494, "level": "info", "text": "Auto-reparo voice: Reinicio pedido: voice. Accoes: voice:8099 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Olla"}
+{"ts": 1788394927.1042416, "level": "error", "text": "bridge OFF (2 checks). Monitor AURA."}
+{"ts": 1788394927.193844, "level": "info", "text": "Auto-reparo: a reiniciar bridge..."}
+{"ts": 1788394937.6699893, "level": "info", "text": "Auto-reparo bridge: Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OFF | matriz OFF | hermes OK | voice OFF | ollama OK. paper_trade=true, Ol"}
+{"ts": 1788394939.679957, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788394939.6849568, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788394949.3468435, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OFF | engine OK | matriz OFF | hermes OK | voice OFF | ollama OK. paper_tr"}
+{"ts": 1788394951.3673801, "level": "error", "text": "matriz OFF (2 checks). Monitor AURA."}
+{"ts": 1788394951.3723862, "level": "info", "text": "Auto-reparo: a reiniciar matriz..."}
+{"ts": 1788394955.8491104, "level": "info", "text": "Auto-reparo matriz: Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OFF | engine OK | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, "}
+{"ts": 1788394957.8560336, "level": "error", "text": "voice OFF (2 checks). Monitor AURA."}
+{"ts": 1788394957.8610337, "level": "info", "text": "Auto-reparo: a reiniciar voice..."}
+{"ts": 1788394962.3461957, "level": "info", "text": "Auto-reparo voice: Reinicio pedido: voice. Accoes: voice:8099 arrancado. Estado agora: bridge OFF | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Oll"}
+{"ts": 1788399870.0344791, "level": "error", "text": "bridge OFF (2 checks). Monitor AURA."}
+{"ts": 1788399870.054572, "level": "info", "text": "Auto-reparo: a reiniciar bridge..."}
+{"ts": 1788399880.828966, "level": "info", "text": "Auto-reparo bridge: Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OFF | matriz OFF | hermes OK | voice OFF | ollama OK. paper_trade=true, Ol"}
+{"ts": 1788399882.8569996, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788399882.9978426, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788399910.8449852, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ainda OFF — ver logs_supervisor/engine_boot.log INFO:     127.0.0.1:63537 - \"GET /api/health HTTP/1.1\" 200 OK |  | "}
+{"ts": 1788399935.376418, "level": "error", "text": "matriz OFF (2 checks). Monitor AURA."}
+{"ts": 1788399935.40396, "level": "info", "text": "Auto-reparo: a reiniciar matriz..."}
+{"ts": 1788399943.1172354, "level": "info", "text": "Auto-reparo matriz: Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OFF | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, "}
+{"ts": 1788399967.0012646, "level": "error", "text": "voice OFF (2 checks). Monitor AURA."}
+{"ts": 1788399967.30785, "level": "info", "text": "Auto-reparo: a reiniciar voice..."}
+{"ts": 1788399980.1748085, "level": "info", "text": "Auto-reparo voice: Reinicio pedido: voice. Accoes: voice:8099 arrancado. Estado agora: bridge OK | engine OFF | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, Ol"}
+{"ts": 1788400054.8826468, "level": "info", "text": "Auto-reparo: a reiniciar voice..."}
+{"ts": 1788400064.8682597, "level": "info", "text": "Auto-reparo voice: Reinicio pedido: voice. Accoes: voice:8099 arrancado. Estado agora: bridge OFF | engine OFF | matriz OFF | hermes OK | voice OFF | ollama OK. paper_trade=true, "}
+{"ts": 1788400074.9169643, "level": "error", "text": "bridge OFF (2 checks). Monitor AURA."}
+{"ts": 1788400074.9299707, "level": "info", "text": "Auto-reparo: a reiniciar bridge..."}
+{"ts": 1788400084.623395, "level": "info", "text": "Auto-reparo bridge: Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OFF | matriz OFF | hermes OK | voice OFF | ollama OK. paper_trade=true, Ol"}
+{"ts": 1788400086.653371, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788400086.6653695, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788400096.9685683, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OFF | hermes OK | voice OFF | ollama OK. paper_tra"}
+{"ts": 1788400098.9884412, "level": "error", "text": "matriz OFF (2 checks). Monitor AURA."}
+{"ts": 1788400098.999438, "level": "info", "text": "Auto-reparo: a reiniciar matriz..."}
+{"ts": 1788400103.0500054, "level": "info", "text": "Auto-reparo matriz: Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, O"}
+{"ts": 1788400125.544656, "level": "info", "text": "Auto-reparo: a reiniciar voice..."}
+{"ts": 1788400130.1621368, "level": "info", "text": "Auto-reparo voice: Reinicio pedido: voice. Accoes: voice:8099 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, Oll"}
+{"ts": 1788400140.4072223, "level": "error", "text": "Circuit breaker: voice com 3 reparos/15min — pausa 5min."}
+{"ts": 1788400345.7421105, "level": "error", "text": "bridge OFF (2 checks). Monitor AURA."}
+{"ts": 1788400345.7591143, "level": "info", "text": "Auto-reparo: a reiniciar bridge..."}
+{"ts": 1788400355.7873473, "level": "info", "text": "Auto-reparo bridge: Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OFF | matriz OFF | hermes OK | voice OFF | ollama OK. paper_trade=true, Ol"}
+{"ts": 1788400357.8037107, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788400357.8166828, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788400367.8931637, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OFF | hermes OK | voice OFF | ollama OK. paper_tra"}
+{"ts": 1788400369.916187, "level": "error", "text": "matriz OFF (2 checks). Monitor AURA."}
+{"ts": 1788400369.927775, "level": "info", "text": "Auto-reparo: a reiniciar matriz..."}
+{"ts": 1788400373.8079739, "level": "info", "text": "Auto-reparo matriz: Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, O"}
+{"ts": 1788400375.8221662, "level": "error", "text": "voice OFF (2 checks). Monitor AURA."}
+{"ts": 1788400447.179286, "level": "error", "text": "Circuit breaker: voice com 3 reparos/15min — pausa 5min."}
+{"ts": 1788400757.2196805, "level": "error", "text": "Circuit breaker: voice com 3 reparos/15min — pausa 5min."}
+{"ts": 1788401065.5437229, "level": "info", "text": "Auto-reparo: a reiniciar voice..."}
+{"ts": 1788401069.7959235, "level": "info", "text": "Auto-reparo voice: Reinicio pedido: voice. Accoes: voice:8099 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, Oll"}
+{"ts": 1788401176.3930922, "level": "error", "text": "ollama OFF (2 checks). Monitor AURA."}
+{"ts": 1788401235.6549308, "level": "error", "text": "bridge OFF (2 checks). Monitor AURA."}
+{"ts": 1788401235.668449, "level": "info", "text": "Auto-reparo: a reiniciar bridge..."}
+{"ts": 1788401247.2350523, "level": "info", "text": "Auto-reparo bridge: Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OFF | matriz OFF | hermes OK | voice OFF | ollama OFF. paper_trade=true, O"}
+{"ts": 1788401249.264883, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788401249.2810266, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788401260.998419, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OFF | hermes OK | voice OFF | ollama OFF. paper_tr"}
+{"ts": 1788401263.027357, "level": "error", "text": "matriz OFF (2 checks). Monitor AURA."}
+{"ts": 1788401263.0440958, "level": "info", "text": "Auto-reparo: a reiniciar matriz..."}
+{"ts": 1788401268.6158717, "level": "info", "text": "Auto-reparo matriz: Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OFF | ollama OFF. paper_trade=true, "}
+{"ts": 1788401270.6339648, "level": "error", "text": "voice OFF (2 checks). Monitor AURA."}
+{"ts": 1788401270.654714, "level": "info", "text": "Auto-reparo: a reiniciar voice..."}
+{"ts": 1788401276.3620548, "level": "info", "text": "Auto-reparo voice: Reinicio pedido: voice. Accoes: voice:8099 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OFF | ollama OFF. paper_trade=true, Ol"}
+{"ts": 1788401505.306853, "level": "error", "text": "bridge OFF (2 checks). Monitor AURA."}
+{"ts": 1788401505.3094902, "level": "info", "text": "Auto-reparo: a reiniciar bridge..."}
+{"ts": 1788401517.5345466, "level": "info", "text": "Auto-reparo bridge: Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OFF | matriz OFF | hermes OK | voice OFF | ollama OFF. paper_trade=true, O"}
+{"ts": 1788401519.5446737, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788401519.5466733, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788401535.1568763, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OFF | hermes OK | voice OFF | ollama OFF. paper_tr"}
+{"ts": 1788401537.158986, "level": "error", "text": "matriz OFF (2 checks). Monitor AURA."}
+{"ts": 1788401537.158986, "level": "info", "text": "Auto-reparo: a reiniciar matriz..."}
+{"ts": 1788401543.0226645, "level": "info", "text": "Auto-reparo matriz: Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OFF | ollama OFF. paper_trade=true, "}
+{"ts": 1788401545.8266826, "level": "error", "text": "ollama OFF (2 checks). Monitor AURA."}
+{"ts": 1788401580.9121, "level": "info", "text": "Auto-reparo: a reiniciar matriz..."}
+{"ts": 1788401585.7719417, "level": "info", "text": "Auto-reparo matriz: Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OFF. paper_trade=true, O"}
+{"ts": 1788404149.2077887, "level": "error", "text": "bridge OFF (2 checks). Monitor AURA."}
+{"ts": 1788404149.2107937, "level": "info", "text": "Auto-reparo: a reiniciar bridge..."}
+{"ts": 1788404160.9286742, "level": "info", "text": "Auto-reparo bridge: Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OFF | matriz OFF | hermes OK | voice OK | ollama OFF. paper_trade=true, Ol"}
+{"ts": 1788404162.9441478, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788404162.946203, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788404177.0230901, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OFF | hermes OK | voice OK | ollama OFF. paper_tra"}
+{"ts": 1788404179.0339031, "level": "error", "text": "matriz OFF (2 checks). Monitor AURA."}
+{"ts": 1788404179.0349185, "level": "info", "text": "Auto-reparo: a reiniciar matriz..."}
+{"ts": 1788404183.6360927, "level": "info", "text": "Auto-reparo matriz: Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OFF. paper_trade=true, O"}
+{"ts": 1788404335.1819687, "level": "error", "text": "bridge OFF (2 checks). Monitor AURA."}
+{"ts": 1788404335.1829672, "level": "info", "text": "Auto-reparo: a reiniciar bridge..."}
+{"ts": 1788404346.6207132, "level": "info", "text": "Auto-reparo bridge: Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OFF | matriz OFF | hermes OK | voice OK | ollama OFF. paper_trade=true, Ol"}
+{"ts": 1788404348.6281497, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788404348.6306753, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788404357.7792459, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OFF | hermes OK | voice OK | ollama OFF. paper_tra"}
+{"ts": 1788404359.794301, "level": "error", "text": "matriz OFF (2 checks). Monitor AURA."}
+{"ts": 1788404359.797805, "level": "info", "text": "Auto-reparo: a reiniciar matriz..."}
+{"ts": 1788404364.254727, "level": "info", "text": "Auto-reparo matriz: Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OFF. paper_trade=true, O"}
+{"ts": 1788404444.0301375, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788404444.0306475, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788404456.470369, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OFF | engine OK | matriz OFF | hermes OK | voice OK | ollama OFF. paper_tr"}
+{"ts": 1788404458.4820037, "level": "error", "text": "matriz OFF (2 checks). Monitor AURA."}
+{"ts": 1788404458.4840014, "level": "info", "text": "Auto-reparo: a reiniciar matriz..."}
+{"ts": 1788404468.2269554, "level": "info", "text": "Auto-reparo matriz: Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OFF | engine OFF | matriz OK | hermes OK | voice OK | ollama OFF. paper_trade=true,"}
+{"ts": 1788404480.3025947, "level": "error", "text": "bridge OFF (2 checks). Monitor AURA."}
+{"ts": 1788404480.3041081, "level": "info", "text": "Auto-reparo: a reiniciar bridge..."}
+{"ts": 1788409294.8306339, "level": "error", "text": "ollama OFF (2 checks). Monitor AURA."}
+{"ts": 1788410871.7426903, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788410871.7436955, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788410876.1389134, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade"}
+{"ts": 1788460609.0037556, "level": "error", "text": "bridge OFF (2 checks). Monitor AURA."}
+{"ts": 1788460609.2516904, "level": "info", "text": "Auto-reparo: a reiniciar bridge..."}
+{"ts": 1788460640.6410685, "level": "info", "text": "Auto-reparo bridge: Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ollam"}
+{"ts": 1788462073.8128242, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788462073.8153512, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788462078.8621662, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade"}
+{"ts": 1788462631.544678, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788462631.5466814, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788462635.6591637, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade"}
+{"ts": 1788562552.0664668, "level": "error", "text": "matriz OFF (2 checks). Monitor AURA."}
+{"ts": 1788562552.0684946, "level": "info", "text": "Auto-reparo: a reiniciar matriz..."}
+{"ts": 1788562559.5086281, "level": "info", "text": "Auto-reparo matriz: Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OFF | hermes OK | voice OK | ollama OK. paper_trade=true, O"}
+{"ts": 1788564456.5351121, "level": "error", "text": "matriz OFF (2 checks). Monitor AURA."}
+{"ts": 1788564456.5361097, "level": "info", "text": "Auto-reparo: a reiniciar matriz..."}
+{"ts": 1788564460.568932, "level": "info", "text": "Auto-reparo matriz: Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OK | ollama OK. paper_trade=true, Ol"}
+{"ts": 1788566760.5906968, "level": "error", "text": "bridge OFF (2 checks). Monitor AURA."}
+{"ts": 1788566760.5987067, "level": "info", "text": "Auto-reparo: a reiniciar bridge..."}
+{"ts": 1788566778.6641052, "level": "info", "text": "Auto-reparo bridge: Reinicio pedido: bridge. Accoes: bridge:8080 ONLINE. Estado agora: bridge OK | engine OFF | matriz OFF | hermes OK | voice OFF | ollama OFF. paper_trade=true, O"}
+{"ts": 1788566780.6680808, "level": "error", "text": "engine OFF (2 checks). Monitor AURA."}
+{"ts": 1788566780.6690784, "level": "info", "text": "Auto-reparo: a reiniciar engine..."}
+{"ts": 1788566790.5329223, "level": "info", "text": "Auto-reparo engine: Reinicio pedido: engine. Accoes: engine:8765 ONLINE apos espera. Estado agora: bridge OK | engine OK | matriz OFF | hermes OK | voice OFF | ollama OK. paper_tra"}
+{"ts": 1788566792.5396388, "level": "error", "text": "matriz OFF (2 checks). Monitor AURA."}
+{"ts": 1788566792.5416412, "level": "info", "text": "Auto-reparo: a reiniciar matriz..."}
+{"ts": 1788566796.503481, "level": "info", "text": "Auto-reparo matriz: Reinicio pedido: matriz. Accoes: matriz:8766 arrancado. Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OFF | ollama OK. paper_trade=true, O"}
+{"ts": 1788566798.5193605, "level": "error", "text": "voice OFF (2 checks). Monitor AURA."}
+{"ts": 1788566798.5203567, "level": "info", "text": "Auto-reparo: a reiniciar voice..."}
+{"ts": 1788566802.7382703, "level": "info", "text": "Auto-reparo voice: Reinicio pedido: voice. Accoes: voice:8099 arrancado (Python311). Estado agora: bridge OK | engine OK | matriz OK | hermes OK | voice OFF | ollama OK. paper_tra"}

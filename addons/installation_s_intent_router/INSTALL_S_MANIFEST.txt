@@ -1,0 +1,39 @@
+AURA QUANT-X V25 — INSTALL S MANIFEST
+======================================
+Installation: S — Intent Router
+Source: /home/ubuntu/upload/pasted_content_19.txt
+Installed: 2026-08-25
+
+Canonical file
+--------------
+engine/agents/intent_router.py
+SHA-256: d1a11f625275fab50169167fb72b3edfb9721fdc28c7b103a9447800522ae779
+
+Addon copy
+----------
+addons/installation_s_intent_router/intent_router_from_pasted_content_19.py
+SHA-256: d1a11f625275fab50169167fb72b3edfb9721fdc28c7b103a9447800522ae779
+
+Backup
+------
+.install-backups/installations-r-s-20260825_102059/
+The canonical intent_router.py did not exist before installation; the backup records its absence.
+
+Safety state
+------------
+- No LLM call, provider, global tool registration or voice-server integration activated.
+- H-IR1 and H-IR2 integrations into jarvis_voice_server.py were intentionally not applied.
+- H-IR3 was implemented only as a local contract entry in the official self-test inventory.
+- CommandCenter remains the authority for execution and confirmations.
+
+Corrections
+-----------
+- Semantic cache stores tokens and session instead of parsing a SHA-256 key.
+- JSONDecoder.raw_decode accepts nested args objects.
+- LLM-first order is preserved with deterministic parser fallback.
+- Confidence values are finite and clamped to 0..1.
+- Self-test fake LLM reads user text separately from context.
+
+Validation
+----------
+Self-test passed: natural intents, dynamic arguments, semantic cache, confidence threshold, deterministic fallback, context injection and Jaccard checks.

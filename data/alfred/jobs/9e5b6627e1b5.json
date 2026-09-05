@@ -1,0 +1,41 @@
+{
+  "job_id": "9e5b6627e1b5",
+  "request_id": "ae5d918f1675",
+  "content_hash": "2c92c482d2c553a2",
+  "created_at": 1788390783.9284115,
+  "status": "success",
+  "authorized": true,
+  "authorization_reason": "AUTORIZO escrito pelo utilizador",
+  "plan_intent": "single_task",
+  "source_message": "",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "open_app",
+      "arguments": {
+        "app": "camera",
+        "exe": "microsoft.windows.camera:"
+      },
+      "risk": "medium",
+      "mutating": true,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "opened": true,
+        "app": "camera",
+        "exe": "microsoft.windows.camera:",
+        "kind": "uri"
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "1 de 1 tarefas concluídas com sucesso.",
+  "finished_at": 1788390785.2113183
+}

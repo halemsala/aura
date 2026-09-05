@@ -1,0 +1,19 @@
+AURA GROK OPS — SEGURO (integrado no pacote completo)
+=====================================================
+paper_trade=true | execution_allowed=false
+
+BATs (raiz do pacote / C:\aura)
+- AURA_GROK_INSTALL.bat
+- AURA_GROK_FIX.bat
+- AURA_GROK_ACTIVATE.bat
+- AURA_GROK_GPU_LIVRE.bat
+
+Prompt: PROMPT_ASSISTENTE_OPERACOES_AURA_SEGURO.txt
+
+Ordem tipica:
+1. INSTALAR_TUDO.bat (admin) ou AURA_GROK_INSTALL.bat
+2. AURA_GROK_FIX.bat
+3. AURA_GROK_ACTIVATE.bat
+4. GPU livre: AURA_GROK_GPU_LIVRE.bat → depois ACTIVATE
+
+Sem Photoshop, sem shell livre, sem unlock de execucao.

@@ -1,0 +1,37 @@
+AURA QUANT-X HERMES V37.3.42 — GYM AUTO-BOOT + DAILY
+====================================================
+paper_trade=true | execution_allowed=false
+
+O QUE MUDA NESTE PACOTE
+-----------------------
+No lifespan do Hermes (boot):
+
+1) global error_catalog JA estava corrigido (auditoria P1)
+2) AutonomyEngine start (maestro)
+3) AURA GYM em background thread:
+   - PRIMEIRO boot: 500 cenarios (ledger inexistente ou <100 bytes)
+   - Boots seguintes / refresh: 200 cenarios
+   - Distill playbooks apos cada sessao
+   - Se ledger >1000 linhas: export Alpaca automatico
+4) Scheduler diario ~06:00 (asyncio task) dispara novo refresh
+
+API sobe imediatamente. Gym nao bloqueia /health nem o chat.
+
+COMO VERIFICAR
+--------------
+1) Ligar sistema
+2) No log: gym_first_boot_training starting (500 scenarios)
+3) ~60-90s depois: gym_session_complete ...
+4) Get-Content C:\aura\logs_supervisor\gym_ledger.jsonl | select -first 3
+5) Durante o treino: http://127.0.0.1:8777/health deve responder OK
+
+COMANDOS MANUAIS (continuam validos)
+------------------------------------
+  AURA_GYM_TREINAR.bat [N]
+  chat: gym | gym 100 | academia
+
+INVARIANTES
+-----------
+- Gym so no SimSystem
+- LLM fora do loop de decisao
+- Promocao a live exige shadow + aprovacao humana

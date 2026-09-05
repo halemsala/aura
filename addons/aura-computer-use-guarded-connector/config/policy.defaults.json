@@ -1,0 +1,17 @@
+{
+  "computer_use_enabled": false,
+  "execution_allowed": false,
+  "approval_required": true,
+  "network_allowed": false,
+  "authenticated_profiles_allowed": false,
+  "scheduler_enabled": false,
+  "autostart_enabled": false,
+  "yolo_mode_allowed": false,
+  "unrestricted_mode_allowed": false,
+  "mouse_allowed": false,
+  "keyboard_allowed": false,
+  "browser_allowed": false,
+  "microphone_allowed": false,
+  "camera_allowed": false,
+  "gateway_allowed": false
+}

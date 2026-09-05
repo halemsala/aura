@@ -1,0 +1,1282 @@
+[
+ {
+  "instruction": "ollama nao carrega",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "failed to fetch de novo",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "o que aconteceu com o engine?",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "o que aconteceu com o ollama?",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "o matriz caiu",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "sistema nao responde",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "o ollama quebrou de novo",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "o que ta errado?",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "failed to fetch de novo",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "o sistema caiu",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "hermes nao responde",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "o que ta errado?",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ },
+ {
+  "instruction": "erro no sistema",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ },
+ {
+  "instruction": "o sistema ta off",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "o que ta errado?",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "tem erro no sistema",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "failed to fetch de novo",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "deu 404",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "tem erro no sistema",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "o global ta off",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "failed to fetch de novo",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "deu 404",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "sistema offline",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "conserta o engine",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "erro no console",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "engine offline",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "o sistema quebrou de novo",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "deu 404",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "conserta o matriz",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "o matriz ta off",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "sistema nao responde",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ },
+ {
+  "instruction": "o console caiu",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "o engine caiu",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "o sistema ta off",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "deu 404",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "diagnostica tudo",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ },
+ {
+  "instruction": "conserta o sistema",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "o que ta errado?",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "diagnostica tudo",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "o que aconteceu com o sistema?",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "conserta o hermes",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "erro no sistema",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "tem erro no sistema",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "sistema nao responde",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "healing nao carrega",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "o que aconteceu com o sistema?",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "status ta estranho",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "o que aconteceu com o sistema?",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "conserta o sistema",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ },
+ {
+  "instruction": "failed to fetch de novo",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "o sistema quebrou de novo",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "erro no ollama",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "bridge nao responde",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "por que o sistema nao ta a dar",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "o que aconteceu com o bridge?",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "bridge nao carrega",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "conserta o bridge",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "global nao carrega",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "diagnostica tudo",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "o console quebrou de novo",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "sistema offline",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "conserta o ollama",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "o que ta errado?",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "por que o healing nao ta a dar",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "arruma o sistema",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "o console ta off",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "sistema nao responde",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "o que ta errado?",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "tem erro no sistema",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "failed to fetch de novo",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "por que o sistema nao ta a dar",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "arruma o sistema",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ },
+ {
+  "instruction": "sistema offline",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "status ta estranho",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "arruma o sistema",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "o que ta errado?",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "o global quebrou de novo",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "bridge offline",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "deu 500",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "o que ta errado?",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "sistema nao carrega",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ },
+ {
+  "instruction": "o sistema caiu",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ },
+ {
+  "instruction": "erro no healing",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "quem e voce",
+  "input": "",
+  "output": "Hermes — operador tecnico do AURA, paper-trade ativo."
+ },
+ {
+  "instruction": "o que aconteceu com o hermes?",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "qual seu nome?",
+  "input": "",
+  "output": "Sou o Hermes, operador do AURA. Posso diagnosticar, corrigir e reiniciar servicos. Tenta: status, corrige ou diagnostico."
+ },
+ {
+  "instruction": "por que o bridge nao ta a dar",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "arruma o engine",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "sistema nao responde",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "hermes nao carrega",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "deu 500",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ },
+ {
+  "instruction": "obrigado",
+  "input": "",
+  "output": "A ordem. Se algo cair, manda diagnostico que eu aponto o erro com codigo."
+ },
+ {
+  "instruction": "o que aconteceu com o sistema?",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "deu 500",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "o que ta errado?",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "arruma o sistema",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "status ta estranho",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "ollama offline",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "tem erro no sistema",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "console nao carrega",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "tem erro no sistema",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ },
+ {
+  "instruction": "o sistema quebrou de novo",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "o ollama caiu",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "o sistema ta off",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "diagnostica tudo",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "ollama nao responde",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "o sistema ta off",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "por que o sistema nao ta a dar",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "conserta o global",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "failed to fetch de novo",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "o hermes quebrou de novo",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "console nao responde",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "deu 404",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "erro no global",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "arruma o sistema",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "o sistema quebrou de novo",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ },
+ {
+  "instruction": "o healing quebrou de novo",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "o sistema ta off",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "diagnostica tudo",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "o hermes caiu",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "status ta estranho",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "conserta o healing",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "o sistema caiu",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "por que o sistema nao ta a dar",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "deu 500",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "deu 500",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "erro no matriz",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "erro no sistema",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "arruma o sistema",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "conserta o sistema",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "status ta estranho",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "o que aconteceu com o console?",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "o hermes ta off",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "o que ta errado?",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "diagnostica tudo",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "tem erro no sistema",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "sistema nao carrega",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "conserta o sistema",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "tem erro no sistema",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "arruma o console",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "erro no hermes",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "sistema nao responde",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "o bridge caiu",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "erro no sistema",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "o que ta errado?",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "o healing caiu",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "diagnostica tudo",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "deu 404",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "matriz nao carrega",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "engine nao carrega",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "erro no sistema",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "o sistema ta off",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ },
+ {
+  "instruction": "deu 404",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "hermes offline",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "diagnostica tudo",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "deu 404",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "deu 500",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "o sistema caiu",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "deu 500",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "por que o hermes nao ta a dar",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "diagnostica tudo",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "arruma o ollama",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "erro no sistema",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "erro no bridge",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "engine nao responde",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "diagnostica tudo",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "deu 500",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "por que o ollama nao ta a dar",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "healing nao responde",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "arruma o matriz",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "arruma o healing",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "por que o sistema nao ta a dar",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "deu 500",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "failed to fetch de novo",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "o matriz quebrou de novo",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "o bridge ta off",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "status ta estranho",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "conserta o console",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "failed to fetch de novo",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "failed to fetch de novo",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "o que ta errado?",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "conserta o sistema",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "deu 404",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "deu 500",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "tem erro no sistema",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "status ta estranho",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "tem erro no sistema",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "o ollama ta off",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "console offline",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "matriz offline",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "o que aconteceu com o sistema?",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ },
+ {
+  "instruction": "o que ta errado?",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "erro no engine",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "o sistema caiu",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "tem erro no sistema",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "o engine ta off",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "o engine quebrou de novo",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "o sistema quebrou de novo",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "conserta o sistema",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "deu 404",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "diagnostica tudo",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "status ta estranho",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "status ta estranho",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "deu 500",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "matriz nao responde",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "arruma o hermes",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "arruma o bridge",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "tem erro no sistema",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "o que aconteceu com o matriz?",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "failed to fetch de novo",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "deu 500",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "global nao responde",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "arruma o global",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "o healing ta off",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "o que aconteceu com o sistema?",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "deu 404",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "healing offline",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "status ta estranho",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "diagnostica tudo",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "sistema offline",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "por que o sistema nao ta a dar",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ },
+ {
+  "instruction": "o sistema caiu",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "status ta estranho",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "deu 500",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "o que aconteceu com o healing?",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "por que o console nao ta a dar",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "diagnostica tudo",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "o que ta errado?",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "o sistema quebrou de novo",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "failed to fetch de novo",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "por que o matriz nao ta a dar",
+  "input": "",
+  "output": "E-NET-005 · Matriz offline (8766)\nOnde: matriz (porta 8766)\nCausa: \nCorrigir: \"reinicia matriz\" (ou envie: fix E-NET-005)"
+ },
+ {
+  "instruction": "status ta estranho",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "sistema nao carrega",
+  "input": "",
+  "output": "E-API-003 · Resposta do chat substituida/esquizofrenica\nOnde: hermes_v10_chat_api.py\nCausa: cascata de interceptacao + blacklist\nCorrigir: \"router explicito 3 camadas\" (ou envie: fix E-API-003)"
+ },
+ {
+  "instruction": "o bridge quebrou de novo",
+  "input": "",
+  "output": "E-NET-003 · Bridge offline (8080)\nOnde: C:\\\\aura\\\\bridge\\\\server.py (porta 8080)\nCausa: \nCorrigir: \"reinicia bridge\" (ou envie: fix E-NET-003)"
+ },
+ {
+  "instruction": "failed to fetch de novo",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ },
+ {
+  "instruction": "sistema nao carrega",
+  "input": "",
+  "output": "E-DET-001 · Detector de anomalias em alarme permanente (score=1.0)\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: live_missing fantasma + poll 15s poluindo baseline\nCorrigir: \"cache 60s + remover live_missing das features\" (ou envie: fix E-DET-001)"
+ },
+ {
+  "instruction": "sistema offline",
+  "input": "",
+  "output": "E-API-002 · ModuleNotFoundError: core.hermes_llm_engine\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py\nCausa: cwd errado (C:\\\\aura em vez de hermes_v10)\nCorrigir: \"sys.path com deteccao de raiz + cwd hermes_v10\" (ou envie: fix E-API-002)"
+ },
+ {
+  "instruction": "global offline",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "sistema nao carrega",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "tem erro no sistema",
+  "input": "",
+  "output": "E-API-001 · numpy.bool nao serializavel → HTTP 500\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_anomaly_detector.py\nCausa: detect() retorna np.True_/np.float64\nCorrigir: \"cast bool()/float() + sanitize_payload\" (ou envie: fix E-API-001)"
+ },
+ {
+  "instruction": "deu 404",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ },
+ {
+  "instruction": "o global caiu",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "sistema nao carrega",
+  "input": "",
+  "output": "E-MEM-001 · sqlite_vec indisponivel — memoria sem busca vetorial\nOnde: C:\\\\aura\\\\hermes_v10\\\\core\\\\hermes_memory_engine.py\nCausa: sqlite-vec nao instalado no venv\nCorrigir: \"pip install sqlite-vec no venv\" (ou envie: fix E-MEM-001)"
+ },
+ {
+  "instruction": "deu 404",
+  "input": "",
+  "output": "E-NET-006 · Porta AURA ocupada / domain lock\nOnde: healing\nCausa: processo zombie segurando porta\nCorrigir: \"corrige\" (ou envie: fix E-NET-006)"
+ },
+ {
+  "instruction": "deu 404",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "o que voce faz?",
+  "input": "",
+  "output": "Diagnostico erros com codigos do catalogo, corrijo e reinicio servicos (exceto Ollama). Pede: status ou diagnostico."
+ },
+ {
+  "instruction": "failed to fetch de novo",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "por que o global nao ta a dar",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "deu 500",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "diagnostica tudo",
+  "input": "",
+  "output": "E-NET-002 · Ollama indisponivel (porta 11434)\nOnde: ollama (porta 11434)\nCausa: Servico Ollama parado (NUNCA deve ser morto pelo Hermes)\nCorrigir: \"Iniciar Ollama fora do Hermes (ollama serve)\" (ou envie: fix E-NET-002)"
+ },
+ {
+  "instruction": "sistema offline",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ },
+ {
+  "instruction": "o que aconteceu com o global?",
+  "input": "",
+  "output": "E-SYS-001 · RAM critica (>=90%) com Ollama carregado\nOnde: global\nCausa: Ollama 3B + stack + navegador sem headroom\nCorrigir: \"gpu cap / fechar matriz / manter modelo 3b\" (ou envie: fix E-SYS-001)"
+ },
+ {
+  "instruction": "tem erro no sistema",
+  "input": "",
+  "output": "E-DATA-001 · Mojibake no console PowerShell\nOnde: console\nCausa: PowerShell UTF-8 como Latin-1\nCorrigir: \"chcp 65001 + OutputEncoding UTF8\" (ou envie: fix E-DATA-001)"
+ },
+ {
+  "instruction": "por que o engine nao ta a dar",
+  "input": "",
+  "output": "E-NET-004 · Engine AURA offline (porta 8765)\nOnde: C:\\\\aura\\\\engine\\\\server.py (porta 8765)\nCausa: Processo do engine caiu ou porta liberada\nCorrigir: \"reinicia engine\" (ou envie: fix E-NET-004)"
+ },
+ {
+  "instruction": "status ta estranho",
+  "input": "",
+  "output": "E-NET-007 · Hermes Chat offline (8777)\nOnde: C:\\\\aura\\\\hermes_v10\\\\scripts\\\\hermes_v10_chat_api.py (porta 8777)\nCausa: API Hermes caiu ou nao arrancou\nCorrigir: \"reinicia hermes a partir de hermes_v10\" (ou envie: fix E-NET-007)"
+ },
+ {
+  "instruction": "status ta estranho",
+  "input": "",
+  "output": "E-VENV-001 · venv partido (No pyvenv.cfg / No module named pip)\nOnde: C:\\\\aura\\\\engine\\\\venv\nCausa: venv incompleto ou bloqueado por processo\nCorrigir: \"matar python AURA + rmdir venv + py -3.11 -m venv + ensurepip\" (ou envie: fix E-VENV-001)"
+ }
+]

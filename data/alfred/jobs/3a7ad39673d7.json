@@ -1,0 +1,47 @@
+{
+  "job_id": "3a7ad39673d7",
+  "request_id": "cffd6e027c15",
+  "content_hash": "5d49e367e014db29",
+  "created_at": 1788380412.719236,
+  "status": "success",
+  "authorized": false,
+  "authorization_reason": "comando único de baixo risco pedido explicitamente",
+  "plan_intent": "single_task",
+  "source_message": "capacidade vram",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "vram_capacity",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "local_gpu": {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "vram_total_mib": 6141.0,
+          "vram_used_mib": 4161.0,
+          "vram_free_mib": 1760.0,
+          "util_pct": 0.0,
+          "temp_c": 49.0
+        },
+        "recommended_num_ctx": 2048,
+        "current_num_ctx": 2048,
+        "workers": [],
+        "ready_for_more_vram": true,
+        "nota": "VRAM remota não entra nesta placa: workers correm o trabalho e devolvem o resultado. Quando houver mais VRAM local, sobe num_ctx (Alfred, adapta vram)."
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "1 de 1 tarefas concluídas com sucesso.",
+  "finished_at": 1788380413.0376756
+}

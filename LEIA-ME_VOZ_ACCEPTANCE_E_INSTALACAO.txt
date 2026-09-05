@@ -1,0 +1,75 @@
+AURA QUANT-X HERMES — VOZ + INSTALAÇÃO COMPLETA
+================================================
+Versão base: V37.3.27 VOZ XTTS
+paper_trade=true | execution_allowed=false | glm_advisory_only=true
+
+INSTALAÇÃO LIMPA (recomendado)
+------------------------------
+1. Extraia este ZIP completo.
+2. Clique direito em INSTALAR_TUDO.bat → Executar como administrador.
+   O instalador executa nesta ordem:
+     - LIMPEZA COMPLETA
+     - INSTALAÇÃO
+     - CHECK
+     - SERVIÇOS
+     - CHECK
+     - HERMES CHAT
+     - DESKTOP
+     - CHECK
+
+Alternativas one-shot:
+  AURA_LIMPEZA_E_INSTALACAO_COMPLETA.bat
+  AURA_TUDO_EM_UM.bat
+  AURA_LIMPA_E_INSTALA.bat
+
+DIA A DIA (após primeira instalação)
+------------------------------------
+  AURA_START_ALL.bat
+  START.bat
+  START_ENGINE.bat + START_BRIDGE.bat
+
+LIMPEZA
+-------
+  LIMPEZA_COMPLETA.bat          → limpa portas AURA (não mata Ollama :11434)
+  LIMPEZA_CORE.bat
+  AURA_LIMPEZA_AGRESSIVA.bat
+
+VOZ / XTTS / PIPER
+------------------
+  AURA_INSTALAR_VOZ.bat
+  AURA_INSTALAR_TESTAR_VOZ_COMPLETO.bat
+  AURA_INSTALAR_VOZ_NATURAL_AGORA.bat
+  AURA_REPARAR_XTTS_TORCHCODEC.bat
+  AURA_ATIVAR_XTTS_REFERENCIA.bat
+  AURA_TESTAR_PIPER.bat
+
+CHECK / AUDITORIA
+-----------------
+  CHECK.bat
+  AURA_AUDITORIA_COMPLETA.bat
+
+ACCEPTANCE OFFLINE (VOZ)
+------------------------
+  AURA_VOICE_ACCEPTANCE_CHECKLIST_OFFLINE.md
+  docs_acceptance/
+
+PORTAS PADRÃO
+-------------
+  8080  Bridge
+  8765  Engine
+  8099  Voice / Jarvis
+  8766  Matriz
+  8777  Hermes Chat
+
+INVARIANTES (NUNCA ALTERAR)
+---------------------------
+  paper_trade = true
+  execution_allowed = false
+  approved = false
+  stake_pct = 0.0
+  exposure = 0.0
+  glm_advisory_only = true
+
+Voicebox (jamiepine/voicebox) = ADVISORY apenas.
+NÃO instalar no núcleo. Usar somente como referência de contrato VoiceProvider.
+Qualquer integração futura deve passar por ToolManifest + PolicyGate + AuditLedger.

@@ -1,0 +1,17 @@
+{"ts": "2026-09-02T14:55:54.015397Z", "severity": "warning", "source": "correct_endpoint", "message": "Simulacao falhou para full_stack"}
+{"ts": "2026-09-02T14:57:01.775548Z", "severity": "info", "source": "correct_endpoint", "message": "Operator full_stack"}
+{"ts": "2026-09-02T15:14:29.393546Z", "severity": "info", "source": "correct_endpoint", "message": "Operator full_stack"}
+{"ts": "2026-09-02T15:18:45.530545Z", "severity": "info", "source": "correct_endpoint", "message": "Operator status"}
+{"ts": "2026-09-02T15:37:16.984566Z", "severity": "info", "source": "correct_endpoint", "message": "Operator full_stack"}
+{"ts": "2026-09-02T15:38:04.618996Z", "severity": "info", "source": "correct_endpoint", "message": "Operator status"}
+{"ts": "2026-09-02T15:42:17.401518Z", "severity": "info", "source": "correct_endpoint", "message": "Operator full_stack"}
+{"ts": "2026-09-02T15:44:52.545046Z", "severity": "info", "source": "correct_endpoint", "message": "Operator run_deep"}
+{"ts": "2026-09-02T16:11:18.752277Z", "severity": "info", "source": "correct_endpoint", "message": "Operator status"}
+{"ts": "2026-09-02T16:16:40.824744Z", "severity": "info", "source": "correct_endpoint", "message": "Operator status"}
+{"ts": "2026-09-02T16:20:12.551000Z", "severity": "info", "source": "correct_endpoint", "message": "Operator run_deep"}
+{"ts": "2026-09-02T16:20:28.491301Z", "severity": "info", "source": "correct_endpoint", "message": "Operator full_stack"}
+{"ts": "2026-09-02T16:21:51.592361Z", "severity": "info", "source": "correct_endpoint", "message": "Operator status"}
+{"ts": "2026-09-02T16:27:10.241922Z", "severity": "info", "source": "correct_endpoint", "message": "Operator status"}
+{"ts": "2026-09-02T16:32:11.133936Z", "severity": "info", "source": "correct_endpoint", "message": "Operator status"}
+{"ts": "2026-09-02T16:37:39.714895Z", "severity": "info", "source": "correct_endpoint", "message": "Operator status"}
+{"ts": "2026-09-02T16:42:55.565735Z", "severity": "info", "source": "correct_endpoint", "message": "Operator status"}

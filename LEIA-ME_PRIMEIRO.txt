@@ -1,0 +1,19 @@
+AURA QUANT-X V37.3.47 — EXTRAIR POR CIMA DE C:\AURA_V25
+=======================================================
+Este ZIP NAO tem pasta-invólucro. Os ficheiros (hermes_v10, engine,
+bridge, BATs) ficam DIRETOS na pasta onde extraíres.
+
+1) Clica direito no ZIP -> Extrair tudo...
+2) Destino: C:\AURA_V25
+3) Confirma substituir ficheiros existentes
+4) Abre PowerShell e corre:
+
+   Set-Location C:\AURA_V25
+   powershell -NoProfile -ExecutionPolicy Bypass -File .\AURA_TESTES.ps1
+
+Hermes deve aparecer em C:\AURA_V25\hermes_v10\scripts\hermes_v10_chat_api.py
+paper_trade=true  execution_allowed=false
+
+Arranque autonomo (ficheiros ja na pasta):
+  AURA_INSTALAR_TESTAR_AUTONOMO.bat
+Skill: skills\aura-operator-autonomo\SKILL.md

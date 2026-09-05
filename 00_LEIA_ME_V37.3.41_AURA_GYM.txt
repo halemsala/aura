@@ -1,0 +1,44 @@
+AURA QUANT-X HERMES V37.3.41 — AURA GYM (academia de falhas)
+============================================================
+paper_trade=true | execution_allowed=false
+
+REGRA DE FERRO
+--------------
+O treino acontece NUM SIMULADOR (SimSystem). Nunca no sistema vivo.
+Gym nao reinicia engine real, nao mata portas, nao escreve em producao.
+
+O QUE E
+-------
+1. SimSystem — copia mental (portas, dependencias, RAM, logs, cascata)
+2. Gerador de taxonomia → ate 5000 cenarios (simples + compostos)
+3. Injecao de fault no simulador
+4. Maestro real: catalog.diagnose(evidence) — O MESMO cerebro de producao
+5. Juiz: apply + healthy()
+6. Ledger: logs_supervisor/gym_ledger.jsonl
+7. Distiller: playbooks com >=90% de acerto
+8. Export Alpaca: dataset para fine-tune do hermes-aura
+
+COMO RODAR
+----------
+  AURA_GYM_TREINAR.bat
+  AURA_GYM_TREINAR.bat 2000
+
+  ou:
+  python hermes_v10\core\aura_gym.py 500 --root C:\aura
+  python hermes_v10\core\aura_gym.py --distill --root C:\aura
+  python hermes_v10\core\aura_gym.py --export-alpaca --root C:\aura
+
+CHAT HERMES (Camada 1)
+----------------------
+  gym / treinar gym / academia
+  → dispara sessao curta (50) e devolve report()
+
+PROMOCAO A LIVE
+---------------
+Gym (>=90% na classe) → Shadow mode → Voce aprova → AUTO_FIX_POLICY
+
+INVARIANTES
+-----------
+- LLM fora do loop de decisao no gym
+- Ollama/E-NET-002 e decisoes humanas fora da politica de auto-fix
+- Gym so em CPU, sob demanda (nunca loop infinito competindo com trading)

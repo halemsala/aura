@@ -1,0 +1,20 @@
+{
+  "version": "V32",
+  "paper_trade": true,
+  "execution_allowed": false,
+  "priority": [
+    "corner_intelligence",
+    "corner_window_specialist",
+    "hawkes_corners",
+    "digital_twin_monte_carlo",
+    "market_edge",
+    "odds_quality_monitor",
+    "data_veracity",
+    "drift_monitor",
+    "gpu_resource_manager",
+    "browser_agent",
+    "health_score",
+    "auto_calibrate_risk"
+  ],
+  "enabled_count": 78
+}

@@ -1,0 +1,18 @@
+AURA — INSTALAR TUDO PAPER
+==========================
+BAT unico: AURA_INSTALAR_TUDO_PAPER.bat
+
+Sempre:
+- apaga e recria engine\venv com Python 3.11
+- pip install deps
+- extrai matriz_v22 do ZIP se faltar index.html
+- sobe Bridge:8080 Engine:8765 Matriz:8766 Hermes:8777 Control:8790 Voice:8099
+- gera logs_supervisor\RELATORIO_INSTALAR_TUDO_LATEST.txt
+
+Uso:
+  1) Extrair ZIP FIXED completo para C:\aura
+  2) cd /d C:\aura
+  3) AURA_INSTALAR_TUDO_PAPER.bat
+
+Invariantes: paper_trade=true | execution_allowed=false
+NAO usa Python 3.12/3.14 (so py -3.11)

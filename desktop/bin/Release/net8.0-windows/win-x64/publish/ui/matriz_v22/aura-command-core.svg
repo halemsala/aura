@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="AURA core">
+  <defs><radialGradient id="r"><stop stop-color="#d8ff9a"/><stop offset=".45" stop-color="#36d1dc"/><stop offset="1" stop-color="#111827"/></radialGradient></defs>
+  <circle cx="80" cy="80" r="70" fill="#101827" stroke="#8bf17a" stroke-width="3"/>
+  <circle cx="80" cy="80" r="48" fill="url(#r)" opacity=".9"/>
+  <path d="M51 104 72 55h16l21 49H94l-5-13H68l-5 13Zm23-26h11l-5.5-15Z" fill="#0b1220"/>
+  <circle cx="80" cy="80" r="61" fill="none" stroke="#22b8cf" stroke-opacity=".42" stroke-width="2" stroke-dasharray="3 8"/>
+</svg>

@@ -1,0 +1,10 @@
+{
+  "name": "telegram_intel_optin",
+  "version": "0.1.0",
+  "default_enabled": false,
+  "hot_path": false,
+  "requires_env": ["AURA_TELEGRAM_INTEL_ENABLED", "AURA_TELEGRAM_BOT_TOKEN", "AURA_TELEGRAM_CHAT_ID"],
+  "side_effects": ["optional_telegram_send", "optional_allowlisted_http_fetch"],
+  "paper_trade_required": true,
+  "execution_allowed": false
+}

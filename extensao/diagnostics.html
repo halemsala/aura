@@ -1,0 +1,13 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CornerAI · Diagnóstico v12.7.16</title><link rel="stylesheet" href="diagnostics.css"></head><body><header class="topbar"><div class="brand"><div class="logo">C</div><div><h1>Diagnóstico <span>CornerAI 12.7.16</span></h1><p>Teste do pipeline sem armar a captura automaticamente</p></div></div><div class="actions"><span id="liveBadge" class="pill">AUDITORIA · CAPTURA MANUAL</span><button id="refresh">Atualizar</button><button id="force">Capturar</button><button id="allToolsTest" class="primary">🧪 Testar TODAS</button><button id="copy">Copiar</button><button id="export">Exportar</button><button id="pruneStorage" type="button">Compactar storage</button><button id="reset" class="danger">Limpar</button></div></header><main class="container"><section id="summary"></section><section class="raw"><div class="raw-head"><div><span class="eyebrow">DIAGNÓSTICO</span><h2>Erros raiz</h2></div><span class="pill">JSON</span></div><pre id="report">{"error":null}</pre></section><section class="raw"><div class="raw-head"><div><span class="eyebrow">AUDITORIA</span><h2>Todas as ferramentas</h2></div><span id="allToolsPill" class="pill">NÃO EXECUTADO</span></div><div id="allToolsAudit" class="tool-audit">Nenhum teste executado. Use 🧪 Testar TODAS.</div></section>
+<section class="raw" id="flaskTelemetrySection">
+  <div class="raw-head">
+    <div><span class="eyebrow">FLASK · /api/eventos</span><h2>Telemetria de envio</h2></div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <span id="flaskTelePill" class="pill">—</span>
+      <button id="flaskTeleRefresh" type="button">Atualizar telemetria</button>
+      <button id="flaskTeleTest" type="button" class="primary">Testar POST</button>
+    </div>
+  </div>
+  <div id="flaskTelemetry" class="tool-audit">Carregando telemetria…</div>
+</section>
+</main><script src="lib/corner-align.js"></script><script src="diagnostics.js"></script></body></html>

@@ -1,0 +1,11 @@
+﻿
+FullName                                              Length Extension LastWriteTime      
+--------                                              ------ --------- -------------      
+C:\aura\agents\ENABLED\engine_health_score.py.enabled    122 .enabled  03/09/2026 17:09:40
+C:\aura\agents\ENABLED\health_score.py.enabled           122 .enabled  03/09/2026 17:09:40
+C:\aura\logs_supervisor\RELATORIO_ERROS_LATEST.html     1287 .html     02/09/2026 18:00:00
+C:\aura\scripts\check_sokkerpro_pane.ps1                5516 .ps1      31/08/2026 15:28:14
+C:\aura\scripts\sokkerpro_cache_janitor.py              2468 .py       31/08/2026 15:28:14
+C:\aura\deepseek-harness\apps\web\index.html             421 .html     01/09/2026 18:20:38
+
+

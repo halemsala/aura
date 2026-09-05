@@ -1,0 +1,19 @@
+{
+  "_read_error": "[Errno 2] No such file or directory: 'C:\\\\aura\\\\halem_control\\\\skill_discovery_memory.json'",
+  "path": "C:\\aura\\halem_control\\skill_discovery_memory.json",
+  "shown": [
+    "AlemMekru/SmartBuilding-AppliedAI",
+    "Cyrax321/CONTINUUM",
+    "av/harbor",
+    "epiral/agent-clip",
+    "headroomlabs-ai/headroom",
+    "janvarev/Irene-Voice-Assistant",
+    "matrixorigin/matrixone",
+    "niyathi9999-spec/AudioRAG",
+    "nullarch/attemptdb",
+    "skalesapp/skales",
+    "sukhmandult4-web/LIFE-AI-COPILOT",
+    "tbphp/gpt-load"
+  ],
+  "calls": 12
+}

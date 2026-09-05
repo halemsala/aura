@@ -1,0 +1,63 @@
+# Go binaries, builds, and coverage
+gpt-load
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+build/
+dist/
+bin/
+coverage/
+go.work
+
+# Local environment and secrets
+.env*
+!.env.example
+keys.txt
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+
+# Runtime data
+data/
+data_bak/
+*.db*
+*.sqlite*
+*.log
+
+# Temporary and profiling output
+tmp/
+temp/
+*.tmp
+*.pid
+*.prof
+*.pprof
+
+# IDE files
+.idea/
+.vscode/
+*.code-workspace
+*.iml
+*.swp
+*.swo
+*~
+
+# macOS files
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Web build output: retain the single go:embed marker only.
+node_modules/
+.pnpm-store/
+
+!internal/webui/dist/
+internal/webui/dist/*
+!internal/webui/dist/assets/
+internal/webui/dist/assets/*
+!internal/webui/dist/assets/embed-placeholder.txt

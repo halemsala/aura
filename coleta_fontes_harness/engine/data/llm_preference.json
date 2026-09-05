@@ -1,0 +1,8 @@
+{
+  "backend": "hermes",
+  "provider": "ollama",
+  "base_url": "http://127.0.0.1:11434",
+  "model": "llama3.2:3b",
+  "fallback_model": "llama3.2:1b",
+  "glm_enabled": false
+}

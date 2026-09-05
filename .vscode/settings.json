@@ -1,0 +1,7 @@
+﻿{
+  "python.defaultInterpreterPath": "python",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.cwd": "C:\\aura",
+  "files.encoding": "utf8",
+  "files.autoGuessEncoding": true
+}

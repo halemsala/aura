@@ -1,0 +1,34 @@
+{
+  "profile_id": "aura-corners-pro-v1",
+  "name": "AURA Corners Pro",
+  "domain": "sports_corner_analysis",
+  "description": "Análise advisory de escanteios em partidas esportivas.",
+  "automation_mode": "analytics_only",
+  "paper_trade": true,
+  "execution_allowed": false,
+  "approved": false,
+  "stake_pct": 0.0,
+  "exposure": 0.0,
+  "refresh_target_seconds": 60,
+  "max_staleness_seconds": 180,
+  "horizons_minutes": [1, 3, 5, 10],
+  "authorized_source_roles": [
+    "live_primary",
+    "historical",
+    "fallback",
+    "manual_audited"
+  ],
+  "quality_gates": {
+    "minimum_evidence_count": 2,
+    "minimum_quality_score": 0.7,
+    "stale_behavior": "AGUARDA"
+  },
+  "ai_orchestration": {
+    "contract": "aura-hermes-advisory-v1",
+    "order": ["AURA_AI_ONE_QUANT", "HERMES_AUDIT"],
+    "divergence_behavior": "downgrade_or_block",
+    "network_default": false,
+    "tool_authority": false
+  },
+  "financial_operations_enabled": false
+}

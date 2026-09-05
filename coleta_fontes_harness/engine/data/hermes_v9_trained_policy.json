@@ -1,0 +1,13 @@
+{
+  "version": "Hermes-V9-Policy-1.1.0-seed",
+  "trained_at": "2026-08-29T23:00:00Z",
+  "samples": {"reports_json": 1, "runbooks": 0, "text_reports": 0, "score_points": 1, "avg_score": 90.0},
+  "priority_codes": {
+    "CAPTURE_ONLY": {"weight": 0.50, "action": "Nao restart core; so captura"},
+    "LIVE_DATA_PARTIAL": {"weight": 0.30, "action": "Captura Desktop + jogo ao vivo"},
+    "CORE_DOWN": {"weight": 0.10, "action": "AURA_TUDO_AUTOMATICO.bat"},
+    "NO_DOMAIN_LOCK": {"weight": 0.10, "action": "domain_lock"}
+  },
+  "invariants": {"paper_trade": true, "execution_allowed": false},
+  "note": "Seed policy for clean install. Re-train with train_v9 after real logs exist."
+}

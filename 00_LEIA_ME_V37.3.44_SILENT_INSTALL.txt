@@ -1,0 +1,29 @@
+AURA QUANT-X HERMES V37.3.44 — INSTALACAO LIMPA SILENCIOSA
+==========================================================
+paper_trade=true | execution_allowed=false
+
+ENTRADA PRINCIPAL
+-----------------
+  AURA_INSTALACAO_LIMPA_SILENCIOSA.bat
+  (ou AURA_ONE_CLICK_AUDITORIA_INSTALACAO.bat = wrapper)
+
+COMANDO
+-------
+  cd /d C:\aura
+  AURA_INSTALACAO_LIMPA_SILENCIOSA.bat
+
+O QUE FAZ
+---------
+1 STOP portas 8080/8765/8777/8099/8790
+2 AUDIT ficheiros criticos
+3 Python 3.10/3.11
+4 VENV limpa
+5 DEPS silenciosas
+6 START Bridge+Engine+Matriz+Hermes minimizado
+7 HEALTH 40s — so OK/OFF no ecran
+
+Log: logs_supervisor\silent_install.log
+
+NORMA
+-----
+Qualquer correcao = ZIP COMPLETO novo. Nunca so patch.

@@ -1,0 +1,8 @@
+node_modules
+ui
+docs
+bun.lock
+.git
+.DS_Store
+*.md
+*.test.ts

@@ -1,0 +1,42 @@
+{
+  "name": "AURA_KNOWLEDGE_AND_SAFE_ADDON_PACK",
+  "version": "1.0.0",
+  "contains_aura_original_system": false,
+  "contains_third_party_source_repositories": false,
+  "contains_credentials": false,
+  "contains_model_weights": false,
+  "purpose": "Reunir todo o código próprio e conhecimento produzido nesta conversa para uso seguro por Grok na melhoria do AURA.",
+  "included": {
+    "own_code": true,
+    "skills": true,
+    "installers": true,
+    "tests": true,
+    "tool_catalog": true,
+    "research_reports": true,
+    "instagram_text_snapshots": true,
+    "official_documentation_snapshots": true,
+    "installation_instructions": true
+  },
+  "safety": {
+    "paper_trade": true,
+    "execution_allowed": false,
+    "glm_advisory_only": true,
+    "network_enabled": false,
+    "scheduler_enabled": false,
+    "tool_execution_enabled": false,
+    "autostart_enabled": false
+  },
+  "external_items_policy": "catalog_only_until source, version, license, hash, permissions, staging, tests and explicit approval",
+  "excluded": [
+    "AURA original system",
+    "unvalidated third-party repositories",
+    "automatic dependency installation",
+    "service activation",
+    "MCP activation",
+    "API keys",
+    "login sessions",
+    "voice and Telegram activation",
+    "financial execution",
+    "social publication"
+  ]
+}

@@ -1,0 +1,70 @@
+version: "3.9"
+
+services:
+  hermes-api:
+    build: .
+    container_name: hermes_v10_api
+    ports:
+      - "8777:8777"
+      - "8778:8778"
+    environment:
+      - AURA_ROOT=/app
+      - PAPER_TRADE=true
+      - EXECUTION_ALLOWED=false
+      - PYTHONUTF8=1
+      - HERMES_API_PORT=8777
+      - HERMES_DASHBOARD_PORT=8778
+      - REDIS_URL=redis://redis:6379
+      - OLLAMA_HOST=http://ollama:11434
+    volumes:
+      - ./data:/app/data
+      - ./logs_supervisor:/app/logs_supervisor
+      - ./orchestrator:/app/orchestrator
+    depends_on:
+      - redis
+      - ollama
+    restart: unless-stopped
+    networks:
+      - hermes-net
+
+  redis:
+    image: redis:7-alpine
+    container_name: hermes_redis
+    volumes:
+      - redis_data:/data
+    networks:
+      - hermes-net
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: hermes_ollama
+    volumes:
+      - ollama_models:/root/.ollama
+    networks:
+      - hermes-net
+    # GPU support (optional)
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: hermes_prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - hermes-net
+
+volumes:
+  redis_data:
+  ollama_models:
+
+networks:
+  hermes-net:
+    driver: bridge

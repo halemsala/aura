@@ -1,0 +1,41 @@
+{
+  "generated_at": 1788127015.4928377,
+  "generated_iso": "2026-08-30T21:56:55Z",
+  "paper_trade": true,
+  "execution_allowed": false,
+  "telegram": {
+    "kill_switch": false,
+    "queue_counts": {
+      "pending": 0,
+      "sent": 0,
+      "blocked": 0,
+      "dry_run": 0,
+      "failed": 0
+    },
+    "queue_total": 0,
+    "recent": [],
+    "session_until": null,
+    "counters": null
+  },
+  "elite_squad": {
+    "last_veto": {
+      "verdict": "APPROVED",
+      "effective_decision": "AGUARDA",
+      "reasons": [
+        "Sem auditoria recente"
+      ],
+      "paper_trade": true,
+      "execution_allowed": false
+    },
+    "threshold_suggestions": {
+      "applied": false,
+      "suggestions": null,
+      "generated_at": null
+    }
+  },
+  "vram": {
+    "ok": false,
+    "gpus": [],
+    "hint": "[Errno 2] No such file or directory: 'nvidia-smi'"
+  }
+}

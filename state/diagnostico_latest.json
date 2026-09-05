@@ -1,0 +1,133 @@
+{
+  "ok": true,
+  "diagnostic": "AURA_DEFINITIVE_READ_ONLY_V1",
+  "timestamp_unix": 1788530129,
+  "policy": "READ_ONLY_NO_COMMAND_EXECUTION",
+  "paper_trade_only": true,
+  "execution_allowed": false,
+  "services_online": [
+    "ollama"
+  ],
+  "services": {
+    "bridge": {
+      "state": "OFFLINE",
+      "error": "ConnectTimeout",
+      "latency_ms": 2014
+    },
+    "engine": {
+      "state": "OFFLINE",
+      "error": "ConnectTimeout",
+      "latency_ms": 2016
+    },
+    "voice": {
+      "state": "OFFLINE",
+      "error": "ConnectTimeout",
+      "latency_ms": 2016
+    },
+    "ollama": {
+      "state": "ONLINE",
+      "http_status": 200,
+      "latency_ms": 14
+    }
+  },
+  "hardware": {
+    "platform": {
+      "system": "Windows",
+      "release": "10",
+      "architecture": "AMD64",
+      "python": "3.11.9"
+    },
+    "host": {
+      "psutil": true,
+      "cpu_percent_sample": 5.1,
+      "ram_percent": 69.3,
+      "ram_available_mb": 4941.1
+    },
+    "gpu": {
+      "available": true,
+      "memory_used_mb": 0.0,
+      "memory_total_mb": 6141.0,
+      "utilization_percent": 0.0
+    }
+  },
+  "ollama": {
+    "state": "ONLINE",
+    "http_status": 200,
+    "latency_ms": 14
+  },
+  "database": {
+    "available": true,
+    "state": "ONLINE",
+    "size_mb": 0.219,
+    "row_counts": {
+      "paper_trades": 0,
+      "logs_telemetria": 0,
+      "kb_team_alphas": 0,
+      "user_feedback": 0
+    }
+  },
+  "engine": {
+    "engine_status": {
+      "state": "OFFLINE",
+      "error": "ConnectTimeout",
+      "latency_ms": 2000
+    },
+    "agent_glm": {
+      "state": "OFFLINE",
+      "error": "ConnectTimeout",
+      "latency_ms": 2016
+    },
+    "performance": {
+      "state": "OFFLINE",
+      "error": "ConnectTimeout",
+      "latency_ms": 2016
+    }
+  },
+  "comparison": {
+    "benchmark": {
+      "ok": true,
+      "benchmark": "AURA_PERFORMANCE_READ_ONLY_V1",
+      "timestamp_unix": 1788530123.1120672,
+      "platform": {
+        "system": "Windows",
+        "release": "10",
+        "architecture": "AMD64",
+        "python": "3.11.9"
+      },
+      "host": {
+        "psutil": true,
+        "cpu_percent_sample": 5.1,
+        "ram_percent": 69.3,
+        "ram_available_mb": 4941.1
+      },
+      "gpu": {
+        "available": true,
+        "memory_used_mb": 0.0,
+        "memory_total_mb": 6141.0,
+        "utilization_percent": 0.0
+      },
+      "database": {
+        "available": true,
+        "state": "ONLINE",
+        "size_mb": 0.219,
+        "pragmas": {
+          "journal_mode": "wal",
+          "synchronous": 2,
+          "cache_size": -2000,
+          "busy_timeout": 2000
+        }
+      },
+      "policy": "READ_ONLY_NO_COMMAND_EXECUTION",
+      "paper_trade_only": true,
+      "execution_allowed": false,
+      "collection_ms": 655
+    },
+    "note": "Amostra pontual; não prova causalidade, estabilidade ou ausência de BSOD."
+  },
+  "warnings": [
+    "ENGINE_STATUS_UNAVAILABLE",
+    "AGENT_GLM_STATUS_UNAVAILABLE"
+  ],
+  "no_mutation": true,
+  "approval_required_for_mutation": true
+}

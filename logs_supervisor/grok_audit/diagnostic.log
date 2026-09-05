@@ -1,0 +1,49 @@
+GROK AUDIT DIAGNOSTIC
+=====================
+root=C:\aura
+python=3.11.9
+gpu=NVIDIA GeForce RTX 4050 Laptop GPU 6141 MiB
+
+PHASE A
+- Root exists. Services originally listening: Hermes 8777 PID 30248, Alfred 8791 PID 13688, Ollama 11434 PID 29320.
+- FINALIZAR_AURA_ALFRED_QWEN3.bat in the live root is valid CMD. Contamination (try:/from alfred) exists only in backups\alfred_real_* copies.
+- Hermes chat API (hermes_v10/scripts/hermes_v10_chat_api.py) had NO Alfred import/route. Chat fell through to conversational LLM.
+- config/alfred.json pointed Hermes health at TCP 8765; live chat is 8777.
+- alfred/ollama_client.py did not send `messages` in /api/chat payload (broken inference).
+- planner stored Path objects in task arguments → JSON TypeError on create_folder confirmation.
+- AURA_START_ALL.bat previously started desktop/engine/voice and opened UI.
+- hermes_model_router.select() could pick llama3.2:3b for high complexity.
+- Watchdog auto-repaired bridge/engine/matriz/voice every 8s with no cap.
+- VRAM ~800-1800 MiB free with qwen3:8b loaded. num_ctx reduced 4096 → 2048.
+
+PHASE B PATCHES
+- Router prefixes: Alfred / AURA Alfred / Hermes, executa
+- Hermes /api/chat calls alfred.hermes_adapter before conversational fallback
+- Structured envelope: route, model, reply, plan, job_id, requires_confirmation, status
+- Exclusive model qwen3:8b, think=false, thinking stripped, no silent 1B/3B fallback
+- Mutating tasks require AUTORIZO
+- Auto-correct cycle + circuit breaker + file locks + patches with dated backups
+- Chat UI: session_id, plan/job, Autorizar/Cancelar, no auto-open reports
+
+PHASE C BATS (CMD, %~dp0, no Python/Markdown source)
+- AURA_START_ALL.bat
+- AURA_STOP_ALL.bat
+- AURA_STATUS.bat
+- AURA_OPEN_CHAT.bat
+- AURA_ALFRED_COMMAND.bat
+- AURA_ROLLBACK_LAST.bat
+- AURA_INSTALL_TO_C_AURA.bat
+
+EVIDENCE
+- pytest tests/test_alfred_offline.py tests/test_grok_audit.py : 29 passed
+- pytest tests/test_alfred_acceptance.py : 3 passed (real qwen3:8b inference)
+- POST /api/chat Alfred, estado → route=alfred model=alfred:qwen3:8b
+- POST /api/chat Oi → route=llm model=qwen3:8b
+- POST /api/chat Hermes, executa estado → route=alfred
+- POST /ask Alfred, cria pasta ... → requires_confirmation=true status=planned
+- python -m alfred.boot start twice → second run skips (already online)
+
+BLOCKED
+- Vision: no multimodal model installed; qwen3:8b is text+thinking+tools only
+- STT/TTS wired as optional (alfred/voice.py); not claimed as complete without Hermes providing stt_fn/tts_fn
+- Legacy BATs (AURA_CONFIGURAR_QWEN_LLAMA.bat, AURA_HERMES_V10_ULTRA.bat auto-browser) remain on disk; new start path does not call them

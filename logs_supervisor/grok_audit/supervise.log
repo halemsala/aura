@@ -1,0 +1,109 @@
+2026-09-02 17:46:17 supervise start pid=31072
+2026-09-02 19:07:27 supervise start pid=21292
+2026-09-02 19:07:27 supervise start pid=18756
+2026-09-02 19:08:19 já existe supervisor — a sair
+2026-09-02 19:12:09 hermes spawn
+2026-09-02 19:12:09 hermes spawn
+2026-09-02 19:12:42 hermes spawn
+2026-09-02 19:12:43 hermes spawn
+2026-09-02 19:13:32 hermes spawn
+2026-09-02 19:13:32 hermes spawn
+2026-09-02 19:28:04 loop error PermissionError: [WinError 5] Acesso negado: 'C:\\aura\\data\\alfred\\tmpggweqx2i.tmp' -> 'C:\\aura\\data\\alfred\\circuit_breaker.json'
+2026-09-02 19:30:35 alfred spawn
+2026-09-02 19:30:35 alfred spawn
+2026-09-02 19:30:42 hermes spawn
+2026-09-02 19:30:42 hermes spawn
+2026-09-02 19:38:16 loop error PermissionError: [WinError 5] Acesso negado: 'C:\\aura\\data\\alfred\\tmp_z5o9q0d.tmp' -> 'C:\\aura\\data\\alfred\\circuit_breaker.json'
+2026-09-02 19:38:37 alfred spawn
+2026-09-02 19:38:37 alfred spawn
+2026-09-02 19:38:44 hermes spawn
+2026-09-02 19:38:44 hermes spawn
+2026-09-02 19:52:24 alfred spawn
+2026-09-02 19:52:24 alfred spawn
+2026-09-02 19:52:31 hermes spawn
+2026-09-02 19:52:31 hermes spawn
+2026-09-02 19:55:19 loop error PermissionError: [WinError 5] Acesso negado: 'C:\\aura\\data\\alfred\\tmpfh3h2pjc.tmp' -> 'C:\\aura\\data\\alfred\\circuit_breaker.json'
+2026-09-02 20:00:09 alfred spawn
+2026-09-02 20:00:09 alfred spawn
+2026-09-02 20:00:16 hermes spawn
+2026-09-02 20:00:16 hermes spawn
+2026-09-02 20:12:43 hermes spawn
+2026-09-02 20:12:43 hermes spawn
+2026-09-02 20:15:13 alfred spawn
+2026-09-02 20:15:13 alfred spawn
+2026-09-02 20:15:20 hermes spawn
+2026-09-02 20:15:20 hermes spawn
+2026-09-02 20:47:57 loop error PermissionError: [WinError 5] Acesso negado: 'C:\\aura\\data\\alfred\\tmpmb7x1_3t.tmp' -> 'C:\\aura\\data\\alfred\\circuit_breaker.json'
+2026-09-02 20:51:06 loop error PermissionError: [WinError 5] Acesso negado: 'C:\\aura\\data\\alfred\\tmpb2enk7zb.tmp' -> 'C:\\aura\\data\\alfred\\circuit_breaker.json'
+2026-09-02 20:59:11 loop error PermissionError: [WinError 5] Acesso negado: 'C:\\aura\\data\\alfred\\tmpdx8js21d.tmp' -> 'C:\\aura\\data\\alfred\\circuit_breaker.json'
+2026-09-02 21:15:50 hermes spawn
+2026-09-02 21:15:50 hermes spawn
+2026-09-02 21:16:14 loop error OSError: [WinError 8] Não existem recursos de memória suficientes para processar este comando
+2026-09-02 21:16:16 loop error OSError: [WinError 1455] O ficheiro de estrutura de página é demasiado pequeno para que esta operação seja concluída
+2026-09-02 21:16:31 hermes spawn
+2026-09-02 21:16:31 hermes spawn
+2026-09-02 21:16:51 hermes spawn
+2026-09-02 21:16:51 hermes spawn
+2026-09-02 21:17:12 hermes circuit open retry_in=285
+2026-09-02 21:17:12 hermes circuit open retry_in=285
+2026-09-02 21:17:20 loop error PermissionError: [WinError 5] Acesso negado: 'C:\\aura\\data\\alfred\\tmppr4gfhf7.tmp' -> 'C:\\aura\\data\\alfred\\circuit_breaker.json'
+2026-09-02 21:17:35 hermes circuit open retry_in=284
+2026-09-02 21:18:19 hermes spawn
+2026-09-02 21:18:21 hermes spawn
+2026-09-02 21:21:58 alfred spawn
+2026-09-02 21:21:58 alfred spawn
+2026-09-02 21:22:10 hermes spawn
+2026-09-02 21:22:10 hermes spawn
+2026-09-02 21:22:38 loop error PermissionError: [WinError 5] Acesso negado: 'C:\\aura\\data\\alfred\\tmplvd5_lk3.tmp' -> 'C:\\aura\\data\\alfred\\circuit_breaker.json'
+2026-09-02 21:27:10 loop error PermissionError: [WinError 5] Acesso negado: 'C:\\aura\\data\\alfred\\tmpi17ol5np.tmp' -> 'C:\\aura\\data\\alfred\\circuit_breaker.json'
+2026-09-02 21:33:37 loop error PermissionError: [WinError 5] Acesso negado: 'C:\\aura\\data\\alfred\\tmp131fzios.tmp' -> 'C:\\aura\\data\\alfred\\circuit_breaker.json'
+2026-09-02 22:26:34 loop error PermissionError: [WinError 5] Acesso negado: 'C:\\aura\\data\\alfred\\tmpuipyj4dk.tmp' -> 'C:\\aura\\data\\alfred\\circuit_breaker.json'
+2026-09-02 22:45:33 alfred spawn
+2026-09-02 22:45:33 alfred spawn
+2026-09-02 22:46:04 alfred spawn
+2026-09-02 22:46:04 alfred spawn
+2026-09-02 22:46:14 hermes spawn
+2026-09-02 22:46:14 hermes spawn
+2026-09-02 22:46:55 alfred spawn
+2026-09-02 22:46:55 alfred spawn
+2026-09-02 22:52:18 alfred spawn
+2026-09-02 22:52:18 alfred spawn
+2026-09-02 22:52:30 hermes spawn
+2026-09-02 22:52:30 hermes spawn
+2026-09-02 23:06:08 hermes spawn
+2026-09-02 23:07:06 hermes spawn
+2026-09-02 23:07:09 hermes spawn
+2026-09-02 23:08:39 alfred spawn
+2026-09-02 23:08:42 alfred spawn
+2026-09-02 23:10:53 supervise start pid=19764
+2026-09-02 23:10:57 alfred spawn
+2026-09-02 23:11:08 hermes spawn
+2026-09-02 23:11:21 voice spawn
+2026-09-02 23:11:53 voice spawn
+2026-09-02 23:12:16 voice spawn
+2026-09-02 23:12:19 já existe supervisor — a sair
+2026-09-03 01:07:55 supervise start pid=15048
+2026-09-03 01:08:01 alfred spawn
+2026-09-03 01:08:11 hermes spawn
+2026-09-03 01:08:24 voice spawn
+2026-09-03 01:20:28 supervise start pid=17228
+2026-09-03 01:20:34 alfred spawn
+2026-09-03 01:20:43 hermes spawn
+2026-09-03 01:20:56 voice spawn
+2026-09-03 01:21:13 hermes spawn
+2026-09-03 01:23:01 hermes spawn
+2026-09-03 01:23:47 hermes spawn
+2026-09-03 01:27:46 hermes spawn
+2026-09-03 01:28:30 alfred spawn
+2026-09-04 19:28:17 supervise start pid=20768
+2026-09-04 19:28:23 alfred spawn
+2026-09-04 19:28:32 hermes spawn
+2026-09-04 19:28:50 hermes spawn
+2026-09-04 19:29:07 hermes spawn
+2026-09-04 19:29:17 já existe supervisor — a sair
+2026-09-04 21:05:47 voice spawn
+2026-09-04 21:06:04 alfred spawn
+2026-09-04 21:06:16 hermes spawn
+2026-09-04 21:06:27 voice spawn
+2026-09-04 21:06:46 voice spawn
+2026-09-04 21:07:06 voice spawn

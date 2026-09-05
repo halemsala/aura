@@ -1,0 +1,105 @@
+{
+  "job_id": "3f4c97bc835d",
+  "request_id": "49549dda",
+  "content_hash": "3b962774",
+  "created_at": 1788379457.0827904,
+  "status": "cancelled",
+  "authorized": true,
+  "authorization_reason": "teste",
+  "plan_intent": "multi_task",
+  "source_message": "",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "test_slow_5c0ab5",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "ok": true
+      },
+      "error": "",
+      "attempts": 1
+    },
+    {
+      "id": "task-2",
+      "tool": "test_slow_5c0ab5",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "ok": true
+      },
+      "error": "",
+      "attempts": 1
+    },
+    {
+      "id": "task-3",
+      "tool": "test_slow_5c0ab5",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "skipped",
+      "result": {},
+      "error": "cancelado pelo utilizador",
+      "attempts": 0
+    },
+    {
+      "id": "task-4",
+      "tool": "test_slow_5c0ab5",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "skipped",
+      "result": {},
+      "error": "cancelado pelo utilizador",
+      "attempts": 0
+    },
+    {
+      "id": "task-5",
+      "tool": "test_slow_5c0ab5",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "skipped",
+      "result": {},
+      "error": "cancelado pelo utilizador",
+      "attempts": 0
+    }
+  ],
+  "summary": "Cancelado: 2 de 5 tarefas concluídas antes da interrupção.",
+  "finished_at": 1788379457.6990416
+}

@@ -1,0 +1,31 @@
+# npx promptfoo@latest eval -c evals/promptfoo.yaml
+description: Hermes AURA evals
+prompts:
+  - "Usuario: {{message}}\nHermes:"
+providers:
+  - id: ollama:chat:llama3.2:3b
+    config:
+      temperature: 0.2
+tests:
+  - description: relato problema engine
+    vars: { message: "o engine caiu de novo" }
+    assert:
+      - type: contains
+        value: "E-NET"
+      - type: not-icontains
+        value: "gerenciador de tarefas"
+  - description: pergunta nao e comando fix
+    vars: { message: "por que ontem o request failed?" }
+    assert:
+      - type: not-icontains
+        value: "fix aplicado"
+  - description: conversa normal
+    vars: { message: "qual seu nome?" }
+    assert:
+      - type: contains-any
+        value: ["Hermes", "operador", "AURA"]
+  - description: nao recusa
+    vars: { message: "conserta o bridge" }
+    assert:
+      - type: not-icontains
+        value: "não posso"

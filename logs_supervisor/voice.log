@@ -1,0 +1,750 @@
+C:\aura\bridge\jarvis_voice_server.py:442: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\bridge\jarvis_voice_server.py:493: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [22376]
+INFO:     Waiting for application startup.
+INFO:aura.jarvis_voice:AuraEventBus SUB connected to tcp://127.0.0.1:5555
+INFO:aura.jarvis_voice:CommandCenter ativo: 17 ferramentas
+INFO:aura.jarvis_voice:PcOperator ativo: 4 raízes permitidas
+INFO:aura.jarvis_voice:Jarvis Voice server startup complete; inicialização dos motores em background
+INFO:aura.jarvis_voice:ear: a ouvir o microfone Windows (wake: Alfred)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8099 (Press CTRL+C to quit)
+[device] NVIDIA CUDA detectada via nvidia-smi | usando cuda:0
+INFO:     127.0.0.1:58105 - "GET /api/health HTTP/1.1" 200 OK
+[stt] Carregando Whisper 'base' em cpu (compute=int8, workers=1)...
+INFO:     127.0.0.1:56725 - "GET /api/health HTTP/1.1" 200 OK
+INFO:aura.pilar4.audio_pipeline:Pipeline de áudio paralelizado iniciado | target_first_segment=320ms
+INFO:aura.jarvis_voice:Pilar 4 integrado ao Voice: pipeline paralelo ativo
+INFO:aura.jarvis_voice:Motores de voz carregados; STT CPU pronto=True (LLM = Hermes qwen3:8b)
+INFO:     127.0.0.1:64426 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64465 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64495 - "GET /api/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.336 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:05.448 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:05.804 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:05.740 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:54707 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63337 - "GET /api/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:05.568 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:05.984 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.336 of audio
+INFO:     127.0.0.1:54460 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54512 - "GET /api/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.080 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.240 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:05.664 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.208 of audio
+INFO:     127.0.0.1:58575 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54967 - "GET /api/health HTTP/1.1" 200 OK
+forrtl: error (200): program aborting due to window-CLOSE event
+Image              PC                Routine            Line        Source             
+KERNELBASE.dll     00007FFCC356605D  Unknown               Unknown  Unknown
+KERNEL32.DLL       00007FFCC53ACCB7  Unknown               Unknown  Unknown
+ntdll.dll          00007FFCC5F6CAEC  Unknown               Unknown  Unknown
+C:\aura\bridge\jarvis_voice_server.py:442: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\bridge\jarvis_voice_server.py:493: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [24524]
+INFO:     Waiting for application startup.
+INFO:aura.jarvis_voice:AuraEventBus SUB connected to tcp://127.0.0.1:5555
+INFO:aura.jarvis_voice:CommandCenter ativo: 17 ferramentas
+INFO:aura.jarvis_voice:PcOperator ativo: 4 raízes permitidas
+INFO:aura.jarvis_voice:Jarvis Voice server startup complete; inicialização dos motores em background
+INFO:aura.jarvis_voice:ear: a ouvir o microfone Windows (wake: Alfred)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8099 (Press CTRL+C to quit)
+[device] NVIDIA CUDA detectada via nvidia-smi | usando cuda:0
+INFO:     127.0.0.1:64880 - "GET /api/health HTTP/1.1" 200 OK
+[stt] Carregando Whisper 'base' em cpu (compute=int8, workers=1)...
+INFO:aura.pilar4.audio_pipeline:Pipeline de áudio paralelizado iniciado | target_first_segment=320ms
+INFO:aura.jarvis_voice:Pilar 4 integrado ao Voice: pipeline paralelo ativo
+INFO:aura.jarvis_voice:Motores de voz carregados; STT CPU pronto=True (LLM = Hermes qwen3:8b)
+INFO:     127.0.0.1:64900 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51197 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50413 - "GET /api/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:04.100 of audio
+INFO:     127.0.0.1:55456 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55494 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55515 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58082 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58119 - "GET /api/health HTTP/1.1" 200 OK
+forrtl: error (200): program aborting due to window-CLOSE event
+Image              PC                Routine            Line        Source             
+KERNELBASE.dll     00007FFCC356605D  Unknown               Unknown  Unknown
+KERNEL32.DLL       00007FFCC53ACCB7  Unknown               Unknown  Unknown
+ntdll.dll          00007FFCC5F6CAEC  Unknown               Unknown  Unknown
+C:\aura\bridge\jarvis_voice_server.py:442: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\aura\bridge\jarvis_voice_server.py:493: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [14468]
+INFO:     Waiting for application startup.
+INFO:aura.jarvis_voice:AuraEventBus SUB connected to tcp://127.0.0.1:5555
+INFO:aura.jarvis_voice:CommandCenter ativo: 17 ferramentas
+INFO:aura.jarvis_voice:PcOperator ativo: 4 raízes permitidas
+INFO:aura.jarvis_voice:Jarvis Voice server startup complete; inicialização dos motores em background
+INFO:aura.jarvis_voice:ear: a ouvir o microfone Windows (wake: Alfred)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8099 (Press CTRL+C to quit)
+[device] NVIDIA CUDA detectada via nvidia-smi | usando cuda:0
+INFO:     127.0.0.1:53730 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53744 - "GET /api/health HTTP/1.1" 200 OK
+[stt] Carregando Whisper 'base' em cpu (compute=int8, workers=1)...
+INFO:aura.pilar4.audio_pipeline:Pipeline de áudio paralelizado iniciado | target_first_segment=320ms
+INFO:aura.jarvis_voice:Pilar 4 integrado ao Voice: pipeline paralelo ativo
+INFO:aura.jarvis_voice:Motores de voz carregados; STT CPU pronto=True (LLM = Hermes qwen3:8b)
+INFO:     127.0.0.1:57268 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:01.612 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:00.688 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:00.264 of audio
+INFO:     127.0.0.1:56610 - "GET /api/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:01.328 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:04.392 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:04.028 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:02.708 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:04.360 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:04.736 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:02.644 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:02.052 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:01.636 of audio
+INFO:     127.0.0.1:55728 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63630 - "GET /api/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:05.600 of audio
+INFO:     127.0.0.1:58108 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63350 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52640 - "GET /api/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:05.320 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:05.888 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:04.192 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:05.164 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:05.280 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:54945 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54977 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54987 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55067 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63795 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52868 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56590 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59019 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50482 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63371 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52104 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61626 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61636 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61649 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50392 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50401 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50410 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49760 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49769 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49778 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60690 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60698 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60708 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54524 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54533 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54542 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52421 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52435 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52443 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52452 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55706 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55716 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55725 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59023 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58835 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58844 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56721 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56730 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56739 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60490 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60498 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60508 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62082 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62090 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62100 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62124 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62134 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62144 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54790 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54798 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54807 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54829 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50644 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50653 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50662 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58652 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58660 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58669 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55096 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55104 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55114 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55124 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64293 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56123 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56132 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52234 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52242 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52251 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57901 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57910 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57919 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55824 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60956 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60974 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54030 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54038 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54048 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52204 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52214 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52223 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52238 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:56097 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56105 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56115 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62156 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62165 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62174 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62189 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59563 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59571 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59580 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.176 of audio
+INFO:     127.0.0.1:53145 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53153 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53162 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53178 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53192 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53211 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62753 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61233 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61242 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56962 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56970 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56979 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56995 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50237 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50246 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50255 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50267 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:55927 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55936 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55945 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55961 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63392 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63400 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63410 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50293 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50302 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50311 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50327 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50338 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50349 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.208 of audio
+INFO:     127.0.0.1:49881 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49889 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49899 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51067 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50102 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57482 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57492 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57508 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58964 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58972 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58981 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55851 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55859 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55869 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55900 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55930 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55941 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55950 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51104 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63310 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63316 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63741 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63747 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58709 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58715 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58412 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58419 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64965 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64972 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49904 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51418 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51425 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51431 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51439 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64068 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64075 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64082 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58349 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58355 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:49644 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57192 - "GET /api/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.208 of audio
+INFO:     127.0.0.1:57210 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57216 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:05.312 of audio
+INFO:     127.0.0.1:53499 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53506 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53518 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65289 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55406 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55413 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62150 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62160 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57855 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57865 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53013 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53022 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49598 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49608 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64693 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64702 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62892 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62233 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59727 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59736 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.336 of audio
+INFO:     127.0.0.1:53282 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53293 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60590 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60599 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53829 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53838 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:49829 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49839 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.336 of audio
+INFO:     127.0.0.1:54854 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49963 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56603 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56612 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56846 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56855 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50160 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50170 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60038 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60047 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60083 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60092 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56344 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56353 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:60049 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60059 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60067 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60076 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60138 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60147 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.336 of audio
+INFO:     127.0.0.1:60211 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60220 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61535 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61545 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:63873 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63883 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:63945 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63955 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51119 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51128 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51140 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51149 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51213 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51223 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51285 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51295 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53593 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53602 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53644 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53653 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:53728 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53738 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60792 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60801 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60820 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60829 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:60893 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60903 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.176 of audio
+INFO:     127.0.0.1:64857 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64866 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55428 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55438 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55484 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55493 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55556 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55566 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49231 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49241 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49260 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49269 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:49332 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49341 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49406 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49415 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:61439 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61449 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61500 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61509 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.336 of audio
+INFO:     127.0.0.1:55852 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55862 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52273 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52283 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.336 of audio
+INFO:     127.0.0.1:52306 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52316 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52380 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52389 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52451 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52461 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51537 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51547 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51600 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51609 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:57258 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57267 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58646 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52252 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49796 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49806 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.304 of audio
+INFO:     127.0.0.1:49871 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49880 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.368 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:49951 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49960 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49981 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.336 of audio
+INFO:     127.0.0.1:58252 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58261 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:05.568 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:05.440 of audio
+INFO:     127.0.0.1:58329 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58339 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:62585 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49675 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57262 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57271 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.048 of audio
+INFO:     127.0.0.1:57334 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57343 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.112 of audio
+INFO:     127.0.0.1:57406 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57416 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57423 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57432 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51303 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51312 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51376 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51386 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53170 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53179 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65507 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65516 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49199 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49208 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64931 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64940 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60060 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60069 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64197 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64207 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:60265 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60274 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65031 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65040 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65511 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65520 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:51157 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51167 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51226 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51235 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58146 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58155 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58217 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58227 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.240 of audio
+INFO:     127.0.0.1:54848 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54858 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59388 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59397 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54365 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54374 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53439 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53449 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53504 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53513 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51036 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51045 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56184 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56194 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:61244 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61253 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60201 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60210 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:53823 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53832 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:49757 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49767 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53190 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53199 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61625 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61634 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56209 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56218 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:64193 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64202 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55438 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55447 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55489 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55498 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59010 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59020 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59069 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59078 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64209 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64218 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64281 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64291 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.336 of audio
+INFO:     127.0.0.1:63791 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63800 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63814 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63823 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:50698 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50708 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:64635 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64646 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64686 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64695 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65301 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65311 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59257 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59266 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57278 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57288 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57297 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57307 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58997 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59006 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54524 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54534 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54570 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54582 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62367 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62376 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51503 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51512 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53176 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53190 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53192 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53202 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:01.488 of audio
+INFO:     127.0.0.1:61164 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61173 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.304 of audio
+INFO:     127.0.0.1:50738 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50748 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60902 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60912 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49659 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49674 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64714 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64724 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56404 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56413 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52566 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52575 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56572 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56582 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.336 of audio
+INFO:     127.0.0.1:50233 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50242 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64648 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64659 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64138 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64147 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58623 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56055 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63415 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63425 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:01.904 of audio
+INFO:     127.0.0.1:56726 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56734 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:06.048 of audio
+INFO:     127.0.0.1:58458 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58467 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+INFO:     127.0.0.1:59293 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59301 - "GET /api/voice/health HTTP/1.1" 200 OK
+INFO:faster_whisper:Processing audio with duration 00:07.000
+INFO:faster_whisper:VAD filter removed 00:07.000 of audio
+forrtl: error (200): program aborting due to window-CLOSE event
+Image              PC                Routine            Line        Source             
+KERNELBASE.dll     00007FFEC8E3605D  Unknown               Unknown  Unknown
+KERNEL32.DLL       00007FFEC96CCCB7  Unknown               Unknown  Unknown
+ntdll.dll          00007FFECB62CAEC  Unknown               Unknown  Unknown

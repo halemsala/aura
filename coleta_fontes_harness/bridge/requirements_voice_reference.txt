@@ -1,0 +1,7 @@
+# Extra opcional para usar bridge/jarvis/voices/voz_masculina_referencia.wav
+coqui-tts==0.27.5
+transformers>=4.57.1,<5.0
+huggingface-hub>=0.26.0,<1.0
+tokenizers>=0.22.0,<0.24
+soundfile
+librosa

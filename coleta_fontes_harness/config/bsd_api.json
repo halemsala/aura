@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "api_key": "",
+  "base_url": "https://sports.bzzoiro.com/api/v2",
+  "timeout_sec": 8,
+  "max_requests_per_minute": 20,
+  "primary_source": "sokkerpro",
+  "role": "complementary",
+  "features": {
+    "live_stats": true,
+    "corners": true,
+    "incidents": true,
+    "xg": true,
+    "shotmap": false,
+    "predictions": true
+  },
+  "notes": "Fonte COMPLEMENTAR. Nunca substitui SokkerPro. Chave alterável aqui ou via env BSD_API_KEY."
+}

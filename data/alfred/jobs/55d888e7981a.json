@@ -1,0 +1,40 @@
+{
+  "job_id": "55d888e7981a",
+  "request_id": "x",
+  "content_hash": "abc",
+  "created_at": 1788379433.7172673,
+  "status": "success",
+  "authorized": true,
+  "authorization_reason": "t",
+  "plan_intent": "single_task",
+  "source_message": "",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "write_text_file",
+      "arguments": {
+        "path": "Documents/s.txt",
+        "text": "x"
+      },
+      "risk": "medium",
+      "mutating": true,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "written": true,
+        "path": "C:\\Users\\salaa\\AppData\\Local\\Temp\\pytest-of-salaa\\pytest-11\\home0\\Documents\\s.txt",
+        "backup": null
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "1 de 1 tarefas concluídas com sucesso.",
+  "finished_at": 1788379433.7428136
+}

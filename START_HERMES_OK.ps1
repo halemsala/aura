@@ -1,0 +1,72 @@
+﻿#Requires -Version 5.1
+# AURA V37.3.52 - Start Hermes + ensure Ollama
+$ErrorActionPreference = 'Continue'
+$Root = 'C:\aura'
+Set-Location $Root
+
+$py = $null
+foreach ($c in @('C:\aura\engine\venv\Scripts\python.exe','C:\aura\engine\venv\Scripts\python.exe')) {
+  if (Test-Path $c) {
+    $v = & $c -c "import sys; print('%d.%d' % sys.version_info[:2])" 2>$null
+    if ($v -match '3\.11') { $py = $c; break }
+  }
+}
+if (-not $py) { Write-Host 'Python 3.11 nao encontrado' -ForegroundColor Red; exit 1 }
+Write-Host "PY=$py"
+
+if (-not (Test-Path 'C:\aura\hermes_v10\core\hermes_llm_engine.py')) {
+  Write-Host 'FALTA hermes_v10' -ForegroundColor Red; exit 2
+}
+
+# Ollama
+$ollama = "$env:LOCALAPPDATA\Programs\Ollama\ollama.exe"
+try {
+  $null = Invoke-WebRequest 'http://127.0.0.1:11434/api/tags' -UseBasicParsing -TimeoutSec 3
+  Write-Host 'Ollama ja ON' -ForegroundColor Green
+} catch {
+  if (Test-Path $ollama) {
+    Start-Process -FilePath $ollama -ArgumentList 'serve' -WindowStyle Minimized
+    Start-Sleep 5
+    Write-Host 'Ollama iniciado' -ForegroundColor Green
+  } else {
+    Write-Host 'Ollama nao encontrado - chat LLM pode falhar' -ForegroundColor Yellow
+  }
+}
+
+$env:AURA_ROOT = $Root
+$env:PYTHONPATH = "$Root;$Root\hermes_v10;$Root\engine;$Root\bridge"
+$env:PAPER_TRADE = 'true'
+$env:EXECUTION_ALLOWED = 'false'
+$env:PYTHONUTF8 = '1'
+$env:OLLAMA_HOST = 'http://127.0.0.1:11434'
+
+try {
+  Get-NetTCPConnection -LocalPort 8777 -State Listen -ErrorAction SilentlyContinue |
+    ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }
+} catch {}
+
+$logDir = Join-Path $Root 'logs_supervisor'
+New-Item -ItemType Directory -Force -Path $logDir | Out-Null
+$log = Join-Path $logDir 'hermes_v10.log'
+$logErr = Join-Path $logDir 'hermes_v10.log.err'
+$work = Join-Path $Root 'hermes_v10'
+$entry = Join-Path $work 'AURA_RUN_HERMES.py'
+Write-Host "ENTRY=$entry"
+
+Start-Process -FilePath $py -WorkingDirectory $work -WindowStyle Minimized `
+  -ArgumentList @('-u', $entry) `
+  -RedirectStandardOutput $log -RedirectStandardError $logErr
+
+Write-Host 'A aguardar health...'
+Start-Sleep 12
+try {
+  $r = Invoke-WebRequest 'http://127.0.0.1:8777/health' -UseBasicParsing -TimeoutSec 8
+  Write-Host "HERMES ON - $($r.StatusCode)" -ForegroundColor Green
+  Write-Host $r.Content
+  Start-Process 'http://127.0.0.1:8777'
+} catch {
+  Write-Host 'Hermes OFF' -ForegroundColor Yellow
+  if (Test-Path $log) { Get-Content $log -Tail 40 }
+  if (Test-Path $logErr) { Get-Content $logErr -Tail 30 }
+}
+

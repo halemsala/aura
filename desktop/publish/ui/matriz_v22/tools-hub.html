@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AURA · Painel de Controlo</title>
+<style>
+:root{
+  --bg:#070b10;--panel:#0f1620;--panel2:#141e2b;--line:#243244;
+  --text:#e8eef6;--muted:#8b9bb0;--accent:#3d9cf0;--ok:#3dd68c;
+  --warn:#f0b429;--bad:#f07178;--radius:14px;
+  --font:ui-sans-serif,system-ui,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font);background:radial-gradient(1000px 500px at 0% 0%,#152033 0%,var(--bg) 50%);color:var(--text);min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line);background:rgba(7,11,16,.9);position:sticky;top:0;z-index:20}
+header h1{margin:0;font-size:1.15rem;font-weight:700}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tabs button{border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--muted);border-radius:999px;padding:7px 12px;font-size:.78rem;font-weight:650;cursor:pointer}
+.tabs button.on{color:var(--text);border-color:var(--accent);background:rgba(61,156,240,.12)}
+.badges{display:flex;gap:6px;flex-wrap:wrap}
+.badge{font-size:.68rem;padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.badge.ok{color:var(--ok);border-color:rgba(61,214,140,.4)}
+.badge.bad{color:var(--bad);border-color:rgba(240,113,120,.45)}
+.badge.warn{color:var(--warn);border-color:rgba(240,180,41,.4)}
+main{padding:16px 18px 40px;max-width:1280px;margin:0 auto}
+.panel{display:none}.panel.on{display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+.card h2{margin:0 0 6px;font-size:.92rem}.card p{margin:0 0 10px;font-size:.76rem;color:var(--muted);line-height:1.4}
+.kv{display:flex;justify-content:space-between;gap:8px;font-size:.82rem;padding:5px 0;border-bottom:1px solid rgba(36,50,68,.55)}
+.kv b{font-weight:650}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+@media(max-width:800px){.row3{grid-template-columns:1fr}}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}
+.stat .n{font-size:.7rem;color:var(--muted)}.stat .v{font-size:1.05rem;font-weight:700;margin-top:3px}
+.v.ok{color:var(--ok)}.v.bad{color:var(--bad)}.v.warn{color:var(--warn)}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+button.btn,a.btn{border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);border-radius:10px;padding:9px 12px;font-size:.78rem;font-weight:650;cursor:pointer}
+button.btn:hover,a.btn:hover{border-color:var(--accent);background:rgba(61,156,240,.1)}
+button.btn.ok{border-color:rgba(61,214,140,.45);color:var(--ok)}
+button.btn.danger{border-color:rgba(240,113,120,.5);color:var(--bad)}
+button.btn.warn{border-color:rgba(240,180,41,.45);color:var(--warn)}
+button.btn:disabled{opacity:.45;cursor:not-allowed}
+.list{max-height:200px;overflow:auto;font-size:.74rem;color:var(--muted);margin-top:8px}
+.list div{padding:5px 0;border-bottom:1px solid rgba(36,50,68,.4)}
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#1a2533;border:1px solid var(--line);padding:10px 16px;border-radius:12px;font-size:.8rem;opacity:0;transition:.2s;z-index:50;pointer-events:none}
+.toast.show{opacity:1}
+.api-banner{font-size:.75rem;color:var(--muted);margin-bottom:12px;padding:8px 12px;border:1px dashed var(--line);border-radius:10px}
+.api-banner.ok{border-color:rgba(61,214,140,.4);color:var(--ok)}
+.api-banner.bad{border-color:rgba(240,113,120,.45);color:var(--bad)}
+input,select{background:#0b121a;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:7px 9px;font-size:.8rem}
+label.field{display:flex;flex-direction:column;gap:4px;font-size:.72rem;color:var(--muted);margin-top:8px}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>AURA · Painel de Controlo</h1>
+    <div class="tabs" id="tabs">
+      <button type="button" data-tab="overview" class="on">Visão geral</button>
+      <button type="button" data-tab="telegram">Telegram</button>
+      <button type="button" data-tab="agents">Agentes</button>
+      <button type="button" data-tab="system">Sistema</button>
+      <button type="button" data-tab="vram">VRAM</button>
+      <button type="button" data-tab="sysmon">CPU/RAM</button>
+      <button type="button" data-tab="reports">Relatórios</button>
+    </div>
+  </div>
+  <div class="badges">
+    <span class="badge ok">paper_trade</span>
+    <span class="badge ok">exec=false</span>
+    <span class="badge" id="apiBadge">API …</span>
+    <span class="badge" id="killBadge">TG kill …</span>
+  </div>
+</header>
+<main>
+  <div id="apiBanner" class="api-banner">A ligar a http://127.0.0.1:8790 (paper-only)…</div>
+
+  <!-- OVERVIEW -->
+  <section class="panel on" id="panel-overview">
+    <div class="row3">
+      <div class="stat"><div class="n">Bridge :8080</div><div class="v" id="stBridge">…</div></div>
+      <div class="stat"><div class="n">Engine :8765</div><div class="v" id="stEngine">…</div></div>
+      <div class="stat"><div class="n">Voice :8099</div><div class="v" id="stVoice">…</div></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h2>Atalhos rápidos</h2>
+        <p>Controlo por botões · paper-only</p>
+        <div class="btns">
+          <button class="btn" type="button" id="btnRefreshAll">Atualizar tudo</button>
+          <button class="btn" type="button" data-copy="AURA_TOOLS_CONTROL_API.bat">Iniciar API :8790</button>
+          <button class="btn" type="button" data-copy="AURA_GROK_ACTIVATE.bat">Ativar stack</button>
+          <button class="btn" type="button" data-copy="AURA_GROK_GPU_LIVRE.bat">GPU livre</button>
+          <a class="btn" href="./index.html">Operator OS</a>
+          <a class="btn" href="./cockpit.html">Cockpit</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Telegram (resumo)</h2>
+        <div class="kv"><span>Pending</span><b id="ovPending">—</b></div>
+        <div class="kv"><span>Sent</span><b id="ovSent">—</b></div>
+        <div class="kv"><span>Blocked</span><b id="ovBlocked">—</b></div>
+        <div class="btns">
+          <button class="btn" type="button" data-tabgo="telegram">Abrir Telegram</button>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Elite Squad (resumo)</h2>
+        <div class="kv"><span>Verdict</span><b id="ovVerdict">—</b></div>
+        <div class="kv"><span>Effective</span><b id="ovEffective">—</b></div>
+        <div class="btns">
+          <button class="btn" type="button" data-tabgo="agents">Abrir Agentes</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TELEGRAM -->
+  <section class="panel" id="panel-telegram">
+    <div class="grid">
+      <div class="card">
+        <h2>Fila de tips</h2>
+        <p>pending → sent / blocked · política + sessão</p>
+        <div class="kv"><span>Pending</span><b id="tgPending">0</b></div>
+        <div class="kv"><span>Sent</span><b id="tgSent">0</b></div>
+        <div class="kv"><span>Blocked</span><b id="tgBlocked">0</b></div>
+        <div class="kv"><span>Dry-run / Failed</span><b id="tgOther">0</b></div>
+        <div class="list" id="tgRecent"></div>
+        <div class="btns">
+          <button class="btn" type="button" id="btnQueueRefresh">Atualizar fila</button>
+          <button class="btn warn" type="button" id="btnClearPending">Limpar pending</button>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Kill switch &amp; sessão</h2>
+        <p>Uma ação sua cobre muitas mensagens (grant)</p>
+        <div class="kv"><span>Kill switch</span><b id="tgKill">—</b></div>
+        <div class="kv"><span>Session until</span><b id="tgSession">—</b></div>
+        <label class="field">Horas de sessão
+          <input type="number" id="sessionHours" value="12" min="1" max="72"/>
+        </label>
+        <div class="btns">
+          <button class="btn danger" type="button" id="btnKillOn">Kill ON</button>
+          <button class="btn ok" type="button" id="btnKillOff">Kill OFF</button>
+          <button class="btn" type="button" id="btnGrant">Grant sessão</button>
+          <button class="btn" type="button" id="btnRevoke">Revogar sessão</button>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Política / config</h2>
+        <p>Pré-autorização bulk · paper/advisory</p>
+        <div class="kv"><span>Policy file</span><b id="tgPolicyFile">—</b></div>
+        <div class="kv"><span>Policy enabled</span><b id="tgPolicyEn">—</b></div>
+        <div class="kv"><span>Auto-publish</span><b id="tgAuto">—</b></div>
+        <div class="btns">
+          <button class="btn" type="button" id="btnPolOn">Ativar policy</button>
+          <button class="btn" type="button" id="btnPolOff">Desativar policy</button>
+          <button class="btn" type="button" id="btnAutoOn">Auto-publish ON</button>
+          <button class="btn" type="button" id="btnAutoOff">Auto-publish OFF</button>
+          <button class="btn" type="button" data-copy="telegram_intel_dry_run.bat">Dry-run BAT</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENTS -->
+  <section class="panel" id="panel-agents">
+    <div class="grid">
+      <div class="card">
+        <h2>Elite Squad</h2>
+        <p>Red Team · Janitor · Forensics · ROI paper</p>
+        <div class="kv"><span>Verdict</span><b id="esVerdict">—</b></div>
+        <div class="kv"><span>Effective</span><b id="esEffective">—</b></div>
+        <div class="kv"><span>Reasons</span><b id="esReasons">—</b></div>
+        <div class="btns">
+          <button class="btn" type="button" id="btnDemoVeto">Gravar veto demo</button>
+          <button class="btn" type="button" data-copy="from engine.agents.elite_squad.integration_hooks import audit_proposal, sanitize_feed">Copy import</button>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Agentes ENABLED</h2>
+        <p>Lista local agents/ENABLED · não altera flags de execução</p>
+        <div class="kv"><span>Count</span><b id="agCount">—</b></div>
+        <div class="list" id="agList"></div>
+        <div class="btns">
+          <button class="btn" type="button" id="btnAgentsRefresh">Atualizar agentes</button>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Invariantes</h2>
+        <div class="kv"><span>paper_trade</span><b class="ok">true</b></div>
+        <div class="kv"><span>execution_allowed</span><b class="ok">false</b></div>
+        <div class="kv"><span>Telegram no hot path</span><b>não</b></div>
+        <p style="margin-top:10px">Decisões de agentes = advisory. Share Telegram = política + sessão.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYSTEM -->
+  <section class="panel" id="panel-system">
+    <div class="grid">
+      <div class="card">
+        <h2>Health</h2>
+        <div class="btns">
+          <a class="btn" href="http://127.0.0.1:8080/health" target="_blank">Bridge</a>
+          <a class="btn" href="http://127.0.0.1:8765/api/health" target="_blank">Engine</a>
+          <a class="btn" href="http://127.0.0.1:8765/api/ui/state" target="_blank">UI state</a>
+          <a class="btn" href="http://127.0.0.1:8765/api/diagnostics/deep" target="_blank">Diagnostics</a>
+          <a class="btn" href="http://127.0.0.1:8099/api/voice/health" target="_blank">Voice</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>BATs (copia)</h2>
+        <div class="btns">
+          <button class="btn" type="button" data-copy="INSTALAR_TUDO.bat">INSTALAR_TUDO</button>
+          <button class="btn" type="button" data-copy="AURA_GROK_FIX.bat">FIX</button>
+          <button class="btn" type="button" data-copy="AURA_GROK_ACTIVATE.bat">ACTIVATE</button>
+          <button class="btn" type="button" data-copy="CHECK.bat">CHECK</button>
+          <button class="btn" type="button" data-copy="LIMPEZA_COMPLETA.bat">LIMPEZA</button>
+          <button class="btn" type="button" data-copy="AURA_REPARAR_XTTS_TORCHCODEC.bat">Reparar XTTS</button>
+          <button class="btn" type="button" data-copy="AURA_OPS_STATUS_REFRESH.bat">Refresh ops JSON</button>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Menus / UI</h2>
+        <p>Corrigido: rail único · link Tools Hub no Cockpit</p>
+        <div class="btns">
+          <a class="btn" href="./index.html">Operator OS (index)</a>
+          <a class="btn" href="./operator-os.html">Operator OS alt</a>
+          <a class="btn" href="./cockpit.html">Cockpit</a>
+          <a class="btn" href="./tools-hub.html">Este painel</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VRAM -->
+  <section class="panel" id="panel-vram">
+    <div class="grid">
+      <div class="card" style="grid-column:1/-1">
+        <h2>VRAM / GPU Monitor</h2>
+        <p>Snapshot live via Control API + nvidia-smi · paper-only</p>
+        <div class="list" id="vramBox">—</div>
+        <div class="list" id="vramTips" style="margin-top:10px;color:var(--muted);font-size:.78rem"></div>
+        <div class="btns">
+          <button class="btn" type="button" id="btnVramRefresh">Atualizar</button>
+          <button class="btn" type="button" data-copy="AURA_GROK_GPU_LIVRE.bat">GPU livre</button>
+          <button class="btn" type="button" data-copy="AURA_VRAM_REPORT.bat">Relatório BAT</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYSMON CPU/RAM -->
+  <section class="panel" id="panel-sysmon">
+    <div class="grid">
+      <div class="card">
+        <h2>CPU</h2>
+        <div class="kv"><span>Uso</span><b id="cpuPct">—</b></div>
+        <div class="kv"><span>Cores</span><b id="cpuCores">—</b></div>
+      </div>
+      <div class="card">
+        <h2>RAM</h2>
+        <div class="kv"><span>Usada</span><b id="ramUsed">—</b></div>
+        <div class="kv"><span>Total</span><b id="ramTotal">—</b></div>
+        <div class="kv"><span>%</span><b id="ramPct">—</b></div>
+      </div>
+      <div class="card" style="grid-column:1/-1">
+        <h2>Serviços (portas)</h2>
+        <div class="list" id="svcBox">—</div>
+        <div class="list" id="sysTips" style="margin-top:8px;color:var(--muted);font-size:.78rem"></div>
+        <div class="btns">
+          <button class="btn" type="button" id="btnSysRefresh">Atualizar métricas</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORTS -->
+  <section class="panel" id="panel-reports">
+    <div class="grid">
+      <div class="card" style="grid-column:1/-1">
+        <h2>Últimos relatórios</h2>
+        <p>Selecione e abra (path local). Também pode copiar o caminho.</p>
+        <select id="reportSelect" style="width:100%;padding:8px;border-radius:8px;background:var(--panel);color:var(--text);border:1px solid var(--line);margin-bottom:10px">
+          <option value="">— carregar —</option>
+        </select>
+        <div class="btns">
+          <button class="btn" type="button" id="btnReportsRefresh">Atualizar lista</button>
+          <button class="btn ok" type="button" id="btnReportOpen">Abrir / Copiar path</button>
+          <button class="btn" type="button" data-copy="AURA_INSTALAR_TESTAR_RELATORIO_GERAL.bat">Gerar relatório geral</button>
+        </div>
+        <div class="list" id="reportInfo" style="margin-top:10px"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<div class="toast" id="toast"></div>
+<script>
+const API = "http://127.0.0.1:8790";
+const $ = (id) => document.getElementById(id);
+function toast(m){const t=$("toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2800)}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}
+
+async function api(path, opts){
+  const r = await fetch(API+path, Object.assign({headers:{"Content-Type":"application/json"}}, opts||{}));
+  const j = await r.json().catch(()=>({}));
+  if(!r.ok) throw new Error(j.error||("HTTP "+r.status));
+  return j;
+}
+
+function setTab(name){
+  document.querySelectorAll(".tabs button").forEach(b=>b.classList.toggle("on", b.dataset.tab===name));
+  document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("on", p.id==="panel-"+name));
+}
+document.getElementById("tabs").addEventListener("click", e=>{
+  const b=e.target.closest("button[data-tab]"); if(b) setTab(b.dataset.tab);
+});
+document.querySelectorAll("[data-tabgo]").forEach(b=>b.addEventListener("click",()=>setTab(b.getAttribute("data-tabgo"))));
+
+document.querySelectorAll("[data-copy]").forEach(btn=>{
+  btn.addEventListener("click", async()=>{
+    const v=btn.getAttribute("data-copy");
+    try{await navigator.clipboard.writeText(v);toast("Copiado: "+v)}catch(e){toast(v)}
+  });
+});
+
+async function ping(id,url){
+  const el=$(id);
+  try{const r=await fetch(url,{cache:"no-store",signal:AbortSignal.timeout(2500)});el.textContent=r.ok?"online":"HTTP "+r.status;el.className="v "+(r.ok?"ok":"bad")}
+  catch(e){el.textContent="offline";el.className="v bad"}
+}
+
+
+async function loadSystem(){
+  try{
+    const j = await api("/api/system");
+    const cr = j.cpu_ram || {};
+    $("cpuPct").textContent = (cr.cpu_percent!=null? cr.cpu_percent+"%":"—");
+    $("cpuPct").className = (cr.cpu_percent>=90?"bad":(cr.cpu_percent>=70?"warn":"ok"));
+    $("cpuCores").textContent = cr.cpu_count||"—";
+    $("ramUsed").textContent = cr.ram_used_mb!=null? cr.ram_used_mb+" MB":"—";
+    $("ramTotal").textContent = cr.ram_total_mb!=null? cr.ram_total_mb+" MB":"—";
+    $("ramPct").textContent = cr.ram_percent!=null? cr.ram_percent+"%":"—";
+    $("ramPct").className = (cr.ram_percent>=90?"bad":(cr.ram_percent>=80?"warn":"ok"));
+    const svc = (j.services&&j.services.summary)||{};
+    $("svcBox").innerHTML = Object.keys(svc).length
+      ? Object.entries(svc).map(([k,v])=>`<div class="kv"><span>${esc(k)}</span><b class="${v==="UP"?"ok":"bad"}">${v}</b></div>`).join("")
+      : "<div>—</div>";
+    const tips = j.recommendations||[];
+    $("sysTips").innerHTML = tips.map(t=>`<div>• ${esc(t)}</div>`).join("");
+  }catch(e){ toast("sys: "+e.message); }
+}
+async function loadReports(){
+  try{
+    const j = await api("/api/reports");
+    const sel = $("reportSelect");
+    const cur = sel.value;
+    sel.innerHTML = '<option value="">— selecione —</option>';
+    (j.reports||[]).forEach(r=>{
+      const o=document.createElement("option");
+      o.value=r.path; o.textContent=`${r.name}  (${new Date(r.mtime*1000).toLocaleString()})`;
+      sel.appendChild(o);
+    });
+    if(cur) sel.value=cur;
+    $("reportInfo").textContent = (j.reports||[]).length+" relatórios encontrados";
+  }catch(e){ toast("reports: "+e.message); }
+}
+
+async function loadStatus(){
+  try{
+    const j = await api("/api/status");
+    $("apiBadge").textContent="API OK"; $("apiBadge").className="badge ok";
+    $("apiBanner").textContent="API de controlo ativa · http://127.0.0.1:8790 · paper-only";
+    $("apiBanner").className="api-banner ok";
+    const c=(j.telegram&&j.telegram.counts)||{};
+    $("tgPending").textContent=c.pending||0; $("ovPending").textContent=c.pending||0;
+    $("tgSent").textContent=c.sent||0; $("ovSent").textContent=c.sent||0;
+    $("tgBlocked").textContent=c.blocked||0; $("ovBlocked").textContent=c.blocked||0;
+    $("tgOther").textContent=(c.dry_run||0)+" / "+(c.failed||0);
+    const kill=!!j.kill_switch;
+    $("tgKill").textContent=kill?"ON":"OFF";
+    $("killBadge").textContent="TG kill: "+(kill?"ON":"OFF");
+    $("killBadge").className="badge "+(kill?"bad":"ok");
+    const recent=j.telegram.recent||[];
+    $("tgRecent").innerHTML=recent.length?recent.map(x=>`<div><button class="btn" style="padding:2px 6px;margin-right:6px" data-mark="${esc(x.id)}" data-st="sent">sent</button><button class="btn" style="padding:2px 6px;margin-right:6px" data-mark="${esc(x.id)}" data-st="blocked">block</button>[${esc(x.status)}] ${esc((x.text||x.preview||"").slice(0,90))}</div>`).join(""):"<div>Fila vazia</div>";
+    $("tgRecent").querySelectorAll("[data-mark]").forEach(btn=>{
+      btn.onclick=async()=>{
+        try{await api("/api/queue/mark",{method:"POST",body:JSON.stringify({id:btn.getAttribute("data-mark"),status:btn.getAttribute("data-st")})});toast("Marcado");loadStatus()}catch(e){toast(e.message)}
+      };
+    });
+    const ops=j.ops||{};
+    const sess=(ops.telegram&&ops.telegram.session_until)||0;
+    $("tgSession").textContent=sess?new Date(sess*1000).toLocaleString():"—";
+    const lv=(j.agents&&j.agents.last_veto)||{};
+    $("esVerdict").textContent=lv.verdict||"—"; $("ovVerdict").textContent=lv.verdict||"—";
+    $("esEffective").textContent=lv.effective_decision||"—"; $("ovEffective").textContent=lv.effective_decision||"—";
+    $("esReasons").textContent=Array.isArray(lv.reasons)?lv.reasons.join("; "):"—";
+    $("agCount").textContent=(j.agents&&j.agents.enabled_count)||0;
+    const sample=(j.agents&&j.agents.enabled_sample)||[];
+    $("agList").innerHTML=sample.map(n=>`<div>${esc(n)}</div>`).join("")||"<div>—</div>";
+    const vram = (j.vram) || (ops.vram) || {};
+    if (vram.ok && vram.gpus && vram.gpus.length) {
+      $("vramBox").innerHTML = vram.gpus.map(g => {
+        const cls = g.mem_pct >= 85 ? "bad" : (g.mem_pct >= 70 ? "warn" : "ok");
+        const temp = (g.temp_c != null) ? ` · ${g.temp_c}°C` : "";
+        return `<div class="kv"><span>GPU${g.index} ${esc(g.name)}</span><b class="${cls}">${g.mem_used_mb}/${g.mem_total_mb} MB (${g.mem_pct}%) · util ${g.util_pct}%${temp}</b></div>`;
+      }).join("");
+      const tips = vram.recommendations || [];
+      $("vramTips").innerHTML = tips.length ? tips.map(t => `<div>• ${esc(t)}</div>`).join("") : "";
+    } else {
+      $("vramBox").innerHTML = `<div class="bad">${esc(vram.hint || "sem nvidia-smi — rode AURA_OPS_STATUS_REFRESH.bat ou instale driver NVIDIA")}</div>`;
+      $("vramTips").innerHTML = "";
+    }
+  }catch(e){
+    $("apiBadge").textContent="API off"; $("apiBadge").className="badge bad";
+    $("apiBanner").textContent="API offline. Execute AURA_TOOLS_CONTROL_API.bat em C:\\aura — depois clique Atualizar. Botões de cópia BAT continuam a funcionar.";
+    $("apiBanner").className="api-banner bad";
+    // fallback ops_status.json
+    try{
+      const r=await fetch("./ops_status.json",{cache:"no-store"});
+      if(r.ok){
+        const j=await r.json();
+        const c=(j.telegram&&j.telegram.queue_counts)||{};
+        $("tgPending").textContent=c.pending||0; $("ovPending").textContent=c.pending||0;
+        $("tgSent").textContent=c.sent||0; $("ovSent").textContent=c.sent||0;
+        const lv=(j.elite_squad&&j.elite_squad.last_veto)||{};
+        $("esVerdict").textContent=lv.verdict||"—"; $("ovVerdict").textContent=lv.verdict||"—";
+      }
+    }catch(_){}
+  }
+  try{
+    const p=await api("/api/policy");
+    const pol=p.policy||{};
+    $("tgPolicyFile").textContent=p.using_example?"example":"live";
+    $("tgPolicyEn").textContent=String(!!pol.enabled);
+    $("tgAuto").textContent=String(!!((pol.auto_publish||{}).enabled));
+  }catch(_){}
+}
+
+async function pingAll(){
+  await Promise.all([
+    ping("stBridge","http://127.0.0.1:8080/health"),
+    ping("stEngine","http://127.0.0.1:8765/api/health"),
+    ping("stVoice","http://127.0.0.1:8099/api/voice/health"),
+  ]);
+}
+
+$("btnRefreshAll").onclick=()=>{loadStatus();pingAll();toast("Atualizado")};
+$("btnQueueRefresh").onclick=()=>loadStatus();
+$("btnAgentsRefresh").onclick=()=>loadStatus();
+$("btnVramRefresh").onclick=()=>loadStatus();
+$("btnSysRefresh").onclick=()=>loadSystem();
+$("btnReportsRefresh").onclick=()=>loadReports();
+$("btnReportOpen").onclick=async()=>{const p=$("reportSelect").value;if(!p){toast("Selecione um relatório");return;}try{await navigator.clipboard.writeText(p);toast("Path copiado: "+p);$("reportInfo").textContent="Path: "+p+" (cole no Explorer ou abra com notepad)";}catch(e){toast(p);}};
+$("btnKillOn").onclick=async()=>{try{await api("/api/kill_switch",{method:"POST",body:JSON.stringify({on:true})});toast("Kill ON");loadStatus()}catch(e){toast(e.message)}};
+$("btnKillOff").onclick=async()=>{try{await api("/api/kill_switch",{method:"POST",body:JSON.stringify({on:false})});toast("Kill OFF");loadStatus()}catch(e){toast(e.message)}};
+$("btnGrant").onclick=async()=>{try{const h=parseFloat($("sessionHours").value||12);await api("/api/session/grant",{method:"POST",body:JSON.stringify({hours:h})});toast("Sessão "+h+"h");loadStatus()}catch(e){toast(e.message)}};
+$("btnRevoke").onclick=async()=>{try{await api("/api/session/revoke",{method:"POST",body:"{}"});toast("Sessão revogada");loadStatus()}catch(e){toast(e.message)}};
+$("btnClearPending").onclick=async()=>{if(!confirm("Limpar todos pending?"))return;try{const j=await api("/api/queue/clear_pending",{method:"POST",body:"{}"});toast("Removidos "+j.removed_pending);loadStatus()}catch(e){toast(e.message)}};
+$("btnPolOn").onclick=async()=>{try{await api("/api/policy/enable_auto",{method:"POST",body:JSON.stringify({enabled:true})});toast("Policy ON");loadStatus()}catch(e){toast(e.message)}};
+$("btnPolOff").onclick=async()=>{try{await api("/api/policy/enable_auto",{method:"POST",body:JSON.stringify({enabled:false})});toast("Policy OFF");loadStatus()}catch(e){toast(e.message)}};
+$("btnAutoOn").onclick=async()=>{try{await api("/api/policy/enable_auto",{method:"POST",body:JSON.stringify({enabled:true,auto_enabled:true})});toast("Auto ON");loadStatus()}catch(e){toast(e.message)}};
+$("btnAutoOff").onclick=async()=>{try{await api("/api/policy/enable_auto",{method:"POST",body:JSON.stringify({enabled:true,auto_enabled:false})});toast("Auto OFF");loadStatus()}catch(e){toast(e.message)}};
+$("btnDemoVeto").onclick=async()=>{try{await api("/api/elite/demo_veto",{method:"POST",body:JSON.stringify({verdict:"VETOED",reasons:["Demo UI paper"]})});toast("Veto demo gravado");loadStatus()}catch(e){toast(e.message)}};
+
+pingAll(); loadStatus();
+setInterval(()=>{loadStatus();},12000);
+setInterval(()=>{if(document.getElementById("panel-sysmon")?.classList.contains("on")) loadSystem();},15000);
+</script>
+</body>
+</html>

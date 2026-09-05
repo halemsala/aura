@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>AURA QUANT-X :: TACTICAL HUD</title>
+    <style>
+        :root {
+            --bg-main: #0a0e14;
+            --bg-panel: #121822;
+            --neon-green: #00ff9d;
+            --neon-red: #ff3b3b;
+            --neon-yellow: #ffcc00;
+            --text-main: #c5c8c6;
+            --text-dim: #62666d;
+        }
+        body {
+            margin: 0;
+            padding: 10px;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-gap: 10px;
+            height: 100vh;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .panel {
+            background-color: var(--bg-panel);
+            border: 1px solid #2a3240;
+            border-radius: 4px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .panel-title {
+            font-size: 12px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #2a3240;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .team-name { font-size: 18px; font-weight: bold; color: var(--neon-green); }
+        .stat-row { display: flex; justify-content: space-between; margin: 5px 0; font-size: 14px; }
+        .stat-val { font-weight: bold; }
+        .center-panel { align-items: center; }
+        .match-score { font-size: 32px; font-weight: bold; margin: 10px 0; }
+        .match-minute { font-size: 48px; font-weight: bold; color: var(--neon-yellow); text-shadow: 0 0 10px var(--neon-yellow); }
+        .window-status { padding: 5px 10px; border-radius: 4px; font-weight: bold; margin-top: 10px; }
+        .window-open { background-color: rgba(0, 255, 157, 0.1); color: var(--neon-green); border: 1px solid var(--neon-green); }
+        .window-closed { background-color: rgba(255, 59, 59, 0.1); color: var(--neon-red); border: 1px solid var(--neon-red); }
+        .pressure-bar-container { width: 100%; height: 10px; background: #1c2230; border-radius: 5px; margin-top: 5px; overflow: hidden; }
+        .pressure-bar { height: 100%; width: 0%; transition: width 0.5s ease; }
+        .bar-home { background: var(--neon-green); }
+        .bar-away { background: var(--neon-red); }
+        .team-b .team-name { color: var(--neon-red); text-align: right; }
+        .team-b .stat-row { flex-direction: row-reverse; }
+        #red-team-banner { display: none; width: 100%; padding: 10px; background: rgba(255, 59, 59, 0.2); color: var(--neon-red); border: 1px dashed var(--neon-red); text-align: center; margin-top: 10px; font-weight: bold; box-sizing: border-box; }
+        .sys-footer { grid-column: 1 / 4; display: flex; justify-content: space-between; font-size: 12px; color: var(--text-dim); padding-top: 5px; border-top: 1px solid #2a3240; }
+    </style>
+</head>
+<body>
+    <div class="panel team-a">
+        <div class="panel-title">Time Casa</div>
+        <div class="team-name" id="home-name">Aguardando...</div>
+        <div class="stat-row"><span>Ataques Perigosos:</span> <span class="stat-val" id="home-ap">0</span></div>
+        <div class="stat-row"><span>Posse de Bola:</span> <span class="stat-val" id="home-possession">0%</span></div>
+        <div class="stat-row"><span>Escanteios:</span> <span class="stat-val" id="home-corners">0</span></div>
+        <div class="stat-row"><span>Finalizacoes:</span> <span class="stat-val" id="home-shots">0</span></div>
+        <div class="stat-row"><span>Cartoes:</span> <span class="stat-val" id="home-cards">0</span></div>
+        <div class="stat-row" style="margin-top: auto;"><span>Excitacao (Hawkes):</span> <span class="stat-val" id="home-hawkes">0%</span></div>
+        <div class="pressure-bar-container"><div class="pressure-bar bar-home" id="home-pressure-bar"></div></div>
+    </div>
+    <div class="panel center-panel">
+        <div class="panel-title">AURA Engine Core</div>
+        <div class="match-score" id="match-score">0 - 0</div>
+        <div class="match-minute" id="match-minute">00'</div>
+        <div class="window-status window-closed" id="window-status">JANELA FECHADA</div>
+        <div id="red-team-banner">VETO DO RED TEAM</div>
+        <div style="margin-top: 20px; width: 100%;">
+            <div class="stat-row"><span>Poisson λ (W1):</span> <span class="stat-val" id="poisson-w1">0.00</span></div>
+            <div class="stat-row"><span>Poisson λ (W2):</span> <span class="stat-val" id="poisson-w2">0.00</span></div>
+            <div class="stat-row"><span>Comando Hermes:</span> <span class="stat-val" id="hermes-status" style="color: var(--neon-yellow);">AGUARDANDO</span></div>
+        </div>
+    </div>
+    <div class="panel team-b">
+        <div class="panel-title">Time Visitante</div>
+        <div class="team-name" id="away-name">Aguardando...</div>
+        <div class="stat-row"><span>Ataques Perigosos:</span> <span class="stat-val" id="away-ap">0</span></div>
+        <div class="stat-row"><span>Posse de Bola:</span> <span class="stat-val" id="away-possession">0%</span></div>
+        <div class="stat-row"><span>Escanteios:</span> <span class="stat-val" id="away-corners">0</span></div>
+        <div class="stat-row"><span>Finalizacoes:</span> <span class="stat-val" id="away-shots">0</span></div>
+        <div class="stat-row"><span>Cartoes:</span> <span class="stat-val" id="away-cards">0</span></div>
+        <div class="stat-row" style="margin-top: auto;"><span>Excitacao (Hawkes):</span> <span class="stat-val" id="away-hawkes">0%</span></div>
+        <div class="pressure-bar-container"><div class="pressure-bar bar-away" id="away-pressure-bar"></div></div>
+    </div>
+    <div class="sys-footer">
+        <div>Captura SokkerPRO: <span id="capture-status" style="color: var(--neon-red);">OFFLINE</span></div>
+        <div>GPU VRAM: <span id="vram-usage">0.0 / 6.0 GB</span></div>
+        <div>Modo: <span id="system-mode">TRADING</span></div>
+        <div>Hermes LLM: <span id="llm-status">DESLIGADO</span></div>
+    </div>
+    <script>
+        async function fetchAuraState() {
+            try {
+                // Prefer Engine UI state; fallback Bridge
+                let data = null;
+                try {
+                    const r = await fetch('http://127.0.0.1:8765/api/ui/state');
+                    if (r.ok) data = await r.json();
+                } catch (e) {}
+                if (!data) {
+                    const r2 = await fetch('http://127.0.0.1:8080/api/ui/state');
+                    if (r2.ok) data = await r2.json();
+                }
+                if (!data) return;
+
+                const view = data.view || data;
+                const home = view.home || view.home_team || data.home_team || 'Aguardando...';
+                const away = view.away || view.away_team || data.away_team || 'Aguardando...';
+                document.getElementById('home-name').innerText = home;
+                document.getElementById('away-name').innerText = away;
+
+                const hs = view.home_score ?? data.home_score ?? 0;
+                const as_ = view.away_score ?? data.away_score ?? 0;
+                document.getElementById('match-score').innerText = hs + ' - ' + as_;
+                const minute = view.minute ?? data.minute ?? 0;
+                document.getElementById('match-minute').innerText = minute + "'";
+
+                document.getElementById('home-ap').innerText = view.home_ap ?? data.home_ap ?? 0;
+                document.getElementById('away-ap').innerText = view.away_ap ?? data.away_ap ?? 0;
+                document.getElementById('home-corners').innerText = view.home_corners ?? data.home_corners ?? 0;
+                document.getElementById('away-corners').innerText = view.away_corners ?? data.away_corners ?? 0;
+                document.getElementById('home-possession').innerText = (view.home_possession ?? data.home_possession ?? 0) + '%';
+                document.getElementById('away-possession').innerText = (view.away_possession ?? data.away_possession ?? 0) + '%';
+                document.getElementById('home-shots').innerText = view.home_shots ?? data.home_shots ?? 0;
+                document.getElementById('away-shots').innerText = view.away_shots ?? data.away_shots ?? 0;
+                document.getElementById('home-cards').innerText = view.home_cards ?? data.home_cards ?? 0;
+                document.getElementById('away-cards').innerText = view.away_cards ?? data.away_cards ?? 0;
+
+                document.getElementById('poisson-w1').innerText = view.poisson_w1 ?? data.poisson_w1 ?? '0.00';
+                document.getElementById('poisson-w2').innerText = view.poisson_w2 ?? data.poisson_w2 ?? '0.00';
+                const hh = view.home_hawkes ?? data.home_hawkes ?? 0;
+                const ah = view.away_hawkes ?? data.away_hawkes ?? 0;
+                document.getElementById('home-hawkes').innerText = hh + '%';
+                document.getElementById('away-hawkes').innerText = ah + '%';
+                document.getElementById('home-pressure-bar').style.width = Math.min(100, Number(hh) || 0) + '%';
+                document.getElementById('away-pressure-bar').style.width = Math.min(100, Number(ah) || 0) + '%';
+
+                const windowEl = document.getElementById('window-status');
+                if (view.window_open || data.window_open) {
+                    windowEl.innerText = 'JANELA ABERTA - PODE ENTRAR';
+                    windowEl.className = 'window-status window-open';
+                } else {
+                    windowEl.innerText = 'JANELA FECHADA';
+                    windowEl.className = 'window-status window-closed';
+                }
+
+                const vetoEl = document.getElementById('red-team-banner');
+                if (view.red_team_veto || data.red_team_veto) {
+                    vetoEl.style.display = 'block';
+                    vetoEl.innerText = 'VETO DO RED TEAM: ' + (view.red_team_reason || data.red_team_reason || '');
+                } else {
+                    vetoEl.style.display = 'none';
+                }
+
+                const cap = view.capture_alive ?? data.capture_alive ?? false;
+                document.getElementById('capture-status').innerText = cap ? 'ONLINE' : 'OFFLINE';
+                document.getElementById('capture-status').style.color = cap ? 'var(--neon-green)' : 'var(--neon-red)';
+                document.getElementById('vram-usage').innerText = (view.vram_used ?? data.vram_used ?? '0.0') + ' / 6.0 GB';
+                document.getElementById('system-mode').innerText = view.mode || data.mode || 'TRADING';
+                document.getElementById('hermes-status').innerText = view.hermes_status || data.hermes_status || 'AGUARDANDO';
+                document.getElementById('llm-status').innerText = view.llm_status || data.llm_status || 'DESLIGADO';
+            } catch (error) {
+                console.error('Erro ao buscar dados do AURA:', error);
+            }
+        }
+        setInterval(fetchAuraState, 1000);
+        fetchAuraState();
+    </script>
+</body>
+</html>

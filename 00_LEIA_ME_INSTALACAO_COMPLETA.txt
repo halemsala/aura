@@ -1,0 +1,51 @@
+AURA QUANT-X HERMES V37.3.38 — INSTALACAO LIMPA E COMPLETA
+==========================================================
+paper_trade=true | execution_allowed=false
+
+ARQUITETURA
+-----------
+LOCAL:  qwen2.5:3b-instruct (principal) + llama3.2:3b (contexto longo)
+NUVEM:  GLM so como arquiteto externo (nunca no Ollama local)
+
+CORRECOES NESTE PACOTE
+----------------------
+- Hermes Chat: comando puro vs conversa + anti-alucinacao Microsoft
+- CAMADA 0 WhatsApp/Telegram (skill + confirmacao)
+- Painel: Control API :8790 sobe com START_ALL
+- Bridge com PYTHONPATH no arranque
+- Voz :8099 sobe com START_ALL (se jarvis_voice_server existir)
+- AURA_SUBIR_STACK_COMPLETO.bat = um clique para tudo
+
+INSTALACAO LIMPA
+----------------
+1) Apague ou renomeie C:\aura antigo (opcional mas recomendado)
+2) Extraia este ZIP para C:\aura
+3) CMD:
+
+   cd /d C:\aura
+   pip install pyautogui pygetwindow pyperclip pywin32 requests fastapi "uvicorn[standard]"
+
+   call AURA_CONFIGURAR_QWEN_LLAMA.bat
+   call AURA_ATIVAR_OPERADOR_HUMANO.bat
+   call AURA_ONE_CLICK_AUDITORIA_INSTALACAO.bat
+
+4) Arranque diario:
+
+   AURA_SUBIR_STACK_COMPLETO.bat
+   :: ou: AURA_START_ALL.bat
+
+5) Painel: clique Atualizar
+   Esperado: Bridge online, Engine online, Control API online
+   Voice online se a voz instalou sem erro
+
+PORTAS
+------
+8080 Bridge | 8765 Engine | 8766 Matriz | 8777 Hermes
+8099 Voz    | 8790 Control API | 11434 Ollama
+
+LOGS
+----
+C:\aura\logs_supervisor\bridge.log
+C:\aura\logs_supervisor\control_api.log
+C:\aura\logs_supervisor\voice.log
+C:\aura\logs_supervisor\hermes_v10.log

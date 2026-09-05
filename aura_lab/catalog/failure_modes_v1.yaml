@@ -1,0 +1,1307 @@
+version: 1.1.0
+product: AURA QUANT-X
+updated: '2026-09-05'
+policy:
+  paper_trade: true
+  execution_allowed: false
+  advisory_only: true
+failure_modes:
+- id: FM-ENGINE-001
+  title: Engine offline (porta 8765 sem resposta)
+  severity: critical
+  service: engine
+  category: availability
+  symptom: Painel mostra Engine OFF; curl em 8765 falha; Side Panel sem análise
+  detect:
+    method: http_health
+    endpoint: http://127.0.0.1:8765/api/health
+    port: 8765
+    expect: online status 200
+  likely_causes:
+  - Processo engine não iniciado
+  - venv/python quebrado ou path errado
+  - Porta 8765 ocupada por outro processo
+  - Crash no boot (ver runtime_engine.log)
+  repair_steps:
+  - Rodar status/diagnóstico e confirmar porta 8765
+  - Executar RECUPERAR_AURA_SERVICOS.bat (ou .ps1)
+  - 'Se persistir: AURA_INICIAR_SISTEMA.bat como admin'
+  - Ler engine/runtime_engine.log e install_run.log
+  verify:
+  - GET http://127.0.0.1:8765/api/health → 200
+  - GET http://127.0.0.1:8765/api/status com paper_trade true
+  official_tools:
+  - RECUPERAR_AURA_SERVICOS.bat
+  - DIAGNOSTICO_AURA.bat
+  - AURA_INICIAR_SISTEMA.bat
+  lab_safe: true
+  injection_hint: 'No LAB: não subir o engine ou bind em porta dummy; nunca no sistema de uso'
+  tags:
+  - engine
+  - offline
+  - port-8765
+  references:
+  - MANUAL §3.3
+  - AUDITORIA_ERROS_ENGINE_OFF
+- id: FM-ENGINE-002
+  title: Engine responde mas /api/ui/state sem view.home / corner_events
+  severity: high
+  service: engine
+  category: data_integrity
+  symptom: Engine ON, porém painel vazio ou 'sem dados de jogo'
+  detect:
+    method: ui_state
+    endpoint: http://127.0.0.1:8765/api/ui/state
+    expect: view.home e corner_events presentes quando houver partida
+  likely_causes:
+  - Sem telemetria da extensão (SokkerPro fechado ou aba inativa)
+  - Captura stale >45s
+  - Fixture não identificado
+  repair_steps:
+  - Abrir SokkerPro ao vivo e manter aba ativa
+  - Recarregar extensão em chrome://extensions
+  - Checar POST /api/telemetry e logs da Bridge
+  - Confirmar freshness no diagnostic deep
+  verify:
+  - ui/state com fixture e eventos recentes
+  - Captura freshness < 45s
+  official_tools:
+  - DIAGNOSTICO_AURA.bat
+  - VALIDAR_AURA_QUANT_X.bat
+  lab_safe: true
+  injection_hint: 'LAB: enviar telemetry vazia ou timestamp antigo'
+  tags:
+  - engine
+  - ui-state
+  - telemetry
+  references:
+  - MANUAL fluxo ao vivo
+  - skill aura-quant-x health
+- id: FM-ENGINE-003
+  title: BLOCKED_BY_DATA / data integrity bloqueando sinal
+  severity: medium
+  service: data
+  category: data_integrity
+  symptom: Sistema online mas sinal em BLOCK; motivo data_integrity / conflito de escanteios
+  detect:
+    method: composite
+    notes: analysis.decision ou risk_gate com BLOCKED_BY_DATA / data_integrity
+  likely_causes:
+  - Estatísticas de corners ≠ eventos
+  - Payload com valores negativos ou fixture incompleto
+  - Fonte autoritativa em conflito (fail-closed)
+  repair_steps:
+  - Não forçar sinal; respeitar fail-closed
+  - Inspecionar data_integrity no /api/analysis/<fixtureId>
+  - Reabrir partida / reenviar telemetry limpa
+  - Registrar no lab o payload que causou o block
+  verify:
+  - Novo analysis sem conflito autoritativo
+  - paper_trade e execution_allowed inalterados
+  official_tools:
+  - VALIDAR_AURA_TESTES.bat
+  lab_safe: true
+  injection_hint: 'LAB: POST telemetry com corners stats ≠ events'
+  tags:
+  - blocked-by-data
+  - fail-closed
+  - integrity
+  references:
+  - MANUAL 3.9
+  - RISK_GATES
+- id: FM-BRIDGE-001
+  title: Bridge offline ou GET /health = 501
+  severity: critical
+  service: bridge
+  category: availability
+  symptom: Bridge OFF; feed não grava; REG não gera
+  detect:
+    method: http_health
+    endpoint: http://127.0.0.1:8080/health
+    port: 8080
+    expect: 200 (não 501)
+  likely_causes:
+  - server.py sem do_GET / rota /health
+  - Processo bridge não iniciado
+  - Porta 8080 ocupada
+  repair_steps:
+  - Confirmar do_GET e rota /health no bridge/server.py
+  - RECUPERAR_AURA_SERVICOS.bat
+  - 'Smoke: python bridge/server.py e curl /health'
+  - Ler bridge/runtime_bridge.log
+  verify:
+  - GET http://127.0.0.1:8080/health → 200
+  official_tools:
+  - RECUPERAR_AURA_SERVICOS.bat
+  - AURA_PRECHECK_PACOTE.bat
+  lab_safe: true
+  injection_hint: 'LAB: subir bridge sem do_GET ou não subir'
+  tags:
+  - bridge
+  - health-501
+  - port-8080
+  references:
+  - skill aura-quant-x bugs de campo
+  - precheck do_GET
+- id: FM-BRIDGE-002
+  title: Bridge online mas feed/REG não atualiza
+  severity: high
+  service: bridge
+  category: data_integrity
+  symptom: health OK; live_feed.jsonl ou REG parados
+  detect:
+    method: log_pattern
+    log_glob: bridge/**/live_feed.jsonl
+    notes: mtime antigo ou ausência de linhas novas
+  likely_causes:
+  - Extensão não envia /api/cornerai/feed
+  - CORS/token Bridge
+  - SokkerPro sem partida ativa
+  repair_steps:
+  - Verificar extensão e background push para 8080
+  - Testar POST /api/cornerai/feed com payload mínimo
+  - Checar CORNERAI_BRIDGE_TOKEN se habilitado
+  verify:
+  - Nova linha em live_feed.jsonl
+  - REG recente em bridge/regs/
+  official_tools:
+  - DIAGNOSTICO_AURA.bat
+  lab_safe: true
+  injection_hint: 'LAB: não enviar feed; ou token errado'
+  tags:
+  - bridge
+  - feed
+  - reg
+  references:
+  - MANUAL §3.2
+- id: FM-VOICE-001
+  title: Voice offline (8099)
+  severity: high
+  service: voice
+  category: availability
+  symptom: Voz offline; Testar Voz falha; sidepanel não fala
+  detect:
+    method: http_health
+    endpoint: http://127.0.0.1:8099/api/voice/health
+    port: 8099
+    expect: 200 mesmo com loading:true
+  likely_causes:
+  - jarvis_voice_server não iniciado
+  - iniciar_voz.bat ausente ou falhou
+  - Deps de voz / Torch
+  repair_steps:
+  - bridge/iniciar_voz.bat ou recovery de serviços
+  - Checar runtime_voice.log
+  - POST /api/voice/reload se loading travado
+  - REPARAR_AURA_VOICE se deps quebradas
+  verify:
+  - GET /api/voice/health → ok ou loading
+  - Diagnóstico STT/TTS/Ollama no checklist
+  official_tools:
+  - bridge/iniciar_voz.bat
+  - RECUPERAR_AURA_SERVICOS.bat
+  - REPARAR_AURA_VOICE.bat
+  lab_safe: true
+  injection_hint: 'LAB: não subir voice; ou bloquear 8099'
+  tags:
+  - voice
+  - port-8099
+  references:
+  - MANUAL §3.4
+  - 12.5.10 CORS/lazy init
+- id: FM-VOICE-002
+  title: Voice up mas Ollama/modelo indisponível
+  severity: high
+  service: ollama
+  category: dependency
+  symptom: llmHealth last_error; chat voz sem resposta útil
+  detect:
+    method: http_health
+    endpoint: http://127.0.0.1:8099/api/voice/health
+    expect: llmHealth sem last_error crítico; modelo ativo
+  likely_causes:
+  - Ollama não no PATH / não rodando (11434)
+  - 'Modelo não instalado (ex.: llama3.2:3b)'
+  - Fallback não encontrado
+  repair_steps:
+  - Subir Ollama; ollama list / pull do modelo documentado
+  - Recovery aguarda API Ollama e modelo
+  - Não usar auto_pull silencioso em produção sem intenção
+  verify:
+  - 11434 /api/tags responde
+  - voice health mostra active_model
+  official_tools:
+  - RECUPERAR_AURA_SERVICOS.bat
+  - AURA_INICIAR_SISTEMA.bat
+  lab_safe: true
+  injection_hint: 'LAB: parar Ollama ou renomear modelo'
+  tags:
+  - ollama
+  - llm
+  - voice
+  references:
+  - MANUAL health LLM
+  - device.py tiers
+- id: FM-VOICE-003
+  title: CORS / sidepanel não alcança voz
+  severity: medium
+  service: voice
+  category: ui
+  symptom: Servidor de voz no ar mas extensão diz offline
+  detect:
+    method: composite
+    notes: Origin chrome-extension:// deve ser aceito em CORS
+  likely_causes:
+  - CORS só permitia sokkerpro.com (bug histórico)
+  - Extensão em perfil/ID diferente
+  repair_steps:
+  - Confirmar _cors aceita chrome-extension://
+  - Recarregar extensão; testar com curl Origin de extensão
+  - Usar botão Testar Voz + reload motores
+  verify:
+  - Preflight/response com Access-Control-Allow-Origin correto
+  official_tools:
+  - DIAGNOSTICO_AURA.bat
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - cors
+  - extension
+  - voice
+  references:
+  - MANUAL 12.5.10 CORS
+- id: FM-DESKTOP-001
+  title: Desktop abriu mas painel não carregou
+  severity: high
+  service: desktop
+  category: ui
+  symptom: Launcher Desktop sobe; painel em branco ou erro de browser/WebView
+  detect:
+    method: manual
+    notes: Operador confirma janela Desktop vs painel interno
+  likely_causes:
+  - Engine/Bridge offline (painel depende de 8765/8080)
+  - WebView2 / path com espaços
+  - URL do painel apontando para host errado
+  - Extensão não é o painel Desktop — confusão de canais
+  repair_steps:
+  - 'status: 8080 e 8765 online'
+  - Abrir apenas inicializador oficial na raiz do projeto
+  - Recarregar extensão se o fluxo for Side Panel Chrome
+  - Diagnosticar WebView2 / path curto (ex. C:\AURA_V23\)
+  verify:
+  - Painel mostra estado dos serviços
+  - ui/state acessível
+  official_tools:
+  - RECUPERAR_AURA_SERVICOS.bat
+  - DIAGNOSTICO_WINDOWS_COMPLETO.bat
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - desktop
+  - painel
+  - webview
+  references:
+  - pedido operador 2026-09
+  - MANUAL Desktop/launcher
+- id: FM-EXT-001
+  title: Extensão não envia telemetria
+  severity: high
+  service: extension
+  category: dependency
+  symptom: SokkerPro aberto; Engine sem updates; captura stale
+  detect:
+    method: composite
+    notes: freshness >45s ou ausência de POST telemetry
+  likely_causes:
+  - Extensão desabilitada ou não recarregada
+  - Aba SokkerPro em background
+  - host_permissions / MV3
+  repair_steps:
+  - chrome://extensions → Reload
+  - Manter aba SokkerPro em foco
+  - Checar background.js e local-ai-client
+  verify:
+  - Telemetry recente no engine
+  - freshness < 45s
+  official_tools:
+  - VALIDAR_AURA_QUANT_X.bat
+  lab_safe: true
+  injection_hint: 'LAB: não carregar extensão; ou bloquear POST 8765'
+  tags:
+  - extension
+  - telemetry
+  - stale
+  references:
+  - MANUAL camada 1
+  - capture stale
+- id: FM-RISK-001
+  title: Risk Manager bloqueia (sem edge / cooldown / WoM)
+  severity: medium
+  service: risk
+  category: policy
+  symptom: Há análise mas não há entrada paper; códigos no_edge, cooldown, smart_money_divergence
+  detect:
+    method: composite
+    notes: risk_gate / risk_reason_code no analysis
+  likely_causes:
+  - Edge insuficiente ou odd inválida
+  - Cooldown ativo
+  - WoM Anti-Red (odds_velocity)
+  - Limites diários / por partida
+  repair_steps:
+  - Ler explanation e risk_reason_code (não forçar stake)
+  - Confirmar paper_trade=true e execution_allowed=false
+  - Ajustar só calibração em lab com dados rotulados
+  verify:
+  - Código de bloqueio legível no analysis
+  - Nenhuma execução real
+  official_tools: []
+  lab_safe: true
+  injection_hint: 'LAB: odds_velocity > 1.5% com BUY_CORNER simulado'
+  tags:
+  - risk
+  - wom
+  - paper
+  references:
+  - MANUAL WoM
+  - risk_manager
+- id: FM-SYS-001
+  title: Recovery rodou mas serviço ainda OFF
+  severity: critical
+  service: system
+  category: recovery
+  symptom: RECUPERAR_AURA_SERVICOS terminou; health ainda falha
+  detect:
+    method: composite
+    notes: 'Pós-recovery: re-checar 8080/8765/8099'
+  likely_causes:
+  - Pré-requisito Python/venv
+  - Porta presa; launcher persistente esgotou retries
+  - Modelo Ollama ausente bloqueando voice chain
+  repair_steps:
+  - DIAGNOSTICO_AURA.bat (-Deep se voz/Whisper)
+  - Ler recovery_services.log + runtime_* .log
+  - Precheck do pacote; path curto
+  - Subir serviço isolado (smoke Bridge/Engine)
+  verify:
+  - Três health checks OK
+  - VALIDAR_AURA_QUANT_X.bat verde
+  official_tools:
+  - DIAGNOSTICO_AURA.bat
+  - AURA_PRECHECK_PACOTE.bat
+  - VALIDAR_AURA_QUANT_X.bat
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - recovery
+  - diagnostic
+  references:
+  - MANUAL recuperação Engine OFF
+- id: FM-HARNESS-001
+  title: Pedido de instalação/reparo sem CONFIRMAR
+  severity: info
+  service: harness
+  category: policy
+  symptom: Usuário pede instalar/reparar; nada deve mutar sem CONFIRMAR
+  detect:
+    method: manual
+    notes: Harness deve criar plano PENDENTE
+  likely_causes:
+  - Comportamento esperado do supervisor
+  repair_steps:
+  - Exibir plano e exigir CONFIRMAR plano p-...
+  - CANCELAR se operador desistir
+  - Nunca inventar CONFIRMAR <nome-skill>
+  verify:
+  - Nenhuma mutação em disco sem confirmação
+  - audit.jsonl com plan_created
+  official_tools: []
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - harness
+  - confirm
+  - governance
+  references:
+  - AURA_HARNESS_UNICO
+  - aura-governance
+- id: FM-ENGINE-004
+  title: Engine crash loop / reinicia sozinho
+  severity: critical
+  service: engine
+  category: availability
+  symptom: Engine sobe e cai; runtime_engine.log com traceback repetido
+  detect:
+    method: log_pattern
+    log_glob: engine/runtime_engine.log
+    pattern: Traceback|Error|Exception
+  likely_causes:
+  - ImportError no venv
+  - Torch/CUDA incompatível
+  - DB path inválido
+  - Porta liberada e processo morre
+  repair_steps:
+  - Ler tail de runtime_engine.log
+  - Ativar venv e python -c import engine modules
+  - RECUPERAR_AURA_SERVICOS
+  - Precheck pacote
+  verify:
+  - Processo estável >2 min
+  - GET /api/health 200 contínuo
+  official_tools:
+  - RECUPERAR_AURA_SERVICOS.bat
+  - DIAGNOSTICO_AURA.bat
+  - AURA_PRECHECK_PACOTE.bat
+  lab_safe: true
+  injection_hint: 'LAB: forçar ImportError em módulo mock'
+  tags:
+  - engine
+  - crash
+  - loop
+  references:
+  - runtime_engine.log
+- id: FM-ENGINE-005
+  title: SQLite DB path divergente / locked
+  severity: high
+  service: engine
+  category: data_integrity
+  symptom: Erros de database locked ou aura_quant_x.db não encontrado após atalho
+  detect:
+    method: log_pattern
+    pattern: database is locked|unable to open database|aura_quant_x.db
+  likely_causes:
+  - CWD diferente do Engine
+  - Dois processos no mesmo DB
+  - Path relativo quebrado
+  repair_steps:
+  - Confirmar caminho absoluto do DB no Engine
+  - Matar instâncias duplicadas via recovery oficial
+  - Validar schema init
+  verify:
+  - Engine health OK
+  - log sem database locked
+  official_tools:
+  - RECUPERAR_AURA_SERVICOS.bat
+  - DIAGNOSTICO_AURA.bat
+  lab_safe: true
+  injection_hint: 'LAB: apontar DB para path inexistente'
+  tags:
+  - sqlite
+  - db
+  - locked
+  references:
+  - MANUAL 12.6.17 path absoluto
+- id: FM-ENGINE-006
+  title: Telemetry rejeitada / schema gate BLOCK
+  severity: medium
+  service: engine
+  category: data_integrity
+  symptom: POST /api/telemetry retorna BLOCK ou data_integrity sem gerar sinal
+  detect:
+    method: composite
+    notes: analysis data_integrity ou reason schema
+  likely_causes:
+  - Fixture ausente
+  - Timestamp stale
+  - Valores negativos
+  - Conflito corners stats vs events
+  repair_steps:
+  - Inspecionar payload e reason/explanation
+  - Corrigir captura extensão
+  - Não forçar sinal
+  verify:
+  - Telemetry aceita com integrity ok ou aviso não bloqueante
+  official_tools:
+  - VALIDAR_AURA_TESTES.bat
+  lab_safe: true
+  injection_hint: 'LAB: payload sem fixtureId'
+  tags:
+  - telemetry
+  - schema
+  - block
+  references:
+  - MANUAL gates
+- id: FM-ENGINE-007
+  title: Paper trade summary / API analysis vazia
+  severity: medium
+  service: engine
+  category: data_integrity
+  symptom: GET /api/analysis/<id> sem reason/explanation ou decision inconsistente
+  detect:
+    method: http_health
+    endpoint: http://127.0.0.1:8765/api/status
+  likely_causes:
+  - Build antigo sem explicabilidade 12.6.17
+  - Fixture nunca ingerido
+  repair_steps:
+  - Atualizar pacote se campos ausentes
+  - Enviar telemetry válida
+  - Checar analysis explanation
+  verify:
+  - analysis com decision, reason, risk_gate
+  official_tools:
+  - VALIDAR_AURA_QUANT_X.bat
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - analysis
+  - explainability
+  references:
+  - MANUAL 3.9
+- id: FM-ENGINE-008
+  title: GPU/Torch indisponível (CPU fallback)
+  severity: low
+  service: engine
+  category: performance
+  symptom: Logs Torch CUDA not available; latência alta
+  detect:
+    method: log_pattern
+    pattern: CUDA|cuda|torch
+  likely_causes:
+  - Driver NVIDIA
+  - Torch CPU wheel
+  - GPU híbrida mal configurada
+  repair_steps:
+  - Checar nvidia-smi
+  - Reinstalar Torch conforme instalador
+  - scripts aura_set_hybrid_gpu se aplicável
+  verify:
+  - Diagnóstico GPU reporta estado esperado
+  official_tools:
+  - DIAGNOSTICO_AURA.bat
+  - DIAGNOSTICO_WINDOWS_COMPLETO.bat
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - gpu
+  - torch
+  - cpu
+  references:
+  - skill quant-x GPU híbrida
+- id: FM-BRIDGE-003
+  title: Bridge token/CORS rejeita feed da extensão
+  severity: high
+  service: bridge
+  category: dependency
+  symptom: Extensão envia feed; Bridge 401/403 ou CORS error no console
+  detect:
+    method: log_pattern
+    pattern: 401|403|CORS|token
+  likely_causes:
+  - CORNERAI_BRIDGE_TOKEN setado e extensão sem token
+  - Origin bloqueada
+  repair_steps:
+  - Alinhar token extensão/Bridge ou desabilitar token em lab
+  - Verificar CORS localhost
+  verify:
+  - POST /api/cornerai/feed 200
+  - live_feed atualiza
+  official_tools:
+  - DIAGNOSTICO_AURA.bat
+  lab_safe: true
+  injection_hint: 'LAB: exigir token e omitir header'
+  tags:
+  - bridge
+  - cors
+  - token
+  references:
+  - MANUAL §3.2
+- id: FM-BRIDGE-004
+  title: REG não gerado / pasta regs vazia
+  severity: medium
+  service: bridge
+  category: data_integrity
+  symptom: Feed chega mas bridge/regs sem REG novos
+  detect:
+    method: manual
+    notes: mtime pasta regs
+  likely_causes:
+  - Parser feed incompleto
+  - Erro ao escrever REG
+  - Permissão pasta
+  repair_steps:
+  - Checar runtime_bridge.log
+  - Validar payload feed mínimo
+  - Permissões em bridge/regs
+  verify:
+  - Novo REG-*.md criado
+  official_tools:
+  - DIAGNOSTICO_AURA.bat
+  lab_safe: true
+  injection_hint: 'LAB: feed mínimo inválido'
+  tags:
+  - reg
+  - bridge
+  references:
+  - MANUAL REG
+- id: FM-BRIDGE-005
+  title: Porta 8080 ocupada por processo estranho
+  severity: high
+  service: bridge
+  category: availability
+  symptom: Bridge não sobe; Address already in use 8080
+  detect:
+    method: tcp_port
+    port: 8080
+  likely_causes:
+  - Instância antiga
+  - Outro app na 8080
+  repair_steps:
+  - RECUPERAR libera portas AURA
+  - Não matar processos arbitrários fora do script oficial
+  verify:
+  - health 8080 do processo Bridge oficial
+  official_tools:
+  - RECUPERAR_AURA_SERVICOS.bat
+  lab_safe: true
+  injection_hint: 'LAB: ocupar 8080 com servidor dummy'
+  tags:
+  - port
+  - '8080'
+  references:
+  - recovery
+- id: FM-VOICE-004
+  title: Whisper/XTTS falha CUDA — precisa CPU/int8
+  severity: high
+  service: voice
+  category: dependency
+  symptom: Voice loading eterno ou error CUDA/cuDNN no runtime_voice
+  detect:
+    method: log_pattern
+    pattern: cuDNN|CUDA|whisper|XTTS
+  likely_causes:
+  - GPU sem libs
+  - OOM VRAM
+  - Fallback CPU não acionado
+  repair_steps:
+  - REPARAR_AURA_VOICE
+  - POST /api/voice/reload
+  - Aceitar CPU/int8 se documentado
+  verify:
+  - /api/voice/health engineReady ou loading→ok
+  - diagnostic STT/TTS
+  official_tools:
+  - REPARAR_AURA_VOICE.bat
+  - bridge/iniciar_voz.bat
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - whisper
+  - xtts
+  - cuda
+  references:
+  - MANUAL voz 12.6.17
+- id: FM-VOICE-005
+  title: Microfone/permissão navegador bloqueada
+  severity: medium
+  service: voice
+  category: ui
+  symptom: Testar Voz falha no mic; getUserMedia denied
+  detect:
+    method: manual
+  likely_causes:
+  - Permissão Chrome
+  - Device errado
+  - HTTPS/extension policy
+  repair_steps:
+  - Permitir mic no Chrome para extensão
+  - Testar alto-falante no diagnóstico
+  - Recarregar sidepanel
+  verify:
+  - Checklist mic OK no Testar Voz
+  official_tools: []
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - mic
+  - permission
+  references:
+  - MANUAL Testar Voz
+- id: FM-VOICE-006
+  title: Latência voz alta / first_segment lento
+  severity: low
+  service: voice
+  category: performance
+  symptom: Resposta de voz demora muito; first_segment_ms alto
+  detect:
+    method: composite
+    notes: latency_ms / first_segment_ms no done
+  likely_causes:
+  - Modelo grande
+  - CPU only
+  - Cold start Whisper
+  repair_steps:
+  - Prewarm sidepanel
+  - Modelo menor se VRAM baixa
+  - Checar voice_max_tokens
+  verify:
+  - first_segment_ms aceitável no hardware
+  official_tools:
+  - DIAGNOSTICO_AURA.bat
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - latency
+  - voice
+  references:
+  - MANUAL latência voz
+- id: FM-OLLAMA-001
+  title: Ollama offline porta 11434
+  severity: high
+  service: ollama
+  category: availability
+  symptom: curl 11434 falha; Harness/Voice sem modelo
+  detect:
+    method: tcp_port
+    port: 11434
+  likely_causes:
+  - Ollama não instalado
+  - Serviço parado
+  repair_steps:
+  - Iniciar app Ollama
+  - Não inventar ollama serve se não houver starter oficial
+  - Recovery espera API
+  verify:
+  - GET http://127.0.0.1:11434/api/tags
+  official_tools:
+  - RECUPERAR_AURA_SERVICOS.bat
+  lab_safe: true
+  injection_hint: 'LAB: parar Ollama'
+  tags:
+  - ollama
+  - '11434'
+  references:
+  - MANUAL
+- id: FM-OLLAMA-002
+  title: Modelo ausente / tags vazias
+  severity: high
+  service: ollama
+  category: dependency
+  symptom: Ollama up mas modelo configurado não listado
+  detect:
+    method: http_health
+    endpoint: http://127.0.0.1:11434/api/tags
+  likely_causes:
+  - Pull não feito
+  - Nome errado no config
+  repair_steps:
+  - ollama pull do modelo documentado
+  - INICIAR pode puxar se previsto
+  - Alinhar config.yaml
+  verify:
+  - Modelo em /api/tags
+  - voice health active_model
+  official_tools:
+  - AURA_INICIAR_SISTEMA.bat
+  lab_safe: true
+  injection_hint: 'LAB: tags sem o modelo esperado'
+  tags:
+  - model
+  - pull
+  references:
+  - device tiers
+- id: FM-EXT-002
+  title: Manifest/sidePanel permission ausente
+  severity: medium
+  service: extension
+  category: config
+  symptom: Side Panel não abre; Chrome sem painel nativo
+  detect:
+    method: manual
+  likely_causes:
+  - manifest sem sidePanel
+  - Extensão desatualizada
+  repair_steps:
+  - Conferir manifest 12.6.x+
+  - Reload extensão
+  - Usar fallback popup se houver
+  verify:
+  - Side Panel abre no Chrome
+  official_tools: []
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - manifest
+  - sidepanel
+  references:
+  - MANUAL 12.5.8
+- id: FM-EXT-003
+  title: Seletores DOM SokkerPro quebrados
+  severity: high
+  service: extension
+  category: data_integrity
+  symptom: Captura sem score/minuto/corners; WoM sempre 0
+  detect:
+    method: composite
+    notes: telemetry vazia com partida aberta
+  likely_causes:
+  - SokkerPro mudou DOM
+  - Placeholders market-capture
+  repair_steps:
+  - Atualizar seletores content/market-capture
+  - Validar com partida ao vivo
+  - Não reinstalar sistema inteiro
+  verify:
+  - Telemetry com clock e corners
+  official_tools: []
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - dom
+  - selectors
+  - stale
+  references:
+  - MANUAL WoM placeholders
+- id: FM-EXT-004
+  title: Service worker background inativo
+  severity: high
+  service: extension
+  category: availability
+  symptom: Sem push telemetry; alarms parados
+  detect:
+    method: manual
+  likely_causes:
+  - SW dormindo
+  - Erro no background.js
+  repair_steps:
+  - chrome://extensions → service worker Inspect
+  - Reload
+  - Ver console erros
+  verify:
+  - Push periódico a 8765/8080
+  official_tools: []
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - service-worker
+  - background
+  references:
+  - MANUAL camada 1
+- id: FM-DESKTOP-002
+  title: WebView2 runtime ausente/quebrado
+  severity: high
+  service: desktop
+  category: dependency
+  symptom: Desktop abre e fecha ou tela branca WebView
+  detect:
+    method: manual
+  likely_causes:
+  - WebView2 Evergreen não instalado
+  - Path com espaços
+  repair_steps:
+  - Instalar WebView2 Runtime Microsoft
+  - Path curto AURA
+  - DIAGNOSTICO_WINDOWS
+  verify:
+  - Painel carrega HTML local
+  official_tools:
+  - DIAGNOSTICO_WINDOWS_COMPLETO.bat
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - webview2
+  - desktop
+  references:
+  - path curto
+- id: FM-DESKTOP-003
+  title: Launcher aponta URL/host errado
+  severity: high
+  service: desktop
+  category: config
+  symptom: Desktop tenta localhost porta errada ou file:// inválido
+  detect:
+    method: manual
+  likely_causes:
+  - Config desatualizada
+  - AURA_ROOT diferente
+  repair_steps:
+  - Só usar launcher oficial
+  - Conferir host 127.0.0.1:8765/8080
+  - status antes
+  verify:
+  - Painel reflete status real
+  official_tools:
+  - RECUPERAR_AURA_SERVICOS.bat
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - launcher
+  - url
+  references: []
+- id: FM-RISK-002
+  title: WoM inerte (odds_velocity sempre 0)
+  severity: low
+  service: risk
+  category: data_integrity
+  symptom: Filtro Anti-Red nunca bloqueia nem confirma
+  detect:
+    method: composite
+    notes: wom.odds_velocity=0 contínuo
+  likely_causes:
+  - Seletores asian-corner placeholder
+  - Sem market_stats na telemetry
+  repair_steps:
+  - Mapear DOM real SokkerPro
+  - Ver state.wom no background
+  verify:
+  - odds_velocity ≠ 0 com mercado vivo
+  official_tools: []
+  lab_safe: true
+  injection_hint: 'LAB: market_stats com velocity simulada'
+  tags:
+  - wom
+  - odds
+  references:
+  - MANUAL WoM
+- id: FM-RISK-003
+  title: Cooldown / limite diário bloqueando paper
+  severity: info
+  service: risk
+  category: policy
+  symptom: BUY_CORNER com risk cooldown ou daily limit
+  detect:
+    method: composite
+    notes: risk_reason_code cooldown
+  likely_causes:
+  - Comportamento esperado do Risk Manager
+  repair_steps:
+  - Aguardar cooldown
+  - Não forçar stake
+  - Calibrar só em lab com dados
+  verify:
+  - Código legível em analysis
+  official_tools: []
+  lab_safe: true
+  injection_hint: 'LAB: forçar cooldown no risk mock'
+  tags:
+  - cooldown
+  - limit
+  references:
+  - risk_manager
+- id: FM-RISK-004
+  title: execution_allowed tentando true (bloqueio de política)
+  severity: critical
+  service: risk
+  category: policy
+  symptom: Qualquer tentativa de liberar execução real detectada
+  detect:
+    method: composite
+    notes: policy execution_allowed
+  likely_causes:
+  - Env malicioso
+  - Código alterado
+  repair_steps:
+  - Forçar paper_trade=true execution_allowed=false
+  - Precheck bloqueia execution_allowed=True
+  - Não promover patch
+  verify:
+  - Invariantes paper no status
+  official_tools:
+  - AURA_PRECHECK_PACOTE.bat
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - policy
+  - paper-lock
+  references:
+  - aura-governance
+- id: FM-SYS-002
+  title: Precheck pacote falhou (exit 1)
+  severity: critical
+  service: system
+  category: config
+  symptom: AURA_PRECHECK_PACOTE.bat exit 1; instalação bloqueada
+  detect:
+    method: manual
+  likely_causes:
+  - Arquivo crítico ausente
+  - Bridge sem do_GET
+  - BAT vazio/LF
+  repair_steps:
+  - Ler logs_instalacao/precheck_*.log
+  - Corrigir pacote antes de instalar
+  - Não ignorar precheck
+  verify:
+  - Precheck exit 0
+  official_tools:
+  - AURA_PRECHECK_PACOTE.bat
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - precheck
+  - install
+  references:
+  - skill quant-x
+- id: FM-SYS-003
+  title: Python não no PATH / venv quebrado
+  severity: critical
+  service: system
+  category: dependency
+  symptom: Instalador não acha Python; venv activate falha
+  detect:
+    method: manual
+  likely_causes:
+  - Python não instalado
+  - py launcher ausente
+  - venv corrompido
+  repair_steps:
+  - Instalar Python 3.10+
+  - Usar discovery do instalador
+  - Recriar venv só se recovery oficial indicar
+  verify:
+  - engine\venv\Scripts\python.exe -V
+  official_tools:
+  - AURA_INSTALAR_E_INICIAR_TUDO.bat
+  - DIAGNOSTICO_WINDOWS_COMPLETO.bat
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - python
+  - venv
+  references:
+  - instalador
+- id: FM-SYS-004
+  title: Path longo / espaços no Windows
+  severity: medium
+  service: system
+  category: config
+  symptom: Falhas estranhas em BAT com path Desktop longo
+  detect:
+    method: manual
+  likely_causes:
+  - Path >260
+  - Espaços sem aspas
+  repair_steps:
+  - Mover para C:\AURA_V23\ ou similar
+  - Reexecutar recovery
+  verify:
+  - Serviços sobem do path curto
+  official_tools:
+  - RECUPERAR_AURA_SERVICOS.bat
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - path
+  - windows
+  references:
+  - skill quant-x pasta curta
+- id: FM-SYS-005
+  title: Firewall/Defender bloqueando localhost ports
+  severity: high
+  service: system
+  category: dependency
+  symptom: Portas parecem up mas curl local falha intermitente
+  detect:
+    method: composite
+  likely_causes:
+  - Firewall regra
+  - Antivirus quarentena python
+  repair_steps:
+  - DIAGNOSTICO_WINDOWS_COMPLETO
+  - Permitir python/bridge nas portas AURA
+  verify:
+  - Health estável em 8080/8765/8099
+  official_tools:
+  - DIAGNOSTICO_WINDOWS_COMPLETO.bat
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - firewall
+  - defender
+  references:
+  - MANUAL diag windows
+- id: FM-HARNESS-002
+  title: Ollama chat Harness offline
+  severity: medium
+  service: harness
+  category: dependency
+  symptom: Pergunta livre no Harness retorna Ollama offline
+  detect:
+    method: tcp_port
+    port: 11434
+  likely_causes:
+  - Mesmo FM-OLLAMA-001
+  - URL AURA_OLLAMA_URL errada
+  repair_steps:
+  - Subir Ollama
+  - Comandos determinísticos (status/lab) ainda funcionam
+  verify:
+  - ask_ollama responde ou status/lab sem modelo
+  official_tools: []
+  lab_safe: true
+  injection_hint: 'LAB: Ollama down'
+  tags:
+  - harness
+  - ollama
+  references: []
+- id: FM-HARNESS-003
+  title: AURA_LAB_ROOT não configurado
+  severity: medium
+  service: harness
+  category: config
+  symptom: lab diagnostico diz LAB não encontrado
+  detect:
+    method: manual
+  likely_causes:
+  - ZIP não extraído
+  - Env AURA_LAB_ROOT ausente
+  repair_steps:
+  - Extrair AURA_LAB zip
+  - set AURA_LAB_ROOT
+  - Reaplicar overlay visão
+  verify:
+  - lab diagnostico retorna FM_ID
+  official_tools: []
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - lab
+  - path
+  references:
+  - INSTALL_NO_HARNESS
+- id: FM-HARNESS-004
+  title: Starter oficial não encontrado para serviço
+  severity: high
+  service: harness
+  category: config
+  symptom: 'iniciar engine/bridge/voice: nenhum inicializador oficial'
+  detect:
+    method: manual
+  likely_causes:
+  - Pacote incompleto
+  - Nomes fora do padrão
+  repair_steps:
+  - Visão → starters
+  - Restaurar BATs oficiais do ZIP
+  - Não inventar comando
+  verify:
+  - visão lista starter path
+  official_tools:
+  - AURA_PRECHECK_PACOTE.bat
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - starter
+  - missing
+  references:
+  - harness resolve_*
+- id: FM-HARNESS-005
+  title: CONFIRMAR com id de plano errado
+  severity: info
+  service: harness
+  category: policy
+  symptom: Usuário digita CONFIRMAR nome-skill em vez de CONFIRMAR PLANO p-...
+  detect:
+    method: manual
+  likely_causes:
+  - Comportamento esperado de proteção
+  repair_steps:
+  - Usar id exibido no plano pendente
+  - CANCELAR se inválido
+  verify:
+  - Nenhuma mutação
+  official_tools: []
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - confirm
+  - plan
+  references:
+  - harness
+- id: FM-DATA-001
+  title: Captura stale >45s
+  severity: high
+  service: data
+  category: data_integrity
+  symptom: Freshness alta; BLOCK por atraso
+  detect:
+    method: composite
+    notes: freshness >45s
+  likely_causes:
+  - Aba SokkerPro em background
+  - SW parado
+  repair_steps:
+  - Focar aba partida
+  - Reload extensão
+  - Não reinstalar AURA
+  verify:
+  - Freshness <45s
+  official_tools: []
+  lab_safe: true
+  injection_hint: 'LAB: timestamp antigo na telemetry'
+  tags:
+  - stale
+  - freshness
+  references:
+  - skill quant-x
+- id: FM-DATA-002
+  title: FixtureId ausente ou AMBIGUOUS_MATCH
+  severity: medium
+  service: data
+  category: data_integrity
+  symptom: Sem fixture; análise não ancora no jogo
+  detect:
+    method: composite
+  likely_causes:
+  - Página sem partida
+  - Parser fixture-id
+  repair_steps:
+  - Abrir partida ao vivo
+  - Checar content fixture-id
+  verify:
+  - Telemetry com fixtureId
+  official_tools: []
+  lab_safe: true
+  injection_hint: 'LAB: omitir fixtureId'
+  tags:
+  - fixture
+  references: []
+- id: FM-DATA-003
+  title: Conflito corners stats vs eventos
+  severity: high
+  service: data
+  category: data_integrity
+  symptom: data_integrity conflito autoritativo de escanteios
+  detect:
+    method: composite
+  likely_causes:
+  - Fontes divergentes no DOM
+  repair_steps:
+  - 'Fail-closed: não fabricar concordância'
+  - Reabrir partida
+  - Registrar valores divergentes
+  verify:
+  - Integrity sem conflito autoritativo
+  official_tools:
+  - VALIDAR_AURA_TESTES.bat
+  lab_safe: true
+  injection_hint: 'LAB: stats≠events'
+  tags:
+  - corners
+  - conflict
+  references:
+  - MANUAL 3.9
+- id: FM-SYS-006
+  title: Telegram não envia (token/chat ausente)
+  severity: low
+  service: system
+  category: config
+  symptom: Alerta Telegram falha ou test endpoint erro
+  detect:
+    method: manual
+  likely_causes:
+  - CORNERAI_TG_TOKEN/CHAT não setados
+  repair_steps:
+  - Configurar env antes do BAT
+  - POST /api/telegram/test
+  - Opcional — não bloqueia paper
+  verify:
+  - test telegram ok se desejado
+  official_tools: []
+  lab_safe: false
+  injection_hint: null
+  tags:
+  - telegram
+  references:
+  - MANUAL telegram

@@ -1,0 +1,29 @@
+COMO FAZER A WAV DE REFERENCIA (XTTS) — maior ganho de naturalidade
+====================================================================
+
+Arquivo obrigatorio:
+  bridge\jarvis\voices\voz_masculina_referencia.wav
+
+Requisitos minimos:
+  - Formato: WAV mono, 16-bit ou 24-bit, 16–48 kHz
+  - Duracao: 8 a 20 segundos (ideal ~12 s)
+  - Conteudo: 1 ou 2 frases completas em pt-BR neutro
+  - Locutor: homem, tom medio-grave, calmo, conversado
+  - Ambiente: silencioso, sem musica, sem eco, sem chiado
+
+Texto sugerido para gravar (leia de forma natural, nao dramatizada):
+
+  "A linha de escanteios ainda tem valor. A pressao subiu no segundo tempo,
+   mas o mercado ja precificou parte do movimento. Gestao de banca primeiro."
+
+Ferramentas faceis:
+  - Gravador de Voz do Windows
+  - Audacity (exportar WAV mono)
+  - Celular → transferir e converter para WAV mono
+
+Depois de colocar o arquivo:
+  1) Rode AURA_ATIVAR_XTTS_REFERENCIA.bat
+  2) Teste no chat de voz (1.a fala demora um pouco)
+
+Para desativar XTTS e voltar ao Humberto:
+  engine\venv\Scripts\python.exe scripts\activate_reference_voice.py --restore

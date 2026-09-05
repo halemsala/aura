@@ -1,0 +1,1371 @@
+# AURA QUANT-X — operador local do chat Hermes (paper-trade)
+# Diagnostico, reinicio seguro, GPU, desktop. NUNCA mata Ollama :11434.
+# NUNCA abre execucao real (execution_allowed permanece false).
+from __future__ import annotations
+
+import json
+import os
+import re
+import shutil
+import subprocess
+import time
+import threading
+from pathlib import Path
+from urllib.request import Request, urlopen
+from urllib.error import URLError, HTTPError
+
+ROOT = Path(__file__).resolve().parents[1]
+STATE = ROOT / "logs_supervisor" / "aura_chat_agents.json"
+MANIFEST = ROOT / "agents" / "activation_manifest.json"
+LOGDIR = ROOT / "logs_supervisor"
+VENV_PY = ROOT / "engine" / "venv" / "Scripts" / "python.exe"
+if not VENV_PY.exists():
+    VENV_PY = Path(shutil.which("python") or "python")
+
+# Portas AURA — 11434 (Ollama) nunca e morta
+AURA_PORTS = {
+    "bridge": 8080,
+    "engine": 8765,
+    "matriz": 8766,
+    "hermes": 8777,
+    "hermes_dash": 8778,
+    "voice": 8099,
+}
+
+
+def _load_state() -> dict:
+    if STATE.exists():
+        try:
+            return json.loads(STATE.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+    return {"paper_trade": True, "execution_allowed": False, "gpu_cap_pct": None, "agents": "safe"}
+
+
+def _save_state(st: dict) -> None:
+    STATE.parent.mkdir(parents=True, exist_ok=True)
+    STATE.write_text(json.dumps(st, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def _ping(url: str, timeout: float = 2.0) -> tuple:
+    try:
+        req = Request(url, headers={"Accept": "application/json"})
+        with urlopen(req, timeout=timeout) as resp:
+            body = resp.read().decode("utf-8", "replace")
+            return resp.status, body
+    except Exception:
+        return 0, ""
+
+
+def _run(cmd, timeout: int = 45, cwd=None) -> str:
+    try:
+        p = subprocess.run(
+            cmd,
+            cwd=str(cwd or ROOT),
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+            shell=False,
+        )
+        out = ((p.stdout or "") + (p.stderr or "")).strip()
+        return out[:1200] if out else f"exit={p.returncode}"
+    except subprocess.TimeoutExpired:
+        return "timeout"
+    except Exception as exc:
+        return str(exc)[:200]
+
+
+def _popen(cmd, cwd=None, log_name: str = "aura_popen.log") -> None:
+    """Arranca processo em background com log (Windows detached)."""
+    LOGDIR.mkdir(parents=True, exist_ok=True)
+    log_path = LOGDIR / log_name
+    try:
+        logf = open(log_path, "a", encoding="utf-8", errors="replace")
+        logf.write("\n==== %s %s ====\n" % (time.strftime("%Y-%m-%d %H:%M:%S"), cmd))
+        logf.flush()
+    except Exception:
+        logf = subprocess.DEVNULL
+    kwargs = {
+        "cwd": str(cwd or ROOT),
+        "stdout": logf if logf is not subprocess.DEVNULL else subprocess.DEVNULL,
+        "stderr": subprocess.STDOUT if logf is not subprocess.DEVNULL else subprocess.DEVNULL,
+        "shell": False,
+    }
+    if os.name == "nt":
+        # DETACHED + CREATE_NO_WINDOW — nao morre com o chat
+        kwargs["creationflags"] = getattr(subprocess, "DETACHED_PROCESS", 0x00000008) | getattr(
+            subprocess, "CREATE_NO_WINDOW", 0x08000000
+        )
+        kwargs["close_fds"] = True
+    subprocess.Popen(cmd, **kwargs)
+
+
+def list_agents() -> str:
+    names = []
+    if MANIFEST.exists():
+        try:
+            data = json.loads(MANIFEST.read_text(encoding="utf-8"))
+            ag = data.get("agents") or {}
+            names = [k.split(":")[-1] for k in list(ag.keys())[:12]]
+        except Exception:
+            pass
+    extra = "diagnostico, correcao, blue, red, meta, corner, hawkes, medic"
+    shown = ", ".join(names[:8]) if names else extra
+    return (
+        f"Agentes paper-only no core (sem ordem real): {shown}. "
+        "Pedidos uteis: status | diagnostico | reinicia engine | gpu 80 | abra desktop | F2."
+    )
+
+
+def count_agents() -> str:
+    names = []
+    if MANIFEST.exists():
+        try:
+            data = json.loads(MANIFEST.read_text(encoding="utf-8"))
+            ag = data.get("agents") or {}
+            names = list(ag.keys())
+        except Exception:
+            pass
+    enabled = list((ROOT / "agents" / "ENABLED").glob("*.enabled")) if (ROOT / "agents" / "ENABLED").exists() else []
+    return (
+        f"Manifest: {len(names)} agentes declarados. "
+        f"ENABLED markers: {len(enabled)}. "
+        f"Amostra: {', '.join(k.split(':')[-1] for k in names[:8]) if names else 'n/a'}. "
+        "Todos paper-only."
+    )
+
+
+def activate_agents() -> str:
+
+    st = _load_state()
+    st["agents"] = "safe"
+    st["paper_trade"] = True
+    st["execution_allowed"] = False
+    _save_state(st)
+    bat = ROOT / "scripts" / "aura_activate_safe.py"
+    if bat.exists():
+        try:
+            subprocess.run(
+                [str(VENV_PY), str(bat)],
+                cwd=str(ROOT), timeout=20, capture_output=True, text=True,
+            )
+        except Exception:
+            pass
+    return list_agents()
+
+
+def _nvidia_smi(*args: str) -> str:
+    exe = shutil.which("nvidia-smi")
+    if not exe:
+        return ""
+    try:
+        p = subprocess.run([exe, *args], capture_output=True, text=True, timeout=8)
+        return (p.stdout or "") + (p.stderr or "")
+    except Exception:
+        return ""
+
+
+def set_gpu_cap(pct: int) -> str:
+    pct = max(20, min(100, int(pct)))
+    st = _load_state()
+    st["gpu_cap_pct"] = pct
+    _save_state(st)
+
+    env_file = LOGDIR / "aura_gpu_cap.env"
+    LOGDIR.mkdir(parents=True, exist_ok=True)
+    env_file.write_text(f"AURA_GPU_CAP_PCT={pct}\n", encoding="utf-8")
+
+    q = _nvidia_smi("-q", "-d", "POWER")
+    applied = []
+    if q:
+        m = re.search(r"Max Power Limit\s*:\s*([0-9.]+)\s*W", q)
+        if m:
+            watts = max(20, int(float(m.group(1)) * pct / 100.0))
+            out = _nvidia_smi("-pl", str(watts))
+            applied.append(f"nvidia-smi -pl {watts}W")
+            if out.strip():
+                applied.append(out.strip().splitlines()[0][:120])
+        else:
+            applied.append("nvidia-smi visivel, sem Max Power Limit")
+    else:
+        applied.append("nvidia-smi ausente — cap gravado so em aura_gpu_cap.env")
+
+    return (
+        f"GPU dedicada limitada a {pct}% no AURA (paper). "
+        + "; ".join(applied)
+        + ". Reinicia Hermes/Ollama para o Ollama herdar o env. Nao uses o Gestor de Tarefas."
+    )
+
+
+def gpu_status() -> str:
+    st = _load_state()
+    cap = st.get("gpu_cap_pct")
+    q = _nvidia_smi(
+        "--query-gpu=name,utilization.gpu,memory.used,memory.total,power.draw,power.limit",
+        "--format=csv,noheader",
+    )
+    cap_s = f"{cap}%" if cap else "sem cap"
+    if q.strip():
+        return f"GPU cap AURA={cap_s}. nvidia: {q.strip()[:180]}"
+    return f"GPU cap AURA={cap_s}. Sem nvidia-smi neste PATH."
+
+
+def open_desktop() -> str:
+    """Abre Aura.QuantX.Desktop.exe ou fallback Matriz :8766. Paper-only."""
+    exe = ROOT / "desktop" / "publish" / "Aura.QuantX.Desktop.exe"
+    bat = ROOT / "AURA_ABRIR_DESKTOP.bat"
+    try:
+        if exe.exists():
+            _popen([str(exe)])
+            return (
+                "Desktop AURA iniciado: desktop\\publish\\Aura.QuantX.Desktop.exe. "
+                "F1 Matriz | F2 SokkerPRO | F11 max. paper_trade=true."
+            )
+        if bat.exists():
+            _popen(["cmd", "/c", str(bat)])
+            return (
+                "AURA_ABRIR_DESKTOP.bat lancado. "
+                "Se EXE em falta, Matriz em http://127.0.0.1:8766/index.html"
+            )
+        _popen(["cmd", "/c", "start", "", "http://127.0.0.1:8766/index.html"])
+        return (
+            "EXE ausente (desktop\\publish\\Aura.QuantX.Desktop.exe). "
+            "Abri Matriz no browser :8766. Gere o EXE com COMPILAR_E_ABRIR_DESKTOP.bat."
+        )
+    except Exception as exc:
+        return (
+            "Falha ao abrir Desktop: %s. "
+            "Manual: AURA_ABRIR_DESKTOP.bat ou http://127.0.0.1:8766" % exc
+        )
+
+
+def full_status() -> dict:
+    """Snapshot real das portas + fixture (sem inventar)."""
+    checks = {
+        "bridge": _ping("http://127.0.0.1:8080/health", 1.5),
+        "engine": _ping("http://127.0.0.1:8765/api/health", 1.5),
+        "matriz": _ping("http://127.0.0.1:8766/health", 1.2),
+        "hermes": (200, "self"),  # este processo
+        "voice": _ping("http://127.0.0.1:8099/api/voice/health", 1.0),
+        "ollama": _ping("http://127.0.0.1:11434/api/tags", 1.5),
+    }
+    st_code, st_body = _ping("http://127.0.0.1:8765/api/ui/state", 2.0)
+    home = away = minute = ""
+    try:
+        data = json.loads(st_body) if st_body else {}
+        view = (data.get("snapshot") or {}).get("view") or data.get("view") or {}
+        home = str(view.get("home") or view.get("home_team") or "")
+        away = str(view.get("away") or view.get("away_team") or "")
+        minute = str(view.get("minute") or "")
+    except Exception:
+        pass
+    ports = {k: ("OK" if (v[0] and v[0] < 400) else "OFF") for k, v in checks.items()}
+    # hermes self always OK when answering
+    ports["hermes"] = "OK"
+    return {
+        "paper_trade": True,
+        "execution_allowed": False,
+        "ports": ports,
+        "fixture": {"home": home, "away": away, "minute": minute} if home and away else None,
+        "raw_ui_state_ok": bool(st_code),
+    }
+
+
+def status_text() -> str:
+    s = full_status()
+    p = s["ports"]
+    line = (
+        f"AURA paper-trade | exec bloqueada. "
+        f"Bridge {p['bridge']} | Engine {p['engine']} | Matriz {p['matriz']} | "
+        f"Hermes {p['hermes']} | Ollama {p['ollama']} | Voz {p['voice']}."
+    )
+    fx = s.get("fixture")
+    if fx:
+        line += f" Live {fx['home']} x {fx['away']}"
+        if fx.get("minute"):
+            line += f" {fx['minute']}'"
+        line += "."
+    else:
+        line += " Sem fixture. Abre SokkerPRO no Desktop F2."
+    return line
+
+
+def deep_diagnose() -> str:
+    """Diagnostico profundo: portas, logs recentes, venv, EXE."""
+    s = full_status()
+    lines = [status_text(), "--- Diagnostico profundo ---"]
+    off = [k for k, v in s["ports"].items() if v == "OFF"]
+    if off:
+        lines.append("OFF: " + ", ".join(off) + ". Posso reiniciar com: reinicia bridge|engine|matriz|hermes|voice|all")
+    else:
+        lines.append("Todas as portas AURA respondem.")
+    # venv / exe
+    lines.append(f"venv: {'OK' if (ROOT / 'engine' / 'venv' / 'Scripts' / 'python.exe').exists() else 'AUSENTE'}")
+    exe = ROOT / "desktop" / "publish" / "Aura.QuantX.Desktop.exe"
+    lines.append(f"Desktop EXE: {'OK ' + str(exe) if exe.exists() else 'AUSENTE — usa AURA_ABRIR_DESKTOP.bat ou browser :8766'}")
+    # last log lines
+    LOGDIR.mkdir(parents=True, exist_ok=True)
+    for name in ("hermes_v10.log", "matriz8766.log", "AURA_OPERATOR_OS_LAUNCHER.log"):
+        fp = LOGDIR / name
+        if fp.exists():
+            try:
+                tail = fp.read_text(encoding="utf-8", errors="ignore").splitlines()[-4:]
+                if tail:
+                    lines.append(f"log {name}: " + " | ".join(t.strip()[:100] for t in tail if t.strip()))
+            except Exception:
+                pass
+    lines.append("Invariantes: paper_trade=true, execution_allowed=false, Ollama :11434 nunca e morto.")
+    return "\n".join(lines)
+
+
+def _safe_free_ports(ports=None) -> str:
+    """Libera portas AURA EXCETO Hermes (8777/8778), Ollama (11434) e PID actual."""
+    mypid = os.getpid()
+    if ports is None:
+        ports = [8080, 8765, 8766, 8099]
+    ports = [int(p) for p in ports if int(p) not in (11434, 8777, 8778)]
+    if not ports:
+        return "safe_free: nada a libertar (Hermes/Ollama/PID protegidos)"
+    ps = (
+        "$mypid=%d; $ports=@(%s); foreach($p in $ports){"
+        "Get-NetTCPConnection -LocalPort $p -State Listen -EA SilentlyContinue |"
+        "ForEach-Object{ $id=$_.OwningProcess; if($id -gt 4 -and $id -ne $mypid){"
+        "Stop-Process -Id $id -Force -EA SilentlyContinue }}}}"
+    ) % (mypid, ",".join(str(p) for p in ports))
+    out = _run(["powershell", "-NoProfile", "-Command", ps], timeout=15)
+    return "safe_free portas %s (Hermes+PID protegidos). %s" % (
+        ",".join(str(p) for p in ports),
+        (out or "ok")[:100],
+    )
+
+
+
+def restart_service(name: str) -> str:
+    """
+    Reinicia um servico AURA de forma segura.
+    name: bridge | engine | matriz | hermes | voice | all | core
+    NUNCA mata Ollama :11434.
+    """
+    name = (name or "").strip().lower()
+    aliases = {
+        "tudo": "core", "todos": "core", "sistema": "core", "aura": "core",
+        "all": "core",  # NUNCA AURA_TUDO_EM_UM a partir do chat (mata Hermes)
+        "core": "core", "chat": "hermes", "voz": "voice", "jarvis": "voice",
+    }
+    name = aliases.get(name, name)
+    allowed = {"bridge", "engine", "matriz", "hermes", "voice", "all", "core"}
+    if name not in allowed:
+        return (
+            f"Servico desconhecido: {name}. "
+            "Usa: reinicia bridge | engine | matriz | hermes | voice | all"
+        )
+
+    LOGDIR.mkdir(parents=True, exist_ok=True)
+    actions = []
+
+    def free_specific(port_list):
+        # NUNCA mata o PID actual (chat Hermes) nem 8777/8778/11434
+        mypid = os.getpid()
+        safe_ports = [int(p) for p in port_list if int(p) not in (11434, 8777, 8778)]
+        if not safe_ports:
+            return
+        ports = ",".join(str(p) for p in safe_ports)
+        ps = (
+            "$mypid=%d; $ports=@(%s); foreach($p in $ports){"
+            "Get-NetTCPConnection -LocalPort $p -State Listen -EA SilentlyContinue |"
+            "ForEach-Object{ $id=$_.OwningProcess; if($id -gt 4 -and $id -ne $mypid){"
+            "Stop-Process -Id $id -Force -EA SilentlyContinue }}}}"
+        ) % (mypid, ports)
+        _run(["powershell", "-NoProfile", "-Command", ps], timeout=15)
+
+
+    py = str(VENV_PY)
+    env_base = os.environ.copy()
+    env_base["AURA_ROOT"] = str(ROOT)
+    env_base["PAPER_TRADE"] = "true"
+    env_base["EXECUTION_ALLOWED"] = "false"
+    env_base["PYTHONUTF8"] = "1"
+    env_base["PYTHONPATH"] = str(ROOT / "hermes_v10") + os.pathsep + str(ROOT)
+
+    def start_bridge():
+        free_specific([8080])
+        time.sleep(0.3)
+        script = ROOT / "bridge" / "server.py"
+        if not script.exists():
+            actions.append("bridge/server.py AUSENTE")
+            return
+        env = env_base.copy()
+        env["PYTHONPATH"] = str(ROOT) + os.pathsep + env.get("PYTHONPATH", "")
+        try:
+            logf = open(LOGDIR / "bridge_boot.log", "a", encoding="utf-8", errors="replace")
+        except Exception:
+            logf = subprocess.DEVNULL
+        kwargs = {"cwd": str(ROOT), "env": env, "stdout": logf, "stderr": subprocess.STDOUT, "shell": False}
+        if os.name == "nt":
+            kwargs["creationflags"] = getattr(subprocess, "DETACHED_PROCESS", 0x00000008) | getattr(
+                subprocess, "CREATE_NO_WINDOW", 0x08000000
+            )
+        subprocess.Popen([py, "-u", str(script)], **kwargs)
+        ok = False
+        for _ in range(8):
+            time.sleep(0.8)
+            code, _ = _ping("http://127.0.0.1:8080/health", timeout=1.2)
+            if code and code < 400:
+                ok = True
+                break
+        actions.append("bridge:8080 ONLINE" if ok else "bridge:8080 ainda OFF — ver bridge_boot.log")
+
+    def start_engine():
+        free_specific([8765])
+        time.sleep(0.4)
+        script = ROOT / "engine" / "server.py"
+        bat = ROOT / "AURA_START_ENGINE.bat"
+        if not script.exists() and not bat.exists():
+            actions.append("engine/server.py AUSENTE")
+            return
+        env = env_base.copy()
+        env["PYTHONPATH"] = str(ROOT) + os.pathsep + str(ROOT / "engine") + os.pathsep + env.get("PYTHONPATH", "")
+        # log dedicado
+        try:
+            logf = open(LOGDIR / "engine_boot.log", "a", encoding="utf-8", errors="replace")
+            logf.write("\n==== BOOT %s ====\n" % time.strftime("%Y-%m-%d %H:%M:%S"))
+            logf.flush()
+        except Exception:
+            logf = subprocess.DEVNULL
+        cmd = [py, "-u", str(script)] if script.exists() else ["cmd", "/c", str(bat)]
+        kwargs = {
+            "cwd": str(ROOT),
+            "env": env,
+            "stdout": logf if logf is not subprocess.DEVNULL else subprocess.DEVNULL,
+            "stderr": subprocess.STDOUT if logf is not subprocess.DEVNULL else subprocess.DEVNULL,
+            "shell": False,
+        }
+        if os.name == "nt":
+            kwargs["creationflags"] = getattr(subprocess, "DETACHED_PROCESS", 0x00000008) | getattr(
+                subprocess, "CREATE_NO_WINDOW", 0x08000000
+            )
+        subprocess.Popen(cmd, **kwargs)
+        # espera saude ate 12s
+        ok = False
+        for i in range(6):
+            time.sleep(0.8)
+            code, _ = _ping("http://127.0.0.1:8765/api/health", timeout=1.5)
+            if code and code < 400:
+                ok = True
+                break
+        if ok:
+            actions.append("engine:8765 ONLINE apos espera")
+        else:
+            # tail log
+            tail = ""
+            try:
+                lp = LOGDIR / "engine_boot.log"
+                if lp.exists():
+                    tail = " | ".join(lp.read_text(encoding="utf-8", errors="ignore").splitlines()[-3:])
+            except Exception:
+                pass
+            actions.append("engine:8765 ainda OFF — ver logs_supervisor/engine_boot.log " + tail[:180])
+
+    def start_matriz():
+        free_specific([8766])
+        script = ROOT / "scripts" / "aura_serve_matriz.py"
+        if script.exists():
+            _popen([py, "-u", str(script)])
+            actions.append("matriz:8766 arrancado")
+        else:
+            actions.append("aura_serve_matriz.py AUSENTE")
+
+    def start_voice():
+        free_specific([8099])
+        script = ROOT / "bridge" / "jarvis_voice_server.py"
+        if script.exists():
+            _popen([py, "-u", str(script)])
+            actions.append("voice:8099 arrancado")
+        else:
+            actions.append("jarvis_voice_server.py AUSENTE")
+
+    def start_hermes():
+        # NUNCA free 8777 a partir deste processo — suicida o chat
+        actions.append(
+            "Hermes: para reiniciar SEM cair o chat, noutro terminal: "
+            "cmd /c C:\\aura\\AURA_SOBE_HERMES_SO.bat"
+        )
+
+    if name in ("all", "core"):
+        # SEGURO: so bridge+engine+matriz+voice em background-friendly path
+        # PROIBIDO: AURA_TUDO_EM_UM.bat / qualquer BAT que mate :8777
+        actions.append("core-safe: bridge/engine/matriz/voice (Hermes preservado)")
+        start_bridge()
+        start_engine()
+        start_matriz()
+        start_voice()
+    elif name == "bridge":
+        start_bridge()
+    elif name == "engine":
+        start_engine()
+    elif name == "matriz":
+        start_matriz()
+    elif name == "voice":
+        start_voice()
+    elif name == "hermes":
+        actions.append(
+            "Hermes NAO e reiniciado daqui (protegido). Usa AURA_SOBE_HERMES_SO.bat noutro terminal."
+        )
+    time.sleep(0.8)
+    # re-check
+    after = full_status()
+    ports_line = " | ".join(f"{k} {v}" for k, v in after["ports"].items())
+    return (
+        f"Reinicio pedido: {name}. Accoes: {'; '.join(actions) or 'nenhuma'}. "
+        f"Estado agora: {ports_line}. paper_trade=true, Ollama nao foi tocado."
+    )
+
+
+def read_recent_log(name: str = "hermes_v10.log", lines: int = 30) -> str:
+    """Le as ultimas linhas de um log em logs_supervisor."""
+    safe = re.sub(r"[^a-zA-Z0-9_.-]", "", name or "hermes_v10.log")
+    fp = LOGDIR / safe
+    if not fp.exists():
+        # tenta listar disponiveis
+        avail = sorted(p.name for p in LOGDIR.glob("*.log"))[:12] if LOGDIR.exists() else []
+        return f"Log {safe} ausente. Disponiveis: {', '.join(avail) or 'nenhum'}."
+    try:
+        content = fp.read_text(encoding="utf-8", errors="ignore").splitlines()
+        tail = content[-max(5, min(80, int(lines))):]
+        return f"--- {safe} (ultimas {len(tail)}) ---\n" + "\n".join(tail)
+    except Exception as exc:
+        return f"Erro a ler {safe}: {exc}"
+
+
+
+_repair_lock = threading.Lock()
+_repair_running = False
+
+
+def queue_repair() -> str:
+    """Reparo em BACKGROUND — responde logo; nao bloqueia nem mata o chat."""
+    global _repair_running
+    import threading
+    with _repair_lock:
+        if _repair_running:
+            return (
+                "Reparo ja em curso em segundo plano. "
+                "Espera 20s e diz: status. Hermes continua online."
+            )
+        _repair_running = True
+
+    def _job():
+        global _repair_running
+        try:
+            LOGDIR.mkdir(parents=True, exist_ok=True)
+            logp = LOGDIR / "aura_repair.log"
+            with logp.open("a", encoding="utf-8") as f:
+                f.write("repair start %s\n" % time.strftime("%H:%M:%S"))
+            # UMA chamada core-safe (nunca Hermes, nunca AURA_TUDO_EM_UM)
+            try:
+                msg = restart_service("core")
+                with logp.open("a", encoding="utf-8") as f:
+                    f.write(msg[:500] + "\n")
+            except Exception as exc:
+                with logp.open("a", encoding="utf-8") as f:
+                    f.write("ERR %s\n" % exc)
+            with logp.open("a", encoding="utf-8") as f:
+                f.write("repair done %s\n" % time.strftime("%H:%M:%S"))
+                try:
+                    f.write(status_text() + "\n")
+                except Exception:
+                    pass
+        finally:
+            with _repair_lock:
+                _repair_running = False
+
+    threading.Thread(target=_job, name="aura-repair-bg", daemon=True).start()
+    return (
+        "Reparo em segundo plano INICIADO (bridge/engine/matriz/voice se OFF). "
+        "Este chat NAO vai cair. Espera ~20s e clica Status. "
+        "Log: logs_supervisor/aura_repair.log"
+    )
+
+
+def fix_common() -> str:
+    """Reparo real + relatorio. Nao fica so na promessa."""
+    try:
+        import aura_programmer_agent as prog
+        return prog.run_operator("corrige os erros e abre o relatorio")
+    except Exception as exc:
+        return queue_repair() + " | programador indisponivel: %s" % exc
+
+
+
+def start_system_monitor() -> str:
+    try:
+        import sys
+        scripts = str(ROOT / "scripts")
+        if scripts not in sys.path:
+            sys.path.insert(0, scripts)
+        import aura_watchdog as wd
+        # activa agentes paper-only tambem
+        try:
+            activate_agents()
+        except Exception:
+            pass
+        return wd.start_watchdog(auto_repair=True)
+    except Exception as exc:
+        return f"Monitor falhou: {exc}"
+
+
+def stop_system_monitor() -> str:
+    try:
+        import sys
+        scripts = str(ROOT / "scripts")
+        if scripts not in sys.path:
+            sys.path.insert(0, scripts)
+        import aura_watchdog as wd
+        return wd.stop_watchdog()
+    except Exception as e:
+        return str(e)
+
+
+def handle_operator_intent(message: str):
+
+    """
+    Se a mensagem for um comando de operador, executa e devolve texto.
+    Caso contrario devolve None (deixar o LLM conversacional).
+    """
+    msg = (message or "").strip().lower()
+    if not msg:
+        return None
+
+    # GPU
+    m = re.search(r"(?:gpu|limite|consum)[^0-9]{0,16}(\d{2,3})", msg)
+    if m and any(k in msg for k in ("gpu", "limite", "consum", "cap")):
+        return set_gpu_cap(int(m.group(1)))
+    if re.search(r"\bgpu\b", msg) or ("limite" in msg and "gpu" in msg):
+        return gpu_status()
+
+    # Agentes
+    if any(k in msg for k in ("ative os agentes", "ativar agentes", "activa agentes", "ativar os agentes")) \
+       or (re.search(r"\bagentes?\b", msg) and any(k in msg for k in ("ativa", "ative", "activar", "ligar"))):
+        return activate_agents()
+    if re.search(r"\bagentes?\b", msg) and any(k in msg for k in ("lista", "quais", "mostra")):
+        return list_agents()
+
+    # Desktop
+    if any(k in msg for k in ("abra o desktop", "abrir desktop", "abra desktop", "abre o desktop",
+                               "abra o exe", "abrir o exe", "abre o exe", "abrir exe",
+                               "abra o aura", "abrir aura desktop")):
+        return open_desktop()
+
+    # Reinicio
+    m = re.search(
+        r"(?:reinic|restart|sobe|suba|arranca|repor)\w*\s+"
+        r"(bridge|engine|matriz|hermes|voice|voz|chat|all|tudo|todos|core|sistema|aura)",
+        msg,
+    )
+    if m:
+        if not _has_auth(message):
+            return require_auth(message, f"reinicia {m.group(1)}")
+        return restart_service(m.group(1))
+    if any(k in msg for k in ("reinicia tudo", "reiniciar tudo", "reinicia o sistema",
+                               "reiniciar sistema", "restart all", "sobe tudo")):
+        if not _has_auth(message):
+            return require_auth(message, "reinicia all")
+        return restart_service("all")
+
+    # Fix / corrige
+    if any(k in msg for k in ("corrige", "corrija", "reparar", "repara", "fix common",
+                               "corrige os erros", "corrigir erros", "resolve os erros")):
+        if not _has_auth(message):
+            return require_auth(message, "corrige")
+        if any(k in msg for k in ("desktop", "exe")):
+            return open_desktop() + " | " + fix_common()
+        return fix_common()
+
+    # Diagnostico profundo
+    if any(k in msg for k in ("diagnostico profundo", "diagnóstico profundo", "diag profundo",
+                               "deep diag", "diagnostico completo", "relatorio completo")):
+        return deep_diagnose()
+
+    # Status / diagnostico simples
+    if any(k in msg for k in ("status", "diagnost", "saude", "saúde", "health",
+                               "como esta", "como está", "estado do sistema")):
+        if any(k in msg for k in ("profu", "completo", "deep", "relator")):
+            return deep_diagnose()
+        return status_text()
+
+    # Logs
+    m = re.search(r"(?:le|l[eê]|mostra|tail)\s+(?:o\s+)?log\s+([a-zA-Z0-9_.-]+)", msg)
+    if m:
+        return read_recent_log(m.group(1))
+    if "log" in msg and any(k in msg for k in ("hermes", "matriz", "engine", "erro")):
+        which = "hermes_v10.log"
+        if "matriz" in msg:
+            which = "matriz8766.log"
+        elif "engine" in msg or "launcher" in msg:
+            which = "AURA_OPERATOR_OS_LAUNCHER.log"
+        return read_recent_log(which)
+
+    # Ajuda / comandos
+    if any(k in msg for k in ("que consegues", "o que consegues", "o que voce consegue",
+                               "o que você consegue", "lista comandos", "ajuda", "help",
+                               "comandos disponiveis", "o que podes fazer")):
+        return (
+            "Sou o operador Hermes do AURA QUANT-X (paper-trade). Consigo:\n"
+            "• status / diagnostico / diagnostico profundo — portas, fixture, logs\n"
+            "• reinicia bridge|engine|matriz|hermes|voice|all — sobe servicos (nunca mata Ollama)\n"
+            "• corrige / repara — libera portas AURA e sobe o que estiver OFF\n"
+            "• gpu / gpu 80 — estado e limite de potencia da GPU dedicada\n"
+            "• abra desktop — lanca Aura.QuantX.Desktop.exe (F1 Matriz, F2 SokkerPRO)\n"
+            "• ative agentes — agentes paper-only\n"
+            "• le log hermes_v10.log — ultimas linhas\n"
+            "Falo em portugues, com dados reais de :8765/api/ui/state. Sem apostas reais."
+        )
+
+    return None
+
+
+
+# ─── Autorizacao do operador (pedidos destrutivos / codigo) ───────────────────
+# O utilizador tem de escrever AUTORIZO (ou "autorizo:") no pedido.
+import hashlib
+from datetime import datetime as _dt
+
+AUTH_TOKENS = ("autorizo", "autorizado", "com autorizacao", "com autorização", "eu autorizo")
+
+# Ficheiros/pastas onde escrita e permitida (relativo a ROOT)
+WRITE_ALLOW_PREFIXES = (
+    "scripts/",
+    "hermes_v10/",
+    "bridge/",
+    "engine/",
+    "desktop/ui/",
+    "logs_supervisor/",
+    "agents/",
+    "voice_profiles/",
+)
+WRITE_DENY_NAMES = (
+    ".env", "credentials", "secret", "token.json", "id_rsa", "private_key",
+)
+MAX_WRITE_BYTES = 1_500_000
+
+
+def _has_auth(message: str) -> bool:
+    low = (message or "").lower()
+    if re.search(r"\b(n[aã]o|nunca|jamais|proib)\w*\s+(autoriz|permit)\w*", low):
+        return False
+    return any(t in low for t in AUTH_TOKENS)
+
+
+def _strip_auth(message: str) -> str:
+    low = message
+    for t in AUTH_TOKENS:
+        low = re.sub(re.escape(t), " ", low, flags=re.IGNORECASE)
+    return re.sub(r"\s+", " ", low).strip(" :.-")
+
+
+def require_auth(message: str, action: str) -> str:
+    return (
+        f"Acao '{action}' precisa da tua autorizacao explicita. "
+        f"Repete o pedido com a palavra AUTORIZO. Exemplo: AUTORIZO {action}"
+    )
+
+
+def _resolve_writable(rel: str):
+    rel = (rel or "").replace("\\", "/").lstrip("/")
+    if ".." in rel.split("/"):
+        return None, "path traversal bloqueado"
+    low = rel.lower()
+    for d in WRITE_DENY_NAMES:
+        if d in low:
+            return None, f"ficheiro sensivel bloqueado ({d})"
+    ok = any(low.startswith(p) or low == p.rstrip("/") for p in WRITE_ALLOW_PREFIXES)
+    # tambem permitir BATs na raiz AURA
+    if not ok and "/" not in rel and rel.lower().endswith(".bat"):
+        ok = True
+    if not ok:
+        return None, "fora da allowlist (scripts/, hermes_v10/, bridge/, engine/, desktop/ui/, agents/, BATs raiz)"
+    target = (ROOT / rel).resolve()
+    if not str(target).startswith(str(ROOT.resolve())):
+        return None, "path fora de C:\\aura"
+    return target, ""
+
+
+def backup_file(path: Path) -> str:
+    LOGDIR.mkdir(parents=True, exist_ok=True)
+    bdir = LOGDIR / "backups"
+    bdir.mkdir(parents=True, exist_ok=True)
+    stamp = _dt.utcnow().strftime("%Y%m%d_%H%M%S")
+    dest = bdir / f"{path.name}.{stamp}.bak"
+    try:
+        dest.write_bytes(path.read_bytes())
+        return str(dest)
+    except Exception as exc:
+        return f"(backup falhou: {exc})"
+
+
+def read_project_file(rel: str, max_chars: int = 8000) -> str:
+    target, err = _resolve_writable(rel)
+    # leitura um pouco mais larga: qualquer ficheiro sob ROOT excepto deny
+    rel_n = (rel or "").replace("\\", "/").lstrip("/")
+    if ".." in rel_n.split("/"):
+        return "path traversal bloqueado"
+    target = (ROOT / rel_n).resolve()
+    if not str(target).startswith(str(ROOT.resolve())):
+        return "path fora de AURA_ROOT"
+    low_path = str(target).lower().replace("\\", "/")
+    for deny in WRITE_DENY_NAMES:
+        d = str(deny).lower()
+        if d and (d in target.name.lower() or d in low_path):
+            return f"leitura bloqueada (deny): {target.name}"
+    if not target.exists():
+        return f"ausente: {rel_n}"
+    if target.is_dir():
+        items = sorted([p.name for p in target.iterdir()])[:40]
+        return f"dir {rel_n}: " + ", ".join(items)
+    try:
+        data = target.read_text(encoding="utf-8", errors="ignore")
+        if len(data) > max_chars:
+            return data[:max_chars] + f"\n... [{len(data)} bytes total, truncado]"
+        return data
+    except Exception as exc:
+        return f"erro leitura: {exc}"
+
+
+def write_project_file(rel: str, content: str, message: str = "") -> str:
+    if not _has_auth(message):
+        return require_auth(message, f"escrever {rel}")
+    target, err = _resolve_writable(rel)
+    if err:
+        return f"bloqueado: {err}"
+    raw = content if isinstance(content, str) else str(content)
+    if len(raw.encode("utf-8")) > MAX_WRITE_BYTES:
+        return f"ficheiro demasiado grande (>{MAX_WRITE_BYTES} bytes)"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    bak = ""
+    if target.exists():
+        bak = backup_file(target)
+    target.write_text(raw, encoding="utf-8")
+    # validar python
+    check = ""
+    if target.suffix.lower() == ".py":
+        r = _run([str(VENV_PY), "-m", "py_compile", str(target)], timeout=20)
+        check = f" py_compile={r or 'ok'}"
+    return f"Escrito {rel} (backup={bak}){check}. paper_trade=true."
+
+
+def apply_text_patch(rel: str, old: str, new: str, message: str = "") -> str:
+    if not _has_auth(message):
+        return require_auth(message, f"patch {rel}")
+    target, err = _resolve_writable(rel)
+    if err:
+        return f"bloqueado: {err}"
+    if not target.exists():
+        return f"ausente: {rel}"
+    text = target.read_text(encoding="utf-8", errors="ignore")
+    if old not in text:
+        return f"padrao old nao encontrado em {rel} (nada alterado)"
+    count = text.count(old)
+    if count > 8:
+        return f"padrao aparece {count}x — recuso patch ambiguo; torna old mais especifico"
+    bak = backup_file(target)
+    target.write_text(text.replace(old, new, 1), encoding="utf-8")
+    check = ""
+    if target.suffix.lower() == ".py":
+        r = _run([str(VENV_PY), "-m", "py_compile", str(target)], timeout=20)
+        check = f" py_compile={r or 'ok'}"
+    return f"Patch em {rel} (1 ocorrencia, backup={bak}){check}."
+
+
+def open_url(url: str) -> str:
+    url = (url or "").strip()
+    if not url.startswith("http://") and not url.startswith("https://"):
+        return "URL invalida (usa http/https)"
+    try:
+        _popen(["cmd", "/c", "start", "", url])
+        return f"Browser aberto em {url}. Para SokkerPRO no Desktop usa F2 (BrowserHost)."
+    except Exception as exc:
+        return f"Falha a abrir URL: {exc}"
+
+
+def stop_service(name: str, message: str = "") -> str:
+    if not _has_auth(message) and name.lower() in ("all", "tudo", "sistema"):
+        return require_auth(message, f"parar {name}")
+    name = (name or "").strip().lower()
+    if name in ("hermes", "chat"):
+        return "Hermes nao se auto-para (protegido). Use o terminal."
+    port_map = {
+        "bridge": [8080], "engine": [8765], "matriz": [8766],
+        "hermes": [8777, 8778], "voice": [8099], "voz": [8099],
+        "core": [8080, 8765, 8766], "all": [8080, 8765, 8766, 8099],  # sem 8777/8778 — protege chat Hermes
+    }
+    ports = port_map.get(name)
+    if not ports:
+        return f"Servico desconhecido: {name}"
+    # nunca 11434
+    ports = [p for p in ports if p != 11434]
+    ps = (
+        "$ports=@(%s); foreach($p in $ports){"
+        "Get-NetTCPConnection -LocalPort $p -State Listen -EA SilentlyContinue |"
+        "ForEach-Object{ $id=$_.OwningProcess; if($id -gt 4){"
+        "$pr=Get-Process -Id $id -EA SilentlyContinue;"
+        "if($pr -and ($pr.Path -match '(?i)\\\\aura|hermes|Aura' -or $pr.ProcessName -match '(?i)python')){"
+        "Stop-Process -Id $id -Force -EA SilentlyContinue }}}}"
+    ) % (",".join(str(p) for p in ports))
+    _run(["powershell", "-NoProfile", "-Command", ps], timeout=20)
+    return f"Parado (portas {ports}). Ollama :11434 intacto. paper_trade=true."
+
+
+def install_python_package(pkg: str, message: str = "") -> str:
+    if not _has_auth(message):
+        return require_auth(message, f"pip install {pkg}")
+    pkg = re.sub(r"[^a-zA-Z0-9_.\-\[\]=<>!,]", "", pkg or "")
+    if not pkg:
+        return "pacote invalido"
+    out = _run([str(VENV_PY), "-m", "pip", "install", "--disable-pip-version-check", pkg], timeout=120)
+    return f"pip install {pkg}: {out[:500]}"
+
+
+def extract_uploaded_zip(zip_path: str, message: str = "") -> str:
+    if not _has_auth(message):
+        return require_auth(message, "extrair zip para C:\\\\aura")
+    zp = Path(zip_path)
+    if not zp.is_absolute():
+        zp = ROOT / "logs_supervisor" / "uploads" / zip_path
+    zp = zp.resolve()
+    upload_root = (LOGDIR / "uploads").resolve()
+    if not str(zp).startswith(str(ROOT.resolve())):
+        return "zip fora de AURA_ROOT"
+    if not zp.exists():
+        return f"zip ausente: {zp}"
+    dest = ROOT / "_tmp_upload"
+    if dest.exists():
+        shutil.rmtree(dest, ignore_errors=True)
+    dest.mkdir(parents=True, exist_ok=True)
+    out = _run([
+        "powershell", "-NoProfile", "-Command",
+        f"Expand-Archive -Force -LiteralPath '{zp}' -DestinationPath '{dest}'"
+    ], timeout=120)
+    # se tiver pasta AURA_QUANT_X_HERMES_INTEGRADO, robocopy
+    integ = dest / "AURA_QUANT_X_HERMES_INTEGRADO"
+    if integ.is_dir():
+        _run(["robocopy", str(integ), str(ROOT), "/E", "/IS", "/IT"], timeout=180)
+        return f"ZIP extraido e robocopy para C:\\aura. Output: {out[:200]}. Reinicia servicos com AUTORIZO reinicia all."
+    return f"ZIP extraido em {dest}. Conteudo sem pasta INTEGRADO — verifica manualmente. {out[:200]}"
+
+
+
+
+def install_voice(message: str = "") -> str:
+    """Instala deps de voz no venv e sobe jarvis_voice_server :8099."""
+    if not _has_auth(message) and "forcar" not in (message or "").lower():
+        return require_auth(message, "instalar voz / pip packages")
+    pkgs = ["edge-tts", "aiofiles"]
+    try:
+        set_voice_profile("francisca")
+    except Exception:
+        pass
+    outs = []
+    for pkg in pkgs:
+        outs.append(install_python_package(pkg, message))
+    # sobe voice
+    restart_service("voice")
+    code, body = _ping("http://127.0.0.1:8099/api/voice/health", 2.5)
+    # tenta /health alternativo
+    if not code:
+        code, body = _ping("http://127.0.0.1:8099/health", 2.0)
+    st = "OK" if code and code < 400 else "OFF"
+    return (
+        f"Voz: deps edge-tts/aiofiles; servico voice:8099={st}. "
+        f"Perfis em voice_profiles/. Muda com: voz antonio | voz francisca. "
+        f"Detalhe: {outs[-1][:120] if outs else ''}"
+    )
+
+
+def set_voice_profile(name: str) -> str:
+    """Altera voz neural preferida (edge-tts) via env + ficheiro config simples."""
+    name = (name or "").strip().lower()
+    catalog = {
+        "antonio": "pt-BR-AntonioNeural",
+        "antonio neural": "pt-BR-AntonioNeural",
+        "francisca": "pt-BR-FranciscaNeural",
+        "francisca neural": "pt-BR-FranciscaNeural",
+        "masculina": "pt-BR-AntonioNeural",
+        "feminina": "pt-BR-FranciscaNeural",
+        "pt-br-antonioreural": "pt-BR-AntonioNeural",
+        "pt-br-franciscaneural": "pt-BR-FranciscaNeural",
+    }
+    # aceita nome tecnico directo
+    voice = catalog.get(name)
+    if not voice and name.startswith("pt-") and "neural" in name:
+        # normalize
+        for k, v in [("antonio", "pt-BR-AntonioNeural"), ("francisca", "pt-BR-FranciscaNeural")]:
+            if k in name:
+                voice = v
+                break
+    if not voice and re.match(r"pt-[A-Z]{2}-\w+Neural", name, re.I):
+        voice = name
+    if not voice:
+        return (
+            "Vozes: antonio (pt-BR-AntonioNeural), francisca (pt-BR-FranciscaNeural). "
+            "Ex: voz antonio | voz francisca"
+        )
+    cfg_path = LOGDIR / "aura_voice_pref.json"
+    LOGDIR.mkdir(parents=True, exist_ok=True)
+    cfg_path.write_text(json.dumps({"voice_name": voice, "preferred_engine": "edge-tts"}, indent=2), encoding="utf-8")
+    # env file for voice server
+    envf = LOGDIR / "aura_voice.env"
+    envf.write_text(f"KANTEIRO_NEURAL_VOICE={voice}\nAURA_TTS_ENGINE=edge-tts\n", encoding="utf-8")
+    # tenta falar teste
+    try:
+        data = json.dumps({"text": f"Voz {voice} activa no AURA.", "message": f"Voz {voice} activa no AURA."}).encode("utf-8")
+        req = Request(
+            "http://127.0.0.1:8099/api/voice/talk",
+            data=data,
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        urlopen(req, timeout=6).read()
+        spoke = "Teste TTS enviado."
+    except Exception:
+        spoke = "TTS nao respondeu — reinicia voice: reinicia voice"
+    return f"Voz preferida={voice}. {spoke} Perfis em voice_profiles/."
+
+
+def voice_status() -> str:
+    code, body = _ping("http://127.0.0.1:8099/api/voice/health", 2.0)
+    if not code:
+        code, body = _ping("http://127.0.0.1:8099/health", 1.5)
+    pref = LOGDIR / "aura_voice_pref.json"
+    voice = "default"
+    if pref.exists():
+        try:
+            voice = json.loads(pref.read_text(encoding="utf-8")).get("voice_name") or voice
+        except Exception:
+            pass
+    return f"Voz:8099={'OK' if code and code < 400 else 'OFF'} | preferida={voice}. Comandos: instala voz | voz antonio | voz francisca."
+
+
+def start_game_watch(with_voice: bool = False) -> str:
+    try:
+        import sys
+        scripts = str(ROOT / "scripts")
+        if scripts not in sys.path:
+            sys.path.insert(0, scripts)
+        import aura_game_watch as gw
+        return gw.start_watch(voice_alerts=with_voice)
+    except Exception as exc:
+        return f"Watcher falhou: {exc}"
+
+
+def stop_game_watch() -> str:
+    try:
+        import sys
+        scripts = str(ROOT / "scripts")
+        if scripts not in sys.path:
+            sys.path.insert(0, scripts)
+        import aura_game_watch as gw
+        return gw.stop_watch()
+    except Exception as exc:
+        return f"Stop watcher: {exc}"
+
+
+def game_watch_status() -> str:
+    try:
+        import sys
+        scripts = str(ROOT / "scripts")
+        if scripts not in sys.path:
+            sys.path.insert(0, scripts)
+        import aura_game_watch as gw
+        return gw.watch_status() + "\n" + gw.recent_events(5)
+    except Exception as exc:
+        return f"Status watcher: {exc}"
+
+
+# actualiza handle_operator_intent para novos verbos
+_prev_handle = handle_operator_intent
+
+
+
+def _engine_json(method: str, path: str, payload=None, timeout: float = 12.0):
+    url = "http://127.0.0.1:8765" + path
+    data = None
+    headers = {"Accept": "application/json", "X-AURA-UI": "hermes-operator"}
+    if payload is not None:
+        headers["Content-Type"] = "application/json"
+        data = json.dumps(payload).encode("utf-8")
+    try:
+        req = Request(url, data=data, headers=headers, method=method)
+        with urlopen(req, timeout=timeout) as resp:
+            body = resp.read().decode("utf-8", "replace")
+            return resp.status, json.loads(body) if body else {}
+    except Exception as exc:
+        return 0, {"ok": False, "error": str(exc)[:240]}
+
+
+def activate_analysis_agents() -> str:
+    """Activa agentes de analise paper-only (manifest + specialized + API se existir)."""
+    parts = [activate_agents()]
+    # specialized script
+    spec = ROOT / "scripts" / "aura_activate_specialized_agents.py"
+    if spec.exists():
+        out = _run([str(VENV_PY), str(spec), str(ROOT)], timeout=40)
+        parts.append("specialized: " + (out[:200] if out else "ok"))
+    safe = ROOT / "scripts" / "aura_activate_safe.py"
+    if safe.exists():
+        out = _run([str(VENV_PY), str(safe)], timeout=30)
+        parts.append("safe: " + (out[:160] if out else "ok"))
+    # engine tools activate-all
+    code, data = _engine_json("POST", "/api/tools/activate-all", {})
+    parts.append(f"engine activate-all HTTP {code}")
+    code2, agents = _engine_json("GET", "/api/agents")
+    n = 0
+    if isinstance(agents, dict):
+        n = len(agents.get("agents") or agents.get("items") or [])
+        if not n and agents:
+            n = len(agents)
+    code3, act = _engine_json("GET", "/api/activation")
+    return (
+        "Agentes de analise paper-only activados. "
+        + " | ".join(parts)
+        + f" | /api/agents~{n} | activation HTTP {code3}. "
+        "Sem ordem real. Pedido seguinte: analisa a partida."
+    )
+
+
+def analyze_match(message: str = "") -> str:
+    """Analise da partida activa via ui/state + trader/chat + analysis se houver fixture_id."""
+    code, state = _engine_json("GET", "/api/ui/state", timeout=5.0)
+    if not code:
+        return (
+            "Engine :8765 inacessivel — nao consigo analisar. "
+            "Sobe o engine e abre SokkerPRO no Desktop F2. "
+            f"Erro: {state.get('error')}"
+        )
+    view = {}
+    if isinstance(state, dict):
+        snap = state.get("snapshot") if isinstance(state.get("snapshot"), dict) else {}
+        view = snap.get("view") if isinstance(snap.get("view"), dict) else state.get("view") or {}
+        if not isinstance(view, dict):
+            view = {}
+    home = str(view.get("home") or view.get("home_team") or "")
+    away = str(view.get("away") or view.get("away_team") or "")
+    minute = str(view.get("minute") or "")
+    fixture_id = (
+        str(state.get("fixtureId") or state.get("fixture_id") or view.get("fixtureId") or view.get("fixture_id") or "")
+        if isinstance(state, dict) else ""
+    )
+    if not home or not away:
+        return (
+            "Sem fixture activa em ui/state. Abre o jogo no Desktop F2 (SokkerPRO) e repete: analisa a partida."
+        )
+    # pede analise ao trader_chat (mesmo control plane)
+    prompt = (
+        message.strip()
+        if message and len(message.strip()) > 20
+        else f"Analisa a partida {home} x {away} minuto {minute}. Resumo paper-only: pressao, escanteios, risco, decisao NO_BET se incerto."
+    )
+    c2, chat = _engine_json(
+        "POST",
+        "/api/trader/chat",
+        {"message": prompt, "fixtureId": fixture_id or None, "context": state if isinstance(state, dict) else {}},
+        timeout=25.0,
+    )
+    reply = ""
+    if isinstance(chat, dict):
+        reply = str(chat.get("reply") or chat.get("message") or chat.get("text") or "").strip()
+    # analysis endpoint se fixture_id
+    analysis_bit = ""
+    if fixture_id:
+        c3, an = _engine_json("GET", f"/api/analysis/{fixture_id}", timeout=10.0)
+        if isinstance(an, dict) and an:
+            dec = an.get("decision") or (an.get("analysis") or {}).get("decision")
+            if dec:
+                analysis_bit = f" Decision={dec}."
+    # agents snapshot
+    c4, ag = _engine_json("GET", "/api/agents/glm/status", timeout=5.0)
+    glm = ""
+    if isinstance(ag, dict):
+        glm = f" GLM={ag.get('status') or ag.get('ok') or 'n/a'}."
+    header = f"Partida (ui/state): {home} x {away}" + (f" {minute}'" if minute else "") + f" fixture={fixture_id or 'n/a'}."
+    if not reply:
+        reply = (
+            "Engine nao devolveu texto de analise. "
+            "Agentes paper-only — tenta: ativa agentes de analise | diagnostico."
+        )
+    return f"{header}{analysis_bit}{glm}\n{reply[:1200]}\n(paper_trade=true · fonte=ui/state · nao inventado)"
+
+
+def headless_public_page(url: str) -> str:
+    try:
+        import sys
+        scripts = str(ROOT / "scripts")
+        if scripts not in sys.path:
+            sys.path.insert(0, scripts)
+        import aura_headless_public as hp
+        return hp.summarize_fetch(hp.fetch_public(url))
+    except Exception as exc:
+        return f"Headless indisponivel: {exc}"
+
+
+def handle_operator_intent(message: str):
+    msg = (message or "").strip()
+    low = msg.lower()
+    if not msg:
+        return None
+
+    try:
+        import aura_programmer_agent as _prog
+        kind = _prog.classify(msg)
+        if kind:
+            return _prog.run_operator(msg)
+    except Exception:
+        pass
+
+    # reinicia sozinho / reinicia tudo -> core seguro em background via queue
+    if low.strip() in ("reinicia", "reiniciar", "restart", "reinicia tudo", "reiniciar tudo", "reinicia o sistema"):
+        if not _has_auth(msg):
+            return require_auth(msg, "reinicia")
+        return (
+            "Reinicio core em segundo plano (bridge/engine/matriz/voice). Hermes fica de pe.\n"
+            + queue_repair()
+        )
+
+
+    if any(k in low for k in (
+        "monitora sistema", "monitorar sistema", "monitor automatico", "monitor automático",
+        "ativa monitor", "ativar monitor", "auto reparo", "deixe os agentes", "deixa os agentes",
+        "ativa todas", "ativar todas", "trabalhando no sistema",
+    )):
+        return start_system_monitor() + chr(10) + activate_analysis_agents()
+    if any(k in low for k in ("para monitor", "parar monitor", "stop monitor")):
+        return stop_system_monitor()
+    if any(k in low for k in ("iniciar repar", "inicia repar", "iniciar correc", "faz o reparo", "executa reparo")):
+        if not _has_auth(msg):
+            return require_auth(msg, "corrige")
+        return fix_common()
+
+
+    # --- desktop / ecran verde ---
+    if any(k in low for k in ("tela verde", "ecrã verde", "ecra verde", "nao carrega", "não carrega",
+                               "nao esta carregando", "não está carregando", "so fica", "só fica")):
+        parts = ["Detectei sintoma Desktop/UI sem dados."]
+        parts.append(restart_service("engine"))
+        st = full_status()
+        if st.get("ports", {}).get("bridge") == "OFF":
+            parts.append(restart_service("bridge"))
+        parts.append(open_desktop())
+        parts.append(status_text())
+        return (
+            "Acao: reiniciar engine (+bridge se OFF) e abrir Desktop. "
+            "Ecran verde = Engine OFF ou sem fixture F2. "
+            + " | ".join(parts)
+        )
+    if any(k in low for k in ("fecha e abre", "fechar e abrir", "reabre tudo", "reinicia o aura")):
+        if not _has_auth(msg):
+            return require_auth(msg, "fecha e abre")
+        parts = [
+            "A reabrir core (bridge+engine+matriz) sem matar Hermes/Ollama...",
+            restart_service("bridge"),
+            restart_service("engine"),
+            restart_service("matriz"),
+            open_desktop(),
+            status_text(),
+        ]
+        return chr(10).join(parts)
+
+    # --- analise + agentes de jogo ---
+
+    if any(k in low for k in ("engine reinic", "reinicia o engine", "reinicie o engine", "engine offline")):
+        return "A reiniciar o Engine (posso demorar ~15s)..." + chr(10) + restart_service("engine")
+
+    if any(k in low for k in ("quantos sao", "quantos são", "quantos agentes", "qts agentes")):
+        return count_agents()
+    if any(k in low for k in ("ative todos", "ativar todos", "activa todos", "ativa todos os agentes",
+                               "ative todos agentes", "ativar todos os agentes")):
+        return activate_analysis_agents() if "activate_analysis_agents" in dir() else activate_agents()
+    if any(k in low for k in ("404", "failed to fetch", "erro de conex", "pagina nao", "page not found",
+                               "corrija esse erro", "corrige esse erro", "resolve esse erro")):
+        return fix_common()
+
+    if any(k in low for k in (
+        "ativa agentes de analise", "ativar agentes de analise", "active analysis agents",
+        "ativa analise", "ativar análise", "ativa os agentes de analise", "agentes de analise",
+        "agentes de análise",
+    )):
+        return activate_analysis_agents()
+    if any(k in low for k in (
+        "analisa a partida", "analisar a partida", "analise a partida", "análise da partida",
+        "analise da partida", "analisa o jogo", "analisar o jogo", "analise o jogo",
+        "faz analise", "faça análise", "faca analise",
+    )):
+        return analyze_match(msg)
+    if low.strip() in ("analisa", "analise", "análise", "analyze"):
+        return analyze_match(msg)
+
+    # --- headless publico ---
+    if any(k in low for k in ("headless", "le a pagina", "lê a pagina", "fetch url", "abre pagina publica")):
+        m = re.search(r"(https?://\S+)", msg)
+        if m:
+            return headless_public_page(m.group(1))
+        m2 = re.search(r"(?:pagina|página|url|site)\s+(\S+)", low)
+        if m2:
+            return headless_public_page(m2.group(1))
+        return "Indica URL publica. Ex: headless https://www.flashscore.com — feed do jogo continua F2/ui/state."
+
+
+    # --- jogo em segundo plano (ui/state) ---
+    if any(k in low for k in ("acompanha o jogo", "acompanhar o jogo", "segue o jogo", "seguir o jogo", "monitora o jogo", "watch game")):
+        with_voice = any(k in low for k in ("voz", "voice", "fala", "avisa"))
+        return start_game_watch(with_voice=with_voice)
+    if any(k in low for k in ("para de acompanhar", "parar acompanhamento", "stop watch", "para o watcher")):
+        return stop_game_watch()
+    if any(k in low for k in ("status do jogo", "eventos do jogo", "o que aconteceu", "ultimo evento", "últimos eventos")):
+        return game_watch_status()
+
+    # --- voz ---
+    if any(k in low for k in ("instala voz", "instalar voz", "instala a voz", "setup voice", "instala tts")):
+        return install_voice(msg)
+    if low.startswith("voz ") or low.startswith("muda voz") or low.startswith("mudar voz") or "muda a voz" in low:
+        m = re.search(r"voz\s+(antonio|francisca|masculina|feminina|pt-\S+)", low)
+        if m:
+            return set_voice_profile(m.group(1))
+        return set_voice_profile(low.replace("muda a voz", "").replace("mudar voz", "").replace("muda voz", "").replace("voz", "").strip())
+    if "status voz" in low or "voz status" in low:
+        return voice_status()
+
+    # parar servicos
+    m = re.search(r"(?:para|parar|stop|fecha|fechar)\s+(bridge|engine|matriz|hermes|voice|voz|all|tudo|core|sistema)", low)
+    if m:
+        return stop_service(m.group(1), msg)
+
+    # abrir url / sokker
+    if "sokker" in low and any(k in low for k in ("abre", "abrir", "naveg", "site", "f2")):
+        # Desktop F2 e o caminho oficial; tambem abre browser
+        open_desktop()
+        return (
+            open_url("https://www.sokkerpro.com")
+            + " Desktop F2 (SokkerPRO BrowserHost) e o caminho oficial do AURA. "
+            "Nao invento fixtures — a verdade continua em GET :8765/api/ui/state."
+        )
+    m = re.search(r"(?:abre|abrir|open)\s+(https?://\S+)", low)
+    if m:
+        return open_url(m.group(1))
+
+    # ler ficheiro
+    m = re.search(r"(?:le|l[eê]|mostra|cat)\s+(?:o\s+)?(?:ficheiro|arquivo|file)\s+(\S+)", low)
+    if m:
+        return read_project_file(m.group(1).strip("\"'"))
+
+    # escrever / patch so com AUTORIZO (pedido estruturado fica para a API JSON)
+    if "pip install" in low or "instala " in low or "instalar " in low:
+        m = re.search(r"(?:pip install|instala(?:r)?)\s+([a-zA-Z0-9_.\-\[\]=<>!,]+)", low)
+        if m:
+            return install_python_package(m.group(1), msg)
+
+    if "extrai" in low and "zip" in low:
+        m = re.search(r"([^\s]+\\.zip)", low)
+        if m:
+            return extract_uploaded_zip(m.group(1), msg)
+
+    # delega ao handler anterior
+    return _prev_handle(message)

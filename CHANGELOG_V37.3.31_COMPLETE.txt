@@ -1,0 +1,19 @@
+AURA QUANT-X 12.7.62 V37.3.31 — COMPLETE (SLIM + OPS + Elite Spec + Assistente)
+==============================================================================
+Data: 2026-08-30
+
+INCLUI
+- Base SLIM (limpeza de duplicados/legacy/clutter)
+- AURA_GROK_INSTALL / FIX / ACTIVATE / GPU_LIVRE
+- PROMPT_ASSISTENTE_OPERACOES_AURA_SEGURO.txt
+- PROMPT_ASSISTENTE_PESSOAL_AURA.txt + docs/assistente_pessoal/
+- Elite Squad Advisory: docs/elite_squad + schemas/elite_squad + engine/agents/elite_squad
+- DOCUMENTACAO_COMPLETA + Voice acceptance checklist
+- AUDITORIA_LIMPEZA_V37.3.30_SLIM.md
+
+FORA
+- Telegram publish, scrape tips, unlock, Photoshop/shell no core
+- Auto-write YAML thresholds
+
+ORDEM: INSTALAR_TUDO → AURA_GROK_FIX → AURA_GROK_ACTIVATE
+GPU: AURA_GROK_GPU_LIVRE

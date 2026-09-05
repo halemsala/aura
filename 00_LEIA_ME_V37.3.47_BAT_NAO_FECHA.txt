@@ -1,0 +1,20 @@
+V37.3.47 — BAT ja nao fecha sozinho
+====================================
+
+Causa: AURA_TUDO_EM_UM.bat e outros estavam em LF (Unix).
+No Windows o `goto` parte e o cmd fecha a janela ao acabar,
+mesmo quando o RESUMO aparece.
+
+Correcao:
+- todos os .bat em CRLF
+- AURA_TUDO_EM_UM.bat, AURA_INSTALAR_TESTAR_RELATORIO_GERAL.bat
+  e AURA_HERMES_V10_ULTRA.bat terminam com pause
+
+Como correr:
+  1) Extraia o ZIP para C:\AURA_V25 (ou a tua raiz)
+  2) Duplo clique em AURA_TUDO_EM_UM.bat
+  3) A janela fica aberta no resumo. Le e so depois fecha.
+  4) Depois: AURA_HERMES_V10_ULTRA.bat
+
+Se ainda fechar: clica direito no BAT -> Executar como administrador
+OU abre cmd na pasta e corre: AURA_TUDO_EM_UM.bat

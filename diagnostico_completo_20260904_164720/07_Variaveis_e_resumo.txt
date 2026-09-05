@@ -1,0 +1,38 @@
+﻿Computador: ANDERSON
+Usuario: salaa
+PowerShell: 5.1.26100.9278
+Python: Python 3.11.9
+Ollama nÃ£o serÃ¡ aberto; apenas processo e variÃ¡veis serÃ£o observados.
+
+
+Id          : 20492
+ProcessName : ollama
+Path        : C:\Users\salaa\AppData\Local\Programs\Ollama\ollama.exe
+StartTime   : 04/09/2026 10:06:28
+
+
+
+
+Name                           Value                                                    
+----                           -----                                                    
+AURA_AUTO_OPEN_UI              0                                                        
+AURA_JARVIS_MODEL              qwen3:8b                                                 
+AURA_LLM_CREATIVE              qwen2.5:3b-instruct                                      
+AURA_LLM_FALLBACK_MODELS       llama3.2:3b,qwen2.5:3b,llama3.2:1b,phi3:mini             
+AURA_LLM_JSON                  qwen3:8b                                                 
+AURA_LLM_LONGCTX               llama3.2:3b                                              
+AURA_LLM_PRIMARY               qwen3:8b                                                 
+AURA_LLM_TRADING               qwen3:8b                                                 
+AURA_NO_BROWSER                1                                                        
+AURA_OLLAMA_KEEP_ALIVE         3m                                                       
+AURA_OLLAMA_KEEP_ALIVE_LONGCTX 0                                                        
+AURA_OLLAMA_MODEL              qwen3:8b                                                 
+AURA_PIPER_BIN                 piper                                                    
+AURA_PIPER_MODEL               C:\Users\salaa\.local\share\piper\pt_BR-faber-medium.onnx
+AURA_SKILLS_ENABLED            1                                                        
+AURA_TELEGRAM_OPERATOR_ENABLED 1                                                        
+AURA_WHATSAPP_OPERATOR_ENABLED 1                                                        
+EXECUTION_ALLOWED              false                                                    
+PAPER_TRADE                    true                                                     
+
+

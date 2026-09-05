@@ -1,0 +1,10 @@
+{
+  "source_url": "https://github.com/tbphp/gpt-load",
+  "archive_url": "https://codeload.github.com/tbphp/gpt-load/tar.gz/refs/heads/main",
+  "kind": "install_skill",
+  "label": "gpt-load",
+  "sha256": "156aebea5b26805fc55f5070eff165c2dfea6d864f1139739692b09ed4f2a292",
+  "downloaded_at": "2026-09-05T10:52:05.942069+00:00",
+  "promoted": false,
+  "installers_executed": false
+}

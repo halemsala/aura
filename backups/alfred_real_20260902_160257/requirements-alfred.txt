@@ -1,0 +1,12 @@
+# Obrigatórias
+requests>=2.31
+fastapi>=0.110
+uvicorn>=0.29
+pydantic>=2
+
+# Opcionais — o Alfred avisa honestamente quando faltam (capacidade degradada, nunca erro falso):
+#   pyautogui      -> type_text
+#   pyperclip      -> type_text (modo clipboard)
+#   Pillow         -> capture_screen
+#   opencv-python  -> capture_camera
+#   psutil         -> CPU/RAM no system_status

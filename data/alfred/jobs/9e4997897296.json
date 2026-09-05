@@ -1,0 +1,533 @@
+{
+  "job_id": "9e4997897296",
+  "request_id": "26a1e6009b4e",
+  "content_hash": "c21f43b851a68dcb",
+  "created_at": 1788379459.800566,
+  "status": "success",
+  "authorized": false,
+  "authorization_reason": "comando único de baixo risco pedido explicitamente",
+  "plan_intent": "single_task",
+  "source_message": "ferramentas",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "list_tools",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "tools": [
+          {
+            "name": "alfred_focus_off",
+            "risk": "medium",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Sai do modo funcionário e reativa o watchdog (sem auto-reparo).",
+            "origin": "core"
+          },
+          {
+            "name": "alfred_focus_on",
+            "risk": "high",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Pausa agentes extra (bridge/engine/matriz/voz). Nunca mata Ollama/Hermes/Alfred.",
+            "origin": "core"
+          },
+          {
+            "name": "alfred_focus_status",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Estado do modo funcionário",
+            "origin": "core"
+          },
+          {
+            "name": "apply_patch",
+            "risk": "high",
+            "mutating": true,
+            "sensitive": true,
+            "summary": "Aplica um patch mínimo com backup datado (só C:\\aura, lock por ficheiro)",
+            "origin": "core"
+          },
+          {
+            "name": "auto_correct",
+            "risk": "high",
+            "mutating": true,
+            "sensitive": true,
+            "summary": "Ciclo observar→diagnosticar→backup→compilar→health→rollback se piorar",
+            "origin": "core"
+          },
+          {
+            "name": "cancel_job",
+            "risk": "low",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Cancela um job pelo id",
+            "origin": "core"
+          },
+          {
+            "name": "capture_camera",
+            "risk": "medium",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Captura fotografia da câmara para ficheiro local (sem upload)",
+            "origin": "core"
+          },
+          {
+            "name": "capture_screen",
+            "risk": "medium",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Captura de tela para ficheiro local (sem upload; sem interpretação sem modelo de visão)",
+            "origin": "core"
+          },
+          {
+            "name": "check_service",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Verifica saúde de serviço allowlisted (ollama/alfred/hermes)",
+            "origin": "core"
+          },
+          {
+            "name": "control_service",
+            "risk": "high",
+            "mutating": true,
+            "sensitive": true,
+            "summary": "status/start/stop/restart de alfred|hermes. Nunca mata Ollama.",
+            "origin": "core"
+          },
+          {
+            "name": "create_checkpoint",
+            "risk": "low",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Cria checkpoint (zip + manifest) do código do Alfred/config/testes",
+            "origin": "core"
+          },
+          {
+            "name": "create_creative_plan",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Monta o plano de um criativo (skills + Photoshop) sem executar",
+            "origin": "core"
+          },
+          {
+            "name": "create_folder",
+            "risk": "low",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Cria uma pasta em Desktop/Documents/Downloads/data-alfred",
+            "origin": "core"
+          },
+          {
+            "name": "delete_file",
+            "risk": "high",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Apaga UM ficheiro após AUTORIZO. Mostra o path. Backup obrigatório. Sem pastas.",
+            "origin": "core"
+          },
+          {
+            "name": "export_gpu_worker",
+            "risk": "low",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Gera ZIP AURA_GPU_WORKER para copiar para outro PC (não abre browser, não abre LAN)",
+            "origin": "core"
+          },
+          {
+            "name": "gpu_report",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "VRAM/GPU/CPU/RAM e estado Ollama (só leitura)",
+            "origin": "core"
+          },
+          {
+            "name": "gpu_share_status",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Pinge os workers e mostra pausa/VRAM/jogos",
+            "origin": "core"
+          },
+          {
+            "name": "install_tool",
+            "risk": "high",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Instala plugin após revisão (AUTORIZO). Rollback se a pós-revisão falhar.",
+            "origin": "core"
+          },
+          {
+            "name": "list_apps",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Lista programas Windows conhecidos e se estão instalados",
+            "origin": "core"
+          },
+          {
+            "name": "list_aura_root",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Lista a raiz C:\\aura (só nomes, sem venv)",
+            "origin": "core"
+          },
+          {
+            "name": "list_files",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Lista ficheiros (só leitura) numa pasta allowlisted",
+            "origin": "core"
+          },
+          {
+            "name": "list_gpu_workers",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Lista workers GPU registados (sem mostrar tokens)",
+            "origin": "core"
+          },
+          {
+            "name": "list_jobs",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Lista jobs recentes do Alfred (só leitura)",
+            "origin": "core"
+          },
+          {
+            "name": "list_recent_logs",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Inventário de logs em data/alfred e logs_supervisor",
+            "origin": "core"
+          },
+          {
+            "name": "list_tools",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Lista ferramentas core e plugins do Alfred",
+            "origin": "core"
+          },
+          {
+            "name": "memory_clear",
+            "risk": "high",
+            "mutating": true,
+            "sensitive": true,
+            "summary": "Limpa toda a memória (ferramenta sensível: exige AUTORIZO + execution_allowed/token)",
+            "origin": "core"
+          },
+          {
+            "name": "memory_delete",
+            "risk": "medium",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Apaga notas da memória (dry-run sem AUTORIZO)",
+            "origin": "core"
+          },
+          {
+            "name": "memory_export",
+            "risk": "low",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Exporta memória para JSON local (sem upload)",
+            "origin": "core"
+          },
+          {
+            "name": "memory_search",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Pesquisa na memória local (só leitura)",
+            "origin": "core"
+          },
+          {
+            "name": "open_app",
+            "risk": "medium",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Abre app allowlisted (Photoshop, Chrome, Explorer, …). AUTORIZO. Sem shell livre.",
+            "origin": "core"
+          },
+          {
+            "name": "open_url",
+            "risk": "low",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Abre um URL http(s) no navegador. Nunca chamada por iniciativa própria.",
+            "origin": "core"
+          },
+          {
+            "name": "organize_desktop",
+            "risk": "medium",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Organiza Desktop por categorias (máx 100 itens; nunca apaga; plano antes de executar)",
+            "origin": "core"
+          },
+          {
+            "name": "preview_change",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Mostra o ficheiro que seria modificado, sem alterar nada",
+            "origin": "core"
+          },
+          {
+            "name": "read_alfred_config",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Lê config/alfred.json com segredos redigidos",
+            "origin": "core"
+          },
+          {
+            "name": "read_recent_log",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Lê últimas N linhas de log allowlisted",
+            "origin": "core"
+          },
+          {
+            "name": "read_text_file",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Lê ficheiro de texto allowlisted (máx 200 KB, segredos ocultados)",
+            "origin": "core"
+          },
+          {
+            "name": "register_gpu_worker",
+            "risk": "medium",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Regista um worker na LAN privada (Aura liga outbound; 8791 continua localhost)",
+            "origin": "core"
+          },
+          {
+            "name": "reload_plugins",
+            "risk": "medium",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Recarrega plugins da pasta alfred/tools/plugins",
+            "origin": "core"
+          },
+          {
+            "name": "remember",
+            "risk": "medium",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Guarda nota/preferência/compromisso (dados pessoais só após AUTORIZO)",
+            "origin": "core"
+          },
+          {
+            "name": "restart_service",
+            "risk": "high",
+            "mutating": true,
+            "sensitive": true,
+            "summary": "Reinicia apenas serviço allowlisted (alfred por PID registado; sem shell arbitrário)",
+            "origin": "core"
+          },
+          {
+            "name": "restore_checkpoint",
+            "risk": "high",
+            "mutating": true,
+            "sensitive": true,
+            "summary": "Restaura último checkpoint (FERRAMENTA SENSÍVEL: AUTORIZO + execution_allowed/token)",
+            "origin": "core"
+          },
+          {
+            "name": "review_tool",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Revisão estática de código de ferramenta (não executa, não instala)",
+            "origin": "core"
+          },
+          {
+            "name": "rollback_last",
+            "risk": "high",
+            "mutating": true,
+            "sensitive": true,
+            "summary": "Restaura o último patch (ou o último checkpoint se não houver patch)",
+            "origin": "core"
+          },
+          {
+            "name": "run_project_tests",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Corre testes offline do Alfred (pytest, argv fixo, sem shell)",
+            "origin": "core"
+          },
+          {
+            "name": "run_python_compile",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Compila (py_compile) um .py do projecto — NÃO executa código",
+            "origin": "core"
+          },
+          {
+            "name": "runtime_flags",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Lê flags de segurança (não permite alterá-las)",
+            "origin": "core"
+          },
+          {
+            "name": "search_skill",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Pesquisa skills locais e sugere URLs. Não abre browser sozinho.",
+            "origin": "core"
+          },
+          {
+            "name": "send_gpu_job",
+            "risk": "medium",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Envia um pedido de inferência ao worker remoto e recebe o resultado",
+            "origin": "core"
+          },
+          {
+            "name": "services_status",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Health Ollama/Alfred/Hermes e flags paper_trade/execution_allowed",
+            "origin": "core"
+          },
+          {
+            "name": "system_status",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Estado do sistema, Ollama e serviço Alfred (só leitura)",
+            "origin": "core"
+          },
+          {
+            "name": "technical_diagnose",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "Diagnóstico técnico agregado (diagnosticar primeiro, reparar depois)",
+            "origin": "core"
+          },
+          {
+            "name": "test_slow_5c0ab5",
+            "risk": "low",
+            "mutating": false,
+            "sensitive": false,
+            "summary": "",
+            "origin": "core"
+          },
+          {
+            "name": "type_text",
+            "risk": "medium",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Escreve texto na janela activa (máx 1500 chars; sem segredos; clipboard só com AUTORIZO)",
+            "origin": "core"
+          },
+          {
+            "name": "uninstall_tool",
+            "risk": "high",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Remove um plugin (não remove ferramentas de núcleo)",
+            "origin": "core"
+          },
+          {
+            "name": "write_text_file",
+            "risk": "high",
+            "mutating": true,
+            "sensitive": false,
+            "summary": "Escreve ficheiro allowlisted (backup prévio; exige AUTORIZO; mostra o path)",
+            "origin": "core"
+          }
+        ],
+        "core": [
+          "alfred_focus_off",
+          "alfred_focus_on",
+          "alfred_focus_status",
+          "apply_patch",
+          "auto_correct",
+          "cancel_job",
+          "capture_camera",
+          "capture_screen",
+          "check_service",
+          "control_service",
+          "create_checkpoint",
+          "create_creative_plan",
+          "create_folder",
+          "delete_file",
+          "export_gpu_worker",
+          "gpu_report",
+          "gpu_share_status",
+          "install_tool",
+          "list_apps",
+          "list_aura_root",
+          "list_files",
+          "list_gpu_workers",
+          "list_jobs",
+          "list_recent_logs",
+          "list_tools",
+          "memory_clear",
+          "memory_delete",
+          "memory_export",
+          "memory_search",
+          "open_app",
+          "open_url",
+          "organize_desktop",
+          "preview_change",
+          "read_alfred_config",
+          "read_recent_log",
+          "read_text_file",
+          "register_gpu_worker",
+          "reload_plugins",
+          "remember",
+          "restart_service",
+          "restore_checkpoint",
+          "review_tool",
+          "rollback_last",
+          "run_project_tests",
+          "run_python_compile",
+          "runtime_flags",
+          "search_skill",
+          "send_gpu_job",
+          "services_status",
+          "system_status",
+          "technical_diagnose",
+          "type_text",
+          "uninstall_tool",
+          "write_text_file"
+        ],
+        "plugins_dir": "C:\\aura\\alfred\\tools\\plugins"
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "1 de 1 tarefas concluídas com sucesso.",
+  "finished_at": 1788379459.8161077
+}

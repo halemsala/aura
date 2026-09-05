@@ -1,0 +1,8 @@
+V37.3.34 — Autorizacao bulk por politica (nao por mensagem)
+- operator_publish_policy.example.json
+- PolicyGate: session grant, rate limits, quiet hours, RedTeam/score, forbid phrases
+- TipQueue local pending/sent/blocked
+- Templates paper/advisory
+- Dispatch: auto_send | queue | block
+- BATs: AURA_TELEGRAM_GRANT_SESSION, AURA_TELEGRAM_KILL_SWITCH_ON
+- Kill switch AURA_TELEGRAM_KILL_SWITCH=1

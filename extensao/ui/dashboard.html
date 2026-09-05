@@ -1,0 +1,44 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CornerAI · Dashboard v12.6.17</title><link rel="stylesheet" href="../style.css"></head><body><header class="topbar"><div class="brand"><div class="logo">C</div><div><h1>CornerAI <span>Capture Intelligence</span></h1><p id="match">Nenhuma partida</p></div></div><div class="telemetry"><button id="sendAI" class="ai-send" type="button" title="Preparar e enviar o feed estruturado para a integração de IA">ENVIAR PARA IA</button><b id="dom">DOM</b><b id="hook">HOOK</b><b id="net">REDE</b></div></header><main class="container"><section class="hero"><div><span class="eyebrow">MONITORAMENTO</span><h2>Centro de inteligência da partida</h2><p>Dados observados, histórico e sinais derivados em uma única visão.</p></div><div class="hero-meta"><span id="minute" class="pill">—</span><span id="modePill" class="pill">AGUARDANDO</span><span class="pill">v12.6.17</span></div></section><section class="score-card"><div><small>MANDANTE</small><strong id="home">--</strong></div><div class="score"><b id="score">0 × 0</b><span id="mode">AGUARDANDO</span></div><div><small>VISITANTE</small><strong id="away">--</strong></div></section><section class="intel-strip"><div><span>PRONTIDÃO IA</span><b id="aiReady">—</b></div><div><span>QUALIDADE</span><b id="quality">—</b></div><div><span>CONSENSO</span><b id="consensus">—</b></div><div><span>ANOMALIAS</span><b id="anomalies">0</b></div></section><section id="liveOverview" class="live-overview"></section><section id="stats"></section><section id="visualCharts" class="visual-charts"></section><section id="candlePanel" class="panel visual-candle-panel"></section><section id="insights" class="insights"></section>
+<section id="ttAdderPanel" class="ttadder-shell" aria-label="TTAdder e Monitoramento da Extensão">
+  <div class="tt-head">
+    <div>
+      <span class="eyebrow">TTADDER · EXTENSION NOC</span>
+      <h2>Execução & Telemetria</h2>
+      <p>Entrada operacional isolada do monitoramento. Atualizações agrupadas por ciclo para evitar saturação do DOM.</p>
+    </div>
+    <div class="tt-state"><i id="ttStateDot"></i><b id="ttState">IDLE</b><span id="ttStateAge">—</span></div>
+  </div>
+  <div class="tt-grid">
+    <section class="tt-zone tt-input-zone">
+      <div class="tt-zone-head"><b>01 · TTAdder</b><span id="ttModeLabel">DRY-RUN</span></div>
+      <textarea id="ttPayload" spellcheck="false" placeholder='Cole um JSON ou um objeto por linha&#10;{"fixtureId":"19728353","type":"corner","minute":88}'></textarea>
+      <div class="tt-controls">
+        <label class="tt-toggle"><input id="ttDryRun" type="checkbox" checked><span></span> Dry-run</label>
+        <button id="ttValidate" type="button">Validar</button>
+        <button id="ttAdd" class="tt-primary" type="button">Adicionar</button>
+        <button id="ttClear" type="button">Limpar</button>
+      </div>
+      <div class="tt-presets"><button data-tt-preset="corner">Escanteio</button><button data-tt-preset="odds">Odds</button><button data-tt-preset="metric">Métrica</button><button data-tt-preset="batch">Lote</button></div>
+      <div class="tt-batch"><span>Payloads</span><b id="ttCount">0</b><span>Válidos</span><b id="ttValid">0</b><span>Fila</span><b id="ttQueue">0</b></div>
+    </section>
+    <section class="tt-zone tt-monitor-zone">
+      <div class="tt-zone-head"><b>02 · Monitor de Saúde</b><span>ATUALIZAÇÃO ATÔMICA</span></div>
+      <div class="tt-health-grid">
+        <div class="tt-health"><span>THROUGHPUT</span><b id="ttThroughput">0/s</b><small id="ttThroughputSub">ciclo atual</small></div>
+        <div class="tt-health"><span>RTT EXTENSÃO</span><b id="ttRtt">—</b><small id="ttRttSub">sem amostra</small></div>
+        <div class="tt-health"><span>QUEUE DEPTH</span><b id="ttDepth">0</b><small id="ttDepthSub">fila local</small></div>
+        <div class="tt-health"><span>ERROR RATE</span><b id="ttErrorRate">0%</b><small id="ttErrorSub">sem erros</small></div>
+      </div>
+      <div class="tt-chart-head"><span id="ttChartTitle">Throughput · janela 5m</span><div><button data-tt-window="5m" class="active">5m</button><button data-tt-window="1h">1h</button><button data-tt-window="24h">24h</button></div></div>
+      <div id="ttSpark" class="tt-spark" aria-label="Gráfico de throughput"></div>
+      <div class="tt-dual"><div><span>CLIENT</span><b id="ttClientLatency">—</b></div><div><span>SERVER</span><b id="ttServerLatency">—</b></div></div>
+    </section>
+  </div>
+  <section class="tt-progress"><div class="tt-progress-head"><b>Ciclo de execução</b><span id="ttProgressText">0 processados · 0 na fila · 0 falhas · ETA —</span></div><div class="tt-progress-track"><i id="ttProgressBar"></i></div></section>
+  <section class="tt-log-zone">
+    <div class="tt-zone-head"><b>03 · Eventos / Payload Inspector</b><span id="ttLogStatus">0 registros</span></div>
+    <div class="tt-log-table"><div class="tt-log-row tt-log-header"><span>TIME</span><span>TIPO</span><span>STATUS</span><span>PAYLOAD</span></div><div id="ttLogRows"></div></div>
+  </section>
+  <div class="tt-toast"><span id="ttToastCount">0</span><span id="ttToastText">Sistema pronto</span></div>
+</section>
+<section id="menuCapturePanel" class="panel"></section></main><footer><span>Última captura <b id="age">—</b></span><span>Fonte <b id="source">—</b></span><span>Eventos <b id="events">0</b></span></footer><script src="dashboard.js"></script></body></html>

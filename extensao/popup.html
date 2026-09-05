@@ -1,0 +1,130 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CornerAI Control</title><link rel="stylesheet" href="popup.css"></head><body><main class="shell"><header><div class="brand"><div class="logo">C</div><div><strong>CornerAI</strong><span>Capture Intelligence</span></div></div><span class="version">v12.8.10</span><div class="head-meta"><span id="mode" class="mode">—</span><span class="pin" title="Janela flutuante persistente">● FIXA</span></div></header><section class="status-card"><div class="status-dot" id="dot"></div><div><b id="statusTitle">Verificando…</b><small id="status">Conectando ao motor de captura</small></div></section><section class="telemetry"><div><b id="readiness">0</b><span>IA</span></div><div><b id="quality">0</b><span>QUALIDADE</span></div><div><b id="coverage">0</b><span>COBERTURA</span></div><div><b id="menus">0</b><span>MENUS</span></div></section><section class="match-card"><div class="eyebrow">PARTIDA ATUAL</div><div id="match" class="match">Nenhuma partida</div><div id="fixture" class="fixture">Aguardando captura</div><div class="live-row"><span id="liveMinute">—</span><span id="liveEvents">0 eventos</span><span id="liveSnapshots">0 snapshots</span></div></section><section class="match-picker-card" id="matchPickerCard">
+<div class="eyebrow">ESCOLHER PARTIDA</div>
+<div class="picker-row">
+<input id="fixtureInput" type="text" placeholder="ID fixture ou URL SokkerPro" class="fixture-input"/>
+<button id="openFixtureBtn" type="button" title="Abrir e armar captura">Abrir</button>
+<button id="refreshPickerBtn" type="button" title="Atualizar listas">⟳</button>
+</div>
+<div class="picker-tabs">
+<button type="button" class="picker-tab on" data-picker="live">Ao vivo</button><button type="button" class="picker-tab" data-picker="tabs">Abas abertas</button>
+<button type="button" class="picker-tab" data-picker="history">Recentes</button>
+</div>
+<div id="pickerList" class="picker-list"><div class="picker-empty">Carregando…</div></div>
+<small id="pickerStatus" class="picker-status">Clique numa partida para carregar na extensão</small>
+</section>
+<div class="actions"><button id="dashboard" class="primary" title="📊 Abrir o painel completo da partida"><span>◈</span> Dashboard</button><button id="visionBtn" title="Visão IA local (Ollama)"><span>◎</span> Visão IA</button><button id="diagnostics" title="🛠️ Mostrar somente o erro raiz"><span>◉</span> Diagnóstico</button><button id="sweep" class="primary" title="🧭 Abrir e capturar os menus da partida"><span>◎</span> Varredura menus</button><button id="capture" title="📡 Forçar uma nova captura"><span>↻</span> Capturar agora</button><button id="reset" class="danger" title="🧹 Limpar os dados da partida atual"><span>×</span> Limpar partida</button></div><section class="webhook-card all-tools-card"><div class="eyebrow">AUDITORIA · TODAS AS FERRAMENTAS</div>
+<p class="hint" style="margin:6px 0 8px;font-size:11px;opacity:.8;line-height:1.35">Testa em um único comando o motor DOM, eventos, escanteios, xG, odds, gráficos, menus, H2H, escalações, ranking, cartões, posse, ataques, finalizações, substituições e o envio ao background.</p>
+<div class="webhook-row"><button id="allToolsTestBtn" type="button" class="primary">🧪 Testar TODAS as ferramentas</button><button id="allToolsCopyBtn" type="button">Copiar relatório</button><button id="allToolsDownloadBtn" type="button">Baixar relatório</button></div>
+<small id="allToolsStatus">Pronto · nenhum teste executado</small><div id="allToolsSummary" class="history-list" style="max-height:260px;overflow:auto;font-size:11px;line-height:1.35"></div></section><section class="webhook-card"><div class="eyebrow">WEBHOOK · BANCO / IA</div>
+<input id="webhookUrl" type="url" value="http://127.0.0.1:8080/api/cornerai/feed" placeholder="http://127.0.0.1:8080/api/cornerai/feed" spellcheck="false"/>
+<div class="webhook-row"><label><input id="webhookEnabled" type="checkbox" checked/> Ativo</label>
+<button id="webhookSave" type="button">Salvar</button>
+<button id="webhookPush" type="button">Enviar agora</button></div>
+<small id="webhookStatus">Outbox —</small></section>
+<section class="webhook-card skill-feed-card"><div class="eyebrow">SKILL · JSON MANUAL</div>
+<div class="webhook-row">
+<button id="skillJsonBtn" type="button">Atualizar JSON</button>
+<button id="skillCopyBtn" type="button">Copiar p/ skill</button>
+<button id="skillDlBtn" type="button">Baixar .json</button>
+</div>
+<small id="skillFeedStatus">Gera JSON · ou abra http://127.0.0.1:8080/skill → Copiar tudo → colar no chat</small>
+<pre id="skillFeedPreview" class="history-list" style="max-height:160px;overflow:auto;font-size:10px;white-space:pre-wrap;word-break:break-all"></pre>
+</section>
+<section class="webhook-card gemini-card"><div class="eyebrow">AUTO-GEMINI · SKILL</div>
+<input id="geminiKey" type="password" placeholder="API Key Google AI (Gemini)" spellcheck="false" autocomplete="off"/>
+<div class="webhook-row">
+<label><input id="geminiEnabled" type="checkbox"/> Ativo</label>
+<label><input id="geminiAuto" type="checkbox"/> Auto</label>
+<label><input id="geminiOnAlert" type="checkbox" checked/> Em alerta</label>
+<label><input id="geminiEconomy" type="checkbox" checked/> Economia</label>
+<label><input id="geminiCritical" type="checkbox" checked/> Só janelas críticas</label>
+</div>
+<div class="webhook-row">
+<label>Modelo
+<select id="geminiModel">
+<option value="gemini-3.5-flash-lite">3.5 flash-lite (barato)</option>
+<option value="gemini-3.6-flash">3.6 flash</option>
+<option value="gemini-3.5-flash">3.5 flash</option>
+<option value="gemini-3.1-flash-lite">3.1 flash-lite</option>
+<option value="gemini-2.5-flash">2.5 flash (legado)</option>
+</select>
+</label>
+<label>Intervalo (s) <input id="geminiInterval" type="number" min="60" max="900" step="30" value="120" class="tiny"/></label>
+<label>Máx/partida <input id="geminiMaxMatch" type="number" min="1" max="40" value="12" class="tiny"/></label>
+</div>
+<div class="webhook-row">
+<button id="geminiSave" type="button">Salvar</button>
+<button id="geminiRun" type="button">Analisar agora</button>
+<button id="geminiResults" type="button">Últimas</button>
+</div>
+<small id="geminiStatus">Gemini —</small>
+<div id="geminiReply" class="history-list"></div>
+</section>
+
+<section class="webhook-card skill-monitor-card"><div class="eyebrow">MONITOR API · SKILL / GEMINI</div>
+<div class="webhook-row">
+<span id="skillHealth" class="pill">—</span>
+<span id="skillLatency" class="pill">lat —</span>
+<span id="skillTotals" class="pill">0 req</span>
+</div>
+<div class="webhook-row">
+<button id="skillTestBtn" type="button">Testar conexão</button>
+<button id="skillRefreshBtn" type="button">Atualizar</button>
+<button id="skillPayloadBtn" type="button">Ver payload</button>
+<button id="skillClearBtn" type="button" class="danger">Limpar log</button>
+</div>
+<small id="skillMonStatus">—</small>
+<div id="skillMonBox" class="history-list" style="max-height:220px;overflow:auto;font-size:11px;line-height:1.35"></div>
+</section>
+<section class="webhook-card alerts-card"><div class="eyebrow">ALERTAS PERSONALIZÁVEIS</div>
+<div class="alert-grid">
+<label><input id="alertEnabled" type="checkbox" checked/> Ativos</label>
+<label><input id="alertFav" type="checkbox" checked/> Favorito em perigo</label>
+<label><input id="alertCpi" type="checkbox" checked/> CPI alto</label>
+<label><input id="alertAppm" type="checkbox" checked/> ΔAPPM</label>
+<label><input id="alertCorner" type="checkbox" checked/> Pred. escanteio 2m</label>
+<label><input id="alertRed" type="checkbox" checked/> Cartão vermelho</label>
+</div>
+<div class="webhook-row"><label>CPI ≥ <input id="alertCpiThr" type="number" min="0.4" max="0.95" step="0.01" value="0.72" class="tiny"/></label>
+<label>Pred ≥ <input id="alertPredThr" type="number" min="0.3" max="0.9" step="0.01" value="0.55" class="tiny"/></label>
+<button id="alertSave" type="button">Salvar alertas</button></div>
+<small id="alertStatus">—</small></section>
+<section class="webhook-card"><div class="eyebrow">EXPLICABILIDADE · DRIFT</div>
+<div class="webhook-row">
+<button id="explainBtn" type="button">Explicar alerta</button>
+<button id="driftBtn" type="button">Ver drift</button>
+</div>
+<small id="explainStatus">—</small>
+<div id="explainBox" class="history-list"></div>
+</section>
+<section class="webhook-card"><div class="eyebrow">HISTÓRICO · INDEXEDDB</div>
+<div class="webhook-row"><button id="historyBtn" type="button">Ver partidas</button>
+<button id="feedbackBtn" type="button">Feedback IA</button></div>
+<small id="historyStatus">—</small>
+<div id="historyList" class="history-list"></div></section>
+<section class="webhook-card"><div class="eyebrow">AUTO-SALVAR JOGOS DO DIA</div>
+<p class="hint" style="margin:6px 0 8px;font-size:11px;opacity:.75;line-height:1.35">Ao <b>abrir/clicar</b> um jogo no SokkerPRO, a extensão captura e grava em <code>bridge/daily/AAAA-MM-DD</code> (Vasco, depois Grêmio, … no mesmo dia).</p>
+<div class="webhook-row">
+<label><input id="dailySaveEnabled" type="checkbox" checked/> Ativo</label>
+<button id="dailySaveNow" type="button">Salvar jogo atual</button>
+<button id="dailySaveRefresh" type="button">Status</button>
+</div>
+<small id="dailySaveStatus">—</small>
+</section>
+<section class="webhook-card"><div class="eyebrow">COLETA EM LOTE · JOGOS PASSADOS</div>
+<p class="hint" style="margin:6px 0 8px;font-size:11px;opacity:.75;line-height:1.35">Cole URLs ou IDs de fixture (um por linha), ou abra a página de resultados do SokkerPRO e clique em <b>Detectar na aba</b>. Ex.: todos os jogos da Série A no dia 12.</p>
+<textarea id="batchLines" rows="5" placeholder="https://sokkerpro.com/fixture/1234567&#10;1234568&#10;https://sokkerpro.com/partida/1234569" style="width:100%;box-sizing:border-box;font-size:11px;resize:vertical;background:#0d131c;color:#dfe6ef;border:1px solid #283242;border-radius:8px;padding:8px;"></textarea>
+<div class="webhook-row" style="margin-top:8px">
+<button id="batchScanBtn" type="button">Detectar na aba</button>
+<button id="batchStartBtn" type="button" class="primary">Iniciar lote</button>
+<button id="batchStopBtn" type="button" class="danger">Parar</button>
+</div>
+<small id="batchStatus">Pronto · bridge precisa estar ligado</small>
+<div id="batchList" class="history-list"></div>
+</section>
+<footer><span>Live + Histórico + Lote</span><span id="source">Fonte —</span></footer></main><script src="popup.js"></script><div class="quantx-actions" style="display:flex;gap:8px;padding:8px 12px;flex-wrap:wrap">
+  <button id="openCentral" type="button">CENTRAL AURA</button>
+  <button id="openChatK" type="button">CHAT KANTEIRO</button>
+  <button id="openLegacyDash" type="button">DASHBOARD ANTIGA</button>
+</div>
+</body></html>

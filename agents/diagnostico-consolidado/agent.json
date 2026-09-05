@@ -1,0 +1,8 @@
+{
+  "name": "diagnostico-consolidado",
+  "purpose": "verificar os quatro servicos, listar os offline e propor uma unica acao para confirmar",
+  "enabled": false,
+  "capabilities": [],
+  "approval_required": true,
+  "created_at": "2026-09-05T05:50:14.592956+00:00"
+}

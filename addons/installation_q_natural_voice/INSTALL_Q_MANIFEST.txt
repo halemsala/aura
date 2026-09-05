@@ -1,0 +1,33 @@
+AURA QUANT-X V25 — INSTALL Q MANIFEST
+======================================
+Installation: Q — Natural Voice
+Source: /home/ubuntu/upload/pasted_content_17.txt
+Installed: 2026-08-25
+
+Canonical file
+--------------
+engine/agents/natural_voice.py
+SHA-256: a711565d4c32f8e6e398245c9b61862a59151a620c7beb10e8f34c8f72f3bfa9
+
+Addon copy
+----------
+addons/installation_q_natural_voice/natural_voice_from_pasted_content_17.py
+SHA-256: a711565d4c32f8e6e398245c9b61862a59151a620c7beb10e8f34c8f72f3bfa9
+
+Backup
+------
+.install-backups/installation-q-natural-voice-20260825_094328/
+The canonical natural_voice.py did not exist before installation; the backup records that absence in original/natural_voice.absent.txt.
+
+Safety state
+------------
+- No pip package or model installed.
+- No network request, microphone, autostart, server or voice integration activated.
+- H-NV1 and H-NV2 hunks were intentionally not applied.
+- Real synthesis in self-test requires AURA_NATURAL_VOICE_SELFTEST_SYNTHESIS=1.
+- Existing PAPER_TRADE=true, EXECUTION_ALLOWED=false and GLM_ADVISORY_ONLY=true policies remain unchanged.
+
+Validation target
+-----------------
+python engine/agents/natural_voice.py
+Expected default behavior: detect an available backend or edge-tts fallback, pass structural checks, and skip real synthesis unless explicitly opted in.

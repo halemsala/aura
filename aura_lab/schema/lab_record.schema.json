@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aura.local/lab/lab_record.schema.json",
+  "title": "AURA Lab Failure Record",
+  "type": "object",
+  "required": [
+    "record_id",
+    "timestamp_utc",
+    "failure_mode_id",
+    "phase",
+    "observed",
+    "advisory_only"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "description": "UUID ou p-<epoch>-<hash>"
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "failure_mode_id": {
+      "type": "string",
+      "pattern": "^FM-[A-Z0-9]+-[0-9]{3}$"
+    },
+    "phase": {
+      "type": "string",
+      "enum": [
+        "detected",
+        "diagnosed",
+        "plan_proposed",
+        "awaiting_confirm",
+        "repair_applied",
+        "verified_ok",
+        "verified_fail",
+        "aborted",
+        "simulated_only"
+      ]
+    },
+    "observed": {
+      "type": "object",
+      "description": "Snapshot mínimo no momento da observação",
+      "properties": {
+        "services": { "type": "object" },
+        "symptom_text": { "type": "string" },
+        "endpoints": { "type": "object" },
+        "extra": { "type": "object" }
+      }
+    },
+    "diagnosis": {
+      "type": ["string", "null"]
+    },
+    "proposed_repair": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "plan_id": {
+      "type": ["string", "null"],
+      "description": "id do plano Harness se houver"
+    },
+    "applied": {
+      "type": "boolean",
+      "default": false
+    },
+    "verified": {
+      "type": ["boolean", "null"]
+    },
+    "advisory_only": {
+      "type": "boolean",
+      "const": true,
+      "description": "Registros de lab são sempre advisory no fluxo padrão"
+    },
+    "lab_mode": {
+      "type": "boolean",
+      "default": true
+    },
+    "notes": {
+      "type": "string"
+    },
+    "operator": {
+      "type": "string",
+      "default": "human"
+    }
+  }
+}

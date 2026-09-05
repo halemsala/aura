@@ -1,0 +1,9 @@
+{
+    "red_team": true,
+    "online_tuner": true,
+    "web_scraper": false,
+    "understat_xg": false,
+    "crew_council": true,
+    "voice_listener": false,
+    "telegram_publish": false
+}

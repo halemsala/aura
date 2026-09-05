@@ -1,0 +1,27 @@
+{
+  "model": "qwen3:8b",
+  "ollama_url": "http://127.0.0.1:11434",
+  "host": "127.0.0.1",
+  "port": 8791,
+  "num_ctx": 4096,
+  "num_predict": 768,
+  "temperature": 0.2,
+  "keep_alive": "20m",
+  "no_browser_polling": true,
+  "paper_trade": true,
+  "execution_allowed": false,
+  "require_confirmation_for_sensitive_tools": true,
+  "max_tasks": 8,
+  "max_retries": 2,
+  "task_timeout_s": 30,
+  "llm_timeout_s": 90,
+  "request_cooldown_s": 60,
+  "capture_retention_hours": 24,
+  "allowed_roots": ["Desktop", "Documents", "Downloads"],
+  "services": {
+    "ollama": {"type": "http", "url": "http://127.0.0.1:11434/api/tags"},
+    "alfred": {"type": "tcp", "port": 8791},
+    "hermes": {"type": "tcp", "port": 8765}
+  },
+  "vision_model": ""
+}

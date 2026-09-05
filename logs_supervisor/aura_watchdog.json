@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "auto_repair": true,
+  "last": {
+    "bridge": "OK",
+    "engine": "OK",
+    "matriz": "OK",
+    "voice": "OFF",
+    "ollama": "OK"
+  },
+  "repairs": 71,
+  "last_ts": 1788566823.2508786
+}

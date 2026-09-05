@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aura.local/lab/failure_mode.schema.json",
+  "title": "AURA Lab Failure Mode",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "severity",
+    "service",
+    "symptom",
+    "detect",
+    "repair_steps",
+    "verify",
+    "lab_safe"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^FM-[A-Z0-9]+-[0-9]{3}$",
+      "description": "Identificador estável, ex.: FM-ENGINE-001"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 120
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["critical", "high", "medium", "low", "info"]
+    },
+    "service": {
+      "type": "string",
+      "enum": [
+        "engine",
+        "bridge",
+        "voice",
+        "ollama",
+        "desktop",
+        "extension",
+        "harness",
+        "system",
+        "data",
+        "risk"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "availability",
+        "data_integrity",
+        "ui",
+        "config",
+        "dependency",
+        "performance",
+        "policy",
+        "recovery"
+      ]
+    },
+    "symptom": {
+      "type": "string",
+      "description": "O que o operador vê (linguagem de campo)"
+    },
+    "detect": {
+      "type": "object",
+      "required": ["method"],
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": [
+            "http_health",
+            "tcp_port",
+            "ui_state",
+            "log_pattern",
+            "process",
+            "manual",
+            "composite"
+          ]
+        },
+        "endpoint": { "type": "string" },
+        "port": { "type": "integer" },
+        "expect": { "type": "string" },
+        "log_glob": { "type": "string" },
+        "pattern": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    },
+    "likely_causes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "repair_steps": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Passos ordenados; preferir scripts oficiais AURA"
+    },
+    "verify": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "official_tools": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "BATs/scripts oficiais, ex.: RECUPERAR_AURA_SERVICOS.bat"
+    },
+    "lab_safe": {
+      "type": "boolean",
+      "description": "true = pode ser simulado/injetado no LAB; false = só documentar/diagnosticar"
+    },
+    "injection_hint": {
+      "type": ["string", "null"],
+      "description": "Como simular no LAB (nunca no sistema de uso). null se lab_safe=false"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "references": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Seções do MANUAL, issues, logs típicos"
+    }
+  }
+}

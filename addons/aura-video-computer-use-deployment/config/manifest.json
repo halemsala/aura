@@ -1,0 +1,20 @@
+{
+  "name": "aura-video-computer-use-deployment",
+  "version": "1.0.0-governance",
+  "preserves_package": "AURA_VIDEO_GROK_COMPLETE_DEPLOYMENT_v1.0.0.zip (if present \u2014 not replaced)",
+  "related_addon": "aura-computer-use-guarded-connector",
+  "policies": {
+    "video_mode": "dry_run",
+    "overwrite_source": false,
+    "publication_allowed": false,
+    "upload_allowed": false,
+    "network_allowed": false,
+    "computer_use_enabled": false,
+    "execution_allowed": false,
+    "approval_required": true,
+    "scheduler_enabled": false,
+    "yolo_forbidden": true
+  },
+  "driver_external_installed": false,
+  "services_started": []
+}

@@ -1,0 +1,42 @@
+AURA QUANT-X HERMES — ÍNDICE DE DOCUMENTAÇÃO
+============================================
+Versão: 12.7.62 V37.3.29 VOZ XTTS
+
+COMEÇAR AQUI
+------------
+1. LEIA-ME_PRIMEIRO.txt
+2. DOCUMENTACAO_COMPLETA_AURA_QUANT_X_HERMES.md   ← documentação integral
+3. LEIA-ME_VOZ_ACCEPTANCE_E_INSTALACAO.txt
+4. AURA_VOICE_ACCEPTANCE_CHECKLIST_OFFLINE.md
+
+INSTALAÇÃO
+----------
+- INSTALAR_TUDO.bat (admin)
+- LEIA-ME_INSTALACAO_RAPIDA.md
+- LEIA-ME_INSTALACAO_COMPLETA.md
+
+VOZ
+---
+- LEIA-ME_VOZ_E_STACK.txt
+- AURA_REPARAR_XTTS_TORCHCODEC.bat
+- docs/ e docs_acceptance/
+
+GOVERNANÇA / SEGURANÇA
+----------------------
+- PACKAGE_MANIFEST_AUTHORIZED.md
+- MANUAL_SISTEMA_AURA.txt
+- allowlist.json
+- skills/aura-governance, aura-hermes-review, aura-ingestion, …
+
+CHANGELOGS
+----------
+- CHANGELOG_V37.3.27_VOZ_XTTS.txt
+- CHANGELOG_V37.3.26_FIX_COMPLETO.txt
+- CHANGELOG_V37.1_CLEAN_INSTALL.md
+- MANUAL_SISTEMA_AURA.txt (histórico de patches)
+
+OPERAÇÃO DIÁRIA
+---------------
+  C:\aura\AURA_START_ALL.bat
+  C:\aura\CHECK.bat
+  C:\aura\LIMPEZA_COMPLETA.bat

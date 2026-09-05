@@ -1,0 +1,55 @@
+AURA QUANT-X V37.3.48 — PACK COMPLETO COM CORREÇÃO HERMES
+=========================================================
+paper_trade=true | execution_allowed=false
+
+Este ZIP = pack V37.3.47 original + correções críticas do Hermes Chat API.
+
+CORREÇÕES INCLUÍDAS (V37.3.48)
+------------------------------
+1) SyntaxError f-string (Python 3.11)
+   - hermes_v10/scripts/hermes_v10_chat_api.py
+   - scripts/hermes_v10_chat_api.py
+   Expressão com \n dentro de f-string substituída por forma 3.11-safe.
+
+2) ModuleNotFoundError core.hermes_llm_engine
+   - Bootstrap de path reforçado em AURA_RUN_HERMES.py e no chat_api
+   - Script AURA_REPARAR_E_SUBIR_HERMES.ps1 (repara + sobe)
+
+3) Arranque robusto
+   - Deteta C:\aura e C:\AURA_V25
+   - Usa venv Python 3.11 (não 3.12/3.14)
+   - Health check em :8777
+
+FICHEIROS NOVOS / ATUALIZADOS
+-----------------------------
+- hermes_v10/scripts/hermes_v10_chat_api.py   (FIX)
+- scripts/hermes_v10_chat_api.py              (FIX)
+- hermes_v10/AURA_RUN_HERMES.py               (path bootstrap)
+- AURA_REPARAR_E_SUBIR_HERMES.ps1             (NOVO — use este)
+- 00_LEIA_ME_REPARO_HERMES.txt
+- 00_LEIA_ME_V37.3.48_HERMES_FIX_COMPLETO.txt (este)
+
+INSTALAÇÃO / ATUALIZAÇÃO
+-----------------------
+Opção A — atualização em cima da instalação existente:
+  1. Extraia este ZIP por cima de C:\aura (ou C:\AURA_V25)
+  2. Execute:
+       powershell -ExecutionPolicy Bypass -File C:\aura\AURA_REPARAR_E_SUBIR_HERMES.ps1
+
+Opção B — instalação limpa:
+  1. Extraia para C:\aura
+  2. Rode INSTALAR_AGORA.ps1 ou AURA_INSTALACAO_LIMPA_SILENCIOSA.bat
+  3. Depois AURA_REPARAR_E_SUBIR_HERMES.ps1
+
+VALIDAÇÃO
+---------
+  curl http://127.0.0.1:8777/health
+  curl http://127.0.0.1:8777/metrics
+
+IMPORTANTE
+----------
+- Use Python 3.11.x (o venv em AURA_V25\engine\venv com 3.11.9 é o ideal).
+- NÃO use Python 3.12 / 3.13 / 3.14 com este Hermes.
+- Invariantes: PAPER_TRADE=true, EXECUTION_ALLOWED=false.
+
+Changelog resumido das correções: ver 00_LEIA_ME_REPARO_HERMES.txt

@@ -1,0 +1,7 @@
+V37.3.36 — Tools Hub live panels + VRAM
+- tools-hub.html: fila Telegram, kill switch UI, ultimo veto Elite Squad, VRAM
+- scripts/aura_ops_status_write.py → ops_status.json
+- scripts/aura_vram_report.py + docs/VRAM_OPTIMIZATION_AURA.md
+- AURA_OPS_STATUS_REFRESH.bat / AURA_VRAM_REPORT.bat
+- KILL_SWITCH ON/OFF via ficheiro data/telegram_intel/kill_switch.on
+- integration_hooks grava last_veto.json

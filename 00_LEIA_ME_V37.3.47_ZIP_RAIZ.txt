@@ -1,0 +1,5 @@
+Correcao deste pack
+- ZIP sem pasta AURA_COMPLETE_V37.3.38 (extrai directo para C:\AURA_V25)
+- hermes_v10 incluso com auditoria chat (AUTORIZO, metrics, WS, CORS)
+- BATs em CRLF + pause
+- AURA_TESTES.ps1 e AURA_SUBIR_HERMES.ps1 (nao uses start /MIN do cmd no PowerShell)

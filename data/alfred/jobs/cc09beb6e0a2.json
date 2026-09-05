@@ -1,0 +1,57 @@
+{
+  "job_id": "cc09beb6e0a2",
+  "request_id": "25ef389da19c",
+  "content_hash": "edb498d4a567ce83",
+  "created_at": 1788382663.4002285,
+  "status": "success",
+  "authorized": false,
+  "authorization_reason": "comando único de baixo risco pedido explicitamente",
+  "plan_intent": "single_task",
+  "source_message": "gpu",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "gpu_report",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "gpu": {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "vram_total_mib": 6141.0,
+          "vram_used_mib": 5435.0,
+          "vram_free_mib": 486.0,
+          "util_pct": 0.0,
+          "temp_c": 50.0
+        },
+        "ollama": {
+          "online": true,
+          "model_present": true,
+          "models": [
+            "qwen3:8b",
+            "qwen2.5-coder:7b",
+            "qwen-coder-safe:latest",
+            "qwen2.5-coder:7b-instruct",
+            "qwen2.5:3b-instruct",
+            "llama3.2:3b",
+            "llama3.2:1b"
+          ]
+        },
+        "ram_used_pct": 80.9,
+        "cpu_percent": 40.3
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "1 de 1 tarefas concluídas com sucesso.",
+  "finished_at": 1788382663.744704
+}

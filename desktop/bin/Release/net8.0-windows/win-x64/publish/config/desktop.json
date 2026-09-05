@@ -1,0 +1,113 @@
+{
+  "app": {
+    "displayName": "AURA QUANT-X Matriz",
+    "version": "12.7.62-V37.3.1-INSTALLER-PATCH",
+    "virtualHost": "aura.local",
+    "homepage": "http://127.0.0.1:8766/",
+    "userDataFolder": "desktop_data",
+    "paperTradeOnly": true,
+    "glmEnabledByDefault": false,
+    "matrixUi": "v25q-original",
+    "fallbackHomepages": [
+      "http://127.0.0.1:8766/",
+      "http://127.0.0.1:8766/index.html",
+      "https://aura.local/index.html",
+      "https://aura.local/"
+    ],
+    "disableSimulatedMode": true,
+    "disableOfflineFirst": true,
+    "singleSurface": true
+  },
+  "browser": {
+    "engine": "WebView2",
+    "chromiumCompatible": true,
+    "operaBinary": false,
+    "allowedHosts": [
+      "aura.local",
+      "sokkerpro.com",
+      "www.sokkerpro.com",
+      "m2.sokkerpro.com",
+      "m4.sokkerpro.com",
+      "127.0.0.1",
+      "localhost"
+    ],
+    "captureScript": "desktop/capture/aura-capture.js"
+  },
+  "services": [
+    {
+      "name": "Bridge",
+      "workingDirectory": ".",
+      "python": "engine/venv/Scripts/python.exe",
+      "script": "bridge/server.py",
+      "arguments": [
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8080"
+      ],
+      "port": 8080,
+      "healthUrl": "http://127.0.0.1:8080/health",
+      "enabled": true
+    },
+    {
+      "name": "Engine",
+      "workingDirectory": ".",
+      "python": "engine/venv/Scripts/python.exe",
+      "script": "engine/server.py",
+      "arguments": [
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8765"
+      ],
+      "port": 8765,
+      "healthUrl": "http://127.0.0.1:8765/api/health",
+      "enabled": true
+    },
+    {
+      "name": "Voice",
+      "workingDirectory": ".",
+      "python": "engine/venv/Scripts/python.exe",
+      "script": "bridge/jarvis_voice_server.py",
+      "arguments": [
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8099",
+        "--lazy"
+      ],
+      "port": 8099,
+      "healthUrl": "http://127.0.0.1:8099/api/voice/health",
+      "enabled": true
+    }
+  ],
+  "ollama": {
+    "executableCandidates": [
+      "%LOCALAPPDATA%/Programs/Ollama/ollama.exe",
+      "%ProgramFiles%/Ollama/ollama.exe",
+      "ollama.exe"
+    ],
+    "baseUrl": "http://127.0.0.1:11434",
+    "model": "llama3.2:3b",
+    "fallbackModel": "llama3.2:1b",
+    "hermesModel": "llama3.2:3b",
+    "glmEnabled": false,
+    "backend": "hermes"
+  },
+  "security": {
+    "bridgeAllowedOrigins": [
+      "https://aura.local",
+      "http://127.0.0.1:8080",
+      "http://localhost:8080"
+    ],
+    "allowRealOrders": false,
+    "requireAdminForRestrictedActions": true
+  },
+  "admin": {
+    "apiBaseUrl": "http://127.0.0.1:8765",
+    "defaultMode": "PLAN_ONLY",
+    "requireExplicitApproval": true,
+    "paperTradeOnly": true,
+    "checkpointPath": "runtime/checkpoints"
+  }
+}

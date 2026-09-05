@@ -1,0 +1,446 @@
+{
+  "job_id": "7a0e12a0bd63",
+  "request_id": "23becffe474b",
+  "content_hash": "5e70415cc53cc018",
+  "created_at": 1788384989.8864071,
+  "status": "success",
+  "authorized": false,
+  "authorization_reason": "comando único de baixo risco pedido explicitamente",
+  "plan_intent": "single_task",
+  "source_message": "lista agentes",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "aura_agents_list",
+      "arguments": {},
+      "risk": "low",
+      "mutating": false,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "success",
+      "result": {
+        "ok": true,
+        "count": 38,
+        "agents": [
+          {
+            "id": "agents:corner_independent_v7",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "evaluate",
+              "observe",
+              "prepare",
+              "no_bet"
+            ]
+          },
+          {
+            "id": "bridge:emergency_bridge.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "now"
+            ]
+          },
+          {
+            "id": "bridge:gpu_resource_manager.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "cleanup",
+              "device_info",
+              "profile",
+              "sample_vram",
+              "vram_snapshot"
+            ]
+          },
+          {
+            "id": "bridge:jarvis_cognitive_server.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "api_state",
+              "health"
+            ]
+          },
+          {
+            "id": "bridge:jarvis_voice_server.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "health",
+              "voice_diagnostic"
+            ]
+          },
+          {
+            "id": "bridge:multi_llm_router.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "extract_intent"
+            ]
+          },
+          {
+            "id": "bridge:neural_tts.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "available",
+              "cache_stats",
+              "sanitize_for_speech"
+            ]
+          },
+          {
+            "id": "bridge:server.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "extract_match_view",
+              "fingerprint",
+              "last_corner_gap",
+              "validate_skill_pack",
+              "view_to_skill_pack",
+              "window_label"
+            ]
+          },
+          {
+            "id": "bridge:state_vector_daemon.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "get_semantic_graph",
+              "get_system_state"
+            ]
+          },
+          {
+            "id": "bridge:stt.py",
+            "status": "enabled",
+            "state": "inspect_only",
+            "runnable": [
+              "__init__",
+              "_has_speech",
+              "transcribe_mic",
+              "transcribe",
+              "stats",
+              "load_stt_model",
+              "transcribe_audio"
+            ]
+          },
+          {
+            "id": "bridge:tg_voice_pipeline.py",
+            "status": "enabled",
+            "state": "inspect_only",
+            "runnable": [
+              "_ffmpeg_ogg_to_wav",
+              "process_voice_message"
+            ]
+          },
+          {
+            "id": "bridge:tts.py",
+            "status": "enabled",
+            "state": "inspect_only",
+            "runnable": [
+              "_aura_sanitize_speech",
+              "__init__",
+              "_key",
+              "_cache_path",
+              "_read_cache",
+              "_write_cache",
+              "synthesize",
+              "warmup",
+              "stats",
+              "speak"
+            ]
+          },
+          {
+            "id": "engine:cache_integration.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "start_cache_management",
+              "CACHE",
+              "cache_stats"
+            ]
+          },
+          {
+            "id": "engine:aura_director_agent.py",
+            "status": "enabled",
+            "state": "inspect_only",
+            "runnable": [
+              "generate",
+              "__init__",
+              "_init_director_db",
+              "_get_system_telemetry",
+              "_get_system_performance_metrics",
+              "_analyze_failure_patterns",
+              "_read_tracebacks",
+              "_check_director_memory",
+              "_log_director_action",
+              "run_thinking_cycle",
+              "_process_v2_decision",
+              "execute_approved_action"
+            ]
+          },
+          {
+            "id": "engine:aura_quant_x_master.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "health"
+            ]
+          },
+          {
+            "id": "engine:auto_calibrate_risk.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "maybe_auto_calibrate"
+            ]
+          },
+          {
+            "id": "engine:backtest_engine.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "run_backtest"
+            ]
+          },
+          {
+            "id": "engine:browser_agent.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "BrowserAgent",
+              "BROWSER",
+              "BROWSER_FULL",
+              "launch",
+              "start_capture",
+              "extract_view",
+              "ask_glm",
+              "navigate"
+            ]
+          },
+          {
+            "id": "engine:corner_intelligence.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "analyst_brief",
+              "analyze_corners"
+            ]
+          },
+          {
+            "id": "engine:cross_site_analyst.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "CrossSiteAnalyst",
+              "ANALYST",
+              "TipsterReputation",
+              "collect_tips",
+              "run_once",
+              "start_loop",
+              "register_site"
+            ]
+          },
+          {
+            "id": "engine:data_veracity.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "verify_payload"
+            ]
+          },
+          {
+            "id": "engine:digital_twin_monte_carlo.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "run_corner_probability"
+            ]
+          },
+          {
+            "id": "engine:drift_monitor.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "missing_rate",
+              "recent_alerts",
+              "update"
+            ]
+          },
+          {
+            "id": "engine:engine_core.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "backend_info",
+              "init_db_wal"
+            ]
+          },
+          {
+            "id": "engine:execution_router.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "execute"
+            ]
+          },
+          {
+            "id": "engine:gpu_resource_manager.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "cuda_info",
+              "recommended_voice_llm",
+              "resolve_cuda_device",
+              "status"
+            ]
+          },
+          {
+            "id": "engine:hawkes_corners.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "build_hawkes_from_payload",
+              "classify_event",
+              "p_at_least_one"
+            ]
+          },
+          {
+            "id": "engine:health_score.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "record",
+              "score"
+            ]
+          },
+          {
+            "id": "engine:market_edge.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "classify_market",
+              "compute_edge",
+              "normalize_market_name",
+              "odds_age_sec",
+              "parse_odds_ts"
+            ]
+          },
+          {
+            "id": "engine:model_shadow.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "baseline_from_payload",
+              "build_feature_vector",
+              "poisson_at_least_one",
+              "shadow_predict"
+            ]
+          },
+          {
+            "id": "agents:mora_master_agent",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "run",
+              "acquire_resources",
+              "release_resources",
+              "get_status",
+              "pause_system",
+              "run_daily_audit",
+              "research_market",
+              "generate_upgrade_report",
+              "release_system"
+            ]
+          },
+          {
+            "id": "engine:odds_quality_monitor.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "OddsQualityMonitor",
+              "ODDS_MONITOR",
+              "ingest_from_view",
+              "evaluate",
+              "attach_to_view"
+            ]
+          },
+          {
+            "id": "engine:pre_treinar_gpu.py",
+            "status": "enabled",
+            "state": "inspect_only",
+            "runnable": [
+              "__init__",
+              "forward",
+              "treinar"
+            ]
+          },
+          {
+            "id": "engine:server.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "api_status",
+              "deep_diagnostic",
+              "performance_diagnostic"
+            ]
+          },
+          {
+            "id": "engine:voice_planner.py",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "apply_pronunciation",
+              "build_ssml",
+              "narrative_from_card",
+              "plan_segments",
+              "strip_forbidden_fillers"
+            ]
+          },
+          {
+            "id": "sre:omnipotent_health_profiler",
+            "status": "enabled",
+            "state": "runnable",
+            "runnable": [
+              "analyze_traces",
+              "check_clock_skew",
+              "check_memory_fragmentation",
+              "check_phase_space",
+              "check_schema_drift",
+              "check_vram_fragmentation",
+              "predict_time_to_failure",
+              "run_full_diagnostic"
+            ]
+          },
+          {
+            "id": "ui:central_nova",
+            "status": "enabled",
+            "state": "asset",
+            "runnable": []
+          },
+          {
+            "id": "voice:masculine_profile",
+            "status": "enabled",
+            "state": "asset",
+            "runnable": []
+          }
+        ],
+        "engine": {
+          "status": 200
+        },
+        "paper_trade": true,
+        "execution_allowed": false
+      },
+      "error": "",
+      "attempts": 1
+    }
+  ],
+  "summary": "1 de 1 tarefas concluídas com sucesso.",
+  "finished_at": 1788384990.4092686
+}

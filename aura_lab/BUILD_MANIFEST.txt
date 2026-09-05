@@ -1,0 +1,43 @@
+{
+  "product": "AURA LAB",
+  "version": "0.1.18",
+  "built_utc": "2026-09-05T11:22:36.900749+00:00",
+  "file_count": 25,
+  "files": [
+    "aura_lab/README.md",
+    "aura_lab/VERSION",
+    "aura_lab/agent/lab_agent_spec.md",
+    "aura_lab/agent/prompts/diagnose_system.md",
+    "aura_lab/catalog/failure_modes_v1.yaml",
+    "aura_lab/harness/INSTALL_NO_HARNESS.txt",
+    "aura_lab/harness/VISION_EXPANSION.md",
+    "aura_lab/harness/harness_lab_vision.py",
+    "aura_lab/records/.gitkeep",
+    "aura_lab/records/experiences.jsonl",
+    "aura_lab/records/lab_failures.jsonl",
+    "aura_lab/schema/failure_mode.schema.json",
+    "aura_lab/schema/lab_record.schema.json",
+    "aura_lab/tools/INSTALL_HARNESS_OVERLAY.ps1",
+    "aura_lab/tools/INSTALL_OPS_DAEMON_WINDOWS.bat",
+    "aura_lab/tools/INSTALL_OPS_DAEMON_WINDOWS.ps1",
+    "aura_lab/tools/catalog_loader.py",
+    "aura_lab/tools/experiences.py",
+    "aura_lab/tools/lab_diagnose.py",
+    "aura_lab/tools/ops_daemon.py",
+    "aura_lab/tools/ops_loop.py",
+    "aura_lab/tools/pack_release.py",
+    "aura_lab/tools/record_writer.py",
+    "aura_lab/tools/snapshot.py",
+    "aura_lab/tools/vision_panel.py"
+  ],
+  "policy": {
+    "paper_trade": true,
+    "execution_allowed": false,
+    "advisory_only": true
+  },
+  "entrypoints": [
+    "aura_lab/tools/lab_diagnose.py",
+    "aura_lab/tools/catalog_loader.py",
+    "aura_lab/tools/pack_release.py"
+  ]
+}

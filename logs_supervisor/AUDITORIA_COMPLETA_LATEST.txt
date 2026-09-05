@@ -1,0 +1,36 @@
+AURA AUDITORIA 02/09/2026  9:59:29,55 ROOT=C:\aura
+paper_trade=true execution_allowed=false
+
+=== Ficheiros criticos ===
+OK   engine\server.py
+OK   bridge\server.py
+OK   bridge\jarvis_voice_server.py
+OK   desktop\ui\matriz_v22\index.html
+OK   desktop\config\desktop.json
+OK   desktop\capture\aura-capture.js
+OK   desktop\publish\Aura.QuantX.Desktop.exe
+OK   hermes_v10\scripts\hermes_v10_chat_api.py
+OK   scripts\aura_serve_matriz.py
+OK   scripts\AURA_SAFE_FREE_PORTS.ps1
+OK   AURA_START_ALL.bat
+OK   AURA_TUDO_EM_UM.bat
+OK   AURA_ABRIR_DESKTOP.bat
+OK   ABRIR_MATRIZ.bat
+
+=== Portas ===
+LISTEN 8080
+LISTEN 8765
+LISTEN 8777
+OFF    8778
+LISTEN 8766
+LISTEN 8099
+LISTEN 11434
+
+=== Health HTTP ===
+200 http://127.0.0.1:8080/health
+200 http://127.0.0.1:8765/api/health
+200 http://127.0.0.1:8766/health
+200 http://127.0.0.1:8777/chat
+
+=== ui/state (nao inventar fixture) ===
+home=Pyunik II away=Sardarapat II min=45

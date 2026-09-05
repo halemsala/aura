@@ -1,0 +1,36 @@
+{
+  "job_id": "2235f8d8dfc8",
+  "request_id": "x",
+  "content_hash": "abc",
+  "created_at": 1788377716.9880505,
+  "status": "failed",
+  "authorized": true,
+  "authorization_reason": "t",
+  "plan_intent": "single_task",
+  "source_message": "",
+  "dedupe_hits": 0,
+  "tasks": [
+    {
+      "id": "task-1",
+      "tool": "write_text_file",
+      "arguments": {
+        "path": "Documents/s.txt",
+        "text": "x"
+      },
+      "risk": "medium",
+      "mutating": true,
+      "dependency_ids": [],
+      "timeout": 30.0,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_s": 0.4
+      },
+      "status": "failed",
+      "result": {},
+      "error": "ToolError: ferramenta sensível bloqueada: define execution_allowed=true em config/alfred.json ou fornece o token local (X-Alfred-Token)",
+      "attempts": 3
+    }
+  ],
+  "summary": "0 de 1 tarefas concluídas com sucesso. FALHOU task-1 (write_text_file): ToolError: ferramenta sensível bloqueada: define execution_allowed=true em config/alfred.json ou fornece o token local (X-Alfred-Token)",
+  "finished_at": 1788377718.1975987
+}

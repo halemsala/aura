@@ -1,0 +1,10 @@
+{
+  "source_url": "https://github.com/epiral/agent-clip",
+  "archive_url": "https://codeload.github.com/epiral/agent-clip/tar.gz/refs/heads/main",
+  "kind": "install_skill",
+  "label": "agent-clip",
+  "sha256": "e969c6053d1622623c25768d90c5786d4b40d31a98cc62071a50f0e0a4117537",
+  "downloaded_at": "2026-09-05T08:02:16.928035+00:00",
+  "promoted": false,
+  "installers_executed": false
+}

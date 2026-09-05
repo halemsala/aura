@@ -1,0 +1,7 @@
+pynvml
+psutil
+apscheduler
+python-telegram-bot
+httpx
+beautifulsoup4
+lxml
